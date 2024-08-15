@@ -18,7 +18,7 @@ middleware = [
 
 app = FastAPI(middleware=middleware)
 
-BASE_DIR = Path(__file__).resolve().parents[2]
+BASE_DIR = Path(__file__).resolve().parents[0]
 ASSETS_DIR = BASE_DIR / "assets"
 SUPPORTED_FORMATS = ["jpg", "jpeg", "png", "webp"]
 
@@ -40,6 +40,10 @@ def convert_image(image_path: Path, target_format: str) -> io.BytesIO:
         if target_format == 'jpg':
             target_format = 'jpeg'
 
+        # Convert RGBA to RGB if saving as JPEG
+        if img.mode == 'RGBA' and target_format == 'jpeg':
+            img = img.convert('RGB')
+
         img.save(img_io, format=target_format.upper())
         img_io.seek(0)
         return img_io
@@ -55,6 +59,7 @@ async def add_cache_control_header(request: Request, call_next: Callable):
 async def serve_file(file_path: str):
     requested_path = (ASSETS_DIR / file_path).resolve()
 
+    print(requested_path)
     # Ensure the requested file is within the assets directory
     if not str(requested_path).startswith(str(ASSETS_DIR)):
         raise HTTPException(status_code=403, detail="Access forbidden")
@@ -76,5 +81,3 @@ async def serve_file(file_path: str):
             return StreamingResponse(converted_image, media_type=f"image/{file_extension}")
 
     raise HTTPException(status_code=404, detail="File not found")
-
-
