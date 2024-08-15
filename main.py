@@ -18,7 +18,6 @@ middleware = [
 
 app = FastAPI(middleware=middleware)
 
-
 BASE_DIR = Path(__file__).resolve().parents[2]
 ASSETS_DIR = BASE_DIR / "assets"
 SUPPORTED_FORMATS = ["jpg", "jpeg", "png", "webp"]
