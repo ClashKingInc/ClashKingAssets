@@ -23,9 +23,9 @@ ASSETS_DIR = BASE_DIR / "assets"
 SUPPORTED_FORMATS = ["jpg", "jpeg", "png", "webp"]
 
 
-def find_alternative_format(file_stem: str):
+def find_alternative_format(relative_path: Path):
     for ext in SUPPORTED_FORMATS:
-        potential_file = ASSETS_DIR / f"{file_stem}.{ext}"
+        potential_file = ASSETS_DIR / f"{relative_path.with_suffix('.' + ext)}"
         if potential_file.is_file():
             return potential_file
     return None
@@ -40,9 +40,23 @@ def convert_image(image_path: Path, target_format: str) -> io.BytesIO:
         if target_format == 'jpg':
             target_format = 'jpeg'
 
-        # Convert RGBA to RGB if saving as JPEG
-        if img.mode == 'RGBA' and target_format == 'jpeg':
+        # For JPEG, handle transparency by flattening onto a white background
+        if img.mode in ('RGBA', 'LA', 'P') and target_format == 'jpeg':
+            # Create a white background image
+            background = Image.new('RGB', img.size, (255, 255, 255))
+            # Convert image to RGBA if it's not already
+            img = img.convert('RGBA')
+            # Paste the image onto the white background, using the alpha channel as a mask
+            background.paste(img, mask=img.split()[3])  # 3 is the alpha channel
+            img = background
+
+        # Convert any remaining modes to RGB for JPEG
+        elif target_format == 'jpeg':
             img = img.convert('RGB')
+
+        # Convert 1 mode to L (grayscale) for PNG/WebP
+        elif img.mode == '1' and target_format in ('png', 'webp'):
+            img = img.convert('L')
 
         img.save(img_io, format=target_format.upper())
         img_io.seek(0)
@@ -64,21 +78,18 @@ async def serve_file(file_path: str):
     if not str(requested_path).startswith(str(ASSETS_DIR)):
         raise HTTPException(status_code=403, detail="Access forbidden")
 
-    # Extract the file name and extension
-    file_stem = requested_path.stem
-    file_extension = requested_path.suffix.lower().lstrip('.')
+    relative_path = requested_path.relative_to(ASSETS_DIR)
 
     # If the requested file exists, serve it
     if requested_path.is_file():
         return FileResponse(requested_path)
 
     # Check if the file exists in another format
-    if file_extension in SUPPORTED_FORMATS:
-        alternative_file = find_alternative_format(file_stem)
-        if alternative_file:
-            # Convert to the requested format
-            converted_image = convert_image(alternative_file, file_extension)
-            return StreamingResponse(converted_image, media_type=f"image/{file_extension}")
+    alternative_file = find_alternative_format(relative_path)
+    if alternative_file:
+        # Convert to the requested format
+        converted_image = convert_image(alternative_file, requested_path.suffix.lstrip('.'))
+        return StreamingResponse(converted_image, media_type=f"image/{requested_path.suffix.lstrip('.')}")
 
     raise HTTPException(status_code=404, detail="File not found")
 
