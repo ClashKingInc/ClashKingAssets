@@ -1,0 +1,28 @@
+{
+    "heroes": {
+        "Barbarian King": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/hero-pics/Icon_HV_Hero_Barbarian_King.png",
+            "type": "hero"
+        },
+        "Archer Queen": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/hero-pics/Icon_HV_Hero_Archer_Queen.png",
+            "type": "hero"
+        },
+        "Grand Warden": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/hero-pics/Icon_HV_Hero_Grand_Warden.png",
+            "type": "hero"
+        },
+        "Royal Champion": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/hero-pics/Icon_HV_Hero_Royal_Champion.png",
+            "type": "hero"
+        },
+        "Battle Machine": {
+            "url": "https://clashkingfiles.b-cdn.net/builder-base/hero-pics/Icon_BB_Hero_Battle_Machine.png",
+            "type": "bb-hero"
+        },
+        "Battle Copter": {
+            "url": "https://clashkingfiles.b-cdn.net/builder-base/hero-pics/Icon_BB_Hero_Battle_Copter.png",
+            "type": "bb-hero"
+        }
+    }
+}

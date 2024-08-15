@@ -1,0 +1,60 @@
+{
+    "spells": {
+        "Lightning Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Spell_Lightning.png",
+            "type": "spell"
+        },
+        "Healing Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Spell_Heal.png",
+            "type": "spell"
+        },
+        "Rage Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Spell_Rage.png",
+            "type": "spell"
+        },
+        "Jump Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Spell_Jump.png",
+            "type": "spell"
+        },
+        "Freeze Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Spell_Freeze.png",
+            "type": "spell"
+        },
+        "Clone Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Spell_Clone.png",
+            "type": "spell"
+        },
+        "Invisibility Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Spell_Invisibility.png",
+            "type": "spell"
+        },
+        "Recall Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Spell_Recall.png",
+            "type": "spell"
+        },
+        "Poison Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Dark_Spell_Poison.png",
+            "type": "spell"
+        },
+        "Earthquake Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Dark_Spell_Earthquake.png",
+            "type": "spell"
+        },
+        "Haste Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Dark_Spell_Haste.png",
+            "type": "spell"
+        },
+        "Skeleton Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Dark_Spell_Skeleton.png",
+            "type": "spell"
+        },
+        "Bat Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Dark_Spell_Bat.png",
+            "type": "spell"
+        },
+        "Overgrowth Spell": {
+            "url": "https://clashkingfiles.b-cdn.net/home-base/spell-pics/Icon_HV_Dark_Spell_Overgrowth.png",
+            "type": "spell"
+        }
+    }
+}
