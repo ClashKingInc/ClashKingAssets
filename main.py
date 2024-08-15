@@ -81,3 +81,9 @@ async def serve_file(file_path: str):
             return StreamingResponse(converted_image, media_type=f"image/{file_extension}")
 
     raise HTTPException(status_code=404, detail="File not found")
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=80)
