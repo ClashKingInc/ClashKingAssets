@@ -35,8 +35,8 @@ jobs:
 
     - name: Configure Git user identity for public repo
       run: |
-        git config --global user.email "matthewanderson3607@gmail.com"
-        git config --global user.name "MagicTheDev"
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
         git config --global --add safe.directory /github/workspace/public_repo
 
     - name: List contents of public repo (debug step)
@@ -44,7 +44,7 @@ jobs:
 
     - name: Copy files to the public repository
       run: |
-        rsync -av --exclude=public_repo ./ public_repo/
+        rsync -av --exclude=public_repo --exclude=.github ./ public_repo/
 
     - name: List contents of public repo after copy (debug step)
       run: ls -la public_repo
