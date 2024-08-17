@@ -1,10 +1,10 @@
-name: Sync to Public Repo
+name: Mirror Private Repo to Public Repo
 
 on:
   workflow_dispatch:  # Allows the action to be triggered manually
 
 jobs:
-  sync:
+  mirror:
     runs-on: ubuntu-latest
 
     steps:
@@ -13,19 +13,21 @@ jobs:
       with:
         token: ${{ secrets.PAT_TOKEN }}
 
-    - name: Checkout the Public Repo
+    - name: Remove the Git directory from the private repo
+      run: |
+        rm -rf .git
+
+    - name: Checkout the public repository
       uses: actions/checkout@v3
       with:
         repository: ClashKingInc/ClashKingAssets
         token: ${{ secrets.PAT_TOKEN }}
         path: public_repo
 
-    - name: Sync to Public Repo
+    - name: Copy files to the public repository
       run: |
-        git config --global user.name "MagicTheDev"
-        git config --global user.email "matthewanderson3607@gmail.com"
-        rsync -av --exclude=public_repo ../ public_repo/
+        rsync -av --exclude=public_repo ./ public_repo/
         cd public_repo
         git add .
-        git commit -m "Sync to public repo" || echo "No changes to commit"
+        git commit -m "Mirror update from private repo" || echo "No changes to commit"
         git push --force
