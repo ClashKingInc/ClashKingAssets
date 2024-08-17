@@ -18,9 +18,7 @@ jobs:
     - name: Sync to Public Repo
       run: |
         git config --global user.name "MagicTheDev"
-        git remote add public https://<PAT_TOKEN>@github.com/ClashKingInc/ClashKingAssets.git
+        git remote add public https://${{ secrets.PAT_TOKEN }}@github.com/ClashKingInc/ClashKingAssets.git
         git add .
         git commit -m "Sync to public repo" || echo "No changes to commit"
         git push --force public main
-      env:
-        PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
