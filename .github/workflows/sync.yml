@@ -1,15 +1,49 @@
-name: 'mirror repo'
+name: Mirror Private Repo to Public Repo
+
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Allows the action to be triggered manually
 
 jobs:
   mirror:
     runs-on: ubuntu-latest
-    name: mirror
+
     steps:
-      - name: mirror
-        id: mirror
-        uses: bridgelightcloud/github-mirror-action@v1
-        with:
-          origin: 'https://github.com/ClashKingInc/ClashKingAssets.git'
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+    - name: Checkout the private repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.PAT_TOKEN }}
+
+    - name: Configure Git to treat the workspace as safe
+      run: git config --global --add safe.directory /github/workspace
+
+    - name: List contents of private repo (debug step)
+      run: ls -la
+
+    - name: Remove the Git directory from the private repo
+      run: |
+        rm -rf .git
+
+    - name: Checkout the public repository
+      uses: actions/checkout@v3
+      with:
+        repository: ClashKingInc/ClashKingAssets
+        token: ${{ secrets.PAT_TOKEN }}
+        path: public_repo
+
+    - name: List contents of public repo (debug step)
+      run: ls -la public_repo
+
+    - name: Copy files to the public repository
+      run: |
+        rsync -av --exclude=public_repo ./ public_repo/
+
+    - name: List contents of public repo after copy (debug step)
+      run: ls -la public_repo
+
+    - name: Commit and push changes to public repository
+      run: |
+        cd public_repo
+        git config --global --add safe.directory /github/workspace/public_repo
+        git add .
+        git commit -m "Mirror update from private repo" || echo "No changes to commit"
+        git push --force
