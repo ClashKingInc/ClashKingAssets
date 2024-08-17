@@ -1,4 +1,4 @@
-name: Mirror Private Repo to Public Repo
+name: Sync Repo
 
 on:
   workflow_dispatch:  # Allows the action to be triggered manually

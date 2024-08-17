@@ -22,7 +22,6 @@ BASE_DIR = Path(__file__).resolve().parents[0]
 ASSETS_DIR = BASE_DIR / "assets"
 SUPPORTED_FORMATS = ["jpg", "jpeg", "png", "webp"]
 
-
 def find_alternative_format(relative_path: Path):
     for ext in SUPPORTED_FORMATS:
         potential_file = ASSETS_DIR / f"{relative_path.with_suffix('.' + ext)}"
