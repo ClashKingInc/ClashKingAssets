@@ -13,8 +13,11 @@ jobs:
       with:
         token: ${{ secrets.PAT_TOKEN }}
 
-    - name: Configure Git to treat the workspace as safe
-      run: git config --global --add safe.directory /github/workspace
+    - name: Configure Git user identity and safe directory
+      run: |
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git config --global --add safe.directory /github/workspace
 
     - name: List contents of private repo (debug step)
       run: ls -la
@@ -30,6 +33,12 @@ jobs:
         token: ${{ secrets.PAT_TOKEN }}
         path: public_repo
 
+    - name: Configure Git user identity for public repo
+      run: |
+        git config --global user.email "matthewanderson3607@gmail.com"
+        git config --global user.name "MagicTheDev"
+        git config --global --add safe.directory /github/workspace/public_repo
+
     - name: List contents of public repo (debug step)
       run: ls -la public_repo
 
@@ -43,7 +52,6 @@ jobs:
     - name: Commit and push changes to public repository
       run: |
         cd public_repo
-        git config --global --add safe.directory /github/workspace/public_repo
         git add .
         git commit -m "Mirror update from private repo" || echo "No changes to commit"
         git push --force
