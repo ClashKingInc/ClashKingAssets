@@ -1,0 +1,26 @@
+name: Sync to Public Repo
+
+on:
+  workflow_dispatch:  # Allows the action to be triggered manually
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the private repository
+      uses: actions/checkout@v2
+
+    - name: Remove GitHub Actions workflow directory
+      run: |
+        rm -rf .github/workflows/
+
+    - name: Sync to Public Repo
+      run: |
+        git config --global user.name "MagicTheDev"
+        git remote add public https://<PAT_TOKEN>@github.com/ClashKingInc/ClashKingAssets.git
+        git add .
+        git commit -m "Sync to public repo" || echo "No changes to commit"
+        git push --force public main
+      env:
+        PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
