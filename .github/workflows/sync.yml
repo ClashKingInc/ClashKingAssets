@@ -1,33 +1,15 @@
-name: Mirror Private Repo to Public Repo
-
+name: 'mirror repo'
 on:
-  workflow_dispatch:  # Allows the action to be triggered manually
+  workflow_dispatch:
 
 jobs:
   mirror:
     runs-on: ubuntu-latest
-
+    name: mirror
     steps:
-    - name: Checkout the private repository
-      uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.PAT_TOKEN }}
-
-    - name: Remove the Git directory from the private repo
-      run: |
-        rm -rf .git
-
-    - name: Checkout the public repository
-      uses: actions/checkout@v3
-      with:
-        repository: ClashKingInc/ClashKingAssets
-        token: ${{ secrets.PAT_TOKEN }}
-        path: public_repo
-
-    - name: Copy files to the public repository
-      run: |
-        rsync -av --exclude=public_repo ./ public_repo/
-        cd public_repo
-        git add .
-        git commit -m "Mirror update from private repo" || echo "No changes to commit"
-        git push --force
+      - name: mirror
+        id: mirror
+        uses: bridgelightcloud/github-mirror-action@v1
+        with:
+          origin: 'https://github.com/ClashKingInc/ClashKingAssets.git'
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
