@@ -9,16 +9,23 @@ jobs:
 
     steps:
     - name: Checkout the private repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.PAT_TOKEN }}
 
-    - name: Remove GitHub Actions workflow directory
-      run: |
-        rm -rf .github/workflows/
+    - name: Checkout the Public Repo
+      uses: actions/checkout@v3
+      with:
+        repository: ClashKingInc/ClashKingAssets
+        token: ${{ secrets.PAT_TOKEN }}
+        path: public_repo
 
     - name: Sync to Public Repo
       run: |
         git config --global user.name "MagicTheDev"
-        git remote add public https://${{ secrets.PAT_TOKEN }}@github.com/ClashKingInc/ClashKingAssets.git
+        git config --global user.email "matthewanderson3607@gmail.com"
+        rsync -av --exclude=public_repo ../ public_repo/
+        cd public_repo
         git add .
         git commit -m "Sync to public repo" || echo "No changes to commit"
-        git push --force public main
+        git push --force
