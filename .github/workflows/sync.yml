@@ -11,14 +11,17 @@ jobs:
     - name: Checkout the private repository
       uses: actions/checkout@v2
 
-    - name: Remove GitHub Actions workflow directory
+    - name: Set up SSH
       run: |
-        rm -rf .github/workflows/
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
 
     - name: Sync to Public Repo
       run: |
         git config --global user.name "MagicTheDev"
-        git remote add public https://${{ secrets.PAT_TOKEN }}@github.com/ClashKingInc/ClashKingAssets.git
+        git remote add public git@github.com:ClashKingInc/ClashKingAssets.git
         git add .
         git commit -m "Sync to public repo" || echo "No changes to commit"
         git push --force public main
