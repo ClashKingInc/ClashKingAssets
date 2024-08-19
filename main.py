@@ -65,7 +65,7 @@ def convert_image(image_path: Path, target_format: str) -> io.BytesIO:
 @app.middleware("http")
 async def add_cache_control_header(request: Request, call_next: Callable):
     response = await call_next(request)
-    response.headers["Cache-Control"] = "public, max-age=7200"
+    response.headers["Cache-Control"] = "public, max-age=2592000"
     return response
 
 @app.get("/{file_path:path}", name="Get a file")
