@@ -45,7 +45,6 @@
     "Poison Lizard": "/home-base/pet-pics/Icon_HV_Hero_Pets_Poison_Lizard.png",
     "Phoenix": "/home-base/pet-pics/Icon_HV_Hero_Pets_Phoenix.png",
     "Diggy": "/home-base/pet-pics/Icon_HV_Hero_Pets_Diggy.png",
-    "Root Rider": "/home-base/pet-pics/Icon_HV_Hero_Pets_Root_Rider.png",
     "Spirit Fox": "/home-base/pet-pics/Icon_HV_Hero_Pets_Spirit_Fox.png",
     "Angry Jelly": "/home-base/pet-pics/Icon_HV_Hero_Pets_Angry_Jelly.png"
   },
@@ -101,8 +100,8 @@
     "Raged Barbarian": "/builder-base/troop-pics/Icon_BB_Raged_Barbarian.png",
     "Night Witch": "/builder-base/troop-pics/Icon_BB_Night_Witch.png",
     "Sneaky Archer": "/builder-base/troop-pics/Icon_BB_Sneaky_Archer.png",
-    "Battle Machine": "/builder-base/hero-pics/Icon_BB_Battle_Machine.png",
-    "Battle Copter": "/builder-base/hero-pics/Icon_BB_Battle_Copter.png",
+    "Battle Machine": "/builder-base/hero-pics/Icon_BB_Hero_Battle_Machine.png",
+    "Battle Copter": "/builder-base/hero-pics/Icon_BB_Hero_Battle_Copter.png",
     "Electrofire Wizard": "/builder-base/troop-pics/Icon_BB_Electrofire_Wizard.png"
   },
   "siege_machine_emojis": {
@@ -149,7 +148,7 @@
     "Goblin": "/home-base/troop-pics/Icon_HV_Goblin.png",
     "Witch": "/home-base/troop-pics/Icon_HV_Witch.png",
     "Minion": "/home-base/troop-pics/Icon_HV_Minion.png",
-    "P.E.K.K.A": "/home-base/troop-pics/Icon_HV_PEKKAA.png",
+    "P.E.K.K.A": "/home-base/troop-pics/Icon_HV_P.E.K.K.A.png",
     "Wall Breaker": "/home-base/troop-pics/Icon_HV_Wall_Breaker.png",
     "Golem": "/home-base/troop-pics/Icon_HV_Golem.png",
     "Lava Hound": "/home-base/troop-pics/Icon_HV_Lava_Hound.png",
@@ -157,7 +156,8 @@
     "Headhunter": "/home-base/troop-pics/Icon_HV_Headhunter.png",
     "Electro Titan": "/home-base/troop-pics/Icon_HV_Electro_Titan.png",
     "Apprentice Warden": "/home-base/troop-pics/Icon_HV_Apprentice_Warden.png",
-    "Druid": "/home-base/troop-pics/Icon_HV_Druid.png"
+    "Druid": "/home-base/troop-pics/Icon_HV_Druid.png",
+    "Root Rider": "/home-base/troop-pics/Icon_HV_Root_Rider.png"
   },
   "hero_emojis": {
     "Barbarian King": "/home-base/hero-pics/Icon_HV_Hero_Barbarian_King.png",
@@ -279,8 +279,8 @@
     "CWL Bronze League II": "/home-base/league-icons/Icon_HV_CWL_Bronze_2.png",
     "CWL Bronze League III": "/home-base/league-icons/Icon_HV_CWL_Bronze_3.png",
     "CWL Silver League I": "/home-base/league-icons/Icon_HV_CWL_Silver_1.png",
-    "CWL Silver League II": "/home-base/league-icons/Icon_HV_CWL_Silver_2.png",
-    "CWL Silver League III": "/home-base/league-icons/Icon_HV_CWL_Silver_3.png",
+    "CWL Silver League II": "/home-base/league-icons/Icon_HV_CWL_Silver_12.png",
+    "CWL Silver League III": "/home-base/league-icons/Icon_HV_CWL_Silver_13.png",
     "CWL Gold League I": "/home-base/league-icons/Icon_HV_CWL_Gold_1.png",
     "CWL Gold League II": "/home-base/league-icons/Icon_HV_CWL_Gold_2.png",
     "CWL Gold League III": "/home-base/league-icons/Icon_HV_CWL_Gold_3.png",
