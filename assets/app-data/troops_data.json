@@ -112,6 +112,10 @@
             "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Druid.png",
             "type": "troop"
         },
+        "Thrower": {
+            "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Thrower.png",
+            "type": "troop"
+        },
         "Super Barbarian": {
             "url": "https://assets.clashk.ing/home-base/super-troop-pics/Icon_HV_Super_Barbarian.png",
             "type": "super-troop"

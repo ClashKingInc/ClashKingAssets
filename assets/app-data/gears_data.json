@@ -42,7 +42,6 @@
             "rarity": "1",
             "hero": "Barbarian King"
         },
-        
         "Earthquake Boots": {
             "url": "https://assets.clashk.ing/home-base/equipment-pics/Hero_Equipment_BK_Earthquake_Boots.png",
             "type": "gear",
@@ -102,6 +101,24 @@
             "type": "gear",
             "rarity" : "1",
             "hero": "Grand Warden"
+        },
+        "Lavaloon Puppet": {
+            "url": "https://assets.clashk.ing/home-base/equipment-pics/Hero_Equipment_GW_Lavaloon_Puppet.png",
+            "type": "gear",
+            "rarity" : "2",
+            "hero": "Grand Warden"
+        },
+        "Dark Orb": {
+            "url": "https://assets.clashk.ing/home-base/equipment-pics/Hero_Equipment_MP_Dark_Orb.png",
+            "type": "gear",
+            "rarity" : "1",
+            "hero": "Minion Prince"
+        },
+        "Henchman": {
+            "url": "https://assets.clashk.ing/home-base/equipment-pics/Hero_Equipment_MP_Henchman.png",
+            "type": "gear",
+            "rarity" : "1",
+            "hero": "Minion Prince"
         },
         "Haste Vial": {
             "url": "https://assets.clashk.ing/home-base/equipment-pics/Hero_Equipment_RC_Haste_Vial.png",

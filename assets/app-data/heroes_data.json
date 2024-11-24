@@ -12,6 +12,10 @@
             "url": "https://assets.clashk.ing/home-base/hero-pics/Icon_HV_Hero_Grand_Warden.png",
             "type": "hero"
         },
+        "Minion Prince": {
+            "url": "https://assets.clashk.ing/home-base/hero-pics/Icon_HV_Hero_Minion_Prince.png",
+            "type": "hero"
+        },
         "Royal Champion": {
             "url": "https://assets.clashk.ing/home-base/hero-pics/Icon_HV_Hero_Royal_Champion.png",
             "type": "hero"
