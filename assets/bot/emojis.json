@@ -16,7 +16,8 @@
     "13": "/home-base/town-hall-pics/town-hall-13.png",
     "14": "/home-base/town-hall-pics/town-hall-14.png",
     "15": "/home-base/town-hall-pics/town-hall-15.png",
-    "16": "/home-base/town-hall-pics/town-hall-16.png"
+    "16": "/home-base/town-hall-pics/town-hall-16.png",
+    "17" : "/home-base/town-hall-pics/town-hall-17.png",
   },
   "super_troop_emojis": {
     "Super Wall Breaker": "/home-base/super-troop-pics/Icon_HV_Super_Wall_Breaker.png",
@@ -70,7 +71,11 @@
     "Fireball": "/home-base/equipment-pics/Hero_Equipment_GW_Fireball.png",
     "Spiky Ball": "/home-base/equipment-pics/Hero_Equipment_BK_Spiky_Ball.png",
     "Rocket Spear": "/home-base/equipment-pics/Hero_Equipment_RC_Rocket_Spear.png",
-    "Magic Mirror": "/home-base/equipment-pics/Hero_Equipment_AQ_Magic_Mirror.png"
+    "Magic Mirror": "/home-base/equipment-pics/Hero_Equipment_AQ_Magic_Mirror.png",
+    "Lavaloon Puppet": "/home-base/equipment-pics/Hero_Equipment_GW_Lavaloon_Puppet.png",
+    "Henchmen": "/home-base/equipment-pics/Hero_Equipment_MP_Henchman.png",
+    "Dark Orb" : "/home-base/equipment-pics/Hero_Equipment_MP_Dark_Orb.png"
+
   },
   "capital_hall_emojis": {
     "Capital_Hall7": "/capital-base/capital-hall-pics/Building_CC_Capital_Hall_level_7.png",
@@ -127,7 +132,8 @@
     "Bat Spell": "/home-base/spell-pics/Icon_HV_Dark_Spell_Bat.png",
     "Clone Spell": "/home-base/spell-pics/Icon_HV_Spell_Clone.png",
     "Recall Spell": "/home-base/spell-pics/Icon_HV_Spell_Recall.png",
-    "Overgrowth Spell": "/home-base/spell-pics/Icon_HV_Dark_Spell_Overgrowth.png"
+    "Overgrowth Spell": "/home-base/spell-pics/Icon_HV_Dark_Spell_Overgrowth.png",
+    "Revive Spell" : "/home-base/spell-pics/Icon_HV_Spell_Hero_Revive_Potion.png"
   },
   "troop_emojis": {
     "Archer": "/home-base/troop-pics/Icon_HV_Archer.png",
@@ -157,13 +163,15 @@
     "Electro Titan": "/home-base/troop-pics/Icon_HV_Electro_Titan.png",
     "Apprentice Warden": "/home-base/troop-pics/Icon_HV_Apprentice_Warden.png",
     "Druid": "/home-base/troop-pics/Icon_HV_Druid.png",
-    "Root Rider": "/home-base/troop-pics/Icon_HV_Root_Rider.png"
+    "Root Rider": "/home-base/troop-pics/Icon_HV_Root_Rider.png",
+    "Thrower" : "/home-base/troop-pics/Icon_HV_Thrower.png"
   },
   "hero_emojis": {
     "Barbarian King": "/home-base/hero-pics/Icon_HV_Hero_Barbarian_King.png",
     "Archer Queen": "/home-base/hero-pics/Icon_HV_Hero_Archer_Queen.png",
     "Grand Warden": "/home-base/hero-pics/Icon_HV_Hero_Grand_Warden.png",
-    "Royal Champion": "/home-base/hero-pics/Icon_HV_Hero_Royal_Champion.png"
+    "Royal Champion": "/home-base/hero-pics/Icon_HV_Hero_Royal_Champion.png",
+    "Minion Prince" : "/home-base/hero-pics/Icon_HV_Hero_Minion_Prince.png"
   },
   "icon_emojis": {
     "animated_clash_swords": "/bot/icons/animated_clash_swords.gif",
