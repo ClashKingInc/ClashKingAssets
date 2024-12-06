@@ -1,5 +1,4 @@
 {
-  "assets_url": "https://assets.clashk.ing",
   "townhall_emojis": {
     "1": "/home-base/town-hall-pics/town-hall-1.png",
     "2": "/home-base/town-hall-pics/town-hall-2.png",
@@ -17,7 +16,7 @@
     "14": "/home-base/town-hall-pics/town-hall-14.png",
     "15": "/home-base/town-hall-pics/town-hall-15.png",
     "16": "/home-base/town-hall-pics/town-hall-16.png",
-    "17" : "/home-base/town-hall-pics/town-hall-17.png",
+    "17": "/home-base/town-hall-pics/town-hall-17.png"
   },
   "super_troop_emojis": {
     "Super Wall Breaker": "/home-base/super-troop-pics/Icon_HV_Super_Wall_Breaker.png",
@@ -75,7 +74,6 @@
     "Lavaloon Puppet": "/home-base/equipment-pics/Hero_Equipment_GW_Lavaloon_Puppet.png",
     "Henchmen": "/home-base/equipment-pics/Hero_Equipment_MP_Henchman.png",
     "Dark Orb" : "/home-base/equipment-pics/Hero_Equipment_MP_Dark_Orb.png"
-
   },
   "capital_hall_emojis": {
     "Capital_Hall7": "/capital-base/capital-hall-pics/Building_CC_Capital_Hall_level_7.png",
