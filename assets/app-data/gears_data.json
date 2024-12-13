@@ -149,6 +149,12 @@
             "type": "gear",
             "rarity" : "2",
             "hero": "Royal Champion"
+        },
+        "Electro Boots": {
+            "url": "https://assets.clashk.ing/home-base/equipment-pics/Hero_Equipment_RC_Electro_Boots.png",
+            "type": "gear",
+            "rarity" : "2",
+            "hero": "Royal Champion"
         }
     }
 }
