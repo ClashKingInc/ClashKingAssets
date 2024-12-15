@@ -73,7 +73,8 @@
     "Magic Mirror": "/home-base/equipment-pics/Hero_Equipment_AQ_Magic_Mirror.png",
     "Lavaloon Puppet": "/home-base/equipment-pics/Hero_Equipment_GW_Lavaloon_Puppet.png",
     "Henchmen": "/home-base/equipment-pics/Hero_Equipment_MP_Henchman.png",
-    "Dark Orb" : "/home-base/equipment-pics/Hero_Equipment_MP_Dark_Orb.png"
+    "Dark Orb" : "/home-base/equipment-pics/Hero_Equipment_MP_Dark_Orb.png",
+    "Electro Boots" : "/home-base/equipment-pics/Hero_Equipment_RC_Electro_Boots.png"
   },
   "capital_hall_emojis": {
     "Capital_Hall7": "/capital-base/capital-hall-pics/Building_CC_Capital_Hall_level_7.png",
@@ -400,7 +401,8 @@
     "blue_96": "/bot/numbers/blue_96.png",
     "blue_97": "/bot/numbers/blue_97.png",
     "blue_98": "/bot/numbers/blue_98.png",
-    "blue_99": "/bot/numbers/blue_99.png"
+    "blue_99": "/bot/numbers/blue_99.png",
+    "blue_100": "/bot/numbers/blue_100.png"
   },
   "gold_numbers": {
     "gold_1": "/bot/numbers/gold_1.png",
@@ -501,6 +503,7 @@
     "gold_96": "/bot/numbers/gold_96.png",
     "gold_97": "/bot/numbers/gold_97.png",
     "gold_98": "/bot/numbers/gold_98.png",
-    "gold_99": "/bot/numbers/gold_99.png"
+    "gold_99": "/bot/numbers/gold_99.png",
+    "gold_100": "/bot/numbers/gold_100.png"
   }
 }
