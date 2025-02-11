@@ -74,7 +74,9 @@
     "Lavaloon Puppet": "/home-base/equipment-pics/Hero_Equipment_GW_Lavaloon_Puppet.png",
     "Henchmen Puppet": "/home-base/equipment-pics/Hero_Equipment_MP_Henchman.png",
     "Dark Orb" : "/home-base/equipment-pics/Hero_Equipment_MP_Dark_Orb.png",
-    "Electro Boots" : "/home-base/equipment-pics/Hero_Equipment_RC_Electro_Boots.png"
+    "Electro Boots" : "/home-base/equipment-pics/Hero_Equipment_RC_Electro_Boots.png",
+    "Metal Pants" : "/home-base/equipment-pics/Metal_Pants.png",
+    "Snake Bracelet" : "/home-base/equipment-pics/Snake_Bracelet.png"
   },
   "capital_hall_emojis": {
     "Capital_Hall7": "/capital-base/capital-hall-pics/Building_CC_Capital_Hall_level_7.png",
@@ -115,7 +117,8 @@
     "Siege Barracks": "/home-base/siege-machine-pics/Icon_HV_Siege_Machine_Siege_Barracks.png",
     "Log Launcher": "/home-base/siege-machine-pics/Icon_HV_Siege_Machine_Log_Launcher.png",
     "Flame Flinger": "/home-base/siege-machine-pics/Icon_HV_Siege_Machine_Flame_Flinger.png",
-    "Battle Drill": "/home-base/siege-machine-pics/Icon_HV_Siege_Machine_Battle_Drill.png"
+    "Battle Drill": "/home-base/siege-machine-pics/Icon_HV_Siege_Machine_Battle_Drill.png",
+    "Troop Launcher": "/home-base/siege-machine-pics/icon_troop_launcher.png"
   },
   "spell_emojis": {
     "Skeleton Spell": "/home-base/spell-pics/Icon_HV_Dark_Spell_Skeleton.png",
