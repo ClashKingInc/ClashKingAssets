@@ -68,6 +68,10 @@
             "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Root_Rider.png",
             "type": "troop"
         },
+        "Thrower": {
+            "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Thrower.png",
+            "type": "troop"
+        },
         "Minion": {
             "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Minion.png",
             "type": "troop"
@@ -112,8 +116,8 @@
             "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Druid.png",
             "type": "troop"
         },
-        "Thrower": {
-            "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Thrower.png",
+        "Furnace": {
+            "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Furnace.png",
             "type": "troop"
         },
         "Super Barbarian": {

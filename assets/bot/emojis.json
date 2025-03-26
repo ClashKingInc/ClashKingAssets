@@ -46,7 +46,8 @@
     "Phoenix": "/home-base/pet-pics/Icon_HV_Hero_Pets_Phoenix.png",
     "Diggy": "/home-base/pet-pics/Icon_HV_Hero_Pets_Diggy.png",
     "Spirit Fox": "/home-base/pet-pics/Icon_HV_Hero_Pets_Spirit_Fox.png",
-    "Angry Jelly": "/home-base/pet-pics/Icon_HV_Hero_Pets_Angry_Jelly.png"
+    "Angry Jelly": "/home-base/pet-pics/Icon_HV_Hero_Pets_Angry_Jelly.png",
+    "Sneezy": "/home-base/pet-pics/Icon_HV_Hero_Pets_Sneezy.png"
   },
   "hero_equipment_emojis": {
     "Barbarian Puppet": "/home-base/equipment-pics/Hero_Equipment_BK_Barbarian_Puppet.png",
@@ -75,8 +76,9 @@
     "Henchmen Puppet": "/home-base/equipment-pics/Hero_Equipment_MP_Henchman.png",
     "Dark Orb" : "/home-base/equipment-pics/Hero_Equipment_MP_Dark_Orb.png",
     "Electro Boots" : "/home-base/equipment-pics/Hero_Equipment_RC_Electro_Boots.png",
-    "Metal Pants" : "/home-base/equipment-pics/Metal_Pants.png",
-    "Snake Bracelet" : "/home-base/equipment-pics/Snake_Bracelet.png"
+    "Metal Pants" : "/home-base/equipment-pics/Hero_Equipment_MP_Metal_Pants.png",
+    "Snake Bracelet" : "/home-base/equipment-pics/Hero_Equipment_BK_Snake_Bracelet.png",
+    "Noble Iron" : "/home-base/equipment-pics/Hero_Equipment_MP_Noble_Iron.png"
   },
   "capital_hall_emojis": {
     "Capital_Hall7": "/capital-base/capital-hall-pics/Building_CC_Capital_Hall_level_7.png",
@@ -166,7 +168,8 @@
     "Apprentice Warden": "/home-base/troop-pics/Icon_HV_Apprentice_Warden.png",
     "Druid": "/home-base/troop-pics/Icon_HV_Druid.png",
     "Root Rider": "/home-base/troop-pics/Icon_HV_Root_Rider.png",
-    "Thrower" : "/home-base/troop-pics/Icon_HV_Thrower.png"
+    "Thrower" : "/home-base/troop-pics/Icon_HV_Thrower.png",
+    "Furnace" : "/home-base/troop-pics/Icon_HV_Furnace.png"
   },
   "hero_emojis": {
     "Barbarian King": "/home-base/hero-pics/Icon_HV_Hero_Barbarian_King.png",
@@ -508,5 +511,8 @@
     "gold_98": "/bot/numbers/gold_98.png",
     "gold_99": "/bot/numbers/gold_99.png",
     "gold_100": "/bot/numbers/gold_100.png"
+  },
+  "default-emoji": {
+    "troop": "/default-pic/Icon_Unknown_Troop.png"
   }
 }
