@@ -252,6 +252,10 @@
             "url": "https://assets.clashk.ing/home-base/siege-machine-pics/Icon_HV_Siege_Machine_Battle_Drill.png",
             "type": "siege-machine"
         },
+        "Troop Launcher": {
+            "url": "https://assets.clashk.ing/home-base/siege-machine-pics/Icon_HV_Siege_Machine_Troop_Launcher.png",
+            "type": "siege-machine"
+        },
         "Raged Barbarian": {
             "url": "https://assets.clashk.ing/builder-base/troop-pics/Icon_BB_Raged_Barbarian.png",
             "type": "bb-troop"
