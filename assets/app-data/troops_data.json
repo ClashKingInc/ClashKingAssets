@@ -68,6 +68,10 @@
             "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Root_Rider.png",
             "type": "troop"
         },
+        "Thrower": {
+            "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Thrower.png",
+            "type": "troop"
+        },
         "Minion": {
             "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Minion.png",
             "type": "troop"
@@ -112,8 +116,8 @@
             "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Druid.png",
             "type": "troop"
         },
-        "Thrower": {
-            "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Thrower.png",
+        "Furnace": {
+            "url": "https://assets.clashk.ing/home-base/troop-pics/Icon_HV_Furnace.png",
             "type": "troop"
         },
         "Super Barbarian": {
@@ -246,6 +250,10 @@
         },
         "Battle Drill": {
             "url": "https://assets.clashk.ing/home-base/siege-machine-pics/Icon_HV_Siege_Machine_Battle_Drill.png",
+            "type": "siege-machine"
+        },
+        "Troop Launcher": {
+            "url": "https://assets.clashk.ing/home-base/siege-machine-pics/Icon_HV_Siege_Machine_Troop_Launcher.png",
             "type": "siege-machine"
         },
         "Raged Barbarian": {

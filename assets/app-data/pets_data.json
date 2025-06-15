@@ -39,6 +39,10 @@
         "Angry Jelly": {
             "url": "https://assets.clashk.ing/home-base/pet-pics/Icon_HV_Hero_Pets_Angry_Jelly.png",
             "type": "pet"
+        },
+        "Sneezy": {
+            "url": "https://assets.clashk.ing/home-base/pet-pics/Icon_HV_Hero_Pets_Sneezy.png",
+            "type": "pet"
         }
     }
 }
