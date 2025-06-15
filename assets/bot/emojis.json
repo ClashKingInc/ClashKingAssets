@@ -46,7 +46,8 @@
     "Phoenix": "/home-base/pet-pics/Icon_HV_Hero_Pets_Phoenix.png",
     "Diggy": "/home-base/pet-pics/Icon_HV_Hero_Pets_Diggy.png",
     "Spirit Fox": "/home-base/pet-pics/Icon_HV_Hero_Pets_Spirit_Fox.png",
-    "Angry Jelly": "/home-base/pet-pics/Icon_HV_Hero_Pets_Angry_Jelly.png"
+    "Angry Jelly": "/home-base/pet-pics/Icon_HV_Hero_Pets_Angry_Jelly.png",
+    "Sneezy" : "/home-base/pet-pics/Icon_HV_Hero_Pets_Sneezy.png"
   },
   "hero_equipment_emojis": {
     "Barbarian Puppet": "/home-base/equipment-pics/Hero_Equipment_BK_Barbarian_Puppet.png",
@@ -76,7 +77,9 @@
     "Dark Orb" : "/home-base/equipment-pics/Hero_Equipment_MP_Dark_Orb.png",
     "Electro Boots" : "/home-base/equipment-pics/Hero_Equipment_RC_Electro_Boots.png",
     "Metal Pants" : "/home-base/equipment-pics/Metal_Pants.png",
-    "Snake Bracelet" : "/home-base/equipment-pics/Snake_Bracelet.png"
+    "Snake Bracelet" : "/home-base/equipment-pics/Snake_Bracelet.png",
+    "Giant Puppet" : "/home-base/equipment-pics/Hero_Equipment_AQ_WWEActionFigure.png",
+    "Dark Crown" : "/home-base/equipment-pics/HeroGear_MP_DarkCrown_2k.png"
   },
   "capital_hall_emojis": {
     "Capital_Hall7": "/capital-base/capital-hall-pics/Building_CC_Capital_Hall_level_7.png",
@@ -196,6 +199,8 @@
     "down_red_arrow": "/bot/icons/down_red_arrow.png",
     "earth": "/bot/icons/earth.png",
     "elixir": "/bot/icons/elixir.png",
+    "equipment_common" : "/bot/icons/equipment_common.png",
+    "equipment_epic" : "/bot/icons/equipment_epic.png",
     "excel": "/bot/icons/excel.png",
     "eye": "/bot/icons/eye.png",
     "forward": "/bot/icons/forward.png",
