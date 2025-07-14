@@ -138,6 +138,12 @@
             "rarity": "1",
             "hero": "Minion Prince"
         },
+        "Dark_Crown": {
+            "url": "https://assets.clashk.ing/home-base/equipment-pics/Hero_Equipment_MP_Dark_Crown.png",
+            "type": "gear",
+            "rarity": "2",
+            "hero": "Minion Prince"
+        },
         "Haste Vial": {
             "url": "https://assets.clashk.ing/home-base/equipment-pics/Hero_Equipment_RC_Haste_Vial.png",
             "type": "gear",
