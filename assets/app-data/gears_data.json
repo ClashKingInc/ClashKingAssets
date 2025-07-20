@@ -36,6 +36,12 @@
             "rarity": "2",
             "hero": "Archer Queen"
         },
+        "Action Figure": {
+            "url": "https://assets.clashk.ing/home-base/equipment-pics/Hero_Equipment_AQ_WWEActionFigure.png",
+            "type": "gear",
+            "rarity": "2",
+            "hero": "Archer Queen"
+        },
         "Barbarian Puppet": {
             "url": "https://assets.clashk.ing/home-base/equipment-pics/Hero_Equipment_BK_Barbarian_Puppet.png",
             "type": "gear",
