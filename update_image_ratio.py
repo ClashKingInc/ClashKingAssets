@@ -1,7 +1,7 @@
 import os, glob, re
 from PIL import Image
 
-NEW_NAME   = "archer-tower"
+NEW_NAME   = "wizard-tower"
 INPUT_DIR  = f"assets/home-base/buildings/{NEW_NAME}"
 OUTPUT_DIR = INPUT_DIR
 DELETE = False
