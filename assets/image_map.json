@@ -808,61 +808,61 @@
     "1000055": {
       "name": "Crusher",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/crusher/crusher-1.png",
+        "2": "/builder-base/buildings/crusher/crusher-2.png",
+        "3": "/builder-base/buildings/crusher/crusher-3.png",
+        "4": "/builder-base/buildings/crusher/crusher-4.png",
+        "5": "/builder-base/buildings/crusher/crusher-5.png",
+        "6": "/builder-base/buildings/crusher/crusher-6.png",
+        "7": "/builder-base/buildings/crusher/crusher-7.png",
+        "8": "/builder-base/buildings/crusher/crusher-8.png",
+        "9": "/builder-base/buildings/crusher/crusher-9.png",
+        "10": "/builder-base/buildings/crusher/crusher-10.png"
       }
     },
     "1000056": {
       "name": "Roaster",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/roaster/roaster-1.png",
+        "2": "/builder-base/buildings/roaster/roaster-2.png",
+        "3": "/builder-base/buildings/roaster/roaster-3.png",
+        "4": "/builder-base/buildings/roaster/roaster-4.png",
+        "5": "/builder-base/buildings/roaster/roaster-5.png",
+        "6": "/builder-base/buildings/roaster/roaster-6.png",
+        "7": "/builder-base/buildings/roaster/roaster-7.png",
+        "8": "/builder-base/buildings/roaster/roaster-8.png",
+        "9": "/builder-base/buildings/roaster/roaster-9.png",
+        "10": "/builder-base/buildings/roaster/roaster-10.png"
       }
     },
     "1000057": {
       "name": "Giant Cannon",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/giant-cannon/giant-cannon-1.png",
+        "2": "/builder-base/buildings/giant-cannon/giant-cannon-2.png",
+        "3": "/builder-base/buildings/giant-cannon/giant-cannon-3.png",
+        "4": "/builder-base/buildings/giant-cannon/giant-cannon-4.png",
+        "5": "/builder-base/buildings/giant-cannon/giant-cannon-5.png",
+        "6": "/builder-base/buildings/giant-cannon/giant-cannon-6.png",
+        "7": "/builder-base/buildings/giant-cannon/giant-cannon-7.png",
+        "8": "/builder-base/buildings/giant-cannon/giant-cannon-8.png",
+        "9": "/builder-base/buildings/giant-cannon/giant-cannon-9.png",
+        "10": "/builder-base/buildings/giant-cannon/giant-cannon-10.png"
       }
     },
     "1000058": {
       "name": "Gem Mine",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/gem-mine/gem-mine-1.png",
+        "2": "/builder-base/buildings/gem-mine/gem-mine-2.png",
+        "3": "/builder-base/buildings/gem-mine/gem-mine-3.png",
+        "4": "/builder-base/buildings/gem-mine/gem-mine-4.png",
+        "5": "/builder-base/buildings/gem-mine/gem-mine-5.png",
+        "6": "/builder-base/buildings/gem-mine/gem-mine-6.png",
+        "7": "/builder-base/buildings/gem-mine/gem-mine-7.png",
+        "8": "/builder-base/buildings/gem-mine/gem-mine-8.png",
+        "9": "/builder-base/buildings/gem-mine/gem-mine-9.png",
+        "10": "/builder-base/buildings/gem-mine/gem-mine-10.png"
       }
     },
     "1000059": {
