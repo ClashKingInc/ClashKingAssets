@@ -714,7 +714,9 @@
     },
     "1000047": {
       "name": "Master Builder's Hut",
-      "levels": {}
+      "levels": {
+        "1" : "/builder-base/buildings/master-builders-hut/master-builders-hut-1.png"
+      }
     },
     "1000048": {
       "name": "Archer Tower",
@@ -733,7 +735,9 @@
     },
     "1000049": {
       "name": "Reinforcement Camp",
-      "levels": {}
+      "levels": {
+        "1" : "/builder-base/buildings/reinforcement-camp/reinforcement-camp-1.png"
+      }
     },
     "1000050": {
       "name": "Firecrackers",
@@ -782,7 +786,9 @@
     },
     "1000053": {
       "name": "Battle Machine",
-      "levels": {}
+      "levels": {
+        "1" : "/builder-base/buildings/battle-machine/battle-machine-1.png"
+      }
     },
     "1000054": {
       "name": "Air Bombs",
