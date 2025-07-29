@@ -1,9 +1,10 @@
 import os, glob, re
 from PIL import Image
 
-INPUT_DIR  = "assets/home-base/buildings/elixir-storage"
+NEW_NAME   = "barracks"
+INPUT_DIR  = f"assets/home-base/buildings/{NEW_NAME}"
 OUTPUT_DIR = INPUT_DIR
-NEW_NAME   = "elixir-storage"
+DELETE = True
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -36,9 +37,11 @@ for path in paths:
     out_name = f"{NEW_NAME}-{count}.png"
     canvas.save(os.path.join(OUTPUT_DIR, out_name))
     count += 1
+    print(f"Saved {out_name}")
 
     # remove original
-    try:
-        os.remove(path)
-    except OSError as e:
-        print(f"Could not delete {path}: {e}")
+    if DELETE:
+        try:
+            os.remove(path)
+        except OSError as e:
+            print(f"Could not delete {path}: {e}")
