@@ -970,8 +970,15 @@
       "name": "Spell Tower",
       "levels": {
         "1": "/home-base/buildings/spell-tower/spell-tower-1.png",
+        "1b": "/home-base/buildings/spell-tower/spell-tower-1b.png",
+        "1c": "/home-base/buildings/spell-tower/spell-tower-1c.png",
         "2": "/home-base/buildings/spell-tower/spell-tower-2.png",
-        "3": "/home-base/buildings/spell-tower/spell-tower-3.png"
+        "2b": "/home-base/buildings/spell-tower/spell-tower-2b.png",
+        "2c": "/home-base/buildings/spell-tower/spell-tower-2c.png",
+        "3": "/home-base/buildings/spell-tower/spell-tower-3.png",
+        "3b": "/home-base/buildings/spell-tower/spell-tower-3b.png",
+        "3c": "/home-base/buildings/spell-tower/spell-tower-3c.png"
+
       }
     },
     "1000077": {
@@ -1001,10 +1008,10 @@
     "1000079": {
       "name": "Multi-Gear Tower",
       "levels": {
-        "1": "/builder-base/buildings/multi-gear-tower/multi-gear-tower-1.png",
-        "1-alt": "/builder-base/buildings/multi-gear-tower/multi-gear-tower-1-alt.png",
-        "2": "/builder-base/buildings/multi-gear-tower/multi-gear-tower-2.png", 
-        "2-alt": "/builder-base/buildings/multi-gear-tower/multi-gear-tower-2-alt.png"
+        "1": "/home-base/buildings/multi-gear-tower/multi-gear-tower-1.png",
+        "1b": "/home-base/buildings/multi-gear-tower/multi-gear-tower-1b.png",
+        "2": "/home-base/buildings/multi-gear-tower/multi-gear-tower-2.png",
+        "2b": "/home-base/buildings/multi-gear-tower/multi-gear-tower-2b.png"
       }
     },
     "1000080": {
@@ -1036,38 +1043,44 @@
     },
     "1000083": {
       "name": "Sour Elixir Cauldron",
-      "levels": {}
+      "levels": {
+        "1" : "/home-base/buildings/sour-elixir-cauldron/sour-elixir-cauldron-1.png"
+      }
     },
     "1000084": {
       "name": "Multi-Archer Tower",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": ""
+        "1": "/builder-base/buildings/multi-archer-tower/multi-archer-tower-1.png",
+        "2": "/builder-base/buildings/multi-archer-tower/multi-archer-tower-2.png",
+        "3": "/builder-base/buildings/multi-archer-tower/multi-archer-tower-3.png"
       }
     },
     "1000085": {
       "name": "Ricochet Cannon",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": ""
+        "1": "/builder-base/buildings/ricochet-cannon/ricochet-cannon-1.png",
+        "2": "/builder-base/buildings/ricochet-cannon/ricochet-cannon-2.png",
+        "3": "/builder-base/buildings/ricochet-cannon/ricochet-cannon-3.png"
       }
     },
     "1000089": {
       "name": "Firespitter",
       "levels": {
-        "1": "",
-        "2": ""
+        "1": "/builder-base/buildings/firespitter/firespitter-1.png",
+        "2": "/builder-base/buildings/firespitter/firespitter-2.png"
       }
     },
     "1000093": {
       "name": "Helper Hut",
-      "levels": {}
+      "levels": {
+        "1": "/builder-base/buildings/helper-hut/helper-hut-1.png"
+      }
     },
     "1000097": {
       "name": "Crafting Station",
-      "levels": {}
+      "levels": {
+        "1": "/builder-base/buildings/crafting-station/crafting-station-1.png"
+      }
     }
   },
   "seasonal_defenses": {
