@@ -868,43 +868,45 @@
     "1000059": {
       "name": "Workshop",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": ""
+        "1": "/home-base/buildings/workshop/workshop-1.png",
+        "2": "/home-base/buildings/workshop/workshop-2.png",
+        "3": "/home-base/buildings/workshop/workshop-3.png",
+        "4": "/home-base/buildings/workshop/workshop-4.png",
+        "5": "/home-base/buildings/workshop/workshop-5.png",
+        "6": "/home-base/buildings/workshop/workshop-6.png",
+        "7": "/home-base/buildings/workshop/workshop-7.png",
+        "8": "/home-base/buildings/workshop/workshop-8.png"
       }
     },
     "1000063": {
       "name": "Lava Launcher",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/lava-launcher/lava-launcher-1.png",
+        "2": "/builder-base/buildings/lava-launcher/lava-launcher-2.png",
+        "3": "/builder-base/buildings/lava-launcher/lava-launcher-3.png",
+        "4": "/builder-base/buildings/lava-launcher/lava-launcher-4.png",
+        "5": "/builder-base/buildings/lava-launcher/lava-launcher-5.png",
+        "6": "/builder-base/buildings/lava-launcher/lava-launcher-6.png",
+        "7": "/builder-base/buildings/lava-launcher/lava-launcher-7.png",
+        "8": "/builder-base/buildings/lava-launcher/lava-launcher-8.png",
+        "9": "/builder-base/buildings/lava-launcher/lava-launcher-9.png",
+        "10": "/builder-base/buildings/lava-launcher/lava-launcher-10.png"
       }
     },
     "1000064": {
       "name": "B.O.B's Hut",
-      "levels": {}
+      "levels": {
+        "1": "/builder-base/buildings/bobs-hut/bobs-hut-1.png"
+      }
     },
     "1000065": {
       "name": "B.O.B Control",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": ""
+        "1": "/builder-base/buildings/bob-control/bob-control-1.png",
+        "2": "/builder-base/buildings/bob-control/bob-control-2.png",
+        "3": "/builder-base/buildings/bob-control/bob-control-3.png",
+        "4": "/builder-base/buildings/bob-control/bob-control-4.png",
+        "5": "/builder-base/buildings/bob-control/bob-control-5.png"
       }
     },
     "1000067": {
@@ -984,48 +986,52 @@
     "1000078": {
       "name": "O.T.T.O's Outpost",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/ottos-outpost/ottos-outpost-1.png",
+        "2": "/builder-base/buildings/ottos-outpost/ottos-outpost-2.png",
+        "3": "/builder-base/buildings/ottos-outpost/ottos-outpost-3.png",
+        "4": "/builder-base/buildings/ottos-outpost/ottos-outpost-4.png",
+        "5": "/builder-base/buildings/ottos-outpost/ottos-outpost-5.png",
+        "6": "/builder-base/buildings/ottos-outpost/ottos-outpost-6.png",
+        "7": "/builder-base/buildings/ottos-outpost/ottos-outpost-7.png",
+        "8": "/builder-base/buildings/ottos-outpost/ottos-outpost-8.png",
+        "9": "/builder-base/buildings/ottos-outpost/ottos-outpost-9.png",
+        "10": "/builder-base/buildings/ottos-outpost/ottos-outpost-10.png"
       }
     },
     "1000079": {
       "name": "Multi-Gear Tower",
       "levels": {
-        "1": "",
-        "2": ""
+        "1": "/builder-base/buildings/multi-gear-tower/multi-gear-tower-1.png",
+        "1-alt": "/builder-base/buildings/multi-gear-tower/multi-gear-tower-1-alt.png",
+        "2": "/builder-base/buildings/multi-gear-tower/multi-gear-tower-2.png", 
+        "2-alt": "/builder-base/buildings/multi-gear-tower/multi-gear-tower-2-alt.png"
       }
     },
     "1000080": {
       "name": "Battle Copter",
-      "levels": {}
+      "levels": {
+        "1" : "/builder-base/buildings/battle-copter/battle-copter-1.png"
+      }
     },
     "1000081": {
       "name": "X-Bow",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": ""
+        "1": "/builder-base/buildings/x-bow/x-bow-1.png",
+        "2": "/builder-base/buildings/x-bow/x-bow-2.png",
+        "3": "/builder-base/buildings/x-bow/x-bow-3.png",
+        "4": "/builder-base/buildings/x-bow/x-bow-4.png",
+        "5": "/builder-base/buildings/x-bow/x-bow-5.png"
       }
     },
     "1000082": {
       "name": "Healing Hut",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": ""
+        "1": "/builder-base/buildings/healing-hut/healing-hut-1.png",
+        "2": "/builder-base/buildings/healing-hut/healing-hut-2.png",
+        "3": "/builder-base/buildings/healing-hut/healing-hut-3.png",
+        "4": "/builder-base/buildings/healing-hut/healing-hut-4.png",
+        "5": "/builder-base/buildings/healing-hut/healing-hut-5.png",
+        "6": "/builder-base/buildings/healing-hut/healing-hut-6.png"
       }
     },
     "1000083": {
