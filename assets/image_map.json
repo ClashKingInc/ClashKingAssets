@@ -912,75 +912,75 @@
     "1000067": {
       "name": "Scattershot",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": ""
+        "1": "/home-base/buildings/scattershot/scattershot-1.png",
+        "2": "/home-base/buildings/scattershot/scattershot-2.png",
+        "3": "/home-base/buildings/scattershot/scattershot-3.png",
+        "4": "/home-base/buildings/scattershot/scattershot-4.png",
+        "5": "/home-base/buildings/scattershot/scattershot-5.png",
+        "6": "/home-base/buildings/scattershot/scattershot-6.png"
       }
     },
     "1000068": {
       "name": "Pet House",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": "",
-        "11": ""
+        "1": "/home-base/buildings/pet-house/pet-house-1.png",
+        "2": "/home-base/buildings/pet-house/pet-house-2.png",
+        "3": "/home-base/buildings/pet-house/pet-house-3.png",
+        "4": "/home-base/buildings/pet-house/pet-house-4.png",
+        "5": "/home-base/buildings/pet-house/pet-house-5.png",
+        "6": "/home-base/buildings/pet-house/pet-house-6.png",
+        "7": "/home-base/buildings/pet-house/pet-house-7.png",
+        "8": "/home-base/buildings/pet-house/pet-house-8.png",
+        "9": "/home-base/buildings/pet-house/pet-house-9.png",
+        "10": "/home-base/buildings/pet-house/pet-house-10.png",
+        "11": "/home-base/buildings/pet-house/pet-house-11.png"
       }
     },
     "1000070": {
       "name": "Blacksmith",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": ""
+        "1": "/home-base/buildings/blacksmith/blacksmith-1.png",
+        "2": "/home-base/buildings/blacksmith/blacksmith-2.png",
+        "3": "/home-base/buildings/blacksmith/blacksmith-3.png",
+        "4": "/home-base/buildings/blacksmith/blacksmith-4.png",
+        "5": "/home-base/buildings/blacksmith/blacksmith-5.png",
+        "6": "/home-base/buildings/blacksmith/blacksmith-6.png",
+        "7": "/home-base/buildings/blacksmith/blacksmith-7.png",
+        "8": "/home-base/buildings/blacksmith/blacksmith-8.png",
+        "9": "/home-base/buildings/blacksmith/blacksmith-9.png"
       }
     },
     "1000071": {
       "name": "Hero Hall",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": "",
-        "11": ""
+        "1": "/home-base/buildings/hero-hall/hero-hall-1.png",
+        "2": "/home-base/buildings/hero-hall/hero-hall-2.png",
+        "3": "/home-base/buildings/hero-hall/hero-hall-3.png",
+        "4": "/home-base/buildings/hero-hall/hero-hall-4.png",
+        "5": "/home-base/buildings/hero-hall/hero-hall-5.png",
+        "6": "/home-base/buildings/hero-hall/hero-hall-6.png",
+        "7": "/home-base/buildings/hero-hall/hero-hall-7.png",
+        "8": "/home-base/buildings/hero-hall/hero-hall-8.png",
+        "9": "/home-base/buildings/hero-hall/hero-hall-9.png",
+        "10": "/home-base/buildings/hero-hall/hero-hall-10.png",
+        "11": "/home-base/buildings/hero-hall/hero-hall-11.png"
       }
     },
     "1000072": {
       "name": "Spell Tower",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": ""
+        "1": "/home-base/buildings/spell-tower/spell-tower-1.png",
+        "2": "/home-base/buildings/spell-tower/spell-tower-2.png",
+        "3": "/home-base/buildings/spell-tower/spell-tower-3.png"
       }
     },
     "1000077": {
       "name": "Monolith",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": ""
+        "1": "/home-base/buildings/monolith/monolith-1.png",
+        "2": "/home-base/buildings/monolith/monolith-2.png",
+        "3": "/home-base/buildings/monolith/monolith-3.png",
+        "4": "/home-base/buildings/monolith/monolith-4.png"
       }
     },
     "1000078": {
