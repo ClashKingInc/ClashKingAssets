@@ -41,7 +41,7 @@ def add_new_entries():
             if data_type in INCLUDE_LEVELS:
                 del data_hold["icon"]
                 data_hold["levels"] = {}
-                for item in data.get("levels", []):
+                for item in data.get("levels", [{"level" : 1}]):
                     old_level_data = old_data.get("levels", {}).get(str(item.get("level")))
                     if old_level_data is None:
                         data_hold["levels"][str(item.get("level"))] = ""

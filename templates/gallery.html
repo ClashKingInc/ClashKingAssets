@@ -99,6 +99,14 @@
 
   <script>
     // Data
+    // Debounce helper
+    function debounce(func, wait) {
+      let timeout;
+      return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    }
     const images = {{ images | tojson }};
     const translations = {{ translations | tojson }};
     const resultsDiv = document.getElementById('transResults');
@@ -336,7 +344,8 @@
     // Event listeners
     searchInput.addEventListener("input", renderGallery);
     sectionFilter.addEventListener("change", renderGallery);
-    transSearch.addEventListener("input", renderTrans);
+    const debouncedRender = debounce(renderTrans, 300);
+    transSearch.addEventListener("input", debouncedRender);
     searchTid.addEventListener("change", renderTrans);
     document.addEventListener('DOMContentLoaded', () => {
       renderGallery();

@@ -43,22 +43,22 @@
     "1000002": {
       "name": "Elixir Collector",
       "levels": {
-        "1": "/home-base/buildings/elixir-collector/elixir-pump-1.png",
-        "2": "/home-base/buildings/elixir-collector/elixir-pump-2.png",
-        "3": "/home-base/buildings/elixir-collector/elixir-pump-3.png",
-        "4": "/home-base/buildings/elixir-collector/elixir-pump-4.png",
-        "5": "/home-base/buildings/elixir-collector/elixir-pump-5.png",
-        "6": "/home-base/buildings/elixir-collector/elixir-pump-6.png",
-        "7": "/home-base/buildings/elixir-collector/elixir-pump-7.png",
-        "8": "/home-base/buildings/elixir-collector/elixir-pump-8.png",
-        "9": "/home-base/buildings/elixir-collector/elixir-pump-9.png",
-        "10": "/home-base/buildings/elixir-collector/elixir-pump-10.png",
-        "11": "/home-base/buildings/elixir-collector/elixir-pump-11.png",
-        "12": "/home-base/buildings/elixir-collector/elixir-pump-12.png",
-        "13": "/home-base/buildings/elixir-collector/elixir-pump-13.png",
-        "14": "/home-base/buildings/elixir-collector/elixir-pump-14.png",
-        "15": "/home-base/buildings/elixir-collector/elixir-pump-15.png",
-        "16": "/home-base/buildings/elixir-collector/elixir-pump-16.png"
+        "1": "/home-base/buildings/elixir-collector/elixir-collector-1.png",
+        "2": "/home-base/buildings/elixir-collector/elixir-collector-2.png",
+        "3": "/home-base/buildings/elixir-collector/elixir-collector-3.png",
+        "4": "/home-base/buildings/elixir-collector/elixir-collector-4.png",
+        "5": "/home-base/buildings/elixir-collector/elixir-collector-5.png",
+        "6": "/home-base/buildings/elixir-collector/elixir-collector-6.png",
+        "7": "/home-base/buildings/elixir-collector/elixir-collector-7.png",
+        "8": "/home-base/buildings/elixir-collector/elixir-collector-8.png",
+        "9": "/home-base/buildings/elixir-collector/elixir-collector-9.png",
+        "10": "/home-base/buildings/elixir-collector/elixir-collector-10.png",
+        "11": "/home-base/buildings/elixir-collector/elixir-collector-11.png",
+        "12": "/home-base/buildings/elixir-collector/elixir-collector-12.png",
+        "13": "/home-base/buildings/elixir-collector/elixir-collector-13.png",
+        "14": "/home-base/buildings/elixir-collector/elixir-collector-14.png",
+        "15": "/home-base/buildings/elixir-collector/elixir-collector-15.png",
+        "16": "/home-base/buildings/elixir-collector/elixir-collector-16.png"
       }
     },
     "1000003": {
@@ -634,80 +634,82 @@
     "1000041": {
       "name": "Double Cannon",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/double-cannon/double-cannon-1.png",
+        "2": "/builder-base/buildings/double-cannon/double-cannon-2.png",
+        "3": "/builder-base/buildings/double-cannon/double-cannon-3.png",
+        "4": "/builder-base/buildings/double-cannon/double-cannon-4.png",
+        "5": "/builder-base/buildings/double-cannon/double-cannon-5.png",
+        "6": "/builder-base/buildings/double-cannon/double-cannon-6.png",
+        "7": "/builder-base/buildings/double-cannon/double-cannon-7.png",
+        "8": "/builder-base/buildings/double-cannon/double-cannon-8.png",
+        "9": "/builder-base/buildings/double-cannon/double-cannon-9.png",
+        "10": "/builder-base/buildings/double-cannon/double-cannon-10.png"
       }
     },
     "1000042": {
       "name": "Army Camp",
-      "levels": {}
+      "levels": {
+        "1" : "/builder-base/buildings/army-camp/army-camp-1.png"
+      }
     },
     "1000043": {
       "name": "Hidden Tesla",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/hidden-tesla/hidden-tesla-1.png",
+        "2": "/builder-base/buildings/hidden-tesla/hidden-tesla-2.png",
+        "3": "/builder-base/buildings/hidden-tesla/hidden-tesla-3.png",
+        "4": "/builder-base/buildings/hidden-tesla/hidden-tesla-4.png",
+        "5": "/builder-base/buildings/hidden-tesla/hidden-tesla-5.png",
+        "6": "/builder-base/buildings/hidden-tesla/hidden-tesla-6.png",
+        "7": "/builder-base/buildings/hidden-tesla/hidden-tesla-7.png",
+        "8": "/builder-base/buildings/hidden-tesla/hidden-tesla-8.png",
+        "9": "/builder-base/buildings/hidden-tesla/hidden-tesla-9.png",
+        "10": "/builder-base/buildings/hidden-tesla/hidden-tesla-10.png"
       }
     },
     "1000044": {
       "name": "Cannon",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/cannon/cannon-1.png",
+        "2": "/builder-base/buildings/cannon/cannon-2.png",
+        "3": "/builder-base/buildings/cannon/cannon-3.png",
+        "4": "/builder-base/buildings/cannon/cannon-4.png",
+        "5": "/builder-base/buildings/cannon/cannon-5.png",
+        "6": "/builder-base/buildings/cannon/cannon-6.png",
+        "7": "/builder-base/buildings/cannon/cannon-7.png",
+        "8": "/builder-base/buildings/cannon/cannon-8.png",
+        "9": "/builder-base/buildings/cannon/cannon-9.png",
+        "10": "/builder-base/buildings/cannon/cannon-10.png"
       }
     },
     "1000045": {
       "name": "Multi Mortar",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/multi-mortar/multi-mortar-1.png",
+        "2": "/builder-base/buildings/multi-mortar/multi-mortar-2.png",
+        "3": "/builder-base/buildings/multi-mortar/multi-mortar-3.png",
+        "4": "/builder-base/buildings/multi-mortar/multi-mortar-4.png",
+        "5": "/builder-base/buildings/multi-mortar/multi-mortar-5.png",
+        "6": "/builder-base/buildings/multi-mortar/multi-mortar-6.png",
+        "7": "/builder-base/buildings/multi-mortar/multi-mortar-7.png",
+        "8": "/builder-base/buildings/multi-mortar/multi-mortar-8.png",
+        "9": "/builder-base/buildings/multi-mortar/multi-mortar-9.png",
+        "10": "/builder-base/buildings/multi-mortar/multi-mortar-10.png"
       }
     },
     "1000046": {
       "name": "Star Laboratory",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/star-laboratory/star-laboratory-1.png",
+        "2": "/builder-base/buildings/star-laboratory/star-laboratory-2.png",
+        "3": "/builder-base/buildings/star-laboratory/star-laboratory-3.png",
+        "4": "/builder-base/buildings/star-laboratory/star-laboratory-4.png",
+        "5": "/builder-base/buildings/star-laboratory/star-laboratory-5.png",
+        "6": "/builder-base/buildings/star-laboratory/star-laboratory-6.png",
+        "7": "/builder-base/buildings/star-laboratory/star-laboratory-7.png",
+        "8": "/builder-base/buildings/star-laboratory/star-laboratory-8.png",
+        "9": "/builder-base/buildings/star-laboratory/star-laboratory-9.png",
+        "10": "/builder-base/buildings/star-laboratory/star-laboratory-10.png"
       }
     },
     "1000047": {
@@ -717,16 +719,16 @@
     "1000048": {
       "name": "Archer Tower",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/archer-tower/archer-tower-1.png",
+        "2": "/builder-base/buildings/archer-tower/archer-tower-2.png",
+        "3": "/builder-base/buildings/archer-tower/archer-tower-3.png",
+        "4": "/builder-base/buildings/archer-tower/archer-tower-4.png",
+        "5": "/builder-base/buildings/archer-tower/archer-tower-5.png",
+        "6": "/builder-base/buildings/archer-tower/archer-tower-6.png",
+        "7": "/builder-base/buildings/archer-tower/archer-tower-7.png",
+        "8": "/builder-base/buildings/archer-tower/archer-tower-8.png",
+        "9": "/builder-base/buildings/archer-tower/archer-tower-9.png",
+        "10": "/builder-base/buildings/archer-tower/archer-tower-10.png"
       }
     },
     "1000049": {
@@ -736,46 +738,46 @@
     "1000050": {
       "name": "Firecrackers",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/firecrackers/firecrackers-1.png",
+        "2": "/builder-base/buildings/firecrackers/firecrackers-2.png",
+        "3": "/builder-base/buildings/firecrackers/firecrackers-3.png",
+        "4": "/builder-base/buildings/firecrackers/firecrackers-4.png",
+        "5": "/builder-base/buildings/firecrackers/firecrackers-5.png",
+        "6": "/builder-base/buildings/firecrackers/firecrackers-6.png",
+        "7": "/builder-base/buildings/firecrackers/firecrackers-7.png",
+        "8": "/builder-base/buildings/firecrackers/firecrackers-8.png",
+        "9": "/builder-base/buildings/firecrackers/firecrackers-9.png",
+        "10": "/builder-base/buildings/firecrackers/firecrackers-10.png"
       }
     },
     "1000051": {
       "name": "Guard Post",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/guard-post/guard-post-1.png",
+        "2": "/builder-base/buildings/guard-post/guard-post-2.png",
+        "3": "/builder-base/buildings/guard-post/guard-post-3.png",
+        "4": "/builder-base/buildings/guard-post/guard-post-4.png",
+        "5": "/builder-base/buildings/guard-post/guard-post-5.png",
+        "6": "/builder-base/buildings/guard-post/guard-post-6.png",
+        "7": "/builder-base/buildings/guard-post/guard-post-7.png",
+        "8": "/builder-base/buildings/guard-post/guard-post-8.png",
+        "9": "/builder-base/buildings/guard-post/guard-post-9.png",
+        "10": "/builder-base/buildings/guard-post/guard-post-10.png"
       }
     },
     "1000052": {
       "name": "Mega Tesla",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/mega-tesla/mega-tesla-1.png",
+        "2": "/builder-base/buildings/mega-tesla/mega-tesla-2.png",
+        "3": "/builder-base/buildings/mega-tesla/mega-tesla-3.png",
+        "4": "/builder-base/buildings/mega-tesla/mega-tesla-4.png",
+        "5": "/builder-base/buildings/mega-tesla/mega-tesla-5.png",
+        "6": "/builder-base/buildings/mega-tesla/mega-tesla-6.png",
+        "7": "/builder-base/buildings/mega-tesla/mega-tesla-7.png",
+        "8": "/builder-base/buildings/mega-tesla/mega-tesla-8.png",
+        "9": "/builder-base/buildings/mega-tesla/mega-tesla-9.png",
+        "10": "/builder-base/buildings/mega-tesla/mega-tesla-10.png"
       }
     },
     "1000053": {
@@ -785,16 +787,16 @@
     "1000054": {
       "name": "Air Bombs",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/air-bombs/air-bombs-1.png",
+        "2": "/builder-base/buildings/air-bombs/air-bombs-2.png",
+        "3": "/builder-base/buildings/air-bombs/air-bombs-3.png",
+        "4": "/builder-base/buildings/air-bombs/air-bombs-4.png",
+        "5": "/builder-base/buildings/air-bombs/air-bombs-5.png",
+        "6": "/builder-base/buildings/air-bombs/air-bombs-6.png",
+        "7": "/builder-base/buildings/air-bombs/air-bombs-7.png",
+        "8": "/builder-base/buildings/air-bombs/air-bombs-8.png",
+        "9": "/builder-base/buildings/air-bombs/air-bombs-9.png",
+        "10": "/builder-base/buildings/air-bombs/air-bombs-10.png"
       }
     },
     "1000055": {
