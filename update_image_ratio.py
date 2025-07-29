@@ -1,7 +1,7 @@
 import os, glob, re
 from PIL import Image
 
-NEW_NAME   = "dark-elixir-storage"
+NEW_NAME   = "dark-barracks"
 INPUT_DIR  = f"assets/home-base/buildings/{NEW_NAME}"
 OUTPUT_DIR = INPUT_DIR
 DELETE = True
