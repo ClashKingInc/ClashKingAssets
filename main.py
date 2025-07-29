@@ -6,6 +6,11 @@ from starlette.middleware.cors import CORSMiddleware
 from typing import Callable
 from PIL import Image
 import io
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+import json
+import zipfile
+import os
 
 middleware = [
     Middleware(
@@ -17,6 +22,11 @@ middleware = [
 ]
 
 app = FastAPI(middleware=middleware)
+
+# Mount `assets/` under `/static`
+app.mount("/static", StaticFiles(directory="assets"), name="static")
+# Templates live in `templates/`
+templates = Jinja2Templates(directory="templates")
 
 BASE_DIR = Path(__file__).resolve().parents[0]
 ASSETS_DIR = BASE_DIR / "assets"
@@ -68,6 +78,52 @@ async def add_cache_control_header(request: Request, call_next: Callable):
     response.headers["Cache-Control"] = "public, max-age=2592000"
     return response
 
+# Load your metadata once
+with open("assets/image_map.json", "r", encoding="utf-8") as f:
+    images = json.load(f)
+
+with open("assets/translations.json", encoding="utf-8") as f:
+    translations = json.load(f)
+
+@app.get("/")
+async def gallery(request: Request):
+    return templates.TemplateResponse(
+        "gallery.html", {
+            "request": request,
+            "sections": sorted(images.keys()),
+            "images": images,
+            "translations": translations,
+        }
+    )
+
+@app.get("/download/{section}/{item_id}/zip")
+async def download_item_zip(section: str, item_id: str):
+    sec = images.get(section)
+    if not sec or item_id not in sec:
+        raise HTTPException(404, "Item not found")
+    meta = sec[item_id]
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, mode="w") as zf:
+        for key in ("full", "icon"):  # individual images
+            path = meta.get(key)
+            if path:
+                src = os.path.join("assets", path.lstrip("/"))
+                if os.path.isfile(src): zf.write(src, arcname=os.path.basename(src))
+        for lvl in (meta.get("levels") or {}).values():
+            if lvl:
+                src = os.path.join("assets", lvl.lstrip("/"))
+                if os.path.isfile(src): zf.write(src, arcname=os.path.basename(src))
+        if section == "sceneries" and meta.get("music"):
+            src = os.path.join("assets", meta["music"].lstrip("/"))
+            if os.path.isfile(src): zf.write(src, arcname=os.path.basename(src))
+    buf.seek(0)
+    return StreamingResponse(
+        buf,
+        media_type="application/x-zip-compressed",
+        headers={"Content-Disposition": f"attachment; filename={item_id}.zip"}
+    )
+
+
 @app.get("/{file_path:path}", name="Get a file")
 async def serve_file(file_path: str):
     requested_path = (ASSETS_DIR / file_path).resolve()
@@ -95,5 +151,10 @@ async def serve_file(file_path: str):
 
 if __name__ == "__main__":
     import uvicorn
-
-    uvicorn.run(app, host="0.0.0.0", port=80)
+    uvicorn.run(
+        "main:app",    # <— module path, not the object
+        host="0.0.0.0",
+        port=80,
+        reload=True,          # enable code-watching
+        workers=1             # you can bump this >1 if you like
+    )

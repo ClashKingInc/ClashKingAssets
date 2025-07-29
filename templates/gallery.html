@@ -1,0 +1,346 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <!-- Tabs -->
+  <div class="flex justify-center mb-8">
+    <button id="tabImages"
+            class="px-4 py-2 bg-indigo-500 text-white rounded-l-lg">Images</button>
+    <button id="tabTrans"
+            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-r-lg">Translations</button>
+  </div>
+
+  <!-- Image Gallery Panel -->
+  <div id="imagesPanel">
+    <!-- Collapsible Info -->
+    <div class="text-center mb-6">
+      <button id="infoToggle" class="bg-green-500 text-white px-4 py-2 rounded-lg">
+        Show Info
+      </button>
+    </div>
+    <div id="infoPanel"
+         class="bg-green-100 border border-green-300 p-4 rounded-lg mx-auto max-w-3xl hidden mb-6">
+      <ul class="list-disc list-inside space-y-2 text-green-800">
+        <li>
+          Static data:
+          <a href="https://assets.clashk.ing/static_data.json"
+             class="font-semibold underline">https://assets.clashk.ing/static_data.json</a>
+        </li>
+        <li>
+          Image mappings:
+          <a href="https://assets.clashk.ing/image_map.json"
+             class="font-semibold underline">https://assets.clashk.ing/image_map.json</a>
+        </li>
+        <li>
+          Translations:
+          <a href="https://assets.clashk.ing/translations.json"
+             class="font-semibold underline">https://assets.clashk.ing/translations.json</a>
+        </li>
+        <li>
+          Discord:
+          <a href="https://discord.gg/clashk.ing"
+             class="font-semibold underline">discord.gg/clashk.ing</a>
+        </li>
+      </ul>
+      <p class="mt-4 text-sm text-green-700">
+        You can point directly to these URLs for the latest assets.<br>
+        <strong>Note:</strong> This content is not created by or endorsed by Supercell.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-4 justify-center mb-8">
+      <input id="search" type="text" placeholder="Search by name..."
+             class="w-full sm:w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"/>
+      <div class="relative w-full sm:w-1/4">
+        <select id="sectionFilter"
+                class="block w-full p-3 border border-gray-300 rounded-lg appearance-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 pr-10">
+          <option value="">All Sections</option>
+          {% for sec in sections %}
+            <option value="{{ sec }}">{{ sec.replace('_',' ').title() }}</option>
+          {% endfor %}
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+          <!-- Chevron Icon -->
+          <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div id="gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"></div>
+  </div>
+
+  <!-- Translations Panel -->
+  <div id="transPanel" class="hidden">
+    <div class="mb-4 flex items-center gap-4">
+      <input id="transSearch" type="text" placeholder="Search English..."
+             class="flex-1 p-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"/>
+      <label class="flex items-center gap-1">
+        <input id="searchTid" type="checkbox" class="form-checkbox"/>
+        Search TIDs
+      </label>
+    </div>
+    <div id="transCount" class="text-sm text-gray-600 mb-2"></div>
+    <div id="transResults" class="space-y-2"></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalBackdrop"
+       class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div id="modalContent"
+         class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl m-4 p-6">
+      <button id="modalClose"
+              class="absolute top-4 right-4 text-gray-500 hover:text-gray-900">✕</button>
+      <div id="modalInner" class="space-y-6"></div>
+    </div>
+  </div>
+
+  <script>
+    // Data
+    const images = {{ images | tojson }};
+    const translations = {{ translations | tojson }};
+    const resultsDiv = document.getElementById('transResults');
+
+    // Tabs
+    const tabImages = document.getElementById('tabImages');
+    const tabTrans = document.getElementById('tabTrans');
+    const imagesPanel = document.getElementById('imagesPanel');
+    const transPanel = document.getElementById('transPanel');
+
+    tabImages.addEventListener('click', () => {
+      imagesPanel.classList.remove('hidden');
+      transPanel.classList.add('hidden');
+      tabImages.classList.replace('bg-gray-200','bg-indigo-500');
+      tabImages.classList.replace('text-gray-700','text-white');
+      tabTrans.classList.replace('bg-indigo-500','bg-gray-200');
+      tabTrans.classList.replace('text-white','text-gray-700');
+    });
+    tabTrans.addEventListener('click', () => {
+      transPanel.classList.remove('hidden');
+      imagesPanel.classList.add('hidden');
+      tabTrans.classList.replace('bg-gray-200','bg-indigo-500');
+      tabTrans.classList.replace('text-gray-700','text-white');
+      tabImages.classList.replace('bg-indigo-500','bg-gray-200');
+      tabImages.classList.replace('text-white','text-gray-700');
+      renderTrans();
+    });
+
+    // Info toggle
+    document.getElementById('infoToggle').addEventListener('click', () => {
+      const panel = document.getElementById('infoPanel');
+      panel.classList.toggle('hidden');
+      document.getElementById('infoToggle').textContent =
+        panel.classList.contains('hidden') ? 'Show Info' : 'Hide Info';
+    });
+
+    // Gallery render
+    const gallery = document.getElementById("gallery");
+    const searchInput = document.getElementById("search");
+    const sectionFilter = document.getElementById("sectionFilter");
+    function getItems() {
+      const q = searchInput.value.toLowerCase();
+      const sec = sectionFilter.value;
+      return Object.entries(images)
+        .filter(([section]) => !sec || section === sec)
+        .flatMap(([section, entries]) =>
+          Object.entries(entries)
+            .filter(([, meta]) => meta.name.toLowerCase().includes(q))
+            .map(([id, meta]) => ({ id, section, meta }))
+        );
+    }
+    function renderGallery() {
+      gallery.innerHTML = "";
+      const items = getItems();
+      if (!items.length) {
+        gallery.innerHTML = '<p class="col-span-full text-center text-gray-500">No results found</p>';
+        return;
+      }
+      items.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition p-4 flex flex-col items-center cursor-pointer";
+        card.onclick = () => openModal(item);
+
+        const thumb =
+          item.meta.full ||
+          item.meta.icon ||
+          (item.meta.levels && item.meta.levels["1"]) ||
+          Object.values(item.meta).find(v => v && v.endsWith(".png"));
+
+        const img = document.createElement("img");
+        img.src = "/static" + thumb;
+        img.alt = item.meta.name;
+        img.className = "w-24 h-24 object-contain mb-2";
+        card.appendChild(img);
+
+        const label = document.createElement("div");
+        label.className = "text-center font-medium whitespace-nowrap truncate";
+        label.textContent = item.meta.name;
+        card.appendChild(label);
+
+        gallery.appendChild(card);
+      });
+    }
+
+    // Modal
+    const modalBackdrop = document.getElementById("modalBackdrop");
+    const modalInner = document.getElementById("modalInner");
+    const modalClose = document.getElementById("modalClose");
+
+    function openModal({ id, section, meta }) {
+      modalInner.innerHTML = "";
+
+      // Title
+      const title = document.createElement("h2");
+      title.className = "text-2xl font-semibold text-center";
+      title.textContent = meta.name;
+      modalInner.appendChild(title);
+
+      // Collect image variants
+      const sources = [];
+      if (meta.full)  sources.push({ src: meta.full,  label: "Full" });
+      if (meta.icon)  sources.push({ src: meta.icon,  label: "Icon" });
+      if (meta.levels) {
+        Object.entries(meta.levels).forEach(([lvl, src]) =>
+          sources.push({ src, label: `Level ${lvl}` })
+        );
+      }
+      Object.entries(meta).forEach(([key, src]) => {
+        const m = key.match(/^(tier|pose)_(\d+)$/);
+        if (m && src) {
+          const type = m[1] === "tier" ? "Tier" : "Pose";
+          sources.push({ src, label: `${type} ${m[2]}` });
+        }
+      });
+
+      // Columns: 3 / 4 / 5
+      let colsClass = "grid-cols-3";
+      if (sources.length >= 16) colsClass = "grid-cols-4";
+      if (sources.length >= 20) colsClass = "grid-cols-5";
+
+      const grid = document.createElement("div");
+      grid.className = `grid ${colsClass} gap-4`;
+      modalInner.appendChild(grid);
+
+      sources.forEach(({ src, label }) => {
+        const card = document.createElement("div");
+        card.className = "flex flex-col items-center p-2 bg-gray-50 rounded-lg relative";
+
+        const imgEl = document.createElement("img");
+        imgEl.src = "/static" + src;
+        imgEl.className = "w-20 h-20 object-contain mb-2";
+        card.appendChild(imgEl);
+
+        // resolution badge
+        imgEl.addEventListener("load", () => {
+          const badge = document.createElement("div");
+          badge.className = "absolute top-1 right-1 bg-gray-800 bg-opacity-75 text-white text-xs px-1 rounded";
+          badge.textContent = `${imgEl.naturalWidth}×${imgEl.naturalHeight}`;
+          card.appendChild(badge);
+        });
+
+        const lab = document.createElement("div");
+        lab.className = "text-sm font-medium mb-1 whitespace-nowrap";
+        lab.textContent = `${meta.name} (${label})`;
+        card.appendChild(lab);
+
+        const btn = document.createElement("a");
+        btn.href = "/static" + src;
+        btn.download = "";
+        btn.className = "px-3 py-1 bg-indigo-600 text-white rounded-md text-sm";
+        btn.textContent = "Download";
+        card.appendChild(btn);
+
+        grid.appendChild(card);
+      });
+
+      // Scenery music
+      if (section === "sceneries" && meta.music) {
+        const audio = document.createElement("audio");
+        audio.controls = true;
+        audio.src = "/static" + meta.music;
+        audio.className = "mt-4 w-full";
+        modalInner.appendChild(audio);
+      }
+
+      // Download ZIP
+      const zipBtn = document.createElement("a");
+      zipBtn.href = `/download/${section}/${id}/zip`;
+      zipBtn.className = "mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600";
+      zipBtn.textContent = "Download All Assets";
+      modalInner.appendChild(zipBtn);
+
+      modalBackdrop.classList.remove("hidden");
+    }
+
+    modalClose.onclick = () => modalBackdrop.classList.add("hidden");
+    modalBackdrop.onclick = e => {
+      if (e.target === modalBackdrop) modalBackdrop.classList.add("hidden");
+    };
+
+    // Translations search
+    const transSearch = document.getElementById("transSearch");
+    const searchTid   = document.getElementById("searchTid");
+
+    function renderTrans() {
+      const q = transSearch.value.toString().toLowerCase();
+      const includeTid = searchTid.checked;
+      resultsDiv.innerHTML = '';
+      let displayed = 0;
+      const total = Object.keys(translations).length;
+      Object.entries(translations).forEach(([tid, locs]) => {
+        const eng = locs.EN ?? '';
+        const engLower = eng.toString().toLowerCase();
+        const tidLower = tid.toString().toLowerCase();
+        if (engLower.includes(q) || (includeTid && tidLower.includes(q))) {
+          const row = document.createElement('div');
+          row.className = 'p-2 bg-white rounded-lg shadow flex justify-between items-center';
+          row.innerHTML = `
+            <div><strong>${tid}</strong>: ${eng}</div>
+            <button data-tid="${tid}" class="copyBtn px-2 py-1 bg-indigo-500 text-white rounded">Copy</button>
+          `;
+          resultsDiv.appendChild(row);
+          displayed++;
+        }
+      });
+      document.getElementById('transCount').textContent =
+        `Showing ${displayed} of ${total} entries`;
+    }
+
+    // Delegate copy button clicks
+    document.getElementById('transResults').addEventListener('click', function(e) {
+      if (e.target && e.target.matches('.copyBtn')) {
+        const tid = e.target.dataset.tid;
+        const jsonStr = JSON.stringify({ [tid]: translations[tid] }, null, 2);
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(jsonStr);
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = jsonStr;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        // Visual feedback
+        e.target.textContent = 'Copied!';
+        e.target.disabled = true;
+        setTimeout(() => {
+          e.target.textContent = 'Copy';
+          e.target.disabled = false;
+        }, 1500);
+      }
+    });
+
+    // Event listeners
+    searchInput.addEventListener("input", renderGallery);
+    sectionFilter.addEventListener("change", renderGallery);
+    transSearch.addEventListener("input", renderTrans);
+    searchTid.addEventListener("change", renderTrans);
+    document.addEventListener('DOMContentLoaded', () => {
+      renderGallery();
+      renderTrans();
+    });
+  </script>
+{% endblock %}

@@ -443,192 +443,192 @@
     "1000027": {
       "name": "Inferno Tower",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": "",
-        "11": ""
+        "1": "/home-base/buildings/inferno-tower/inferno-tower-1.png",
+        "2": "/home-base/buildings/inferno-tower/inferno-tower-2.png",
+        "3": "/home-base/buildings/inferno-tower/inferno-tower-3.png",
+        "4": "/home-base/buildings/inferno-tower/inferno-tower-4.png",
+        "5": "/home-base/buildings/inferno-tower/inferno-tower-5.png",
+        "6": "/home-base/buildings/inferno-tower/inferno-tower-6.png",
+        "7": "/home-base/buildings/inferno-tower/inferno-tower-7.png",
+        "8": "/home-base/buildings/inferno-tower/inferno-tower-8.png",
+        "9": "/home-base/buildings/inferno-tower/inferno-tower-9.png",
+        "10": "/home-base/buildings/inferno-tower/inferno-tower-10.png",
+        "11": "/home-base/buildings/inferno-tower/inferno-tower-11.png"
       }
     },
     "1000028": {
       "name": "Air Sweeper",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": ""
+        "1": "/home-base/buildings/air-sweeper/air-sweeper-1.png",
+        "2": "/home-base/buildings/air-sweeper/air-sweeper-2.png",
+        "3": "/home-base/buildings/air-sweeper/air-sweeper-3.png",
+        "4": "/home-base/buildings/air-sweeper/air-sweeper-4.png",
+        "5": "/home-base/buildings/air-sweeper/air-sweeper-5.png",
+        "6": "/home-base/buildings/air-sweeper/air-sweeper-6.png",
+        "7": "/home-base/buildings/air-sweeper/air-sweeper-7.png"
       }
     },
     "1000029": {
       "name": "Dark Spell Factory",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": ""
+        "1": "/home-base/buildings/dark-spell-factory/dark-spell-factory-1.png",
+        "2": "/home-base/buildings/dark-spell-factory/dark-spell-factory-2.png",
+        "3": "/home-base/buildings/dark-spell-factory/dark-spell-factory-3.png",
+        "4": "/home-base/buildings/dark-spell-factory/dark-spell-factory-4.png",
+        "5": "/home-base/buildings/dark-spell-factory/dark-spell-factory-5.png",
+        "6": "/home-base/buildings/dark-spell-factory/dark-spell-factory-6.png",
+        "7": "/home-base/buildings/dark-spell-factory/dark-spell-factory-7.png"
       }
     },
     "1000031": {
       "name": "Eagle Artillery",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": ""
+        "1": "/home-base/buildings/eagle-artillery/eagle-artillery-1.png",
+        "2": "/home-base/buildings/eagle-artillery/eagle-artillery-2.png",
+        "3": "/home-base/buildings/eagle-artillery/eagle-artillery-3.png",
+        "4": "/home-base/buildings/eagle-artillery/eagle-artillery-4.png",
+        "5": "/home-base/buildings/eagle-artillery/eagle-artillery-5.png",
+        "6": "/home-base/buildings/eagle-artillery/eagle-artillery-6.png",
+        "7": "/home-base/buildings/eagle-artillery/eagle-artillery-7.png"
       }
     },
     "1000032": {
       "name": "Bomb Tower",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": "",
-        "11": "",
-        "12": ""
+        "1": "/home-base/buildings/bomb-tower/bomb-tower-1.png",
+        "2": "/home-base/buildings/bomb-tower/bomb-tower-2.png",
+        "3": "/home-base/buildings/bomb-tower/bomb-tower-3.png",
+        "4": "/home-base/buildings/bomb-tower/bomb-tower-4.png",
+        "5": "/home-base/buildings/bomb-tower/bomb-tower-5.png",
+        "6": "/home-base/buildings/bomb-tower/bomb-tower-6.png",
+        "7": "/home-base/buildings/bomb-tower/bomb-tower-7.png",
+        "8": "/home-base/buildings/bomb-tower/bomb-tower-8.png",
+        "9": "/home-base/buildings/bomb-tower/bomb-tower-9.png",
+        "10": "/home-base/buildings/bomb-tower/bomb-tower-10.png",
+        "11": "/home-base/buildings/bomb-tower/bomb-tower-11.png",
+        "12": "/home-base/buildings/bomb-tower/bomb-tower-12.png"
       }
     },
     "1000033": {
       "name": "Wall",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/wall/wall-1.png",
+        "2": "/builder-base/buildings/wall/wall-2.png",
+        "3": "/builder-base/buildings/wall/wall-3.png",
+        "4": "/builder-base/buildings/wall/wall-4.png",
+        "5": "/builder-base/buildings/wall/wall-5.png",
+        "6": "/builder-base/buildings/wall/wall-6.png",
+        "7": "/builder-base/buildings/wall/wall-7.png",
+        "8": "/builder-base/buildings/wall/wall-8.png",
+        "9": "/builder-base/buildings/wall/wall-9.png",
+        "10": "/builder-base/buildings/wall/wall-10.png"
       }
     },
     "1000034": {
       "name": "Builder Hall",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/builder-hall/builder-hall-1.png",
+        "2": "/builder-base/buildings/builder-hall/builder-hall-2.png",
+        "3": "/builder-base/buildings/builder-hall/builder-hall-3.png",
+        "4": "/builder-base/buildings/builder-hall/builder-hall-4.png",
+        "5": "/builder-base/buildings/builder-hall/builder-hall-5.png",
+        "6": "/builder-base/buildings/builder-hall/builder-hall-6.png",
+        "7": "/builder-base/buildings/builder-hall/builder-hall-7.png",
+        "8": "/builder-base/buildings/builder-hall/builder-hall-8.png",
+        "9": "/builder-base/buildings/builder-hall/builder-hall-9.png",
+        "10": "/builder-base/buildings/builder-hall/builder-hall-10.png"
       }
     },
     "1000035": {
       "name": "Elixir Collector",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/elixir-collector/elixir-collector-1.png",
+        "2": "/builder-base/buildings/elixir-collector/elixir-collector-2.png",
+        "3": "/builder-base/buildings/elixir-collector/elixir-collector-3.png",
+        "4": "/builder-base/buildings/elixir-collector/elixir-collector-4.png",
+        "5": "/builder-base/buildings/elixir-collector/elixir-collector-5.png",
+        "6": "/builder-base/buildings/elixir-collector/elixir-collector-6.png",
+        "7": "/builder-base/buildings/elixir-collector/elixir-collector-7.png",
+        "8": "/builder-base/buildings/elixir-collector/elixir-collector-8.png",
+        "9": "/builder-base/buildings/elixir-collector/elixir-collector-9.png",
+        "10": "/builder-base/buildings/elixir-collector/elixir-collector-10.png"
       }
     },
     "1000036": {
       "name": "Elixir Storage",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/elixir-storage/elixir-storage-1.png",
+        "2": "/builder-base/buildings/elixir-storage/elixir-storage-2.png",
+        "3": "/builder-base/buildings/elixir-storage/elixir-storage-3.png",
+        "4": "/builder-base/buildings/elixir-storage/elixir-storage-4.png",
+        "5": "/builder-base/buildings/elixir-storage/elixir-storage-5.png",
+        "6": "/builder-base/buildings/elixir-storage/elixir-storage-6.png",
+        "7": "/builder-base/buildings/elixir-storage/elixir-storage-7.png",
+        "8": "/builder-base/buildings/elixir-storage/elixir-storage-8.png",
+        "9": "/builder-base/buildings/elixir-storage/elixir-storage-9.png",
+        "10": "/builder-base/buildings/elixir-storage/elixir-storage-10.png"
       }
     },
     "1000037": {
       "name": "Gold Mine",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/gold-mine/gold-mine-1.png",
+        "2": "/builder-base/buildings/gold-mine/gold-mine-2.png",
+        "3": "/builder-base/buildings/gold-mine/gold-mine-3.png",
+        "4": "/builder-base/buildings/gold-mine/gold-mine-4.png",
+        "5": "/builder-base/buildings/gold-mine/gold-mine-5.png",
+        "6": "/builder-base/buildings/gold-mine/gold-mine-6.png",
+        "7": "/builder-base/buildings/gold-mine/gold-mine-7.png",
+        "8": "/builder-base/buildings/gold-mine/gold-mine-8.png",
+        "9": "/builder-base/buildings/gold-mine/gold-mine-9.png",
+        "10": "/builder-base/buildings/gold-mine/gold-mine-10.png"
       }
     },
     "1000038": {
       "name": "Gold Storage",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/gold-storage/gold-storage-1.png",
+        "2": "/builder-base/buildings/gold-storage/gold-storage-2.png",
+        "3": "/builder-base/buildings/gold-storage/gold-storage-3.png",
+        "4": "/builder-base/buildings/gold-storage/gold-storage-4.png",
+        "5": "/builder-base/buildings/gold-storage/gold-storage-5.png",
+        "6": "/builder-base/buildings/gold-storage/gold-storage-6.png",
+        "7": "/builder-base/buildings/gold-storage/gold-storage-7.png",
+        "8": "/builder-base/buildings/gold-storage/gold-storage-8.png",
+        "9": "/builder-base/buildings/gold-storage/gold-storage-9.png",
+        "10": "/builder-base/buildings/gold-storage/gold-storage-10.png"
       }
     },
     "1000039": {
       "name": "Clock Tower",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/buildings/clock-tower/clock-tower-1.png",
+        "2": "/builder-base/buildings/clock-tower/clock-tower-2.png",
+        "3": "/builder-base/buildings/clock-tower/clock-tower-3.png",
+        "4": "/builder-base/buildings/clock-tower/clock-tower-4.png",
+        "5": "/builder-base/buildings/clock-tower/clock-tower-5.png",
+        "6": "/builder-base/buildings/clock-tower/clock-tower-6.png",
+        "7": "/builder-base/buildings/clock-tower/clock-tower-7.png",
+        "8": "/builder-base/buildings/clock-tower/clock-tower-8.png",
+        "9": "/builder-base/buildings/clock-tower/clock-tower-9.png",
+        "10": "/builder-base/buildings/clock-tower/clock-tower-10.png"
       }
     },
     "1000040": {
       "name": "Builder Barracks",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": "",
-        "11": "",
-        "12": ""
+        "1": "/builder-base/buildings/builder-barracks/builder-barracks-1.png",
+        "2": "/builder-base/buildings/builder-barracks/builder-barracks-2.png",
+        "3": "/builder-base/buildings/builder-barracks/builder-barracks-3.png",
+        "4": "/builder-base/buildings/builder-barracks/builder-barracks-4.png",
+        "5": "/builder-base/buildings/builder-barracks/builder-barracks-5.png",
+        "6": "/builder-base/buildings/builder-barracks/builder-barracks-6.png",
+        "7": "/builder-base/buildings/builder-barracks/builder-barracks-7.png",
+        "8": "/builder-base/buildings/builder-barracks/builder-barracks-8.png",
+        "9": "/builder-base/buildings/builder-barracks/builder-barracks-9.png",
+        "10": "/builder-base/buildings/builder-barracks/builder-barracks-10.png",
+        "11": "/builder-base/buildings/builder-barracks/builder-barracks-11.png",
+        "12": "/builder-base/buildings/builder-barracks/builder-barracks-12.png"
       }
     },
     "1000041": {
@@ -1059,10 +1059,11 @@
   "seasonal_defenses": {
     "855814416": {
       "name": "Hook Tower",
-      "icon": "",
-      "tier_1": "",
-      "tier_2": "",
-      "tier_3": ""
+      "icon": "/home-base/seasonal-defenses/hook-tower/hook-tower-icon.png",
+      "tier_1": "/home-base/seasonal-defenses/hook-tower/hook-tower-1.png",
+      "tier_2": "/home-base/seasonal-defenses/hook-tower/hook-tower-2.png",
+      "tier_3": "/home-base/seasonal-defenses/hook-tower/hook-tower-3.png",
+      "tier_4": "/home-base/seasonal-defenses/hook-tower/hook-tower-4.png"
     },
     "3271576464": {
       "name": "Sun Beam",

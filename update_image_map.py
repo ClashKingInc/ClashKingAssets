@@ -49,7 +49,7 @@ def add_new_entries():
                         data_hold["levels"][str(item.get("level"))] = old_level_data
 
             if data_type in MODULES:
-                for tier in ["tier_1", "tier_2", "tier_3"]:
+                for tier in ["tier_1", "tier_2", "tier_3", "tier_4"]:
                     old_tier_data = old_data.get(tier)
                     if old_tier_data is None:
                         data_hold[tier] = ""
