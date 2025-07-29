@@ -1,10 +1,10 @@
 import os, glob, re
 from PIL import Image
 
-NEW_NAME   = "barracks"
+NEW_NAME   = "archer-tower"
 INPUT_DIR  = f"assets/home-base/buildings/{NEW_NAME}"
 OUTPUT_DIR = INPUT_DIR
-DELETE = True
+DELETE = False
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
