@@ -1,0 +1,4896 @@
+{
+  "buildings": {
+    "1000000": {
+      "name": "Army Camp",
+      "levels": {
+        "1": "/home-base/buildings/army-camp/troop-housing-1.png",
+        "2": "/home-base/buildings/army-camp/troop-housing-2.png",
+        "3": "/home-base/buildings/army-camp/troop-housing-3.png",
+        "4": "/home-base/buildings/army-camp/troop-housing-4.png",
+        "5": "/home-base/buildings/army-camp/troop-housing-5.png",
+        "6": "/home-base/buildings/army-camp/troop-housing-6.png",
+        "7": "/home-base/buildings/army-camp/troop-housing-7.png",
+        "8": "/home-base/buildings/army-camp/troop-housing-8.png",
+        "9": "/home-base/buildings/army-camp/troop-housing-9.png",
+        "10": "/home-base/buildings/army-camp/troop-housing-10.png",
+        "11": "/home-base/buildings/army-camp/troop-housing-11.png",
+        "12": "/home-base/buildings/army-camp/troop-housing-12.png",
+        "13": "/home-base/buildings/army-camp/troop-housing-13.png"
+      }
+    },
+    "1000001": {
+      "name": "Town Hall",
+      "levels": {
+        "1": "/home-base/buildings/town-hall/town-hall-1.png",
+        "2": "/home-base/buildings/town-hall/town-hall-2.png",
+        "3": "/home-base/buildings/town-hall/town-hall-3.png",
+        "4": "/home-base/buildings/town-hall/town-hall-4.png",
+        "5": "/home-base/buildings/town-hall/town-hall-5.png",
+        "6": "/home-base/buildings/town-hall/town-hall-6.png",
+        "7": "/home-base/buildings/town-hall/town-hall-7.png",
+        "8": "/home-base/buildings/town-hall/town-hall-8.png",
+        "9": "/home-base/buildings/town-hall/town-hall-9.png",
+        "10": "/home-base/buildings/town-hall/town-hall-10.png",
+        "11": "/home-base/buildings/town-hall/town-hall-11.png",
+        "12": "/home-base/buildings/town-hall/town-hall-12.png",
+        "13": "/home-base/buildings/town-hall/town-hall-13.png",
+        "14": "/home-base/buildings/town-hall/town-hall-14.png",
+        "15": "/home-base/buildings/town-hall/town-hall-15.png",
+        "16": "/home-base/buildings/town-hall/town-hall-16.png",
+        "17": "/home-base/buildings/town-hall/town-hall-17.png"
+      }
+    },
+    "1000002": {
+      "name": "Elixir Collector",
+      "levels": {
+        "1": "/home-base/buildings/elixir-collector/elixir-pump-1.png",
+        "2": "/home-base/buildings/elixir-collector/elixir-pump-2.png",
+        "3": "/home-base/buildings/elixir-collector/elixir-pump-3.png",
+        "4": "/home-base/buildings/elixir-collector/elixir-pump-4.png",
+        "5": "/home-base/buildings/elixir-collector/elixir-pump-5.png",
+        "6": "/home-base/buildings/elixir-collector/elixir-pump-6.png",
+        "7": "/home-base/buildings/elixir-collector/elixir-pump-7.png",
+        "8": "/home-base/buildings/elixir-collector/elixir-pump-8.png",
+        "9": "/home-base/buildings/elixir-collector/elixir-pump-9.png",
+        "10": "/home-base/buildings/elixir-collector/elixir-pump-10.png",
+        "11": "/home-base/buildings/elixir-collector/elixir-pump-11.png",
+        "12": "/home-base/buildings/elixir-collector/elixir-pump-12.png",
+        "13": "/home-base/buildings/elixir-collector/elixir-pump-13.png",
+        "14": "/home-base/buildings/elixir-collector/elixir-pump-14.png",
+        "15": "/home-base/buildings/elixir-collector/elixir-pump-15.png",
+        "16": "/home-base/buildings/elixir-collector/elixir-pump-16.png"
+      }
+    },
+    "1000003": {
+      "name": "Elixir Storage",
+      "levels": {
+        "1": "/home-base/buildings/elixir-storage/elixir-storage-1.png",
+        "2": "/home-base/buildings/elixir-storage/elixir-storage-2.png",
+        "3": "/home-base/buildings/elixir-storage/elixir-storage-3.png",
+        "4": "/home-base/buildings/elixir-storage/elixir-storage-4.png",
+        "5": "/home-base/buildings/elixir-storage/elixir-storage-5.png",
+        "6": "/home-base/buildings/elixir-storage/elixir-storage-6.png",
+        "7": "/home-base/buildings/elixir-storage/elixir-storage-7.png",
+        "8": "/home-base/buildings/elixir-storage/elixir-storage-8.png",
+        "9": "/home-base/buildings/elixir-storage/elixir-storage-9.png",
+        "10": "/home-base/buildings/elixir-storage/elixir-storage-10.png",
+        "11": "/home-base/buildings/elixir-storage/elixir-storage-11.png",
+        "12": "/home-base/buildings/elixir-storage/elixir-storage-12.png",
+        "13": "/home-base/buildings/elixir-storage/elixir-storage-13.png",
+        "14": "/home-base/buildings/elixir-storage/elixir-storage-14.png",
+        "15": "/home-base/buildings/elixir-storage/elixir-storage-15.png",
+        "16": "/home-base/buildings/elixir-storage/elixir-storage-16.png",
+        "17": "/home-base/buildings/elixir-storage/elixir-storage-17.png",
+        "18": "/home-base/buildings/elixir-storage/elixir-storage-18.png"
+      }
+    },
+    "1000004": {
+      "name": "Gold Mine",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": "",
+        "16": ""
+      }
+    },
+    "1000005": {
+      "name": "Gold Storage",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": "",
+        "16": "",
+        "17": "",
+        "18": ""
+      }
+    },
+    "1000006": {
+      "name": "Barracks",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": "",
+        "16": "",
+        "17": "",
+        "18": ""
+      }
+    },
+    "1000007": {
+      "name": "Laboratory",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
+      }
+    },
+    "1000008": {
+      "name": "Cannon",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": "",
+        "16": "",
+        "17": "",
+        "18": "",
+        "19": "",
+        "20": "",
+        "21": ""
+      }
+    },
+    "1000009": {
+      "name": "Archer Tower",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": "",
+        "16": "",
+        "17": "",
+        "18": "",
+        "19": "",
+        "20": "",
+        "21": ""
+      }
+    },
+    "1000010": {
+      "name": "Wall",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": "",
+        "16": "",
+        "17": "",
+        "18": ""
+      }
+    },
+    "1000011": {
+      "name": "Wizard Tower",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": "",
+        "16": "",
+        "17": ""
+      }
+    },
+    "1000012": {
+      "name": "Air Defense",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
+      }
+    },
+    "1000013": {
+      "name": "Mortar",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": "",
+        "16": "",
+        "17": ""
+      }
+    },
+    "1000014": {
+      "name": "Clan Castle",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": ""
+      }
+    },
+    "1000015": {
+      "name": "Builder's Hut",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": ""
+      }
+    },
+    "1000019": {
+      "name": "Hidden Tesla",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": "",
+        "16": ""
+      }
+    },
+    "1000020": {
+      "name": "Spell Factory",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": ""
+      }
+    },
+    "1000021": {
+      "name": "X-Bow",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": ""
+      }
+    },
+    "1000023": {
+      "name": "Dark Elixir Drill",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000024": {
+      "name": "Dark Elixir Storage",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": ""
+      }
+    },
+    "1000026": {
+      "name": "Dark Barracks",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": ""
+      }
+    },
+    "1000027": {
+      "name": "Inferno Tower",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": ""
+      }
+    },
+    "1000028": {
+      "name": "Air Sweeper",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": ""
+      }
+    },
+    "1000029": {
+      "name": "Dark Spell Factory",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": ""
+      }
+    },
+    "1000031": {
+      "name": "Eagle Artillery",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": ""
+      }
+    },
+    "1000032": {
+      "name": "Bomb Tower",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": ""
+      }
+    },
+    "1000033": {
+      "name": "Wall",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000034": {
+      "name": "Builder Hall",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000035": {
+      "name": "Elixir Collector",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000036": {
+      "name": "Elixir Storage",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000037": {
+      "name": "Gold Mine",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000038": {
+      "name": "Gold Storage",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000039": {
+      "name": "Clock Tower",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000040": {
+      "name": "Builder Barracks",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": ""
+      }
+    },
+    "1000041": {
+      "name": "Double Cannon",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000042": {
+      "name": "Army Camp",
+      "levels": {}
+    },
+    "1000043": {
+      "name": "Hidden Tesla",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000044": {
+      "name": "Cannon",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000045": {
+      "name": "Multi Mortar",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000046": {
+      "name": "Star Laboratory",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000047": {
+      "name": "Master Builder's Hut",
+      "levels": {}
+    },
+    "1000048": {
+      "name": "Archer Tower",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000049": {
+      "name": "Reinforcement Camp",
+      "levels": {}
+    },
+    "1000050": {
+      "name": "Firecrackers",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000051": {
+      "name": "Guard Post",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000052": {
+      "name": "Mega Tesla",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000053": {
+      "name": "Battle Machine",
+      "levels": {}
+    },
+    "1000054": {
+      "name": "Air Bombs",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000055": {
+      "name": "Crusher",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000056": {
+      "name": "Roaster",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000057": {
+      "name": "Giant Cannon",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000058": {
+      "name": "Gem Mine",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000059": {
+      "name": "Workshop",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": ""
+      }
+    },
+    "1000063": {
+      "name": "Lava Launcher",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000064": {
+      "name": "B.O.B's Hut",
+      "levels": {}
+    },
+    "1000065": {
+      "name": "B.O.B Control",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": ""
+      }
+    },
+    "1000067": {
+      "name": "Scattershot",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": ""
+      }
+    },
+    "1000068": {
+      "name": "Pet House",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": ""
+      }
+    },
+    "1000070": {
+      "name": "Blacksmith",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": ""
+      }
+    },
+    "1000071": {
+      "name": "Hero Hall",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": ""
+      }
+    },
+    "1000072": {
+      "name": "Spell Tower",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": ""
+      }
+    },
+    "1000077": {
+      "name": "Monolith",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": ""
+      }
+    },
+    "1000078": {
+      "name": "O.T.T.O's Outpost",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "1000079": {
+      "name": "Multi-Gear Tower",
+      "levels": {
+        "1": "",
+        "2": ""
+      }
+    },
+    "1000080": {
+      "name": "Battle Copter",
+      "levels": {}
+    },
+    "1000081": {
+      "name": "X-Bow",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": ""
+      }
+    },
+    "1000082": {
+      "name": "Healing Hut",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": ""
+      }
+    },
+    "1000083": {
+      "name": "Sour Elixir Cauldron",
+      "levels": {}
+    },
+    "1000084": {
+      "name": "Multi-Archer Tower",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": ""
+      }
+    },
+    "1000085": {
+      "name": "Ricochet Cannon",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": ""
+      }
+    },
+    "1000089": {
+      "name": "Firespitter",
+      "levels": {
+        "1": "",
+        "2": ""
+      }
+    },
+    "1000093": {
+      "name": "Helper Hut",
+      "levels": {}
+    },
+    "1000097": {
+      "name": "Crafting Station",
+      "levels": {}
+    }
+  },
+  "seasonal_defenses": {
+    "855814416": {
+      "name": "Hook Tower",
+      "icon": "",
+      "tier_1": "",
+      "tier_2": "",
+      "tier_3": ""
+    },
+    "3271576464": {
+      "name": "Sun Beam",
+      "icon": "",
+      "tier_1": "",
+      "tier_2": "",
+      "tier_3": ""
+    },
+    "3616099271": {
+      "name": "Flame Spinner",
+      "icon": "",
+      "tier_1": "",
+      "tier_2": "",
+      "tier_3": ""
+    },
+    "3765015657": {
+      "name": "Crusher Mortar",
+      "icon": "",
+      "tier_1": "",
+      "tier_2": "",
+      "tier_3": ""
+    },
+    "2172091388": {
+      "name": "Lazy Laser",
+      "icon": "",
+      "tier_1": "",
+      "tier_2": "",
+      "tier_3": ""
+    }
+  },
+  "traps": {
+    "12000000": {
+      "name": "Bomb",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": ""
+      }
+    },
+    "12000001": {
+      "name": "Spring Trap",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": ""
+      }
+    },
+    "12000002": {
+      "name": "Giant Bomb",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": ""
+      }
+    },
+    "12000005": {
+      "name": "Air Bomb",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": ""
+      }
+    },
+    "12000006": {
+      "name": "Seeking Air Mine",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": ""
+      }
+    },
+    "12000008": {
+      "name": "Skeleton Trap",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": ""
+      }
+    },
+    "12000010": {
+      "name": "Spring Trap",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": ""
+      }
+    },
+    "12000011": {
+      "name": "Push Trap",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "12000013": {
+      "name": "Mine",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "12000014": {
+      "name": "Mega Mine",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": ""
+      }
+    },
+    "12000016": {
+      "name": "Tornado Trap",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": ""
+      }
+    },
+    "12000020": {
+      "name": "Giga Bomb",
+      "levels": {
+        "1": "",
+        "2": "",
+        "3": ""
+      }
+    }
+  },
+  "troops": {
+    "4000000": {
+      "name": "Barbarian",
+      "icon": "",
+      "full": ""
+    },
+    "4000001": {
+      "name": "Archer",
+      "icon": "",
+      "full": ""
+    },
+    "4000002": {
+      "name": "Goblin",
+      "icon": "",
+      "full": ""
+    },
+    "4000003": {
+      "name": "Giant",
+      "icon": "",
+      "full": ""
+    },
+    "4000004": {
+      "name": "Wall Breaker",
+      "icon": "",
+      "full": ""
+    },
+    "4000005": {
+      "name": "Balloon",
+      "icon": "",
+      "full": ""
+    },
+    "4000006": {
+      "name": "Wizard",
+      "icon": "",
+      "full": ""
+    },
+    "4000007": {
+      "name": "Healer",
+      "icon": "",
+      "full": ""
+    },
+    "4000008": {
+      "name": "Dragon",
+      "icon": "",
+      "full": ""
+    },
+    "4000009": {
+      "name": "P.E.K.K.A",
+      "icon": "",
+      "full": ""
+    },
+    "4000010": {
+      "name": "Minion",
+      "icon": "",
+      "full": ""
+    },
+    "4000011": {
+      "name": "Hog Rider",
+      "icon": "",
+      "full": ""
+    },
+    "4000012": {
+      "name": "Valkyrie",
+      "icon": "",
+      "full": ""
+    },
+    "4000013": {
+      "name": "Golem",
+      "icon": "",
+      "full": ""
+    },
+    "4000015": {
+      "name": "Witch",
+      "icon": "",
+      "full": ""
+    },
+    "4000017": {
+      "name": "Lava Hound",
+      "icon": "",
+      "full": ""
+    },
+    "4000022": {
+      "name": "Bowler",
+      "icon": "",
+      "full": ""
+    },
+    "4000023": {
+      "name": "Baby Dragon",
+      "icon": "",
+      "full": ""
+    },
+    "4000024": {
+      "name": "Miner",
+      "icon": "",
+      "full": ""
+    },
+    "4000026": {
+      "name": "Super Barbarian",
+      "icon": "",
+      "full": ""
+    },
+    "4000027": {
+      "name": "Super Archer",
+      "icon": "",
+      "full": ""
+    },
+    "4000028": {
+      "name": "Super Wall Breaker",
+      "icon": "",
+      "full": ""
+    },
+    "4000029": {
+      "name": "Super Giant",
+      "icon": "",
+      "full": ""
+    },
+    "4000030": {
+      "name": "Ice Wizard",
+      "icon": "",
+      "full": ""
+    },
+    "4000031": {
+      "name": "Raged Barbarian",
+      "icon": "",
+      "full": ""
+    },
+    "4000032": {
+      "name": "Sneaky Archer",
+      "icon": "",
+      "full": ""
+    },
+    "4000033": {
+      "name": "Beta Minion",
+      "icon": "",
+      "full": ""
+    },
+    "4000034": {
+      "name": "Boxer Giant",
+      "icon": "",
+      "full": ""
+    },
+    "4000035": {
+      "name": "Bomber",
+      "icon": "",
+      "full": ""
+    },
+    "4000036": {
+      "name": "Power P.E.K.K.A",
+      "icon": "",
+      "full": ""
+    },
+    "4000037": {
+      "name": "Cannon Cart",
+      "icon": "",
+      "full": ""
+    },
+    "4000038": {
+      "name": "Drop Ship",
+      "icon": "",
+      "full": ""
+    },
+    "4000041": {
+      "name": "Baby Dragon",
+      "icon": "",
+      "full": ""
+    },
+    "4000042": {
+      "name": "Night Witch",
+      "icon": "",
+      "full": ""
+    },
+    "4000045": {
+      "name": "Battle Ram",
+      "icon": "",
+      "full": ""
+    },
+    "4000047": {
+      "name": "Royal Ghost",
+      "icon": "",
+      "full": ""
+    },
+    "4000048": {
+      "name": "Pumpkin Barbarian",
+      "icon": "",
+      "full": ""
+    },
+    "4000050": {
+      "name": "Giant Skeleton",
+      "icon": "",
+      "full": ""
+    },
+    "4000051": {
+      "name": "Wall Wrecker",
+      "icon": "",
+      "full": ""
+    },
+    "4000052": {
+      "name": "Battle Blimp",
+      "icon": "",
+      "full": ""
+    },
+    "4000053": {
+      "name": "Yeti",
+      "icon": "",
+      "full": ""
+    },
+    "4000055": {
+      "name": "Sneaky Goblin",
+      "icon": "",
+      "full": ""
+    },
+    "4000056": {
+      "name": "Super Miner",
+      "icon": "",
+      "full": ""
+    },
+    "4000057": {
+      "name": "Rocket Balloon",
+      "icon": "",
+      "full": ""
+    },
+    "4000058": {
+      "name": "Ice Golem",
+      "icon": "",
+      "full": ""
+    },
+    "4000059": {
+      "name": "Electro Dragon",
+      "icon": "",
+      "full": ""
+    },
+    "4000061": {
+      "name": "Skeleton Barrel",
+      "icon": "",
+      "full": ""
+    },
+    "4000062": {
+      "name": "Stone Slammer",
+      "icon": "",
+      "full": ""
+    },
+    "4000063": {
+      "name": "Inferno Dragon",
+      "icon": "",
+      "full": ""
+    },
+    "4000064": {
+      "name": "Super Valkyrie",
+      "icon": "",
+      "full": ""
+    },
+    "4000065": {
+      "name": "Dragon Rider",
+      "icon": "",
+      "full": ""
+    },
+    "4000066": {
+      "name": "Super Witch",
+      "icon": "",
+      "full": ""
+    },
+    "4000067": {
+      "name": "M.E.C.H.A",
+      "icon": "",
+      "full": ""
+    },
+    "4000070": {
+      "name": "Hog Glider",
+      "icon": "",
+      "full": ""
+    },
+    "4000072": {
+      "name": "Party Wizard",
+      "icon": "",
+      "full": ""
+    },
+    "4000075": {
+      "name": "Siege Barracks",
+      "icon": "",
+      "full": ""
+    },
+    "4000076": {
+      "name": "Ice Hound",
+      "icon": "",
+      "full": ""
+    },
+    "4000080": {
+      "name": "Super Bowler",
+      "icon": "",
+      "full": ""
+    },
+    "4000081": {
+      "name": "Super Dragon",
+      "icon": "",
+      "full": ""
+    },
+    "4000082": {
+      "name": "Headhunter",
+      "icon": "",
+      "full": ""
+    },
+    "4000083": {
+      "name": "Super Wizard",
+      "icon": "",
+      "full": ""
+    },
+    "4000084": {
+      "name": "Super Minion",
+      "icon": "",
+      "full": ""
+    },
+    "4000087": {
+      "name": "Log Launcher",
+      "icon": "",
+      "full": ""
+    },
+    "4000091": {
+      "name": "Flame Flinger",
+      "icon": "",
+      "full": ""
+    },
+    "4000092": {
+      "name": "Battle Drill",
+      "icon": "",
+      "full": ""
+    },
+    "4000094": {
+      "name": "Ram Rider",
+      "icon": "",
+      "full": ""
+    },
+    "4000095": {
+      "name": "Electro Titan",
+      "icon": "",
+      "full": ""
+    },
+    "4000097": {
+      "name": "Apprentice Warden",
+      "icon": "",
+      "full": ""
+    },
+    "4000098": {
+      "name": "Super Hog Rider",
+      "icon": "",
+      "full": ""
+    },
+    "4000101": {
+      "name": "Barcher",
+      "icon": "",
+      "full": ""
+    },
+    "4000102": {
+      "name": "Witch Golem",
+      "icon": "",
+      "full": ""
+    },
+    "4000103": {
+      "name": "Hog Wizard",
+      "icon": "",
+      "full": ""
+    },
+    "4000104": {
+      "name": "Lavaloon",
+      "icon": "",
+      "full": ""
+    },
+    "4000106": {
+      "name": "Electrofire Wizard",
+      "icon": "",
+      "full": ""
+    },
+    "4000110": {
+      "name": "Root Rider",
+      "icon": "",
+      "full": ""
+    },
+    "4000118": {
+      "name": "C.O.O.K.I.E",
+      "icon": "",
+      "full": ""
+    },
+    "4000119": {
+      "name": "Firecracker",
+      "icon": "",
+      "full": ""
+    },
+    "4000120": {
+      "name": "Azure Dragon",
+      "icon": "",
+      "full": ""
+    },
+    "4000121": {
+      "name": "Barbarian Kicker",
+      "icon": "",
+      "full": ""
+    },
+    "4000122": {
+      "name": "Giant Thrower",
+      "icon": "",
+      "full": ""
+    },
+    "4000123": {
+      "name": "Druid",
+      "icon": "",
+      "full": ""
+    },
+    "4000125": {
+      "name": "Broom Witch",
+      "icon": "",
+      "full": ""
+    },
+    "4000130": {
+      "name": "Ice Minion",
+      "icon": "",
+      "full": ""
+    },
+    "4000132": {
+      "name": "Thrower",
+      "icon": "",
+      "full": ""
+    },
+    "4000135": {
+      "name": "Troop Launcher",
+      "icon": "",
+      "full": ""
+    },
+    "4000136": {
+      "name": "Debt Collector",
+      "icon": "",
+      "full": ""
+    },
+    "4000142": {
+      "name": "Snake Barrel",
+      "icon": "",
+      "full": ""
+    },
+    "4000147": {
+      "name": "Super Yeti",
+      "icon": "",
+      "full": ""
+    },
+    "4000150": {
+      "name": "Furnace",
+      "icon": "",
+      "full": ""
+    },
+    "4000156": {
+      "name": "Giant Giant",
+      "icon": "",
+      "full": ""
+    },
+    "4000157": {
+      "name": "K.A.N.E",
+      "icon": "",
+      "full": ""
+    },
+    "4000158": {
+      "name": "The Disarmer",
+      "icon": "",
+      "full": ""
+    },
+    "4000159": {
+      "name": "YEETer",
+      "icon": "",
+      "full": ""
+    },
+    "4000164": {
+      "name": "YEETer",
+      "icon": "",
+      "full": ""
+    },
+    "4000165": {
+      "name": "The Disarmer",
+      "icon": "",
+      "full": ""
+    }
+  },
+  "heroes": {
+    "28000000": {
+      "name": "Barbarian King",
+      "icon": "",
+      "full": ""
+    },
+    "28000001": {
+      "name": "Archer Queen",
+      "icon": "",
+      "full": ""
+    },
+    "28000002": {
+      "name": "Grand Warden",
+      "icon": "",
+      "full": ""
+    },
+    "28000003": {
+      "name": "Battle Machine",
+      "icon": "",
+      "full": ""
+    },
+    "28000004": {
+      "name": "Royal Champion",
+      "icon": "",
+      "full": ""
+    },
+    "28000005": {
+      "name": "Battle Copter",
+      "icon": "",
+      "full": ""
+    },
+    "28000006": {
+      "name": "Minion Prince",
+      "icon": "",
+      "full": ""
+    }
+  },
+  "pets": {
+    "73000000": {
+      "name": "L.A.S.S.I",
+      "icon": "",
+      "full": ""
+    },
+    "73000001": {
+      "name": "Mighty Yak",
+      "icon": "",
+      "full": ""
+    },
+    "73000002": {
+      "name": "Electro Owl",
+      "icon": "",
+      "full": ""
+    },
+    "73000003": {
+      "name": "Unicorn",
+      "icon": "",
+      "full": ""
+    },
+    "73000004": {
+      "name": "Phoenix",
+      "icon": "",
+      "full": ""
+    },
+    "73000007": {
+      "name": "Poison Lizard",
+      "icon": "",
+      "full": ""
+    },
+    "73000008": {
+      "name": "Diggy",
+      "icon": "",
+      "full": ""
+    },
+    "73000009": {
+      "name": "Frosty",
+      "icon": "",
+      "full": ""
+    },
+    "73000010": {
+      "name": "Spirit Fox",
+      "icon": "",
+      "full": ""
+    },
+    "73000011": {
+      "name": "Angry Jelly",
+      "icon": "",
+      "full": ""
+    },
+    "73000016": {
+      "name": "Sneezy",
+      "icon": "",
+      "full": ""
+    }
+  },
+  "equipment": {
+    "90000000": {
+      "name": "Barbarian Puppet",
+      "icon": ""
+    },
+    "90000001": {
+      "name": "Rage Vial",
+      "icon": ""
+    },
+    "90000002": {
+      "name": "Archer Puppet",
+      "icon": ""
+    },
+    "90000003": {
+      "name": "Invisibility Vial",
+      "icon": ""
+    },
+    "90000004": {
+      "name": "Eternal Tome",
+      "icon": ""
+    },
+    "90000005": {
+      "name": "Life Gem",
+      "icon": ""
+    },
+    "90000006": {
+      "name": "Seeking Shield",
+      "icon": ""
+    },
+    "90000007": {
+      "name": "Royal Gem",
+      "icon": ""
+    },
+    "90000008": {
+      "name": "Earthquake Boots",
+      "icon": ""
+    },
+    "90000009": {
+      "name": "Hog Rider Puppet",
+      "icon": ""
+    },
+    "90000010": {
+      "name": "Giant Gauntlet",
+      "icon": ""
+    },
+    "90000011": {
+      "name": "Vampstache",
+      "icon": ""
+    },
+    "90000012": {
+      "name": "Haste Vial",
+      "icon": ""
+    },
+    "90000013": {
+      "name": "Rocket Spear",
+      "icon": ""
+    },
+    "90000014": {
+      "name": "Spiky Ball",
+      "icon": ""
+    },
+    "90000015": {
+      "name": "Frozen Arrow",
+      "icon": ""
+    },
+    "90000017": {
+      "name": "Giant Arrow",
+      "icon": ""
+    },
+    "90000019": {
+      "name": "Heroic Torch",
+      "icon": ""
+    },
+    "90000020": {
+      "name": "Healer Puppet",
+      "icon": ""
+    },
+    "90000022": {
+      "name": "Fireball",
+      "icon": ""
+    },
+    "90000024": {
+      "name": "Rage Gem",
+      "icon": ""
+    },
+    "90000032": {
+      "name": "Snake Bracelet",
+      "icon": ""
+    },
+    "90000034": {
+      "name": "Healing Tome",
+      "icon": ""
+    },
+    "90000035": {
+      "name": "Dark Crown",
+      "icon": ""
+    },
+    "90000039": {
+      "name": "Magic Mirror",
+      "icon": ""
+    },
+    "90000040": {
+      "name": "Electro Boots",
+      "icon": ""
+    },
+    "90000041": {
+      "name": "Lavaloon Puppet",
+      "icon": ""
+    },
+    "90000042": {
+      "name": "Henchmen Puppet",
+      "icon": ""
+    },
+    "90000043": {
+      "name": "Dark Orb",
+      "icon": ""
+    },
+    "90000044": {
+      "name": "Metal Pants",
+      "icon": ""
+    },
+    "90000047": {
+      "name": "Noble Iron",
+      "icon": ""
+    },
+    "90000048": {
+      "name": "Action Figure",
+      "icon": ""
+    }
+  },
+  "decorations": {
+    "18000000": {
+      "name": "Mighty Statue",
+      "icon": ""
+    },
+    "18000001": {
+      "name": "Torch",
+      "icon": ""
+    },
+    "18000003": {
+      "name": "White Flag",
+      "icon": ""
+    },
+    "18000004": {
+      "name": "Pirate Flag",
+      "icon": ""
+    },
+    "18000005": {
+      "name": "Cornflower Bed",
+      "icon": ""
+    },
+    "18000006": {
+      "name": "Sunflower Bed",
+      "icon": ""
+    },
+    "18000007": {
+      "name": "Weather Vane",
+      "icon": ""
+    },
+    "18000008": {
+      "name": "Rally Flag",
+      "icon": ""
+    },
+    "18000009": {
+      "name": "Point Flag",
+      "icon": ""
+    },
+    "18000010": {
+      "name": "Ancient Skull",
+      "icon": ""
+    },
+    "18000033": {
+      "name": "Statue of P.E.K.K.A",
+      "icon": ""
+    },
+    "18000037": {
+      "name": "Mighty Hero Statue",
+      "icon": ""
+    },
+    "18000038": {
+      "name": "Torch",
+      "icon": ""
+    },
+    "18000039": {
+      "name": "Small Spruce Tree",
+      "icon": ""
+    },
+    "18000040": {
+      "name": "Spruce Tree",
+      "icon": ""
+    },
+    "18000041": {
+      "name": "Ancient Barbarian Statue",
+      "icon": ""
+    },
+    "18000042": {
+      "name": "Stone Path",
+      "icon": ""
+    },
+    "18000043": {
+      "name": "Archer Queen Statue",
+      "icon": ""
+    },
+    "18000044": {
+      "name": "Target",
+      "icon": ""
+    },
+    "18000045": {
+      "name": "Bonfire",
+      "icon": ""
+    },
+    "18000046": {
+      "name": "Builder Statue",
+      "icon": ""
+    },
+    "18000047": {
+      "name": "The Champion Statue",
+      "icon": ""
+    },
+    "18000048": {
+      "name": "The Master Statue",
+      "icon": ""
+    },
+    "18000049": {
+      "name": "The Contender Statue",
+      "icon": ""
+    },
+    "18000050": {
+      "name": "The Challenger Statue",
+      "icon": ""
+    },
+    "18000051": {
+      "name": "The Warrior Statue",
+      "icon": ""
+    },
+    "18000052": {
+      "name": "Golden Hog",
+      "icon": ""
+    },
+    "18000053": {
+      "name": "Festive Firecrackers",
+      "icon": ""
+    },
+    "18000054": {
+      "name": "Snowman",
+      "icon": ""
+    },
+    "18000055": {
+      "name": "Snowman",
+      "icon": ""
+    },
+    "18000056": {
+      "name": "Battle Machine Statue",
+      "icon": ""
+    },
+    "18000057": {
+      "name": "Dragon Statue",
+      "icon": ""
+    },
+    "18000058": {
+      "name": "Golden Poet",
+      "icon": ""
+    },
+    "18000059": {
+      "name": "Super Statue",
+      "icon": ""
+    },
+    "18000060": {
+      "name": "Storied Statue",
+      "icon": ""
+    },
+    "18000061": {
+      "name": "Anniversary Fountain",
+      "icon": ""
+    },
+    "18000062": {
+      "name": "Clockwork Statue",
+      "icon": ""
+    },
+    "18000063": {
+      "name": "\\qA Piece of Birthday Cake\\q",
+      "icon": ""
+    },
+    "18000064": {
+      "name": "Retired Anchor",
+      "icon": ""
+    },
+    "18000065": {
+      "name": "Logmas Tree",
+      "icon": ""
+    },
+    "18000066": {
+      "name": "Firework Fanboy",
+      "icon": ""
+    },
+    "18000067": {
+      "name": "Flowing Fountain",
+      "icon": ""
+    },
+    "18000068": {
+      "name": "Fiery Figure",
+      "icon": ""
+    },
+    "18000069": {
+      "name": "Wizard Statue",
+      "icon": ""
+    },
+    "18000070": {
+      "name": "Goblin King Tribute",
+      "icon": ""
+    },
+    "18000071": {
+      "name": "Eternal Flame",
+      "icon": ""
+    },
+    "18000072": {
+      "name": "Clashmas Sleigh",
+      "icon": ""
+    },
+    "18000073": {
+      "name": "Magic Show Statue",
+      "icon": ""
+    },
+    "18000074": {
+      "name": "Decorated Dragon Statue",
+      "icon": ""
+    },
+    "18000075": {
+      "name": "Dragon Trophy",
+      "icon": ""
+    },
+    "18000076": {
+      "name": "Bonfire",
+      "icon": ""
+    },
+    "18000077": {
+      "name": "Torch",
+      "icon": ""
+    },
+    "18000078": {
+      "name": "Target",
+      "icon": ""
+    },
+    "18000079": {
+      "name": "Books of Clash",
+      "icon": ""
+    },
+    "18000080": {
+      "name": "Master Builder's Return",
+      "icon": ""
+    },
+    "18000081": {
+      "name": "Goblin Chest",
+      "icon": ""
+    },
+    "18000082": {
+      "name": "Goblin Cart",
+      "icon": ""
+    },
+    "18000083": {
+      "name": "Torch",
+      "icon": ""
+    },
+    "18000084": {
+      "name": "Torch",
+      "icon": ""
+    },
+    "18000085": {
+      "name": "Torch",
+      "icon": ""
+    },
+    "18000086": {
+      "name": "Torch",
+      "icon": ""
+    },
+    "18000087": {
+      "name": "Torch",
+      "icon": ""
+    },
+    "18000088": {
+      "name": "Torch",
+      "icon": ""
+    },
+    "18000089": {
+      "name": "Goblin Cellar",
+      "icon": ""
+    },
+    "18000090": {
+      "name": "Goblin Dragon Statue",
+      "icon": ""
+    },
+    "18000091": {
+      "name": "Goblin Barrel",
+      "icon": ""
+    },
+    "18000092": {
+      "name": "League Hammer",
+      "icon": ""
+    },
+    "18000093": {
+      "name": "League Shield",
+      "icon": ""
+    },
+    "18000094": {
+      "name": "Razer Deco",
+      "icon": ""
+    },
+    "18000095": {
+      "name": "Flexing Barbarian",
+      "icon": ""
+    },
+    "18000096": {
+      "name": "Cosy Coffin",
+      "icon": ""
+    },
+    "18000097": {
+      "name": "\\qFriendly\\q Clown",
+      "icon": ""
+    },
+    "18000098": {
+      "name": "Spooky Spa",
+      "icon": ""
+    },
+    "18000099": {
+      "name": "Pumpkin Scarecrow",
+      "icon": ""
+    },
+    "18000100": {
+      "name": "Sour Elixir Cauldron",
+      "icon": ""
+    },
+    "18000101": {
+      "name": "World Finals 23 Statue",
+      "icon": ""
+    },
+    "18000103": {
+      "name": "Duck Bath",
+      "icon": ""
+    },
+    "18000109": {
+      "name": "Hog Pen",
+      "icon": ""
+    },
+    "18000114": {
+      "name": "Cozy Clam",
+      "icon": ""
+    },
+    "18000115": {
+      "name": "Gingerbread Bakery",
+      "icon": ""
+    },
+    "18000116": {
+      "name": "Jingle Bell",
+      "icon": ""
+    },
+    "18000117": {
+      "name": "Barbarian Santa",
+      "icon": ""
+    },
+    "18000118": {
+      "name": "Skeleton Sock",
+      "icon": ""
+    },
+    "18000119": {
+      "name": "Lucky Anchor",
+      "icon": ""
+    },
+    "18000120": {
+      "name": "Crab at home",
+      "icon": ""
+    },
+    "18000121": {
+      "name": "Baby Dragon Statue",
+      "icon": ""
+    },
+    "18000122": {
+      "name": "Dragon Pinata",
+      "icon": ""
+    },
+    "18000123": {
+      "name": "Clashy Crater",
+      "icon": ""
+    },
+    "18000124": {
+      "name": "Stone Globe",
+      "icon": ""
+    },
+    "18000125": {
+      "name": "Goblin Explorer",
+      "icon": ""
+    },
+    "18000126": {
+      "name": "Baby Ptah",
+      "icon": ""
+    },
+    "18000127": {
+      "name": "Goblin Pharaoh",
+      "icon": ""
+    },
+    "18000128": {
+      "name": "Hog Sphinx",
+      "icon": ""
+    },
+    "18000129": {
+      "name": "Crown Sword",
+      "icon": ""
+    },
+    "18000130": {
+      "name": "Surprising Squad",
+      "icon": ""
+    },
+    "18000131": {
+      "name": "Golden Boot",
+      "icon": ""
+    },
+    "18000132": {
+      "name": "Bestest Ball",
+      "icon": ""
+    },
+    "18000133": {
+      "name": "Haaland Statue",
+      "icon": ""
+    },
+    "18000134": {
+      "name": "Triumphant Trophy",
+      "icon": ""
+    },
+    "18000135": {
+      "name": "Celebration Cup",
+      "icon": ""
+    },
+    "18000136": {
+      "name": "Victory Milk",
+      "icon": ""
+    },
+    "18000137": {
+      "name": "Cactus Guy",
+      "icon": ""
+    },
+    "18000138": {
+      "name": "Cowboy Skeleton",
+      "icon": ""
+    },
+    "18000139": {
+      "name": "Dragon Totem",
+      "icon": ""
+    },
+    "18000140": {
+      "name": "Football Camp",
+      "icon": ""
+    },
+    "18000141": {
+      "name": "Wizard Vendor",
+      "icon": ""
+    },
+    "18000142": {
+      "name": "Torch",
+      "icon": ""
+    },
+    "18000143": {
+      "name": "Cherry Bonsai",
+      "icon": ""
+    },
+    "18000144": {
+      "name": "Chibi Archer",
+      "icon": ""
+    },
+    "18000145": {
+      "name": "Kawaii Giant",
+      "icon": ""
+    },
+    "18000146": {
+      "name": "Beach Break",
+      "icon": ""
+    },
+    "18000147": {
+      "name": "Brawl's Star",
+      "icon": ""
+    },
+    "18000148": {
+      "name": "Gargantuan Gauntlet",
+      "icon": ""
+    },
+    "18000149": {
+      "name": "Heroic Chicken",
+      "icon": ""
+    },
+    "18000150": {
+      "name": "Sleepy King",
+      "icon": ""
+    },
+    "18000151": {
+      "name": "Champion's Flame",
+      "icon": ""
+    },
+    "18000152": {
+      "name": "Goblin High Dive",
+      "icon": ""
+    },
+    "18000153": {
+      "name": "Foot Tribute",
+      "icon": ""
+    },
+    "18000154": {
+      "name": "Pretty Portal",
+      "icon": ""
+    },
+    "18000155": {
+      "name": "Decision Dice",
+      "icon": ""
+    },
+    "18000156": {
+      "name": "Cuddly Chest",
+      "icon": ""
+    },
+    "18000157": {
+      "name": "Hydra Headstone",
+      "icon": ""
+    },
+    "18000158": {
+      "name": "Jailbroken Box",
+      "icon": ""
+    },
+    "18000159": {
+      "name": "Bubble Boil Cauldron",
+      "icon": ""
+    },
+    "18000160": {
+      "name": "Abra-Cada-Brewer",
+      "icon": ""
+    },
+    "18000161": {
+      "name": "Festival Lantern",
+      "icon": ""
+    },
+    "18000162": {
+      "name": "Rocking Reindeer",
+      "icon": ""
+    },
+    "18000163": {
+      "name": "Clockwork Choir",
+      "icon": ""
+    },
+    "18000164": {
+      "name": "Snow Globe",
+      "icon": ""
+    },
+    "18000165": {
+      "name": "Gift Bag",
+      "icon": ""
+    },
+    "18000166": {
+      "name": "Snake Shrine",
+      "icon": ""
+    },
+    "18000167": {
+      "name": "Monk Statue",
+      "icon": ""
+    },
+    "18000168": {
+      "name": "Cozy Sauna",
+      "icon": ""
+    },
+    "18000169": {
+      "name": "Lucky Cookies",
+      "icon": ""
+    },
+    "18000170": {
+      "name": "Shooting Range",
+      "icon": ""
+    },
+    "18000171": {
+      "name": "WWE Title",
+      "icon": ""
+    },
+    "18000172": {
+      "name": "Rumbling Goblins",
+      "icon": ""
+    },
+    "18000173": {
+      "name": "Golden Giant",
+      "icon": ""
+    },
+    "18000174": {
+      "name": "Creator Fountain",
+      "icon": ""
+    },
+    "18000175": {
+      "name": "Surprise Wheel",
+      "icon": ""
+    },
+    "18000176": {
+      "name": "Sacred Gate",
+      "icon": ""
+    },
+    "18000177": {
+      "name": "Jingle Maker",
+      "icon": ""
+    },
+    "18000178": {
+      "name": "Looter Wagon",
+      "icon": ""
+    },
+    "18000179": {
+      "name": "Frozen Wizard",
+      "icon": ""
+    },
+    "18000180": {
+      "name": "Clashy Carving",
+      "icon": ""
+    },
+    "18000181": {
+      "name": "Sketch Summoner",
+      "icon": ""
+    },
+    "18000182": {
+      "name": "Cyber Hologram",
+      "icon": ""
+    },
+    "18000183": {
+      "name": "Soda Stand",
+      "icon": ""
+    },
+    "18000184": {
+      "name": "Party Bench",
+      "icon": ""
+    },
+    "18000185": {
+      "name": "Justice Crown",
+      "icon": ""
+    }
+  },
+  "obstacles": {
+    "8000000": {
+      "name": "Tree",
+      "icon": ""
+    },
+    "8000001": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000002": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000003": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000004": {
+      "name": "Bush",
+      "icon": ""
+    },
+    "8000005": {
+      "name": "Tree",
+      "icon": ""
+    },
+    "8000006": {
+      "name": "Trunk",
+      "icon": ""
+    },
+    "8000007": {
+      "name": "Trunk",
+      "icon": ""
+    },
+    "8000008": {
+      "name": "Mushroom",
+      "icon": ""
+    },
+    "8000009": {
+      "name": "Tombstone",
+      "icon": ""
+    },
+    "8000010": {
+      "name": "Trunk",
+      "icon": ""
+    },
+    "8000011": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000012": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000013": {
+      "name": "Tree",
+      "icon": ""
+    },
+    "8000014": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000015": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000016": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000017": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000018": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000019": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000020": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000021": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000022": {
+      "name": "Tombstone",
+      "icon": ""
+    },
+    "8000023": {
+      "name": "Tombstone",
+      "icon": ""
+    },
+    "8000024": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000025": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000026": {
+      "name": "Goblin Camp Fire",
+      "icon": ""
+    },
+    "8000027": {
+      "name": "Goblin Camp Fire",
+      "icon": ""
+    },
+    "8000028": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000029": {
+      "name": "Present",
+      "icon": ""
+    },
+    "8000030": {
+      "name": "Gem Box",
+      "icon": ""
+    },
+    "8000031": {
+      "name": "Halloween Headstone",
+      "icon": ""
+    },
+    "8000032": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000033": {
+      "name": "Present",
+      "icon": ""
+    },
+    "8000034": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000035": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000036": {
+      "name": "Halloween Cauldron",
+      "icon": ""
+    },
+    "8000037": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000038": {
+      "name": "Loot Cart",
+      "icon": ""
+    },
+    "8000039": {
+      "name": "Scary Pumpkin",
+      "icon": ""
+    },
+    "8000040": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000041": {
+      "name": "Tree",
+      "icon": ""
+    },
+    "8000042": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000043": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000044": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000045": {
+      "name": "Bush",
+      "icon": ""
+    },
+    "8000046": {
+      "name": "Tree",
+      "icon": ""
+    },
+    "8000047": {
+      "name": "Mushroom",
+      "icon": ""
+    },
+    "8000048": {
+      "name": "Tombstone",
+      "icon": ""
+    },
+    "8000049": {
+      "name": "Trunk",
+      "icon": ""
+    },
+    "8000050": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000051": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000052": {
+      "name": "Tree",
+      "icon": ""
+    },
+    "8000053": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000054": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000055": {
+      "name": "Old Barbarian Statue",
+      "icon": ""
+    },
+    "8000056": {
+      "name": "Tree Stump",
+      "icon": ""
+    },
+    "8000057": {
+      "name": "Grove",
+      "icon": ""
+    },
+    "8000058": {
+      "name": "Small Tree",
+      "icon": ""
+    },
+    "8000059": {
+      "name": "Big Tree",
+      "icon": ""
+    },
+    "8000060": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000061": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000062": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000063": {
+      "name": "Tall Grass",
+      "icon": ""
+    },
+    "8000064": {
+      "name": "Tall Grass",
+      "icon": ""
+    },
+    "8000065": {
+      "name": "5th Anniversary Cake",
+      "icon": ""
+    },
+    "8000066": {
+      "name": "Present",
+      "icon": ""
+    },
+    "8000067": {
+      "name": "Halloween Obstacle",
+      "icon": ""
+    },
+    "8000068": {
+      "name": "Fireworks Stash",
+      "icon": ""
+    },
+    "8000069": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000070": {
+      "name": "Fortune Tree",
+      "icon": ""
+    },
+    "8000071": {
+      "name": "6th Anniversary Cake",
+      "icon": ""
+    },
+    "8000072": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000073": {
+      "name": "Witch's Hat",
+      "icon": ""
+    },
+    "8000074": {
+      "name": "Spike-y Cactus",
+      "icon": ""
+    },
+    "8000075": {
+      "name": "Glowy Lantern",
+      "icon": ""
+    },
+    "8000076": {
+      "name": "7th Birthday Surprise",
+      "icon": ""
+    },
+    "8000077": {
+      "name": "Spooky Tree",
+      "icon": ""
+    },
+    "8000078": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000079": {
+      "name": "Glowy Lantern",
+      "icon": ""
+    },
+    "8000080": {
+      "name": "8th Anniversary Cake",
+      "icon": ""
+    },
+    "8000081": {
+      "name": "Vacant Tomb",
+      "icon": ""
+    },
+    "8000082": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000083": {
+      "name": "Lucky Shrub",
+      "icon": ""
+    },
+    "8000084": {
+      "name": "9th Anniversary Cake",
+      "icon": ""
+    },
+    "8000085": {
+      "name": "\\qFriendly\\q Flower",
+      "icon": ""
+    },
+    "8000086": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000087": {
+      "name": "10th Anniversary Cake",
+      "icon": ""
+    },
+    "8000088": {
+      "name": "Trick or Treat?",
+      "icon": ""
+    },
+    "8000089": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000090": {
+      "name": "Rabbit Lantern",
+      "icon": ""
+    },
+    "8000091": {
+      "name": "Root",
+      "icon": ""
+    },
+    "8000092": {
+      "name": "Large Root",
+      "icon": ""
+    },
+    "8000093": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000094": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000095": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000096": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000097": {
+      "name": "Small Root",
+      "icon": ""
+    },
+    "8000098": {
+      "name": "Small Root",
+      "icon": ""
+    },
+    "8000099": {
+      "name": "Small Root",
+      "icon": ""
+    },
+    "8000100": {
+      "name": "Root",
+      "icon": ""
+    },
+    "8000101": {
+      "name": "Small Root",
+      "icon": ""
+    },
+    "8000102": {
+      "name": "Stone",
+      "icon": ""
+    },
+    "8000103": {
+      "name": "Pond",
+      "icon": ""
+    },
+    "8000104": {
+      "name": "Pond",
+      "icon": ""
+    },
+    "8000105": {
+      "name": "Overgrown Pond",
+      "icon": ""
+    },
+    "8000106": {
+      "name": "Large Pond",
+      "icon": ""
+    },
+    "8000107": {
+      "name": "Large Pond",
+      "icon": ""
+    },
+    "8000108": {
+      "name": "11th Anniversary Cake",
+      "icon": ""
+    },
+    "8000109": {
+      "name": "Tombstone",
+      "icon": ""
+    },
+    "8000110": {
+      "name": "Sinister Sapling",
+      "icon": ""
+    },
+    "8000111": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000112": {
+      "name": "Tombstone",
+      "icon": ""
+    },
+    "8000113": {
+      "name": "Lucky Letterbox",
+      "icon": ""
+    },
+    "8000114": {
+      "name": "Tombstone",
+      "icon": ""
+    },
+    "8000115": {
+      "name": "Mysterious Object",
+      "icon": ""
+    },
+    "8000116": {
+      "name": "12th Anniversary Cake",
+      "icon": ""
+    },
+    "8000117": {
+      "name": "Ghost Post",
+      "icon": ""
+    },
+    "8000118": {
+      "name": "Deployable area marker",
+      "icon": ""
+    },
+    "8000119": {
+      "name": "Foothill",
+      "icon": ""
+    },
+    "8000120": {
+      "name": "Foothill",
+      "icon": ""
+    },
+    "8000121": {
+      "name": "Foothill",
+      "icon": ""
+    },
+    "8000122": {
+      "name": "Foothill",
+      "icon": ""
+    },
+    "8000123": {
+      "name": "Foothill",
+      "icon": ""
+    },
+    "8000124": {
+      "name": "Foothill",
+      "icon": ""
+    },
+    "8000125": {
+      "name": "Water",
+      "icon": ""
+    },
+    "8000126": {
+      "name": "Foothill",
+      "icon": ""
+    },
+    "8000127": {
+      "name": "Clashmas Tree",
+      "icon": ""
+    },
+    "8000128": {
+      "name": "Snake Sculpture",
+      "icon": ""
+    },
+    "8000129": {
+      "name": "Money in the Bank",
+      "icon": ""
+    },
+    "8000130": {
+      "name": "Tombstone",
+      "icon": ""
+    },
+    "8000131": {
+      "name": "13th Anniversary Cake",
+      "icon": ""
+    }
+  },
+  "sceneries": {
+    "60000000": {
+      "name": "Classic Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000001": {
+      "name": "Classic Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000002": {
+      "name": "Classic Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000004": {
+      "name": "Clashy Constructs Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000005": {
+      "name": "Pirate Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000006": {
+      "name": "Epic Winter Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000007": {
+      "name": "Hog Mountain Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000008": {
+      "name": "Jungle Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000009": {
+      "name": "Epic Jungle Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000010": {
+      "name": "Inferno War Base Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000011": {
+      "name": "9th Clashiversary Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000012": {
+      "name": "Pumpkin Graveyard",
+      "icon": "",
+      "full": ""
+    },
+    "60000013": {
+      "name": "Snow Day",
+      "icon": "",
+      "full": ""
+    },
+    "60000014": {
+      "name": "Tiger Mountain",
+      "icon": "",
+      "full": ""
+    },
+    "60000015": {
+      "name": "Pixel Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000016": {
+      "name": "Primal Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000017": {
+      "name": "Shadow Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000018": {
+      "name": "Royale Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000019": {
+      "name": "Summer Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000020": {
+      "name": "10th Clashiversary Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000021": {
+      "name": "Clash Fest Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000022": {
+      "name": "Magic Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000023": {
+      "name": "Epic Magic Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000034": {
+      "name": "Spooky Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000035": {
+      "name": "Jolly Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000036": {
+      "name": "Magic Theatre Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000037": {
+      "name": "Painter Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000038": {
+      "name": "Classic Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000040": {
+      "name": "Dark Ages Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000041": {
+      "name": "Books of Clash Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000042": {
+      "name": "War Arena Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000043": {
+      "name": "Goblin Caves Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000046": {
+      "name": "Chess Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000047": {
+      "name": "Crystal Caverns Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000048": {
+      "name": "Future Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000049": {
+      "name": "Ghost Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000052": {
+      "name": "Champion Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000053": {
+      "name": "Gingerbread Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000054": {
+      "name": "Of the North Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000055": {
+      "name": "Dragon Palace Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000056": {
+      "name": "Space Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000057": {
+      "name": "Egypt Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000058": {
+      "name": "Football Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000059": {
+      "name": "Wild West Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000060": {
+      "name": "Clash Games Stadium",
+      "icon": "",
+      "full": ""
+    },
+    "60000061": {
+      "name": "Anime Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000062": {
+      "name": "Crossover Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000063": {
+      "name": "Clash of Dragons",
+      "icon": "",
+      "full": ""
+    },
+    "60000064": {
+      "name": "Doomed Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000065": {
+      "name": "Justice Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000066": {
+      "name": "War Machine Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000067": {
+      "name": "Toy Workshop Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000068": {
+      "name": "Fire and Ice Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000070": {
+      "name": "Year of the Snake",
+      "icon": "",
+      "full": ""
+    },
+    "60000071": {
+      "name": "Military Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000072": {
+      "name": "ClashaMania Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000073": {
+      "name": "High Seas Scenery",
+      "icon": "",
+      "full": ""
+    },
+    "60000074": {
+      "name": "Dark Days Scenery",
+      "icon": "",
+      "full": ""
+    }
+  },
+  "skins": {
+    "52000000": {
+      "name": "Barbarian King",
+      "icon": "",
+      "full": ""
+    },
+    "52000001": {
+      "name": "Gladiator King",
+      "icon": "",
+      "full": ""
+    },
+    "52000002": {
+      "name": "Archer Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000003": {
+      "name": "Grand Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000004": {
+      "name": "P.E.K.K.A King",
+      "icon": "",
+      "full": ""
+    },
+    "52000005": {
+      "name": "Skeleton King",
+      "icon": "",
+      "full": ""
+    },
+    "52000006": {
+      "name": "Jolly King",
+      "icon": "",
+      "full": ""
+    },
+    "52000007": {
+      "name": "Primal King",
+      "icon": "",
+      "full": ""
+    },
+    "52000008": {
+      "name": "Clockwork King",
+      "icon": "",
+      "full": ""
+    },
+    "52000009": {
+      "name": "Party King",
+      "icon": "",
+      "full": ""
+    },
+    "52000010": {
+      "name": "Champion King",
+      "icon": "",
+      "full": ""
+    },
+    "52000011": {
+      "name": "Pirate King",
+      "icon": "",
+      "full": ""
+    },
+    "52000012": {
+      "name": "Gladiator Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000013": {
+      "name": "Valkyrie Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000014": {
+      "name": "Autumn Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000015": {
+      "name": "Ice Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000016": {
+      "name": "Warrior Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000017": {
+      "name": "Primal Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000018": {
+      "name": "Clockwork Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000019": {
+      "name": "Pirate Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000020": {
+      "name": "Party Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000021": {
+      "name": "Primal Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000022": {
+      "name": "Clockwork Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000023": {
+      "name": "Gladiator Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000024": {
+      "name": "Pirate Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000025": {
+      "name": "Warden of the North",
+      "icon": "",
+      "full": ""
+    },
+    "52000026": {
+      "name": "Jungle Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000027": {
+      "name": "Warden Master",
+      "icon": "",
+      "full": ""
+    },
+    "52000028": {
+      "name": "Royal Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000029": {
+      "name": "Winter Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000030": {
+      "name": "Rogue Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000031": {
+      "name": "Jungle Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000032": {
+      "name": "Gladiator Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000033": {
+      "name": "Shadow Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000034": {
+      "name": "Primal Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000035": {
+      "name": "Summer Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000036": {
+      "name": "Pixel Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000037": {
+      "name": "Party Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000038": {
+      "name": "Magic Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000039": {
+      "name": "Pirate Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000040": {
+      "name": "Jolly Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000041": {
+      "name": "Warrior Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000042": {
+      "name": "Painter Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000043": {
+      "name": "Dark Ages Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000044": {
+      "name": "Ghost Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000045": {
+      "name": "Warrior King",
+      "icon": "",
+      "full": ""
+    },
+    "52000046": {
+      "name": "Rogue King",
+      "icon": "",
+      "full": ""
+    },
+    "52000047": {
+      "name": "Fierce King",
+      "icon": "",
+      "full": ""
+    },
+    "52000048": {
+      "name": "Jungle King",
+      "icon": "",
+      "full": ""
+    },
+    "52000049": {
+      "name": "Beat King",
+      "icon": "",
+      "full": ""
+    },
+    "52000050": {
+      "name": "Golem King",
+      "icon": "",
+      "full": ""
+    },
+    "52000051": {
+      "name": "Ice King",
+      "icon": "",
+      "full": ""
+    },
+    "52000052": {
+      "name": "Lunar King",
+      "icon": "",
+      "full": ""
+    },
+    "52000053": {
+      "name": "Shadow King",
+      "icon": "",
+      "full": ""
+    },
+    "52000054": {
+      "name": "Summer King",
+      "icon": "",
+      "full": ""
+    },
+    "52000055": {
+      "name": "Pixel King",
+      "icon": "",
+      "full": ""
+    },
+    "52000056": {
+      "name": "Clash Fest King",
+      "icon": "",
+      "full": ""
+    },
+    "52000057": {
+      "name": "Rogue Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000058": {
+      "name": "Jungle Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000059": {
+      "name": "Party Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000060": {
+      "name": "Champion Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000061": {
+      "name": "Shadow Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000062": {
+      "name": "Miner Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000063": {
+      "name": "Summer Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000064": {
+      "name": "Pixel Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000065": {
+      "name": "Spooky Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000066": {
+      "name": "Magic Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000067": {
+      "name": "Jolly Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000068": {
+      "name": "Dark Ages Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000069": {
+      "name": "Jolly Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000070": {
+      "name": "Warrior Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000071": {
+      "name": "Shadow Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000072": {
+      "name": "Summer Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000073": {
+      "name": "Pixel Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000074": {
+      "name": "Champion Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000075": {
+      "name": "Magic Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000076": {
+      "name": "Painter Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000077": {
+      "name": "Dark Ages Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000078": {
+      "name": "Ghost Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000079": {
+      "name": "Goblin Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000080": {
+      "name": "League Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000087": {
+      "name": "Magic King",
+      "icon": "",
+      "full": ""
+    },
+    "52000088": {
+      "name": "Dark Ages King",
+      "icon": "",
+      "full": ""
+    },
+    "52000089": {
+      "name": "Painter King",
+      "icon": "",
+      "full": ""
+    },
+    "52000090": {
+      "name": "Beast King",
+      "icon": "",
+      "full": ""
+    },
+    "52000091": {
+      "name": "League King",
+      "icon": "",
+      "full": ""
+    },
+    "52000092": {
+      "name": "Goblin King",
+      "icon": "",
+      "full": ""
+    },
+    "52000093": {
+      "name": "Future King",
+      "icon": "",
+      "full": ""
+    },
+    "52000094": {
+      "name": "Gingerbread King",
+      "icon": "",
+      "full": ""
+    },
+    "52000095": {
+      "name": "Ghost King",
+      "icon": "",
+      "full": ""
+    },
+    "52000096": {
+      "name": "Chess King",
+      "icon": "",
+      "full": ""
+    },
+    "52000097": {
+      "name": "Lunar Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000098": {
+      "name": "Painter Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000099": {
+      "name": "Heart Hunter Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000100": {
+      "name": "Goblin Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000101": {
+      "name": "Ghost Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000102": {
+      "name": "League Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000103": {
+      "name": "Future Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000104": {
+      "name": "Gingerbread Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000105": {
+      "name": "Chess Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000106": {
+      "name": "Queen of the North",
+      "icon": "",
+      "full": ""
+    },
+    "52000112": {
+      "name": "League Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000113": {
+      "name": "Goblin Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000114": {
+      "name": "Future Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000115": {
+      "name": "Gingerbread Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000116": {
+      "name": "Champions' Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000117": {
+      "name": "Dragon Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000118": {
+      "name": "Space Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000119": {
+      "name": "Egypt Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000120": {
+      "name": "Football Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000121": {
+      "name": "Wild West Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000122": {
+      "name": "Future Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000123": {
+      "name": "Gingerbread Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000124": {
+      "name": "Dragon Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000125": {
+      "name": "Space Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000126": {
+      "name": "Egypt Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000127": {
+      "name": "Football Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000128": {
+      "name": "Wild West Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000129": {
+      "name": "Clash Games Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000130": {
+      "name": "Anime Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000131": {
+      "name": "Grand Dwarf",
+      "icon": "",
+      "full": ""
+    },
+    "52000132": {
+      "name": "Dragon King",
+      "icon": "",
+      "full": ""
+    },
+    "52000133": {
+      "name": "King of the North",
+      "icon": "",
+      "full": ""
+    },
+    "52000134": {
+      "name": "Egypt King",
+      "icon": "",
+      "full": ""
+    },
+    "52000135": {
+      "name": "Space King",
+      "icon": "",
+      "full": ""
+    },
+    "52000136": {
+      "name": "Super Squad King",
+      "icon": "",
+      "full": ""
+    },
+    "52000137": {
+      "name": "King Haaland",
+      "icon": "",
+      "full": ""
+    },
+    "52000138": {
+      "name": "Football King",
+      "icon": "",
+      "full": ""
+    },
+    "52000139": {
+      "name": "Wild West King",
+      "icon": "",
+      "full": ""
+    },
+    "52000141": {
+      "name": "Clash Games King",
+      "icon": "",
+      "full": ""
+    },
+    "52000142": {
+      "name": "Dragon Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000143": {
+      "name": "Space Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000144": {
+      "name": "Egypt Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000145": {
+      "name": "Football Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000146": {
+      "name": "Wild West Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000147": {
+      "name": "Clash Games Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000148": {
+      "name": "Anime Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000149": {
+      "name": "Archer Satyr",
+      "icon": "",
+      "full": ""
+    },
+    "52000150": {
+      "name": "Dark Minion Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000151": {
+      "name": "Justice Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000152": {
+      "name": "Battle Machine",
+      "icon": "",
+      "full": ""
+    },
+    "52000153": {
+      "name": "Armored Machine",
+      "icon": "",
+      "full": ""
+    },
+    "52000154": {
+      "name": "Goblin Machine",
+      "icon": "",
+      "full": ""
+    },
+    "52000155": {
+      "name": "Steampunk Machine",
+      "icon": "",
+      "full": ""
+    },
+    "52000156": {
+      "name": "Battle Machine of the North",
+      "icon": "",
+      "full": ""
+    },
+    "52000163": {
+      "name": "Battle Copter",
+      "icon": "",
+      "full": ""
+    },
+    "52000164": {
+      "name": "SteamPunk Copter",
+      "icon": "",
+      "full": ""
+    },
+    "52000165": {
+      "name": "Hotrod Copter",
+      "icon": "",
+      "full": ""
+    },
+    "52000166": {
+      "name": "Boat Copter",
+      "icon": "",
+      "full": ""
+    },
+    "52000174": {
+      "name": "Anime Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000175": {
+      "name": "Paladin Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000176": {
+      "name": "Ice Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000177": {
+      "name": "Snake Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000178": {
+      "name": "Sniper Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000179": {
+      "name": "The RoyalEST",
+      "icon": "",
+      "full": ""
+    },
+    "52000180": {
+      "name": "Royal Ninja",
+      "icon": "",
+      "full": ""
+    },
+    "52000181": {
+      "name": "Showtime Champion",
+      "icon": "",
+      "full": ""
+    },
+    "52000191": {
+      "name": "Anime King",
+      "icon": "",
+      "full": ""
+    },
+    "52000192": {
+      "name": "Barbarian Orc",
+      "icon": "",
+      "full": ""
+    },
+    "52000193": {
+      "name": "Dark Minion King",
+      "icon": "",
+      "full": ""
+    },
+    "52000194": {
+      "name": "Judgment King",
+      "icon": "",
+      "full": ""
+    },
+    "52000195": {
+      "name": "Robo King",
+      "icon": "",
+      "full": ""
+    },
+    "52000196": {
+      "name": "Fire King",
+      "icon": "",
+      "full": ""
+    },
+    "52000197": {
+      "name": "Snake King",
+      "icon": "",
+      "full": ""
+    },
+    "52000198": {
+      "name": "Combat King",
+      "icon": "",
+      "full": ""
+    },
+    "52000199": {
+      "name": "King Cody",
+      "icon": "",
+      "full": ""
+    },
+    "52000200": {
+      "name": "Samurai King",
+      "icon": "",
+      "full": ""
+    },
+    "52000201": {
+      "name": "Barbarian Butcher",
+      "icon": "",
+      "full": ""
+    },
+    "52000210": {
+      "name": "Puppet Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000211": {
+      "name": "Fire Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000212": {
+      "name": "Snake Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000213": {
+      "name": "Quickfire Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000214": {
+      "name": "Brutality Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000215": {
+      "name": "Kyudo Queen",
+      "icon": "",
+      "full": ""
+    },
+    "52000216": {
+      "name": "Queen Fatale",
+      "icon": "",
+      "full": ""
+    },
+    "52000230": {
+      "name": "Dark Minion Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000231": {
+      "name": "Grand Judge",
+      "icon": "",
+      "full": ""
+    },
+    "52000232": {
+      "name": "Ice Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000233": {
+      "name": "Snake Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000234": {
+      "name": "Jetpack Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000235": {
+      "name": "Darkness Warden",
+      "icon": "",
+      "full": ""
+    },
+    "52000236": {
+      "name": "Grand Monk",
+      "icon": "",
+      "full": ""
+    },
+    "52000237": {
+      "name": "Grand Godfather",
+      "icon": "",
+      "full": ""
+    },
+    "52000250": {
+      "name": "Minion Prince",
+      "icon": "",
+      "full": ""
+    },
+    "52000251": {
+      "name": "Snake Prince",
+      "icon": "",
+      "full": ""
+    },
+    "52000252": {
+      "name": "Minion General",
+      "icon": "",
+      "full": ""
+    },
+    "52000253": {
+      "name": "Prince Mysterio",
+      "icon": "",
+      "full": ""
+    },
+    "52000254": {
+      "name": "Cyclone Prince",
+      "icon": "",
+      "full": ""
+    },
+    "52000255": {
+      "name": "Minion Cop",
+      "icon": "",
+      "full": ""
+    }
+  },
+  "capital_house_parts": {
+    "82000000": {
+      "name": "Fence Ground 1",
+      "icon": ""
+    },
+    "82000001": {
+      "name": "Terrace Ground 1",
+      "icon": ""
+    },
+    "82000002": {
+      "name": "Stones Ground 1",
+      "icon": ""
+    },
+    "82000003": {
+      "name": "Stones Ground 2",
+      "icon": ""
+    },
+    "82000004": {
+      "name": "Gold Ground 1",
+      "icon": ""
+    },
+    "82000005": {
+      "name": "Winter Ground 1",
+      "icon": ""
+    },
+    "82000006": {
+      "name": "Clashmas Ground 1",
+      "icon": ""
+    },
+    "82000007": {
+      "name": "Grass Ground 1",
+      "icon": ""
+    },
+    "82000008": {
+      "name": "Classic Roof 1",
+      "icon": ""
+    },
+    "82000009": {
+      "name": "Classic Roof 2",
+      "icon": ""
+    },
+    "82000010": {
+      "name": "Classic Roof 3",
+      "icon": ""
+    },
+    "82000011": {
+      "name": "Classic Roof 4",
+      "icon": ""
+    },
+    "82000013": {
+      "name": "Thatch Roof 1",
+      "icon": ""
+    },
+    "82000014": {
+      "name": "Thatch Roof 4",
+      "icon": ""
+    },
+    "82000015": {
+      "name": "Square Roof 1",
+      "icon": ""
+    },
+    "82000016": {
+      "name": "Square Roof 2",
+      "icon": ""
+    },
+    "82000017": {
+      "name": "Square Roof 3",
+      "icon": ""
+    },
+    "82000019": {
+      "name": "Tent Roof 1",
+      "icon": ""
+    },
+    "82000020": {
+      "name": "Tent Roof 2",
+      "icon": ""
+    },
+    "82000021": {
+      "name": "Tent Roof 3",
+      "icon": ""
+    },
+    "82000022": {
+      "name": "Tent Roof 4",
+      "icon": ""
+    },
+    "82000023": {
+      "name": "Cross Roof 1",
+      "icon": ""
+    },
+    "82000024": {
+      "name": "Cross Roof 2",
+      "icon": ""
+    },
+    "82000025": {
+      "name": "Cross Roof 3",
+      "icon": ""
+    },
+    "82000026": {
+      "name": "Castle Roof 1",
+      "icon": ""
+    },
+    "82000027": {
+      "name": "Castle Roof 2",
+      "icon": ""
+    },
+    "82000028": {
+      "name": "Castle Roof 3",
+      "icon": ""
+    },
+    "82000029": {
+      "name": "Castle Roof 4",
+      "icon": ""
+    },
+    "82000030": {
+      "name": "Castle Roof 5",
+      "icon": ""
+    },
+    "82000031": {
+      "name": "Gold Roof 1",
+      "icon": ""
+    },
+    "82000032": {
+      "name": "Gold Roof 2",
+      "icon": ""
+    },
+    "82000033": {
+      "name": "Gold Roof 3",
+      "icon": ""
+    },
+    "82000034": {
+      "name": "Gold Roof 4",
+      "icon": ""
+    },
+    "82000035": {
+      "name": "Gold Roof 5",
+      "icon": ""
+    },
+    "82000036": {
+      "name": "Gold Roof 6",
+      "icon": ""
+    },
+    "82000037": {
+      "name": "Gold Roof 7",
+      "icon": ""
+    },
+    "82000038": {
+      "name": "Stone Roof 1",
+      "icon": ""
+    },
+    "82000039": {
+      "name": "Grass Roof 1",
+      "icon": ""
+    },
+    "82000040": {
+      "name": "Grass Roof 2",
+      "icon": ""
+    },
+    "82000041": {
+      "name": "Windmill Roof 1",
+      "icon": ""
+    },
+    "82000042": {
+      "name": "Windmill Roof 2",
+      "icon": ""
+    },
+    "82000043": {
+      "name": "Windmill Roof 3",
+      "icon": ""
+    },
+    "82000044": {
+      "name": "Windmill Roof 4",
+      "icon": ""
+    },
+    "82000045": {
+      "name": "Windmill Roof 5",
+      "icon": ""
+    },
+    "82000046": {
+      "name": "Clashmas Roof 1",
+      "icon": ""
+    },
+    "82000047": {
+      "name": "Winter Roof 1",
+      "icon": ""
+    },
+    "82000048": {
+      "name": "Classic Foot 1",
+      "icon": ""
+    },
+    "82000049": {
+      "name": "Stone Foot 1",
+      "icon": ""
+    },
+    "82000050": {
+      "name": "Stone Foot 2",
+      "icon": ""
+    },
+    "82000051": {
+      "name": "Stilt Foot 1",
+      "icon": ""
+    },
+    "82000052": {
+      "name": "Hole Foot 1",
+      "icon": ""
+    },
+    "82000053": {
+      "name": "Thatch Foot 1",
+      "icon": ""
+    },
+    "82000054": {
+      "name": "Grass Foot 1",
+      "icon": ""
+    },
+    "82000055": {
+      "name": "Clashmas Foot 1",
+      "icon": ""
+    },
+    "82000056": {
+      "name": "Winter Foot 1",
+      "icon": ""
+    },
+    "82000057": {
+      "name": "Winter Foot 2",
+      "icon": ""
+    },
+    "82000058": {
+      "name": "Mundane Deco 1",
+      "icon": ""
+    },
+    "82000059": {
+      "name": "Mundane Deco 2",
+      "icon": ""
+    },
+    "82000060": {
+      "name": "Mundane Deco 3",
+      "icon": ""
+    },
+    "82000061": {
+      "name": "Mundane Deco 4",
+      "icon": ""
+    },
+    "82000062": {
+      "name": "Weapon Deco 1",
+      "icon": ""
+    },
+    "82000063": {
+      "name": "Weapon Deco 2",
+      "icon": ""
+    },
+    "82000064": {
+      "name": "Food Deco 1",
+      "icon": ""
+    },
+    "82000065": {
+      "name": "Tree Deco 1",
+      "icon": ""
+    },
+    "82000066": {
+      "name": "Gold Deco 2",
+      "icon": ""
+    },
+    "82000067": {
+      "name": "Clashmas Deco 1",
+      "icon": ""
+    },
+    "82000068": {
+      "name": "Clashmas Deco 2",
+      "icon": ""
+    },
+    "82000070": {
+      "name": "Winter Deco 1",
+      "icon": ""
+    },
+    "82000071": {
+      "name": "Flamingo Deco",
+      "icon": ""
+    },
+    "82000072": {
+      "name": "Ground  Emptyhouse 1",
+      "icon": ""
+    },
+    "82000073": {
+      "name": "Ground  Emptyhouse 2",
+      "icon": ""
+    },
+    "82000074": {
+      "name": "Roof  Emptyhouse 1",
+      "icon": ""
+    },
+    "82000075": {
+      "name": "Roof  Emptyhouse 2",
+      "icon": ""
+    },
+    "82000076": {
+      "name": "Roof  Emptyhouse 3",
+      "icon": ""
+    },
+    "82000077": {
+      "name": "Deco  Emptyhouse 1",
+      "icon": ""
+    },
+    "82000078": {
+      "name": "Fancy Roof 1",
+      "icon": ""
+    },
+    "82000079": {
+      "name": "Fancy Foot 1",
+      "icon": ""
+    },
+    "82000080": {
+      "name": "Gold Deco 1",
+      "icon": ""
+    },
+    "82000081": {
+      "name": "Fancy Roof 2",
+      "icon": ""
+    },
+    "82000082": {
+      "name": "Fancy Roof 3",
+      "icon": ""
+    },
+    "82000083": {
+      "name": "Stone Deco 1",
+      "icon": ""
+    },
+    "82000084": {
+      "name": "Fence Ground 2",
+      "icon": ""
+    },
+    "82000085": {
+      "name": "Winter Roof 2",
+      "icon": ""
+    },
+    "82000086": {
+      "name": "Gold Ground 2",
+      "icon": ""
+    },
+    "82000087": {
+      "name": "Goblin Roof",
+      "icon": ""
+    },
+    "82000088": {
+      "name": "Goblin Foot",
+      "icon": ""
+    },
+    "82000089": {
+      "name": "Goblin Deco",
+      "icon": ""
+    },
+    "82000090": {
+      "name": "Goblin Ground",
+      "icon": ""
+    },
+    "82000091": {
+      "name": "Chess Roof",
+      "icon": ""
+    },
+    "82000092": {
+      "name": "Chess Foot",
+      "icon": ""
+    },
+    "82000093": {
+      "name": "Chess Deco",
+      "icon": ""
+    },
+    "82000094": {
+      "name": "Chess Ground",
+      "icon": ""
+    },
+    "82000095": {
+      "name": "Laundry Deco",
+      "icon": ""
+    },
+    "82000096": {
+      "name": "Crystals Deco",
+      "icon": ""
+    },
+    "82000097": {
+      "name": "Cauldron Deco",
+      "icon": ""
+    },
+    "82000098": {
+      "name": "Chess Roof 2",
+      "icon": ""
+    },
+    "82000099": {
+      "name": "Chess Foot 2",
+      "icon": ""
+    },
+    "82000100": {
+      "name": "Greenhouse Roof 1",
+      "icon": ""
+    },
+    "82000101": {
+      "name": "Greenhouse Foot 1",
+      "icon": ""
+    },
+    "82000102": {
+      "name": "Greenhouse Ground 1",
+      "icon": ""
+    },
+    "82000103": {
+      "name": "Greenhouse Deco 1",
+      "icon": ""
+    },
+    "82000104": {
+      "name": "Summer Deco 1",
+      "icon": ""
+    },
+    "82000105": {
+      "name": "Summer Roof 1",
+      "icon": ""
+    },
+    "82000106": {
+      "name": "Summer Foot 1",
+      "icon": ""
+    },
+    "82000107": {
+      "name": "Summer Deco 2",
+      "icon": ""
+    },
+    "82000108": {
+      "name": "Halloween23 Roof",
+      "icon": ""
+    },
+    "82000109": {
+      "name": "Halloween23 Deco",
+      "icon": ""
+    },
+    "82000110": {
+      "name": "Clashmas23 Roof",
+      "icon": ""
+    },
+    "82000111": {
+      "name": "Clashmas23 Deco",
+      "icon": ""
+    },
+    "82000112": {
+      "name": "Clashmas23 Foot",
+      "icon": ""
+    },
+    "82000113": {
+      "name": "Clashmas23 Ground",
+      "icon": ""
+    },
+    "82000114": {
+      "name": "Lny24 Roof",
+      "icon": ""
+    },
+    "82000115": {
+      "name": "Lny24 Deco",
+      "icon": ""
+    },
+    "82000116": {
+      "name": "Lny24 Foot",
+      "icon": ""
+    },
+    "82000117": {
+      "name": "Lny24 Ground",
+      "icon": ""
+    },
+    "82000118": {
+      "name": "Wildwest Roof",
+      "icon": ""
+    },
+    "82000119": {
+      "name": "Wildwest Foot",
+      "icon": ""
+    },
+    "82000120": {
+      "name": "Football Roof",
+      "icon": ""
+    },
+    "82000121": {
+      "name": "Football Deco",
+      "icon": ""
+    },
+    "82000122": {
+      "name": "Football Foot",
+      "icon": ""
+    },
+    "82000123": {
+      "name": "Football Ground",
+      "icon": ""
+    },
+    "82000124": {
+      "name": "Clashgames Deco",
+      "icon": ""
+    },
+    "82000125": {
+      "name": "Clashgames Ground",
+      "icon": ""
+    },
+    "82000126": {
+      "name": "Anime Roof",
+      "icon": ""
+    },
+    "82000127": {
+      "name": "Anime Deco",
+      "icon": ""
+    },
+    "82000128": {
+      "name": "Anime Foot",
+      "icon": ""
+    },
+    "82000129": {
+      "name": "Anime Ground",
+      "icon": ""
+    },
+    "82000130": {
+      "name": "Ttrpg Roof",
+      "icon": ""
+    },
+    "82000131": {
+      "name": "Ttrpg Deco",
+      "icon": ""
+    },
+    "82000132": {
+      "name": "Halloween 24 Roof 2",
+      "icon": ""
+    },
+    "82000133": {
+      "name": "Halloween 24 Deco 2",
+      "icon": ""
+    },
+    "82000134": {
+      "name": "Clashmas 24 Roof 2",
+      "icon": ""
+    },
+    "82000135": {
+      "name": "Clashmas 24 Deco 2",
+      "icon": ""
+    },
+    "82000136": {
+      "name": "Lny25 Roof",
+      "icon": ""
+    },
+    "82000137": {
+      "name": "Lny25 Deco",
+      "icon": ""
+    },
+    "82000138": {
+      "name": "April25 Deco",
+      "icon": ""
+    },
+    "82000139": {
+      "name": "April25 Ground",
+      "icon": ""
+    },
+    "82000140": {
+      "name": "Darkdays Foot",
+      "icon": ""
+    },
+    "82000141": {
+      "name": "Darkdays Ground",
+      "icon": ""
+    },
+    "82000142": {
+      "name": "Clasharama Roof",
+      "icon": ""
+    },
+    "82000143": {
+      "name": "Clasharama Deco",
+      "icon": ""
+    },
+    "82000144": {
+      "name": "Clasharama Foot",
+      "icon": ""
+    },
+    "82000145": {
+      "name": "Clasharama Ground",
+      "icon": ""
+    }
+  }
+}
