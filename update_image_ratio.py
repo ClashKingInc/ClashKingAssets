@@ -1,9 +1,10 @@
 import os, glob, re
 from PIL import Image
 
-NEW_NAME   = "crafting-station"
-INPUT_DIR  = f"assets/home-base/buildings/{NEW_NAME}"
+NEW_NAME   = "pekka"
+INPUT_DIR  = f"assets/home-base/troops/{NEW_NAME}"
 OUTPUT_DIR = INPUT_DIR
+
 DELETE = True
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -33,8 +34,14 @@ for path in paths:
     size    = max(w, h)
     canvas  = Image.new("RGBA", (size, size), (0, 0, 0, 0))
     canvas.paste(cropped, ((size - w)//2, (size - h)//2))
-
     out_name = f"{NEW_NAME}-{count}.png"
+
+    if count == 1:
+        out_name = f"{NEW_NAME}-icon.png"
+
+    if count == 2:
+        out_name = f"{NEW_NAME}-character.png"
+
     canvas.save(os.path.join(OUTPUT_DIR, out_name))
     count += 1
     print(f"Saved {out_name}")

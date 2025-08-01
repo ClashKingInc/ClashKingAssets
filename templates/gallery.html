@@ -171,9 +171,9 @@
         card.onclick = () => openModal(item);
 
         const thumb =
-          item.meta.full ||
           item.meta.icon ||
-          (item.meta.levels && item.meta.levels["1"]) ||
+          item.meta.character ||
+          (item.meta.levels && item.meta.levels[Object.keys(item.meta.levels).pop()]) ||
           Object.values(item.meta).find(v => v && v.endsWith(".png"));
 
         const img = document.createElement("img");
@@ -207,7 +207,7 @@
 
       // Collect image variants
       const sources = [];
-      if (meta.full)  sources.push({ src: meta.full,  label: "Full" });
+      if (meta.character)  sources.push({ src: meta.character,  label: "Character Pose" });
       if (meta.icon)  sources.push({ src: meta.icon,  label: "Icon" });
       if (meta.levels) {
         Object.entries(meta.levels).forEach(([lvl, src]) =>

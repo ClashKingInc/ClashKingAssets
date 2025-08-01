@@ -1050,36 +1050,36 @@
     "1000084": {
       "name": "Multi-Archer Tower",
       "levels": {
-        "1": "/builder-base/buildings/multi-archer-tower/multi-archer-tower-1.png",
-        "2": "/builder-base/buildings/multi-archer-tower/multi-archer-tower-2.png",
-        "3": "/builder-base/buildings/multi-archer-tower/multi-archer-tower-3.png"
+        "1": "/home-base/buildings/multi-archer-tower/multi-archer-tower-1.png",
+        "2": "/home-base/buildings/multi-archer-tower/multi-archer-tower-2.png",
+        "3": "/home-base/buildings/multi-archer-tower/multi-archer-tower-3.png"
       }
     },
     "1000085": {
       "name": "Ricochet Cannon",
       "levels": {
-        "1": "/builder-base/buildings/ricochet-cannon/ricochet-cannon-1.png",
-        "2": "/builder-base/buildings/ricochet-cannon/ricochet-cannon-2.png",
-        "3": "/builder-base/buildings/ricochet-cannon/ricochet-cannon-3.png"
+        "1": "/home-base/buildings/ricochet-cannon/ricochet-cannon-1.png",
+        "2": "/home-base/buildings/ricochet-cannon/ricochet-cannon-2.png",
+        "3": "/home-base/buildings/ricochet-cannon/ricochet-cannon-3.png"
       }
     },
     "1000089": {
       "name": "Firespitter",
       "levels": {
-        "1": "/builder-base/buildings/firespitter/firespitter-1.png",
-        "2": "/builder-base/buildings/firespitter/firespitter-2.png"
+        "1": "/home-base/buildings/firespitter/firespitter-1.png",
+        "2": "/home-base/buildings/firespitter/firespitter-2.png"
       }
     },
     "1000093": {
       "name": "Helper Hut",
       "levels": {
-        "1": "/builder-base/buildings/helper-hut/helper-hut-1.png"
+        "1": "/home-base/buildings/helper-hut/helper-hut-1.png"
       }
     },
     "1000097": {
       "name": "Crafting Station",
       "levels": {
-        "1": "/builder-base/buildings/crafting-station/crafting-station-1.png"
+        "1": "/home-base/buildings/crafting-station/crafting-station-1.png"
       }
     }
   },
@@ -1091,13 +1091,6 @@
       "tier_2": "/home-base/seasonal-defenses/hook-tower/hook-tower-2.png",
       "tier_3": "/home-base/seasonal-defenses/hook-tower/hook-tower-3.png",
       "tier_4": "/home-base/seasonal-defenses/hook-tower/hook-tower-4.png"
-    },
-    "3271576464": {
-      "name": "Sun Beam",
-      "icon": "",
-      "tier_1": "",
-      "tier_2": "",
-      "tier_3": ""
     },
     "3616099271": {
       "name": "Flame Spinner",
@@ -1112,738 +1105,731 @@
       "tier_1": "",
       "tier_2": "",
       "tier_3": ""
-    },
-    "2172091388": {
-      "name": "Lazy Laser",
-      "icon": "",
-      "tier_1": "",
-      "tier_2": "",
-      "tier_3": ""
     }
   },
   "traps": {
     "12000000": {
       "name": "Bomb",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": "",
-        "11": "",
-        "12": "",
-        "13": ""
+        "1": "/home-base/traps/bomb/bomb-1.png",
+        "2": "/home-base/traps/bomb/bomb-2.png",
+        "3": "/home-base/traps/bomb/bomb-3.png",
+        "4": "/home-base/traps/bomb/bomb-4.png",
+        "5": "/home-base/traps/bomb/bomb-5.png",
+        "6": "/home-base/traps/bomb/bomb-6.png",
+        "7": "/home-base/traps/bomb/bomb-7.png",
+        "8": "/home-base/traps/bomb/bomb-8.png",
+        "9": "/home-base/traps/bomb/bomb-9.png",
+        "10": "/home-base/traps/bomb/bomb-10.png",
+        "11": "/home-base/traps/bomb/bomb-11.png",
+        "12": "/home-base/traps/bomb/bomb-12.png",
+        "13": "/home-base/traps/bomb/bomb-13.png"
       }
     },
     "12000001": {
       "name": "Spring Trap",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": ""
+        "1": "/home-base/traps/spring-trap/spring-trap-1.png",
+        "2": "/home-base/traps/spring-trap/spring-trap-2.png",
+        "3": "/home-base/traps/spring-trap/spring-trap-3.png",
+        "4": "/home-base/traps/spring-trap/spring-trap-4.png",
+        "5": "/home-base/traps/spring-trap/spring-trap-5.png"
       }
     },
     "12000002": {
       "name": "Giant Bomb",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": "",
-        "11": ""
+        "1": "/home-base/traps/giant-bomb/giant-bomb-1.png",
+        "2": "/home-base/traps/giant-bomb/giant-bomb-2.png",
+        "3": "/home-base/traps/giant-bomb/giant-bomb-3.png",
+        "4": "/home-base/traps/giant-bomb/giant-bomb-4.png",
+        "5": "/home-base/traps/giant-bomb/giant-bomb-5.png",
+        "6": "/home-base/traps/giant-bomb/giant-bomb-6.png",
+        "7": "/home-base/traps/giant-bomb/giant-bomb-7.png",
+        "8": "/home-base/traps/giant-bomb/giant-bomb-8.png",
+        "9": "/home-base/traps/giant-bomb/giant-bomb-9.png",
+        "10": "/home-base/traps/giant-bomb/giant-bomb-10.png",
+        "11": "/home-base/traps/giant-bomb/giant-bomb-11.png"
       }
     },
     "12000005": {
       "name": "Air Bomb",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": "",
-        "11": "",
-        "12": ""
+        "1": "/home-base/traps/air-bomb/air-bomb-1.png",
+        "2": "/home-base/traps/air-bomb/air-bomb-2.png",
+        "3": "/home-base/traps/air-bomb/air-bomb-3.png",
+        "4": "/home-base/traps/air-bomb/air-bomb-4.png",
+        "5": "/home-base/traps/air-bomb/air-bomb-5.png",
+        "6": "/home-base/traps/air-bomb/air-bomb-6.png",
+        "7": "/home-base/traps/air-bomb/air-bomb-7.png",
+        "8": "/home-base/traps/air-bomb/air-bomb-8.png",
+        "9": "/home-base/traps/air-bomb/air-bomb-9.png",
+        "10": "/home-base/traps/air-bomb/air-bomb-10.png",
+        "11": "/home-base/traps/air-bomb/air-bomb-11.png",
+        "12": "/home-base/traps/air-bomb/air-bomb-12.png"
       }
     },
     "12000006": {
       "name": "Seeking Air Mine",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": ""
+        "1": "/home-base/traps/seeking-air-mine/seeking-air-mine-1.png",
+        "2": "/home-base/traps/seeking-air-mine/seeking-air-mine-2.png",
+        "3": "/home-base/traps/seeking-air-mine/seeking-air-mine-3.png",
+        "4": "/home-base/traps/seeking-air-mine/seeking-air-mine-4.png",
+        "5": "/home-base/traps/seeking-air-mine/seeking-air-mine-5.png",
+        "6": "/home-base/traps/seeking-air-mine/seeking-air-mine-6.png",
+        "7": "/home-base/traps/seeking-air-mine/seeking-air-mine-7.png"
       }
     },
     "12000008": {
       "name": "Skeleton Trap",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": ""
+        "1": "/home-base/traps/skeleton-trap/skeleton-trap-1.png",
+        "2": "/home-base/traps/skeleton-trap/skeleton-trap-2.png",
+        "3": "/home-base/traps/skeleton-trap/skeleton-trap-3.png",
+        "4": "/home-base/traps/skeleton-trap/skeleton-trap-4.png"
       }
     },
     "12000010": {
       "name": "Spring Trap",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": ""
+        "1": "/builder-base/traps/spring-trap/spring-trap-1.png",
+        "2": "/builder-base/traps/spring-trap/spring-trap-2.png",
+        "3": "/builder-base/traps/spring-trap/spring-trap-3.png",
+        "4": "/builder-base/traps/spring-trap/spring-trap-4.png"
       }
     },
     "12000011": {
       "name": "Push Trap",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/traps/push-trap/push-trap-1.png",
+        "2": "/builder-base/traps/push-trap/push-trap-2.png",
+        "3": "/builder-base/traps/push-trap/push-trap-3.png",
+        "4": "/builder-base/traps/push-trap/push-trap-4.png",
+        "5": "/builder-base/traps/push-trap/push-trap-5.png",
+        "6": "/builder-base/traps/push-trap/push-trap-6.png",
+        "7": "/builder-base/traps/push-trap/push-trap-7.png",
+        "8": "/builder-base/traps/push-trap/push-trap-8.png",
+        "9": "/builder-base/traps/push-trap/push-trap-9.png",
+        "10": "/builder-base/traps/push-trap/push-trap-10.png"
       }
     },
     "12000013": {
       "name": "Mine",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/traps/mine/mine-1.png",
+        "2": "/builder-base/traps/mine/mine-2.png",
+        "3": "/builder-base/traps/mine/mine-3.png",
+        "4": "/builder-base/traps/mine/mine-4.png",
+        "5": "/builder-base/traps/mine/mine-5.png",
+        "6": "/builder-base/traps/mine/mine-6.png",
+        "7": "/builder-base/traps/mine/mine-7.png",
+        "8": "/builder-base/traps/mine/mine-8.png",
+        "9": "/builder-base/traps/mine/mine-9.png",
+        "10": "/builder-base/traps/mine/mine-10.png"
       }
     },
     "12000014": {
       "name": "Mega Mine",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": ""
+        "1": "/builder-base/traps/mega-mine/mega-mine-1.png",
+        "2": "/builder-base/traps/mega-mine/mega-mine-2.png",
+        "3": "/builder-base/traps/mega-mine/mega-mine-3.png",
+        "4": "/builder-base/traps/mega-mine/mega-mine-4.png",
+        "5": "/builder-base/traps/mega-mine/mega-mine-5.png",
+        "6": "/builder-base/traps/mega-mine/mega-mine-6.png",
+        "7": "/builder-base/traps/mega-mine/mega-mine-7.png",
+        "8": "/builder-base/traps/mega-mine/mega-mine-8.png",
+        "9": "/builder-base/traps/mega-mine/mega-mine-9.png",
+        "10": "/builder-base/traps/mega-mine/mega-mine-10.png"
       }
     },
     "12000016": {
       "name": "Tornado Trap",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": ""
+        "1": "/home-base/traps/tornado-trap/tornado-trap-1.png",
+        "2": "/home-base/traps/tornado-trap/tornado-trap-2.png",
+        "3": "/home-base/traps/tornado-trap/tornado-trap-3.png"
       }
     },
     "12000020": {
       "name": "Giga Bomb",
       "levels": {
-        "1": "",
-        "2": "",
-        "3": ""
+        "1": "/home-base/traps/giga-bomb/giga-bomb-1.png",
+        "2": "/home-base/traps/giga-bomb/giga-bomb-2.png",
+        "3": "/home-base/traps/giga-bomb/giga-bomb-3.png"
       }
     }
   },
   "troops": {
     "4000000": {
       "name": "Barbarian",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/barbarian/barbarian-icon.png",
+      "character": "/home-base/troops/barbarian/barbarian-character.png"
     },
     "4000001": {
       "name": "Archer",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/archer/archer-icon.png",
+      "character": "/home-base/troops/archer/archer-character.png"
     },
     "4000002": {
       "name": "Goblin",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/goblin/goblin-icon.png",
+      "character": "/home-base/troops/goblin/goblin-character.png"
     },
     "4000003": {
       "name": "Giant",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/giant/giant-icon.png",
+      "character": "/home-base/troops/giant/giant-character.png"
     },
     "4000004": {
       "name": "Wall Breaker",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/wall-breaker/wall-breaker-icon.png",
+      "character": "/home-base/troops/wall-breaker/wall-breaker-character.png"
     },
     "4000005": {
       "name": "Balloon",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/balloon/balloon-icon.png",
+      "character": "/home-base/troops/balloon/balloon-character.png"
     },
     "4000006": {
       "name": "Wizard",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/wizard/wizard-icon.png",
+      "character": "/home-base/troops/wizard/wizard-character.png"
     },
     "4000007": {
       "name": "Healer",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/healer/healer-icon.png",
+      "character": "/home-base/troops/healer/healer-character.png"
     },
     "4000008": {
       "name": "Dragon",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/dragon/dragon-icon.png",
+      "character": "/home-base/troops/dragon/dragon-character.png"
     },
     "4000009": {
       "name": "P.E.K.K.A",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/pekka/pekka-icon.png",
+      "character": "/home-base/troops/pekka/pekka-character.png"
     },
     "4000010": {
       "name": "Minion",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/minion/minion-icon.png",
+      "character": "/home-base/troops/minion/minion-character.png"
     },
     "4000011": {
       "name": "Hog Rider",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/hog-rider/hog-rider-icon.png",
+      "character": "/home-base/troops/hog-rider/hog-rider-character.png"
     },
     "4000012": {
       "name": "Valkyrie",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/valkyrie/valkyrie-icon.png",
+      "character": "/home-base/troops/valkyrie/valkyrie-character.png"
     },
     "4000013": {
       "name": "Golem",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/golem/golem-icon.png",
+      "character": "/home-base/troops/golem/golem-character.png"
     },
     "4000015": {
       "name": "Witch",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/witch/witch-icon.png",
+      "character": "/home-base/troops/witch/witch-character.png"
     },
     "4000017": {
       "name": "Lava Hound",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/lava-hound/lava-hound-icon.png",
+      "character": "/home-base/troops/lava-hound/lava-hound-character.png"
     },
     "4000022": {
       "name": "Bowler",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/bowler/bowler-icon.png",
+      "character": "/home-base/troops/bowler/bowler-character.png"
     },
     "4000023": {
       "name": "Baby Dragon",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/baby-dragon/baby-dragon-icon.png",
+      "character": "/home-base/troops/baby-dragon/baby-dragon-character.png"
     },
     "4000024": {
       "name": "Miner",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/miner/miner-icon.png",
+      "character": "/home-base/troops/miner/miner-character.png"
     },
     "4000026": {
       "name": "Super Barbarian",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/super-barbarian/super-barbarian-icon.png",
+      "character": "/home-base/troops/super-barbarian/super-barbarian-character.png"
     },
     "4000027": {
       "name": "Super Archer",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/super-archer/super-archer-icon.png",
+      "character": "/home-base/troops/super-archer/super-archer-character.png"
     },
     "4000028": {
       "name": "Super Wall Breaker",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/super-wall-breaker/super-wall-breaker-icon.png",
+      "character": "/home-base/troops/super-wall-breaker/super-wall-breaker-character.png"
     },
     "4000029": {
       "name": "Super Giant",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/super-giant/super-giant-icon.png",
+      "character": "/home-base/troops/super-giant/super-giant-character.png"
     },
     "4000030": {
       "name": "Ice Wizard",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/troops/ice-wizard/ice-wizard-icon.png",
+      "character": "/home-base/troops/ice-wizard/ice-wizard-character.png"
     },
     "4000031": {
       "name": "Raged Barbarian",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000032": {
       "name": "Sneaky Archer",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000033": {
       "name": "Beta Minion",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000034": {
       "name": "Boxer Giant",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000035": {
       "name": "Bomber",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000036": {
       "name": "Power P.E.K.K.A",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000037": {
       "name": "Cannon Cart",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000038": {
       "name": "Drop Ship",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000041": {
       "name": "Baby Dragon",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000042": {
       "name": "Night Witch",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000045": {
       "name": "Battle Ram",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000047": {
       "name": "Royal Ghost",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000048": {
       "name": "Pumpkin Barbarian",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000050": {
       "name": "Giant Skeleton",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000051": {
       "name": "Wall Wrecker",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000052": {
       "name": "Battle Blimp",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000053": {
       "name": "Yeti",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000055": {
       "name": "Sneaky Goblin",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000056": {
       "name": "Super Miner",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000057": {
       "name": "Rocket Balloon",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000058": {
       "name": "Ice Golem",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000059": {
       "name": "Electro Dragon",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000061": {
       "name": "Skeleton Barrel",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000062": {
       "name": "Stone Slammer",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000063": {
       "name": "Inferno Dragon",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000064": {
       "name": "Super Valkyrie",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000065": {
       "name": "Dragon Rider",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000066": {
       "name": "Super Witch",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000067": {
       "name": "M.E.C.H.A",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000070": {
       "name": "Hog Glider",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000072": {
       "name": "Party Wizard",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000075": {
       "name": "Siege Barracks",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000076": {
       "name": "Ice Hound",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000080": {
       "name": "Super Bowler",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000081": {
       "name": "Super Dragon",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000082": {
       "name": "Headhunter",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000083": {
       "name": "Super Wizard",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000084": {
       "name": "Super Minion",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000087": {
       "name": "Log Launcher",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000091": {
       "name": "Flame Flinger",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000092": {
       "name": "Battle Drill",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000094": {
       "name": "Ram Rider",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000095": {
       "name": "Electro Titan",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000097": {
       "name": "Apprentice Warden",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000098": {
       "name": "Super Hog Rider",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000101": {
       "name": "Barcher",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000102": {
       "name": "Witch Golem",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000103": {
       "name": "Hog Wizard",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000104": {
       "name": "Lavaloon",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000106": {
       "name": "Electrofire Wizard",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000110": {
       "name": "Root Rider",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000118": {
       "name": "C.O.O.K.I.E",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000119": {
       "name": "Firecracker",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000120": {
       "name": "Azure Dragon",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000121": {
       "name": "Barbarian Kicker",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000122": {
       "name": "Giant Thrower",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000123": {
       "name": "Druid",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000125": {
       "name": "Broom Witch",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000130": {
       "name": "Ice Minion",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000132": {
       "name": "Thrower",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000135": {
       "name": "Troop Launcher",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000136": {
       "name": "Debt Collector",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000142": {
       "name": "Snake Barrel",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000147": {
       "name": "Super Yeti",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000150": {
       "name": "Furnace",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000156": {
       "name": "Giant Giant",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000157": {
       "name": "K.A.N.E",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000158": {
       "name": "The Disarmer",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000159": {
       "name": "YEETer",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000164": {
       "name": "YEETer",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "4000165": {
       "name": "The Disarmer",
       "icon": "",
-      "full": ""
+      "character": ""
     }
   },
   "heroes": {
     "28000000": {
       "name": "Barbarian King",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "28000001": {
       "name": "Archer Queen",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "28000002": {
       "name": "Grand Warden",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "28000003": {
       "name": "Battle Machine",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "28000004": {
       "name": "Royal Champion",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "28000005": {
       "name": "Battle Copter",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "28000006": {
       "name": "Minion Prince",
       "icon": "",
-      "full": ""
+      "character": ""
     }
   },
   "pets": {
     "73000000": {
       "name": "L.A.S.S.I",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "73000001": {
       "name": "Mighty Yak",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "73000002": {
       "name": "Electro Owl",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "73000003": {
       "name": "Unicorn",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "73000004": {
       "name": "Phoenix",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "73000007": {
       "name": "Poison Lizard",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "73000008": {
       "name": "Diggy",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "73000009": {
       "name": "Frosty",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "73000010": {
       "name": "Spirit Fox",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "73000011": {
       "name": "Angry Jelly",
       "icon": "",
-      "full": ""
+      "character": ""
     },
     "73000016": {
       "name": "Sneezy",
       "icon": "",
-      "full": ""
+      "character": ""
     }
   },
   "equipment": {
@@ -4382,19 +4368,19 @@
     },
     "82000008": {
       "name": "Classic Roof 1",
-      "icon": ""
+      "icon": "/capital-base/capital-house-parts/classic-roof-1.png"
     },
     "82000009": {
       "name": "Classic Roof 2",
-      "icon": ""
+      "icon": "/capital-base/capital-house-parts/classic-roof-2.png"
     },
     "82000010": {
       "name": "Classic Roof 3",
-      "icon": ""
+      "icon": "/capital-base/capital-house-parts/classic-roof-3.png"
     },
     "82000011": {
       "name": "Classic Roof 4",
-      "icon": ""
+      "icon": "/capital-base/capital-house-parts/classic-roof-4.png"
     },
     "82000013": {
       "name": "Thatch Roof 1",

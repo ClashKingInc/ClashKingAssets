@@ -12225,7 +12225,7 @@
       "attack_range": 300,
       "housing_space": 4,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -13944,7 +13944,7 @@
       "attack_range": 60,
       "housing_space": 4,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -14075,7 +14075,7 @@
       "attack_range": 50,
       "housing_space": 8,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -14206,7 +14206,7 @@
       "attack_range": 40,
       "housing_space": 1,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -14292,7 +14292,7 @@
       "attack_range": 100,
       "housing_space": 20,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -15115,7 +15115,7 @@
       "attack_range": 0,
       "housing_space": 5,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -15683,7 +15683,7 @@
       "attack_range": 60,
       "housing_space": 10,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -15890,7 +15890,7 @@
       "attack_range": 300,
       "housing_space": 4,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -16858,7 +16858,7 @@
       "attack_range": 350,
       "housing_space": 12,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -17227,7 +17227,7 @@
       "attack_range": 350,
       "housing_space": 3,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -17349,7 +17349,7 @@
       "attack_range": 100,
       "housing_space": 41,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -17471,7 +17471,7 @@
       "attack_range": 250,
       "housing_space": 7,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -17593,7 +17593,7 @@
       "attack_range": 0,
       "housing_space": 23,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -17822,7 +17822,7 @@
       "attack_range": 60,
       "housing_space": 10,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -17953,7 +17953,7 @@
       "attack_range": 600,
       "housing_space": 10,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -18084,7 +18084,7 @@
       "attack_range": 250,
       "housing_space": 40,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -18215,7 +18215,7 @@
       "attack_range": 60,
       "housing_space": 12,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -18346,7 +18346,7 @@
       "attack_range": 70,
       "housing_space": 15,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -18544,7 +18544,7 @@
       "attack_range": 350,
       "housing_space": 20,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -18675,7 +18675,7 @@
       "attack_range": 150,
       "housing_space": 4,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -18904,7 +18904,7 @@
       "attack_range": 40,
       "housing_space": 4,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -19035,7 +19035,7 @@
       "attack_range": 0,
       "housing_space": 8,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -19310,7 +19310,7 @@
       "attack_range": 100,
       "housing_space": 50,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -19468,7 +19468,7 @@
       "attack_range": 150,
       "housing_space": 75,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -19626,7 +19626,7 @@
       "attack_range": 50,
       "housing_space": 60,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -19757,7 +19757,7 @@
       "attack_range": 650,
       "housing_space": 45,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -19915,7 +19915,7 @@
       "attack_range": 650,
       "housing_space": 45,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -20073,7 +20073,7 @@
       "attack_range": 50,
       "housing_space": 60,
       "village_type": "home",
-      "is_seasonal_troop": true,
+      "is_seasonal": true,
       "levels": [
         {
           "level": 1,
@@ -20182,6 +20182,1354 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": null
+        }
+      ]
+    }
+  ],
+  "spells": [
+    {
+      "_id": 26000000,
+      "name": "Lightning Spell",
+      "info": "Electrocute your enemies with a bolt of lightning!\\n\\nCast this Spell at the enemy Village to damage and stun Buildings and units inside a small area.",
+      "TID": {
+        "name": "TID_LIGHTNING_STORM",
+        "info": "TID_LIGHTNING_STORM_INFO"
+      },
+      "production_building": "Spell Factory",
+      "production_building_level": 1,
+      "upgrade_resource": "Elixir",
+      "radius": 200,
+      "housing_space": 1,
+      "levels": [
+        {
+          "level": 1,
+          "damage": 150,
+          "upgrade_time": 7200,
+          "upgrade_cost": 50000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": 180,
+          "upgrade_time": 14400,
+          "upgrade_cost": 100000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 3,
+          "damage": 210,
+          "upgrade_time": 21600,
+          "upgrade_cost": 200000,
+          "required_lab_level": 2,
+          "required_townhall": 4
+        },
+        {
+          "level": 4,
+          "damage": 240,
+          "upgrade_time": 86400,
+          "upgrade_cost": 600000,
+          "required_lab_level": 3,
+          "required_townhall": 5
+        },
+        {
+          "level": 5,
+          "damage": 270,
+          "upgrade_time": 129600,
+          "upgrade_cost": 1500000,
+          "required_lab_level": 6,
+          "required_townhall": 8
+        },
+        {
+          "level": 6,
+          "damage": 320,
+          "upgrade_time": 259200,
+          "upgrade_cost": 2500000,
+          "required_lab_level": 7,
+          "required_townhall": 9
+        },
+        {
+          "level": 7,
+          "damage": 400,
+          "upgrade_time": 302400,
+          "upgrade_cost": 4200000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 8,
+          "damage": 480,
+          "upgrade_time": 432000,
+          "upgrade_cost": 6300000,
+          "required_lab_level": 9,
+          "required_townhall": 11
+        },
+        {
+          "level": 9,
+          "damage": 560,
+          "upgrade_time": 604800,
+          "upgrade_cost": 10000000,
+          "required_lab_level": 10,
+          "required_townhall": 12
+        },
+        {
+          "level": 10,
+          "damage": 600,
+          "upgrade_time": 691200,
+          "upgrade_cost": 13500000,
+          "required_lab_level": 13,
+          "required_townhall": 15
+        },
+        {
+          "level": 11,
+          "damage": 640,
+          "upgrade_time": 1209600,
+          "upgrade_cost": 18500000,
+          "required_lab_level": 14,
+          "required_townhall": 16
+        },
+        {
+          "level": 12,
+          "damage": 680,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 15,
+          "required_townhall": 17
+        }
+      ]
+    },
+    {
+      "_id": 26000001,
+      "name": "Healing Spell",
+      "info": "Heal your Troops to keep them in the fight!\\n\\nCast this Spell to create a Ring of Healing. Your units will be healed while they are inside this ring.",
+      "TID": {
+        "name": "TID_HEALING_WAVE",
+        "info": "TID_HEALING_WAVE_INFO"
+      },
+      "production_building": "Spell Factory",
+      "production_building_level": 2,
+      "upgrade_resource": "Elixir",
+      "radius": 500,
+      "housing_space": 2,
+      "levels": [
+        {
+          "level": 1,
+          "damage": -15,
+          "upgrade_time": 10800,
+          "upgrade_cost": 75000,
+          "required_lab_level": 2,
+          "required_townhall": 4
+        },
+        {
+          "level": 2,
+          "damage": -20,
+          "upgrade_time": 21600,
+          "upgrade_cost": 150000,
+          "required_lab_level": 2,
+          "required_townhall": 4
+        },
+        {
+          "level": 3,
+          "damage": -25,
+          "upgrade_time": 43200,
+          "upgrade_cost": 300000,
+          "required_lab_level": 4,
+          "required_townhall": 6
+        },
+        {
+          "level": 4,
+          "damage": -30,
+          "upgrade_time": 86400,
+          "upgrade_cost": 900000,
+          "required_lab_level": 5,
+          "required_townhall": 7
+        },
+        {
+          "level": 5,
+          "damage": -35,
+          "upgrade_time": 129600,
+          "upgrade_cost": 1800000,
+          "required_lab_level": 6,
+          "required_townhall": 8
+        },
+        {
+          "level": 6,
+          "damage": -40,
+          "upgrade_time": 259200,
+          "upgrade_cost": 3000000,
+          "required_lab_level": 7,
+          "required_townhall": 9
+        },
+        {
+          "level": 7,
+          "damage": -45,
+          "upgrade_time": 432000,
+          "upgrade_cost": 6000000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 8,
+          "damage": -50,
+          "upgrade_time": 604800,
+          "upgrade_cost": 11000000,
+          "required_lab_level": 11,
+          "required_townhall": 13
+        },
+        {
+          "level": 9,
+          "damage": -55,
+          "upgrade_time": 691200,
+          "upgrade_cost": 14000000,
+          "required_lab_level": 13,
+          "required_townhall": 15
+        },
+        {
+          "level": 10,
+          "damage": -60,
+          "upgrade_time": 1296000,
+          "upgrade_cost": 19000000,
+          "required_lab_level": 14,
+          "required_townhall": 16
+        },
+        {
+          "level": 11,
+          "damage": -65,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 15,
+          "required_townhall": 17
+        }
+      ]
+    },
+    {
+      "_id": 26000002,
+      "name": "Rage Spell",
+      "info": "Enrage your units to make them bigger, faster and stronger!\\n\\nCast this to create a Ring of Rage! Your units will gain speed and attack power while they are inside this ring.",
+      "TID": {
+        "name": "TID_HASTE",
+        "info": "TID_HASTE_INFO"
+      },
+      "production_building": "Spell Factory",
+      "production_building_level": 3,
+      "upgrade_resource": "Elixir",
+      "radius": 500,
+      "housing_space": 2,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 21600,
+          "upgrade_cost": 400000,
+          "required_lab_level": 3,
+          "required_townhall": 5
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 43200,
+          "upgrade_cost": 800000,
+          "required_lab_level": 3,
+          "required_townhall": 5
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 86400,
+          "upgrade_cost": 1000000,
+          "required_lab_level": 4,
+          "required_townhall": 6
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 172800,
+          "upgrade_cost": 2000000,
+          "required_lab_level": 5,
+          "required_townhall": 7
+        },
+        {
+          "level": 5,
+          "damage": null,
+          "upgrade_time": 345600,
+          "upgrade_cost": 5000000,
+          "required_lab_level": 6,
+          "required_townhall": 8
+        },
+        {
+          "level": 6,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 10,
+          "required_townhall": 12
+        }
+      ]
+    },
+    {
+      "_id": 26000003,
+      "name": "Jump Spell",
+      "info": "Walls slowing you down? Try making a shortcut!\\n\\nCast this Spell near enemy Walls to create a route straight over them. Your Troops will jump over affected wall pieces as if they weren't even there!",
+      "TID": {
+        "name": "TID_JUMP_SPELL",
+        "info": "TID_JUMP_SPELL_INFO"
+      },
+      "production_building": "Spell Factory",
+      "production_building_level": 4,
+      "upgrade_resource": "Elixir",
+      "radius": 350,
+      "housing_space": 2,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 86400,
+          "upgrade_cost": 1000000,
+          "required_lab_level": 4,
+          "required_townhall": 6
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 172800,
+          "upgrade_cost": 2000000,
+          "required_lab_level": 5,
+          "required_townhall": 7
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 345600,
+          "upgrade_cost": 5000000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 561600,
+          "upgrade_cost": 8000000,
+          "required_lab_level": 11,
+          "required_townhall": 13
+        },
+        {
+          "level": 5,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 13,
+          "required_townhall": 15
+        }
+      ]
+    },
+    {
+      "_id": 26000005,
+      "name": "Freeze Spell",
+      "info": "When the going gets hot, stay frosty!\\n\\nThe Freeze Spell sends out a cryogenic blast that temporarily immobilizes enemy troops and disables defensive buildings within its radius.",
+      "TID": {
+        "name": "TID_FREEZE_SPELL",
+        "info": "TID_FREEZE_SPELL_INFO"
+      },
+      "production_building": "Spell Factory",
+      "production_building_level": 4,
+      "upgrade_resource": "Elixir",
+      "radius": 350,
+      "housing_space": 1,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 86400,
+          "upgrade_cost": 1200000,
+          "required_lab_level": 7,
+          "required_townhall": 9
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 129600,
+          "upgrade_cost": 1700000,
+          "required_lab_level": 7,
+          "required_townhall": 9
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 172800,
+          "upgrade_cost": 3000000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 216000,
+          "upgrade_cost": 4200000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 5,
+          "damage": null,
+          "upgrade_time": 302400,
+          "upgrade_cost": 6000000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 6,
+          "damage": null,
+          "upgrade_time": 432000,
+          "upgrade_cost": 7000000,
+          "required_lab_level": 9,
+          "required_townhall": 11
+        },
+        {
+          "level": 7,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 10,
+          "required_townhall": 12
+        }
+      ]
+    },
+    {
+      "_id": 26000006,
+      "name": "Santa's Surprise",
+      "info": "Ask Santa for the best present there is: a hail of destruction raining down on your enemies!",
+      "TID": {
+        "name": "TID_XMAS_SPELL",
+        "info": "TID_XMAS_SPELL_INFO"
+      },
+      "production_building": "Spell Factory",
+      "production_building_level": 1,
+      "upgrade_resource": "Elixir",
+      "radius": 150,
+      "housing_space": 2,
+      "is_seasonal": true,
+      "levels": [
+        {
+          "level": 1,
+          "damage": 180,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 6
+        },
+        {
+          "level": 2,
+          "damage": 190,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 7
+        },
+        {
+          "level": 3,
+          "damage": 200,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 8
+        },
+        {
+          "level": 4,
+          "damage": 210,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 9
+        },
+        {
+          "level": 5,
+          "damage": 230,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 10
+        },
+        {
+          "level": 6,
+          "damage": 260,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 11
+        },
+        {
+          "level": 7,
+          "damage": 280,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 12
+        },
+        {
+          "level": 8,
+          "damage": 300,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 13
+        },
+        {
+          "level": 9,
+          "damage": 330,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 14
+        },
+        {
+          "level": 10,
+          "damage": 350,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 15
+        },
+        {
+          "level": 11,
+          "damage": 370,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 16
+        },
+        {
+          "level": 12,
+          "damage": 390,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 17
+        }
+      ]
+    },
+    {
+      "_id": 26000009,
+      "name": "Poison Spell",
+      "info": "Give your army the upper hand against enemy troops with this deadly poison!\\n\\nDefending units that linger in a Poison Spell's toxic cloud will move slower, attack slower and take damage with increasing severity over time. Poison Spells do not affect structures.",
+      "TID": {
+        "name": "TID_POISON_CLOUD",
+        "info": "TID_POISON_CLOUD_INFO"
+      },
+      "production_building": "Dark Spell Factory",
+      "production_building_level": 1,
+      "upgrade_resource": "Dark Elixir",
+      "radius": 400,
+      "housing_space": 1,
+      "levels": [
+        {
+          "level": 1,
+          "damage": 90,
+          "upgrade_time": 21600,
+          "upgrade_cost": 5000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": 115,
+          "upgrade_time": 64800,
+          "upgrade_cost": 10000,
+          "required_lab_level": 6,
+          "required_townhall": 8
+        },
+        {
+          "level": 3,
+          "damage": 145,
+          "upgrade_time": 172800,
+          "upgrade_cost": 21500,
+          "required_lab_level": 7,
+          "required_townhall": 9
+        },
+        {
+          "level": 4,
+          "damage": 180,
+          "upgrade_time": 259200,
+          "upgrade_cost": 35000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 5,
+          "damage": 220,
+          "upgrade_time": 345600,
+          "upgrade_cost": 55000,
+          "required_lab_level": 9,
+          "required_townhall": 11
+        },
+        {
+          "level": 6,
+          "damage": 260,
+          "upgrade_time": 432000,
+          "upgrade_cost": 77500,
+          "required_lab_level": 10,
+          "required_townhall": 12
+        },
+        {
+          "level": 7,
+          "damage": 280,
+          "upgrade_time": 604800,
+          "upgrade_cost": 100000,
+          "required_lab_level": 11,
+          "required_townhall": 13
+        },
+        {
+          "level": 8,
+          "damage": 300,
+          "upgrade_time": 691200,
+          "upgrade_cost": 135000,
+          "required_lab_level": 12,
+          "required_townhall": 14
+        },
+        {
+          "level": 9,
+          "damage": 320,
+          "upgrade_time": 777600,
+          "upgrade_cost": 175000,
+          "required_lab_level": 13,
+          "required_townhall": 15
+        },
+        {
+          "level": 10,
+          "damage": 340,
+          "upgrade_time": 1252800,
+          "upgrade_cost": 280000,
+          "required_lab_level": 14,
+          "required_townhall": 16
+        },
+        {
+          "level": 11,
+          "damage": 360,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 15,
+          "required_townhall": 17
+        }
+      ]
+    },
+    {
+      "_id": 26000010,
+      "name": "Earthquake Spell",
+      "info": "Weaken Walls and Buildings with crippling earthquakes!\\n\\nEarthquake Spells damage structures based on their maximum hitpoints. Repeated earthquakes deal decreasing damage to the same Buildings, but increasing damage to the same Walls. No Wall can withstand the might of four Earthquake Spells!",
+      "TID": {
+        "name": "TID_EARTHQUAKE",
+        "info": "TID_EARTHQUAKE_INFO"
+      },
+      "production_building": "Dark Spell Factory",
+      "production_building_level": 2,
+      "upgrade_resource": "Dark Elixir",
+      "radius": 350,
+      "housing_space": 1,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 43200,
+          "upgrade_cost": 6000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 86400,
+          "upgrade_cost": 12000,
+          "required_lab_level": 6,
+          "required_townhall": 8
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 259200,
+          "upgrade_cost": 25500,
+          "required_lab_level": 7,
+          "required_townhall": 9
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 302400,
+          "upgrade_cost": 42000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 5,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 9,
+          "required_townhall": 11
+        }
+      ]
+    },
+    {
+      "_id": 26000011,
+      "name": "Haste Spell",
+      "info": "Put some hustle in even your heaviest units!\\n\\nHaste Spells lack the damage boost of Rage Spells, but provide an even better boost to movement speed. A lower storage space also allows you to take more of them into battle!",
+      "TID": {
+        "name": "TID_SPEEDUP",
+        "info": "TID_SPEEDUP_INFO"
+      },
+      "production_building": "Dark Spell Factory",
+      "production_building_level": 3,
+      "upgrade_resource": "Dark Elixir",
+      "radius": 400,
+      "housing_space": 1,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 86400,
+          "upgrade_cost": 8000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 172800,
+          "upgrade_cost": 17000,
+          "required_lab_level": 7,
+          "required_townhall": 9
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 259200,
+          "upgrade_cost": 30000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 345600,
+          "upgrade_cost": 38500,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 5,
+          "damage": null,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 200000,
+          "required_lab_level": 9,
+          "required_townhall": 11
+        },
+        {
+          "level": 6,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 15,
+          "required_townhall": 17
+        }
+      ]
+    },
+    {
+      "_id": 26000016,
+      "name": "Clone Spell",
+      "info": "Turn this Spell into a pop-up army!\\n\\nClone Spells create a circle of spawning that creates limited-lifetime copies of troops that enter it. It will only spawn up to a maximum housing space of troops.",
+      "TID": {
+        "name": "TID_DUPLICATE_SPELL",
+        "info": "TID_DUPLICATE_SPELL_INFO"
+      },
+      "production_building": "Spell Factory",
+      "production_building_level": 5,
+      "upgrade_resource": "Elixir",
+      "radius": 350,
+      "housing_space": 3,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 86400,
+          "upgrade_cost": 1500000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 172800,
+          "upgrade_cost": 2500000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 194400,
+          "upgrade_cost": 3000000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 216000,
+          "upgrade_cost": 4000000,
+          "required_lab_level": 9,
+          "required_townhall": 11
+        },
+        {
+          "level": 5,
+          "damage": null,
+          "upgrade_time": 345600,
+          "upgrade_cost": 5000000,
+          "required_lab_level": 9,
+          "required_townhall": 11
+        },
+        {
+          "level": 6,
+          "damage": null,
+          "upgrade_time": 432000,
+          "upgrade_cost": 8000000,
+          "required_lab_level": 11,
+          "required_townhall": 13
+        },
+        {
+          "level": 7,
+          "damage": null,
+          "upgrade_time": 604800,
+          "upgrade_cost": 9000000,
+          "required_lab_level": 12,
+          "required_townhall": 14
+        },
+        {
+          "level": 8,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 13,
+          "required_townhall": 15
+        }
+      ]
+    },
+    {
+      "_id": 26000017,
+      "name": "Skeleton Spell",
+      "info": "Summon an army of Skeletons anywhere on the battlefield!\\n\\nPut a few extra swords when and where you need them most. Skeletons do not trigger traps.",
+      "TID": {
+        "name": "TID_CREATE_SKELETONS_SPELL",
+        "info": "TID_CREATE_SKELETONS_SPELL_INFO"
+      },
+      "production_building": "Dark Spell Factory",
+      "production_building_level": 4,
+      "upgrade_resource": "Dark Elixir",
+      "radius": 225,
+      "housing_space": 1,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 86400,
+          "upgrade_cost": 11000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 129600,
+          "upgrade_cost": 17000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 194400,
+          "upgrade_cost": 25000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 259200,
+          "upgrade_cost": 40000,
+          "required_lab_level": 9,
+          "required_townhall": 11
+        },
+        {
+          "level": 5,
+          "damage": null,
+          "upgrade_time": 345600,
+          "upgrade_cost": 50000,
+          "required_lab_level": 10,
+          "required_townhall": 12
+        },
+        {
+          "level": 6,
+          "damage": null,
+          "upgrade_time": 432000,
+          "upgrade_cost": 75000,
+          "required_lab_level": 10,
+          "required_townhall": 12
+        },
+        {
+          "level": 7,
+          "damage": null,
+          "upgrade_time": 619200,
+          "upgrade_cost": 135000,
+          "required_lab_level": 11,
+          "required_townhall": 13
+        },
+        {
+          "level": 8,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 13,
+          "required_townhall": 15
+        }
+      ]
+    },
+    {
+      "_id": 26000028,
+      "name": "Bat Spell",
+      "info": "Summon an army of Bats anywhere on the battlefield!\\n\\nDeploy aerial reinforcements wherever you need them the most. Bats do not trigger traps.",
+      "TID": {
+        "name": "TID_SPELL_BATS",
+        "info": "TID_SPELL_BATS_INFO"
+      },
+      "production_building": "Dark Spell Factory",
+      "production_building_level": 5,
+      "upgrade_resource": "Dark Elixir",
+      "radius": 225,
+      "housing_space": 1,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 86400,
+          "upgrade_cost": 13000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 172800,
+          "upgrade_cost": 25500,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 194400,
+          "upgrade_cost": 35000,
+          "required_lab_level": 8,
+          "required_townhall": 10
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 345600,
+          "upgrade_cost": 47500,
+          "required_lab_level": 9,
+          "required_townhall": 11
+        },
+        {
+          "level": 5,
+          "damage": null,
+          "upgrade_time": 619200,
+          "upgrade_cost": 140000,
+          "required_lab_level": 10,
+          "required_townhall": 12
+        },
+        {
+          "level": 6,
+          "damage": null,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 260000,
+          "required_lab_level": 13,
+          "required_townhall": 15
+        },
+        {
+          "level": 7,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 15,
+          "required_townhall": 17
+        }
+      ]
+    },
+    {
+      "_id": 26000035,
+      "name": "Invisibility Spell",
+      "info": "Invisibility Spell makes EVERYTHING except for Walls and Siege Machines invisible and untargetable within its radius.",
+      "TID": {
+        "name": "TID_INVISIBILITY_SPELL",
+        "info": "TID_INVISIBILITY_SPELL_INFO"
+      },
+      "production_building": "Spell Factory",
+      "production_building_level": 6,
+      "upgrade_resource": "Elixir",
+      "radius": 400,
+      "housing_space": 1,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 259200,
+          "upgrade_cost": 5000000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 345600,
+          "upgrade_cost": 6000000,
+          "required_lab_level": 9,
+          "required_townhall": 11
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 432000,
+          "upgrade_cost": 7000000,
+          "required_lab_level": 10,
+          "required_townhall": 12
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 11,
+          "required_townhall": 13
+        }
+      ]
+    },
+    {
+      "_id": 26000053,
+      "name": "Recall Spell",
+      "info": "Attack going badly? Need to come in from another direction? The Recall Spell summons back Troops, Heroes and Pets to the deployment bar. You can then send the recalled units back out for a second strike.",
+      "TID": {
+        "name": "TID_SPELL_RECALL",
+        "info": "TID_SPELL_RECALL_INFO"
+      },
+      "production_building": "Spell Factory",
+      "production_building_level": 7,
+      "upgrade_resource": "Elixir",
+      "radius": 500,
+      "housing_space": 2,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 604800,
+          "upgrade_cost": 7500000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 777600,
+          "upgrade_cost": 8000000,
+          "required_lab_level": 11,
+          "required_townhall": 13
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 950400,
+          "upgrade_cost": 9000000,
+          "required_lab_level": 12,
+          "required_townhall": 14
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 13000000,
+          "required_lab_level": 13,
+          "required_townhall": 15
+        },
+        {
+          "level": 5,
+          "damage": null,
+          "upgrade_time": 1296000,
+          "upgrade_cost": 21000000,
+          "required_lab_level": 14,
+          "required_townhall": 16
+        },
+        {
+          "level": 6,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 15,
+          "required_townhall": 17
+        }
+      ]
+    },
+    {
+      "_id": 26000070,
+      "name": "Overgrowth Spell",
+      "info": "Ever wish you could ignore a whole chunk of that enemy base? The Overgrowth Spell traps nearby Buildings in tough roots, stopping Defenses attacking. Troops ignore trapped Buildings.",
+      "TID": {
+        "name": "TID_SPELL_OVERGROWTH",
+        "info": "TID_SPELL_OVERGROWTH_INFO"
+      },
+      "production_building": "Dark Spell Factory",
+      "production_building_level": 6,
+      "upgrade_resource": "Dark Elixir",
+      "radius": 600,
+      "housing_space": 2,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 475200,
+          "upgrade_cost": 62500,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 777600,
+          "upgrade_cost": 125000,
+          "required_lab_level": 10,
+          "required_townhall": 12
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 950400,
+          "upgrade_cost": 175000,
+          "required_lab_level": 12,
+          "required_townhall": 14
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 14,
+          "required_townhall": 16
+        }
+      ]
+    },
+    {
+      "_id": 26000073,
+      "name": "Bag of Frostmites",
+      "info": "Briefly freezes the target area and slowly summons bouncing Frostmites which slow down and distract the nearby defenses.",
+      "TID": {
+        "name": "TID_SPELL_BAG_OF_FROSTMITES",
+        "info": "TID_SPELL_BAG_OF_FROSTMITES_INFO"
+      },
+      "production_building": "Spell Factory",
+      "production_building_level": 1,
+      "upgrade_resource": "Elixir",
+      "radius": 350,
+      "housing_space": 1,
+      "is_seasonal": true,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 6
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 7
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 8
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 9
+        },
+        {
+          "level": 5,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 10
+        },
+        {
+          "level": 6,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 11
+        },
+        {
+          "level": 7,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 12
+        },
+        {
+          "level": 8,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 13
+        },
+        {
+          "level": 9,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 14
+        },
+        {
+          "level": 10,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 15
+        },
+        {
+          "level": 11,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 16
+        }
+      ]
+    },
+    {
+      "_id": 26000098,
+      "name": "Revive Spell",
+      "info": "The Healer's own special recipe! The Revive Spell brings a defeated Hero in its range back into the fight with some health. Bring this Spell into battle, and a floating golden heart will appear above any defeated Hero that can be revived. Upgrade the Revive Spell to increase the amount of health Heroes regain.",
+      "TID": {
+        "name": "TID_SPELL_REVIVE",
+        "info": "TID_SPELL_REVIVE_INFO"
+      },
+      "production_building": "Spell Factory",
+      "production_building_level": 8,
+      "upgrade_resource": "Elixir",
+      "radius": null,
+      "housing_space": 2,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 864000,
+          "upgrade_cost": 18000000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 1209600,
+          "upgrade_cost": 20000000,
+          "required_lab_level": 13,
+          "required_townhall": 15
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 1382400,
+          "upgrade_cost": 22000000,
+          "required_lab_level": 14,
+          "required_townhall": 16
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 15,
+          "required_townhall": 17
+        }
+      ]
+    },
+    {
+      "_id": 26000109,
+      "name": "Ice Block Spell",
+      "info": "A brrr-illiant defensive strategy!\\n\\nCast this cool concoction to encase your ground and air Troops in ice that blocks almost all damage but freezes their movement and attack!",
+      "TID": {
+        "name": "TID_ICE_BLOCK_SPELL",
+        "info": "TID_ICE_BLOCK_SPELL_INFO"
+      },
+      "production_building": "Dark Spell Factory",
+      "production_building_level": 7,
+      "upgrade_resource": "Dark Elixir",
+      "radius": 500,
+      "housing_space": 1,
+      "levels": [
+        {
+          "level": 1,
+          "damage": null,
+          "upgrade_time": 864000,
+          "upgrade_cost": 140000,
+          "required_lab_level": 1,
+          "required_townhall": 3
+        },
+        {
+          "level": 2,
+          "damage": null,
+          "upgrade_time": 950400,
+          "upgrade_cost": 200000,
+          "required_lab_level": 12,
+          "required_townhall": 14
+        },
+        {
+          "level": 3,
+          "damage": null,
+          "upgrade_time": 1209600,
+          "upgrade_cost": 280000,
+          "required_lab_level": 13,
+          "required_townhall": 15
+        },
+        {
+          "level": 4,
+          "damage": null,
+          "upgrade_time": 1382400,
+          "upgrade_cost": 320000,
+          "required_lab_level": 14,
+          "required_townhall": 16
+        },
+        {
+          "level": 5,
+          "damage": null,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 15,
+          "required_townhall": 17
         }
       ]
     }

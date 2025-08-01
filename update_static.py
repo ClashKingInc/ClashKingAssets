@@ -41,7 +41,7 @@ TARGETS = [
 KEEP_CSV = False
 KEEP_JSON = False
 BASE_PATH = "assets/"
-MANUAL_FINGERPRINT = ""
+MANUAL_FINGERPRINT = "c1dd37dcad3d77e0678a1ce2319225ede9a6b821"
 
 supported_languages = [
     "ar", "cn", "cnt", "de", "es", "fa", "fi", "fr", "id", "it", "jp", "kr",
@@ -50,6 +50,7 @@ supported_languages = [
 
 for language in supported_languages:
     TARGETS.append((f"localization/{language}.csv", f"texts_{language}.csv"))
+
 
 APK_URL = "https://d.apkpure.net/b/APK/com.supercell.clashofclans?version=latest"
 
@@ -300,6 +301,9 @@ def master_json():
     with open(f"skins.json", "r", encoding="utf-8") as f:
         full_skin_data: dict = json.load(f)
 
+    with open(f"spells.json", "r", encoding="utf-8") as f:
+        full_spell_data: dict = json.load(f)
+
     with open(f"supercharges.json", "r", encoding="utf-8") as f:
         full_supercharges_data: dict = json.load(f)
 
@@ -512,7 +516,7 @@ def master_json():
             hold_data["is_super_troop"] = True
 
         if is_seasonal_troop:
-            hold_data["is_seasonal_troop"] = True
+            hold_data["is_seasonal"] = True
         hold_data["levels"] = []
 
         max_townhall_converter = lab_to_townhall
@@ -545,6 +549,56 @@ def master_json():
         if not hold_data["levels"]:
             continue
         new_troop_data.append(hold_data)
+
+    new_spell_data = []
+    for _id, (spell_name, spell_data) in enumerate(full_spell_data.items(), 26000000):
+        if spell_data.get("DisableProduction", False):
+            continue
+
+        resource = spell_data.get("UpgradeResource")
+        resource = resource if resource != "DarkElixir" else "Dark_Elixir"
+
+        production_building = full_building_data.get(spell_data.get("ProductionBuilding")).get("TID")
+        resource_TID = f'TID_{resource}'.upper()
+        hold_data = {
+            "_id": _id,
+            "name": new_translation_data.get(spell_data.get("TID")).get("EN"),
+            "info": new_translation_data.get(spell_data.get("InfoTID")).get("EN"),
+            "TID": {
+                "name": spell_data.get("TID"),
+                "info": spell_data.get("InfoTID"),
+            },
+            "production_building": new_translation_data.get(production_building).get("EN"),
+            "production_building_level": spell_data.get("SpellForgeLevel"),
+            "upgrade_resource": new_translation_data.get(resource_TID, {}).get("EN"),
+            "radius": spell_data.get("Radius") or spell_data.get("1", {}).get("Radius"),
+            "housing_space": spell_data.get("HousingSpace"),
+        }
+        is_seasonal_spell = spell_data.get("EnabledByCalendar", False)
+        if is_seasonal_spell:
+            hold_data["is_seasonal"] = is_seasonal_spell
+        hold_data["levels"] = []
+
+        for level, level_data in spell_data.items():
+            if not isinstance(level_data, dict):
+                continue
+            # convert times to seconds, all times for all things will be in seconds
+            upgrade_time_seconds = level_data.get("UpgradeTimeH", 0) * 60 * 60
+
+            new_level_data = {
+                "level": int(level),
+                "damage": level_data.get("Damage") or level_data.get("PoisonDPS"),
+                "upgrade_time": upgrade_time_seconds,
+                "upgrade_cost": level_data.get("UpgradeCost", 0),
+                "required_lab_level": level_data.get("LaboratoryLevel"),
+                "required_townhall": level_data.get("UpgradeLevelByTH") or lab_to_townhall[level_data.get("LaboratoryLevel")],
+            }
+            hold_data["levels"].append(new_level_data)
+
+        if not hold_data["levels"]:
+            continue
+        new_spell_data.append(hold_data)
+
 
     #BUILD HERO JSON
     new_hero_data = []
@@ -902,6 +956,7 @@ def master_json():
         "seasonal_defenses": new_seasonal_defense_data,
         "traps" : new_trap_data,
         "troops": new_troop_data,
+        "spells" : new_spell_data,
         "heroes": new_hero_data,
         "pets": new_pet_data,
         "equipment": new_equipment_data,
