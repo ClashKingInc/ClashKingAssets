@@ -1533,7 +1533,8 @@
     "4000066": {
       "name": "Super Witch",
       "icon": "/home-base/troops/super-witch/super-witch-icon.png",
-      "character": "/home-base/troops/super-witch/super-witch-character.png"
+      "character": "/home-base/troops/super-witch/super-witch-character.png",
+      "character-2": "/home-base/troops/super-witch/super-witch-character-2.png"
     },
     "4000067": {
       "name": "M.E.C.H.A",
@@ -1548,12 +1549,14 @@
     "4000072": {
       "name": "Party Wizard",
       "icon": "/home-base/troops/party-wizard/party-wizard-icon.png",
-      "character": "/home-base/troops/party-wizard/party-wizard-character.png"
+      "character": "/home-base/troops/party-wizard/party-wizard-character.png",
+      "character_2": "/home-base/troops/party-wizard/party-wizard-character-2.png"
     },
     "4000075": {
       "name": "Siege Barracks",
       "icon": "/home-base/troops/siege-barracks/siege-barracks-icon.png",
-      "character": "/home-base/troops/siege-barracks/siege-barracks-character.png"
+      "character": "/home-base/troops/siege-barracks/siege-barracks-character.png",
+      "character_2": "/home-base/troops/siege-barracks/siege-barracks-character-2.png"
     },
     "4000076": {
       "name": "Ice Hound",
