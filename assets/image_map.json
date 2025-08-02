@@ -1543,8 +1543,8 @@
     },
     "4000070": {
       "name": "Hog Glider",
-      "icon": "/home-base/troops/hog-glider/hog-glider-icon.png",
-      "character": "/home-base/troops/hog-glider/hog-glider-character.png"
+      "icon": "/builder-base/troops/hog-glider/hog-glider-icon.png",
+      "character": "/builder-base/troops/hog-glider/hog-glider-character.png"
     },
     "4000072": {
       "name": "Party Wizard",
@@ -1611,152 +1611,167 @@
     "4000094": {
       "name": "Ram Rider",
       "icon": "/home-base/troops/ram-rider/ram-rider-icon.png",
-      "character": "/home-base/troops/ram-rider/ram-rider-character.png"
+      "character": "/home-base/troops/ram-rider/ram-rider-character.png",
+      "character_2": "/home-base/troops/ram-rider/ram-rider-character-2.png"
     },
     "4000095": {
       "name": "Electro Titan",
       "icon": "/home-base/troops/electro-titan/electro-titan-icon.png",
-      "character": "/home-base/troops/electro-titan/electro-titan-character.png"
+      "character": "/home-base/troops/electro-titan/electro-titan-character.png",
+      "character_2": "/home-base/troops/electro-titan/electro-titan-character-2.png"
     },
     "4000097": {
       "name": "Apprentice Warden",
       "icon": "/home-base/troops/apprentice-warden/apprentice-warden-icon.png",
-      "character": "/home-base/troops/apprentice-warden/apprentice-warden-character.png"
+      "character": "/home-base/troops/apprentice-warden/apprentice-warden-character.png",
+      "character-2": "/home-base/troops/apprentice-warden/apprentice-warden-character-2.png"
     },
     "4000098": {
       "name": "Super Hog Rider",
       "icon": "/home-base/troops/super-hog-rider/super-hog-rider-icon.png",
-      "character": "/home-base/troops/super-hog-rider/super-hog-rider-character.png"
+      "character": "/home-base/troops/super-hog-rider/super-hog-rider-character.png",
+      "character_2": "/home-base/troops/super-hog-rider/super-hog-rider-character-2.png"
     },
     "4000101": {
       "name": "Barcher",
       "icon": "/home-base/troops/barcher/barcher-icon.png",
-      "character": "/home-base/troops/barcher/barcher-character.png"
+      "character": "/home-base/troops/barcher/barcher-character.png",
+      "character_2": "/home-base/troops/barcher/barcher-character-2.png"
     },
     "4000102": {
       "name": "Witch Golem",
       "icon": "/home-base/troops/witch-golem/witch-golem-icon.png",
-      "character": "/home-base/troops/witch-golem/witch-golem-character.png"
+      "character": "/home-base/troops/witch-golem/witch-golem-character.png",
+      "character_2": "/home-base/troops/witch-golem/witch-golem-character-2.png"
     },
     "4000103": {
       "name": "Hog Wizard",
       "icon": "/home-base/troops/hog-wizard/hog-wizard-icon.png",
-      "character": "/home-base/troops/hog-wizard/hog-wizard-character.png"
+      "character": "/home-base/troops/hog-wizard/hog-wizard-character.png",
+      "character_2": "/home-base/troops/hog-wizard/hog-wizard-character-2.png"
     },
     "4000104": {
       "name": "Lavaloon",
       "icon": "/home-base/troops/lavaloon/lavaloon-icon.png",
-      "character": "/home-base/troops/lavaloon/lavaloon-character.png"
+      "character": "/home-base/troops/lavaloon/lavaloon-character.png",
+      "character_2": "/home-base/troops/lavaloon/lavaloon-character-2.png"
     },
     "4000106": {
       "name": "Electrofire Wizard",
-      "icon": "",
-      "character": ""
+      "icon": "/builder-base/troops/electrofire-wizard/electrofire-wizard-icon.png",
+      "character": "/builder-base/troops/electrofire-wizard/electrofire-wizard-icon.png"
     },
     "4000110": {
       "name": "Root Rider",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/root-rider/root-rider-icon.png",
+      "character": "/home-base/troops/root-rider/root-rider-character.png"
     },
     "4000118": {
       "name": "C.O.O.K.I.E",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/cookie/cookie-icon.png",
+      "character": "/home-base/troops/cookie/cookie-character.png",
+      "character_2": "/home-base/troops/cookie/cookie-character-2.png"
     },
     "4000119": {
       "name": "Firecracker",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/firecracker/firecracker-icon.png",
+      "character": "/home-base/troops/firecracker/firecracker-character.png"
     },
     "4000120": {
       "name": "Azure Dragon",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/azure-dragon/azure-dragon-icon.png",
+      "character": "/home-base/troops/azure-dragon/azure-dragon-character.png",
+      "character_2": "/home-base/troops/azure-dragon/azure-dragon-character-1.png"
     },
     "4000121": {
       "name": "Barbarian Kicker",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/barbarian-kicker/barbarian-kicker-icon.png",
+      "character": "/home-base/troops/barbarian-kicker/barbarian-kicker-character.png"
     },
     "4000122": {
       "name": "Giant Thrower",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/giant-thrower/giant-thrower-icon.png",
+      "character": "/home-base/troops/giant-thrower/giant-thrower-character.png",
+      "character_2": "/home-base/troops/giant-thrower/giant-thrower-character-2.png"
     },
     "4000123": {
       "name": "Druid",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/druid/druid-icon.png",
+      "character": "/home-base/troops/druid/druid-character.png",
+      "character_2": "/home-base/troops/druid/druid-character-2.png"
     },
     "4000125": {
       "name": "Broom Witch",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/broom-witch/broom-witch-icon.png",
+      "character": "/home-base/troops/broom-witch/broom-witch-character.png"
     },
     "4000130": {
       "name": "Ice Minion",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/ice-minion/ice-minion-icon.png",
+      "character": "/home-base/troops/ice-minion/ice-minion-character.png"
     },
     "4000132": {
       "name": "Thrower",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/thrower/thrower-icon.png",
+      "character": "/home-base/troops/thrower/thrower-character.png",
+      "character_2": "/home-base/troops/thrower/thrower-character-2.png"
     },
     "4000135": {
       "name": "Troop Launcher",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/troop-launcher/troop-launcher-icon.png",
+      "character": "/home-base/troops/troop-launcher/troop-launcher-character.png",
+      "character_2": "/home-base/troops/troop-launcher/troop-launcher-character-2.png"
     },
     "4000136": {
       "name": "Debt Collector",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/debt-collector/debt-collector-icon.png",
+      "character": "/home-base/troops/debt-collector/debt-collector-character.png"
     },
     "4000142": {
       "name": "Snake Barrel",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/snake-barrel/snake-barrel-icon.png",
+      "character": "/home-base/troops/snake-barrel/snake-barrel-character.png"
     },
     "4000147": {
       "name": "Super Yeti",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/super-yeti/super-yeti-icon.png",
+      "character": "/home-base/troops/super-yeti/super-yeti-character.png"
     },
     "4000150": {
       "name": "Furnace",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/furnace/furnace-icon.png",
+      "character": "/home-base/troops/furnace/furnace-character.png"
     },
     "4000156": {
       "name": "Giant Giant",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/giant-giant/giant-giant-icon.png",
+      "character": "/home-base/troops/giant-giant/giant-giant-character.png",
+      "character_2": "/home-base/troops/giant-giant/giant-giant-character-2.png"
     },
     "4000157": {
       "name": "K.A.N.E",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/kane/kane-icon.png",
+      "character": "/home-base/troops/kane/kane-character.png"
     },
     "4000158": {
       "name": "The Disarmer",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/the-disarmer/the-disarmer-icon.png",
+      "character": "/home-base/troops/the-disarmer/the-disarmer-character.png"
     },
     "4000159": {
       "name": "YEETer",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/yeeter/yeeter-icon.png",
+      "character": "/home-base/troops/yeeter/yeeter-character.png"
     },
     "4000164": {
       "name": "YEETer",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/yeeter/yeeter-icon.png",
+      "character": "/home-base/troops/yeeter/yeeter-character.png"
     },
     "4000165": {
       "name": "The Disarmer",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/troops/the-disarmer/the-disarmer-icon.png",
+      "character": "/home-base/troops/the-disarmer/the-disarmer-character.png"
     }
   },
   "heroes": {
