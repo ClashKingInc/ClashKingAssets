@@ -1,8 +1,8 @@
 import os, glob, re
 from PIL import Image
 
-NEW_NAME   = "hog-glider"
-INPUT_DIR  = f"assets/builder-base/troops/{NEW_NAME}"
+NEW_NAME   = "lavaloon"
+INPUT_DIR  = f"assets/home-base/troops/{NEW_NAME}"
 OUTPUT_DIR = INPUT_DIR
 
 DELETE = True
