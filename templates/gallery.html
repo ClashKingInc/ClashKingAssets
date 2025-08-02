@@ -207,17 +207,27 @@
 
       // Collect image variants
       const sources = [];
-      if (meta.character)  sources.push({ src: meta.character,  label: "Character Pose" });
-      if (meta.icon)  sources.push({ src: meta.icon,  label: "Icon" });
+
+      if (meta.character) sources.push({ src: meta.character, label: "Character Pose" });
+      if (meta.icon) sources.push({ src: meta.icon, label: "Icon" });
+
       if (meta.levels) {
         Object.entries(meta.levels).forEach(([lvl, src]) =>
           sources.push({ src, label: `Level ${lvl}` })
         );
       }
+
+      // Handle tier_*, pose_*, and character_* variants
       Object.entries(meta).forEach(([key, src]) => {
-        const m = key.match(/^(tier|pose)_(\d+)$/);
-        if (m && src) {
-          const type = m[1] === "tier" ? "Tier" : "Pose";
+        if (!src) return;
+        const m = key.match(/^(tier|pose|character)_(\d+)$/);
+        if (m) {
+          const type =
+            m[1] === "tier"
+              ? "Tier"
+              : m[1] === "pose"
+              ? "Pose"
+              : "Character Pose";
           sources.push({ src, label: `${type} ${m[2]}` });
         }
       });

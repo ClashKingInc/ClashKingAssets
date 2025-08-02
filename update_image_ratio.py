@@ -1,7 +1,7 @@
 import os, glob, re
 from PIL import Image
 
-NEW_NAME   = "pekka"
+NEW_NAME   = "dragon-rider"
 INPUT_DIR  = f"assets/home-base/troops/{NEW_NAME}"
 OUTPUT_DIR = INPUT_DIR
 
@@ -41,6 +41,9 @@ for path in paths:
 
     if count == 2:
         out_name = f"{NEW_NAME}-character.png"
+
+    if count == 3:
+        out_name = f"{NEW_NAME}-character-2.png"
 
     canvas.save(os.path.join(OUTPUT_DIR, out_name))
     count += 1
