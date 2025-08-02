@@ -85,26 +85,26 @@
       }
     },
     "1000004": {
-  "name": "Gold Mine",
-  "levels": {
-    "1": "/home-base/buildings/gold-mine/gold-mine-1.png",
-    "2": "/home-base/buildings/gold-mine/gold-mine-2.png",
-    "3": "/home-base/buildings/gold-mine/gold-mine-3.png",
-    "4": "/home-base/buildings/gold-mine/gold-mine-4.png",
-    "5": "/home-base/buildings/gold-mine/gold-mine-5.png",
-    "6": "/home-base/buildings/gold-mine/gold-mine-6.png",
-    "7": "/home-base/buildings/gold-mine/gold-mine-7.png",
-    "8": "/home-base/buildings/gold-mine/gold-mine-8.png",
-    "9": "/home-base/buildings/gold-mine/gold-mine-9.png",
-    "10": "/home-base/buildings/gold-mine/gold-mine-10.png",
-    "11": "/home-base/buildings/gold-mine/gold-mine-11.png",
-    "12": "/home-base/buildings/gold-mine/gold-mine-12.png",
-    "13": "/home-base/buildings/gold-mine/gold-mine-13.png",
-    "14": "/home-base/buildings/gold-mine/gold-mine-14.png",
-    "15": "/home-base/buildings/gold-mine/gold-mine-15.png",
-    "16": "/home-base/buildings/gold-mine/gold-mine-16.png"
-  }
-},
+      "name": "Gold Mine",
+      "levels": {
+        "1": "/home-base/buildings/gold-mine/gold-mine-1.png",
+        "2": "/home-base/buildings/gold-mine/gold-mine-2.png",
+        "3": "/home-base/buildings/gold-mine/gold-mine-3.png",
+        "4": "/home-base/buildings/gold-mine/gold-mine-4.png",
+        "5": "/home-base/buildings/gold-mine/gold-mine-5.png",
+        "6": "/home-base/buildings/gold-mine/gold-mine-6.png",
+        "7": "/home-base/buildings/gold-mine/gold-mine-7.png",
+        "8": "/home-base/buildings/gold-mine/gold-mine-8.png",
+        "9": "/home-base/buildings/gold-mine/gold-mine-9.png",
+        "10": "/home-base/buildings/gold-mine/gold-mine-10.png",
+        "11": "/home-base/buildings/gold-mine/gold-mine-11.png",
+        "12": "/home-base/buildings/gold-mine/gold-mine-12.png",
+        "13": "/home-base/buildings/gold-mine/gold-mine-13.png",
+        "14": "/home-base/buildings/gold-mine/gold-mine-14.png",
+        "15": "/home-base/buildings/gold-mine/gold-mine-15.png",
+        "16": "/home-base/buildings/gold-mine/gold-mine-16.png"
+      }
+    },
     "1000005": {
       "name": "Gold Storage",
       "levels": {
@@ -649,7 +649,7 @@
     "1000042": {
       "name": "Army Camp",
       "levels": {
-        "1" : "/builder-base/buildings/army-camp/army-camp-1.png"
+        "1": "/builder-base/buildings/army-camp/army-camp-1.png"
       }
     },
     "1000043": {
@@ -715,7 +715,7 @@
     "1000047": {
       "name": "Master Builder's Hut",
       "levels": {
-        "1" : "/builder-base/buildings/master-builders-hut/master-builders-hut-1.png"
+        "1": "/builder-base/buildings/master-builders-hut/master-builders-hut-1.png"
       }
     },
     "1000048": {
@@ -736,7 +736,7 @@
     "1000049": {
       "name": "Reinforcement Camp",
       "levels": {
-        "1" : "/builder-base/buildings/reinforcement-camp/reinforcement-camp-1.png"
+        "1": "/builder-base/buildings/reinforcement-camp/reinforcement-camp-1.png"
       }
     },
     "1000050": {
@@ -787,7 +787,7 @@
     "1000053": {
       "name": "Battle Machine",
       "levels": {
-        "1" : "/builder-base/buildings/battle-machine/battle-machine-1.png"
+        "1": "/builder-base/buildings/battle-machine/battle-machine-1.png"
       }
     },
     "1000054": {
@@ -978,7 +978,6 @@
         "3": "/home-base/buildings/spell-tower/spell-tower-3.png",
         "3b": "/home-base/buildings/spell-tower/spell-tower-3b.png",
         "3c": "/home-base/buildings/spell-tower/spell-tower-3c.png"
-
       }
     },
     "1000077": {
@@ -1017,7 +1016,7 @@
     "1000080": {
       "name": "Battle Copter",
       "levels": {
-        "1" : "/builder-base/buildings/battle-copter/battle-copter-1.png"
+        "1": "/builder-base/buildings/battle-copter/battle-copter-1.png"
       }
     },
     "1000081": {
@@ -1044,7 +1043,7 @@
     "1000083": {
       "name": "Sour Elixir Cauldron",
       "levels": {
-        "1" : "/home-base/buildings/sour-elixir-cauldron/sour-elixir-cauldron-1.png"
+        "1": "/home-base/buildings/sour-elixir-cauldron/sour-elixir-cauldron-1.png"
       }
     },
     "1000084": {
@@ -1341,7 +1340,7 @@
       "name": "Lava Hound",
       "icon": "/home-base/troops/lava-hound/lava-hound-icon.png",
       "character": "/home-base/troops/lava-hound/lava-hound-character.png",
-      "character_2" : "/home-base/troops/lava-hound/lava-hound-character-2.png"
+      "character_2": "/home-base/troops/lava-hound/lava-hound-character-2.png"
     },
     "4000022": {
       "name": "Bowler",
@@ -1388,7 +1387,7 @@
       "name": "Raged Barbarian",
       "icon": "/builder-base/troops/raged-barbarian/raged-barbarian-icon.png",
       "character": "/builder-base/troops/raged-barbarian/raged-barbarian-character.png",
-      "character_2" : "/builder-base/troops/raged-barbarian/raged-barbarian-character-2.png"
+      "character_2": "/builder-base/troops/raged-barbarian/raged-barbarian-character-2.png"
     },
     "4000032": {
       "name": "Sneaky Archer",
@@ -1777,8 +1776,8 @@
   "heroes": {
     "28000000": {
       "name": "Barbarian King",
-      "icon": "",
-      "character": ""
+      "icon": "/home-base/heroes/barbarian-king/barbarian-king-icon.png",
+      "character": "/home-base/heroes/barbarian-king/barbarian-king-character.png"
     },
     "28000001": {
       "name": "Archer Queen",
@@ -2160,8 +2159,8 @@
       "icon": ""
     },
     "18000066": {
-      "name": "Firework Fanboy",
-      "icon": ""
+      "icon": "/home-base/decorations/firework-fanboy.png",
+      "name": "Firework Fanboy"
     },
     "18000067": {
       "name": "Flowing Fountain",
@@ -3418,8 +3417,8 @@
     },
     "60000074": {
       "name": "Dark Days Scenery",
-      "icon": "",
-      "full": ""
+      "icon": "/home-base/sceneries/dark-days/dark-days-icon.png",
+      "full": "/home-base/sceneries/dark-days/dark-days-full.jpg"
     }
   },
   "skins": {
@@ -4354,593 +4353,33 @@
       "full": ""
     },
     "52000253": {
-      "name": "Prince Mysterio",
-      "icon": "",
-      "full": ""
+      "poses": {
+        "1": "/home-base/skins/prince-mysterio/prince-mysterio-pose-1.png",
+        "2": "/home-base/skins/prince-mysterio/prince-mysterio-pose-2.png",
+        "3": "/home-base/skins/prince-mysterio/prince-mysterio-pose-3.png"
+      },
+      "icon": "/home-base/skins/prince-mysterio/prince-mysterio-icon.png",
+      "name": "Prince Mysterio"
     },
     "52000254": {
-      "name": "Cyclone Prince",
-      "icon": "",
-      "full": ""
+      "poses": {
+        "1": "/home-base/skins/cyclone-prince/cyclone-prince-pose-1.png",
+        "2": "/home-base/skins/cyclone-prince/cyclone-prince-pose-2.png"
+      },
+      "icon": "/home-base/skins/cyclone-prince/cyclone-prince-icon.png",
+      "name": "Cyclone Prince"
     },
     "52000255": {
-      "name": "Minion Cop",
-      "icon": "",
-      "full": ""
-    }
-  },
-  "capital_house_parts": {
-    "82000000": {
-      "name": "Fence Ground 1",
-      "icon": ""
-    },
-    "82000001": {
-      "name": "Terrace Ground 1",
-      "icon": ""
-    },
-    "82000002": {
-      "name": "Stones Ground 1",
-      "icon": ""
-    },
-    "82000003": {
-      "name": "Stones Ground 2",
-      "icon": ""
-    },
-    "82000004": {
-      "name": "Gold Ground 1",
-      "icon": ""
-    },
-    "82000005": {
-      "name": "Winter Ground 1",
-      "icon": ""
-    },
-    "82000006": {
-      "name": "Clashmas Ground 1",
-      "icon": ""
-    },
-    "82000007": {
-      "name": "Grass Ground 1",
-      "icon": ""
-    },
-    "82000008": {
-      "name": "Classic Roof 1",
-      "icon": "/capital-base/capital-house-parts/classic-roof-1.png"
-    },
-    "82000009": {
-      "name": "Classic Roof 2",
-      "icon": "/capital-base/capital-house-parts/classic-roof-2.png"
-    },
-    "82000010": {
-      "name": "Classic Roof 3",
-      "icon": "/capital-base/capital-house-parts/classic-roof-3.png"
-    },
-    "82000011": {
-      "name": "Classic Roof 4",
-      "icon": "/capital-base/capital-house-parts/classic-roof-4.png"
-    },
-    "82000013": {
-      "name": "Thatch Roof 1",
-      "icon": ""
-    },
-    "82000014": {
-      "name": "Thatch Roof 4",
-      "icon": ""
-    },
-    "82000015": {
-      "name": "Square Roof 1",
-      "icon": ""
-    },
-    "82000016": {
-      "name": "Square Roof 2",
-      "icon": ""
-    },
-    "82000017": {
-      "name": "Square Roof 3",
-      "icon": ""
-    },
-    "82000019": {
-      "name": "Tent Roof 1",
-      "icon": ""
-    },
-    "82000020": {
-      "name": "Tent Roof 2",
-      "icon": ""
-    },
-    "82000021": {
-      "name": "Tent Roof 3",
-      "icon": ""
-    },
-    "82000022": {
-      "name": "Tent Roof 4",
-      "icon": ""
-    },
-    "82000023": {
-      "name": "Cross Roof 1",
-      "icon": ""
-    },
-    "82000024": {
-      "name": "Cross Roof 2",
-      "icon": ""
-    },
-    "82000025": {
-      "name": "Cross Roof 3",
-      "icon": ""
-    },
-    "82000026": {
-      "name": "Castle Roof 1",
-      "icon": ""
-    },
-    "82000027": {
-      "name": "Castle Roof 2",
-      "icon": ""
-    },
-    "82000028": {
-      "name": "Castle Roof 3",
-      "icon": ""
-    },
-    "82000029": {
-      "name": "Castle Roof 4",
-      "icon": ""
-    },
-    "82000030": {
-      "name": "Castle Roof 5",
-      "icon": ""
-    },
-    "82000031": {
-      "name": "Gold Roof 1",
-      "icon": ""
-    },
-    "82000032": {
-      "name": "Gold Roof 2",
-      "icon": ""
-    },
-    "82000033": {
-      "name": "Gold Roof 3",
-      "icon": ""
-    },
-    "82000034": {
-      "name": "Gold Roof 4",
-      "icon": ""
-    },
-    "82000035": {
-      "name": "Gold Roof 5",
-      "icon": ""
-    },
-    "82000036": {
-      "name": "Gold Roof 6",
-      "icon": ""
-    },
-    "82000037": {
-      "name": "Gold Roof 7",
-      "icon": ""
-    },
-    "82000038": {
-      "name": "Stone Roof 1",
-      "icon": ""
-    },
-    "82000039": {
-      "name": "Grass Roof 1",
-      "icon": ""
-    },
-    "82000040": {
-      "name": "Grass Roof 2",
-      "icon": ""
-    },
-    "82000041": {
-      "name": "Windmill Roof 1",
-      "icon": ""
-    },
-    "82000042": {
-      "name": "Windmill Roof 2",
-      "icon": ""
-    },
-    "82000043": {
-      "name": "Windmill Roof 3",
-      "icon": ""
-    },
-    "82000044": {
-      "name": "Windmill Roof 4",
-      "icon": ""
-    },
-    "82000045": {
-      "name": "Windmill Roof 5",
-      "icon": ""
-    },
-    "82000046": {
-      "name": "Clashmas Roof 1",
-      "icon": ""
-    },
-    "82000047": {
-      "name": "Winter Roof 1",
-      "icon": ""
-    },
-    "82000048": {
-      "name": "Classic Foot 1",
-      "icon": ""
-    },
-    "82000049": {
-      "name": "Stone Foot 1",
-      "icon": ""
-    },
-    "82000050": {
-      "name": "Stone Foot 2",
-      "icon": ""
-    },
-    "82000051": {
-      "name": "Stilt Foot 1",
-      "icon": ""
-    },
-    "82000052": {
-      "name": "Hole Foot 1",
-      "icon": ""
-    },
-    "82000053": {
-      "name": "Thatch Foot 1",
-      "icon": ""
-    },
-    "82000054": {
-      "name": "Grass Foot 1",
-      "icon": ""
-    },
-    "82000055": {
-      "name": "Clashmas Foot 1",
-      "icon": ""
-    },
-    "82000056": {
-      "name": "Winter Foot 1",
-      "icon": ""
-    },
-    "82000057": {
-      "name": "Winter Foot 2",
-      "icon": ""
-    },
-    "82000058": {
-      "name": "Mundane Deco 1",
-      "icon": ""
-    },
-    "82000059": {
-      "name": "Mundane Deco 2",
-      "icon": ""
-    },
-    "82000060": {
-      "name": "Mundane Deco 3",
-      "icon": ""
-    },
-    "82000061": {
-      "name": "Mundane Deco 4",
-      "icon": ""
-    },
-    "82000062": {
-      "name": "Weapon Deco 1",
-      "icon": ""
-    },
-    "82000063": {
-      "name": "Weapon Deco 2",
-      "icon": ""
-    },
-    "82000064": {
-      "name": "Food Deco 1",
-      "icon": ""
-    },
-    "82000065": {
-      "name": "Tree Deco 1",
-      "icon": ""
-    },
-    "82000066": {
-      "name": "Gold Deco 2",
-      "icon": ""
-    },
-    "82000067": {
-      "name": "Clashmas Deco 1",
-      "icon": ""
-    },
-    "82000068": {
-      "name": "Clashmas Deco 2",
-      "icon": ""
-    },
-    "82000070": {
-      "name": "Winter Deco 1",
-      "icon": ""
-    },
-    "82000071": {
-      "name": "Flamingo Deco",
-      "icon": ""
-    },
-    "82000072": {
-      "name": "Ground  Emptyhouse 1",
-      "icon": ""
-    },
-    "82000073": {
-      "name": "Ground  Emptyhouse 2",
-      "icon": ""
-    },
-    "82000074": {
-      "name": "Roof  Emptyhouse 1",
-      "icon": ""
-    },
-    "82000075": {
-      "name": "Roof  Emptyhouse 2",
-      "icon": ""
-    },
-    "82000076": {
-      "name": "Roof  Emptyhouse 3",
-      "icon": ""
-    },
-    "82000077": {
-      "name": "Deco  Emptyhouse 1",
-      "icon": ""
-    },
-    "82000078": {
-      "name": "Fancy Roof 1",
-      "icon": ""
-    },
-    "82000079": {
-      "name": "Fancy Foot 1",
-      "icon": ""
-    },
-    "82000080": {
-      "name": "Gold Deco 1",
-      "icon": ""
-    },
-    "82000081": {
-      "name": "Fancy Roof 2",
-      "icon": ""
-    },
-    "82000082": {
-      "name": "Fancy Roof 3",
-      "icon": ""
-    },
-    "82000083": {
-      "name": "Stone Deco 1",
-      "icon": ""
-    },
-    "82000084": {
-      "name": "Fence Ground 2",
-      "icon": ""
-    },
-    "82000085": {
-      "name": "Winter Roof 2",
-      "icon": ""
-    },
-    "82000086": {
-      "name": "Gold Ground 2",
-      "icon": ""
-    },
-    "82000087": {
-      "name": "Goblin Roof",
-      "icon": ""
-    },
-    "82000088": {
-      "name": "Goblin Foot",
-      "icon": ""
-    },
-    "82000089": {
-      "name": "Goblin Deco",
-      "icon": ""
-    },
-    "82000090": {
-      "name": "Goblin Ground",
-      "icon": ""
-    },
-    "82000091": {
-      "name": "Chess Roof",
-      "icon": ""
-    },
-    "82000092": {
-      "name": "Chess Foot",
-      "icon": ""
-    },
-    "82000093": {
-      "name": "Chess Deco",
-      "icon": ""
-    },
-    "82000094": {
-      "name": "Chess Ground",
-      "icon": ""
-    },
-    "82000095": {
-      "name": "Laundry Deco",
-      "icon": ""
-    },
-    "82000096": {
-      "name": "Crystals Deco",
-      "icon": ""
-    },
-    "82000097": {
-      "name": "Cauldron Deco",
-      "icon": ""
-    },
-    "82000098": {
-      "name": "Chess Roof 2",
-      "icon": ""
-    },
-    "82000099": {
-      "name": "Chess Foot 2",
-      "icon": ""
-    },
-    "82000100": {
-      "name": "Greenhouse Roof 1",
-      "icon": ""
-    },
-    "82000101": {
-      "name": "Greenhouse Foot 1",
-      "icon": ""
-    },
-    "82000102": {
-      "name": "Greenhouse Ground 1",
-      "icon": ""
-    },
-    "82000103": {
-      "name": "Greenhouse Deco 1",
-      "icon": ""
-    },
-    "82000104": {
-      "name": "Summer Deco 1",
-      "icon": ""
-    },
-    "82000105": {
-      "name": "Summer Roof 1",
-      "icon": ""
-    },
-    "82000106": {
-      "name": "Summer Foot 1",
-      "icon": ""
-    },
-    "82000107": {
-      "name": "Summer Deco 2",
-      "icon": ""
-    },
-    "82000108": {
-      "name": "Halloween23 Roof",
-      "icon": ""
-    },
-    "82000109": {
-      "name": "Halloween23 Deco",
-      "icon": ""
-    },
-    "82000110": {
-      "name": "Clashmas23 Roof",
-      "icon": ""
-    },
-    "82000111": {
-      "name": "Clashmas23 Deco",
-      "icon": ""
-    },
-    "82000112": {
-      "name": "Clashmas23 Foot",
-      "icon": ""
-    },
-    "82000113": {
-      "name": "Clashmas23 Ground",
-      "icon": ""
-    },
-    "82000114": {
-      "name": "Lny24 Roof",
-      "icon": ""
-    },
-    "82000115": {
-      "name": "Lny24 Deco",
-      "icon": ""
-    },
-    "82000116": {
-      "name": "Lny24 Foot",
-      "icon": ""
-    },
-    "82000117": {
-      "name": "Lny24 Ground",
-      "icon": ""
-    },
-    "82000118": {
-      "name": "Wildwest Roof",
-      "icon": ""
-    },
-    "82000119": {
-      "name": "Wildwest Foot",
-      "icon": ""
-    },
-    "82000120": {
-      "name": "Football Roof",
-      "icon": ""
-    },
-    "82000121": {
-      "name": "Football Deco",
-      "icon": ""
-    },
-    "82000122": {
-      "name": "Football Foot",
-      "icon": ""
-    },
-    "82000123": {
-      "name": "Football Ground",
-      "icon": ""
-    },
-    "82000124": {
-      "name": "Clashgames Deco",
-      "icon": ""
-    },
-    "82000125": {
-      "name": "Clashgames Ground",
-      "icon": ""
-    },
-    "82000126": {
-      "name": "Anime Roof",
-      "icon": ""
-    },
-    "82000127": {
-      "name": "Anime Deco",
-      "icon": ""
-    },
-    "82000128": {
-      "name": "Anime Foot",
-      "icon": ""
-    },
-    "82000129": {
-      "name": "Anime Ground",
-      "icon": ""
-    },
-    "82000130": {
-      "name": "Ttrpg Roof",
-      "icon": ""
-    },
-    "82000131": {
-      "name": "Ttrpg Deco",
-      "icon": ""
-    },
-    "82000132": {
-      "name": "Halloween 24 Roof 2",
-      "icon": ""
-    },
-    "82000133": {
-      "name": "Halloween 24 Deco 2",
-      "icon": ""
-    },
-    "82000134": {
-      "name": "Clashmas 24 Roof 2",
-      "icon": ""
-    },
-    "82000135": {
-      "name": "Clashmas 24 Deco 2",
-      "icon": ""
-    },
-    "82000136": {
-      "name": "Lny25 Roof",
-      "icon": ""
-    },
-    "82000137": {
-      "name": "Lny25 Deco",
-      "icon": ""
-    },
-    "82000138": {
-      "name": "April25 Deco",
-      "icon": ""
-    },
-    "82000139": {
-      "name": "April25 Ground",
-      "icon": ""
-    },
-    "82000140": {
-      "name": "Darkdays Foot",
-      "icon": ""
-    },
-    "82000141": {
-      "name": "Darkdays Ground",
-      "icon": ""
-    },
-    "82000142": {
-      "name": "Clasharama Roof",
-      "icon": ""
-    },
-    "82000143": {
-      "name": "Clasharama Deco",
-      "icon": ""
-    },
-    "82000144": {
-      "name": "Clasharama Foot",
-      "icon": ""
-    },
-    "82000145": {
-      "name": "Clasharama Ground",
-      "icon": ""
+      "poses": {
+        "1": "/home-base/skins/minion-cop/minion-cop-pose-1.png",
+        "2": "/home-base/skins/minion-cop/minion-cop-pose-2.png",
+        "3": "/home-base/skins/minion-cop/minion-cop-pose-3.png",
+        "4": "/home-base/skins/minion-cop/minion-cop-pose-4.png",
+        "5": "/home-base/skins/minion-cop/minion-cop-pose-5.png",
+        "6": "/home-base/skins/minion-cop/minion-cop-pose-6.png"
+      },
+      "icon": "/home-base/skins/minion-cop/minion-cop-icon.png",
+      "name": "Minion Cop"
     }
   }
 }

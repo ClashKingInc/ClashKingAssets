@@ -1,10 +1,14 @@
 import os, glob, re
 from PIL import Image
+import json
 
-NEW_NAME   = "lavaloon"
-INPUT_DIR  = f"assets/home-base/troops/{NEW_NAME}"
+FIND_NAME   = "Firework Fanboy"
+NEW_NAME = FIND_NAME.lower().replace(" ", "-").replace(".", "")
+
+type = "decorations"
+INPUT_DIR  = f"assets/home-base/{type}/{NEW_NAME}"
 OUTPUT_DIR = INPUT_DIR
-
+SAY_ICON = False
 DELETE = True
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -20,7 +24,13 @@ paths = sorted(
     key=lambda p: natural_key(os.path.basename(p))
 )
 
-count = 1
+count = 0
+dicto = {}
+if type == "skins":
+    dicto = {
+        "poses": {}
+    }
+
 for path in paths:
     img   = Image.open(path).convert("RGBA")
     alpha = img.split()[-1]
@@ -36,14 +46,20 @@ for path in paths:
     canvas.paste(cropped, ((size - w)//2, (size - h)//2))
     out_name = f"{NEW_NAME}-{count}.png"
 
-    if count == 1:
-        out_name = f"{NEW_NAME}-icon.png"
+    if count == 0:
+        if SAY_ICON:
+            out_name = f"{NEW_NAME}-icon.png"
+        else:
+            out_name = f"{NEW_NAME}.png"
 
-    if count == 2:
-        out_name = f"{NEW_NAME}-character.png"
-
-    if count == 3:
-        out_name = f"{NEW_NAME}-character-2.png"
+        SPOT_INPUT_DIR = INPUT_DIR.replace("/assets", "")
+        if type == "decorations":
+            SPOT_INPUT_DIR.replace(f"/{NEW_NAME}", "")
+        spot = f"/{SPOT_INPUT_DIR}/{out_name}".replace("/assets", "")
+        dicto["icon"] = spot
+    else:
+        out_name = f"{NEW_NAME}-pose-{count}.png"
+        dicto["poses"][str(count)] = f"/{INPUT_DIR}/{out_name}".replace("/assets", "")
 
     canvas.save(os.path.join(OUTPUT_DIR, out_name))
     count += 1
@@ -55,3 +71,22 @@ for path in paths:
             os.remove(path)
         except OSError as e:
             print(f"Could not delete {path}: {e}")
+
+
+with open("assets/image_map.json", 'r', encoding='utf-8') as f:
+    full_data = json.load(f)
+
+type_data = full_data.get(type, {})
+
+entry_id = ""
+for key, data in type_data.items():
+    if data.get("name") == FIND_NAME:
+        entry_id = key
+        break
+
+dicto["name"] = FIND_NAME
+
+full_data[type][entry_id] = dicto
+
+with open("assets/image_map.json", "w", encoding="utf-8") as jf:
+    jf.write(json.dumps(full_data, indent=2))
