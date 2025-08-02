@@ -210,7 +210,7 @@
 
       if (meta.character) sources.push({ src: meta.character, label: "Character Pose" });
       if (meta.icon) sources.push({ src: meta.icon, label: "Icon" });
-      if (meta.icon) sources.push({ src: meta.full, label: "Full Scenery" });
+      if (meta.icon && meta.full) sources.push({ src: meta.full, label: "Full Scenery" });
 
       if (meta.levels) {
         Object.entries(meta.levels).forEach(([lvl, src]) =>

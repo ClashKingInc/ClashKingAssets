@@ -2,11 +2,12 @@ import os, glob, re
 from PIL import Image
 import json
 
-FIND_NAME   = "Firework Fanboy"
+FIND_NAME   = "Pirate Flag"
 NEW_NAME = FIND_NAME.lower().replace(" ", "-").replace(".", "")
 
 type = "decorations"
 INPUT_DIR  = f"assets/home-base/{type}/{NEW_NAME}"
+
 OUTPUT_DIR = INPUT_DIR
 SAY_ICON = False
 DELETE = True
@@ -46,22 +47,24 @@ for path in paths:
     canvas.paste(cropped, ((size - w)//2, (size - h)//2))
     out_name = f"{NEW_NAME}-{count}.png"
 
+    SPOT_INPUT_DIR = INPUT_DIR.replace("/assets", "")
     if count == 0:
         if SAY_ICON:
             out_name = f"{NEW_NAME}-icon.png"
         else:
             out_name = f"{NEW_NAME}.png"
 
-        SPOT_INPUT_DIR = INPUT_DIR.replace("/assets", "")
         if type == "decorations":
-            SPOT_INPUT_DIR.replace(f"/{NEW_NAME}", "")
-        spot = f"/{SPOT_INPUT_DIR}/{out_name}".replace("/assets", "")
-        dicto["icon"] = spot
+            SPOT_INPUT_DIR = SPOT_INPUT_DIR.replace(f"/{NEW_NAME}", "")
+
+        SPOT_INPUT_DIR = f"/{SPOT_INPUT_DIR}/{out_name}".replace("/assets", "")
+        dicto["icon"] = SPOT_INPUT_DIR
     else:
         out_name = f"{NEW_NAME}-pose-{count}.png"
-        dicto["poses"][str(count)] = f"/{INPUT_DIR}/{out_name}".replace("/assets", "")
+        SPOT_INPUT_DIR = f"/{INPUT_DIR}/{out_name}"
+        dicto["poses"][str(count)] = SPOT_INPUT_DIR
 
-    canvas.save(os.path.join(OUTPUT_DIR, out_name))
+    canvas.save(os.path.join(f"assets{SPOT_INPUT_DIR}"))
     count += 1
     print(f"Saved {out_name}")
 
@@ -86,6 +89,7 @@ for key, data in type_data.items():
 
 dicto["name"] = FIND_NAME
 
+print(dicto)
 full_data[type][entry_id] = dicto
 
 with open("assets/image_map.json", "w", encoding="utf-8") as jf:

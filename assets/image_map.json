@@ -1999,20 +1999,20 @@
   },
   "decorations": {
     "18000000": {
-      "name": "Mighty Statue",
-      "icon": ""
+      "icon": "/home-base/decorations/mighty-statue.png",
+      "name": "Mighty Statue"
     },
     "18000001": {
       "name": "Torch",
-      "icon": ""
+      "icon": "/home-base/decorations/torch.webp"
     },
     "18000003": {
-      "name": "White Flag",
-      "icon": ""
+      "icon": "/home-base/decorations/white-flag.png",
+      "name": "White Flag"
     },
     "18000004": {
-      "name": "Pirate Flag",
-      "icon": ""
+      "icon": "/home-base/decorations/pirate-flag.png",
+      "name": "Pirate Flag"
     },
     "18000005": {
       "name": "Cornflower Bed",
@@ -2387,8 +2387,8 @@
       "icon": ""
     },
     "18000133": {
-      "name": "Haaland Statue",
-      "icon": ""
+      "icon": "/home-base/decorations/haaland-statue.png",
+      "name": "Haaland Statue"
     },
     "18000134": {
       "name": "Triumphant Trophy",
@@ -2467,8 +2467,8 @@
       "icon": ""
     },
     "18000153": {
-      "name": "Foot Tribute",
-      "icon": ""
+      "icon": "/home-base/decorations/foot-tribute.png",
+      "name": "Foot Tribute"
     },
     "18000154": {
       "name": "Pretty Portal",
@@ -2523,8 +2523,8 @@
       "icon": ""
     },
     "18000167": {
-      "name": "Monk Statue",
-      "icon": ""
+      "icon": "/home-base/decorations/monk-statue.png",
+      "name": "Monk Statue"
     },
     "18000168": {
       "name": "Cozy Sauna",
