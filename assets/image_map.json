@@ -1581,7 +1581,8 @@
     "4000083": {
       "name": "Super Wizard",
       "icon": "/home-base/troops/super-wizard/super-wizard-icon.png",
-      "character": "/home-base/troops/super-wizard/super-wizard-character.png"
+      "character": "/home-base/troops/super-wizard/super-wizard-character.png",
+      "character_2": "/home-base/troops/super-wizard/super-wizard-character-2.png"
     },
     "4000084": {
       "name": "Super Minion",
