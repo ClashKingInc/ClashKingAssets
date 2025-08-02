@@ -1,7 +1,7 @@
 import os, glob, re
 from PIL import Image
 
-NEW_NAME   = "super-minion"
+NEW_NAME   = "ram-rider"
 INPUT_DIR  = f"assets/home-base/troops/{NEW_NAME}"
 OUTPUT_DIR = INPUT_DIR
 

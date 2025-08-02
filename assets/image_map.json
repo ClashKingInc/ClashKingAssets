@@ -1587,22 +1587,26 @@
     "4000084": {
       "name": "Super Minion",
       "icon": "/home-base/troops/super-minion/super-minion-icon.png",
-      "character": "/home-base/troops/super-minion/super-minion-character.png"
+      "character": "/home-base/troops/super-minion/super-minion-character.png",
+      "character_2": "/home-base/troops/super-minion/super-minion-character-2.png"
     },
     "4000087": {
       "name": "Log Launcher",
       "icon": "/home-base/troops/log-launcher/log-launcher-icon.png",
-      "character": "/home-base/troops/log-launcher/log-launcher-character.png"
+      "character": "/home-base/troops/log-launcher/log-launcher-character.png",
+      "character_2": "/home-base/troops/log-launcher/log-launcher-character-2.png"
     },
     "4000091": {
       "name": "Flame Flinger",
       "icon": "/home-base/troops/flame-flinger/flame-flinger-icon.png",
-      "character": "/home-base/troops/flame-flinger/flame-flinger-character.png"
+      "character": "/home-base/troops/flame-flinger/flame-flinger-character.png",
+      "character_2": "/home-base/troops/flame-flinger/flame-flinger-character-2.png"
     },
     "4000092": {
       "name": "Battle Drill",
       "icon": "/home-base/troops/battle-drill/battle-drill-icon.png",
-      "character": "/home-base/troops/battle-drill/battle-drill-character.png"
+      "character": "/home-base/troops/battle-drill/battle-drill-character.png",
+      "character_2": "/home-base/troops/battle-drill/battle-drill-character-2.png"
     },
     "4000094": {
       "name": "Ram Rider",
