@@ -739,6 +739,7 @@ class StaticUpdater:
 
                 if upgrade_costs[0] != "":
                     for resource, cost in zip(upgrade_resources, upgrade_costs):
+                        resource = resource.strip()
                         cost = int(cost)
                         if resource == "CommonOre":
                             shiny_ore += cost

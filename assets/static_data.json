@@ -27617,7 +27617,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -27683,7 +27683,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -27749,7 +27749,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -27815,7 +27815,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -27881,7 +27881,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -27947,7 +27947,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28029,7 +28029,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28095,7 +28095,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28161,7 +28161,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28227,7 +28227,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28293,7 +28293,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28359,7 +28359,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28441,7 +28441,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28507,7 +28507,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28573,7 +28573,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28639,7 +28639,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28705,7 +28705,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28771,7 +28771,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28853,7 +28853,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28919,7 +28919,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -28985,7 +28985,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29051,7 +29051,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29117,7 +29117,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29183,7 +29183,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29265,7 +29265,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29331,7 +29331,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29397,7 +29397,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29463,7 +29463,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29529,7 +29529,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29595,7 +29595,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29676,7 +29676,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29739,7 +29739,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29802,7 +29802,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29865,7 +29865,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29928,7 +29928,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -29991,7 +29991,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30070,7 +30070,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30133,7 +30133,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30196,7 +30196,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30259,7 +30259,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30322,7 +30322,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30385,7 +30385,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30464,7 +30464,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30527,7 +30527,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30590,7 +30590,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30653,7 +30653,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30716,7 +30716,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30779,7 +30779,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30858,7 +30858,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30921,7 +30921,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -30984,7 +30984,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31047,7 +31047,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31110,7 +31110,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31173,7 +31173,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31253,7 +31253,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31319,7 +31319,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31385,7 +31385,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31451,7 +31451,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31517,7 +31517,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31583,7 +31583,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31674,7 +31674,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31767,7 +31767,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -31860,8 +31860,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -31953,8 +31953,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -32046,8 +32046,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -32139,8 +32139,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -32232,8 +32232,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -32325,8 +32325,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -32418,8 +32418,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -32517,7 +32517,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -32580,7 +32580,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -32643,7 +32643,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -32706,7 +32706,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -32769,7 +32769,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -32832,7 +32832,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -32913,7 +32913,7 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -32982,7 +32982,7 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -33051,7 +33051,7 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -33120,7 +33120,7 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -33189,7 +33189,7 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -33258,7 +33258,7 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -33342,7 +33342,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -33408,7 +33408,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -33474,8 +33474,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -33540,8 +33540,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -33606,8 +33606,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -33672,8 +33672,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -33738,8 +33738,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -33804,8 +33804,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -33870,8 +33870,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -33952,7 +33952,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -34018,7 +34018,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -34084,8 +34084,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -34150,8 +34150,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -34216,8 +34216,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -34282,8 +34282,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -34348,8 +34348,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -34414,8 +34414,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -34480,8 +34480,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -34562,7 +34562,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -34628,7 +34628,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -34694,8 +34694,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -34760,8 +34760,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -34826,8 +34826,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -34892,8 +34892,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -34958,8 +34958,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -35024,8 +35024,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -35090,8 +35090,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -35171,7 +35171,7 @@
           "required_townhall": 9,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -35234,7 +35234,7 @@
           "required_townhall": 9,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -35297,7 +35297,7 @@
           "required_townhall": 9,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -35360,7 +35360,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -35423,7 +35423,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -35486,7 +35486,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -35567,7 +35567,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -35636,7 +35636,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -35705,8 +35705,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -35774,8 +35774,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -35843,8 +35843,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -35912,8 +35912,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -35981,8 +35981,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -36050,8 +36050,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -36119,8 +36119,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -36210,7 +36210,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -36297,7 +36297,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -36384,7 +36384,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -36471,7 +36471,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -36558,7 +36558,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -36645,7 +36645,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -36743,7 +36743,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -36815,7 +36815,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -36887,8 +36887,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -36959,8 +36959,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -37031,8 +37031,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -37103,8 +37103,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -37175,8 +37175,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -37247,8 +37247,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -37319,8 +37319,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -37404,7 +37404,7 @@
           "required_townhall": 11,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -37467,7 +37467,7 @@
           "required_townhall": 11,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -37530,7 +37530,7 @@
           "required_townhall": 11,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -37593,7 +37593,7 @@
           "required_townhall": 11,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -37656,7 +37656,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -37719,7 +37719,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -37799,7 +37799,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -37865,7 +37865,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -37931,8 +37931,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -37997,8 +37997,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -38063,8 +38063,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -38129,8 +38129,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -38195,8 +38195,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -38261,8 +38261,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -38327,8 +38327,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -38409,7 +38409,7 @@
           "required_townhall": 13,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -38475,7 +38475,7 @@
           "required_townhall": 13,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -38541,7 +38541,7 @@
           "required_townhall": 13,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -38607,7 +38607,7 @@
           "required_townhall": 13,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -38673,7 +38673,7 @@
           "required_townhall": 13,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -38739,7 +38739,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -38835,7 +38835,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -38943,7 +38943,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -39051,8 +39051,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -39159,8 +39159,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -39267,8 +39267,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -39375,8 +39375,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -39483,8 +39483,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -39591,8 +39591,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -39699,8 +39699,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -39810,7 +39810,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -39879,7 +39879,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -39948,8 +39948,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -40017,8 +40017,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -40086,8 +40086,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -40155,8 +40155,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -40224,8 +40224,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -40293,8 +40293,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -40362,8 +40362,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -40452,7 +40452,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -40536,7 +40536,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -40620,8 +40620,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -40704,8 +40704,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -40788,8 +40788,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -40872,8 +40872,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -40956,8 +40956,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -41040,8 +41040,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -41124,8 +41124,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -41218,7 +41218,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -41284,7 +41284,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -41350,8 +41350,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -41416,8 +41416,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -41482,8 +41482,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -41548,8 +41548,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -41614,8 +41614,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -41680,8 +41680,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -41746,8 +41746,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -41828,7 +41828,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -41894,7 +41894,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -41960,7 +41960,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42026,7 +42026,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42092,7 +42092,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42158,7 +42158,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42241,7 +42241,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42310,7 +42310,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42379,7 +42379,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42448,7 +42448,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42517,7 +42517,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42586,7 +42586,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42670,7 +42670,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42736,7 +42736,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42802,7 +42802,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42868,7 +42868,7 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -42934,7 +42934,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -43000,7 +43000,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -43083,7 +43083,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -43152,7 +43152,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -43221,7 +43221,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
+            "glowy_ore": 200,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -43290,7 +43290,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
+            "glowy_ore": 400,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -43359,7 +43359,7 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -43428,7 +43428,7 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
+            "glowy_ore": 600,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -43518,7 +43518,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -43602,7 +43602,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -43686,8 +43686,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -43770,8 +43770,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -43854,8 +43854,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -43938,8 +43938,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -44022,8 +44022,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -44106,8 +44106,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -44190,8 +44190,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
@@ -44284,7 +44284,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 240,
-            "glowy_ore": 0,
+            "glowy_ore": 20,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -44350,7 +44350,7 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 840,
-            "glowy_ore": 0,
+            "glowy_ore": 100,
             "starry_ore": 0
           },
           "main_abilities": [
@@ -44416,8 +44416,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 1800,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 200,
+            "starry_ore": 10
           },
           "main_abilities": [
             {
@@ -44482,8 +44482,8 @@
           "required_townhall": 8,
           "upgrade_cost": {
             "shiny_ore": 2100,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 400,
+            "starry_ore": 20
           },
           "main_abilities": [
             {
@@ -44548,8 +44548,8 @@
           "required_townhall": 10,
           "upgrade_cost": {
             "shiny_ore": 2400,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 30
           },
           "main_abilities": [
             {
@@ -44614,8 +44614,8 @@
           "required_townhall": 12,
           "upgrade_cost": {
             "shiny_ore": 2700,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 50
           },
           "main_abilities": [
             {
@@ -44680,8 +44680,8 @@
           "required_townhall": 14,
           "upgrade_cost": {
             "shiny_ore": 3000,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 100
           },
           "main_abilities": [
             {
@@ -44746,8 +44746,8 @@
           "required_townhall": 15,
           "upgrade_cost": {
             "shiny_ore": 3300,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 120
           },
           "main_abilities": [
             {
@@ -44812,8 +44812,8 @@
           "required_townhall": 16,
           "upgrade_cost": {
             "shiny_ore": 3600,
-            "glowy_ore": 0,
-            "starry_ore": 0
+            "glowy_ore": 600,
+            "starry_ore": 150
           },
           "main_abilities": [
             {
