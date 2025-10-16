@@ -1,0 +1,49 @@
+[project]
+name = "clashking-assets"
+version = "0.1.0"
+description = "Asset management service for ClashKing game assets and images"
+
+requires-python = "==3.13.7"
+dependencies = [
+    "aiohttp",
+    "fastapi",
+    "gunicorn",
+    "lz4",
+    "pillow",
+    "uvloop",
+    "uvicorn",
+    "zstandard>=0.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+    "flake8",
+    "ruff",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length    = 120
+target-version = "py313"
+exclude        = ["venv", ".venv", "build", "dist", "assets"]
+
+[tool.ruff.lint]
+extend-select = [
+  "F",  # Pyflakes (unused imports, etc.)
+  "E",  # pycodestyle errors
+  "W",  # pycodestyle warnings
+  "I",  # isort rules
+]
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
+
+[tool.ruff.format]
+docstring-code-format     = false
+quote-style               = "preserve"
+indent-style              = "space"
+skip-magic-trailing-comma = true
