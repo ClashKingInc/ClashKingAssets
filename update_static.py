@@ -6,18 +6,16 @@ If new files need to be added, then place them in the TARGETS list.
 import aiohttp
 import asyncio
 import json
-import urllib
-import urllib.request
 import logging
 import csv
 import os
 import zipfile
 import re
-import zlib
 
 
-class StaticUpdater():
+class StaticUpdater:
     def __init__(self):
+
         self.TARGETS = [
             ("logic/buildings.csv", "buildings.csv"),
             ("logic/traps.csv", "traps.csv"),
@@ -40,7 +38,9 @@ class StaticUpdater():
             ("localization/texts.csv", "texts_EN.csv"),
             ("logic/league_tiers.csv", "league_tiers.csv"),
             ("logic/war_leagues.csv", "war_leagues.csv"),
+            ("logic/villager_apprentices.csv", "helpers.csv")
         ]
+
 
         self.supported_languages = [
             "ar", "cn", "cnt", "de", "es", "fa", "fi", "fr", "id", "it", "jp", "kr",
@@ -58,11 +58,22 @@ class StaticUpdater():
         self.VERSION_PARAM = "version" if self.CLASH_VERSION == "latest" else "versionCode"
         self.APK_URL = f"https://d.apkpure.net/b/APK/com.supercell.clashofclans?{self.VERSION_PARAM}={self.CLASH_VERSION}"
 
+        self.translation_data = {}
+        self.full_building_data = {}
+        self.full_supercharges_data = {}
+        self.full_abilities_data = {}
+        self.full_hero_data = {}
+
+        self.lab_to_townhall = {}
+        self.smithy_to_townhall = {}
+        self.bb_lab_to_townhall = {}
+        self.pethouse_to_townhall = {}
+
+
     async def download(self, url: str):
         async with aiohttp.request('GET', url) as fp:
             c = await fp.read()
         return c
-
 
     async def get_fingerprint(self):
         data = await self.download(self.APK_URL)
@@ -75,7 +86,6 @@ class StaticUpdater():
 
         os.remove("apk.zip")
         return fingerprint
-
 
     def decompress(self, data):
         """
@@ -114,7 +124,6 @@ class StaticUpdater():
         import lzma
         decompressed = lzma.LZMADecompressor().decompress(data)
         return decompressed, {"lzma_prop": o_prop}
-
 
     def process_csv(self, data, file_path, save_name, compressed: bool):
         """
@@ -242,7 +251,6 @@ class StaticUpdater():
             except OSError as e:
                 logging.warning(f"Could not delete {file_path}: {e}")
 
-
     def check_header(self, data):
         if data[0] == 0x5D:
             return "csv"
@@ -254,101 +262,70 @@ class StaticUpdater():
             return "decoded csv"
         raise Exception("Unknown header")
 
+    def open_file(self, file_path: str) -> dict:
+        with open(file_path, "r", encoding="utf-8") as f:
+            data: dict = json.load(f)
+        return data
 
-    def create_master_json(self):
+    def _translate(self, tid: str):
+        return self.translation_data.get(tid, {}).get("EN")
 
-        with open(f"texts_EN.json", "r", encoding="utf-8") as f:
-            full_translation_data: dict = json.load(f)
+    def _parse_resource(self, resource: str) -> str:
+        resource = resource if resource != "DarkElixir" else "Dark_Elixir"
+        resource_TID = f'TID_{resource}'.upper()
+        return self._translate(resource_TID)
 
+    def _parse_translation_data(self):
+        full_translation_data = self.open_file("texts_EN.json")
         other_translations = []
         for language in self.supported_languages:
             with open(f"texts_{language}.json", "r", encoding="utf-8") as f:
                 other_translations.append((language, json.load(f)))
 
-        with open(f"buildings.json", "r", encoding="utf-8") as f:
-            full_building_data: dict = json.load(f)
-
-        with open(f"characters.json", "r", encoding="utf-8") as f:
-            full_troop_data: dict = json.load(f)
-
-        with open(f"traps.json", "r", encoding="utf-8") as f:
-            full_trap_data: dict = json.load(f)
-
-        with open(f"decos.json", "r", encoding="utf-8") as f:
-            full_deco_data: dict = json.load(f)
-
-        with open(f"obstacles.json", "r", encoding="utf-8") as f:
-            full_obstacle_data: dict = json.load(f)
-
-        with open(f"pets.json", "r", encoding="utf-8") as f:
-            full_pet_data: dict = json.load(f)
-
-        with open(f"heroes.json", "r", encoding="utf-8") as f:
-            full_hero_data: dict = json.load(f)
-
-        with open(f"clan_capital_parts.json", "r", encoding="utf-8") as f:
-            full_capital_part_data: dict = json.load(f)
-
-        with open(f"equipment.json", "r", encoding="utf-8") as f:
-            full_equipment_data: dict = json.load(f)
-
-        with open(f"special_abilities.json", "r", encoding="utf-8") as f:
-            full_abilities_data: dict = json.load(f)
-
-        with open(f"sceneries.json", "r", encoding="utf-8") as f:
-            full_scenery_data: dict = json.load(f)
-
-        with open(f"skins.json", "r", encoding="utf-8") as f:
-            full_skin_data: dict = json.load(f)
-
-        with open(f"spells.json", "r", encoding="utf-8") as f:
-            full_spell_data: dict = json.load(f)
-
-        with open(f"supercharges.json", "r", encoding="utf-8") as f:
-            full_supercharges_data: dict = json.load(f)
-
-        with open(f"seasonal_defense_archetypes.json", "r", encoding="utf-8") as f:
-            full_seasonal_defenses: dict = json.load(f)
-
-        with open(f"seasonal_defense_modules.json", "r", encoding="utf-8") as f:
-            full_seasonal_modules: dict = json.load(f)
-
         new_translation_data = {}
         for translation_key, translation_data in full_translation_data.items():
-            new_translation_data[translation_key] = {"EN" : translation_data.get("EN")}
+            new_translation_data[translation_key] = {"EN": translation_data.get("EN")}
             for lang, language_data in other_translations:
                 if not language_data.get(translation_key):
                     continue
-                new_translation_data[translation_key][lang.upper()] = language_data.get(translation_key).get(lang.upper())
+                new_translation_data[translation_key][lang.upper()] = language_data.get(translation_key).get(
+                    lang.upper())
 
-        #BUILDING JSON BUILD
+        self.translation_data = new_translation_data
+        return new_translation_data
+
+    def _parse_building_data(self):
+        self.full_building_data = self.open_file("buildings.json")
+        self.full_supercharges_data = self.open_file("supercharges.json")
+
         new_building_data = []
-        for _id, (building_name, building_data) in enumerate(full_building_data.items(), 1000000):
-            if building_data.get("BuildingClass") in ["Npc", "NonFunctional", "Npc Town Hall"] or "Unused" in building_name:
+
+        for _id, (building_name, building_data) in enumerate(self.full_building_data.items(), 1000000):
+            if building_data.get("BuildingClass") in ["Npc", "NonFunctional",
+                                                      "Npc Town Hall"] or "Unused" in building_name:
                 continue
-            resource_TID = f'TID_{building_data.get("BuildResource")}'.upper()
             village_type = building_data.get("VillageType", 0)
 
             superchargeable = False
-            for supercharge_data in full_supercharges_data.values():
+            for supercharge_data in self.full_supercharges_data.values():
                 if supercharge_data.get("Name") == building_name:
                     superchargeable = True
                     break
 
             hold_data = {
-                "_id" : _id,
-                "name": new_translation_data.get(building_data.get("TID")).get("EN"),
-                "info": new_translation_data.get(building_data.get("InfoTID")).get("EN"),
+                "_id": _id,
+                "name": self._translate(tid=building_data.get("TID")),
+                "info": self._translate(tid=building_data.get("InfoTID")),
                 "TID": {
                     "name": building_data.get("TID"),
                     "info": building_data.get("InfoTID"),
                 },
                 "type": building_data.get("BuildingClass"),
-                "upgrade_resource": new_translation_data.get(resource_TID, {}).get("EN"),
+                "upgrade_resource": self._parse_resource(resource=building_data.get("BuildResource")),
                 "village_type": "home" if not village_type else "builder_base",
-                "width" : building_data.get("Width"),
-                "superchargeable" : superchargeable,
-                "levels" : []
+                "width": building_data.get("Width"),
+                "superchargeable": superchargeable,
+                "levels": []
             }
             for level, level_data in building_data.items():
                 if not isinstance(level_data, dict):
@@ -368,23 +345,39 @@ class StaticUpdater():
 
             new_building_data.append(hold_data)
 
-        #SUPERCHARGE JSON BUILD
-        new_supercharge_data = []
-        for supercharge_name, supercharge_data in full_supercharges_data.items():
-            target = supercharge_data.get("TargetBuilding")
-            name = new_translation_data.get(full_building_data.get(target).get("TID")).get("EN")
+        lab_data = next((item for item in new_building_data if item["name"] == "Laboratory")).get("levels")
+        lab_to_townhall = {spot : level_data.get("required_townhall") for spot, level_data in enumerate(lab_data, 1)}
+        lab_to_townhall[-1] = 1 # there are troops with no lab ...
+        lab_to_townhall[0] = 2
+        self.lab_to_townhall = lab_to_townhall
 
-            resource = supercharge_data.get("BuildResource")
-            resource = resource if resource != "DarkElixir" else "Dark_Elixir"
-            resource_TID = f'TID_{resource}'.upper()
+        blacksmith_data = next((item for item in new_building_data if item["name"] == "Blacksmith")).get("levels")
+        self.smithy_to_townhall = {spot: level_data.get("required_townhall") for spot, level_data in
+                              enumerate(blacksmith_data, 1)}
+
+        pet_house_data = next((item for item in new_building_data if item["name"] == "Pet House")).get("levels")
+        self.pethouse_to_townhall = {spot: level_data.get("required_townhall") for spot, level_data in
+                                enumerate(pet_house_data, 1)}
+
+        bb_lab_data = next((item for item in new_building_data if item["name"] == "Star Laboratory")).get("levels")
+        self.bb_lab_to_townhall = {spot: level_data.get("required_townhall") for spot, level_data in
+                              enumerate(bb_lab_data, 1)}
+
+        return new_building_data
+
+    def _parse_supercharge_data(self):
+        new_supercharge_data = []
+        for supercharge_name, supercharge_data in self.full_supercharges_data.items():
+            target = supercharge_data.get("TargetBuilding")
+            name = self._translate(tid=self.full_building_data.get(target).get("TID"))
 
             hold_data = {
-                "_id" : name,
-                "name" : f"{name} Supercharge",
+                "_id": name,
+                "name": f"{name} Supercharge",
                 "target_building": name,
                 "required_townhall_level": supercharge_data.get("RequiredTownHallLevel"),
-                "upgrade_resource": new_translation_data.get(resource_TID).get("EN"),
-                "levels" : []
+                "upgrade_resource": self._parse_resource(resource=supercharge_data.get("BuildResource")),
+                "levels": []
             }
             for level, level_data in supercharge_data.items():
                 if not isinstance(level_data, dict):
@@ -395,8 +388,8 @@ class StaticUpdater():
                 upgrade_time_seconds += level_data.get("BuildTimeS", 0)
 
                 DPS = level_data.get("DPS")
-                #if the level doesnt have a DPS & there is no hitpoints for this row, that means it is a DPS upgrade
-                #unless it is a resource pump, but we dont handle those anyways
+                # if the level doesnt have a DPS & there is no hitpoints for this row, that means it is a DPS upgrade
+                # unless it is a resource pump, but we dont handle those anyways
                 if not DPS and not level_data.get("Hitpoints"):
                     DPS = supercharge_data.get("DPS")
                 hold_data["levels"].append({
@@ -408,43 +401,50 @@ class StaticUpdater():
                 })
             new_supercharge_data.append(hold_data)
 
-        #SEASONAL DEFENSE JSON BUILD
+        return new_supercharge_data
+
+    def _parse_ability_data(self):
+        self.full_abilities_data = self.open_file("special_abilities.json")
+        return self.full_abilities_data
+
+    def _parse_seasonal_defense_data(self):
+        full_seasonal_defenses = self.open_file("seasonal_defense_archetypes.json")
+        full_seasonal_modules = self.open_file("seasonal_defense_modules.json")
+
+        for _id, (n, d) in enumerate(full_seasonal_modules.items(), 102000000):
+            d["_id"] = _id
+
         new_seasonal_defense_data = []
-        for seasonal_def_name, seasonal_def_data in full_seasonal_defenses.items():
+        for _id, (seasonal_def_name, seasonal_def_data) in enumerate(full_seasonal_defenses.items(), 103000000):
             spaced_name = re.sub(r'([A-Z])', r' \1', seasonal_def_name).strip().replace(" ", "_")
             name_TID = f"TID_BUILDING_{spaced_name}".upper()
             info_TID = f"TID_BUILDING_{spaced_name}_INFO".upper()
 
-            #may be an unreleased season def
-            if not new_translation_data.get(name_TID):
+            # may be an unreleased season def
+            if not self._translate(tid=name_TID):
                 continue
 
             hold_data = {
-                "_id": string_to_number(new_translation_data.get(name_TID).get("EN")),
-                "name": new_translation_data.get(name_TID).get("EN"),
-                "info": new_translation_data.get(info_TID).get("EN"),
-                "TID" : {
+                "_id": _id,
+                "name": self._translate(tid=name_TID),
+                "info": self._translate(tid=info_TID),
+                "TID": {
                     "name": name_TID,
                     "info": info_TID,
                 },
-                "module_1": {},
-                "module_2": {},
-                "module_3": {},
+                "modules" : []
             }
             for count, module in enumerate(seasonal_def_data.get("Modules").split(";"), 1):
                 module_data = full_seasonal_modules.get(module)
 
-                resource = module_data.get("BuildResource")
-                resource = resource if resource != "DarkElixir" else "Dark_Elixir"
-                resource_TID = f'TID_{resource}'.upper()
-
-                hold_data[f"module_{count}"] = {
-                    "name": new_translation_data.get(module_data.get("TID")).get("EN"),
-                    "TID" : {
-                        "name" : module_data.get("TID"),
+                module_hold_data = {
+                    "_id": module_data.get("_id"),
+                    "name": self._translate(tid=module_data.get("TID")),
+                    "TID": {
+                        "name": module_data.get("TID"),
                     },
-                    "upgrade_resource": new_translation_data.get(resource_TID).get("EN"),
-                    "levels" : []
+                    "upgrade_resource": self._parse_resource(module_data.get("BuildResource")),
+                    "levels": []
                 }
                 for level, level_data in module_data.items():
                     if not isinstance(level_data, dict):
@@ -454,52 +454,45 @@ class StaticUpdater():
                     upgrade_time_seconds += level_data.get("BuildTimeM", 0) * 60
                     upgrade_time_seconds += level_data.get("BuildTimeS", 0)
 
-                    ability_data = full_abilities_data.get(module_data.get("SpecialAbility")).get(level)
+                    ability_data = self.full_abilities_data.get(module_data.get("SpecialAbility")).get(level)
                     ability_data.pop("ActivateFromGameSystem", None)
                     ability_data.pop("DeactivateFromGameSystem", None)
                     ability_data.pop("Level", None)
 
-                    hold_data[f"module_{count}"]["levels"].append({
+                    module_hold_data["levels"].append({
                         "level": int(level),
                         "upgrade_cost": level_data.get("BuildCost"),
                         "upgrade_time": upgrade_time_seconds,
                         "ability_data": ability_data
                     })
+
+                hold_data["modules"].append(module_hold_data)
+
             new_seasonal_defense_data.append(hold_data)
 
-        #TROOP JSON BUILD
-        lab_data = next((item for item in new_building_data if item["name"] == "Laboratory")).get("levels")
-        lab_to_townhall = {spot : level_data.get("required_townhall") for spot, level_data in enumerate(lab_data, 1)}
-        lab_to_townhall[-1] = 1 # there are troops with no lab ...
-        lab_to_townhall[0] = 2
+        return new_seasonal_defense_data
 
-        blacksmith_data = next((item for item in new_building_data if item["name"] == "Blacksmith")).get("levels")
-        smithy_to_townhall = {spot : level_data.get("required_townhall") for spot, level_data in enumerate(blacksmith_data, 1)}
-
-        pet_house_data = next((item for item in new_building_data if item["name"] == "Pet House")).get("levels")
-        pethouse_to_townhall = {spot: level_data.get("required_townhall") for spot, level_data in enumerate(pet_house_data, 1)}
-
-        bb_lab_data = next((item for item in new_building_data if item["name"] == "Star Laboratory")).get("levels")
-        bb_lab_to_townhall = {spot: level_data.get("required_townhall") for spot, level_data in enumerate(bb_lab_data, 1)}
+    def _parse_troop_data(self):
+        full_troop_data = self.open_file("characters.json")
 
         new_troop_data = []
         for _id, (troop_name, troop_data) in enumerate(full_troop_data.items(), 4000000):
             if troop_data.get("DisableProduction", False):
                 continue
             village_type = troop_data.get("VillageType", 0)
-            production_building = full_building_data.get(troop_data.get("ProductionBuilding")).get("TID")
-            resource_TID = f'TID_{troop_data.get("UpgradeResource")}'.upper()
+            production_building = self.full_building_data.get(troop_data.get("ProductionBuilding")).get("TID")
+
             hold_data = {
                 "_id": _id,
-                "name": new_translation_data.get(troop_data.get("TID")).get("EN"),
-                "info": new_translation_data.get(troop_data.get("InfoTID")).get("EN"),
+                "name": self._translate(tid=troop_data.get("TID")),
+                "info": self._translate(tid=troop_data.get("InfoTID")),
                 "TID": {
                     "name": troop_data.get("TID"),
                     "info": troop_data.get("InfoTID"),
                 },
-                "production_building": new_translation_data.get(production_building).get("EN"),
+                "production_building": self._translate(tid=production_building),
                 "production_building_level": troop_data.get("BarrackLevel"),
-                "upgrade_resource": new_translation_data.get(resource_TID, {}).get("EN"),
+                "upgrade_resource": self._parse_resource(resource=troop_data.get("UpgradeResource")),
 
                 "is_flying": troop_data.get("IsFlying"),
                 "is_air_targeting": troop_data.get("AirTargets"),
@@ -521,10 +514,9 @@ class StaticUpdater():
                 hold_data["is_seasonal"] = True
             hold_data["levels"] = []
 
-            max_townhall_converter = lab_to_townhall
-
+            max_townhall_converter = self.lab_to_townhall
             if troop_data.get("ProductionBuilding") == "Barrack2":
-                max_townhall_converter = bb_lab_to_townhall
+                max_townhall_converter = self.bb_lab_to_townhall
 
             for level, level_data in troop_data.items():
                 if not isinstance(level_data, dict):
@@ -552,27 +544,28 @@ class StaticUpdater():
                 continue
             new_troop_data.append(hold_data)
 
+        return new_troop_data
+
+    def _parse_spell_data(self):
+        full_spell_data = self.open_file("spells.json")
+
         new_spell_data = []
         for _id, (spell_name, spell_data) in enumerate(full_spell_data.items(), 26000000):
             if spell_data.get("DisableProduction", False):
                 continue
 
-            resource = spell_data.get("UpgradeResource")
-            resource = resource if resource != "DarkElixir" else "Dark_Elixir"
-
-            production_building = full_building_data.get(spell_data.get("ProductionBuilding")).get("TID")
-            resource_TID = f'TID_{resource}'.upper()
+            production_building = self.full_building_data.get(spell_data.get("ProductionBuilding")).get("TID")
             hold_data = {
                 "_id": _id,
-                "name": new_translation_data.get(spell_data.get("TID")).get("EN"),
-                "info": new_translation_data.get(spell_data.get("InfoTID")).get("EN"),
+                "name": self._translate(spell_data.get("TID")),
+                "info": self._translate(spell_data.get("InfoTID")),
                 "TID": {
                     "name": spell_data.get("TID"),
                     "info": spell_data.get("InfoTID"),
                 },
-                "production_building": new_translation_data.get(production_building).get("EN"),
+                "production_building": self._translate(production_building),
                 "production_building_level": spell_data.get("SpellForgeLevel"),
-                "upgrade_resource": new_translation_data.get(resource_TID, {}).get("EN"),
+                "upgrade_resource": self._parse_resource(resource=spell_data.get("UpgradeResource")),
                 "radius": spell_data.get("Radius") or spell_data.get("1", {}).get("Radius"),
                 "housing_space": spell_data.get("HousingSpace"),
             }
@@ -593,7 +586,7 @@ class StaticUpdater():
                     "upgrade_time": upgrade_time_seconds,
                     "upgrade_cost": level_data.get("UpgradeCost", 0),
                     "required_lab_level": level_data.get("LaboratoryLevel"),
-                    "required_townhall": level_data.get("UpgradeLevelByTH") or lab_to_townhall[level_data.get("LaboratoryLevel")],
+                    "required_townhall": level_data.get("UpgradeLevelByTH") or self.lab_to_townhall[level_data.get("LaboratoryLevel")],
                 }
                 hold_data["levels"].append(new_level_data)
 
@@ -601,25 +594,25 @@ class StaticUpdater():
                 continue
             new_spell_data.append(hold_data)
 
+        return new_spell_data
 
-        #BUILD HERO JSON
+    def _parse_hero_data(self):
+        self.full_hero_data = self.open_file("heroes.json")
+
         new_hero_data = []
-        for _id, (hero_name, hero_data) in enumerate(full_hero_data.items(), 28000000):
-            resource = hero_data.get("UpgradeResource")
-            resource = resource if resource != "DarkElixir" else "Dark_Elixir"
+        for _id, (hero_name, hero_data) in enumerate(self.full_hero_data.items(), 28000000):
             village_type = hero_data.get("VillageType", 0)
-            resource_TID = f'TID_{resource}'.upper()
             hold_data = {
                 "_id": _id,
-                "name": new_translation_data.get(hero_data.get("TID")).get("EN"),
-                "info": new_translation_data.get(hero_data.get("InfoTID")).get("EN"),
+                "name": self._translate(tid=hero_data.get("TID")),
+                "info": self._translate(hero_data.get("InfoTID")),
                 "TID": {
                     "name": hero_data.get("TID"),
                     "info": hero_data.get("InfoTID"),
                 },
-                "production_building": new_translation_data.get("TID_HERO_TAVERN").get("EN") if not village_type else None,
+                "production_building": self._translate(tid="TID_HERO_TAVERN") if not village_type else None,
                 "production_building_level": hero_data.get("1", {}).get("RequiredHeroTavernLevel"),
-                "upgrade_resource": new_translation_data.get(resource_TID).get("EN"),
+                "upgrade_resource": self._parse_resource(resource=hero_data.get("UpgradeResource")),
 
                 "is_flying": hero_data.get("IsFlying"),
                 "is_air_targeting": hero_data.get("AirTargets"),
@@ -653,25 +646,27 @@ class StaticUpdater():
 
             new_hero_data.append(hold_data)
 
+        return new_hero_data
 
-        #BUILD PET JSON
+    def _parse_pet_data(self):
+        full_pet_data = self.open_file("pets.json")
+
         new_pet_data = []
         for _id, (pet_name, pet_data) in enumerate(full_pet_data.items(), 73000000):
             if pet_data.get("Deprecated", False) or pet_name in ["PhoenixEgg"]:
                 continue
 
-            resource_TID = f'TID_DARK_ELIXIR'.upper()
             hold_data = {
                 "_id": _id,
-                "name": new_translation_data.get(pet_data.get("TID")).get("EN"),
-                "info": new_translation_data.get(pet_data.get("InfoTID")).get("EN"),
+                "name": self._translate(tid=pet_data.get("TID")),
+                "info": self._translate(tid=pet_data.get("InfoTID")),
                 "TID": {
                     "name": pet_data.get("TID"),
                     "info": pet_data.get("InfoTID"),
                 },
-                "production_building": new_translation_data.get("TID_PET_SHOP").get("EN"),
+                "production_building": self._translate(tid="TID_PET_SHOP"),
                 "production_building_level": pet_data.get("1").get("LaboratoryLevel"),
-                "upgrade_resource": new_translation_data.get(resource_TID).get("EN"),
+                "upgrade_resource": self._parse_resource('DarkElixir'),
 
                 "is_flying": pet_data.get("IsFlying"),
                 "is_air_targeting": pet_data.get("AirTargets"),
@@ -680,7 +675,7 @@ class StaticUpdater():
                 "movement_speed": pet_data.get("Speed"),
                 "attack_speed": pet_data.get("AttackSpeed"),
                 "attack_range": pet_data.get("AttackRange"),
-                "levels" : []
+                "levels": []
             }
 
             for level, level_data in pet_data.items():
@@ -688,7 +683,6 @@ class StaticUpdater():
                     continue
                 # convert times to seconds, all times for all things will be in seconds
                 upgrade_time_seconds = level_data.get("UpgradeTimeH", 0) * 60 * 60
-
 
                 new_level_data = {
                     "level": int(level),
@@ -698,13 +692,17 @@ class StaticUpdater():
                     "upgrade_time": upgrade_time_seconds,
                     "upgrade_cost": level_data.get("UpgradeCost", 0),
                     "lab_level": level_data.get("LaboratoryLevel"),
-                    "required_townhall": pethouse_to_townhall[level_data.get("LaboratoryLevel")],
+                    "required_townhall": self.pethouse_to_townhall[level_data.get("LaboratoryLevel")],
                 }
                 hold_data["levels"].append(new_level_data)
 
             new_pet_data.append(hold_data)
 
-        # BUILD EQUIPMENT JSON
+        return new_pet_data
+
+    def _parse_equipment_data(self):
+        full_equipment_data = self.open_file("equipment.json")
+
         new_equipment_data = []
         for _id, (equipment_name, equipment_data) in enumerate(full_equipment_data.items(), 90000000):
             if equipment_data.get("Deprecated", False):
@@ -712,29 +710,26 @@ class StaticUpdater():
 
             main_abilities = equipment_data.get("MainAbilities").split(";")
             extra_abilities = equipment_data.get("ExtraAbilities", "").split(";")
-            hero_TID = full_hero_data.get(equipment_data.get("AllowedCharacters").split(";")[0]).get("TID")
+            hero_TID = self.full_hero_data.get(equipment_data.get("AllowedCharacters").split(";")[0]).get("TID")
             hold_data = {
                 "_id": _id,
-                "name": new_translation_data.get(equipment_data.get("TID")).get("EN"),
-                "info": new_translation_data.get(equipment_data.get("InfoTID")).get("EN"),
+                "name": self._translate(tid=equipment_data.get("TID")),
+                "info": self._translate(tid=equipment_data.get("InfoTID")),
                 "TID": {
                     "name": equipment_data.get("TID"),
                     "info": equipment_data.get("InfoTID"),
                     "production_building": "TID_SMITHY",
                 },
-                "production_building": new_translation_data.get("TID_SMITHY").get("EN"),
+                "production_building": self._translate(tid="TID_SMITHY"),
                 "production_building_level": equipment_data.get("1").get("RequiredBlacksmithLevel"),
                 "rarity": equipment_data.get("Rarity"),
-                "hero": new_translation_data.get(hero_TID).get("EN"),
+                "hero": self._translate(tid=hero_TID),
                 "levels": []
             }
 
             for level, level_data in equipment_data.items():
                 if not isinstance(level_data, dict):
                     continue
-                # convert times to seconds, all times for all things will be in seconds
-                upgrade_time_seconds = level_data.get("UpgradeTimeH", 0) * 60 * 60
-
 
                 shiny_ore = 0
                 glowy_ore = 0
@@ -757,11 +752,13 @@ class StaticUpdater():
                     "hitpoints": level_data.get("Hitpoints"),
                     "dps": level_data.get("DPS"),
                     "heal_on_activation" : level_data.get("HealOnActivation"),
-
-                    "upgrade_time": upgrade_time_seconds,
-                    "upgrade_cost": level_data.get("UpgradeCost", 0),
                     "required_blacksmith_level": level_data.get("RequiredBlacksmithLevel"),
-                    "required_townhall": smithy_to_townhall[level_data.get("RequiredBlacksmithLevel")],
+                    "required_townhall": self.smithy_to_townhall[level_data.get("RequiredBlacksmithLevel")],
+                    "upgrade_cost": {
+                        "shiny_ore": shiny_ore,
+                        "glowy_ore": glowy_ore,
+                        "starry_ore": starry_ore
+                    }
                 }
 
                 main_ability_levels = str(level_data.get("MainAbilityLevels", "")).split(";")
@@ -769,10 +766,10 @@ class StaticUpdater():
                 if main_ability_levels[0] != "":
                     main_ability_json = []
                     for main_ability, main_ability_level in zip(main_abilities, main_ability_levels):
-                        full_ability = full_abilities_data.get(main_ability)
+                        full_ability = self.full_abilities_data.get(main_ability)
                         ability = full_ability.get(main_ability_level)
-                        ability["name"] = new_translation_data.get(full_ability.get("TID")).get("EN")
-                        ability["info"] = new_translation_data.get(full_ability.get("InfoTID")).get("EN")
+                        ability["name"] = self._translate(tid=full_ability.get("TID"))
+                        ability["info"] = self._translate(tid=full_ability.get("InfoTID"))
                         main_ability_json.append(ability)
 
                     if main_ability_json:
@@ -782,10 +779,10 @@ class StaticUpdater():
                 if extra_ability_levels[0] != "":
                     extra_ability_json = []
                     for extra_ability, extra_ability_level in zip(extra_abilities, extra_ability_levels):
-                        full_ability = full_abilities_data.get(extra_ability)
+                        full_ability = self.full_abilities_data.get(extra_ability)
                         ability = full_ability.get(extra_ability_level)
                         if ability:
-                            ability["name"] = new_translation_data.get(full_ability.get("TID")).get("EN")
+                            ability["name"] = self._translate(tid=full_ability.get("TID"))
                             extra_ability_json.append(ability)
 
                     if extra_ability_json:
@@ -795,18 +792,21 @@ class StaticUpdater():
 
             new_equipment_data.append(hold_data)
 
-        #TRAP JSON BUILD
+        return new_equipment_data
+
+    def _parse_trap_data(self):
+        full_trap_data = self.open_file("traps.json")
+
         new_trap_data = []
         for _id, (trap_name, trap_data) in enumerate(full_trap_data.items(), 12000000):
             if trap_data.get("Disabled", False) or trap_data.get("EnabledByCalendar", False):
                 continue
-            resource_TID = f'TID_{trap_data.get("BuildResource")}'.upper()
-            village_type = building_data.get("VillageType", 0)
+            village_type = trap_data.get("VillageType", 0)
 
             hold_data = {
                 "_id": _id,
-                "name": new_translation_data.get(trap_data.get("TID")).get("EN"),
-                "info": new_translation_data.get(trap_data.get("InfoTID")).get("EN"),
+                "name": self._translate(tid=trap_data.get("TID")),
+                "info": self._translate(tid=trap_data.get("InfoTID")),
                 "TID" : {
                     "name" : trap_data.get("TID"),
                     "info" : trap_data.get("InfoTID"),
@@ -818,7 +818,7 @@ class StaticUpdater():
                 "trigger_radius": trap_data.get("TriggerRadius"),
                 "village_type": "home" if not village_type else "builder_base",
 
-                "upgrade_resource": new_translation_data.get(resource_TID).get("EN"),
+                "upgrade_resource": self._parse_resource(resource=trap_data.get("BuildResource")),
                 "levels" : []
             }
             for level, level_data in trap_data.items():
@@ -839,16 +839,18 @@ class StaticUpdater():
 
             new_trap_data.append(hold_data)
 
-        #DECORATION JSON BUILD
+        return new_trap_data
+
+    def _parse_decoration_data(self):
+        full_deco_data = self.open_file("decos.json")
         new_deco_data = []
         for _id, (deco_name, deco_data) in enumerate(full_deco_data.items(), 18000000):
             if deco_data.get("TID") in ["TID_DECORATION_GENERIC", "TID_DECORATION_NATIONAL_FLAG"]:
                 continue
             village_type = deco_data.get("VillageType", 0)
-            resource_TID = f'TID_{deco_data.get("BuildResource")}'.upper()
             hold_data = {
                 "_id": _id,
-                "name": new_translation_data.get(deco_data.get("TID")).get("EN"),
+                "name": self._translate(deco_data.get("TID")),
                 "TID": {
                     "name": deco_data.get("TID"),
                 },
@@ -856,13 +858,16 @@ class StaticUpdater():
                 "not_in_shop": deco_data.get("NotInShop"),
                 "pass_reward": deco_data.get("BPReward"),
                 "max_count": deco_data.get("MaxCount", 1),
-                "build_resource": new_translation_data.get(resource_TID).get("EN"),
+                "build_resource": self._parse_resource(resource=deco_data.get("BuildResource")),
                 "build_cost": deco_data.get("BuildCost"),
                 "village_type": "home" if not village_type else "builder_base"
             }
             new_deco_data.append(hold_data)
 
-        #CLAN CAPITAL HOUSE JSON BUILD
+        return new_deco_data
+
+    def _parse_capital_part_data(self):
+        full_capital_part_data = self.open_file("clan_capital_parts.json")
         new_capital_part_data = []
         for _id, (part_name, part_data) in enumerate(full_capital_part_data.items(), 82000000):
             if part_data.get("Deprecated", False):
@@ -884,30 +889,34 @@ class StaticUpdater():
                 "pass_reward": part_data.get("BattlePassReward", False),
             })
 
-        # OBSTACLES JSON BUILD
+        return new_capital_part_data
+
+    def _parse_obstacle_data(self):
+        full_obstacle_data = self.open_file("obstacles.json")
+
         new_obstacle_data = []
         for _id, (obstacle_name, obstacle_data) in enumerate(full_obstacle_data.items(), 8000000):
             village_type = obstacle_data.get("VillageType", 0)
-            clear_resource = obstacle_data.get("ClearResource") 
-            clear_resource_TID = f'TID_{obstacle_data.get("ClearResource")}'.upper()
-            loot_resource_TID = f'TID_{obstacle_data.get("LootResource")}'.upper()
-            print(clear_resource_TID)
             hold_data = {
                 "_id": _id,
-                "name": new_translation_data.get(obstacle_data.get("TID")).get("EN"),
+                "name": self._translate(tid=obstacle_data.get("TID")),
                 "TID": {
                     "name": obstacle_data.get("TID"),
                 },
                 "width": obstacle_data.get("Width"),
-                "clear_resource": new_translation_data.get(clear_resource_TID).get("EN"),
+                "clear_resource": self._parse_resource(resource=obstacle_data.get("ClearResource")),
                 "clear_cost": obstacle_data.get("ClearCost"),
-                "loot_resource": new_translation_data.get(loot_resource_TID, {}).get("EN"),
+                "loot_resource": self._parse_resource(resource=obstacle_data.get("LootResource")),
                 "loot_count": obstacle_data.get("LootCount"),
                 "village_type": "home" if not village_type else "builder_base"
             }
             new_obstacle_data.append(hold_data)
 
-        #SCENERIES JSON BUILD
+        return new_obstacle_data
+
+    def _parse_scenery_data(self):
+        full_scenery_data = self.open_file("sceneries.json")
+
         new_scenery_data = []
         for _id, (scenery_name, scenery_data) in enumerate(full_scenery_data.items(), 60000000):
             type_map = {
@@ -918,11 +927,12 @@ class StaticUpdater():
             if scenery_data.get("HomeType") not in type_map:
                 continue
 
-            if new_translation_data.get(scenery_data.get("TID"), {}).get("EN") is None:
+            if not self._translate(tid=scenery_data.get("TID")):
                 continue
+
             hold_data = {
                 "_id": _id,
-                "name": new_translation_data.get(scenery_data.get("TID")).get("EN"),
+                "name": self._translate(tid=scenery_data.get("TID")),
                 "TID": {
                     "name": scenery_data.get("TID"),
                 },
@@ -936,15 +946,19 @@ class StaticUpdater():
 
             new_scenery_data.append(hold_data)
 
-        #SKINS JSON BUILD
+        return new_scenery_data
+
+    def _parse_skin_data(self):
+        full_skin_data = self.open_file("skins.json")
+
         new_skins_data = []
         for _id, (skin_name, skin_data) in enumerate(full_skin_data.items(), 52000000):
             character = skin_data.get("character") or skin_data.get("Character")
-            if not skin_data.get("TID") or character not in full_hero_data.keys():
+            if not skin_data.get("TID") or character not in self.full_hero_data.keys():
                 continue
             hold_data = {
                 "_id": _id,
-                "name": new_translation_data.get(skin_data.get("TID")).get("EN"),
+                "name": self._translate(tid=skin_data.get("TID")),
                 "TID": {
                     "name": skin_data.get("TID"),
                 },
@@ -953,27 +967,65 @@ class StaticUpdater():
             }
             new_skins_data.append(hold_data)
 
+        return new_skins_data
+
+    def _parse_helper_data(self):
+        full_helper_data = self.open_file("helpers.json")
+
+        new_helper_data = []
+        for _id, (helper_name, helper_data) in enumerate(full_helper_data.items(), 93000000):
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=helper_data.get("TID")),
+                "info": self._translate(tid=helper_data.get("InfoTID")),
+                "TID": {
+                    "name": helper_data.get("TID"),
+                    "info": helper_data.get("InfoTID"),
+                },
+                "gender": helper_data.get("Gender"),
+                "upgrade_resource": self._parse_resource(resource=helper_data.get("CostResource")),
+                "levels": []
+            }
+            for level, level_data in helper_data.items():
+                if not isinstance(level_data, dict):
+                    continue
+                hold_data["levels"].append({
+                    "required_townhall": level_data.get("RequiredTownHallLevel"),
+                    "upgrade_cost": level_data.get("Cost"),
+                    "boost_time_seconds": level_data.get("BoostTimeSeconds"),
+                    "boost_multiplier": level_data.get("BoostMultiplier"),
+                })
+
+            new_helper_data.append(hold_data)
+
+        return new_helper_data
+
+    def create_master_json(self):
+        self._parse_translation_data()
+        self._parse_ability_data()
+
         master_data = {
-            "buildings": new_building_data,
-            "supercharges": new_supercharge_data,
-            "seasonal_defenses": new_seasonal_defense_data,
-            "traps" : new_trap_data,
-            "troops": new_troop_data,
-            "spells" : new_spell_data,
-            "heroes": new_hero_data,
-            "pets": new_pet_data,
-            "equipment": new_equipment_data,
-            "decorations": new_deco_data,
-            "obstacles": new_obstacle_data,
-            "sceneries": new_scenery_data,
-            "skins": new_skins_data,
-            "capital_house_parts": new_capital_part_data,
+            "buildings": self._parse_building_data(),
+            "supercharges": self._parse_supercharge_data(),
+            "seasonal_defenses": self._parse_seasonal_defense_data(),
+            "traps" : self._parse_trap_data(),
+            "troops": self._parse_troop_data(),
+            "spells" : self._parse_spell_data(),
+            "heroes": self._parse_hero_data(),
+            "pets": self._parse_pet_data(),
+            "equipment": self._parse_equipment_data(),
+            "decorations": self._parse_decoration_data(),
+            "obstacles": self._parse_obstacle_data(),
+            "sceneries": self._parse_scenery_data(),
+            "skins": self._parse_skin_data(),
+            "capital_house_parts": self._parse_capital_part_data(),
+            "helpers": self._parse_helper_data()
         }
         with open(f"{self.BASE_PATH}static_data.json", "w", encoding="utf-8") as jf:
             jf.write(json.dumps(master_data, indent=2))
 
         with open(f"{self.BASE_PATH}translations.json", "w", encoding="utf-8") as jf:
-            jf.write(json.dumps(new_translation_data, indent=2))
+            jf.write(json.dumps(self.translation_data, indent=2))
 
         for _, file_path in self.TARGETS:
             # 6) Delete the extra jsons
@@ -984,7 +1036,6 @@ class StaticUpdater():
                 os.remove(file_path)
             except OSError as e:
                 logging.warning(f"Could not delete {file_path}: {e}")
-
 
     async def download_files(self):
         if not self.FINGERPRINT:
@@ -1008,12 +1059,11 @@ class StaticUpdater():
             else:
                 self.process_csv(data=data, file_path=target_save, save_name=target_save.split(".")[0], compressed=False)
 
+        self.create_master_json()
 
     def run(self):
         asyncio.run(self.download_files())
 
-
 if __name__ == "__main__":
-    static = StaticUpdater()
-    static.run()
+    StaticUpdater().run()
 
