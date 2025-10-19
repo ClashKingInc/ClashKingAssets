@@ -6728,6 +6728,1012 @@
       "levels": []
     }
   ],
+  "hall_unlocks": {
+    "townhall": [
+      {
+        "level": 1,
+        "buildings_unlocked": [
+          {
+            "name": "Army Camp",
+            "_id": 1000000,
+            "quantity": 1
+          },
+          {
+            "name": "Elixir Storage",
+            "_id": 1000003,
+            "quantity": 1
+          },
+          {
+            "name": "Gold Storage",
+            "_id": 1000005,
+            "quantity": 1
+          },
+          {
+            "name": "Elixir Collector",
+            "_id": 1000002,
+            "quantity": 1
+          },
+          {
+            "name": "Gold Mine",
+            "_id": 1000004,
+            "quantity": 1
+          },
+          {
+            "name": "Barracks",
+            "_id": 1000006,
+            "quantity": 1
+          },
+          {
+            "name": "Cannon",
+            "_id": 1000008,
+            "quantity": 1
+          },
+          {
+            "name": "Clan Castle",
+            "_id": 1000014,
+            "quantity": 1
+          },
+          {
+            "name": "Builder's Hut",
+            "_id": 1000015,
+            "quantity": 5
+          },
+          {
+            "name": "B.O.B's Hut",
+            "_id": 1000064,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "buildings_unlocked": [
+          {
+            "name": "Elixir Collector",
+            "_id": 1000002,
+            "quantity": 2
+          },
+          {
+            "name": "Gold Mine",
+            "_id": 1000004,
+            "quantity": 2
+          },
+          {
+            "name": "Cannon",
+            "_id": 1000008,
+            "quantity": 2
+          },
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 25
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000009,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "buildings_unlocked": [
+          {
+            "name": "Army Camp",
+            "_id": 1000000,
+            "quantity": 2
+          },
+          {
+            "name": "Elixir Storage",
+            "_id": 1000003,
+            "quantity": 2
+          },
+          {
+            "name": "Gold Storage",
+            "_id": 1000005,
+            "quantity": 2
+          },
+          {
+            "name": "Elixir Collector",
+            "_id": 1000002,
+            "quantity": 3
+          },
+          {
+            "name": "Gold Mine",
+            "_id": 1000004,
+            "quantity": 3
+          },
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 50
+          },
+          {
+            "name": "Mortar",
+            "_id": 1000013,
+            "quantity": 1
+          },
+          {
+            "name": "Laboratory",
+            "_id": 1000007,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 4,
+        "buildings_unlocked": [
+          {
+            "name": "Elixir Collector",
+            "_id": 1000002,
+            "quantity": 4
+          },
+          {
+            "name": "Gold Mine",
+            "_id": 1000004,
+            "quantity": 4
+          },
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 75
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000009,
+            "quantity": 2
+          },
+          {
+            "name": "Air Defense",
+            "_id": 1000012,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 5,
+        "buildings_unlocked": [
+          {
+            "name": "Army Camp",
+            "_id": 1000000,
+            "quantity": 3
+          },
+          {
+            "name": "Elixir Collector",
+            "_id": 1000002,
+            "quantity": 5
+          },
+          {
+            "name": "Gold Mine",
+            "_id": 1000004,
+            "quantity": 5
+          },
+          {
+            "name": "Cannon",
+            "_id": 1000008,
+            "quantity": 3
+          },
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 100
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000009,
+            "quantity": 3
+          },
+          {
+            "name": "Wizard Tower",
+            "_id": 1000011,
+            "quantity": 1
+          },
+          {
+            "name": "Spell Factory",
+            "_id": 1000020,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 6,
+        "buildings_unlocked": [
+          {
+            "name": "Elixir Collector",
+            "_id": 1000002,
+            "quantity": 6
+          },
+          {
+            "name": "Gold Mine",
+            "_id": 1000004,
+            "quantity": 6
+          },
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 125
+          },
+          {
+            "name": "Wizard Tower",
+            "_id": 1000011,
+            "quantity": 2
+          },
+          {
+            "name": "Air Defense",
+            "_id": 1000012,
+            "quantity": 2
+          },
+          {
+            "name": "Mortar",
+            "_id": 1000013,
+            "quantity": 2
+          },
+          {
+            "name": "Air Sweeper",
+            "_id": 1000028,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 7,
+        "buildings_unlocked": [
+          {
+            "name": "Army Camp",
+            "_id": 1000000,
+            "quantity": 4
+          },
+          {
+            "name": "Cannon",
+            "_id": 1000008,
+            "quantity": 5
+          },
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 175
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000009,
+            "quantity": 4
+          },
+          {
+            "name": "Air Defense",
+            "_id": 1000012,
+            "quantity": 3
+          },
+          {
+            "name": "Mortar",
+            "_id": 1000013,
+            "quantity": 3
+          },
+          {
+            "name": "Hidden Tesla",
+            "_id": 1000019,
+            "quantity": 2
+          },
+          {
+            "name": "Dark Elixir Drill",
+            "_id": 1000023,
+            "quantity": 1
+          },
+          {
+            "name": "Dark Elixir Storage",
+            "_id": 1000024,
+            "quantity": 1
+          },
+          {
+            "name": "Dark Barracks",
+            "_id": 1000026,
+            "quantity": 1
+          },
+          {
+            "name": "Hero Hall",
+            "_id": 1000071,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 8,
+        "buildings_unlocked": [
+          {
+            "name": "Elixir Storage",
+            "_id": 1000003,
+            "quantity": 3
+          },
+          {
+            "name": "Gold Storage",
+            "_id": 1000005,
+            "quantity": 3
+          },
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 225
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000009,
+            "quantity": 5
+          },
+          {
+            "name": "Wizard Tower",
+            "_id": 1000011,
+            "quantity": 3
+          },
+          {
+            "name": "Mortar",
+            "_id": 1000013,
+            "quantity": 4
+          },
+          {
+            "name": "Hidden Tesla",
+            "_id": 1000019,
+            "quantity": 3
+          },
+          {
+            "name": "Dark Spell Factory",
+            "_id": 1000029,
+            "quantity": 1
+          },
+          {
+            "name": "Dark Elixir Drill",
+            "_id": 1000023,
+            "quantity": 2
+          },
+          {
+            "name": "Bomb Tower",
+            "_id": 1000032,
+            "quantity": 1
+          },
+          {
+            "name": "Blacksmith",
+            "_id": 1000070,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 9,
+        "buildings_unlocked": [
+          {
+            "name": "Elixir Storage",
+            "_id": 1000003,
+            "quantity": 4
+          },
+          {
+            "name": "Gold Storage",
+            "_id": 1000005,
+            "quantity": 4
+          },
+          {
+            "name": "Elixir Collector",
+            "_id": 1000002,
+            "quantity": 7
+          },
+          {
+            "name": "Gold Mine",
+            "_id": 1000004,
+            "quantity": 7
+          },
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 250
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000009,
+            "quantity": 6
+          },
+          {
+            "name": "Wizard Tower",
+            "_id": 1000011,
+            "quantity": 4
+          },
+          {
+            "name": "Air Defense",
+            "_id": 1000012,
+            "quantity": 4
+          },
+          {
+            "name": "Hidden Tesla",
+            "_id": 1000019,
+            "quantity": 4
+          },
+          {
+            "name": "X-Bow",
+            "_id": 1000021,
+            "quantity": 2
+          },
+          {
+            "name": "Dark Elixir Drill",
+            "_id": 1000023,
+            "quantity": 3
+          },
+          {
+            "name": "Air Sweeper",
+            "_id": 1000028,
+            "quantity": 2
+          },
+          {
+            "name": "Helper Hut",
+            "_id": 1000093,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 10,
+        "buildings_unlocked": [
+          {
+            "name": "Cannon",
+            "_id": 1000008,
+            "quantity": 6
+          },
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 275
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000009,
+            "quantity": 7
+          },
+          {
+            "name": "X-Bow",
+            "_id": 1000021,
+            "quantity": 3
+          },
+          {
+            "name": "Inferno Tower",
+            "_id": 1000027,
+            "quantity": 2
+          },
+          {
+            "name": "Bomb Tower",
+            "_id": 1000032,
+            "quantity": 2
+          }
+        ]
+      },
+      {
+        "level": 11,
+        "buildings_unlocked": [
+          {
+            "name": "Cannon",
+            "_id": 1000008,
+            "quantity": 7
+          },
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 300
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000009,
+            "quantity": 8
+          },
+          {
+            "name": "Wizard Tower",
+            "_id": 1000011,
+            "quantity": 5
+          },
+          {
+            "name": "X-Bow",
+            "_id": 1000021,
+            "quantity": 4
+          },
+          {
+            "name": "Eagle Artillery",
+            "_id": 1000031,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 12,
+        "buildings_unlocked": [
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 300
+          },
+          {
+            "name": "Hidden Tesla",
+            "_id": 1000019,
+            "quantity": 5
+          },
+          {
+            "name": "Inferno Tower",
+            "_id": 1000027,
+            "quantity": 3
+          },
+          {
+            "name": "Workshop",
+            "_id": 1000059,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 13,
+        "buildings_unlocked": [
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 300
+          },
+          {
+            "name": "Scattershot",
+            "_id": 1000067,
+            "quantity": 2
+          }
+        ]
+      },
+      {
+        "level": 14,
+        "buildings_unlocked": [
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 325
+          },
+          {
+            "name": "Pet House",
+            "_id": 1000068,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 15,
+        "buildings_unlocked": [
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 325
+          },
+          {
+            "name": "Spell Tower",
+            "_id": 1000072,
+            "quantity": 2
+          },
+          {
+            "name": "Monolith",
+            "_id": 1000077,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 16,
+        "buildings_unlocked": [
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 325
+          },
+          {
+            "name": "Multi-Archer Tower",
+            "_id": 1000084,
+            "quantity": 2
+          },
+          {
+            "name": "Ricochet Cannon",
+            "_id": 1000085,
+            "quantity": 2
+          }
+        ]
+      },
+      {
+        "level": 17,
+        "buildings_unlocked": [
+          {
+            "name": "Wall",
+            "_id": 1000010,
+            "quantity": 325
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000009,
+            "quantity": 9
+          },
+          {
+            "name": "Multi-Archer Tower",
+            "_id": 1000084,
+            "quantity": 3
+          },
+          {
+            "name": "Ricochet Cannon",
+            "_id": 1000085,
+            "quantity": 3
+          },
+          {
+            "name": "Firespitter",
+            "_id": 1000089,
+            "quantity": 2
+          },
+          {
+            "name": "Multi-Gear Tower",
+            "_id": 1000079,
+            "quantity": 1
+          },
+          {
+            "name": "Crafting Station",
+            "_id": 1000097,
+            "quantity": 1
+          }
+        ]
+      }
+    ],
+    "builderhall": [
+      {
+        "level": 1,
+        "buildings_unlocked": [
+          {
+            "name": "Elixir Collector",
+            "_id": 1000035,
+            "quantity": 1
+          },
+          {
+            "name": "Gold Mine",
+            "_id": 1000037,
+            "quantity": 1
+          },
+          {
+            "name": "Wall",
+            "_id": 1000033,
+            "quantity": 10
+          },
+          {
+            "name": "Cannon",
+            "_id": 1000044,
+            "quantity": 1
+          },
+          {
+            "name": "Army Camp",
+            "_id": 1000042,
+            "quantity": 1
+          },
+          {
+            "name": "Star Laboratory",
+            "_id": 1000046,
+            "quantity": 1
+          },
+          {
+            "name": "Builder Barracks",
+            "_id": 1000040,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "buildings_unlocked": [
+          {
+            "name": "Wall",
+            "_id": 1000033,
+            "quantity": 20
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000048,
+            "quantity": 1
+          },
+          {
+            "name": "Army Camp",
+            "_id": 1000042,
+            "quantity": 2
+          },
+          {
+            "name": "Double Cannon",
+            "_id": 1000041,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "buildings_unlocked": [
+          {
+            "name": "Elixir Storage",
+            "_id": 1000036,
+            "quantity": 1
+          },
+          {
+            "name": "Gold Storage",
+            "_id": 1000038,
+            "quantity": 1
+          },
+          {
+            "name": "Wall",
+            "_id": 1000033,
+            "quantity": 50
+          },
+          {
+            "name": "Cannon",
+            "_id": 1000044,
+            "quantity": 2
+          },
+          {
+            "name": "Army Camp",
+            "_id": 1000042,
+            "quantity": 3
+          },
+          {
+            "name": "Hidden Tesla",
+            "_id": 1000043,
+            "quantity": 1
+          },
+          {
+            "name": "Firecrackers",
+            "_id": 1000050,
+            "quantity": 1
+          },
+          {
+            "name": "Crusher",
+            "_id": 1000055,
+            "quantity": 1
+          },
+          {
+            "name": "Gem Mine",
+            "_id": 1000058,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 4,
+        "buildings_unlocked": [
+          {
+            "name": "Wall",
+            "_id": 1000033,
+            "quantity": 75
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000048,
+            "quantity": 2
+          },
+          {
+            "name": "Army Camp",
+            "_id": 1000042,
+            "quantity": 4
+          },
+          {
+            "name": "Clock Tower",
+            "_id": 1000039,
+            "quantity": 1
+          },
+          {
+            "name": "Guard Post",
+            "_id": 1000051,
+            "quantity": 1
+          },
+          {
+            "name": "Air Bombs",
+            "_id": 1000054,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 5,
+        "buildings_unlocked": [
+          {
+            "name": "Wall",
+            "_id": 1000033,
+            "quantity": 100
+          },
+          {
+            "name": "Double Cannon",
+            "_id": 1000041,
+            "quantity": 2
+          },
+          {
+            "name": "Multi Mortar",
+            "_id": 1000045,
+            "quantity": 1
+          },
+          {
+            "name": "Battle Machine",
+            "_id": 1000053,
+            "quantity": 1
+          },
+          {
+            "name": "Firecrackers",
+            "_id": 1000050,
+            "quantity": 2
+          }
+        ]
+      },
+      {
+        "level": 6,
+        "buildings_unlocked": [
+          {
+            "name": "Elixir Collector",
+            "_id": 1000035,
+            "quantity": 2
+          },
+          {
+            "name": "Elixir Storage",
+            "_id": 1000036,
+            "quantity": 2
+          },
+          {
+            "name": "Gold Mine",
+            "_id": 1000037,
+            "quantity": 2
+          },
+          {
+            "name": "Gold Storage",
+            "_id": 1000038,
+            "quantity": 2
+          },
+          {
+            "name": "Wall",
+            "_id": 1000033,
+            "quantity": 120
+          },
+          {
+            "name": "Archer Tower",
+            "_id": 1000048,
+            "quantity": 3
+          },
+          {
+            "name": "Army Camp",
+            "_id": 1000042,
+            "quantity": 5
+          },
+          {
+            "name": "Hidden Tesla",
+            "_id": 1000043,
+            "quantity": 2
+          },
+          {
+            "name": "Crusher",
+            "_id": 1000055,
+            "quantity": 2
+          },
+          {
+            "name": "Roaster",
+            "_id": 1000056,
+            "quantity": 1
+          },
+          {
+            "name": "Reinforcement Camp",
+            "_id": 1000049,
+            "quantity": 1
+          },
+          {
+            "name": "Healing Hut",
+            "_id": 1000082,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 7,
+        "buildings_unlocked": [
+          {
+            "name": "Wall",
+            "_id": 1000033,
+            "quantity": 140
+          },
+          {
+            "name": "Cannon",
+            "_id": 1000044,
+            "quantity": 3
+          },
+          {
+            "name": "Army Camp",
+            "_id": 1000042,
+            "quantity": 6
+          },
+          {
+            "name": "Hidden Tesla",
+            "_id": 1000043,
+            "quantity": 3
+          },
+          {
+            "name": "Firecrackers",
+            "_id": 1000050,
+            "quantity": 3
+          },
+          {
+            "name": "Giant Cannon",
+            "_id": 1000057,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 8,
+        "buildings_unlocked": [
+          {
+            "name": "Elixir Collector",
+            "_id": 1000035,
+            "quantity": 3
+          },
+          {
+            "name": "Gold Mine",
+            "_id": 1000037,
+            "quantity": 3
+          },
+          {
+            "name": "Wall",
+            "_id": 1000033,
+            "quantity": 160
+          },
+          {
+            "name": "Double Cannon",
+            "_id": 1000041,
+            "quantity": 3
+          },
+          {
+            "name": "Mega Tesla",
+            "_id": 1000052,
+            "quantity": 1
+          },
+          {
+            "name": "Firecrackers",
+            "_id": 1000050,
+            "quantity": 4
+          },
+          {
+            "name": "Battle Copter",
+            "_id": 1000080,
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "level": 9,
+        "buildings_unlocked": [
+          {
+            "name": "Wall",
+            "_id": 1000033,
+            "quantity": 180
+          },
+          {
+            "name": "Firecrackers",
+            "_id": 1000050,
+            "quantity": 5
+          },
+          {
+            "name": "Lava Launcher",
+            "_id": 1000063,
+            "quantity": 1
+          },
+          {
+            "name": "B.O.B Control",
+            "_id": 1000065,
+            "quantity": 1
+          },
+          {
+            "name": "Reinforcement Camp",
+            "_id": 1000049,
+            "quantity": 2
+          }
+        ]
+      },
+      {
+        "level": 10,
+        "buildings_unlocked": [
+          {
+            "name": "X-Bow",
+            "_id": 1000081,
+            "quantity": 1
+          }
+        ]
+      }
+    ]
+  },
   "supercharges": [
     {
       "_id": "Elixir Collector",
@@ -52370,6 +53376,5482 @@
           "upgrade_cost": 1500,
           "boost_time_seconds": 4,
           "boost_multiplier": 0
+        }
+      ]
+    }
+  ],
+  "war_leagues": [
+    {
+      "_id": 48000001,
+      "name": "Bronze League III",
+      "TID": {
+        "name": "TID_LEAGUE_BRONZE3"
+      },
+      "cwl_medals": {
+        "first_place": 34,
+        "position_medal_diff": 2,
+        "bonus_reward": 35,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 3,
+      "demotions": 0,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000002,
+      "name": "Bronze League II",
+      "TID": {
+        "name": "TID_LEAGUE_BRONZE2"
+      },
+      "cwl_medals": {
+        "first_place": 46,
+        "position_medal_diff": 2,
+        "bonus_reward": 35,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 3,
+      "demotions": 1,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000003,
+      "name": "Bronze League I",
+      "TID": {
+        "name": "TID_LEAGUE_BRONZE1"
+      },
+      "cwl_medals": {
+        "first_place": 58,
+        "position_medal_diff": 2,
+        "bonus_reward": 35,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 3,
+      "demotions": 1,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000004,
+      "name": "Silver League III",
+      "TID": {
+        "name": "TID_LEAGUE_SILVER3"
+      },
+      "cwl_medals": {
+        "first_place": 76,
+        "position_medal_diff": 3,
+        "bonus_reward": 35,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 2,
+      "demotions": 1,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000005,
+      "name": "Silver League II",
+      "TID": {
+        "name": "TID_LEAGUE_SILVER2"
+      },
+      "cwl_medals": {
+        "first_place": 94,
+        "position_medal_diff": 3,
+        "bonus_reward": 40,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000006,
+      "name": "Silver League I",
+      "TID": {
+        "name": "TID_LEAGUE_SILVER1"
+      },
+      "cwl_medals": {
+        "first_place": 112,
+        "position_medal_diff": 3,
+        "bonus_reward": 45,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000007,
+      "name": "Gold League III",
+      "TID": {
+        "name": "TID_LEAGUE_GOLD3"
+      },
+      "cwl_medals": {
+        "first_place": 136,
+        "position_medal_diff": 4,
+        "bonus_reward": 50,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000008,
+      "name": "Gold League II",
+      "TID": {
+        "name": "TID_LEAGUE_GOLD2"
+      },
+      "cwl_medals": {
+        "first_place": 160,
+        "position_medal_diff": 4,
+        "bonus_reward": 55,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000009,
+      "name": "Gold League I",
+      "TID": {
+        "name": "TID_LEAGUE_GOLD1"
+      },
+      "cwl_medals": {
+        "first_place": 184,
+        "position_medal_diff": 4,
+        "bonus_reward": 60,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000010,
+      "name": "Crystal League III",
+      "TID": {
+        "name": "TID_LEAGUE_CRYSTAL3"
+      },
+      "cwl_medals": {
+        "first_place": 214,
+        "position_medal_diff": 5,
+        "bonus_reward": 65,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000011,
+      "name": "Crystal League II",
+      "TID": {
+        "name": "TID_LEAGUE_CRYSTAL2"
+      },
+      "cwl_medals": {
+        "first_place": 244,
+        "position_medal_diff": 5,
+        "bonus_reward": 70,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000012,
+      "name": "Crystal League I",
+      "TID": {
+        "name": "TID_LEAGUE_CRYSTAL1"
+      },
+      "cwl_medals": {
+        "first_place": 274,
+        "position_medal_diff": 5,
+        "bonus_reward": 75,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000013,
+      "name": "Master League III",
+      "TID": {
+        "name": "TID_LEAGUE_MASTER3"
+      },
+      "cwl_medals": {
+        "first_place": 310,
+        "position_medal_diff": 6,
+        "bonus_reward": 80,
+        "minimum_bonus_amount": 3
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000014,
+      "name": "Master League II",
+      "TID": {
+        "name": "TID_LEAGUE_MASTER2"
+      },
+      "cwl_medals": {
+        "first_place": 346,
+        "position_medal_diff": 6,
+        "bonus_reward": 85,
+        "minimum_bonus_amount": 3
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000015,
+      "name": "Master League I",
+      "TID": {
+        "name": "TID_LEAGUE_MASTER1"
+      },
+      "cwl_medals": {
+        "first_place": 382,
+        "position_medal_diff": 6,
+        "bonus_reward": 90,
+        "minimum_bonus_amount": 3
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000016,
+      "name": "Champion League III",
+      "TID": {
+        "name": "TID_LEAGUE_CHAMPION3"
+      },
+      "cwl_medals": {
+        "first_place": 424,
+        "position_medal_diff": 7,
+        "bonus_reward": 95,
+        "minimum_bonus_amount": 4
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": true
+    },
+    {
+      "_id": 48000017,
+      "name": "Champion League II",
+      "TID": {
+        "name": "TID_LEAGUE_CHAMPION2"
+      },
+      "cwl_medals": {
+        "first_place": 466,
+        "position_medal_diff": 7,
+        "bonus_reward": 100,
+        "minimum_bonus_amount": 4
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": true
+    },
+    {
+      "_id": 48000018,
+      "name": "Champion League I",
+      "TID": {
+        "name": "TID_LEAGUE_CHAMPION1"
+      },
+      "cwl_medals": {
+        "first_place": 508,
+        "position_medal_diff": 7,
+        "bonus_reward": 105,
+        "minimum_bonus_amount": 4
+      },
+      "promotions": 0,
+      "demotions": 3,
+      "15v15_only": true
+    }
+  ],
+  "league_tiers": [
+    {
+      "name": "Unranked",
+      "league_tier": 0,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_UNRANKED"
+      },
+      "group_size": 100,
+      "demote_percentage": 0,
+      "promote_percentage": 0,
+      "battle_count": 0,
+      "trophy_start": 0,
+      "clan_score": 0,
+      "townhall_cap": 17,
+      "rewards": [
+        {
+          "townhall_level": 2,
+          "resources": {
+            "gold": 300,
+            "elixir": 300,
+            "dark_elixir": 0
+          },
+          "star_bonus": {
+            "gold": 20000,
+            "elixir": 20000,
+            "dark_elixir": 0,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 3,
+          "resources": {
+            "gold": 400,
+            "elixir": 400,
+            "dark_elixir": 0
+          },
+          "star_bonus": {
+            "gold": 40000,
+            "elixir": 40000,
+            "dark_elixir": 0,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 4,
+          "resources": {
+            "gold": 500,
+            "elixir": 500,
+            "dark_elixir": 0
+          },
+          "star_bonus": {
+            "gold": 50000,
+            "elixir": 50000,
+            "dark_elixir": 0,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 5,
+          "resources": {
+            "gold": 600,
+            "elixir": 600,
+            "dark_elixir": 0
+          },
+          "star_bonus": {
+            "gold": 60000,
+            "elixir": 60000,
+            "dark_elixir": 0,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 6,
+          "resources": {
+            "gold": 700,
+            "elixir": 700,
+            "dark_elixir": 0
+          },
+          "star_bonus": {
+            "gold": 150000,
+            "elixir": 150000,
+            "dark_elixir": 0,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 800,
+            "elixir": 800,
+            "dark_elixir": 80
+          },
+          "star_bonus": {
+            "gold": 160000,
+            "elixir": 160000,
+            "dark_elixir": 800,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 1600,
+            "elixir": 1600,
+            "dark_elixir": 120
+          },
+          "star_bonus": {
+            "gold": 200000,
+            "elixir": 200000,
+            "dark_elixir": 960,
+            "shiny_ore": 240,
+            "glowy_ore": 16,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 2400,
+            "elixir": 2400,
+            "dark_elixir": 160
+          },
+          "star_bonus": {
+            "gold": 240000,
+            "elixir": 240000,
+            "dark_elixir": 1160,
+            "shiny_ore": 260,
+            "glowy_ore": 17,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 4000,
+            "elixir": 4000,
+            "dark_elixir": 200
+          },
+          "star_bonus": {
+            "gold": 280000,
+            "elixir": 280000,
+            "dark_elixir": 1360,
+            "shiny_ore": 280,
+            "glowy_ore": 18,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 12000,
+            "elixir": 12000,
+            "dark_elixir": 280
+          },
+          "star_bonus": {
+            "gold": 360000,
+            "elixir": 360000,
+            "dark_elixir": 1760,
+            "shiny_ore": 300,
+            "glowy_ore": 18,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 24000,
+            "elixir": 24000,
+            "dark_elixir": 400
+          },
+          "star_bonus": {
+            "gold": 440000,
+            "elixir": 440000,
+            "dark_elixir": 2160,
+            "shiny_ore": 340,
+            "glowy_ore": 20,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 60000,
+            "elixir": 60000,
+            "dark_elixir": 640
+          },
+          "star_bonus": {
+            "gold": 560000,
+            "elixir": 560000,
+            "dark_elixir": 2760,
+            "shiny_ore": 380,
+            "glowy_ore": 22,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 80000,
+            "elixir": 80000,
+            "dark_elixir": 720
+          },
+          "star_bonus": {
+            "gold": 600000,
+            "elixir": 600000,
+            "dark_elixir": 2960,
+            "shiny_ore": 440,
+            "glowy_ore": 26,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 208000,
+            "elixir": 208000,
+            "dark_elixir": 1360
+          },
+          "star_bonus": {
+            "gold": 780000,
+            "elixir": 780000,
+            "dark_elixir": 3840,
+            "shiny_ore": 460,
+            "glowy_ore": 28,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 240000,
+            "elixir": 240000,
+            "dark_elixir": 1680
+          },
+          "star_bonus": {
+            "gold": 860000,
+            "elixir": 860000,
+            "dark_elixir": 4160,
+            "shiny_ore": 580,
+            "glowy_ore": 36,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 17,
+          "resources": {
+            "gold": 272000,
+            "elixir": 272000,
+            "dark_elixir": 2000
+          },
+          "star_bonus": {
+            "gold": 928000,
+            "elixir": 928000,
+            "dark_elixir": 4440,
+            "shiny_ore": 720,
+            "glowy_ore": 42,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Skeleton League 1",
+      "league_tier": 1,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_1_RANK_3"
+      },
+      "group_size": 100,
+      "demote_percentage": 0,
+      "promote_percentage": 50,
+      "battle_count": 6,
+      "trophy_start": 0,
+      "clan_score": 100,
+      "townhall_cap": 7,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 1000,
+            "elixir": 1000,
+            "dark_elixir": 100
+          },
+          "star_bonus": {
+            "gold": 200000,
+            "elixir": 200000,
+            "dark_elixir": 1000,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Skeleton League 2",
+      "league_tier": 2,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_1_RANK_2"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 50,
+      "battle_count": 6,
+      "trophy_start": 0,
+      "clan_score": 200,
+      "townhall_cap": 8,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 1500,
+            "elixir": 1500,
+            "dark_elixir": 125
+          },
+          "star_bonus": {
+            "gold": 225000,
+            "elixir": 225000,
+            "dark_elixir": 1100,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 2000,
+            "elixir": 2000,
+            "dark_elixir": 150
+          },
+          "star_bonus": {
+            "gold": 250000,
+            "elixir": 250000,
+            "dark_elixir": 1200,
+            "shiny_ore": 325,
+            "glowy_ore": 21,
+            "starry_ore": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Skeleton League 3",
+      "league_tier": 3,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_1_RANK_1"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 50,
+      "battle_count": 6,
+      "trophy_start": 0,
+      "clan_score": 300,
+      "townhall_cap": 9,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 2000,
+            "elixir": 2000,
+            "dark_elixir": 150
+          },
+          "star_bonus": {
+            "gold": 250000,
+            "elixir": 250000,
+            "dark_elixir": 1225,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 2500,
+            "elixir": 2500,
+            "dark_elixir": 175
+          },
+          "star_bonus": {
+            "gold": 275000,
+            "elixir": 275000,
+            "dark_elixir": 1325,
+            "shiny_ore": 350,
+            "glowy_ore": 22,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 3000,
+            "elixir": 3000,
+            "dark_elixir": 200
+          },
+          "star_bonus": {
+            "gold": 300000,
+            "elixir": 300000,
+            "dark_elixir": 1450,
+            "shiny_ore": 350,
+            "glowy_ore": 22,
+            "starry_ore": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Barbarian League 4",
+      "league_tier": 4,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_2_RANK_3"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 40,
+      "battle_count": 6,
+      "trophy_start": 0,
+      "clan_score": 400,
+      "townhall_cap": 10,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 3000,
+            "elixir": 3000,
+            "dark_elixir": 175
+          },
+          "star_bonus": {
+            "gold": 275000,
+            "elixir": 275000,
+            "dark_elixir": 1350,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 3500,
+            "elixir": 3500,
+            "dark_elixir": 200
+          },
+          "star_bonus": {
+            "gold": 300000,
+            "elixir": 300000,
+            "dark_elixir": 1450,
+            "shiny_ore": 375,
+            "glowy_ore": 23,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 4000,
+            "elixir": 4000,
+            "dark_elixir": 225
+          },
+          "star_bonus": {
+            "gold": 325000,
+            "elixir": 325000,
+            "dark_elixir": 1575,
+            "shiny_ore": 375,
+            "glowy_ore": 23,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 5000,
+            "elixir": 5000,
+            "dark_elixir": 250
+          },
+          "star_bonus": {
+            "gold": 350000,
+            "elixir": 350000,
+            "dark_elixir": 1700,
+            "shiny_ore": 375,
+            "glowy_ore": 23,
+            "starry_ore": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Barbarian League 5",
+      "league_tier": 5,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_2_RANK_2"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 30,
+      "battle_count": 6,
+      "trophy_start": 0,
+      "clan_score": 500,
+      "townhall_cap": 10,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 5500,
+            "elixir": 5500,
+            "dark_elixir": 200
+          },
+          "star_bonus": {
+            "gold": 300000,
+            "elixir": 300000,
+            "dark_elixir": 1475,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 6000,
+            "elixir": 6000,
+            "dark_elixir": 225
+          },
+          "star_bonus": {
+            "gold": 325000,
+            "elixir": 325000,
+            "dark_elixir": 1575,
+            "shiny_ore": 400,
+            "glowy_ore": 24,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 6500,
+            "elixir": 6500,
+            "dark_elixir": 250
+          },
+          "star_bonus": {
+            "gold": 350000,
+            "elixir": 350000,
+            "dark_elixir": 1700,
+            "shiny_ore": 400,
+            "glowy_ore": 24,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 10000,
+            "elixir": 10000,
+            "dark_elixir": 300
+          },
+          "star_bonus": {
+            "gold": 400000,
+            "elixir": 400000,
+            "dark_elixir": 1950,
+            "shiny_ore": 400,
+            "glowy_ore": 24,
+            "starry_ore": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Barbarian League 6",
+      "league_tier": 6,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_2_RANK_1"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 30,
+      "battle_count": 6,
+      "trophy_start": 0,
+      "clan_score": 600,
+      "townhall_cap": 11,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 8000,
+            "elixir": 8000,
+            "dark_elixir": 225
+          },
+          "star_bonus": {
+            "gold": 325000,
+            "elixir": 325000,
+            "dark_elixir": 1600,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 8500,
+            "elixir": 8500,
+            "dark_elixir": 250
+          },
+          "star_bonus": {
+            "gold": 350000,
+            "elixir": 350000,
+            "dark_elixir": 1700,
+            "shiny_ore": 425,
+            "glowy_ore": 25,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 9000,
+            "elixir": 9000,
+            "dark_elixir": 275
+          },
+          "star_bonus": {
+            "gold": 375000,
+            "elixir": 375000,
+            "dark_elixir": 1825,
+            "shiny_ore": 425,
+            "glowy_ore": 25,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 12500,
+            "elixir": 12500,
+            "dark_elixir": 325
+          },
+          "star_bonus": {
+            "gold": 425000,
+            "elixir": 425000,
+            "dark_elixir": 2075,
+            "shiny_ore": 425,
+            "glowy_ore": 25,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 15000,
+            "elixir": 15000,
+            "dark_elixir": 350
+          },
+          "star_bonus": {
+            "gold": 450000,
+            "elixir": 450000,
+            "dark_elixir": 2200,
+            "shiny_ore": 425,
+            "glowy_ore": 25,
+            "starry_ore": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Archer League 7",
+      "league_tier": 7,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_3_RANK_3"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 25,
+      "battle_count": 8,
+      "trophy_start": 0,
+      "clan_score": 700,
+      "townhall_cap": 11,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 10500,
+            "elixir": 10500,
+            "dark_elixir": 250
+          },
+          "star_bonus": {
+            "gold": 350000,
+            "elixir": 350000,
+            "dark_elixir": 1725,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 11000,
+            "elixir": 11000,
+            "dark_elixir": 275
+          },
+          "star_bonus": {
+            "gold": 375000,
+            "elixir": 375000,
+            "dark_elixir": 1825,
+            "shiny_ore": 450,
+            "glowy_ore": 27,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 11500,
+            "elixir": 11500,
+            "dark_elixir": 300
+          },
+          "star_bonus": {
+            "gold": 400000,
+            "elixir": 400000,
+            "dark_elixir": 1950,
+            "shiny_ore": 450,
+            "glowy_ore": 27,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 15000,
+            "elixir": 15000,
+            "dark_elixir": 350
+          },
+          "star_bonus": {
+            "gold": 450000,
+            "elixir": 450000,
+            "dark_elixir": 2200,
+            "shiny_ore": 450,
+            "glowy_ore": 27,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 20000,
+            "elixir": 20000,
+            "dark_elixir": 400
+          },
+          "star_bonus": {
+            "gold": 500000,
+            "elixir": 500000,
+            "dark_elixir": 2450,
+            "shiny_ore": 450,
+            "glowy_ore": 27,
+            "starry_ore": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Archer League 8",
+      "league_tier": 8,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_3_RANK_2"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 25,
+      "battle_count": 8,
+      "trophy_start": 0,
+      "clan_score": 800,
+      "townhall_cap": 12,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 15500,
+            "elixir": 15500,
+            "dark_elixir": 300
+          },
+          "star_bonus": {
+            "gold": 375000,
+            "elixir": 375000,
+            "dark_elixir": 1850,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 16000,
+            "elixir": 16000,
+            "dark_elixir": 325
+          },
+          "star_bonus": {
+            "gold": 400000,
+            "elixir": 400000,
+            "dark_elixir": 1950,
+            "shiny_ore": 475,
+            "glowy_ore": 27,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 16500,
+            "elixir": 16500,
+            "dark_elixir": 350
+          },
+          "star_bonus": {
+            "gold": 425000,
+            "elixir": 425000,
+            "dark_elixir": 2075,
+            "shiny_ore": 475,
+            "glowy_ore": 27,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 20000,
+            "elixir": 20000,
+            "dark_elixir": 400
+          },
+          "star_bonus": {
+            "gold": 475000,
+            "elixir": 475000,
+            "dark_elixir": 2325,
+            "shiny_ore": 475,
+            "glowy_ore": 27,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 25000,
+            "elixir": 25000,
+            "dark_elixir": 450
+          },
+          "star_bonus": {
+            "gold": 525000,
+            "elixir": 525000,
+            "dark_elixir": 2575,
+            "shiny_ore": 475,
+            "glowy_ore": 27,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 30000,
+            "elixir": 30000,
+            "dark_elixir": 500
+          },
+          "star_bonus": {
+            "gold": 550000,
+            "elixir": 550000,
+            "dark_elixir": 2700,
+            "shiny_ore": 475,
+            "glowy_ore": 27,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Archer League 9",
+      "league_tier": 9,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_3_RANK_1"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 25,
+      "battle_count": 8,
+      "trophy_start": 0,
+      "clan_score": 900,
+      "townhall_cap": 12,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 20500,
+            "elixir": 20500,
+            "dark_elixir": 350
+          },
+          "star_bonus": {
+            "gold": 400000,
+            "elixir": 400000,
+            "dark_elixir": 1975,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 21000,
+            "elixir": 21000,
+            "dark_elixir": 375
+          },
+          "star_bonus": {
+            "gold": 425000,
+            "elixir": 425000,
+            "dark_elixir": 2075,
+            "shiny_ore": 500,
+            "glowy_ore": 29,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 21500,
+            "elixir": 21500,
+            "dark_elixir": 400
+          },
+          "star_bonus": {
+            "gold": 450000,
+            "elixir": 450000,
+            "dark_elixir": 2200,
+            "shiny_ore": 500,
+            "glowy_ore": 29,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 25000,
+            "elixir": 25000,
+            "dark_elixir": 450
+          },
+          "star_bonus": {
+            "gold": 500000,
+            "elixir": 500000,
+            "dark_elixir": 2450,
+            "shiny_ore": 500,
+            "glowy_ore": 29,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 30000,
+            "elixir": 30000,
+            "dark_elixir": 500
+          },
+          "star_bonus": {
+            "gold": 550000,
+            "elixir": 550000,
+            "dark_elixir": 2700,
+            "shiny_ore": 500,
+            "glowy_ore": 29,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 40000,
+            "elixir": 40000,
+            "dark_elixir": 600
+          },
+          "star_bonus": {
+            "gold": 600000,
+            "elixir": 600000,
+            "dark_elixir": 2950,
+            "shiny_ore": 500,
+            "glowy_ore": 29,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wizard League 10",
+      "league_tier": 10,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_4_RANK_3"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 25,
+      "battle_count": 8,
+      "trophy_start": 0,
+      "clan_score": 1000,
+      "townhall_cap": 12,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 25500,
+            "elixir": 25500,
+            "dark_elixir": 400
+          },
+          "star_bonus": {
+            "gold": 425000,
+            "elixir": 425000,
+            "dark_elixir": 2100,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 26000,
+            "elixir": 26000,
+            "dark_elixir": 425
+          },
+          "star_bonus": {
+            "gold": 450000,
+            "elixir": 450000,
+            "dark_elixir": 2200,
+            "shiny_ore": 525,
+            "glowy_ore": 31,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 26500,
+            "elixir": 26500,
+            "dark_elixir": 450
+          },
+          "star_bonus": {
+            "gold": 475000,
+            "elixir": 475000,
+            "dark_elixir": 2325,
+            "shiny_ore": 525,
+            "glowy_ore": 31,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 30000,
+            "elixir": 30000,
+            "dark_elixir": 500
+          },
+          "star_bonus": {
+            "gold": 525000,
+            "elixir": 525000,
+            "dark_elixir": 2575,
+            "shiny_ore": 525,
+            "glowy_ore": 31,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 35000,
+            "elixir": 35000,
+            "dark_elixir": 550
+          },
+          "star_bonus": {
+            "gold": 575000,
+            "elixir": 575000,
+            "dark_elixir": 2825,
+            "shiny_ore": 525,
+            "glowy_ore": 31,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 50000,
+            "elixir": 50000,
+            "dark_elixir": 700
+          },
+          "star_bonus": {
+            "gold": 650000,
+            "elixir": 650000,
+            "dark_elixir": 3200,
+            "shiny_ore": 525,
+            "glowy_ore": 31,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wizard League 11",
+      "league_tier": 11,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_4_RANK_2"
+      },
+      "group_size": 100,
+      "demote_percentage": 15,
+      "promote_percentage": 25,
+      "battle_count": 8,
+      "trophy_start": 0,
+      "clan_score": 1100,
+      "townhall_cap": 13,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 38000,
+            "elixir": 38000,
+            "dark_elixir": 450
+          },
+          "star_bonus": {
+            "gold": 450000,
+            "elixir": 450000,
+            "dark_elixir": 2225,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 38500,
+            "elixir": 38500,
+            "dark_elixir": 475
+          },
+          "star_bonus": {
+            "gold": 475000,
+            "elixir": 475000,
+            "dark_elixir": 2325,
+            "shiny_ore": 550,
+            "glowy_ore": 33,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 39000,
+            "elixir": 39000,
+            "dark_elixir": 500
+          },
+          "star_bonus": {
+            "gold": 500000,
+            "elixir": 500000,
+            "dark_elixir": 2450,
+            "shiny_ore": 550,
+            "glowy_ore": 33,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 42500,
+            "elixir": 42500,
+            "dark_elixir": 550
+          },
+          "star_bonus": {
+            "gold": 550000,
+            "elixir": 550000,
+            "dark_elixir": 2700,
+            "shiny_ore": 550,
+            "glowy_ore": 33,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 47500,
+            "elixir": 47500,
+            "dark_elixir": 600
+          },
+          "star_bonus": {
+            "gold": 600000,
+            "elixir": 600000,
+            "dark_elixir": 2950,
+            "shiny_ore": 550,
+            "glowy_ore": 33,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 62500,
+            "elixir": 62500,
+            "dark_elixir": 750
+          },
+          "star_bonus": {
+            "gold": 675000,
+            "elixir": 675000,
+            "dark_elixir": 3325,
+            "shiny_ore": 550,
+            "glowy_ore": 33,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 75000,
+            "elixir": 75000,
+            "dark_elixir": 800
+          },
+          "star_bonus": {
+            "gold": 700000,
+            "elixir": 700000,
+            "dark_elixir": 3450,
+            "shiny_ore": 550,
+            "glowy_ore": 33,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wizard League 12",
+      "league_tier": 12,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_4_RANK_1"
+      },
+      "group_size": 100,
+      "demote_percentage": 15,
+      "promote_percentage": 25,
+      "battle_count": 8,
+      "trophy_start": 0,
+      "clan_score": 1200,
+      "townhall_cap": 13,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 50500,
+            "elixir": 50500,
+            "dark_elixir": 500
+          },
+          "star_bonus": {
+            "gold": 475000,
+            "elixir": 475000,
+            "dark_elixir": 2350,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 51000,
+            "elixir": 51000,
+            "dark_elixir": 525
+          },
+          "star_bonus": {
+            "gold": 500000,
+            "elixir": 500000,
+            "dark_elixir": 2450,
+            "shiny_ore": 575,
+            "glowy_ore": 35,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 51500,
+            "elixir": 51500,
+            "dark_elixir": 550
+          },
+          "star_bonus": {
+            "gold": 525000,
+            "elixir": 525000,
+            "dark_elixir": 2575,
+            "shiny_ore": 575,
+            "glowy_ore": 35,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 55000,
+            "elixir": 55000,
+            "dark_elixir": 600
+          },
+          "star_bonus": {
+            "gold": 575000,
+            "elixir": 575000,
+            "dark_elixir": 2825,
+            "shiny_ore": 575,
+            "glowy_ore": 35,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 60000,
+            "elixir": 60000,
+            "dark_elixir": 650
+          },
+          "star_bonus": {
+            "gold": 625000,
+            "elixir": 625000,
+            "dark_elixir": 3075,
+            "shiny_ore": 575,
+            "glowy_ore": 35,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 75000,
+            "elixir": 75000,
+            "dark_elixir": 800
+          },
+          "star_bonus": {
+            "gold": 700000,
+            "elixir": 700000,
+            "dark_elixir": 3450,
+            "shiny_ore": 575,
+            "glowy_ore": 35,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 100000,
+            "elixir": 100000,
+            "dark_elixir": 900
+          },
+          "star_bonus": {
+            "gold": 750000,
+            "elixir": 750000,
+            "dark_elixir": 3700,
+            "shiny_ore": 575,
+            "glowy_ore": 35,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Valkyrie League 13",
+      "league_tier": 13,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_5_RANK_3"
+      },
+      "group_size": 100,
+      "demote_percentage": 15,
+      "promote_percentage": 25,
+      "battle_count": 10,
+      "trophy_start": 0,
+      "clan_score": 1300,
+      "townhall_cap": 13,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 63000,
+            "elixir": 63000,
+            "dark_elixir": 550
+          },
+          "star_bonus": {
+            "gold": 500000,
+            "elixir": 500000,
+            "dark_elixir": 2475,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 63500,
+            "elixir": 63500,
+            "dark_elixir": 575
+          },
+          "star_bonus": {
+            "gold": 525000,
+            "elixir": 525000,
+            "dark_elixir": 2575,
+            "shiny_ore": 600,
+            "glowy_ore": 37,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 64000,
+            "elixir": 64000,
+            "dark_elixir": 600
+          },
+          "star_bonus": {
+            "gold": 550000,
+            "elixir": 550000,
+            "dark_elixir": 2700,
+            "shiny_ore": 600,
+            "glowy_ore": 37,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 67500,
+            "elixir": 67500,
+            "dark_elixir": 650
+          },
+          "star_bonus": {
+            "gold": 600000,
+            "elixir": 600000,
+            "dark_elixir": 2950,
+            "shiny_ore": 600,
+            "glowy_ore": 37,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 72500,
+            "elixir": 72500,
+            "dark_elixir": 700
+          },
+          "star_bonus": {
+            "gold": 650000,
+            "elixir": 650000,
+            "dark_elixir": 3200,
+            "shiny_ore": 600,
+            "glowy_ore": 37,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 87500,
+            "elixir": 87500,
+            "dark_elixir": 850
+          },
+          "star_bonus": {
+            "gold": 725000,
+            "elixir": 725000,
+            "dark_elixir": 3575,
+            "shiny_ore": 600,
+            "glowy_ore": 37,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 125000,
+            "elixir": 125000,
+            "dark_elixir": 1000
+          },
+          "star_bonus": {
+            "gold": 800000,
+            "elixir": 800000,
+            "dark_elixir": 3950,
+            "shiny_ore": 600,
+            "glowy_ore": 37,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Valkyrie League 14",
+      "league_tier": 14,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_5_RANK_2"
+      },
+      "group_size": 100,
+      "demote_percentage": 15,
+      "promote_percentage": 25,
+      "battle_count": 10,
+      "trophy_start": 0,
+      "clan_score": 1400,
+      "townhall_cap": 14,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 75500,
+            "elixir": 75500,
+            "dark_elixir": 600
+          },
+          "star_bonus": {
+            "gold": 525000,
+            "elixir": 525000,
+            "dark_elixir": 2600,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 76000,
+            "elixir": 76000,
+            "dark_elixir": 625
+          },
+          "star_bonus": {
+            "gold": 550000,
+            "elixir": 550000,
+            "dark_elixir": 2700,
+            "shiny_ore": 625,
+            "glowy_ore": 39,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 76500,
+            "elixir": 76500,
+            "dark_elixir": 650
+          },
+          "star_bonus": {
+            "gold": 575000,
+            "elixir": 575000,
+            "dark_elixir": 2825,
+            "shiny_ore": 625,
+            "glowy_ore": 39,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 80000,
+            "elixir": 80000,
+            "dark_elixir": 700
+          },
+          "star_bonus": {
+            "gold": 625000,
+            "elixir": 625000,
+            "dark_elixir": 3075,
+            "shiny_ore": 625,
+            "glowy_ore": 39,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 85000,
+            "elixir": 85000,
+            "dark_elixir": 750
+          },
+          "star_bonus": {
+            "gold": 675000,
+            "elixir": 675000,
+            "dark_elixir": 3325,
+            "shiny_ore": 625,
+            "glowy_ore": 39,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 100000,
+            "elixir": 100000,
+            "dark_elixir": 900
+          },
+          "star_bonus": {
+            "gold": 750000,
+            "elixir": 750000,
+            "dark_elixir": 3700,
+            "shiny_ore": 625,
+            "glowy_ore": 39,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 137500,
+            "elixir": 137500,
+            "dark_elixir": 1050
+          },
+          "star_bonus": {
+            "gold": 825000,
+            "elixir": 825000,
+            "dark_elixir": 4075,
+            "shiny_ore": 625,
+            "glowy_ore": 39,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 150000,
+            "elixir": 150000,
+            "dark_elixir": 1100
+          },
+          "star_bonus": {
+            "gold": 850000,
+            "elixir": 850000,
+            "dark_elixir": 4200,
+            "shiny_ore": 625,
+            "glowy_ore": 39,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Valkyrie League 15",
+      "league_tier": 15,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_5_RANK_1"
+      },
+      "group_size": 100,
+      "demote_percentage": 15,
+      "promote_percentage": 25,
+      "battle_count": 10,
+      "trophy_start": 0,
+      "clan_score": 1500,
+      "townhall_cap": 14,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 100500,
+            "elixir": 100500,
+            "dark_elixir": 725
+          },
+          "star_bonus": {
+            "gold": 550000,
+            "elixir": 550000,
+            "dark_elixir": 2725,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 101000,
+            "elixir": 101000,
+            "dark_elixir": 750
+          },
+          "star_bonus": {
+            "gold": 575000,
+            "elixir": 575000,
+            "dark_elixir": 2825,
+            "shiny_ore": 650,
+            "glowy_ore": 41,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 101500,
+            "elixir": 101500,
+            "dark_elixir": 775
+          },
+          "star_bonus": {
+            "gold": 600000,
+            "elixir": 600000,
+            "dark_elixir": 2950,
+            "shiny_ore": 650,
+            "glowy_ore": 41,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 105000,
+            "elixir": 105000,
+            "dark_elixir": 825
+          },
+          "star_bonus": {
+            "gold": 650000,
+            "elixir": 650000,
+            "dark_elixir": 3200,
+            "shiny_ore": 650,
+            "glowy_ore": 41,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 110000,
+            "elixir": 110000,
+            "dark_elixir": 875
+          },
+          "star_bonus": {
+            "gold": 700000,
+            "elixir": 700000,
+            "dark_elixir": 3450,
+            "shiny_ore": 650,
+            "glowy_ore": 41,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 125000,
+            "elixir": 125000,
+            "dark_elixir": 1025
+          },
+          "star_bonus": {
+            "gold": 775000,
+            "elixir": 775000,
+            "dark_elixir": 3825,
+            "shiny_ore": 650,
+            "glowy_ore": 41,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 162500,
+            "elixir": 162500,
+            "dark_elixir": 1175
+          },
+          "star_bonus": {
+            "gold": 850000,
+            "elixir": 850000,
+            "dark_elixir": 4200,
+            "shiny_ore": 650,
+            "glowy_ore": 41,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 200000,
+            "elixir": 200000,
+            "dark_elixir": 1350
+          },
+          "star_bonus": {
+            "gold": 900000,
+            "elixir": 900000,
+            "dark_elixir": 4450,
+            "shiny_ore": 650,
+            "glowy_ore": 41,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Witch League 16",
+      "league_tier": 16,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_6_RANK_3"
+      },
+      "group_size": 100,
+      "demote_percentage": 15,
+      "promote_percentage": 20,
+      "battle_count": 10,
+      "trophy_start": 0,
+      "clan_score": 1600,
+      "townhall_cap": 14,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 125500,
+            "elixir": 125500,
+            "dark_elixir": 850
+          },
+          "star_bonus": {
+            "gold": 575000,
+            "elixir": 575000,
+            "dark_elixir": 2850,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 126000,
+            "elixir": 126000,
+            "dark_elixir": 875
+          },
+          "star_bonus": {
+            "gold": 600000,
+            "elixir": 600000,
+            "dark_elixir": 2950,
+            "shiny_ore": 675,
+            "glowy_ore": 43,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 126500,
+            "elixir": 126500,
+            "dark_elixir": 900
+          },
+          "star_bonus": {
+            "gold": 625000,
+            "elixir": 625000,
+            "dark_elixir": 3075,
+            "shiny_ore": 675,
+            "glowy_ore": 43,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 130000,
+            "elixir": 130000,
+            "dark_elixir": 950
+          },
+          "star_bonus": {
+            "gold": 675000,
+            "elixir": 675000,
+            "dark_elixir": 3325,
+            "shiny_ore": 675,
+            "glowy_ore": 43,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 135000,
+            "elixir": 135000,
+            "dark_elixir": 1000
+          },
+          "star_bonus": {
+            "gold": 725000,
+            "elixir": 725000,
+            "dark_elixir": 3575,
+            "shiny_ore": 675,
+            "glowy_ore": 43,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 150000,
+            "elixir": 150000,
+            "dark_elixir": 1150
+          },
+          "star_bonus": {
+            "gold": 800000,
+            "elixir": 800000,
+            "dark_elixir": 3950,
+            "shiny_ore": 675,
+            "glowy_ore": 43,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 187500,
+            "elixir": 187500,
+            "dark_elixir": 1300
+          },
+          "star_bonus": {
+            "gold": 875000,
+            "elixir": 875000,
+            "dark_elixir": 4325,
+            "shiny_ore": 675,
+            "glowy_ore": 43,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 250000,
+            "elixir": 250000,
+            "dark_elixir": 1600
+          },
+          "star_bonus": {
+            "gold": 950000,
+            "elixir": 950000,
+            "dark_elixir": 4700,
+            "shiny_ore": 675,
+            "glowy_ore": 43,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Witch League 17",
+      "league_tier": 17,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_6_RANK_2"
+      },
+      "group_size": 100,
+      "demote_percentage": 15,
+      "promote_percentage": 20,
+      "battle_count": 10,
+      "trophy_start": 0,
+      "clan_score": 1700,
+      "townhall_cap": 15,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 130500,
+            "elixir": 130500,
+            "dark_elixir": 900
+          },
+          "star_bonus": {
+            "gold": 587500,
+            "elixir": 587500,
+            "dark_elixir": 2900,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 131000,
+            "elixir": 131000,
+            "dark_elixir": 925
+          },
+          "star_bonus": {
+            "gold": 612500,
+            "elixir": 612500,
+            "dark_elixir": 3000,
+            "shiny_ore": 725,
+            "glowy_ore": 45,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 131500,
+            "elixir": 131500,
+            "dark_elixir": 950
+          },
+          "star_bonus": {
+            "gold": 637500,
+            "elixir": 637500,
+            "dark_elixir": 3125,
+            "shiny_ore": 725,
+            "glowy_ore": 45,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 135000,
+            "elixir": 135000,
+            "dark_elixir": 1000
+          },
+          "star_bonus": {
+            "gold": 687500,
+            "elixir": 687500,
+            "dark_elixir": 3375,
+            "shiny_ore": 725,
+            "glowy_ore": 45,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 140000,
+            "elixir": 140000,
+            "dark_elixir": 1050
+          },
+          "star_bonus": {
+            "gold": 737500,
+            "elixir": 737500,
+            "dark_elixir": 3625,
+            "shiny_ore": 725,
+            "glowy_ore": 45,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 155000,
+            "elixir": 155000,
+            "dark_elixir": 1200
+          },
+          "star_bonus": {
+            "gold": 812500,
+            "elixir": 812500,
+            "dark_elixir": 4000,
+            "shiny_ore": 725,
+            "glowy_ore": 45,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 192500,
+            "elixir": 192500,
+            "dark_elixir": 1350
+          },
+          "star_bonus": {
+            "gold": 887500,
+            "elixir": 887500,
+            "dark_elixir": 4375,
+            "shiny_ore": 725,
+            "glowy_ore": 45,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 255000,
+            "elixir": 255000,
+            "dark_elixir": 1650
+          },
+          "star_bonus": {
+            "gold": 962500,
+            "elixir": 962500,
+            "dark_elixir": 4750,
+            "shiny_ore": 725,
+            "glowy_ore": 45,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 260000,
+            "elixir": 260000,
+            "dark_elixir": 1700
+          },
+          "star_bonus": {
+            "gold": 975000,
+            "elixir": 975000,
+            "dark_elixir": 4800,
+            "shiny_ore": 725,
+            "glowy_ore": 45,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Witch League 18",
+      "league_tier": 18,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_6_RANK_1"
+      },
+      "group_size": 100,
+      "demote_percentage": 15,
+      "promote_percentage": 20,
+      "battle_count": 10,
+      "trophy_start": 0,
+      "clan_score": 1800,
+      "townhall_cap": 15,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 135500,
+            "elixir": 135500,
+            "dark_elixir": 950
+          },
+          "star_bonus": {
+            "gold": 600000,
+            "elixir": 600000,
+            "dark_elixir": 2950,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 136000,
+            "elixir": 136000,
+            "dark_elixir": 975
+          },
+          "star_bonus": {
+            "gold": 625000,
+            "elixir": 625000,
+            "dark_elixir": 3050,
+            "shiny_ore": 775,
+            "glowy_ore": 47,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 136500,
+            "elixir": 136500,
+            "dark_elixir": 1000
+          },
+          "star_bonus": {
+            "gold": 650000,
+            "elixir": 650000,
+            "dark_elixir": 3175,
+            "shiny_ore": 775,
+            "glowy_ore": 47,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 140000,
+            "elixir": 140000,
+            "dark_elixir": 1050
+          },
+          "star_bonus": {
+            "gold": 700000,
+            "elixir": 700000,
+            "dark_elixir": 3425,
+            "shiny_ore": 775,
+            "glowy_ore": 47,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 145000,
+            "elixir": 145000,
+            "dark_elixir": 1100
+          },
+          "star_bonus": {
+            "gold": 750000,
+            "elixir": 750000,
+            "dark_elixir": 3675,
+            "shiny_ore": 775,
+            "glowy_ore": 47,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 160000,
+            "elixir": 160000,
+            "dark_elixir": 1250
+          },
+          "star_bonus": {
+            "gold": 825000,
+            "elixir": 825000,
+            "dark_elixir": 4050,
+            "shiny_ore": 775,
+            "glowy_ore": 47,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 197500,
+            "elixir": 197500,
+            "dark_elixir": 1400
+          },
+          "star_bonus": {
+            "gold": 900000,
+            "elixir": 900000,
+            "dark_elixir": 4425,
+            "shiny_ore": 775,
+            "glowy_ore": 47,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 260000,
+            "elixir": 260000,
+            "dark_elixir": 1700
+          },
+          "star_bonus": {
+            "gold": 975000,
+            "elixir": 975000,
+            "dark_elixir": 4800,
+            "shiny_ore": 775,
+            "glowy_ore": 47,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 270000,
+            "elixir": 270000,
+            "dark_elixir": 1800
+          },
+          "star_bonus": {
+            "gold": 1000000,
+            "elixir": 1000000,
+            "dark_elixir": 4900,
+            "shiny_ore": 775,
+            "glowy_ore": 47,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Golem League 19",
+      "league_tier": 19,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_7_RANK_3"
+      },
+      "group_size": 100,
+      "demote_percentage": 20,
+      "promote_percentage": 15,
+      "battle_count": 12,
+      "trophy_start": 0,
+      "clan_score": 1900,
+      "townhall_cap": 15,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 140500,
+            "elixir": 140500,
+            "dark_elixir": 1000
+          },
+          "star_bonus": {
+            "gold": 612500,
+            "elixir": 612500,
+            "dark_elixir": 3000,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 141000,
+            "elixir": 141000,
+            "dark_elixir": 1025
+          },
+          "star_bonus": {
+            "gold": 637500,
+            "elixir": 637500,
+            "dark_elixir": 3100,
+            "shiny_ore": 825,
+            "glowy_ore": 49,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 141500,
+            "elixir": 141500,
+            "dark_elixir": 1050
+          },
+          "star_bonus": {
+            "gold": 662500,
+            "elixir": 662500,
+            "dark_elixir": 3225,
+            "shiny_ore": 825,
+            "glowy_ore": 49,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 145000,
+            "elixir": 145000,
+            "dark_elixir": 1100
+          },
+          "star_bonus": {
+            "gold": 712500,
+            "elixir": 712500,
+            "dark_elixir": 3475,
+            "shiny_ore": 825,
+            "glowy_ore": 49,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 150000,
+            "elixir": 150000,
+            "dark_elixir": 1150
+          },
+          "star_bonus": {
+            "gold": 762500,
+            "elixir": 762500,
+            "dark_elixir": 3725,
+            "shiny_ore": 825,
+            "glowy_ore": 49,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 165000,
+            "elixir": 165000,
+            "dark_elixir": 1300
+          },
+          "star_bonus": {
+            "gold": 837500,
+            "elixir": 837500,
+            "dark_elixir": 4100,
+            "shiny_ore": 825,
+            "glowy_ore": 49,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 202500,
+            "elixir": 202500,
+            "dark_elixir": 1450
+          },
+          "star_bonus": {
+            "gold": 912500,
+            "elixir": 912500,
+            "dark_elixir": 4475,
+            "shiny_ore": 825,
+            "glowy_ore": 49,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 265000,
+            "elixir": 265000,
+            "dark_elixir": 1750
+          },
+          "star_bonus": {
+            "gold": 987500,
+            "elixir": 987500,
+            "dark_elixir": 4850,
+            "shiny_ore": 825,
+            "glowy_ore": 49,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 280000,
+            "elixir": 280000,
+            "dark_elixir": 1900
+          },
+          "star_bonus": {
+            "gold": 1025000,
+            "elixir": 1025000,
+            "dark_elixir": 5000,
+            "shiny_ore": 825,
+            "glowy_ore": 49,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Golem League 20",
+      "league_tier": 20,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_7_RANK_2"
+      },
+      "group_size": 100,
+      "demote_percentage": 20,
+      "promote_percentage": 15,
+      "battle_count": 12,
+      "trophy_start": 0,
+      "clan_score": 2000,
+      "townhall_cap": 15,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 145500,
+            "elixir": 145500,
+            "dark_elixir": 1050
+          },
+          "star_bonus": {
+            "gold": 625000,
+            "elixir": 625000,
+            "dark_elixir": 3050,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 146000,
+            "elixir": 146000,
+            "dark_elixir": 1075
+          },
+          "star_bonus": {
+            "gold": 650000,
+            "elixir": 650000,
+            "dark_elixir": 3150,
+            "shiny_ore": 875,
+            "glowy_ore": 51,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 146500,
+            "elixir": 146500,
+            "dark_elixir": 1100
+          },
+          "star_bonus": {
+            "gold": 675000,
+            "elixir": 675000,
+            "dark_elixir": 3275,
+            "shiny_ore": 875,
+            "glowy_ore": 51,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 150000,
+            "elixir": 150000,
+            "dark_elixir": 1150
+          },
+          "star_bonus": {
+            "gold": 725000,
+            "elixir": 725000,
+            "dark_elixir": 3525,
+            "shiny_ore": 875,
+            "glowy_ore": 51,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 155000,
+            "elixir": 155000,
+            "dark_elixir": 1200
+          },
+          "star_bonus": {
+            "gold": 775000,
+            "elixir": 775000,
+            "dark_elixir": 3775,
+            "shiny_ore": 875,
+            "glowy_ore": 51,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 170000,
+            "elixir": 170000,
+            "dark_elixir": 1350
+          },
+          "star_bonus": {
+            "gold": 850000,
+            "elixir": 850000,
+            "dark_elixir": 4150,
+            "shiny_ore": 875,
+            "glowy_ore": 51,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 207500,
+            "elixir": 207500,
+            "dark_elixir": 1500
+          },
+          "star_bonus": {
+            "gold": 925000,
+            "elixir": 925000,
+            "dark_elixir": 4525,
+            "shiny_ore": 875,
+            "glowy_ore": 51,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 270000,
+            "elixir": 270000,
+            "dark_elixir": 1800
+          },
+          "star_bonus": {
+            "gold": 1000000,
+            "elixir": 1000000,
+            "dark_elixir": 4900,
+            "shiny_ore": 875,
+            "glowy_ore": 51,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 290000,
+            "elixir": 290000,
+            "dark_elixir": 2000
+          },
+          "star_bonus": {
+            "gold": 1050000,
+            "elixir": 1050000,
+            "dark_elixir": 5100,
+            "shiny_ore": 875,
+            "glowy_ore": 51,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Golem League 21",
+      "league_tier": 21,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_7_RANK_1"
+      },
+      "group_size": 100,
+      "demote_percentage": 20,
+      "promote_percentage": 15,
+      "battle_count": 12,
+      "trophy_start": 0,
+      "clan_score": 2100,
+      "townhall_cap": 16,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 150500,
+            "elixir": 150500,
+            "dark_elixir": 1100
+          },
+          "star_bonus": {
+            "gold": 637500,
+            "elixir": 637500,
+            "dark_elixir": 3100,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 151000,
+            "elixir": 151000,
+            "dark_elixir": 1125
+          },
+          "star_bonus": {
+            "gold": 662500,
+            "elixir": 662500,
+            "dark_elixir": 3200,
+            "shiny_ore": 900,
+            "glowy_ore": 53,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 151500,
+            "elixir": 151500,
+            "dark_elixir": 1150
+          },
+          "star_bonus": {
+            "gold": 687500,
+            "elixir": 687500,
+            "dark_elixir": 3325,
+            "shiny_ore": 900,
+            "glowy_ore": 53,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 155000,
+            "elixir": 155000,
+            "dark_elixir": 1200
+          },
+          "star_bonus": {
+            "gold": 737500,
+            "elixir": 737500,
+            "dark_elixir": 3575,
+            "shiny_ore": 900,
+            "glowy_ore": 53,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 160000,
+            "elixir": 160000,
+            "dark_elixir": 1250
+          },
+          "star_bonus": {
+            "gold": 787500,
+            "elixir": 787500,
+            "dark_elixir": 3825,
+            "shiny_ore": 900,
+            "glowy_ore": 53,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 175000,
+            "elixir": 175000,
+            "dark_elixir": 1400
+          },
+          "star_bonus": {
+            "gold": 862500,
+            "elixir": 862500,
+            "dark_elixir": 4200,
+            "shiny_ore": 900,
+            "glowy_ore": 53,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 212500,
+            "elixir": 212500,
+            "dark_elixir": 1550
+          },
+          "star_bonus": {
+            "gold": 937500,
+            "elixir": 937500,
+            "dark_elixir": 4575,
+            "shiny_ore": 900,
+            "glowy_ore": 53,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 275000,
+            "elixir": 275000,
+            "dark_elixir": 1850
+          },
+          "star_bonus": {
+            "gold": 1012500,
+            "elixir": 1012500,
+            "dark_elixir": 4950,
+            "shiny_ore": 900,
+            "glowy_ore": 53,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 295000,
+            "elixir": 295000,
+            "dark_elixir": 2050
+          },
+          "star_bonus": {
+            "gold": 1062500,
+            "elixir": 1062500,
+            "dark_elixir": 5150,
+            "shiny_ore": 900,
+            "glowy_ore": 53,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 300000,
+            "elixir": 300000,
+            "dark_elixir": 2100
+          },
+          "star_bonus": {
+            "gold": 1075000,
+            "elixir": 1075000,
+            "dark_elixir": 5200,
+            "shiny_ore": 900,
+            "glowy_ore": 53,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "P.E.K.K.A League 22",
+      "league_tier": 22,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_8_RANK_3"
+      },
+      "group_size": 100,
+      "demote_percentage": 20,
+      "promote_percentage": 15,
+      "battle_count": 14,
+      "trophy_start": 0,
+      "clan_score": 2200,
+      "townhall_cap": 16,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 155500,
+            "elixir": 155500,
+            "dark_elixir": 1150
+          },
+          "star_bonus": {
+            "gold": 650000,
+            "elixir": 650000,
+            "dark_elixir": 3150,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 156000,
+            "elixir": 156000,
+            "dark_elixir": 1175
+          },
+          "star_bonus": {
+            "gold": 675000,
+            "elixir": 675000,
+            "dark_elixir": 3250,
+            "shiny_ore": 925,
+            "glowy_ore": 54,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 156500,
+            "elixir": 156500,
+            "dark_elixir": 1200
+          },
+          "star_bonus": {
+            "gold": 700000,
+            "elixir": 700000,
+            "dark_elixir": 3375,
+            "shiny_ore": 925,
+            "glowy_ore": 54,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 160000,
+            "elixir": 160000,
+            "dark_elixir": 1250
+          },
+          "star_bonus": {
+            "gold": 750000,
+            "elixir": 750000,
+            "dark_elixir": 3625,
+            "shiny_ore": 925,
+            "glowy_ore": 54,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 165000,
+            "elixir": 165000,
+            "dark_elixir": 1300
+          },
+          "star_bonus": {
+            "gold": 800000,
+            "elixir": 800000,
+            "dark_elixir": 3875,
+            "shiny_ore": 925,
+            "glowy_ore": 54,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 180000,
+            "elixir": 180000,
+            "dark_elixir": 1450
+          },
+          "star_bonus": {
+            "gold": 875000,
+            "elixir": 875000,
+            "dark_elixir": 4250,
+            "shiny_ore": 925,
+            "glowy_ore": 54,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 217500,
+            "elixir": 217500,
+            "dark_elixir": 1600
+          },
+          "star_bonus": {
+            "gold": 950000,
+            "elixir": 950000,
+            "dark_elixir": 4625,
+            "shiny_ore": 925,
+            "glowy_ore": 54,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 280000,
+            "elixir": 280000,
+            "dark_elixir": 1900
+          },
+          "star_bonus": {
+            "gold": 1025000,
+            "elixir": 1025000,
+            "dark_elixir": 5000,
+            "shiny_ore": 925,
+            "glowy_ore": 54,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 300000,
+            "elixir": 300000,
+            "dark_elixir": 2100
+          },
+          "star_bonus": {
+            "gold": 1075000,
+            "elixir": 1075000,
+            "dark_elixir": 5200,
+            "shiny_ore": 925,
+            "glowy_ore": 54,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 310000,
+            "elixir": 310000,
+            "dark_elixir": 2200
+          },
+          "star_bonus": {
+            "gold": 1100000,
+            "elixir": 1100000,
+            "dark_elixir": 5300,
+            "shiny_ore": 925,
+            "glowy_ore": 54,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "P.E.K.K.A League 23",
+      "league_tier": 23,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_8_RANK_2"
+      },
+      "group_size": 100,
+      "demote_percentage": 20,
+      "promote_percentage": 15,
+      "battle_count": 14,
+      "trophy_start": 0,
+      "clan_score": 2300,
+      "townhall_cap": 16,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 160500,
+            "elixir": 160500,
+            "dark_elixir": 1200
+          },
+          "star_bonus": {
+            "gold": 662500,
+            "elixir": 662500,
+            "dark_elixir": 3200,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 161000,
+            "elixir": 161000,
+            "dark_elixir": 1225
+          },
+          "star_bonus": {
+            "gold": 687500,
+            "elixir": 687500,
+            "dark_elixir": 3300,
+            "shiny_ore": 938,
+            "glowy_ore": 55,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 161500,
+            "elixir": 161500,
+            "dark_elixir": 1250
+          },
+          "star_bonus": {
+            "gold": 712500,
+            "elixir": 712500,
+            "dark_elixir": 3425,
+            "shiny_ore": 938,
+            "glowy_ore": 55,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 165000,
+            "elixir": 165000,
+            "dark_elixir": 1300
+          },
+          "star_bonus": {
+            "gold": 762500,
+            "elixir": 762500,
+            "dark_elixir": 3675,
+            "shiny_ore": 938,
+            "glowy_ore": 55,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 170000,
+            "elixir": 170000,
+            "dark_elixir": 1350
+          },
+          "star_bonus": {
+            "gold": 812500,
+            "elixir": 812500,
+            "dark_elixir": 3925,
+            "shiny_ore": 938,
+            "glowy_ore": 55,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 185000,
+            "elixir": 185000,
+            "dark_elixir": 1500
+          },
+          "star_bonus": {
+            "gold": 887500,
+            "elixir": 887500,
+            "dark_elixir": 4300,
+            "shiny_ore": 938,
+            "glowy_ore": 55,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 222500,
+            "elixir": 222500,
+            "dark_elixir": 1650
+          },
+          "star_bonus": {
+            "gold": 962500,
+            "elixir": 962500,
+            "dark_elixir": 4675,
+            "shiny_ore": 938,
+            "glowy_ore": 55,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 285000,
+            "elixir": 285000,
+            "dark_elixir": 1950
+          },
+          "star_bonus": {
+            "gold": 1037500,
+            "elixir": 1037500,
+            "dark_elixir": 5050,
+            "shiny_ore": 938,
+            "glowy_ore": 55,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 305000,
+            "elixir": 305000,
+            "dark_elixir": 2150
+          },
+          "star_bonus": {
+            "gold": 1087500,
+            "elixir": 1087500,
+            "dark_elixir": 5250,
+            "shiny_ore": 938,
+            "glowy_ore": 55,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 320000,
+            "elixir": 320000,
+            "dark_elixir": 2300
+          },
+          "star_bonus": {
+            "gold": 1125000,
+            "elixir": 1125000,
+            "dark_elixir": 5400,
+            "shiny_ore": 950,
+            "glowy_ore": 55,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "P.E.K.K.A League 24",
+      "league_tier": 24,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_8_RANK_1"
+      },
+      "group_size": 100,
+      "demote_percentage": 20,
+      "promote_percentage": 15,
+      "battle_count": 14,
+      "trophy_start": 0,
+      "clan_score": 2400,
+      "townhall_cap": 16,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 165500,
+            "elixir": 165500,
+            "dark_elixir": 1250
+          },
+          "star_bonus": {
+            "gold": 675000,
+            "elixir": 675000,
+            "dark_elixir": 3250,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 166000,
+            "elixir": 166000,
+            "dark_elixir": 1275
+          },
+          "star_bonus": {
+            "gold": 700000,
+            "elixir": 700000,
+            "dark_elixir": 3350,
+            "shiny_ore": 963,
+            "glowy_ore": 56,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 166500,
+            "elixir": 166500,
+            "dark_elixir": 1300
+          },
+          "star_bonus": {
+            "gold": 725000,
+            "elixir": 725000,
+            "dark_elixir": 3475,
+            "shiny_ore": 963,
+            "glowy_ore": 56,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 170000,
+            "elixir": 170000,
+            "dark_elixir": 1350
+          },
+          "star_bonus": {
+            "gold": 775000,
+            "elixir": 775000,
+            "dark_elixir": 3725,
+            "shiny_ore": 963,
+            "glowy_ore": 56,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 175000,
+            "elixir": 175000,
+            "dark_elixir": 1400
+          },
+          "star_bonus": {
+            "gold": 825000,
+            "elixir": 825000,
+            "dark_elixir": 3975,
+            "shiny_ore": 963,
+            "glowy_ore": 56,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 190000,
+            "elixir": 190000,
+            "dark_elixir": 1550
+          },
+          "star_bonus": {
+            "gold": 900000,
+            "elixir": 900000,
+            "dark_elixir": 4350,
+            "shiny_ore": 963,
+            "glowy_ore": 56,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 227500,
+            "elixir": 227500,
+            "dark_elixir": 1700
+          },
+          "star_bonus": {
+            "gold": 975000,
+            "elixir": 975000,
+            "dark_elixir": 4725,
+            "shiny_ore": 963,
+            "glowy_ore": 56,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 290000,
+            "elixir": 290000,
+            "dark_elixir": 2000
+          },
+          "star_bonus": {
+            "gold": 1050000,
+            "elixir": 1050000,
+            "dark_elixir": 5100,
+            "shiny_ore": 963,
+            "glowy_ore": 56,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 310000,
+            "elixir": 310000,
+            "dark_elixir": 2200
+          },
+          "star_bonus": {
+            "gold": 1100000,
+            "elixir": 1100000,
+            "dark_elixir": 5300,
+            "shiny_ore": 963,
+            "glowy_ore": 56,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 325000,
+            "elixir": 325000,
+            "dark_elixir": 2350
+          },
+          "star_bonus": {
+            "gold": 1137500,
+            "elixir": 1137500,
+            "dark_elixir": 5450,
+            "shiny_ore": 963,
+            "glowy_ore": 56,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Titan League 25",
+      "league_tier": 25,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_9_RANK_3"
+      },
+      "group_size": 100,
+      "demote_percentage": 20,
+      "promote_percentage": 15,
+      "battle_count": 18,
+      "trophy_start": 0,
+      "clan_score": 2500,
+      "townhall_cap": 17,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 170500,
+            "elixir": 170500,
+            "dark_elixir": 1300
+          },
+          "star_bonus": {
+            "gold": 680000,
+            "elixir": 680000,
+            "dark_elixir": 3275,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 171000,
+            "elixir": 171000,
+            "dark_elixir": 1325
+          },
+          "star_bonus": {
+            "gold": 705000,
+            "elixir": 705000,
+            "dark_elixir": 3375,
+            "shiny_ore": 1000,
+            "glowy_ore": 57,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 171500,
+            "elixir": 171500,
+            "dark_elixir": 1350
+          },
+          "star_bonus": {
+            "gold": 730000,
+            "elixir": 730000,
+            "dark_elixir": 3500,
+            "shiny_ore": 1000,
+            "glowy_ore": 57,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 175000,
+            "elixir": 175000,
+            "dark_elixir": 1400
+          },
+          "star_bonus": {
+            "gold": 780000,
+            "elixir": 780000,
+            "dark_elixir": 3750,
+            "shiny_ore": 1000,
+            "glowy_ore": 57,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 180000,
+            "elixir": 180000,
+            "dark_elixir": 1450
+          },
+          "star_bonus": {
+            "gold": 830000,
+            "elixir": 830000,
+            "dark_elixir": 4000,
+            "shiny_ore": 1000,
+            "glowy_ore": 57,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 195000,
+            "elixir": 195000,
+            "dark_elixir": 1600
+          },
+          "star_bonus": {
+            "gold": 905000,
+            "elixir": 905000,
+            "dark_elixir": 4375,
+            "shiny_ore": 1000,
+            "glowy_ore": 57,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 232500,
+            "elixir": 232500,
+            "dark_elixir": 1750
+          },
+          "star_bonus": {
+            "gold": 980000,
+            "elixir": 980000,
+            "dark_elixir": 4750,
+            "shiny_ore": 1000,
+            "glowy_ore": 57,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 295000,
+            "elixir": 295000,
+            "dark_elixir": 2050
+          },
+          "star_bonus": {
+            "gold": 1055000,
+            "elixir": 1055000,
+            "dark_elixir": 5125,
+            "shiny_ore": 1000,
+            "glowy_ore": 57,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 315000,
+            "elixir": 315000,
+            "dark_elixir": 2250
+          },
+          "star_bonus": {
+            "gold": 1105000,
+            "elixir": 1105000,
+            "dark_elixir": 5325,
+            "shiny_ore": 1000,
+            "glowy_ore": 57,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 330000,
+            "elixir": 330000,
+            "dark_elixir": 2400
+          },
+          "star_bonus": {
+            "gold": 1142500,
+            "elixir": 1142500,
+            "dark_elixir": 5475,
+            "shiny_ore": 1000,
+            "glowy_ore": 57,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 17,
+          "resources": {
+            "gold": 340000,
+            "elixir": 340000,
+            "dark_elixir": 2500
+          },
+          "star_bonus": {
+            "gold": 1160000,
+            "elixir": 1160000,
+            "dark_elixir": 5550,
+            "shiny_ore": 1000,
+            "glowy_ore": 57,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Titan League 26",
+      "league_tier": 26,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_9_RANK_2"
+      },
+      "group_size": 100,
+      "demote_percentage": 20,
+      "promote_percentage": 15,
+      "battle_count": 18,
+      "trophy_start": 0,
+      "clan_score": 2750,
+      "townhall_cap": 17,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 173000,
+            "elixir": 173000,
+            "dark_elixir": 1313
+          },
+          "star_bonus": {
+            "gold": 685000,
+            "elixir": 685000,
+            "dark_elixir": 3300,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 173500,
+            "elixir": 173500,
+            "dark_elixir": 1338
+          },
+          "star_bonus": {
+            "gold": 710000,
+            "elixir": 710000,
+            "dark_elixir": 3400,
+            "shiny_ore": 1010,
+            "glowy_ore": 58,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 174000,
+            "elixir": 174000,
+            "dark_elixir": 1363
+          },
+          "star_bonus": {
+            "gold": 735000,
+            "elixir": 735000,
+            "dark_elixir": 3525,
+            "shiny_ore": 1010,
+            "glowy_ore": 58,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 177500,
+            "elixir": 177500,
+            "dark_elixir": 1413
+          },
+          "star_bonus": {
+            "gold": 785000,
+            "elixir": 785000,
+            "dark_elixir": 3775,
+            "shiny_ore": 1010,
+            "glowy_ore": 58,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 182500,
+            "elixir": 182500,
+            "dark_elixir": 1463
+          },
+          "star_bonus": {
+            "gold": 835000,
+            "elixir": 835000,
+            "dark_elixir": 4025,
+            "shiny_ore": 1010,
+            "glowy_ore": 58,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 197500,
+            "elixir": 197500,
+            "dark_elixir": 1613
+          },
+          "star_bonus": {
+            "gold": 910000,
+            "elixir": 910000,
+            "dark_elixir": 4400,
+            "shiny_ore": 1010,
+            "glowy_ore": 58,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 235000,
+            "elixir": 235000,
+            "dark_elixir": 1763
+          },
+          "star_bonus": {
+            "gold": 985000,
+            "elixir": 985000,
+            "dark_elixir": 4775,
+            "shiny_ore": 1010,
+            "glowy_ore": 58,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 297500,
+            "elixir": 297500,
+            "dark_elixir": 2063
+          },
+          "star_bonus": {
+            "gold": 1060000,
+            "elixir": 1060000,
+            "dark_elixir": 5150,
+            "shiny_ore": 1010,
+            "glowy_ore": 58,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 317500,
+            "elixir": 317500,
+            "dark_elixir": 2263
+          },
+          "star_bonus": {
+            "gold": 1110000,
+            "elixir": 1110000,
+            "dark_elixir": 5350,
+            "shiny_ore": 1010,
+            "glowy_ore": 58,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 332500,
+            "elixir": 332500,
+            "dark_elixir": 2413
+          },
+          "star_bonus": {
+            "gold": 1147500,
+            "elixir": 1147500,
+            "dark_elixir": 5500,
+            "shiny_ore": 1010,
+            "glowy_ore": 58,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 17,
+          "resources": {
+            "gold": 345000,
+            "elixir": 345000,
+            "dark_elixir": 2525
+          },
+          "star_bonus": {
+            "gold": 1170000,
+            "elixir": 1170000,
+            "dark_elixir": 5600,
+            "shiny_ore": 1010,
+            "glowy_ore": 58,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Titan League 27",
+      "league_tier": 27,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_9_RANK_1"
+      },
+      "group_size": 100,
+      "demote_percentage": 20,
+      "promote_percentage": 15,
+      "battle_count": 18,
+      "trophy_start": 0,
+      "clan_score": 3000,
+      "townhall_cap": 17,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 175500,
+            "elixir": 175500,
+            "dark_elixir": 1325
+          },
+          "star_bonus": {
+            "gold": 690000,
+            "elixir": 690000,
+            "dark_elixir": 3325,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 176000,
+            "elixir": 176000,
+            "dark_elixir": 1350
+          },
+          "star_bonus": {
+            "gold": 715000,
+            "elixir": 715000,
+            "dark_elixir": 3425,
+            "shiny_ore": 1020,
+            "glowy_ore": 59,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 176500,
+            "elixir": 176500,
+            "dark_elixir": 1375
+          },
+          "star_bonus": {
+            "gold": 740000,
+            "elixir": 740000,
+            "dark_elixir": 3550,
+            "shiny_ore": 1020,
+            "glowy_ore": 59,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 180000,
+            "elixir": 180000,
+            "dark_elixir": 1425
+          },
+          "star_bonus": {
+            "gold": 790000,
+            "elixir": 790000,
+            "dark_elixir": 3800,
+            "shiny_ore": 1020,
+            "glowy_ore": 59,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 185000,
+            "elixir": 185000,
+            "dark_elixir": 1475
+          },
+          "star_bonus": {
+            "gold": 840000,
+            "elixir": 840000,
+            "dark_elixir": 4050,
+            "shiny_ore": 1020,
+            "glowy_ore": 59,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 200000,
+            "elixir": 200000,
+            "dark_elixir": 1625
+          },
+          "star_bonus": {
+            "gold": 915000,
+            "elixir": 915000,
+            "dark_elixir": 4425,
+            "shiny_ore": 1020,
+            "glowy_ore": 59,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 237500,
+            "elixir": 237500,
+            "dark_elixir": 1775
+          },
+          "star_bonus": {
+            "gold": 990000,
+            "elixir": 990000,
+            "dark_elixir": 4800,
+            "shiny_ore": 1020,
+            "glowy_ore": 59,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 300000,
+            "elixir": 300000,
+            "dark_elixir": 2075
+          },
+          "star_bonus": {
+            "gold": 1065000,
+            "elixir": 1065000,
+            "dark_elixir": 5175,
+            "shiny_ore": 1020,
+            "glowy_ore": 59,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 320000,
+            "elixir": 320000,
+            "dark_elixir": 2275
+          },
+          "star_bonus": {
+            "gold": 1115000,
+            "elixir": 1115000,
+            "dark_elixir": 5375,
+            "shiny_ore": 1020,
+            "glowy_ore": 59,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 335000,
+            "elixir": 335000,
+            "dark_elixir": 2425
+          },
+          "star_bonus": {
+            "gold": 1152500,
+            "elixir": 1152500,
+            "dark_elixir": 5525,
+            "shiny_ore": 1020,
+            "glowy_ore": 59,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 17,
+          "resources": {
+            "gold": 350000,
+            "elixir": 350000,
+            "dark_elixir": 2550
+          },
+          "star_bonus": {
+            "gold": 1180000,
+            "elixir": 1180000,
+            "dark_elixir": 5650,
+            "shiny_ore": 1020,
+            "glowy_ore": 59,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dragon League 28",
+      "league_tier": 28,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_10_RANK_3"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 10,
+      "battle_count": 24,
+      "trophy_start": 0,
+      "clan_score": 3250,
+      "townhall_cap": 17,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 178000,
+            "elixir": 178000,
+            "dark_elixir": 1338
+          },
+          "star_bonus": {
+            "gold": 695000,
+            "elixir": 695000,
+            "dark_elixir": 3350,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 178500,
+            "elixir": 178500,
+            "dark_elixir": 1363
+          },
+          "star_bonus": {
+            "gold": 720000,
+            "elixir": 720000,
+            "dark_elixir": 3450,
+            "shiny_ore": 1030,
+            "glowy_ore": 60,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 179000,
+            "elixir": 179000,
+            "dark_elixir": 1388
+          },
+          "star_bonus": {
+            "gold": 745000,
+            "elixir": 745000,
+            "dark_elixir": 3575,
+            "shiny_ore": 1030,
+            "glowy_ore": 60,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 182500,
+            "elixir": 182500,
+            "dark_elixir": 1438
+          },
+          "star_bonus": {
+            "gold": 795000,
+            "elixir": 795000,
+            "dark_elixir": 3825,
+            "shiny_ore": 1030,
+            "glowy_ore": 60,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 187500,
+            "elixir": 187500,
+            "dark_elixir": 1488
+          },
+          "star_bonus": {
+            "gold": 845000,
+            "elixir": 845000,
+            "dark_elixir": 4075,
+            "shiny_ore": 1030,
+            "glowy_ore": 60,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 202500,
+            "elixir": 202500,
+            "dark_elixir": 1638
+          },
+          "star_bonus": {
+            "gold": 920000,
+            "elixir": 920000,
+            "dark_elixir": 4450,
+            "shiny_ore": 1030,
+            "glowy_ore": 60,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 240000,
+            "elixir": 240000,
+            "dark_elixir": 1788
+          },
+          "star_bonus": {
+            "gold": 995000,
+            "elixir": 995000,
+            "dark_elixir": 4825,
+            "shiny_ore": 1030,
+            "glowy_ore": 60,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 302500,
+            "elixir": 302500,
+            "dark_elixir": 2088
+          },
+          "star_bonus": {
+            "gold": 1070000,
+            "elixir": 1070000,
+            "dark_elixir": 5200,
+            "shiny_ore": 1030,
+            "glowy_ore": 60,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 322500,
+            "elixir": 322500,
+            "dark_elixir": 2288
+          },
+          "star_bonus": {
+            "gold": 1120000,
+            "elixir": 1120000,
+            "dark_elixir": 5400,
+            "shiny_ore": 1030,
+            "glowy_ore": 60,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 337500,
+            "elixir": 337500,
+            "dark_elixir": 2438
+          },
+          "star_bonus": {
+            "gold": 1157500,
+            "elixir": 1157500,
+            "dark_elixir": 5550,
+            "shiny_ore": 1030,
+            "glowy_ore": 60,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 17,
+          "resources": {
+            "gold": 355000,
+            "elixir": 355000,
+            "dark_elixir": 2575
+          },
+          "star_bonus": {
+            "gold": 1190000,
+            "elixir": 1190000,
+            "dark_elixir": 5700,
+            "shiny_ore": 1030,
+            "glowy_ore": 60,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dragon League 29",
+      "league_tier": 29,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_10_RANK_2"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 10,
+      "battle_count": 24,
+      "trophy_start": 0,
+      "clan_score": 3500,
+      "townhall_cap": 17,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 180500,
+            "elixir": 180500,
+            "dark_elixir": 1350
+          },
+          "star_bonus": {
+            "gold": 700000,
+            "elixir": 700000,
+            "dark_elixir": 3375,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 181000,
+            "elixir": 181000,
+            "dark_elixir": 1375
+          },
+          "star_bonus": {
+            "gold": 725000,
+            "elixir": 725000,
+            "dark_elixir": 3475,
+            "shiny_ore": 1040,
+            "glowy_ore": 61,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 181500,
+            "elixir": 181500,
+            "dark_elixir": 1400
+          },
+          "star_bonus": {
+            "gold": 750000,
+            "elixir": 750000,
+            "dark_elixir": 3600,
+            "shiny_ore": 1040,
+            "glowy_ore": 61,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 185000,
+            "elixir": 185000,
+            "dark_elixir": 1450
+          },
+          "star_bonus": {
+            "gold": 800000,
+            "elixir": 800000,
+            "dark_elixir": 3850,
+            "shiny_ore": 1040,
+            "glowy_ore": 61,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 190000,
+            "elixir": 190000,
+            "dark_elixir": 1500
+          },
+          "star_bonus": {
+            "gold": 850000,
+            "elixir": 850000,
+            "dark_elixir": 4100,
+            "shiny_ore": 1040,
+            "glowy_ore": 61,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 205000,
+            "elixir": 205000,
+            "dark_elixir": 1650
+          },
+          "star_bonus": {
+            "gold": 925000,
+            "elixir": 925000,
+            "dark_elixir": 4475,
+            "shiny_ore": 1040,
+            "glowy_ore": 61,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 242500,
+            "elixir": 242500,
+            "dark_elixir": 1800
+          },
+          "star_bonus": {
+            "gold": 1000000,
+            "elixir": 1000000,
+            "dark_elixir": 4850,
+            "shiny_ore": 1040,
+            "glowy_ore": 61,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 305000,
+            "elixir": 305000,
+            "dark_elixir": 2100
+          },
+          "star_bonus": {
+            "gold": 1075000,
+            "elixir": 1075000,
+            "dark_elixir": 5225,
+            "shiny_ore": 1040,
+            "glowy_ore": 61,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 325000,
+            "elixir": 325000,
+            "dark_elixir": 2300
+          },
+          "star_bonus": {
+            "gold": 1125000,
+            "elixir": 1125000,
+            "dark_elixir": 5425,
+            "shiny_ore": 1040,
+            "glowy_ore": 61,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 340000,
+            "elixir": 340000,
+            "dark_elixir": 2450
+          },
+          "star_bonus": {
+            "gold": 1162500,
+            "elixir": 1162500,
+            "dark_elixir": 5575,
+            "shiny_ore": 1040,
+            "glowy_ore": 61,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 17,
+          "resources": {
+            "gold": 360000,
+            "elixir": 360000,
+            "dark_elixir": 2600
+          },
+          "star_bonus": {
+            "gold": 1200000,
+            "elixir": 1200000,
+            "dark_elixir": 5750,
+            "shiny_ore": 1040,
+            "glowy_ore": 61,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dragon League 30",
+      "league_tier": 30,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_10_RANK_1"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 10,
+      "battle_count": 24,
+      "trophy_start": 0,
+      "clan_score": 3750,
+      "townhall_cap": 17,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 183000,
+            "elixir": 183000,
+            "dark_elixir": 1363
+          },
+          "star_bonus": {
+            "gold": 705000,
+            "elixir": 705000,
+            "dark_elixir": 3400,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 183500,
+            "elixir": 183500,
+            "dark_elixir": 1388
+          },
+          "star_bonus": {
+            "gold": 730000,
+            "elixir": 730000,
+            "dark_elixir": 3500,
+            "shiny_ore": 1050,
+            "glowy_ore": 62,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 184000,
+            "elixir": 184000,
+            "dark_elixir": 1413
+          },
+          "star_bonus": {
+            "gold": 755000,
+            "elixir": 755000,
+            "dark_elixir": 3625,
+            "shiny_ore": 1050,
+            "glowy_ore": 62,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 187500,
+            "elixir": 187500,
+            "dark_elixir": 1463
+          },
+          "star_bonus": {
+            "gold": 805000,
+            "elixir": 805000,
+            "dark_elixir": 3875,
+            "shiny_ore": 1050,
+            "glowy_ore": 62,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 192500,
+            "elixir": 192500,
+            "dark_elixir": 1513
+          },
+          "star_bonus": {
+            "gold": 855000,
+            "elixir": 855000,
+            "dark_elixir": 4125,
+            "shiny_ore": 1050,
+            "glowy_ore": 62,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 207500,
+            "elixir": 207500,
+            "dark_elixir": 1663
+          },
+          "star_bonus": {
+            "gold": 930000,
+            "elixir": 930000,
+            "dark_elixir": 4500,
+            "shiny_ore": 1050,
+            "glowy_ore": 62,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 245000,
+            "elixir": 245000,
+            "dark_elixir": 1813
+          },
+          "star_bonus": {
+            "gold": 1005000,
+            "elixir": 1005000,
+            "dark_elixir": 4875,
+            "shiny_ore": 1050,
+            "glowy_ore": 62,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 307500,
+            "elixir": 307500,
+            "dark_elixir": 2113
+          },
+          "star_bonus": {
+            "gold": 1080000,
+            "elixir": 1080000,
+            "dark_elixir": 5250,
+            "shiny_ore": 1050,
+            "glowy_ore": 62,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 327500,
+            "elixir": 327500,
+            "dark_elixir": 2313
+          },
+          "star_bonus": {
+            "gold": 1130000,
+            "elixir": 1130000,
+            "dark_elixir": 5450,
+            "shiny_ore": 1050,
+            "glowy_ore": 62,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 342500,
+            "elixir": 342500,
+            "dark_elixir": 2463
+          },
+          "star_bonus": {
+            "gold": 1167500,
+            "elixir": 1167500,
+            "dark_elixir": 5600,
+            "shiny_ore": 1050,
+            "glowy_ore": 62,
+            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 17,
+          "resources": {
+            "gold": 365000,
+            "elixir": 365000,
+            "dark_elixir": 2625
+          },
+          "star_bonus": {
+            "gold": 1210000,
+            "elixir": 1210000,
+            "dark_elixir": 5800,
+            "shiny_ore": 1050,
+            "glowy_ore": 62,
+            "starry_ore": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Electro League 31",
+      "league_tier": 31,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_11_RANK_3"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 10,
+      "battle_count": 30,
+      "trophy_start": 0,
+      "clan_score": 4000,
+      "townhall_cap": 17,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 185500,
+            "elixir": 185500,
+            "dark_elixir": 1375
+          },
+          "star_bonus": {
+            "gold": 710000,
+            "elixir": 710000,
+            "dark_elixir": 3425,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 186000,
+            "elixir": 186000,
+            "dark_elixir": 1400
+          },
+          "star_bonus": {
+            "gold": 735000,
+            "elixir": 735000,
+            "dark_elixir": 3525,
+            "shiny_ore": 1060,
+            "glowy_ore": 62,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 186500,
+            "elixir": 186500,
+            "dark_elixir": 1425
+          },
+          "star_bonus": {
+            "gold": 760000,
+            "elixir": 760000,
+            "dark_elixir": 3650,
+            "shiny_ore": 1060,
+            "glowy_ore": 62,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 190000,
+            "elixir": 190000,
+            "dark_elixir": 1475
+          },
+          "star_bonus": {
+            "gold": 810000,
+            "elixir": 810000,
+            "dark_elixir": 3900,
+            "shiny_ore": 1060,
+            "glowy_ore": 62,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 195000,
+            "elixir": 195000,
+            "dark_elixir": 1525
+          },
+          "star_bonus": {
+            "gold": 860000,
+            "elixir": 860000,
+            "dark_elixir": 4150,
+            "shiny_ore": 1060,
+            "glowy_ore": 62,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 210000,
+            "elixir": 210000,
+            "dark_elixir": 1675
+          },
+          "star_bonus": {
+            "gold": 935000,
+            "elixir": 935000,
+            "dark_elixir": 4525,
+            "shiny_ore": 1060,
+            "glowy_ore": 62,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 247500,
+            "elixir": 247500,
+            "dark_elixir": 1825
+          },
+          "star_bonus": {
+            "gold": 1010000,
+            "elixir": 1010000,
+            "dark_elixir": 4900,
+            "shiny_ore": 1060,
+            "glowy_ore": 62,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 310000,
+            "elixir": 310000,
+            "dark_elixir": 2125
+          },
+          "star_bonus": {
+            "gold": 1085000,
+            "elixir": 1085000,
+            "dark_elixir": 5275,
+            "shiny_ore": 1060,
+            "glowy_ore": 62,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 330000,
+            "elixir": 330000,
+            "dark_elixir": 2325
+          },
+          "star_bonus": {
+            "gold": 1135000,
+            "elixir": 1135000,
+            "dark_elixir": 5475,
+            "shiny_ore": 1060,
+            "glowy_ore": 62,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 345000,
+            "elixir": 345000,
+            "dark_elixir": 2475
+          },
+          "star_bonus": {
+            "gold": 1172500,
+            "elixir": 1172500,
+            "dark_elixir": 5625,
+            "shiny_ore": 1060,
+            "glowy_ore": 62,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 17,
+          "resources": {
+            "gold": 370000,
+            "elixir": 370000,
+            "dark_elixir": 2650
+          },
+          "star_bonus": {
+            "gold": 1220000,
+            "elixir": 1220000,
+            "dark_elixir": 5850,
+            "shiny_ore": 1060,
+            "glowy_ore": 62,
+            "starry_ore": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "Electro League 32",
+      "league_tier": 32,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_11_RANK_2"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 10,
+      "battle_count": 30,
+      "trophy_start": 0,
+      "clan_score": 4250,
+      "townhall_cap": 17,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 188000,
+            "elixir": 188000,
+            "dark_elixir": 1388
+          },
+          "star_bonus": {
+            "gold": 715000,
+            "elixir": 715000,
+            "dark_elixir": 3450,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 188500,
+            "elixir": 188500,
+            "dark_elixir": 1413
+          },
+          "star_bonus": {
+            "gold": 740000,
+            "elixir": 740000,
+            "dark_elixir": 3550,
+            "shiny_ore": 1070,
+            "glowy_ore": 63,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 189000,
+            "elixir": 189000,
+            "dark_elixir": 1438
+          },
+          "star_bonus": {
+            "gold": 765000,
+            "elixir": 765000,
+            "dark_elixir": 3675,
+            "shiny_ore": 1070,
+            "glowy_ore": 63,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 192500,
+            "elixir": 192500,
+            "dark_elixir": 1488
+          },
+          "star_bonus": {
+            "gold": 815000,
+            "elixir": 815000,
+            "dark_elixir": 3925,
+            "shiny_ore": 1070,
+            "glowy_ore": 63,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 197500,
+            "elixir": 197500,
+            "dark_elixir": 1538
+          },
+          "star_bonus": {
+            "gold": 865000,
+            "elixir": 865000,
+            "dark_elixir": 4175,
+            "shiny_ore": 1070,
+            "glowy_ore": 63,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 212500,
+            "elixir": 212500,
+            "dark_elixir": 1688
+          },
+          "star_bonus": {
+            "gold": 940000,
+            "elixir": 940000,
+            "dark_elixir": 4550,
+            "shiny_ore": 1070,
+            "glowy_ore": 63,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 250000,
+            "elixir": 250000,
+            "dark_elixir": 1838
+          },
+          "star_bonus": {
+            "gold": 1015000,
+            "elixir": 1015000,
+            "dark_elixir": 4925,
+            "shiny_ore": 1070,
+            "glowy_ore": 63,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 312500,
+            "elixir": 312500,
+            "dark_elixir": 2138
+          },
+          "star_bonus": {
+            "gold": 1090000,
+            "elixir": 1090000,
+            "dark_elixir": 5300,
+            "shiny_ore": 1070,
+            "glowy_ore": 63,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 332500,
+            "elixir": 332500,
+            "dark_elixir": 2338
+          },
+          "star_bonus": {
+            "gold": 1140000,
+            "elixir": 1140000,
+            "dark_elixir": 5500,
+            "shiny_ore": 1070,
+            "glowy_ore": 63,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 347500,
+            "elixir": 347500,
+            "dark_elixir": 2488
+          },
+          "star_bonus": {
+            "gold": 1177500,
+            "elixir": 1177500,
+            "dark_elixir": 5650,
+            "shiny_ore": 1070,
+            "glowy_ore": 63,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 17,
+          "resources": {
+            "gold": 375000,
+            "elixir": 375000,
+            "dark_elixir": 2675
+          },
+          "star_bonus": {
+            "gold": 1230000,
+            "elixir": 1230000,
+            "dark_elixir": 5900,
+            "shiny_ore": 1070,
+            "glowy_ore": 63,
+            "starry_ore": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "Electro League 33",
+      "league_tier": 33,
+      "TID": {
+        "name": "TID_LEAGUE_TIER_11_RANK_1"
+      },
+      "group_size": 100,
+      "demote_percentage": 10,
+      "promote_percentage": 10,
+      "battle_count": 30,
+      "trophy_start": 0,
+      "clan_score": 4500,
+      "townhall_cap": 17,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 190500,
+            "elixir": 190500,
+            "dark_elixir": 1400
+          },
+          "star_bonus": {
+            "gold": 720000,
+            "elixir": 720000,
+            "dark_elixir": 3475,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 191000,
+            "elixir": 191000,
+            "dark_elixir": 1425
+          },
+          "star_bonus": {
+            "gold": 745000,
+            "elixir": 745000,
+            "dark_elixir": 3575,
+            "shiny_ore": 1080,
+            "glowy_ore": 64,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 191500,
+            "elixir": 191500,
+            "dark_elixir": 1450
+          },
+          "star_bonus": {
+            "gold": 770000,
+            "elixir": 770000,
+            "dark_elixir": 3700,
+            "shiny_ore": 1080,
+            "glowy_ore": 64,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 195000,
+            "elixir": 195000,
+            "dark_elixir": 1500
+          },
+          "star_bonus": {
+            "gold": 820000,
+            "elixir": 820000,
+            "dark_elixir": 3950,
+            "shiny_ore": 1080,
+            "glowy_ore": 64,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 200000,
+            "elixir": 200000,
+            "dark_elixir": 1550
+          },
+          "star_bonus": {
+            "gold": 870000,
+            "elixir": 870000,
+            "dark_elixir": 4200,
+            "shiny_ore": 1080,
+            "glowy_ore": 64,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 215000,
+            "elixir": 215000,
+            "dark_elixir": 1700
+          },
+          "star_bonus": {
+            "gold": 945000,
+            "elixir": 945000,
+            "dark_elixir": 4575,
+            "shiny_ore": 1080,
+            "glowy_ore": 64,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 252500,
+            "elixir": 252500,
+            "dark_elixir": 1850
+          },
+          "star_bonus": {
+            "gold": 1020000,
+            "elixir": 1020000,
+            "dark_elixir": 4950,
+            "shiny_ore": 1080,
+            "glowy_ore": 64,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 315000,
+            "elixir": 315000,
+            "dark_elixir": 2150
+          },
+          "star_bonus": {
+            "gold": 1095000,
+            "elixir": 1095000,
+            "dark_elixir": 5325,
+            "shiny_ore": 1080,
+            "glowy_ore": 64,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 335000,
+            "elixir": 335000,
+            "dark_elixir": 2350
+          },
+          "star_bonus": {
+            "gold": 1145000,
+            "elixir": 1145000,
+            "dark_elixir": 5525,
+            "shiny_ore": 1080,
+            "glowy_ore": 64,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 350000,
+            "elixir": 350000,
+            "dark_elixir": 2500
+          },
+          "star_bonus": {
+            "gold": 1182500,
+            "elixir": 1182500,
+            "dark_elixir": 5675,
+            "shiny_ore": 1080,
+            "glowy_ore": 64,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 17,
+          "resources": {
+            "gold": 380000,
+            "elixir": 380000,
+            "dark_elixir": 2700
+          },
+          "star_bonus": {
+            "gold": 1240000,
+            "elixir": 1240000,
+            "dark_elixir": 5950,
+            "shiny_ore": 1080,
+            "glowy_ore": 64,
+            "starry_ore": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "Legend League",
+      "league_tier": 34,
+      "TID": {
+        "name": "TID_LEAGUE_LEGENDARY"
+      },
+      "group_size": 1500,
+      "demote_percentage": null,
+      "promote_percentage": null,
+      "battle_count": 8,
+      "trophy_start": 5000,
+      "clan_score": 5000,
+      "townhall_cap": 17,
+      "rewards": [
+        {
+          "townhall_level": 7,
+          "resources": {
+            "gold": 200500,
+            "elixir": 200500,
+            "dark_elixir": 1450
+          },
+          "star_bonus": {
+            "gold": 725000,
+            "elixir": 725000,
+            "dark_elixir": 3500,
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          }
+        },
+        {
+          "townhall_level": 8,
+          "resources": {
+            "gold": 201000,
+            "elixir": 201000,
+            "dark_elixir": 1475
+          },
+          "star_bonus": {
+            "gold": 750000,
+            "elixir": 750000,
+            "dark_elixir": 3600,
+            "shiny_ore": 1100,
+            "glowy_ore": 65,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 9,
+          "resources": {
+            "gold": 201500,
+            "elixir": 201500,
+            "dark_elixir": 1500
+          },
+          "star_bonus": {
+            "gold": 775000,
+            "elixir": 775000,
+            "dark_elixir": 3725,
+            "shiny_ore": 1100,
+            "glowy_ore": 65,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 10,
+          "resources": {
+            "gold": 205000,
+            "elixir": 205000,
+            "dark_elixir": 1550
+          },
+          "star_bonus": {
+            "gold": 825000,
+            "elixir": 825000,
+            "dark_elixir": 3975,
+            "shiny_ore": 1100,
+            "glowy_ore": 65,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 11,
+          "resources": {
+            "gold": 210000,
+            "elixir": 210000,
+            "dark_elixir": 1600
+          },
+          "star_bonus": {
+            "gold": 875000,
+            "elixir": 875000,
+            "dark_elixir": 4225,
+            "shiny_ore": 1100,
+            "glowy_ore": 65,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 12,
+          "resources": {
+            "gold": 225000,
+            "elixir": 225000,
+            "dark_elixir": 1750
+          },
+          "star_bonus": {
+            "gold": 950000,
+            "elixir": 950000,
+            "dark_elixir": 4600,
+            "shiny_ore": 1100,
+            "glowy_ore": 65,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 13,
+          "resources": {
+            "gold": 262500,
+            "elixir": 262500,
+            "dark_elixir": 1900
+          },
+          "star_bonus": {
+            "gold": 1025000,
+            "elixir": 1025000,
+            "dark_elixir": 4975,
+            "shiny_ore": 1100,
+            "glowy_ore": 65,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 14,
+          "resources": {
+            "gold": 325000,
+            "elixir": 325000,
+            "dark_elixir": 2200
+          },
+          "star_bonus": {
+            "gold": 1100000,
+            "elixir": 1100000,
+            "dark_elixir": 5350,
+            "shiny_ore": 1100,
+            "glowy_ore": 65,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 15,
+          "resources": {
+            "gold": 345000,
+            "elixir": 345000,
+            "dark_elixir": 2400
+          },
+          "star_bonus": {
+            "gold": 1150000,
+            "elixir": 1150000,
+            "dark_elixir": 5550,
+            "shiny_ore": 1100,
+            "glowy_ore": 65,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 16,
+          "resources": {
+            "gold": 360000,
+            "elixir": 360000,
+            "dark_elixir": 2550
+          },
+          "star_bonus": {
+            "gold": 1187500,
+            "elixir": 1187500,
+            "dark_elixir": 5700,
+            "shiny_ore": 1100,
+            "glowy_ore": 65,
+            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 17,
+          "resources": {
+            "gold": 400000,
+            "elixir": 400000,
+            "dark_elixir": 2800
+          },
+          "star_bonus": {
+            "gold": 1250000,
+            "elixir": 1250000,
+            "dark_elixir": 6000,
+            "shiny_ore": 1100,
+            "glowy_ore": 65,
+            "starry_ore": 2
+          }
         }
       ]
     }

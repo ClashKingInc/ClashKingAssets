@@ -41,7 +41,6 @@ class StaticUpdater:
             ("logic/villager_apprentices.csv", "helpers.csv")
         ]
 
-
         self.supported_languages = [
             "ar", "cn", "cnt", "de", "es", "fa", "fi", "fr", "id", "it", "jp", "kr",
             "ms", "nl", "no", "pl", "pt", "ru", "th", "tr", "vi"
@@ -63,6 +62,7 @@ class StaticUpdater:
         self.full_supercharges_data = {}
         self.full_abilities_data = {}
         self.full_hero_data = {}
+        self.full_townhall_data = {}
 
         self.lab_to_townhall = {}
         self.smithy_to_townhall = {}
@@ -297,6 +297,7 @@ class StaticUpdater:
     def _parse_building_data(self):
         self.full_building_data = self.open_file("buildings.json")
         self.full_supercharges_data = self.open_file("supercharges.json")
+        self.full_townhall_data = self.open_file("townhall_levels.json")
 
         new_building_data = []
 
@@ -305,7 +306,7 @@ class StaticUpdater:
                                                       "Npc Town Hall"] or "Unused" in building_name:
                 continue
             village_type = building_data.get("VillageType", 0)
-
+            building_data["_id"] = _id #later on we need this id in this data
             superchargeable = False
             for supercharge_data in self.full_supercharges_data.values():
                 if supercharge_data.get("Name") == building_name:
@@ -1001,12 +1002,124 @@ class StaticUpdater:
 
         return new_helper_data
 
+    def _parse_war_league_data(self):
+        full_war_league_data = self.open_file("war_leagues.json")
+
+        new_war_league_data = []
+        for _id, (war_league_name, war_league_data) in enumerate(full_war_league_data.items(), 48000000):
+            if not war_league_data.get("Name"): #skip Unranked, no data
+                continue
+            new_war_league_data.append({
+                "_id": _id,
+                "name": self._translate(tid=war_league_data.get("TID")),
+                "TID": {
+                    "name": war_league_data.get("TID"),
+                },
+                "cwl_medals": {
+                    "first_place": war_league_data.get("LeagueWinReward"),
+                    "position_medal_diff": war_league_data.get("LeaguePosRewardEffect"),
+                    "bonus_reward": war_league_data.get("BonusMedalReward"),
+                    "minimum_bonus_amount": war_league_data.get("MinNumMedalBonuses"),
+                },
+                "promotions": war_league_data.get("NumPromotions"),
+                "demotions": war_league_data.get("NumDemotions"),
+                "15v15_only": war_league_data.get("AllowFirstWarSizeOnly")
+            })
+
+        return new_war_league_data
+
+    def _parse_league_tier_data(self):
+        full_league_tier_data = self.open_file("league_tiers.json")
+
+        new_league_tier_data = []
+        for _id, (league_name, league_data) in enumerate(full_league_tier_data.items(), 105000000):
+            league_tier = _id - 105000000
+            hold_data = {
+                "name": self._translate(tid=league_data.get("TID")),
+                "league_tier": league_tier,
+                "TID": {
+                    "name": league_data.get("TID"),
+                },
+                "group_size": league_data.get("GroupSizeMax"),
+                "demote_percentage": league_data.get("DemotePercentage"),
+                "promote_percentage": league_data.get("PromotePercentage"),
+                "battle_count": league_data.get("MaxBattleCount"),
+                "trophy_start": league_data.get("TrophyFloor"),
+                "clan_score": league_data.get("TopClanScore"),
+                "townhall_cap": None,
+                "rewards" : []
+            }
+            highest_townhall = 0
+            rewards = []
+            for tier, level_data in league_data.items():
+                if not isinstance(level_data, dict):
+                    continue
+                if tier == "1": #always empty idky
+                    continue
+                townhall_level = level_data.get("TH")
+                th_min_league_tier = self.full_townhall_data.get(str(townhall_level)).get("LeagueTier", 0)
+                if league_tier < th_min_league_tier and league_tier != 0:
+                    continue
+                highest_townhall = max(townhall_level, highest_townhall)
+                rewards.append({
+                    "townhall_level": townhall_level,
+                    "resources": {
+                        "gold": level_data.get("GoldReward"),
+                        "elixir": level_data.get("ElixirReward"),
+                        "dark_elixir": level_data.get("DarkElixirReward")
+                    },
+                    "star_bonus": {
+                        "gold": level_data.get("GoldRewardStarBonus"),
+                        "elixir": level_data.get("ElixirRewardStarBonus"),
+                        "dark_elixir": level_data.get("DarkElixirRewardStarBonus"),
+                        "shiny_ore": level_data.get("CommonOreRewardStarBonus"),
+                        "glowy_ore": level_data.get("RareOreRewardStarBonus"),
+                        "starry_ore": level_data.get("EpicOreRewardStarBonus")
+                    }
+                })
+            hold_data["townhall_cap"] = highest_townhall
+            hold_data["rewards"] = rewards
+            new_league_tier_data.append(hold_data)
+
+        return new_league_tier_data
+
+    def _parse_hall_data(self):
+        builderhall_data = []
+        townhall_data = []
+        for _id, (hall_level, hall_data) in enumerate(self.full_townhall_data.items(), 1):
+            builderhall_unlocks = []
+            townhall_unlocks = []
+            for field, data in hall_data.items():
+                building_data = self.full_building_data.get(field)
+                if not building_data:
+                    continue
+                village_type = building_data.get("VillageType", 0)
+                if not village_type: #is home village
+                    townhall_unlocks.append({
+                        "name": self._translate(tid=building_data.get("TID")),
+                        "_id": building_data.get("_id"),
+                        "quantity": data
+                    })
+                else:
+                    builderhall_unlocks.append({
+                        "name": self._translate(tid=building_data.get("TID")),
+                        "_id": building_data.get("_id"),
+                        "quantity": data
+                    })
+            townhall_data.append({"level": _id, "buildings_unlocked": townhall_unlocks})
+            if builderhall_unlocks:
+                builderhall_data.append({"level": _id, "buildings_unlocked": builderhall_unlocks})
+
+        return {"townhall" : townhall_data, "builderhall": builderhall_data}
+
+
     def create_master_json(self):
         self._parse_translation_data()
         self._parse_ability_data()
 
         master_data = {
             "buildings": self._parse_building_data(),
+            "hall_unlocks": self._parse_hall_data(),
             "supercharges": self._parse_supercharge_data(),
             "seasonal_defenses": self._parse_seasonal_defense_data(),
             "traps" : self._parse_trap_data(),
@@ -1020,7 +1133,9 @@ class StaticUpdater:
             "sceneries": self._parse_scenery_data(),
             "skins": self._parse_skin_data(),
             "capital_house_parts": self._parse_capital_part_data(),
-            "helpers": self._parse_helper_data()
+            "helpers": self._parse_helper_data(),
+            "war_leagues": self._parse_war_league_data(),
+            "league_tiers": self._parse_league_tier_data()
         }
         with open(f"{self.BASE_PATH}static_data.json", "w", encoding="utf-8") as jf:
             jf.write(json.dumps(master_data, indent=2))
