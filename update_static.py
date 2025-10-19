@@ -51,7 +51,7 @@ class StaticUpdater:
 
         self.KEEP_CSV = False
         self.KEEP_JSON = False
-        self.BASE_PATH = "assets/"
+        self.BASE_PATH = "/assets"
         self.FINGERPRINT = "baf7ccb3e9d8068415c6462bd327e598a8670e42"
         self.CLASH_VERSION = "170477001" or "latest"
         self.VERSION_PARAM = "version" if self.CLASH_VERSION == "latest" else "versionCode"
@@ -323,7 +323,7 @@ class StaticUpdater:
                 },
                 "type": building_data.get("BuildingClass"),
                 "upgrade_resource": self._parse_resource(resource=building_data.get("BuildResource")),
-                "village_type": "home" if not village_type else "builder_base",
+                "village_type": "home" if not village_type else "builderBase",
                 "width": building_data.get("Width"),
                 "superchargeable": superchargeable,
                 "levels": []
@@ -504,7 +504,7 @@ class StaticUpdater:
                 "attack_speed": troop_data.get("AttackSpeed"),
                 "attack_range": troop_data.get("AttackRange"),
                 "housing_space": troop_data.get("HousingSpace"),
-                "village_type": "home" if not village_type else "builder_base",
+                "village_type": "home" if not village_type else "builderBase",
             }
             is_super_troop = troop_data.get("EnabledBySuperLicence", False)
             is_seasonal_troop = troop_data.get("EnabledByCalendar", False)
@@ -622,7 +622,7 @@ class StaticUpdater:
                 "movement_speed": hero_data.get("Speed"),
                 "attack_speed": hero_data.get("AttackSpeed"),
                 "attack_range": hero_data.get("AttackRange"),
-                "village_type": "home" if not village_type else "builder_base",
+                "village_type": "home" if not village_type else "builderBase",
                 "levels": []
             }
 
@@ -818,7 +818,7 @@ class StaticUpdater:
                 "ground_trigger": trap_data.get("GroundTrigger", False),
                 "damage_radius": trap_data.get("DamageRadius"),
                 "trigger_radius": trap_data.get("TriggerRadius"),
-                "village_type": "home" if not village_type else "builder_base",
+                "village_type": "home" if not village_type else "builderBase",
 
                 "upgrade_resource": self._parse_resource(resource=trap_data.get("BuildResource")),
                 "levels" : []
@@ -862,7 +862,7 @@ class StaticUpdater:
                 "max_count": deco_data.get("MaxCount", 1),
                 "build_resource": self._parse_resource(resource=deco_data.get("BuildResource")),
                 "build_cost": deco_data.get("BuildCost"),
-                "village_type": "home" if not village_type else "builder_base"
+                "village_type": "home" if not village_type else "builderBase"
             }
             new_deco_data.append(hold_data)
 
@@ -910,7 +910,7 @@ class StaticUpdater:
                 "clear_cost": obstacle_data.get("ClearCost"),
                 "loot_resource": self._parse_resource(resource=obstacle_data.get("LootResource")),
                 "loot_count": obstacle_data.get("LootCount"),
-                "village_type": "home" if not village_type else "builder_base"
+                "village_type": "home" if not village_type else "builderBase"
             }
             new_obstacle_data.append(hold_data)
 
@@ -923,7 +923,7 @@ class StaticUpdater:
         for _id, (scenery_name, scenery_data) in enumerate(full_scenery_data.items(), 60000000):
             type_map = {
                 "WAR" : "war",
-                "BB" : "builder_base",
+                "BB" : "builderBase",
                 "HOME" : "home"
             }
             if scenery_data.get("HomeType") not in type_map:
