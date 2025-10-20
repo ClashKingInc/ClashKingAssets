@@ -475,7 +475,10 @@ class StaticUpdater:
 
     def _parse_troop_data(self):
         full_troop_data = self.open_file("characters.json")
+        full_super_troop_data = self.open_file("supers.json")
+        full_super_troop_data = {v.get("Replacement"): v for k, v in full_super_troop_data.items()}
 
+        name_to_id = {}
         new_troop_data = []
         for _id, (troop_name, troop_data) in enumerate(full_troop_data.items(), 4000000):
             if troop_data.get("DisableProduction", False):
@@ -483,6 +486,7 @@ class StaticUpdater:
             village_type = troop_data.get("VillageType", 0)
             production_building = self.full_building_data.get(troop_data.get("ProductionBuilding")).get("TID")
 
+            name_to_id[(troop_name, village_type)] = _id
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=troop_data.get("TID")),
@@ -509,7 +513,8 @@ class StaticUpdater:
             is_super_troop = troop_data.get("EnabledBySuperLicence", False)
             is_seasonal_troop = troop_data.get("EnabledByCalendar", False)
             if is_super_troop:
-                hold_data["is_super_troop"] = True
+                original_name = full_super_troop_data.get(troop_name).get("Original")
+                hold_data["original_troop"] = name_to_id[(original_name, 0)]
 
             if is_seasonal_troop:
                 hold_data["is_seasonal"] = True
