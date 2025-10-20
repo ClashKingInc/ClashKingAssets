@@ -50,7 +50,7 @@ class StaticUpdater:
             self.TARGETS.append((f"localization/{language}.csv", f"texts_{language}.csv"))
 
         self.KEEP_CSV = False
-        self.KEEP_JSON = False
+        self.KEEP_JSON = True
         self.BASE_PATH = "/assets"
         self.FINGERPRINT = "baf7ccb3e9d8068415c6462bd327e598a8670e42"
         self.CLASH_VERSION = "170477001" or "latest"
@@ -513,9 +513,9 @@ class StaticUpdater:
             is_super_troop = troop_data.get("EnabledBySuperLicence", False)
             is_seasonal_troop = troop_data.get("EnabledByCalendar", False)
             if is_super_troop:
-                original_name = full_super_troop_data.get(troop_name).get("Original")
-                hold_data["original_troop"] = name_to_id[(original_name, 0)]
-
+                super_troop_data = full_super_troop_data.get(troop_name)
+                hold_data["super_troop"] = {"original_id": name_to_id[(super_troop_data.get("Original"), 0)],
+                                            "original_min_level": super_troop_data.get("MinOriginalLevel")}
             if is_seasonal_troop:
                 hold_data["is_seasonal"] = True
             hold_data["levels"] = []
