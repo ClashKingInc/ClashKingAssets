@@ -280,17 +280,6 @@ class StaticUpdater:
         # Default to compressed if we're not sure
         return True
 
-    def check_header(self, data):
-        if data[0] == 0x5D:
-            return "csv"
-        if data[:2] == b"\x53\x43":
-            return "sc"
-        if data[:4] == b"\x53\x69\x67\x3a":
-            return "sig:"
-        if data[:6] == b'"Name"' or data[:6] == b'"name"' or data[:5] == b'"TID"':
-            return "decoded csv"
-        raise Exception("Unknown header")
-
     def open_file(self, file_path: str) -> dict:
         with open(file_path, "r", encoding="utf-8") as f:
             data: dict = json.load(f)
