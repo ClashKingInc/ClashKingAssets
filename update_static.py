@@ -11,7 +11,8 @@ import csv
 import os
 import zipfile
 import re
-
+import zstandard
+import lzma
 
 class StaticUpdater:
     def __init__(self):
@@ -25,6 +26,7 @@ class StaticUpdater:
             ("logic/special_abilities.csv", "special_abilities.csv"),
             ("logic/characters.csv", "characters.csv"),
             ("logic/heroes.csv", "heroes.csv"),
+            ("logic/guardians.csv", "guardians.csv"),
             ("logic/pets.csv", "pets.csv"),
             ("logic/spells.csv", "spells.csv"),
             ("logic/super_licences.csv", "supers.csv"),
@@ -50,10 +52,10 @@ class StaticUpdater:
             self.TARGETS.append((f"localization/{language}.csv", f"texts_{language}.csv"))
 
         self.KEEP_CSV = False
-        self.KEEP_JSON = True
-        self.BASE_PATH = "/assets"
-        self.FINGERPRINT = "baf7ccb3e9d8068415c6462bd327e598a8670e42"
-        self.CLASH_VERSION = "170477001" or "latest"
+        self.KEEP_JSON = False
+        self.BASE_PATH = "assets/"
+        self.FINGERPRINT = "475cb6a2d13043762034ddd6a198bad23e0782eb"
+        self.CLASH_VERSION = "" or "latest"
         self.VERSION_PARAM = "version" if self.CLASH_VERSION == "latest" else "versionCode"
         self.APK_URL = f"https://d.apkpure.net/b/APK/com.supercell.clashofclans?{self.VERSION_PARAM}={self.CLASH_VERSION}"
 
@@ -63,6 +65,7 @@ class StaticUpdater:
         self.full_abilities_data = {}
         self.full_hero_data = {}
         self.full_townhall_data = {}
+        self.full_troop_data = {}
 
         self.lab_to_townhall = {}
         self.smithy_to_townhall = {}
@@ -105,7 +108,6 @@ class StaticUpdater:
                 "uncompressed_size": uncompressed_size,
             }
 
-        import zstandard
         if int.from_bytes(data[0:4], byteorder="little") == zstandard.MAGIC_NUMBER:
             logging.debug("Decompressing using ZSTD ...")
             decompressed = zstandard.decompress(data)
@@ -121,11 +123,10 @@ class StaticUpdater:
         o_prop = prop
         if prop > (4 * 5 + 4) * 9 + 8:
             raise Exception("LZMA properties error")
-        import lzma
         decompressed = lzma.LZMADecompressor().decompress(data)
         return decompressed, {"lzma_prop": o_prop}
 
-    def process_csv(self, data, file_path, save_name, compressed: bool):
+    def process_csv(self, data, file_path, save_name):
         """
         1. Decompress data -> raw CSV
         2. Write raw CSV to disk
@@ -138,10 +139,15 @@ class StaticUpdater:
         5. Write out JSON with (troop → levels + troop-level props).
         6. Delete the CSV file.
         """
-        if not compressed:
-            decompressed_data = data
-        else:
+        # Check if data is compressed
+        if self.is_compressed(data):
+            # Strip signature header if present (Sig: + 64 bytes signature)
+            if data[:4] == b"Sig:":
+                logging.debug("Stripping Sig: header and signature...")
+                data = data[68:]  # Skip "Sig:" (4 bytes) + 64-byte signature
             decompressed_data, _ = self.decompress(data)
+        else:
+            decompressed_data = data
 
         # 1) Write out the raw CSV
         with open(file_path, "wb") as f:
@@ -251,6 +257,29 @@ class StaticUpdater:
             except OSError as e:
                 logging.warning(f"Could not delete {file_path}: {e}")
 
+    def is_compressed(self, data):
+        """Check if data is compressed by looking for compression signatures."""
+        # Check for Sig: header (signed compressed data)
+        if data[:4] == b"Sig:":
+            return True
+        # Check for SCLZ (LZHAM)
+        if data[:4] == b"SCLZ":
+            return True
+        # Check for ZSTD magic number
+        if len(data) >= 4 and int.from_bytes(data[0:4], byteorder="little") == zstandard.MAGIC_NUMBER:
+            return True
+        # Check for LZMA (starts with 0x5D)
+        if data[0] == 0x5D:
+            return True
+        # Check for SC header (Supercell compression)
+        if data[:2] == b"\x53\x43":
+            return True
+        # If it looks like plain CSV text, it's not compressed
+        if data[:6] == b'"Name"' or data[:6] == b'"name"' or data[:5] == b'"TID"':
+            return False
+        # Default to compressed if we're not sure
+        return True
+
     def check_header(self, data):
         if data[0] == 0x5D:
             return "csv"
@@ -301,17 +330,24 @@ class StaticUpdater:
 
         new_building_data = []
 
+        #fill in ids, make it easier
+        for _id, (building_name, building_data) in enumerate(self.full_building_data.items(), 1000000):
+            building_data["_id"] = _id
+
         for _id, (building_name, building_data) in enumerate(self.full_building_data.items(), 1000000):
             if building_data.get("BuildingClass") in ["Npc", "NonFunctional",
                                                       "Npc Town Hall"] or "Unused" in building_name:
                 continue
             village_type = building_data.get("VillageType", 0)
-            building_data["_id"] = _id #later on we need this id in this data
             superchargeable = False
             for supercharge_data in self.full_supercharges_data.values():
                 if supercharge_data.get("Name") == building_name:
                     superchargeable = True
                     break
+
+            #for merged buildings, move the requirement to level 1 since that is when the requirement is actually needed
+            if building_data.get("MergeRequirement") is not None:
+                building_data["1"]["MergeRequirement"] = building_data.get("MergeRequirement")
 
             hold_data = {
                 "_id": _id,
@@ -328,21 +364,47 @@ class StaticUpdater:
                 "superchargeable": superchargeable,
                 "levels": []
             }
+
+            if building_data.get("GearUpLevelRequirement"):
+                hold_data["gear_up"] = {
+                    "level_required": building_data.get("GearUpLevelRequirement"),
+                    "resource": self._parse_resource(resource=building_data.get("GearUpResource")),
+                    "building_id": self.full_building_data.get(building_data.get("GearUpBuilding")).get("_id")
+                }
+
             for level, level_data in building_data.items():
                 if not isinstance(level_data, dict):
                     continue
+
                 upgrade_time_seconds = level_data.get("BuildTimeD", 0) * 24 * 60 * 60
                 upgrade_time_seconds += level_data.get("BuildTimeH", 0) * 60 * 60
                 upgrade_time_seconds += level_data.get("BuildTimeM", 0) * 60
                 upgrade_time_seconds += level_data.get("BuildTimeS", 0)
-                hold_data["levels"].append({
+
+                hold_level_data = {
                     "level": level_data.get("BuildingLevel"),
                     "upgrade_cost": level_data.get("BuildCost"),
                     "upgrade_time": upgrade_time_seconds,
                     "required_townhall": level_data.get("TownHallLevel"),
                     "hitpoints": level_data.get("Hitpoints"),
-                    "dps": level_data.get("DPS"),
-                })
+                    "dps": level_data.get("DPS") or level_data.get("Damage"),
+                }
+                if merge_requirement := level_data.get("MergeRequirement"):
+                    merge_list = []
+                    buildings = merge_requirement.split(";")
+                    for building in buildings:
+                        name, level, geared_up = building.split(":")
+                        merge_building_data = self.full_building_data.get(name)
+                        merge_list.append({
+                            "name": self._translate(tid=merge_building_data.get("TID")),
+                            "_id": merge_building_data.get("_id"),
+                            "geared_up": True if geared_up == "1" else False,
+                            "level": int(level)
+                        })
+
+                    hold_level_data["merge_requirement"] = merge_list
+
+                hold_data["levels"].append(hold_level_data)
 
             new_building_data.append(hold_data)
 
@@ -363,6 +425,18 @@ class StaticUpdater:
         bb_lab_data = next((item for item in new_building_data if item["name"] == "Star Laboratory")).get("levels")
         self.bb_lab_to_townhall = {spot: level_data.get("required_townhall") for spot, level_data in
                               enumerate(bb_lab_data, 1)}
+
+        townhall_unlocks, builderhall_unlocks = self._parse_hall_data()
+
+        for building in new_building_data:
+            unlocks = []
+            if building["type"] == "Town Hall":
+                unlocks = townhall_unlocks
+            elif building["type"] == "Town Hall2":
+                unlocks = builderhall_unlocks
+
+            for unlock_data in unlocks:
+                building["levels"][(unlock_data["level"] - 1)]["unlocks"] = unlock_data["buildings_unlocked"]
 
         return new_building_data
 
@@ -474,13 +548,13 @@ class StaticUpdater:
         return new_seasonal_defense_data
 
     def _parse_troop_data(self):
-        full_troop_data = self.open_file("characters.json")
+        self.full_troop_data = self.open_file("characters.json")
         full_super_troop_data = self.open_file("supers.json")
         full_super_troop_data = {v.get("Replacement"): v for k, v in full_super_troop_data.items()}
 
         name_to_id = {}
         new_troop_data = []
-        for _id, (troop_name, troop_data) in enumerate(full_troop_data.items(), 4000000):
+        for _id, (troop_name, troop_data) in enumerate(self.full_troop_data.items(), 4000000):
             if troop_data.get("DisableProduction", False):
                 continue
             village_type = troop_data.get("VillageType", 0)
@@ -551,6 +625,59 @@ class StaticUpdater:
             new_troop_data.append(hold_data)
 
         return new_troop_data
+
+    def _parse_guardian_data(self):
+        full_guardian_data = self.open_file("guardians.json")
+
+        new_guardian_data = []
+        for _id, (guardian_name, guardian_data) in enumerate(full_guardian_data.items(), 107000000):
+            if guardian_data.get("Deprecated", False):
+                continue
+            character_data = self.full_troop_data.get(guardian_data.get("CharacterDatas"))
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=guardian_data.get("TID")),
+                "info": self._translate(tid=guardian_data.get("InfoTID")),
+                "TID": {
+                    "name": guardian_data.get("TID"),
+                    "info": guardian_data.get("InfoTID"),
+                },
+                "upgrade_resource": self._parse_resource(resource=character_data.get("UpgradeResource")),
+
+                "is_flying": character_data.get("IsFlying"),
+                "is_air_targeting": character_data.get("AirTargets"),
+                "is_ground_targeting": character_data.get("GroundTargets"),
+
+                "movement_speed": character_data.get("Speed"),
+
+                "attack_speed": character_data.get("AttackSpeed"),
+                "attack_range": character_data.get("AttackRange"),
+                "levels": []
+            }
+
+            for level, level_data in character_data.items():
+                if not isinstance(level_data, dict):
+                    continue
+                #convert times to seconds, all times for all things will be in seconds
+                upgrade_time_seconds = level_data.get("UpgradeTimeH", 0) * 60 * 60
+
+                #hard coded for now, didn't find where this is defined, except "HousesGuardians" on the Townhall data
+                required_townhall = 18
+
+                new_level_data = {
+                    "level": int(level),
+                    "hitpoints": level_data.get("Hitpoints"),
+                    "dps": level_data.get("DPS"),
+
+                    "upgrade_time": upgrade_time_seconds,
+                    "upgrade_cost": level_data.get("UpgradeCost", 0),
+                    "required_townhall": required_townhall,
+                }
+                hold_data["levels"].append(new_level_data)
+
+            new_guardian_data.append(hold_data)
+
+        return new_guardian_data
 
     def _parse_spell_data(self):
         full_spell_data = self.open_file("spells.json")
@@ -1091,6 +1218,8 @@ class StaticUpdater:
     def _parse_hall_data(self):
         builderhall_data = []
         townhall_data = []
+        id_quantity_map = {}
+
         for _id, (hall_level, hall_data) in enumerate(self.full_townhall_data.items(), 1):
             builderhall_unlocks = []
             townhall_unlocks = []
@@ -1099,24 +1228,37 @@ class StaticUpdater:
                 if not building_data:
                     continue
                 village_type = building_data.get("VillageType", 0)
+                id = building_data.get("_id")
+                quantity = data
+
+                current_quantity = id_quantity_map.get(id, 0)
+                new_quantity = quantity - current_quantity
+
+                if not new_quantity:
+                    continue
+
+                if id not in id_quantity_map:
+                    id_quantity_map[id] = new_quantity
+                else:
+                    id_quantity_map[id] += new_quantity
+
                 if not village_type: #is home village
                     townhall_unlocks.append({
                         "name": self._translate(tid=building_data.get("TID")),
-                        "_id": building_data.get("_id"),
-                        "quantity": data
+                        "_id": id,
+                        "quantity": new_quantity
                     })
                 else:
                     builderhall_unlocks.append({
                         "name": self._translate(tid=building_data.get("TID")),
-                        "_id": building_data.get("_id"),
-                        "quantity": data
+                        "_id": id,
+                        "quantity": new_quantity
                     })
             townhall_data.append({"level": _id, "buildings_unlocked": townhall_unlocks})
             if builderhall_unlocks:
                 builderhall_data.append({"level": _id, "buildings_unlocked": builderhall_unlocks})
 
-        return {"townhall" : townhall_data, "builderhall": builderhall_data}
-
+        return townhall_data, builderhall_data
 
     def create_master_json(self):
         self._parse_translation_data()
@@ -1124,11 +1266,11 @@ class StaticUpdater:
 
         master_data = {
             "buildings": self._parse_building_data(),
-            "hall_unlocks": self._parse_hall_data(),
             "supercharges": self._parse_supercharge_data(),
             "seasonal_defenses": self._parse_seasonal_defense_data(),
             "traps" : self._parse_trap_data(),
             "troops": self._parse_troop_data(),
+            "guardians": self._parse_guardian_data(),
             "spells" : self._parse_spell_data(),
             "heroes": self._parse_hero_data(),
             "pets": self._parse_pet_data(),
@@ -1174,12 +1316,8 @@ class StaticUpdater:
             with open(target_save, "wb") as f:
                 f.write(data)
 
-            file_type = self.check_header(data)
-            if file_type == "sig:":
-                self.process_csv(data=data, file_path=target_save, save_name=target_save.split(".")[0], compressed=True)
-            else:
-                self.process_csv(data=data, file_path=target_save, save_name=target_save.split(".")[0], compressed=False)
-
+            print(f"Processing: {target_file}")
+            self.process_csv(data=data, file_path=target_save, save_name=target_save.split(".")[0])
         self.create_master_json()
 
     def run(self):
