@@ -8,6 +8,7 @@ dependencies = [
     "aiohttp",
     "fastapi",
     "gunicorn",
+    "jinja2",
     "lz4",
     "pillow",
     "uvloop",
