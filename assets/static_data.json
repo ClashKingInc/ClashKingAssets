@@ -700,7 +700,7 @@
           "upgrade_time": 518400,
           "required_townhall": 11,
           "hitpoints": 7500,
-          "dps": null,
+          "dps": 140,
           "unlocks": [
             {
               "name": "Hidden Tesla",
@@ -725,7 +725,7 @@
           "upgrade_time": 604800,
           "required_townhall": 12,
           "hitpoints": 8200,
-          "dps": null,
+          "dps": 220,
           "unlocks": [
             {
               "name": "Scattershot",
@@ -740,7 +740,7 @@
           "upgrade_time": 648000,
           "required_townhall": 13,
           "hitpoints": 8900,
-          "dps": null,
+          "dps": 280,
           "unlocks": [
             {
               "name": "Wall",
@@ -760,7 +760,7 @@
           "upgrade_time": 691200,
           "required_townhall": 14,
           "hitpoints": 9600,
-          "dps": null,
+          "dps": 300,
           "unlocks": [
             {
               "name": "Spell Tower",
@@ -780,7 +780,7 @@
           "upgrade_time": 777600,
           "required_townhall": 15,
           "hitpoints": 10000,
-          "dps": null,
+          "dps": 300,
           "unlocks": [
             {
               "name": "Multi-Archer Tower",
@@ -809,6 +809,47 @@
               "level": 7
             }
           ],
+          "weapon": {
+            "name": "Inferno Artillery",
+            "info": "Bring the heat! The Inferno Artillery launches 4 enemy-seeking explosives and leaves burning pools of fire where it strikes. If there are less than 4 enemies in range, it can strike the same target multiple times. Ouch!",
+            "TID": {
+              "name": "TID_WEAPON_TOWN_HALL_17",
+              "info": "TID_WEAPON_TOWN_HALL_17_INFO"
+            },
+            "upgrade_resource": "Gold",
+            "levels": [
+              {
+                "level": 1,
+                "upgrade_cost": 16000000,
+                "upgrade_time": 0,
+                "dps": 40
+              },
+              {
+                "level": 2,
+                "upgrade_cost": 16000000,
+                "upgrade_time": 518400,
+                "dps": 45
+              },
+              {
+                "level": 3,
+                "upgrade_cost": 16000000,
+                "upgrade_time": 604800,
+                "dps": 50
+              },
+              {
+                "level": 4,
+                "upgrade_cost": 16000000,
+                "upgrade_time": 691200,
+                "dps": 55
+              },
+              {
+                "level": 5,
+                "upgrade_cost": 16000000,
+                "upgrade_time": 864000,
+                "dps": 60
+              }
+            ]
+          },
           "unlocks": [
             {
               "name": "Archer Tower",
