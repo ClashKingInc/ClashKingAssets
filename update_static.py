@@ -10,7 +10,6 @@ import logging
 import csv
 import os
 import zipfile
-import re
 import zstandard
 import lzma
 
@@ -71,7 +70,6 @@ class StaticUpdater:
         self.smithy_to_townhall = {}
         self.bb_lab_to_townhall = {}
         self.pethouse_to_townhall = {}
-
 
     async def download(self, url: str):
         async with aiohttp.request('GET', url) as fp:
@@ -480,13 +478,15 @@ class StaticUpdater:
 
         new_seasonal_defense_data = []
         for _id, (seasonal_def_name, seasonal_def_data) in enumerate(full_seasonal_defenses.items(), 103000000):
-            spaced_name = re.sub(r'([A-Z])', r' \1', seasonal_def_name).strip().replace(" ", "_")
-            name_TID = f"TID_BUILDING_{spaced_name}".upper()
-            info_TID = f"TID_BUILDING_{spaced_name}_INFO".upper()
+            season_defense_ability = self.full_abilities_data.get(seasonal_def_data.get("SpecialAbility"))
+
+            name_TID = season_defense_ability.get("OverrideTID")
+            info_TID = season_defense_ability.get("OverrideInfoTID")
 
             # may be an unreleased season def
-            if not self._translate(tid=name_TID):
+            if not self._translate(tid=name_TID) or "WIP" in self._translate(tid=name_TID):
                 continue
+
 
             hold_data = {
                 "_id": _id,

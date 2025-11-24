@@ -9287,6 +9287,307 @@
       ]
     },
     {
+      "_id": 103000002,
+      "name": "Bomb Hive",
+      "info": "Oh, those bombs of ours, they blow up so fast! Bombs leave the nest in straight lines, exploding when they hit a ground or air target.",
+      "TID": {
+        "name": "TID_BUILDING_BOMB_SPAWNER",
+        "info": "TID_BUILDING_BOMB_SPAWNER_INFO"
+      },
+      "modules": [
+        {
+          "_id": 102000006,
+          "name": "Log Lobber HP Module",
+          "TID": {
+            "name": "TID_SEAONAL_DEFENSE_LOG_LOBBER_MODULE_HP"
+          },
+          "upgrade_resource": "Gold",
+          "levels": [
+            {
+              "level": 1,
+              "upgrade_cost": 0,
+              "upgrade_time": 0,
+              "ability_data": {
+                "HealthOverride": 400
+              }
+            },
+            {
+              "level": 2,
+              "upgrade_cost": 3000000,
+              "upgrade_time": 129600,
+              "ability_data": {
+                "HealthOverride": 900
+              }
+            },
+            {
+              "level": 3,
+              "upgrade_cost": 3500000,
+              "upgrade_time": 172800,
+              "ability_data": {
+                "HealthOverride": 1400
+              }
+            },
+            {
+              "level": 4,
+              "upgrade_cost": 4000000,
+              "upgrade_time": 216000,
+              "ability_data": {
+                "HealthOverride": 1900
+              }
+            },
+            {
+              "level": 5,
+              "upgrade_cost": 4500000,
+              "upgrade_time": 223200,
+              "ability_data": {
+                "HealthOverride": 2400
+              }
+            },
+            {
+              "level": 6,
+              "upgrade_cost": 6000000,
+              "upgrade_time": 230400,
+              "ability_data": {
+                "HealthOverride": 2900
+              }
+            },
+            {
+              "level": 7,
+              "upgrade_cost": 7500000,
+              "upgrade_time": 237600,
+              "ability_data": {
+                "HealthOverride": 3400
+              }
+            },
+            {
+              "level": 8,
+              "upgrade_cost": 9000000,
+              "upgrade_time": 244800,
+              "ability_data": {
+                "HealthOverride": 3900
+              }
+            },
+            {
+              "level": 9,
+              "upgrade_cost": 10500000,
+              "upgrade_time": 252000,
+              "ability_data": {
+                "HealthOverride": 4400
+              }
+            },
+            {
+              "level": 10,
+              "upgrade_cost": 12000000,
+              "upgrade_time": 259200,
+              "ability_data": {
+                "HealthOverride": 4900
+              }
+            }
+          ]
+        },
+        {
+          "_id": 102000007,
+          "name": "Log Lobber Atk Module",
+          "TID": {
+            "name": "TID_SEAONAL_DEFENSE_LOG_LOBBER_MODULE_ATTACK"
+          },
+          "upgrade_resource": "Dark Elixir",
+          "levels": [
+            {
+              "level": 1,
+              "upgrade_cost": 0,
+              "upgrade_time": 0,
+              "ability_data": {
+                "Projectile": "SlowLog1"
+              }
+            },
+            {
+              "level": 2,
+              "upgrade_cost": 35000,
+              "upgrade_time": 86400,
+              "ability_data": {
+                "Projectile": "SlowLog2"
+              }
+            },
+            {
+              "level": 3,
+              "upgrade_cost": 45000,
+              "upgrade_time": 108000,
+              "ability_data": {
+                "Projectile": "SlowLog3"
+              }
+            },
+            {
+              "level": 4,
+              "upgrade_cost": 55000,
+              "upgrade_time": 129600,
+              "ability_data": {
+                "Projectile": "SlowLog4"
+              }
+            },
+            {
+              "level": 5,
+              "upgrade_cost": 65000,
+              "upgrade_time": 151200,
+              "ability_data": {
+                "Projectile": "SlowLog5"
+              }
+            },
+            {
+              "level": 6,
+              "upgrade_cost": 75000,
+              "upgrade_time": 172800,
+              "ability_data": {
+                "Projectile": "SlowLog6"
+              }
+            },
+            {
+              "level": 7,
+              "upgrade_cost": 85000,
+              "upgrade_time": 194400,
+              "ability_data": {
+                "Projectile": "SlowLog7"
+              }
+            },
+            {
+              "level": 8,
+              "upgrade_cost": 95000,
+              "upgrade_time": 216000,
+              "ability_data": {
+                "Projectile": "SlowLog8"
+              }
+            },
+            {
+              "level": 9,
+              "upgrade_cost": 105000,
+              "upgrade_time": 237600,
+              "ability_data": {
+                "Projectile": "SlowLog9"
+              }
+            },
+            {
+              "level": 10,
+              "upgrade_cost": 115000,
+              "upgrade_time": 259200,
+              "ability_data": {
+                "Projectile": "SlowLog10"
+              }
+            }
+          ]
+        },
+        {
+          "_id": 102000008,
+          "name": "Log Lobber Effect Module",
+          "TID": {
+            "name": "TID_SEAONAL_DEFENSE_LOG_LOBBER_MODULE_EFFECT"
+          },
+          "upgrade_resource": "Elixir",
+          "levels": [
+            {
+              "level": 1,
+              "upgrade_cost": 0,
+              "upgrade_time": 0,
+              "ability_data": {
+                "AttackRange": 1100,
+                "PenetratingExtraRange": 0,
+                "PenetratingRadius": 150
+              }
+            },
+            {
+              "level": 2,
+              "upgrade_cost": 5000000,
+              "upgrade_time": 43200,
+              "ability_data": {
+                "AttackRange": 1200,
+                "PenetratingExtraRange": 0,
+                "PenetratingRadius": 150
+              }
+            },
+            {
+              "level": 3,
+              "upgrade_cost": 6500000,
+              "upgrade_time": 57600,
+              "ability_data": {
+                "AttackRange": 1300,
+                "PenetratingExtraRange": 0,
+                "PenetratingRadius": 150
+              }
+            },
+            {
+              "level": 4,
+              "upgrade_cost": 8000000,
+              "upgrade_time": 72000,
+              "ability_data": {
+                "AttackRange": 1400,
+                "PenetratingExtraRange": 0,
+                "PenetratingRadius": 150
+              }
+            },
+            {
+              "level": 5,
+              "upgrade_cost": 9500000,
+              "upgrade_time": 86400,
+              "ability_data": {
+                "AttackRange": 1500,
+                "PenetratingExtraRange": 0,
+                "PenetratingRadius": 150
+              }
+            },
+            {
+              "level": 6,
+              "upgrade_cost": 10000000,
+              "upgrade_time": 108000,
+              "ability_data": {
+                "AttackRange": 1600,
+                "PenetratingExtraRange": 0,
+                "PenetratingRadius": 150
+              }
+            },
+            {
+              "level": 7,
+              "upgrade_cost": 10500000,
+              "upgrade_time": 129600,
+              "ability_data": {
+                "AttackRange": 1700,
+                "PenetratingExtraRange": 0,
+                "PenetratingRadius": 150
+              }
+            },
+            {
+              "level": 8,
+              "upgrade_cost": 11000000,
+              "upgrade_time": 172800,
+              "ability_data": {
+                "AttackRange": 1800,
+                "PenetratingExtraRange": 0,
+                "PenetratingRadius": 150
+              }
+            },
+            {
+              "level": 9,
+              "upgrade_cost": 11500000,
+              "upgrade_time": 216000,
+              "ability_data": {
+                "AttackRange": 1900,
+                "PenetratingExtraRange": 0,
+                "PenetratingRadius": 150
+              }
+            },
+            {
+              "level": 10,
+              "upgrade_cost": 12000000,
+              "upgrade_time": 259200,
+              "ability_data": {
+                "AttackRange": 2000,
+                "PenetratingExtraRange": 0,
+                "PenetratingRadius": 150
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "_id": 103000003,
       "name": "Flame Spinner",
       "info": "Fear the relentless rotating of a repurposed cooking oven!\\n\\nWithout ever getting dizzy, the Flame Spinner creates an endless whirlwind of fire that damages nearby ground and air enemies.",
@@ -10153,297 +10454,6 @@
               "upgrade_time": 259200,
               "ability_data": {
                 "AttackRange": 1950
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "_id": 103000006,
-      "name": "WIP Slowdown Tower",
-      "info": "WIP Shoots pools of sticky goo at attacking troops to slow them down",
-      "TID": {
-        "name": "TID_BUILDING_SLOWDOWN_TOWER",
-        "info": "TID_BUILDING_SLOWDOWN_TOWER_INFO"
-      },
-      "modules": [
-        {
-          "_id": 102000018,
-          "name": "Slowdown Tower HP Module",
-          "TID": {
-            "name": "TID_SEASONAL_DEFENSE_SLOWDOWN_TOWER_MODULE_HP"
-          },
-          "upgrade_resource": "Elixir",
-          "levels": [
-            {
-              "level": 1,
-              "upgrade_cost": 0,
-              "upgrade_time": 0,
-              "ability_data": {
-                "HealthOverride": 500
-              }
-            },
-            {
-              "level": 2,
-              "upgrade_cost": 4000000,
-              "upgrade_time": 86400,
-              "ability_data": {
-                "HealthOverride": 1000
-              }
-            },
-            {
-              "level": 3,
-              "upgrade_cost": 5000000,
-              "upgrade_time": 108000,
-              "ability_data": {
-                "HealthOverride": 1500
-              }
-            },
-            {
-              "level": 4,
-              "upgrade_cost": 6000000,
-              "upgrade_time": 129600,
-              "ability_data": {
-                "HealthOverride": 2000
-              }
-            },
-            {
-              "level": 5,
-              "upgrade_cost": 7000000,
-              "upgrade_time": 151200,
-              "ability_data": {
-                "HealthOverride": 2500
-              }
-            },
-            {
-              "level": 6,
-              "upgrade_cost": 8000000,
-              "upgrade_time": 172800,
-              "ability_data": {
-                "HealthOverride": 3000
-              }
-            },
-            {
-              "level": 7,
-              "upgrade_cost": 9000000,
-              "upgrade_time": 194400,
-              "ability_data": {
-                "HealthOverride": 3500
-              }
-            },
-            {
-              "level": 8,
-              "upgrade_cost": 10000000,
-              "upgrade_time": 216000,
-              "ability_data": {
-                "HealthOverride": 4000
-              }
-            },
-            {
-              "level": 9,
-              "upgrade_cost": 11000000,
-              "upgrade_time": 237600,
-              "ability_data": {
-                "HealthOverride": 4500
-              }
-            },
-            {
-              "level": 10,
-              "upgrade_cost": 12000000,
-              "upgrade_time": 259200,
-              "ability_data": {
-                "HealthOverride": 5000
-              }
-            }
-          ]
-        },
-        {
-          "_id": 102000019,
-          "name": "Slowdown Tower Atk Module",
-          "TID": {
-            "name": "TID_SEASONAL_DEFENSE_SLOWDOWN_TOWER_MODULE_ATTACK"
-          },
-          "upgrade_resource": "Gold",
-          "levels": [
-            {
-              "level": 1,
-              "upgrade_cost": 0,
-              "upgrade_time": 0,
-              "ability_data": {
-                "AttackSpeed": 7100,
-                "Damage": 1
-              }
-            },
-            {
-              "level": 2,
-              "upgrade_cost": 5000000,
-              "upgrade_time": 43200,
-              "ability_data": {
-                "AttackSpeed": 6900,
-                "Damage": 1
-              }
-            },
-            {
-              "level": 3,
-              "upgrade_cost": 6500000,
-              "upgrade_time": 57600,
-              "ability_data": {
-                "AttackSpeed": 6700,
-                "Damage": 1
-              }
-            },
-            {
-              "level": 4,
-              "upgrade_cost": 8000000,
-              "upgrade_time": 72000,
-              "ability_data": {
-                "AttackSpeed": 6500,
-                "Damage": 1
-              }
-            },
-            {
-              "level": 5,
-              "upgrade_cost": 9500000,
-              "upgrade_time": 86400,
-              "ability_data": {
-                "AttackSpeed": 6300,
-                "Damage": 1
-              }
-            },
-            {
-              "level": 6,
-              "upgrade_cost": 10000000,
-              "upgrade_time": 108000,
-              "ability_data": {
-                "AttackSpeed": 6100,
-                "Damage": 1
-              }
-            },
-            {
-              "level": 7,
-              "upgrade_cost": 10500000,
-              "upgrade_time": 129600,
-              "ability_data": {
-                "AttackSpeed": 5900,
-                "Damage": 1
-              }
-            },
-            {
-              "level": 8,
-              "upgrade_cost": 11000000,
-              "upgrade_time": 172800,
-              "ability_data": {
-                "AttackSpeed": 5700,
-                "Damage": 1
-              }
-            },
-            {
-              "level": 9,
-              "upgrade_cost": 11500000,
-              "upgrade_time": 216000,
-              "ability_data": {
-                "AttackSpeed": 5500,
-                "Damage": 1
-              }
-            },
-            {
-              "level": 10,
-              "upgrade_cost": 12000000,
-              "upgrade_time": 259200,
-              "ability_data": {
-                "AttackSpeed": 5300,
-                "Damage": 1
-              }
-            }
-          ]
-        },
-        {
-          "_id": 102000020,
-          "name": "Slowdown Tower Effect Module",
-          "TID": {
-            "name": "TID_SEASONAL_DEFENSE_SLOWDOWN_TOWER_MODULE_EFFECT"
-          },
-          "upgrade_resource": "Dark Elixir",
-          "levels": [
-            {
-              "level": 1,
-              "upgrade_cost": 0,
-              "upgrade_time": 0,
-              "ability_data": {
-                "Projectile": "SlowdownTowerSlownessProjectile1"
-              }
-            },
-            {
-              "level": 2,
-              "upgrade_cost": 25000,
-              "upgrade_time": 129600,
-              "ability_data": {
-                "Projectile": "SlowdownTowerSlownessProjectile2"
-              }
-            },
-            {
-              "level": 3,
-              "upgrade_cost": 30000,
-              "upgrade_time": 172800,
-              "ability_data": {
-                "Projectile": "SlowdownTowerSlownessProjectile3"
-              }
-            },
-            {
-              "level": 4,
-              "upgrade_cost": 35000,
-              "upgrade_time": 216000,
-              "ability_data": {
-                "Projectile": "SlowdownTowerSlownessProjectile4"
-              }
-            },
-            {
-              "level": 5,
-              "upgrade_cost": 40000,
-              "upgrade_time": 223200,
-              "ability_data": {
-                "Projectile": "SlowdownTowerSlownessProjectile5"
-              }
-            },
-            {
-              "level": 6,
-              "upgrade_cost": 55000,
-              "upgrade_time": 230400,
-              "ability_data": {
-                "Projectile": "SlowdownTowerSlownessProjectile6"
-              }
-            },
-            {
-              "level": 7,
-              "upgrade_cost": 70000,
-              "upgrade_time": 237600,
-              "ability_data": {
-                "Projectile": "SlowdownTowerSlownessProjectile7"
-              }
-            },
-            {
-              "level": 8,
-              "upgrade_cost": 85000,
-              "upgrade_time": 244800,
-              "ability_data": {
-                "Projectile": "SlowdownTowerSlownessProjectile8"
-              }
-            },
-            {
-              "level": 9,
-              "upgrade_cost": 100000,
-              "upgrade_time": 252000,
-              "ability_data": {
-                "Projectile": "SlowdownTowerSlownessProjectile9"
-              }
-            },
-            {
-              "level": 10,
-              "upgrade_cost": 115000,
-              "upgrade_time": 259200,
-              "ability_data": {
-                "Projectile": "SlowdownTowerSlownessProjectile10"
               }
             }
           ]
