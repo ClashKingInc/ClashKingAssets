@@ -296,6 +296,7 @@ class StaticUpdater:
         self.full_building_data = self.open_file("buildings.json")
         self.full_supercharges_data = self.open_file("mini_levels.json")
         self.full_townhall_data = self.open_file("townhall_levels.json")
+        full_weapon_data: dict = self.open_file("weapons.json")
 
         new_building_data = []
 
@@ -380,6 +381,42 @@ class StaticUpdater:
                         })
 
                     hold_level_data["merge_requirement"] = merge_list
+
+                if (weapon_name := level_data.get("Weapon")) is not None:
+
+                    weapon_data: dict = full_weapon_data[weapon_name]
+
+                    #if the townhall only has 1 level of weapon, then it is inherently part of the base level,
+                    # so just set the dps and continue
+                    if weapon_data.get("1") is None:
+                        hold_level_data["dps"] = weapon_data.get("DPS")
+                    else:
+                        hold_weapon_data = {
+                            "name": self._translate(tid=weapon_data["TID"]),
+                            "info": self._translate(tid=weapon_data["InfoTID"]),
+                            "TID": {
+                                "name": weapon_data.get("TID"),
+                                "info": weapon_data.get("InfoTID"),
+                            },
+                            "upgrade_resource": self._parse_resource(resource=building_data.get("BuildResource")),
+                            "levels": []
+                        }
+                        for weapon_level, weapon_level_data in weapon_data.items():
+                            if not isinstance(weapon_level_data, dict):
+                                continue
+
+                            upgrade_time_seconds = weapon_level_data.get("BuildTimeD", 0) * 24 * 60 * 60
+                            upgrade_time_seconds += weapon_level_data.get("BuildTimeH", 0) * 60 * 60
+                            upgrade_time_seconds += weapon_level_data.get("BuildTimeM", 0) * 60
+                            upgrade_time_seconds += weapon_level_data.get("BuildTimeS", 0)
+
+                            hold_weapon_data["levels"].append({
+                                "level": weapon_level_data.get("Level"),
+                                "upgrade_cost": level_data.get("BuildCost"),
+                                "upgrade_time": upgrade_time_seconds,
+                                "dps": weapon_level_data.get("DPS"),
+                            })
+                        hold_level_data["weapon"] = hold_weapon_data
 
                 hold_data["levels"].append(hold_level_data)
 
@@ -1332,20 +1369,6 @@ class StaticUpdater:
             self.process_csv(data=data, file_path=save_path, save_name=save_path.split(".")[0])
             self.TARGETS.append(save_path)
 
-
-        '''        for target_file, target_save in self.TARGETS:
-            target_save = target_file if target_save is None else target_save
-            download_url = f"{BASE_URL}/{target_file}"
-
-            print(f"Downloading: {download_url}")
-            data = await self.download(url=download_url)
-
-            # Save raw compressed data
-            with open(target_save, "wb") as f:
-                f.write(data)
-
-            print(f"Processing: {target_file}")
-            self.process_csv(data=data, file_path=target_save, save_name=target_save.split(".")[0])'''
         self.create_master_json()
 
     def run(self):
