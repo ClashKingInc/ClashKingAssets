@@ -12,6 +12,7 @@ import os
 import zipfile
 import zstandard
 import lzma
+from pathlib import Path
 
 class StaticUpdater:
     def __init__(self):
@@ -48,7 +49,6 @@ class StaticUpdater:
         self.smithy_to_townhall = {}
         self.bb_lab_to_townhall = {}
         self.pethouse_to_townhall = {}
-
 
     async def download(self, url: str, as_json: bool = False):
         async with aiohttp.request('GET', url) as fp:
@@ -292,6 +292,40 @@ class StaticUpdater:
         self.translation_data = new_translation_data
         return new_translation_data
 
+    def _parse_achievement_data(self):
+        self.full_achievement_data = self.open_file("achievements.json")
+        new_achievement_data = {}
+        for achievement_name, achievement_data in self.full_achievement_data.items():
+            tid = achievement_data.get("TID")
+            if tid not in new_achievement_data:
+                new_achievement_data[tid] = {
+                    "name": self._translate(achievement_data.get("TID")),
+                    "info": self._translate(achievement_data.get("InfoTID")),
+                    "completed_message": self._translate(achievement_data.get("CompletedTID")),
+                    "TID": {
+                        "name": achievement_data.get("TID"),
+                        "info": achievement_data.get("InfoTID"),
+                        "completed_message": achievement_data.get("CompletedTID"),
+                    },
+                    "levels" : [{
+                        "level": achievement_data.get("Level") + 1,
+                        "action_count": achievement_data.get("ActionCount"),
+                        "action_data": achievement_data.get("ActionData"),
+                        "xp": achievement_data.get("ExpReward", 0),
+                        "gems": achievement_data.get("DiamondReward", 0)
+                    }]
+                }
+            else:
+                new_achievement_data[tid]["levels"].append({
+                    "level": achievement_data.get("Level") + 1,
+                    "action_count": achievement_data.get("ActionCount"),
+                    "action_data": achievement_data.get("ActionData"),
+                    "xp": achievement_data.get("ExpReward", 0),
+                    "gems": achievement_data.get("DiamondReward", 0)
+                })
+
+        return list(new_achievement_data.values())
+
     def _parse_building_data(self):
         self.full_building_data = self.open_file("buildings.json")
         self.full_supercharges_data = self.open_file("mini_levels.json")
@@ -308,11 +342,39 @@ class StaticUpdater:
             if building_data.get("BuildingClass") in ["Npc", "NonFunctional",
                                                       "Npc Town Hall"] or "Unused" in building_name:
                 continue
+
             village_type = building_data.get("VillageType", 0)
             superchargeable = False
+
+            supercharge_level_data = {}
             for supercharge_data in self.full_supercharges_data.values():
                 if supercharge_data.get("TargetBuilding") == building_name:
                     superchargeable = True
+                    hold_data = {
+                        "upgrade_resource": self._parse_resource(resource=supercharge_data.get("BuildResource")),
+                        "levels": []
+                    }
+                    for level, level_data in supercharge_data.items():
+                        if not isinstance(level_data, dict):
+                            continue
+                        upgrade_time_seconds = level_data.get("BuildTimeD", 0) * 24 * 60 * 60
+                        upgrade_time_seconds += level_data.get("BuildTimeH", 0) * 60 * 60
+                        upgrade_time_seconds += level_data.get("BuildTimeM", 0) * 60
+                        upgrade_time_seconds += level_data.get("BuildTimeS", 0)
+
+                        DPS = level_data.get("DPS", 0)
+                        # if the level doesnt have a DPS & there is no hitpoints for this row, that means it is a DPS upgrade
+                        # unless it is a resource pump, but we dont handle those anyways
+                        if not DPS and not level_data.get("Hitpoints"):
+                            DPS = supercharge_data.get("DPS", 0)
+                        hold_data["levels"].append({
+                            "level": int(level),
+                            "upgrade_cost": level_data.get("BuildCost"),
+                            "upgrade_time": upgrade_time_seconds,
+                            "hitpoints_buff": level_data.get("Hitpoints", 0),
+                            "dps_buff": DPS,
+                        })
+                    supercharge_level_data = hold_data
                     break
 
             #for merged buildings, move the requirement to level 1 since that is when the requirement is actually needed
@@ -332,7 +394,7 @@ class StaticUpdater:
                 "upgrade_resource": self._parse_resource(
                     resource=building_data.get("BuildResource") or building_data.get("2").get("BuildResource")
                 ),
-                "village_type": "home" if not village_type else "builderBase",
+                "village": "home" if not village_type else "builderBase",
                 "width": building_data.get("Width", 1), #walls are null for some reason, so let's make it 1
                 "superchargeable": superchargeable,
                 "levels": []
@@ -420,6 +482,9 @@ class StaticUpdater:
 
                 hold_data["levels"].append(hold_level_data)
 
+            if superchargeable:
+                #supercharges are always on the last available level
+                hold_data["levels"][-1]["supercharge"] = supercharge_level_data
             new_building_data.append(hold_data)
 
         lab_data = next((item for item in new_building_data if item["name"] == "Laboratory")).get("levels")
@@ -453,43 +518,6 @@ class StaticUpdater:
                 building["levels"][(unlock_data["level"] - 1)]["unlocks"] = unlock_data["buildings_unlocked"]
 
         return new_building_data
-
-    def _parse_supercharge_data(self):
-        new_supercharge_data = []
-        for supercharge_name, supercharge_data in self.full_supercharges_data.items():
-            target = supercharge_data.get("TargetBuilding")
-            name = self._translate(tid=self.full_building_data.get(target).get("TID"))
-
-            hold_data = {
-                "_id": self.full_building_data.get(target).get("_id"),
-                "name": f"{name} Supercharge",
-                "required_townhall": supercharge_data.get("RequiredTownHallLevel"),
-                "upgrade_resource": self._parse_resource(resource=supercharge_data.get("BuildResource")),
-                "levels": []
-            }
-            for level, level_data in supercharge_data.items():
-                if not isinstance(level_data, dict):
-                    continue
-                upgrade_time_seconds = level_data.get("BuildTimeD", 0) * 24 * 60 * 60
-                upgrade_time_seconds += level_data.get("BuildTimeH", 0) * 60 * 60
-                upgrade_time_seconds += level_data.get("BuildTimeM", 0) * 60
-                upgrade_time_seconds += level_data.get("BuildTimeS", 0)
-
-                DPS = level_data.get("DPS", 0)
-                # if the level doesnt have a DPS & there is no hitpoints for this row, that means it is a DPS upgrade
-                # unless it is a resource pump, but we dont handle those anyways
-                if not DPS and not level_data.get("Hitpoints"):
-                    DPS = supercharge_data.get("DPS", 0)
-                hold_data["levels"].append({
-                    "level": int(level),
-                    "upgrade_cost": level_data.get("BuildCost"),
-                    "upgrade_time": upgrade_time_seconds,
-                    "hitpoints_buff": level_data.get("Hitpoints", 0),
-                    "dps_buff": DPS,
-                })
-            new_supercharge_data.append(hold_data)
-
-        return new_supercharge_data
 
     def _parse_seasonal_defense_data(self):
         full_seasonal_defenses = self.open_file("seasonal_defense_archetypes.json")
@@ -602,7 +630,7 @@ class StaticUpdater:
                 "attack_speed": troop_data.get("AttackSpeed", 0),
                 "attack_range": troop_data.get("AttackRange", 0),
                 "housing_space": troop_data.get("HousingSpace"),
-                "village_type": "home" if not village_type else "builderBase",
+                "village": "home" if not village_type else "builderBase",
             }
             is_super_troop = troop_data.get("EnabledBySuperLicence", False)
             is_seasonal_troop = troop_data.get("EnabledByCalendar", False)
@@ -729,7 +757,6 @@ class StaticUpdater:
                 "production_building": self._translate(production_building),
                 "production_building_level": spell_data.get("SpellForgeLevel"),
                 "upgrade_resource": self._parse_resource(resource=spell_data.get("UpgradeResource")),
-                "radius": spell_data.get("Radius") or spell_data.get("1", {}).get("Radius"),
                 "housing_space": spell_data.get("HousingSpace"),
             }
             is_seasonal_spell = spell_data.get("EnabledByCalendar", False)
@@ -744,9 +771,11 @@ class StaticUpdater:
                 upgrade_time_seconds = level_data.get("UpgradeTimeH", 0) * 60 * 60
 
                 duration_ms = level_data.get("NumberOfHits", 0) * level_data.get("TimeBetweenHitsMS", 0)
+                radius = spell_data.get("Radius", 0) or level_data.get("Radius", 0)
                 new_level_data = {
                     "level": int(level),
                     "duration": int(duration_ms / 1000),
+                    "radius": round(radius / 100, 1),
                     "damage": level_data.get("Damage", 0) or level_data.get("PoisonDPS", 0),
                     "upgrade_time": upgrade_time_seconds,
                     "upgrade_cost": level_data.get("UpgradeCost", 0),
@@ -786,7 +815,7 @@ class StaticUpdater:
                 "movement_speed": hero_data.get("Speed"),
                 "attack_speed": hero_data.get("AttackSpeed"),
                 "attack_range": hero_data.get("AttackRange"),
-                "village_type": "home" if not village_type else "builderBase",
+                "village": "home" if not village_type else "builderBase",
                 "levels": []
             }
 
@@ -982,7 +1011,7 @@ class StaticUpdater:
                 "ground_trigger": trap_data.get("GroundTrigger", False),
                 "damage_radius": trap_data.get("DamageRadius"),
                 "trigger_radius": trap_data.get("TriggerRadius"),
-                "village_type": "home" if not village_type else "builderBase",
+                "village": "home" if not village_type else "builderBase",
 
                 "upgrade_resource": self._parse_resource(resource=trap_data.get("BuildResource")),
                 "levels" : []
@@ -1026,7 +1055,7 @@ class StaticUpdater:
                 "max_count": deco_data.get("MaxCount", 1),
                 "build_resource": self._parse_resource(resource=deco_data.get("BuildResource")),
                 "build_cost": deco_data.get("BuildCost"),
-                "village_type": "home" if not village_type else "builderBase"
+                "village": "home" if not village_type else "builderBase"
             }
             new_deco_data.append(hold_data)
 
@@ -1074,7 +1103,7 @@ class StaticUpdater:
                 "clear_cost": obstacle_data.get("ClearCost"),
                 "loot_resource": self._parse_resource(resource=obstacle_data.get("LootResource")),
                 "loot_count": obstacle_data.get("LootCount"),
-                "village_type": "home" if not village_type else "builderBase"
+                "village": "home" if not village_type else "builderBase"
             }
             new_obstacle_data.append(hold_data)
 
@@ -1300,7 +1329,6 @@ class StaticUpdater:
 
         master_data = {
             "buildings": self._parse_building_data(),
-            "supercharges": self._parse_supercharge_data(),
             "seasonal_defenses": self._parse_seasonal_defense_data(),
             "traps" : self._parse_trap_data(),
             "troops": self._parse_troop_data(),
@@ -1316,7 +1344,8 @@ class StaticUpdater:
             "capital_house_parts": self._parse_capital_part_data(),
             "helpers": self._parse_helper_data(),
             "war_leagues": self._parse_war_league_data(),
-            "league_tiers": self._parse_league_tier_data()
+            "league_tiers": self._parse_league_tier_data(),
+            "achievements": self._parse_achievement_data(),
         }
         with open(f"{self.BASE_PATH}static_data.json", "w", encoding="utf-8") as jf:
             jf.write(json.dumps(master_data, indent=2))
@@ -1338,6 +1367,70 @@ class StaticUpdater:
                 os.remove(file_path)
             except OSError as e:
                 logging.warning(f"Could not delete {file_path}: {e}")
+
+    def generate_constants(self):
+        static_data = self.open_file("static_data.json")
+
+        troops = static_data["troops"]
+        spells = static_data["spells"]
+        heroes = static_data["heroes"]
+        equipment = static_data["equipment"]
+        pets = static_data["pets"]
+        buildings = static_data["buildings"]
+        achievements = static_data["achievements"]
+
+        lists_to_write = {
+            'ELIXIR_TROOP_ORDER':  [
+                t["name"] for t in troops
+                if t["production_building"] == "Barracks"
+                and not t.get("is_seasonal", False)
+                and not "super_troop" in t
+            ],
+            'DARK_ELIXIR_TROOP_ORDER': [
+                t["name"] for t in troops
+                if t["production_building"] == "Dark Barracks"
+                and not t.get("is_seasonal", False)
+                and not "super_troop" in t
+            ],
+            'HV_TROOP_ORDER': 'ELIXIR_TROOP_ORDER + DARK_ELIXIR_TROOP_ORDER',
+            'SIEGE_MACHINE_ORDER': [t["name"] for t in troops if t["production_building"] == "Workshop"],
+            'SUPER_TROOP_ORDER': [t["name"] for t in troops if "super_troop" in t],
+            'HOME_TROOP_ORDER': 'HV_TROOP_ORDER + SIEGE_MACHINE_ORDER',
+            'SEASONAL_TROOP_ORDER': [t["name"] for t in troops if t.get("is_seasonal", False)],
+            'BUILDER_TROOPS_ORDER': [t["name"] for t in troops if t["village"] == "builderBase"],
+            'ELIXIR_SPELL_ORDER': [
+                s["name"] for s in spells
+                if s["upgrade_resource"] == "Elixir"
+                and not s.get("is_seasonal", False)
+            ],
+            'DARK_ELIXIR_SPELL_ORDER': [s["name"] for s in spells if s["upgrade_resource"] == "Dark Elixir"],
+            'SEASONAL_SPELL_ORDER': [s["name"] for s in spells if s.get("is_seasonal", False)],
+            'SPELL_ORDER': 'ELIXIR_SPELL_ORDER + DARK_ELIXIR_SPELL_ORDER',
+            'HOME_BASE_HERO_ORDER': [h["name"] for h in heroes if h["village"] == "home"],
+            'BUILDER_BASE_HERO_ORDER': [h["name"] for h in heroes if h["village"] == "builderBase"],
+            'HERO_ORDER': 'HOME_BASE_HERO_ORDER + BUILDER_BASE_HERO_ORDER',
+            'PETS_ORDER': [p["name"] for p in pets],
+            'EQUIPMENT': [e["name"] for e in equipment],
+            'HV_BUILDINGS': [b["name"] for b in buildings if b["village"] == "home"],
+            'ACHIEVEMENT_ORDER': [a["name"] for a in achievements],
+        }
+
+        constants_path = Path(__file__).parent.parent / "constants.py"
+
+        with open(constants_path, 'w') as f:
+            f.write('"""Auto-generated constants from static game data."""\n\n')
+            for name, lst in lists_to_write.items():
+                if isinstance(lst, str):
+                    f.write(f"{name} = {lst}\n\n")
+                else:
+                    # Manual formatting: each item on its own line
+                    f.write(f"{name} = [\n")
+                    for item in lst:
+                        f.write(f"    {repr(item)},\n")
+                    f.write("]\n\n")
+
+        print(f"Constants written to {constants_path}")
+
 
     async def download_files(self):
         if not self.FINGERPRINT:
@@ -1370,6 +1463,7 @@ class StaticUpdater:
             self.TARGETS.append(save_path)
 
         self.create_master_json()
+
 
     def run(self):
         asyncio.run(self.download_files())
