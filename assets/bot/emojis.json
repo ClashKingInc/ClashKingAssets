@@ -16,7 +16,8 @@
     "14": "/home-base/town-hall-pics/town-hall-14.png",
     "15": "/home-base/town-hall-pics/town-hall-15.png",
     "16": "/home-base/town-hall-pics/town-hall-16.png",
-    "17": "/home-base/town-hall-pics/town-hall-17.png"
+    "17": "/home-base/town-hall-pics/town-hall-17.png",
+    "18": "/home-base/town-hall-pics/town-hall-18.png"
   },
   "super_troop_emojis": {
     "Super Wall Breaker": "/home-base/super-troop-pics/Icon_HV_Super_Wall_Breaker.png",
@@ -34,7 +35,8 @@
     "Ice Hound": "/home-base/super-troop-pics/Icon_HV_Ice_Hound.png",
     "Super Dragon": "/home-base/super-troop-pics/Icon_HV_Super_Dragon.png",
     "Super Bowler": "/home-base/super-troop-pics/Icon_HV_Super_Bowler.png",
-    "Super Hog Rider": "/home-base/super-troop-pics/Icon_HV_Super_Hog_Rider.png"
+    "Super Hog Rider": "/home-base/super-troop-pics/Icon_HV_Super_Hog_Rider.png",
+    "Super Yeti": "/home-base/super-troop-pics/Icon_HV_Super_Yeti.png"
   },
   "pet_emojis": {
     "Unicorn": "/home-base/pet-pics/Icon_HV_Hero_Pets_Unicorn.png",
@@ -79,7 +81,9 @@
     "Metal Pants" : "/home-base/equipment-pics/Metal_Pants.png",
     "Snake Bracelet" : "/home-base/equipment-pics/Snake_Bracelet.png",
     "Giant Puppet" : "/home-base/equipment-pics/Hero_Equipment_AQ_WWEActionFigure.png",
-    "Dark Crown" : "/home-base/equipment-pics/HeroGear_MP_DarkCrown_2k.png"
+    "Dark Crown" : "/home-base/equipment-pics/HeroGear_MP_DarkCrown_2k.png",
+    "Noble Iron": "/home-base/equipment-pics/Hero_Equipment_MP_Noble_Iron.png",
+    "Meteor Staff": "/home-base/equipment-pics/Hero_Equipment_MP_Meteor_Staff.png"
   },
   "capital_hall_emojis": {
     "Capital_Hall7": "/capital-base/capital-hall-pics/Building_CC_Capital_Hall_level_7.png",
@@ -138,7 +142,8 @@
     "Clone Spell": "/home-base/spell-pics/Icon_HV_Spell_Clone.png",
     "Recall Spell": "/home-base/spell-pics/Icon_HV_Spell_Recall.png",
     "Overgrowth Spell": "/home-base/spell-pics/Icon_HV_Dark_Spell_Overgrowth.png",
-    "Revive Spell" : "/home-base/spell-pics/Icon_HV_Spell_Hero_Revive_Potion.png"
+    "Revive Spell" : "/home-base/spell-pics/Icon_HV_Spell_Hero_Revive_Potion.png",
+    "Totem Spell": "/home-base/spell-pics/Icon_HV_Spell_Totem.png"
   },
   "troop_emojis": {
     "Archer": "/home-base/troop-pics/Icon_HV_Archer.png",
@@ -169,7 +174,9 @@
     "Apprentice Warden": "/home-base/troop-pics/Icon_HV_Apprentice_Warden.png",
     "Druid": "/home-base/troop-pics/Icon_HV_Druid.png",
     "Root Rider": "/home-base/troop-pics/Icon_HV_Root_Rider.png",
-    "Thrower" : "/home-base/troop-pics/Icon_HV_Thrower.png"
+    "Thrower" : "/home-base/troop-pics/Icon_HV_Thrower.png",
+    "Furnace": "/home-base/troop-pics/Icon_HV_Furnace.png",
+    "Meteor Golem": "/home-base/troop-pics/Icon_HV_Meteor_Golem.png"
   },
   "hero_emojis": {
     "Barbarian King": "/home-base/hero-pics/Icon_HV_Hero_Barbarian_King.png",
@@ -309,6 +316,43 @@
     "CWL Champion League I": "/home-base/league-icons/Icon_HV_CWL_Champion_1.png",
     "CWL Champion League II": "/home-base/league-icons/Icon_HV_CWL_Champion_2.png",
     "CWL Champion League III": "/home-base/league-icons/Icon_HV_CWL_Champion_3.png"
+  },
+  "league_tier_emojis": {
+    "Unranked": "/home-base/league-tier-icons/Unranked.png",
+    "Skeleton League 1": "/home-base/league-tier-icons/Skeleton_League_1.png",
+    "Skeleton League 2": "/home-base/league-tier-icons/Skeleton_League_2.png",
+    "Skeleton League 3": "/home-base/league-tier-icons/Skeleton_League_3.png",
+    "Barbarian League 4": "/home-base/league-tier-icons/Barbarian_League_4.png",
+    "Barbarian League 5": "/home-base/league-tier-icons/Barbarian_League_5.png",
+    "Barbarian League 6": "/home-base/league-tier-icons/Barbarian_League_6.png",
+    "Archer League 7": "/home-base/league-tier-icons/Archer_League_7.png",
+    "Archer League 8": "/home-base/league-tier-icons/Archer_League_8.png",
+    "Archer League 9": "/home-base/league-tier-icons/Archer_League_9.png",
+    "Wizard League 10": "/home-base/league-tier-icons/Wizard_League_10.png",
+    "Wizard League 11": "/home-base/league-tier-icons/Wizard_League_11.png",
+    "Wizard League 12": "/home-base/league-tier-icons/Wizard_League_12.png",
+    "Valkyrie League 13": "/home-base/league-tier-icons/Valkyrie_League_13.png",
+    "Valkyrie League 14": "/home-base/league-tier-icons/Valkyrie_League_14.png",
+    "Valkyrie League 15": "/home-base/league-tier-icons/Valkyrie_League_15.png",
+    "Witch League 16": "/home-base/league-tier-icons/Witch_League_16.png",
+    "Witch League 17": "/home-base/league-tier-icons/Witch_League_17.png",
+    "Witch League 18": "/home-base/league-tier-icons/Witch_League_18.png",
+    "Golem League 19": "/home-base/league-tier-icons/Golem_League_19.png",
+    "Golem League 20": "/home-base/league-tier-icons/Golem_League_20.png",
+    "Golem League 21": "/home-base/league-tier-icons/Golem_League_21.png",
+    "P.E.K.K.A League 22": "/home-base/league-tier-icons/PEKKA_League_22.png",
+    "P.E.K.K.A League 23": "/home-base/league-tier-icons/PEKKA_League_23.png",
+    "P.E.K.K.A League 24": "/home-base/league-tier-icons/PEKKA_League_24.png",
+    "Titan League 25": "/home-base/league-tier-icons/Titan_League_25.png",
+    "Titan League 26": "/home-base/league-tier-icons/Titan_League_26.png",
+    "Titan League 27": "/home-base/league-tier-icons/Titan_League_27.png",
+    "Dragon League 28": "/home-base/league-tier-icons/Dragon_League_28.png",
+    "Dragon League 29": "/home-base/league-tier-icons/Dragon_League_29.png",
+    "Dragon League 30": "/home-base/league-tier-icons/Dragon_League_30.png",
+    "Electro League 31": "/home-base/league-tier-icons/Electro_League_31.png",
+    "Electro League 32": "/home-base/league-tier-icons/Electro_League_32.png",
+    "Electro League 33": "/home-base/league-tier-icons/Electro_League_33.png",
+    "Legend League": "/home-base/league-tier-icons/Legend_League.png"
   },
   "blue_numbers": {
     "blue_1": "/bot/numbers/blue_1.png",
