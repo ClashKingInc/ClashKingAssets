@@ -55528,7 +55528,6 @@
         "name": "TID_BUILDER_APPRENTICE",
         "info": "TID_BUILDER_APPRENTICE_INFO"
       },
-      "gender": "M",
       "upgrade_resource": "Gems",
       "levels": [
         {
@@ -55597,7 +55596,6 @@
         "name": "TID_RESEARCHER_APPRENTICE",
         "info": "TID_RESEARCHER_APPRENTICE_INFO"
       },
-      "gender": "M",
       "upgrade_resource": "Gems",
       "levels": [
         {
@@ -55694,7 +55692,6 @@
         "name": "TID_ALCHEMIST_APPRENTICE",
         "info": "TID_ALCHEMIST_APPRENTICE_INFO"
       },
-      "gender": "F",
       "upgrade_resource": "Gems",
       "levels": [
         {

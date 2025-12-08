@@ -83,7 +83,8 @@
     "Action Figure" : "/home-base/equipment-pics/Hero_Equipment_AQ_WWEActionFigure.png",
     "Dark Crown" : "/home-base/equipment-pics/HeroGear_MP_DarkCrown_2k.png",
     "Noble Iron": "/home-base/equipment-pics/Hero_Equipment_MP_Noble_Iron.png",
-    "Meteor Staff": "/home-base/equipment-pics/Hero_Equipment_MP_Meteor_Staff.png"
+    "Meteor Staff": "/home-base/equipment-pics/Hero_Equipment_MP_Meteor_Staff.png",
+    "Frost Flake": "/home-base/equipment-pics/Hero_Equipment_RC_Snow_Flake.png"
   },
   "capital_hall_emojis": {
     "Capital_Hall7": "/capital-base/capital-hall-pics/Building_CC_Capital_Hall_level_7.png",
@@ -143,7 +144,8 @@
     "Recall Spell": "/home-base/spell-pics/Icon_HV_Spell_Recall.png",
     "Overgrowth Spell": "/home-base/spell-pics/Icon_HV_Dark_Spell_Overgrowth.png",
     "Revive Spell" : "/home-base/spell-pics/Icon_HV_Spell_Hero_Revive_Potion.png",
-    "Totem Spell": "/home-base/spell-pics/Icon_HV_Spell_Totem.png"
+    "Totem Spell": "/home-base/spell-pics/Icon_HV_Spell_Totem.png",
+    "Ice Block Spell": "/home-base/spell-pics/Icon_HV_Ice_block.png"
   },
   "troop_emojis": {
     "Archer": "/home-base/troop-pics/Icon_HV_Archer.png",
