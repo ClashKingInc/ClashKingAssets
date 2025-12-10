@@ -177,7 +177,7 @@
           Object.values(item.meta).find(v => v && v.endsWith(".png"));
 
         const img = document.createElement("img");
-        img.src = "/static" + thumb;
+        img.src = thumb;
         img.alt = item.meta.name;
         img.className = "w-24 h-24 object-contain mb-2";
         card.appendChild(img);
@@ -254,7 +254,7 @@
         card.className = "flex flex-col items-center p-2 bg-gray-50 rounded-lg relative";
 
         const imgEl = document.createElement("img");
-        imgEl.src = "/static" + src;
+        imgEl.src = src;
         imgEl.className = "w-20 h-20 object-contain mb-2";
         card.appendChild(imgEl);
 
@@ -272,7 +272,7 @@
         card.appendChild(lab);
 
         const btn = document.createElement("a");
-        btn.href = "/static" + src;
+        btn.href = src;
         btn.download = "";
         btn.className = "px-3 py-1 bg-indigo-600 text-white rounded-md text-sm";
         btn.textContent = "Download";
@@ -285,7 +285,7 @@
       if (section === "sceneries" && meta.music) {
         const audio = document.createElement("audio");
         audio.controls = true;
-        audio.src = "/static" + meta.music;
+        audio.src = meta.music;
         audio.className = "mt-4 w-full";
         modalInner.appendChild(audio);
       }

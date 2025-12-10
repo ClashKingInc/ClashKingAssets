@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Request, Response
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import StreamingResponse, FileResponse
 from pathlib import Path
 from starlette.middleware import Middleware
@@ -6,11 +6,9 @@ from starlette.middleware.cors import CORSMiddleware
 from typing import Callable
 from PIL import Image
 import io
-from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import json
-import zipfile
-import os
+import aiohttp
 
 middleware = [
     Middleware(
@@ -23,20 +21,46 @@ middleware = [
 
 app = FastAPI(middleware=middleware)
 
-# Mount `assets/` under `/static`
-app.mount("/static", StaticFiles(directory="assets"), name="static")
 # Templates live in `templates/`
 templates = Jinja2Templates(directory="templates")
 
 BASE_DIR = Path(__file__).resolve().parents[0]
-ASSETS_DIR = BASE_DIR / "assets"
+# Use /app/cache in container, local .cache directory otherwise
+CACHE_DIR = Path("/app/cache") if Path("/app").exists() and Path("/app").is_dir() else BASE_DIR / ".cache"
+CACHE_DIR.mkdir(parents=True, exist_ok=True)
+ASSETS_DIR = CACHE_DIR
 SUPPORTED_FORMATS = ["jpg", "jpeg", "png", "webp"]
+GITHUB_RAW_BASE = "https://raw.githubusercontent.com/ClashKingInc/ClashKingAssets/main/assets"
 
-def find_alternative_format(relative_path: Path):
+async def download_from_github(file_path: str) -> bytes:
+    url = f"{GITHUB_RAW_BASE}/{file_path}"
+    timeout = aiohttp.ClientTimeout(total=30.0)
+    async with aiohttp.ClientSession(timeout=timeout) as session:
+        async with session.get(url) as response:
+            if response.status == 200:
+                return await response.read()
+            raise HTTPException(status_code=404, detail=f"File not found on GitHub: {file_path}")
+
+async def get_cached_file(file_path: str) -> Path:
+    cached_file = CACHE_DIR / file_path
+    
+    if cached_file.is_file():
+        return cached_file
+    
+    # Download from GitHub and cache
+    content = await download_from_github(file_path)
+    cached_file.parent.mkdir(parents=True, exist_ok=True)
+    cached_file.write_bytes(content)
+    return cached_file
+
+async def find_alternative_format(relative_path: Path):
     for ext in SUPPORTED_FORMATS:
-        potential_file = ASSETS_DIR / f"{relative_path.with_suffix('.' + ext)}"
-        if potential_file.is_file():
-            return potential_file
+        potential_path = f"{relative_path.with_suffix('.' + ext)}"
+        try:
+            cached_file = await get_cached_file(potential_path)
+            return cached_file
+        except:
+            continue
     return None
 
 
@@ -78,12 +102,23 @@ async def add_cache_control_header(request: Request, call_next: Callable):
     response.headers["Cache-Control"] = "public, max-age=2592000"
     return response
 
-# Load your metadata once
-with open("assets/image_map.json", "r", encoding="utf-8") as f:
-    images = json.load(f)
+# Load metadata from GitHub on startup
+images = {}
+translations = {}
 
-with open("assets/translations.json", encoding="utf-8") as f:
-    translations = json.load(f)
+@app.on_event("startup")
+async def load_metadata():
+    global images, translations
+    
+    # Load image_map.json
+    image_map_path = await get_cached_file("image_map.json")
+    with open(image_map_path, "r", encoding="utf-8") as f:
+        images = json.load(f)
+    
+    # Load translations.json
+    translations_path = await get_cached_file("translations.json")
+    with open(translations_path, "r", encoding="utf-8") as f:
+        translations = json.load(f)
 
 @app.get("/")
 async def gallery(request: Request):
@@ -96,57 +131,27 @@ async def gallery(request: Request):
         }
     )
 
-@app.get("/download/{section}/{item_id}/zip")
-async def download_item_zip(section: str, item_id: str):
-    sec = images.get(section)
-    if not sec or item_id not in sec:
-        raise HTTPException(404, "Item not found")
-    meta = sec[item_id]
-    buf = io.BytesIO()
-    with zipfile.ZipFile(buf, mode="w") as zf:
-        for key in ("full", "icon"):  # individual images
-            path = meta.get(key)
-            if path:
-                src = os.path.join("assets", path.lstrip("/"))
-                if os.path.isfile(src): zf.write(src, arcname=os.path.basename(src))
-        for lvl in (meta.get("levels") or {}).values():
-            if lvl:
-                src = os.path.join("assets", lvl.lstrip("/"))
-                if os.path.isfile(src): zf.write(src, arcname=os.path.basename(src))
-        if section == "sceneries" and meta.get("music"):
-            src = os.path.join("assets", meta["music"].lstrip("/"))
-            if os.path.isfile(src): zf.write(src, arcname=os.path.basename(src))
-    buf.seek(0)
-    return StreamingResponse(
-        buf,
-        media_type="application/x-zip-compressed",
-        headers={"Content-Disposition": f"attachment; filename={item_id}.zip"}
-    )
-
-
 @app.get("/{file_path:path}", name="Get a file")
 async def serve_file(file_path: str):
-    requested_path = (ASSETS_DIR / file_path).resolve()
-
-    print(requested_path)
-    # Ensure the requested file is within the assets directory
-    if not str(requested_path).startswith(str(ASSETS_DIR)):
+    # Prevent path traversal
+    if ".." in file_path or file_path.startswith("/"):
         raise HTTPException(status_code=403, detail="Access forbidden")
 
-    relative_path = requested_path.relative_to(ASSETS_DIR)
-
-    # If the requested file exists, serve it
-    if requested_path.is_file():
-        return FileResponse(requested_path)
-
-    # Check if the file exists in another format
-    alternative_file = find_alternative_format(relative_path)
-    if alternative_file:
-        # Convert to the requested format
-        converted_image = convert_image(alternative_file, requested_path.suffix.lstrip('.'))
-        return StreamingResponse(converted_image, media_type=f"image/{requested_path.suffix.lstrip('.')}")
-
-    raise HTTPException(status_code=404, detail="File not found")
+    try:
+        # Try to get the file from cache or download it
+        cached_file = await get_cached_file(file_path)
+        return FileResponse(cached_file)
+    except HTTPException:
+        # File doesn't exist in the exact format, try alternative formats
+        requested_path = Path(file_path)
+        alternative_file = await find_alternative_format(requested_path)
+        
+        if alternative_file:
+            # Convert to the requested format
+            converted_image = convert_image(alternative_file, requested_path.suffix.lstrip('.'))
+            return StreamingResponse(converted_image, media_type=f"image/{requested_path.suffix.lstrip('.')}")
+        
+        raise HTTPException(status_code=404, detail="File not found")
 
 
 if __name__ == "__main__":

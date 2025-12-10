@@ -27,8 +27,12 @@ RUN uv pip install --system . \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/* /root/.cache/pip
 
-# Copy the rest of the application code into the container
-COPY . .
+# Copy only necessary application files (not assets)
+COPY main.py .
+COPY templates/ templates/
+
+# Create cache directory for downloaded assets
+RUN mkdir -p /app/cache
 
 EXPOSE 6000
 
