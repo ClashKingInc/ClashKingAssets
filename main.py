@@ -1,5 +1,5 @@
-from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import StreamingResponse, FileResponse
+from fastapi import FastAPI, HTTPException, Request, UploadFile, File, Form
+from fastapi.responses import StreamingResponse, FileResponse, HTMLResponse, JSONResponse
 from pathlib import Path
 from starlette.middleware import Middleware
 from starlette.middleware.cors import CORSMiddleware
@@ -11,6 +11,7 @@ import json
 import aiohttp
 import contextlib
 import logging
+import random
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("assets")
@@ -26,6 +27,14 @@ middleware = [
 
 images = {}
 translations = {}
+
+BASE_DIR = Path(__file__).resolve().parents[0]
+ASSETS_DIR = BASE_DIR / "assets"
+ASSETS_DIR.mkdir(exist_ok=True)
+CACHE_DIR = BASE_DIR / ".cache"
+CACHE_DIR.mkdir(parents=True, exist_ok=True)
+SUPPORTED_FORMATS = ["jpg", "jpeg", "png", "webp"]
+GITHUB_RAW_BASE = "https://raw.githubusercontent.com/killshotttttt/ClashAssets/main/assets"
 
 @contextlib.asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
@@ -53,12 +62,6 @@ app = FastAPI(middleware=middleware, lifespan=lifespan)
 
 # Templates live in `templates/`
 templates = Jinja2Templates(directory="templates")
-
-BASE_DIR = Path(__file__).resolve().parents[0]
-CACHE_DIR = BASE_DIR / ".cache"
-CACHE_DIR.mkdir(parents=True, exist_ok=True)
-SUPPORTED_FORMATS = ["jpg", "jpeg", "png", "webp"]
-GITHUB_RAW_BASE = "https://raw.githubusercontent.com/killshotttttt/ClashAssets/main/assets"
 
 async def download_from_github(file_path: str) -> bytes:
     url = f"{GITHUB_RAW_BASE}/{file_path}"
@@ -121,18 +124,106 @@ async def add_cache_control_header(request: Request, call_next: Callable):
     response.headers["Cache-Control"] = "public, max-age=2592000"
     return response
 
+# ----------- Asset Lab Methods ------------
+
+def load_image_map():
+    map_path = ASSETS_DIR / "image_map.json"
+    if not map_path.exists():
+        return {}
+    with open(map_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def save_image_map(data):
+    map_path = ASSETS_DIR / "image_map.json"
+    with open(map_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+def process_and_save_image(image_bytes: bytes, asset_type: str, asset_name: str, slug: str, level: str = None):
+    # PIL Processing
+    img = Image.open(io.BytesIO(image_bytes)).convert("RGBA")
+    alpha = img.split()[-1]
+    bbox = alpha.getbbox()
+    if not bbox:
+        raise ValueError("Empty image")
+
+    cropped = img.crop(bbox)
+    w, h = cropped.size
+    size = max(w, h)
+    
+    # Make square
+    canvas = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    canvas.paste(cropped, ((size - w)//2, (size - h)//2))
+
+    # Determine paths
+    image_map = load_image_map()
+    
+    # Try to find existing folder from current entries
+    existing_folder = None
+    type_data = image_map.get(asset_type, {})
+    entry_id = None
+    for eid, info in type_data.items():
+        if info.get("name") == asset_name:
+            entry_id = eid
+            sample_path = None
+            if "levels" in info and info["levels"]:
+                sample_path = list(info["levels"].values())[0]
+            elif "icon" in info:
+                sample_path = info["icon"]
+            elif "poses" in info and info["poses"]:
+                sample_path = list(info["poses"].values())[0]
+            
+            if sample_path:
+                existing_folder = "/".join(sample_path.lstrip("/").split("/")[:-1])
+            break
+
+    if existing_folder:
+        rel_dir = existing_folder
+    else:
+        # Standardize folder name if creating new
+        base_type = "home-base"
+        if asset_type in ["builder-base", "capital-base"]:
+            base_type = asset_type
+        folder_slug = asset_name.lower().replace(" ", "-").replace(".", "")
+        rel_dir = f"{base_type}/{asset_type}/{folder_slug}"
+    
+    out_filename = f"{slug}.png"
+    rel_path = f"/{rel_dir}/{out_filename}"
+    
+    abs_path = ASSETS_DIR / rel_dir
+    abs_path.mkdir(parents=True, exist_ok=True)
+    canvas.save(abs_path / out_filename)
+    
+    # Update Map
+    if not entry_id:
+        entry_id = str(random.randint(2000000, 2999999))
+        type_data[entry_id] = {"name": asset_name}
+        image_map[asset_type] = type_data
+    
+    entry = type_data[entry_id]
+    if level:
+        if "levels" not in entry:
+            entry["levels"] = {}
+        entry["levels"][str(level)] = rel_path
+    else:
+        entry["icon"] = rel_path
+
+    save_image_map(image_map)
+    return rel_path
+
+# ----------- Routes ------------
+
 @app.get("/")
 async def gallery(request: Request):
     global images, translations
     
     # Reload from local disk to catch new uploads
     try:
-        image_map_path = BASE_DIR / "assets" / "image_map.json"
+        image_map_path = ASSETS_DIR / "image_map.json"
         if image_map_path.exists():
             with open(image_map_path, "r", encoding="utf-8") as f:
                 images = json.load(f)
         
-        trans_path = BASE_DIR / "assets" / "translations.json"
+        trans_path = ASSETS_DIR / "translations.json"
         if trans_path.exists():
             with open(trans_path, "r", encoding="utf-8") as f:
                 translations = json.load(f)
@@ -147,6 +238,31 @@ async def gallery(request: Request):
             "translations": translations,
         }
     )
+
+@app.get("/lab", response_class=HTMLResponse)
+async def lab(request: Request):
+    image_map = load_image_map()
+    return templates.TemplateResponse("upload.html", {
+        "request": request, 
+        "images": image_map
+    })
+
+@app.post("/upload")
+async def handle_upload(
+    file: UploadFile = File(...),
+    asset_type: str = Form(...),
+    asset_name: str = Form(...),
+    slug: str = Form(...),
+    level: str = Form(None)
+):
+    try:
+        content = await file.read()
+        rel_path = process_and_save_image(content, asset_type, asset_name, slug, level)
+        return JSONResponse({"status": "success", "path": rel_path})
+    except Exception as e:
+        logger.error(f"Upload failed: {e}")
+        return JSONResponse({"status": "error", "message": str(e)}, status_code=400)
+
 
 @app.get("/{file_path:path}", name="Get a file")
 async def serve_file(file_path: str):

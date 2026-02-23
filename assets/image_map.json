@@ -1087,7 +1087,8 @@
       "name": "Firespitter",
       "levels": {
         "1": "/home-base/buildings/firespitter/firespitter-1.png",
-        "2": "/home-base/buildings/firespitter/firespitter-2.png"
+        "2": "/home-base/buildings/firespitter/firespitter-2.png",
+        "3": "/home-base/buildings/firespitter/firespitter-3.png"
       }
     },
     "1000093": {
