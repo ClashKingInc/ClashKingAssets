@@ -30,8 +30,9 @@ class StaticUpdater:
         # base path for the static files to be stored in
         self.BASE_PATH = "assets/"
 
-        self.FINGERPRINT = "475cb6a2d13043762034ddd6a198bad23e0782eb"
+        self.FINGERPRINT = "9840a5081b8f7b08e909af73bad47e34c342bea7"
         self.CLASH_VERSION = "" or "latest"
+
         self.VERSION_PARAM = "version" if self.CLASH_VERSION == "latest" else "versionCode"
         self.APK_URL = f"https://d.apkpure.net/b/APK/com.supercell.clashofclans?{self.VERSION_PARAM}={self.CLASH_VERSION}"
 
@@ -143,6 +144,22 @@ class StaticUpdater:
 
         columns   = rows[0]
         types_row = rows[1]
+
+        # If GlobalID column exists at position 1, move it to the end
+        if len(columns) > 1 and columns[1] == "GlobalID":
+            # Reorder columns: [Name, GlobalID, Level, ...] -> [Name, Level, ..., GlobalID]
+            columns = [columns[0]] + columns[2:] + [columns[1]]
+            types_row = [types_row[0]] + types_row[2:] + [types_row[1]]
+            
+            # Reorder all data rows to match
+            reordered_rows = []
+            for row in rows[2:]:
+                if len(row) > 1:
+                    reordered_row = [row[0]] + row[2:] + [row[1]]
+                    reordered_rows.append(reordered_row)
+                else:
+                    reordered_rows.append(row)
+            rows = rows[:2] + reordered_rows
 
         # detect if col[1] really is a numeric level
         is_numeric_level = (
@@ -343,11 +360,7 @@ class StaticUpdater:
 
         new_building_data = []
 
-        #fill in ids, make it easier
-        for _id, (building_name, building_data) in enumerate(self.full_building_data.items(), 1000000):
-            building_data["_id"] = _id
-
-        for _id, (building_name, building_data) in enumerate(self.full_building_data.items(), 1000000):
+        for building_name, building_data in self.full_building_data.items():
             if building_data.get("BuildingClass") in ["Npc", "NonFunctional",
                                                       "Npc Town Hall"] or "Unused" in building_name:
                 continue
@@ -388,7 +401,7 @@ class StaticUpdater:
                 building_data["1"]["MergeRequirement"] = building_data.get("MergeRequirement")
 
             hold_data = {
-                "_id": _id,
+                "_id": building_data.get("GlobalID"),
                 "name": self._translate(tid=building_data.get("TID")),
                 "info": self._translate(tid=building_data.get("InfoTID")),
                 "TID": {
@@ -407,7 +420,7 @@ class StaticUpdater:
             }
 
             # put seasonal defense onto the crafting station
-            if _id == 1000097:
+            if building_data.get("GlobalID") == 1000097:
                 # seasonal defenses are a max townhall thing
                 seasonal_def_data = self._parse_seasonal_defense_data()
                 hold_data["seasonal_defenses"] = seasonal_def_data
@@ -416,7 +429,7 @@ class StaticUpdater:
                 hold_data["gear_up"] = {
                     "level_required": building_data.get("GearUpLevelRequirement"),
                     "resource": self._parse_resource(resource=building_data.get("GearUpResource")),
-                    "building_id": self.full_building_data.get(building_data.get("GearUpBuilding")).get("_id")
+                    "building_id": self.full_building_data.get(building_data.get("GearUpBuilding")).get("GlobalID")
                 }
 
 
@@ -449,7 +462,7 @@ class StaticUpdater:
                         merge_building_data = self.full_building_data.get(name)
                         merge_list.append({
                             "name": self._translate(tid=merge_building_data.get("TID")),
-                            "_id": merge_building_data.get("_id"),
+                            "_id": merge_building_data.get("GlobalID"),
                             "geared_up": True if geared_up == "1" else False,
                             "level": int(level)
                         })
@@ -518,9 +531,9 @@ class StaticUpdater:
 
         for building in new_building_data:
             unlocks = []
-            if building["type"] == "Town Hall":
+            if building["_id"] == 1000001: #townhall id
                 unlocks = townhall_unlocks
-            elif building["type"] == "Town Hall2":
+            elif building["_id"] == 1000034: #builderhall id
                 unlocks = builderhall_unlocks
 
             for unlock_data in unlocks:
@@ -608,15 +621,15 @@ class StaticUpdater:
 
         name_to_id = {}
         new_troop_data = []
-        for _id, (troop_name, troop_data) in enumerate(self.full_troop_data.items(), 4000000):
+        for troop_name, troop_data in self.full_troop_data.items():
             if troop_data.get("DisableProduction", False):
                 continue
             village_type = troop_data.get("VillageType", 0)
             production_building = self.full_building_data.get(troop_data.get("ProductionBuilding")).get("TID")
 
-            name_to_id[(troop_name, village_type)] = _id
+            name_to_id[(troop_name, village_type)] = troop_data.get("GlobalID")
             hold_data = {
-                "_id": _id,
+                "_id": troop_data.get("GlobalID"),
                 "name": self._translate(tid=troop_data.get("TID")),
                 "info": self._translate(tid=troop_data.get("InfoTID")),
                 "TID": {
@@ -750,13 +763,13 @@ class StaticUpdater:
         full_spell_data = self.open_file("spells.json")
 
         new_spell_data = []
-        for _id, (spell_name, spell_data) in enumerate(full_spell_data.items(), 26000000):
+        for spell_name, spell_data in full_spell_data.items():
             if spell_data.get("DisableProduction", False):
                 continue
 
             production_building = self.full_building_data.get(spell_data.get("ProductionBuilding")).get("TID")
             hold_data = {
-                "_id": _id,
+                "_id": spell_data.get("GlobalID"),
                 "name": self._translate(spell_data.get("TID")),
                 "info": self._translate(spell_data.get("InfoTID")),
                 "TID": {
@@ -860,7 +873,7 @@ class StaticUpdater:
 
         new_pet_data = []
         for _id, (pet_name, pet_data) in enumerate(full_pet_data.items(), 73000000):
-            if pet_data.get("Deprecated", False) or pet_name in ["PhoenixEgg"]:
+            if pet_data.get("Deprecated", False) or pet_name in ["Phoenix Egg"]:
                 continue
 
             hold_data = {
@@ -1009,13 +1022,13 @@ class StaticUpdater:
         full_trap_data = self.open_file("traps.json")
 
         new_trap_data = []
-        for _id, (trap_name, trap_data) in enumerate(full_trap_data.items(), 12000000):
+        for trap_name, trap_data in full_trap_data.items():
             if trap_data.get("Disabled", False) or trap_data.get("EnabledByCalendar", False):
                 continue
             village_type = trap_data.get("VillageType", 0)
 
             hold_data = {
-                "_id": _id,
+                "_id": trap_data.get("GlobalID"),
                 "name": self._translate(tid=trap_data.get("TID")),
                 "info": self._translate(tid=trap_data.get("InfoTID")),
                 "TID" : {
@@ -1309,7 +1322,7 @@ class StaticUpdater:
                 if not building_data:
                     continue
                 village_type = building_data.get("VillageType", 0)
-                id = building_data.get("_id")
+                id = building_data.get("GlobalID")
                 quantity = data
 
                 current_quantity = id_quantity_map.get(id, 0)
@@ -1348,11 +1361,11 @@ class StaticUpdater:
         self.full_resource_data = self.open_file("resources.json")
 
         master_data = {
-            "buildings": self._parse_building_data(),
+            "buildings": sorted(self._parse_building_data(), key=lambda x : x["_id"]),
             "traps" : self._parse_trap_data(),
-            "troops": self._parse_troop_data(),
+            "troops": sorted(self._parse_troop_data(), key=lambda x : x["_id"]),
             "guardians": self._parse_guardian_data(),
-            "spells" : self._parse_spell_data(),
+            "spells" : sorted(self._parse_spell_data(), key=lambda x : x["_id"]),
             "heroes": self._parse_hero_data(),
             "pets": self._parse_pet_data(),
             "equipment": self._parse_equipment_data(),
