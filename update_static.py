@@ -3,38 +3,32 @@ Automates updating the static files.
 Now saves both the raw CSV and the generated JSON files.
 If new files need to be added, then place them in the TARGETS list.
 """
-import aiohttp
 import asyncio
 import json
 import logging
 import csv
 import os
-import zipfile
 import zstandard
 import lzma
 from pathlib import Path
 
+from update_utils import apk_url, download_file, fetch_fingerprint
+
 class StaticUpdater:
     def __init__(self):
-
-        self.TARGETS = []
-        self.supported_languages: list[str] = []
         self.USED_TIDS = set()
 
         # keep the raw CSV files
         self.KEEP_CSV = False
         # keep the raw JSON files
-        self.KEEP_JSON = False
+        self.KEEP_JSON = True
         # removes any TIDs not used in the static files
         self.PRUNE_TRANSLATIONS = True
         # base path for the static files to be stored in
         self.BASE_PATH = "assets/"
 
-        self.FINGERPRINT = "9840a5081b8f7b08e909af73bad47e34c342bea7"
-        self.CLASH_VERSION = "" or "latest"
-
-        self.VERSION_PARAM = "version" if self.CLASH_VERSION == "latest" else "versionCode"
-        self.APK_URL = f"https://d.apkpure.net/b/APK/com.supercell.clashofclans?{self.VERSION_PARAM}={self.CLASH_VERSION}"
+        self.FINGERPRINT = os.getenv("FINGERPRINT", "")
+        self.APK_URL = apk_url()
 
         self.translation_data = {}
         self.full_building_data = {}
@@ -50,25 +44,7 @@ class StaticUpdater:
         self.bb_lab_to_townhall = {}
         self.pethouse_to_townhall = {}
 
-    async def download(self, url: str, as_json: bool = False):
-        async with aiohttp.request('GET', url) as fp:
-            if as_json:
-                c = await fp.json()
-            else:
-                c = await fp.read()
-        return c
-
-    async def get_fingerprint(self):
-        data = await self.download(self.APK_URL)
-
-        with open("apk.zip", "wb") as f:
-            f.write(data)
-        zf = zipfile.ZipFile("apk.zip")
-        with zf.open('assets/fingerprint.json') as fp:
-            fingerprint = json.loads(fp.read())['sha']
-
-        os.remove("apk.zip")
-        return fingerprint
+        self.animations_data = {}
 
     def decompress(self, data):
         """
@@ -106,7 +82,7 @@ class StaticUpdater:
         decompressed = lzma.LZMADecompressor().decompress(data)
         return decompressed, {"lzma_prop": o_prop}
 
-    def process_csv(self, data, file_path, save_name):
+    def process_csv(self, data, file_path: str):
         """
         1. Decompress data -> raw CSV
         2. Write raw CSV to disk
@@ -130,6 +106,7 @@ class StaticUpdater:
             decompressed_data = data
 
         # 1) Write out the raw CSV
+        Path(file_path).parent.mkdir(parents=True, exist_ok=True)
         with open(file_path, "wb") as f:
             f.write(decompressed_data)
 
@@ -137,9 +114,6 @@ class StaticUpdater:
         with open(file_path, encoding="utf-8") as csvf:
             rows = list(csv.reader(csvf))
         if len(rows) < 2:
-            with open(f"{save_name}.json", "w", encoding="utf-8") as jf:
-                jf.write("{}")
-            os.remove(file_path)
             return
 
         columns   = rows[0]
@@ -150,7 +124,7 @@ class StaticUpdater:
             # Reorder columns: [Name, GlobalID, Level, ...] -> [Name, Level, ..., GlobalID]
             columns = [columns[0]] + columns[2:] + [columns[1]]
             types_row = [types_row[0]] + types_row[2:] + [types_row[1]]
-            
+
             # Reorder all data rows to match
             reordered_rows = []
             for row in rows[2:]:
@@ -243,10 +217,94 @@ class StaticUpdater:
                     final_data[troop] = data_dict
 
         # 5) Write final JSON
-        with open(f"{save_name}.json", "w", encoding="utf-8") as jf:
+        save_file = file_path.replace(".csv", ".json")
+        with open(save_file, "w", encoding="utf-8") as jf:
             json.dump(final_data, jf, indent=2)
 
         # 6) Delete the CSV
+        if not self.KEEP_CSV:
+            try:
+                os.remove(file_path)
+            except OSError as e:
+                logging.warning(f"Could not delete {file_path}: {e}")
+
+    def process_animations_csv(self, data, file_path: str):
+        if self.is_compressed(data):
+            try:
+                if data[:4] == b"Sig:":
+                    data = data[68:]
+                decompressed_data, _ = self.decompress(data)
+            except Exception:
+                decompressed_data = data
+        else:
+            decompressed_data = data
+
+        Path(file_path).parent.mkdir(parents=True, exist_ok=True)
+        with open(file_path, "wb") as f:
+            f.write(decompressed_data)
+
+        with open(file_path, newline="", encoding="utf-8") as csvf:
+            rows = list(csv.reader(csvf))
+
+        final_data = {}
+        index = 0
+        while index < len(rows):
+            row = rows[index]
+            character_name = row[0].strip() if row else ""
+            if not character_name:
+                index += 1
+                continue
+
+            if index + 1 >= len(rows):
+                break
+
+            header_row = rows[index + 1]
+            columns = [cell.strip() for cell in header_row]
+            if "HasDirections" not in columns:
+                index += 1
+                while index < len(rows) and not (rows[index] and rows[index][0].strip()):
+                    index += 1
+                continue
+
+            column_map = {name: position for position, name in enumerate(columns) if name}
+            current_export_name = None
+            next_index = index + 3
+            character_swf = None
+            animations = []
+            seen_animations = set()
+
+            while next_index < len(rows):
+                data_row = rows[next_index]
+                if data_row and data_row[0].strip():
+                    break
+
+                has_directions = data_row[column_map["HasDirections"]].strip().upper() if len(data_row) > column_map["HasDirections"] else ""
+                export_name = data_row[column_map["ExportName"]].strip() if "ExportName" in column_map and len(data_row) > column_map["ExportName"] else ""
+                swf_value = data_row[column_map["SWF"]].strip() if "SWF" in column_map and len(data_row) > column_map["SWF"] else ""
+
+                if export_name:
+                    current_export_name = export_name
+                if swf_value and not character_swf:
+                    character_swf = swf_value
+
+                if has_directions == "TRUE" and current_export_name and current_export_name not in seen_animations:
+                    seen_animations.add(current_export_name)
+                    animations.append(current_export_name)
+
+                next_index += 1
+
+            if character_swf:
+                final_data[character_name] = {
+                    "swf": character_swf,
+                    "animations": animations,
+                }
+
+            index = next_index
+
+        save_file = file_path.replace(".csv", ".json")
+        with open(save_file, "w", encoding="utf-8") as jf:
+            json.dump(final_data, jf, indent=2)
+
         if not self.KEEP_CSV:
             try:
                 os.remove(file_path)
@@ -297,11 +355,13 @@ class StaticUpdater:
         return self._translate(resource_TID)
 
     def _parse_translation_data(self):
-        full_translation_data = self.open_file("texts.json")
+        full_translation_data = self.open_file("localization/texts.json")
         other_translations = []
-        for language in self.supported_languages:
-            with open(f"texts_{language}.json", "r", encoding="utf-8") as f:
-                other_translations.append((language, json.load(f)))
+        for path in sorted(Path("localization").glob("*.json")):
+            if "text" in path.stem.lower():
+                continue
+            with open(path, "r", encoding="utf-8") as f:
+                other_translations.append((path.stem, json.load(f)))
 
         new_translation_data = {}
         for translation_key, translation_data in full_translation_data.items():
@@ -316,7 +376,7 @@ class StaticUpdater:
         return new_translation_data
 
     def _parse_achievement_data(self):
-        self.full_achievement_data = self.open_file("achievements.json")
+        self.full_achievement_data = self.open_file("logic/achievements.json")
         new_achievement_data = {}
         for achievement_name, achievement_data in self.full_achievement_data.items():
             tid = achievement_data.get("TID")
@@ -353,10 +413,10 @@ class StaticUpdater:
         return list(new_achievement_data.values())
 
     def _parse_building_data(self):
-        self.full_building_data = self.open_file("buildings.json")
-        self.full_supercharges_data = self.open_file("mini_levels.json")
-        self.full_townhall_data = self.open_file("townhall_levels.json")
-        full_weapon_data: dict = self.open_file("weapons.json")
+        self.full_building_data = self.open_file("logic/buildings.json")
+        self.full_supercharges_data = self.open_file("logic/mini_levels.json")
+        self.full_townhall_data = self.open_file("logic/townhall_levels.json")
+        full_weapon_data: dict = self.open_file("logic/weapons.json")
 
         new_building_data = []
 
@@ -542,9 +602,9 @@ class StaticUpdater:
         return new_building_data
 
     def _parse_seasonal_defense_data(self):
-        full_seasonal_defenses = self.open_file("seasonal_defense_archetypes.json")
-        full_seasonal_modules = self.open_file("seasonal_defense_modules.json")
-        full_season_data = self.open_file("seasonal_defense.json")
+        full_seasonal_defenses = self.open_file("logic/seasonal_defense_archetypes.json")
+        full_seasonal_modules = self.open_file("logic/seasonal_defense_modules.json")
+        full_season_data = self.open_file("logic/seasonal_defense.json")
 
         seasons = []
         for season_data in full_season_data.values():
@@ -615,8 +675,8 @@ class StaticUpdater:
         return new_seasonal_defense_data
 
     def _parse_troop_data(self):
-        self.full_troop_data = self.open_file("characters.json")
-        full_super_troop_data = self.open_file("super_licences.json")
+        self.full_troop_data = self.open_file("logic/characters.json")
+        full_super_troop_data = self.open_file("logic/super_licences.json")
         full_super_troop_data = {v.get("Replacement"): v for k, v in full_super_troop_data.items()}
 
         name_to_id = {}
@@ -686,17 +746,22 @@ class StaticUpdater:
                 else:
                     continue
 
+                animation_key = level_data.get("Animation") or troop_data.get("Animation")
+                animation_data = self.animations_data.get(animation_key, {})
+                animations = []
+                swf = animation_data.get("swf", "").replace(".sc", "")
+                for animation in animation_data.get("animations", []):
+                    animations.append(f"{swf}/{animation}.webp")
                 new_level_data = {
                     "level": int(level),
                     "hitpoints": level_data.get("Hitpoints", 0),
                     "dps": level_data.get("DPS", 0),
-
                     "upgrade_time": upgrade_time_seconds,
                     "upgrade_cost": level_data.get("UpgradeCost", 0),
                     "required_lab_level": required_lab_level,
                     "required_townhall": required_townhall,
-
                     "strength_weight": level_data.get("StrengthWeight", 0),
+                    "animations" : animations
                 }
                 hold_data["levels"].append(new_level_data)
 
@@ -707,7 +772,7 @@ class StaticUpdater:
         return new_troop_data
 
     def _parse_guardian_data(self):
-        full_guardian_data = self.open_file("guardians.json")
+        full_guardian_data = self.open_file("logic/guardians.json")
 
         new_guardian_data = []
         for _id, (guardian_name, guardian_data) in enumerate(full_guardian_data.items(), 107000000):
@@ -760,7 +825,7 @@ class StaticUpdater:
         return new_guardian_data
 
     def _parse_spell_data(self):
-        full_spell_data = self.open_file("spells.json")
+        full_spell_data = self.open_file("logic/spells.json")
 
         new_spell_data = []
         for spell_name, spell_data in full_spell_data.items():
@@ -815,7 +880,7 @@ class StaticUpdater:
         return new_spell_data
 
     def _parse_hero_data(self):
-        self.full_hero_data = self.open_file("heroes.json")
+        self.full_hero_data = self.open_file("logic/heroes.json")
 
         new_hero_data = []
         for _id, (hero_name, hero_data) in enumerate(self.full_hero_data.items(), 28000000):
@@ -869,7 +934,7 @@ class StaticUpdater:
         return new_hero_data
 
     def _parse_pet_data(self):
-        full_pet_data = self.open_file("pets.json")
+        full_pet_data = self.open_file("logic/pets.json")
 
         new_pet_data = []
         for _id, (pet_name, pet_data) in enumerate(full_pet_data.items(), 73000000):
@@ -923,7 +988,7 @@ class StaticUpdater:
         return new_pet_data
 
     def _parse_equipment_data(self):
-        full_equipment_data = self.open_file("character_items.json")
+        full_equipment_data = self.open_file("logic/character_items.json")
 
         new_equipment_data = []
         for _id, (equipment_name, equipment_data) in enumerate(full_equipment_data.items(), 90000000):
@@ -1019,7 +1084,7 @@ class StaticUpdater:
         return new_equipment_data
 
     def _parse_trap_data(self):
-        full_trap_data = self.open_file("traps.json")
+        full_trap_data = self.open_file("logic/traps.json")
 
         new_trap_data = []
         for trap_name, trap_data in full_trap_data.items():
@@ -1065,7 +1130,7 @@ class StaticUpdater:
         return new_trap_data
 
     def _parse_decoration_data(self):
-        full_deco_data = self.open_file("decos.json")
+        full_deco_data = self.open_file("logic/decos.json")
         new_deco_data = []
         for _id, (deco_name, deco_data) in enumerate(full_deco_data.items(), 18000000):
             if deco_data.get("TID") in ["TID_DECORATION_GENERIC", "TID_DECORATION_NATIONAL_FLAG"]:
@@ -1090,7 +1155,7 @@ class StaticUpdater:
         return new_deco_data
 
     def _parse_capital_part_data(self):
-        full_capital_part_data = self.open_file("building_parts.json")
+        full_capital_part_data = self.open_file("logic/building_parts.json")
         new_capital_part_data = []
         for _id, (part_name, part_data) in enumerate(full_capital_part_data.items(), 82000000):
             if part_data.get("Deprecated", False):
@@ -1119,7 +1184,7 @@ class StaticUpdater:
         return new_capital_part_data
 
     def _parse_obstacle_data(self):
-        full_obstacle_data = self.open_file("obstacles.json")
+        full_obstacle_data = self.open_file("logic/obstacles.json")
 
         new_obstacle_data = []
         for _id, (obstacle_name, obstacle_data) in enumerate(full_obstacle_data.items(), 8000000):
@@ -1142,7 +1207,7 @@ class StaticUpdater:
         return new_obstacle_data
 
     def _parse_scenery_data(self):
-        full_scenery_data = self.open_file("village_backgrounds.json")
+        full_scenery_data = self.open_file("logic/village_backgrounds.json")
 
         new_scenery_data = []
         for _id, (scenery_name, scenery_data) in enumerate(full_scenery_data.items(), 60000000):
@@ -1165,6 +1230,8 @@ class StaticUpdater:
                 },
                 "type": type_map.get(scenery_data.get("HomeType")),
                 "music" : scenery_data.get("Music"),
+                "icon": scenery_data.get("Icon", "").replace(".sctx", ".png"),
+                "thumbnail": scenery_data.get("Thumbnail", "").replace(".sctx", ".png"),
             }
             if  scenery_data.get("FreeBackground", False):
                 scenery_data["free"] = True
@@ -1176,7 +1243,7 @@ class StaticUpdater:
         return new_scenery_data
 
     def _parse_skin_data(self):
-        full_skin_data = self.open_file("skins.json")
+        full_skin_data = self.open_file("logic/skins.json")
 
         new_skins_data = []
         for _id, (skin_name, skin_data) in enumerate(full_skin_data.items(), 52000000):
@@ -1197,7 +1264,7 @@ class StaticUpdater:
         return new_skins_data
 
     def _parse_helper_data(self):
-        full_helper_data = self.open_file("villager_apprentices.json")
+        full_helper_data = self.open_file("logic/villager_apprentices.json")
 
         new_helper_data = []
         for _id, (helper_name, helper_data) in enumerate(full_helper_data.items(), 93000000):
@@ -1228,7 +1295,7 @@ class StaticUpdater:
         return new_helper_data
 
     def _parse_war_league_data(self):
-        full_war_league_data = self.open_file("war_leagues.json")
+        full_war_league_data = self.open_file("logic/war_leagues.json")
 
         new_war_league_data = []
         for _id, (war_league_name, war_league_data) in enumerate(full_war_league_data.items(), 48000000):
@@ -1254,7 +1321,7 @@ class StaticUpdater:
         return new_war_league_data
 
     def _parse_league_tier_data(self):
-        full_league_tier_data = self.open_file("league_tiers.json")
+        full_league_tier_data = self.open_file("logic/league_tiers.json")
 
         new_league_tier_data = []
         for _id, (league_name, league_data) in enumerate(full_league_tier_data.items(), 105000000):
@@ -1357,8 +1424,9 @@ class StaticUpdater:
     def create_master_json(self):
         self._parse_translation_data()
 
-        self.full_abilities_data = self.open_file("special_abilities.json")
-        self.full_resource_data = self.open_file("resources.json")
+        self.full_abilities_data = self.open_file("logic/special_abilities.json")
+        self.full_resource_data = self.open_file("logic/resources.json")
+        self.animations_data = self.open_file("csv/animations.json")
 
         master_data = {
             "buildings": sorted(self._parse_building_data(), key=lambda x : x["_id"]),
@@ -1390,15 +1458,16 @@ class StaticUpdater:
         with open(f"{self.BASE_PATH}translations.json", "w", encoding="utf-8") as jf:
             jf.write(json.dumps(self.translation_data, indent=2))
 
-        for file_path in self.TARGETS:
-            # 6) Delete the extra jsons
-            if self.KEEP_JSON:
-                continue
-            try:
-                file_path = file_path.replace("csv", "json")
-                os.remove(file_path)
-            except OSError as e:
-                logging.warning(f"Could not delete {file_path}: {e}")
+        if not self.KEEP_JSON:
+            for folder in ("csv", "logic", "localization"):
+                root = Path(folder)
+                if not root.exists():
+                    continue
+                for file_path in root.rglob("*.json"):
+                    try:
+                        file_path.unlink()
+                    except OSError as e:
+                        logging.warning(f"Could not delete {file_path}: {e}")
 
     def generate_constants(self):
         static_data = self.open_file("static_data.json")
@@ -1471,33 +1540,34 @@ class StaticUpdater:
 
     async def download_files(self):
         if not self.FINGERPRINT:
-            self.FINGERPRINT = await self.get_fingerprint()
+            self.FINGERPRINT = await fetch_fingerprint(self.APK_URL)
 
         BASE_URL = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
 
-        fingerprint_file = await self.download(url=f"{BASE_URL}/fingerprint.json", as_json=True)
+        fingerprint_file = await download_file(url=f"{BASE_URL}/fingerprint.json", as_json=True)
 
         for file_data in fingerprint_file.get("files"):
             file_path: str = file_data["file"]
-            if not file_path.startswith("logic/") and not file_path.startswith("localization/"):
+            if (
+                not file_path.startswith("logic/")
+                and not file_path.startswith("localization/")
+                and file_path != "csv/animations.csv"
+            ):
                 continue
 
             download_url = f"{BASE_URL}/{file_path}"
             print(f"Downloading: {download_url}")
-            data = await self.download(url=download_url)
+            data = await download_file(url=download_url)
 
-            save_path = file_path.split("/", )[-1]
-
-            if file_path.startswith("localization/") and "texts" not in save_path:
-                self.supported_languages.append(save_path.replace(".csv", ""))
-                save_path = f"texts_{save_path}"
-
-            with open(save_path, "wb") as f:
+            Path(file_path).parent.mkdir(parents=True, exist_ok=True)
+            with open(file_path, "wb") as f:
                 f.write(data)
 
-            print(f"Processing: {save_path}")
-            self.process_csv(data=data, file_path=save_path, save_name=save_path.split(".")[0])
-            self.TARGETS.append(save_path)
+            print(f"Processing: {file_path}")
+            if file_path == "csv/animations.csv":
+                self.process_animations_csv(data=data, file_path=file_path)
+            else:
+                self.process_csv(data=data, file_path=file_path)
 
         self.create_master_json()
 
@@ -1506,4 +1576,3 @@ class StaticUpdater:
 
 if __name__ == "__main__":
     StaticUpdater().run()
-

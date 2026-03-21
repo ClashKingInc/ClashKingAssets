@@ -1,0 +1,359 @@
+package sc
+
+import (
+	"fmt"
+	"image"
+	"image/color"
+	"math"
+)
+
+var shapeBitmapTags = map[uint8]bool{
+	4:  true,
+	17: true,
+	22: true,
+}
+
+func loadShape(reader *Reader, tag uint8, textures []*Texture) (*Shape, error) {
+	id, err := reader.ReadU16()
+	if err != nil {
+		return nil, err
+	}
+	bitmapCount, err := reader.ReadU16()
+	if err != nil {
+		return nil, err
+	}
+	if tag == 18 {
+		if _, err := reader.ReadU16(); err != nil {
+			return nil, err
+		}
+	}
+
+	shape := &Shape{ID: id, Bitmaps: make([]ShapeBitmap, 0, bitmapCount)}
+	for {
+		bitmapTag, err := reader.ReadU8()
+		if err != nil {
+			return nil, err
+		}
+		bitmapTagLength, err := reader.ReadI32()
+		if err != nil {
+			return nil, err
+		}
+		bitmapEnd := reader.Pos() + int(bitmapTagLength)
+
+		if bitmapTag == 0 {
+			return shape, nil
+		}
+		if !shapeBitmapTags[bitmapTag] {
+			if err := reader.Seek(bitmapEnd); err != nil {
+				return nil, err
+			}
+			continue
+		}
+
+		bitmap, err := loadShapeBitmap(reader, bitmapTag, textures)
+		if err != nil {
+			return nil, err
+		}
+		shape.Bitmaps = append(shape.Bitmaps, bitmap)
+		if reader.Pos() < bitmapEnd {
+			if err := reader.Seek(bitmapEnd); err != nil {
+				return nil, err
+			}
+		}
+	}
+}
+
+func loadShapeBitmap(reader *Reader, tag uint8, textures []*Texture) (ShapeBitmap, error) {
+	textureIndex, err := reader.ReadU8()
+	if err != nil {
+		return ShapeBitmap{}, err
+	}
+	maxRects := tag == 4
+	pointsCount := 4
+	if !maxRects {
+		pc, err := reader.ReadU8()
+		if err != nil {
+			return ShapeBitmap{}, err
+		}
+		pointsCount = int(pc)
+	}
+	bitmap := ShapeBitmap{
+		TextureIndex: int(textureIndex),
+		MaxRects:     maxRects,
+		XYCoords:     make([]Point, 0, pointsCount),
+		UVCoords:     make([]Point, 0, pointsCount),
+	}
+
+	for i := 0; i < pointsCount; i++ {
+		x, err := reader.ReadTwip()
+		if err != nil {
+			return ShapeBitmap{}, err
+		}
+		y, err := reader.ReadTwip()
+		if err != nil {
+			return ShapeBitmap{}, err
+		}
+		bitmap.XYCoords = append(bitmap.XYCoords, Point{X: x, Y: y})
+	}
+
+	texWidth, texHeight := 0.0, 0.0
+	if int(textureIndex) < len(textures) && textures[textureIndex] != nil {
+		texWidth = float64(textures[textureIndex].Width)
+		texHeight = float64(textures[textureIndex].Height)
+	}
+	for i := 0; i < pointsCount; i++ {
+		u16, err := reader.ReadU16()
+		if err != nil {
+			return ShapeBitmap{}, err
+		}
+		v16, err := reader.ReadU16()
+		if err != nil {
+			return ShapeBitmap{}, err
+		}
+		u := float64(u16)
+		v := float64(v16)
+		if tag == 22 {
+			u = float64(u16) / 65535.0 * texWidth
+			v = float64(v16) / 65535.0 * texHeight
+		}
+		bitmap.UVCoords = append(bitmap.UVCoords, Point{
+			X: math.Ceil(u),
+			Y: math.Ceil(v),
+		})
+	}
+
+	return bitmap, nil
+}
+
+func (b ShapeBitmap) UVBounds() (left, top, right, bottom int) {
+	if len(b.UVCoords) == 0 {
+		return 0, 0, 1, 1
+	}
+	minX := b.UVCoords[0].X
+	maxX := b.UVCoords[0].X
+	minY := b.UVCoords[0].Y
+	maxY := b.UVCoords[0].Y
+	for _, p := range b.UVCoords[1:] {
+		if p.X < minX {
+			minX = p.X
+		}
+		if p.X > maxX {
+			maxX = p.X
+		}
+		if p.Y < minY {
+			minY = p.Y
+		}
+		if p.Y > maxY {
+			maxY = p.Y
+		}
+	}
+
+	left = int(minX)
+	top = int(minY)
+	right = int(maxX)
+	bottom = int(maxY)
+	if right-left == 0 {
+		right++
+	}
+	if bottom-top == 0 {
+		bottom++
+	}
+	return
+}
+
+func (b ShapeBitmap) SpriteImage(textures []*Texture) (*image.NRGBA, error) {
+	if b.TextureIndex < 0 || b.TextureIndex >= len(textures) || textures[b.TextureIndex] == nil {
+		return nil, fmt.Errorf("texture %d is not available", b.TextureIndex)
+	}
+	texture := textures[b.TextureIndex]
+	if texture.Image == nil {
+		if texture.LoadError != "" {
+			return nil, fmt.Errorf("texture %d failed to decode: %s", b.TextureIndex, texture.LoadError)
+		}
+		return nil, fmt.Errorf("texture %d image is not loaded", b.TextureIndex)
+	}
+	src := texture.Image
+	if len(b.UVCoords) == 0 {
+		return image.NewNRGBA(image.Rect(0, 0, 1, 1)), nil
+	}
+
+	w, h := b.uvSize()
+	if w == 1 && h == 1 {
+		x := int(b.UVCoords[0].X)
+		y := int(b.UVCoords[0].Y)
+		if image.Pt(x, y).In(src.Rect) {
+			c := src.NRGBAAt(x, y)
+			sprite := image.NewNRGBA(image.Rect(0, 0, 1, 1))
+			sprite.SetNRGBA(0, 0, c)
+			return sprite, nil
+		}
+		return image.NewNRGBA(image.Rect(0, 0, 1, 1)), nil
+	}
+
+	left, top, right, bottom := b.UVBounds()
+	sprite := image.NewNRGBA(image.Rect(0, 0, right-left, bottom-top))
+	for y := top; y < bottom; y++ {
+		for x := left; x < right; x++ {
+			if !pointInPolygon(float64(x)+0.5, float64(y)+0.5, b.UVCoords) && !pointOnPolygonEdge(float64(x)+0.5, float64(y)+0.5, b.UVCoords) {
+				continue
+			}
+			if !image.Pt(x, y).In(src.Rect) {
+				continue
+			}
+			sprite.SetNRGBA(x-left, y-top, src.NRGBAAt(x, y))
+		}
+	}
+	return sprite, nil
+}
+
+func (b ShapeBitmap) LocalTransform() (Matrix, error) {
+	left, top, _, _ := b.UVBounds()
+	local := make([]Point, len(b.UVCoords))
+	for i, p := range b.UVCoords {
+		local[i] = Point{X: p.X - float64(left), Y: p.Y - float64(top)}
+	}
+	return solveAffine(local, b.XYCoords)
+}
+
+func (b ShapeBitmap) uvSize() (int, int) {
+	left, top, right, bottom := b.UVBounds()
+	return right - left, bottom - top
+}
+
+func pointInPolygon(x, y float64, poly []Point) bool {
+	inside := false
+	for i, pi := range poly {
+		pj := poly[(i+len(poly)-1)%len(poly)]
+		intersect := ((pi.Y > y) != (pj.Y > y)) &&
+			(x < (pj.X-pi.X)*(y-pi.Y)/(pj.Y-pi.Y+1e-12)+pi.X)
+		if intersect {
+			inside = !inside
+		}
+	}
+	return inside
+}
+
+func pointOnPolygonEdge(x, y float64, poly []Point) bool {
+	for i, a := range poly {
+		b := poly[(i+1)%len(poly)]
+		if pointOnSegment(x, y, a, b) {
+			return true
+		}
+	}
+	return false
+}
+
+func pointOnSegment(x, y float64, a, b Point) bool {
+	cross := (x-a.X)*(b.Y-a.Y) - (y-a.Y)*(b.X-a.X)
+	if math.Abs(cross) > 1e-6 {
+		return false
+	}
+	dot := (x-a.X)*(b.X-a.X) + (y-a.Y)*(b.Y-a.Y)
+	if dot < 0 {
+		return false
+	}
+	lengthSq := (b.X-a.X)*(b.X-a.X) + (b.Y-a.Y)*(b.Y-a.Y)
+	return dot <= lengthSq+1e-6
+}
+
+func solveAffine(src, dst []Point) (Matrix, error) {
+	if len(src) != len(dst) || len(src) == 0 {
+		return IdentityMatrix(), fmt.Errorf("invalid affine point set")
+	}
+	if len(src) == 1 {
+		return Matrix{A: 1, D: 1, Tx: dst[0].X - src[0].X, Ty: dst[0].Y - src[0].Y}, nil
+	}
+
+	var m [3][3]float64
+	var bx [3]float64
+	var by [3]float64
+	for i := range src {
+		u, v := src[i].X, src[i].Y
+		x, y := dst[i].X, dst[i].Y
+		row := [3]float64{u, v, 1}
+		for r := 0; r < 3; r++ {
+			for c := 0; c < 3; c++ {
+				m[r][c] += row[r] * row[c]
+			}
+			bx[r] += row[r] * x
+			by[r] += row[r] * y
+		}
+	}
+
+	sx, err := solve3x3(m, bx)
+	if err != nil {
+		return IdentityMatrix(), err
+	}
+	sy, err := solve3x3(m, by)
+	if err != nil {
+		return IdentityMatrix(), err
+	}
+
+	return Matrix{
+		A:  sx[0],
+		C:  sx[1],
+		Tx: sx[2],
+		B:  sy[0],
+		D:  sy[1],
+		Ty: sy[2],
+	}, nil
+}
+
+func solve3x3(m [3][3]float64, b [3]float64) ([3]float64, error) {
+	aug := [3][4]float64{}
+	for i := 0; i < 3; i++ {
+		for j := 0; j < 3; j++ {
+			aug[i][j] = m[i][j]
+		}
+		aug[i][3] = b[i]
+	}
+
+	for col := 0; col < 3; col++ {
+		pivot := col
+		for row := col + 1; row < 3; row++ {
+			if math.Abs(aug[row][col]) > math.Abs(aug[pivot][col]) {
+				pivot = row
+			}
+		}
+		if math.Abs(aug[pivot][col]) < 1e-10 {
+			return [3]float64{}, fmt.Errorf("singular affine system")
+		}
+		if pivot != col {
+			aug[col], aug[pivot] = aug[pivot], aug[col]
+		}
+		factor := aug[col][col]
+		for j := col; j < 4; j++ {
+			aug[col][j] /= factor
+		}
+		for row := 0; row < 3; row++ {
+			if row == col {
+				continue
+			}
+			f := aug[row][col]
+			for j := col; j < 4; j++ {
+				aug[row][j] -= f * aug[col][j]
+			}
+		}
+	}
+
+	return [3]float64{aug[0][3], aug[1][3], aug[2][3]}, nil
+}
+
+func toNRGBA(img image.Image) *image.NRGBA {
+	if out, ok := img.(*image.NRGBA); ok {
+		return out
+	}
+	b := img.Bounds()
+	out := image.NewNRGBA(b)
+	for y := b.Min.Y; y < b.Max.Y; y++ {
+		for x := b.Min.X; x < b.Max.X; x++ {
+			out.Set(x, y, img.At(x, y))
+		}
+	}
+	return out
+}
+
+func colorToNRGBA(c color.Color) color.NRGBA {
+	r, g, b, a := c.RGBA()
+	return color.NRGBA{R: uint8(r >> 8), G: uint8(g >> 8), B: uint8(b >> 8), A: uint8(a >> 8)}
+}
