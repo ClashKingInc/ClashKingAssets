@@ -138,7 +138,7 @@ def save_image_map(data):
     with open(map_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
-def process_and_save_image(image_bytes: bytes, asset_type: str, asset_name: str, slug: str, level: str = None):
+def process_and_save_image(image_bytes: bytes, asset_type: str, asset_name: str, slug: str, level: str = None, key: str = None):
     # PIL Processing
     img = Image.open(io.BytesIO(image_bytes)).convert("RGBA")
     alpha = img.split()[-1]
@@ -204,6 +204,13 @@ def process_and_save_image(image_bytes: bytes, asset_type: str, asset_name: str,
         if "levels" not in entry:
             entry["levels"] = {}
         entry["levels"][str(level)] = rel_path
+    elif key:
+        if key.startswith("poses."):
+            pose_num = key.split(".")[1]
+            if "poses" not in entry: entry["poses"] = {}
+            entry["poses"][pose_num] = rel_path
+        else:
+            entry[key] = rel_path
     else:
         entry["icon"] = rel_path
 
@@ -253,15 +260,47 @@ async def handle_upload(
     asset_type: str = Form(...),
     asset_name: str = Form(...),
     slug: str = Form(...),
-    level: str = Form(None)
+    level: str = Form(None),
+    key: str = Form(None)
 ):
     try:
         content = await file.read()
-        rel_path = process_and_save_image(content, asset_type, asset_name, slug, level)
+        rel_path = process_and_save_image(content, asset_type, asset_name, slug, level, key)
         return JSONResponse({"status": "success", "path": rel_path})
     except Exception as e:
         logger.error(f"Upload failed: {e}")
         return JSONResponse({"status": "error", "message": str(e)}, status_code=400)
+
+@app.post("/delete-asset")
+async def delete_asset(request: Request):
+    data = await request.json()
+    asset_type = data.get("asset_type")
+    asset_name = data.get("asset_name")
+    level = data.get("level")
+    key = data.get("key")
+    
+    image_map = load_image_map()
+    if asset_type in image_map:
+        for eid, info in image_map[asset_type].items():
+            if info.get("name") == asset_name:
+                changed = False
+                if level is not None and "levels" in info and str(level) in info["levels"]:
+                    del info["levels"][str(level)]
+                    changed = True
+                elif key is not None:
+                    if key.startswith("poses."):
+                        p_num = key.split(".")[1]
+                        if "poses" in info and p_num in info["poses"]:
+                            del info["poses"][p_num]
+                            changed = True
+                    elif key in info:
+                        del info[key]
+                        changed = True
+                
+                if changed:
+                    save_image_map(image_map)
+                    return JSONResponse({"status": "success"})
+    return JSONResponse({"status": "error", "message": "Not found"}, status_code=404)
 
 
 @app.get("/{file_path:path}", name="Get a file")

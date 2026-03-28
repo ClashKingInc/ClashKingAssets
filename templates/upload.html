@@ -1,253 +1,311 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="max-w-4xl mx-auto py-10 px-6">
-    <div class="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-        <h1 class="text-4xl font-black text-gray-900 mb-2">Asset Lab</h1>
-        <p class="text-gray-500 mb-8 font-medium">Visual manager for ClashKing image processing.</p>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <!-- Left: Drop Zone -->
-            <div id="dropZone" class="relative group cursor-pointer">
-                <div
-                    class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000">
-                </div>
-                <div
-                    class="relative bg-white border-2 border-dashed border-gray-200 rounded-2xl p-12 text-center hover:border-indigo-400 transition-all flex flex-col items-center justify-center min-h-[400px]">
-                    <div id="previewContainer" class="hidden mb-6 w-full flex flex-col items-center">
-                        <img id="imgPreview" src="#"
-                            class="max-h-64 rounded-lg shadow-lg object-contain bg-slate-50 p-2 border border-gray-100 mb-4 animate-in fade-in zoom-in duration-300">
-                        <p id="fileNameLabel" class="text-sm font-semibold text-gray-900 truncate max-w-full px-4"></p>
-                    </div>
-
-                    <div id="uploadPrompt" class="flex flex-col items-center">
-                        <div class="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center mb-6">
-                            <svg class="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M12 4v16m8-8H4"></path>
-                            </svg>
-                        </div>
-                        <p class="text-lg font-bold text-gray-900">Drop asset here</p>
-                        <p class="text-sm text-gray-400 mt-1">or click to browse your files</p>
-                    </div>
-                    <input type="file" id="fileInput" class="hidden" accept="image/png">
-                </div>
-            </div>
-
-            <!-- Right: Meta Data -->
-            <div class="flex flex-col justify-center space-y-6">
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Category
-                            Type</label>
-                        <select id="assetType"
-                            class="w-full bg-gray-50 border-0 rounded-xl px-4 py-3 text-gray-900 focus:ring-2 focus:ring-indigo-500 font-semibold appearance-none transition-all">
-                            {% for section in images.keys() %}
-                            <option value="{{ section }}" {% if section=='buildings' %}selected{% endif %}>{{
-                                section.replace('_',' ').title() }}</option>
-                            {% endfor %}
-                            <option value="custom">Custom (New Section)</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Asset
-                            Name</label>
-                        <input type="text" id="assetName" list="nameList" placeholder="e.g. Town Hall"
-                            class="w-full bg-gray-50 border-0 rounded-xl px-4 py-3 text-gray-900 focus:ring-2 focus:ring-indigo-500 font-semibold transition-all">
-                        <datalist id="nameList"></datalist>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Slug
-                                (Filename)</label>
-                            <input type="text" id="assetSlug" placeholder="e.g. town-hall-18"
-                                class="w-full bg-gray-50 border-0 rounded-xl px-4 py-3 text-gray-900 focus:ring-2 focus:ring-indigo-500 font-semibold transition-all">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Level
-                                (Optional)</label>
-                            <input type="number" id="assetLevel" placeholder="18"
-                                class="w-full bg-gray-50 border-0 rounded-xl px-4 py-3 text-gray-900 focus:ring-2 focus:ring-indigo-500 font-semibold transition-all">
-                        </div>
-                    </div>
-                </div>
-
-                <button id="processBtn" disabled
-                    class="w-full py-4 bg-gray-100 text-gray-400 font-black rounded-2xl transition-all uppercase tracking-widest hover:translate-y-[-2px] active:scale-95 disabled:hover:translate-y-0 disabled:active:scale-100">
-                    Process Asset
-                </button>
-
-                <div id="statusMsg" class="text-sm font-medium text-center opacity-0 transition-opacity">Asset processed
-                    successfully!</div>
-            </div>
-        </div>
+<div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+  <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+    <div>
+      <h1 class="text-3xl font-black text-gray-900">Asset Lab</h1>
+      <p class="text-gray-500 font-medium mt-1">Visually manage and update Clash assets.</p>
     </div>
+    
+    <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+      <button onclick="createNewAsset()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold shadow transition-colors flex items-center justify-center gap-2">
+        <span>+</span> New Asset
+      </button>
+      
+      <div class="relative">
+        <input id="searchInput" type="text" placeholder="Search assets..." 
+          class="border border-gray-300 rounded-lg pl-10 pr-4 py-2 w-full md:w-64 focus:ring-2 focus:ring-indigo-500 transition-all shadow-sm">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+      </div>
+      
+      <select id="sectionFilter" class="border border-gray-300 rounded-lg px-4 py-2 bg-white w-full md:w-auto focus:ring-2 focus:ring-indigo-500 shadow-sm cursor-pointer">
+        {% for section in images.keys() %}
+        <option value="{{ section }}" {% if section == 'buildings' %}selected{% endif %}>{{ section.replace('_', ' ').title() }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div id="labContainer" class="flex flex-col gap-6">
+    <!-- Rendered via JS -->
+  </div>
+</div>
+
+<!-- Hidden File Input for Auto Uploads -->
+<input type="file" id="autoFileInput" class="hidden" accept="image/png,image/jpeg,image/webp">
+
+<!-- Upload Overlay -->
+<div id="uploadOverlay" class="fixed inset-0 bg-indigo-900 bg-opacity-80 hidden flex-col items-center justify-center z-[100] backdrop-blur-sm">
+  <div class="animate-bounce mb-4 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl">
+     <svg class="w-10 h-10 text-indigo-600 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+     </svg>
+  </div>
+  <h2 class="text-white text-2xl font-black tracking-widest uppercase" id="uploadStatusText">Processing Asset...</h2>
 </div>
 
 <script>
-    const imagesData = {{ images | tojson }};
-    const dropZone = document.getElementById('dropZone');
-    const fileInput = document.getElementById('fileInput');
-    const imgPreview = document.getElementById('imgPreview');
-    const previewContainer = document.getElementById('previewContainer');
-    const uploadPrompt = document.getElementById('uploadPrompt');
-    const fileNameLabel = document.getElementById('fileNameLabel');
-    const processBtn = document.getElementById('processBtn');
+  let imagesData = {{ images | tojson }};
+  const labContainer = document.getElementById('labContainer');
+  const sectionFilter = document.getElementById('sectionFilter');
+  const searchInput = document.getElementById('searchInput');
+  const fileInput = document.getElementById('autoFileInput');
+  const uploadOverlay = document.getElementById('uploadOverlay');
 
-    // Selects
-    const assetType = document.getElementById('assetType');
-    const assetName = document.getElementById('assetName');
-    const assetSlug = document.getElementById('assetSlug');
-    const assetLevel = document.getElementById('assetLevel');
-    const nameList = document.getElementById('nameList');
-    const statusMsg = document.getElementById('statusMsg');
+  let currentUploadContext = null;
 
-    // Update name list based on type
-    const updateNames = () => {
-        const type = assetType.value;
-        nameList.innerHTML = '';
-        const items = Object.values(imagesData[type] || {});
-        items.forEach(item => {
-            const opt = document.createElement('option');
-            opt.value = item.name;
-            nameList.appendChild(opt);
-        });
+  function renderLab() {
+    const section = sectionFilter.value;
+    const search = searchInput.value.toLowerCase();
+    const items = imagesData[section] || {};
 
-        // Trigger auto-level if the selected name already exists in this type
-        const entry = items.find(e => e.name.toLowerCase() === assetName.value.toLowerCase());
-        if (entry) updateAutoLevel(entry);
-    };
+    labContainer.innerHTML = '';
 
-    assetType.onchange = updateNames;
-    updateNames();
+    const filteredItems = Object.entries(items).filter(([id, meta]) => {
+      const name = meta.name || '';
+      return name.toLowerCase().includes(search);
+    });
 
-    // Auto-detect metadata from file name
-    const detectMeta = (filename) => {
-        // e.g. gold_storage_lvl19_0.png
-        const cleanName = filename.replace('.png', '').replace(/(_lvl\d+.*$)/i, '').replace(/_/g, ' ');
-        const levelMatch = filename.match(/lvl(\d+)/i);
-
-        // Try to find the closest matching asset name in the current type
-        const currentType = assetType.value;
-        const entries = Object.values(imagesData[currentType] || {});
-
-        let foundEntry = entries.find(e => e.name.toLowerCase() === cleanName.toLowerCase());
-
-        // If no exact match, try partial match
-        if (!foundEntry) {
-            foundEntry = entries.find(e => e.name.toLowerCase().includes(cleanName.toLowerCase()) || cleanName.toLowerCase().includes(e.name.toLowerCase()));
-        }
-
-        if (foundEntry) {
-            assetName.value = foundEntry.name;
-            updateAutoLevel(foundEntry);
-        } else {
-            assetName.value = cleanName.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-            if (levelMatch) assetLevel.value = levelMatch[1];
-        }
-
-        updateSlug();
-        validate();
-    };
-
-    const updateAutoLevel = (entry) => {
-        if (entry && entry.levels) {
-            const levels = Object.keys(entry.levels).map(l => parseInt(l)).filter(l => !isNaN(l));
-            if (levels.length > 0) {
-                assetLevel.value = Math.max(...levels) + 1;
-            } else {
-                assetLevel.value = 1;
-            }
-        } else {
-            assetLevel.value = "";
-        }
-    };
-
-    const updateSlug = () => {
-        const namePart = assetName.value.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
-        const levelPart = assetLevel.value ? `-${assetLevel.value}` : '';
-        assetSlug.value = `${namePart}${levelPart}`;
-    };
-
-    assetName.oninput = () => {
-        const currentType = assetType.value;
-        const entry = Object.values(imagesData[currentType] || {}).find(e => e.name.toLowerCase() === assetName.value.toLowerCase());
-        if (entry) updateAutoLevel(entry);
-        updateSlug();
-        validate();
-    };
-
-    assetLevel.oninput = () => {
-        updateSlug();
-        validate();
-    };
-
-    const validate = () => {
-        const isValid = fileInput.files.length > 0 && assetType.value && assetName.value && assetSlug.value;
-        processBtn.disabled = !isValid;
-        processBtn.className = isValid
-            ? "w-full py-4 bg-indigo-600 text-white font-black rounded-2xl shadow-xl shadow-indigo-200 transition-all uppercase tracking-widest hover:translate-y-[-2px] active:scale-95"
-            : "w-full py-4 bg-gray-100 text-gray-400 font-black rounded-2xl transition-all uppercase tracking-widest";
-    };
-
-    [assetName, assetSlug, assetLevel].forEach(el => el.oninput = validate);
-
-    // Drop Zone Events
-    dropZone.onclick = () => fileInput.click();
-    dropZone.ondragover = (e) => { e.preventDefault(); dropZone.classList.add('border-indigo-500'); };
-    dropZone.ondragleave = () => dropZone.classList.remove('border-indigo-500');
-    dropZone.ondrop = (e) => {
-        e.preventDefault();
-        fileInput.files = e.dataTransfer.files;
-        handleFile();
-    };
-    fileInput.onchange = handleFile;
-
-    function handleFile() {
-        const file = fileInput.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                imgPreview.src = e.target.result;
-                previewContainer.classList.remove('hidden');
-                uploadPrompt.classList.add('hidden');
-                fileNameLabel.textContent = file.name;
-                detectMeta(file.name);
-            };
-            reader.readAsDataURL(file);
-        }
+    if (filteredItems.length === 0) {
+      labContainer.innerHTML = '<div class="col-span-full text-gray-500 text-center py-20 font-medium text-lg">No assets found matching your criteria. Try creating a new one!</div>';
+      return;
     }
 
-    processBtn.onclick = async () => {
-        const formData = new FormData();
-        formData.append('file', fileInput.files[0]);
-        formData.append('asset_type', assetType.value);
-        formData.append('asset_name', assetName.value);
-        formData.append('slug', assetSlug.value);
-        if (assetLevel.value) formData.append('level', assetLevel.value);
+    filteredItems.forEach(([id, meta]) => {
+      const card = document.createElement('div');
+      card.className = "bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 p-5 transition-shadow flex flex-col md:flex-row items-start gap-6 w-full";
 
-        processBtn.disabled = true;
-        processBtn.textContent = "Processing...";
+      const titleContainer = document.createElement('div');
+      titleContainer.className = "w-full md:w-48 lg:w-64 flex-shrink-0 pt-1";
+      
+      const title = document.createElement('h2');
+      title.className = "text-xl font-black text-gray-800 tracking-tight";
+      title.textContent = meta.name;
+      titleContainer.appendChild(title);
+      card.appendChild(titleContainer);
 
-        try {
-            const resp = await fetch('/upload', { method: 'POST', body: formData });
-            const result = await resp.json();
-            if (result.status === 'success') {
-                statusMsg.textContent = `Successfully saved as ${result.path}`;
-                statusMsg.className = "text-sm font-bold text-green-500 text-center animate-bounce";
-                statusMsg.style.opacity = 1;
-                setTimeout(() => { location.reload(); }, 2000);
-            } else {
-                alert("Error: " + result.message);
-            }
-        } catch (e) {
-            alert("Upload failed: " + e);
-        } finally {
-            processBtn.textContent = "Process Asset";
-            validate();
+      const gridInfo = document.createElement('div');
+      gridInfo.className = "flex flex-wrap gap-3 items-center w-full";
+
+      const imagesToShow = [];
+
+      // Add existing levels
+      if (meta.levels) {
+        const levels = Object.keys(meta.levels).map(Number).sort((a,b) => a-b);
+        levels.forEach(lvl => {
+          imagesToShow.push({ type: 'level', val: lvl, src: meta.levels[lvl], label: `Lv ${lvl}` });
+        });
+      }
+
+      // Add non-level existing images
+      Object.entries(meta).forEach(([key, src]) => {
+        if (key === 'levels' || key === 'name' || key === 'poses' || !src) return;
+        if (typeof src === 'string' && (src.endsWith('.png') || src.endsWith('.jpg') || src.endsWith('.webp'))) {
+           let label = key.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
+           imagesToShow.push({ type: 'key', val: key, src: src, label: label });
         }
-    };
+      });
+
+      // Add poses
+      if (meta.poses) {
+          Object.entries(meta.poses).forEach(([pNum, src]) => {
+              imagesToShow.push({ type: 'key', val: `poses.${pNum}`, src: src, label: `Pose ${pNum}` });
+          });
+      }
+
+      imagesToShow.forEach(imgData => {
+         gridInfo.appendChild(createImageBox(meta.name, imgData));
+      });
+
+      // Render "+" button
+      gridInfo.appendChild(createPlusBox(meta));
+
+      card.appendChild(gridInfo);
+      labContainer.appendChild(card);
+    });
+  }
+
+  function createImageBox(assetName, imgData) {
+      const box = document.createElement('div');
+      box.className = "group relative flex-shrink-0 w-[72px] h-[72px] bg-indigo-50/50 border border-gray-200 rounded-xl flex items-center justify-center p-2 transition-all hover:border-indigo-300";
+
+      const img = document.createElement('img');
+      img.src = imgData.src;
+      img.className = "max-w-full max-h-full object-contain filter drop-shadow-sm";
+      box.appendChild(img);
+
+      const label = document.createElement('div');
+      label.className = "absolute top-0 right-0 bg-gray-900 bg-opacity-80 text-white text-[9px] px-1.5 py-0.5 rounded-bl-lg font-bold uppercase truncate max-w-[90%]";
+      label.textContent = imgData.label;
+      box.appendChild(label);
+
+      // Overlay with Update/Delete
+      const overlay = document.createElement('div');
+      overlay.className = "absolute inset-0 bg-slate-900 bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex flex-col items-center justify-center gap-1.5 backdrop-blur-[1px]";
+
+      const btnUpdate = document.createElement('button');
+      btnUpdate.className = "w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600 shadow-md transform hover:scale-110 transition-transform focus:outline-none";
+      btnUpdate.title = "Replace " + imgData.label;
+      btnUpdate.innerHTML = `<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>`;
+      btnUpdate.onclick = () => triggerUpload(assetName, imgData.type, imgData.val);
+
+      const btnDelete = document.createElement('button');
+      btnDelete.className = "w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600 shadow-md transform hover:scale-110 transition-transform focus:outline-none";
+      btnDelete.title = "Delete " + imgData.label;
+      btnDelete.innerHTML = `<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>`;
+      btnDelete.onclick = () => confirmDelete(assetName, imgData.type, imgData.val);
+
+      const btnContainer = document.createElement('div');
+      btnContainer.className = "flex gap-1.5";
+      btnContainer.appendChild(btnUpdate);
+      btnContainer.appendChild(btnDelete);
+      
+      overlay.appendChild(btnContainer);
+      box.appendChild(overlay);
+
+      return box;
+  }
+
+  function createPlusBox(meta) {
+      let nextLevelNum = 1;
+      let addType = 'level';
+      let uploadVal = 1;
+      let labelText = 'Lv 1';
+
+      if (meta.levels && Object.keys(meta.levels).length > 0) {
+           const levels = Object.keys(meta.levels).map(Number).filter(n => !isNaN(n));
+           if(levels.length > 0) {
+              nextLevelNum = Math.max(...levels) + 1;
+              uploadVal = nextLevelNum;
+              labelText = `Lv ${nextLevelNum}`;
+           }
+      } else if(Object.keys(meta).find(k=>k==='icon' || k.startsWith('character'))) {
+           // For non-buildings, we can just say "Icon" or let the backend fallback to icon
+           addType = 'key';
+           uploadVal = 'icon';
+           labelText = `Icon`;
+      }
+
+      const box = document.createElement('button');
+      box.className = "flex-shrink-0 w-[72px] h-[72px] bg-slate-50 border-2 border-dashed border-indigo-200 text-indigo-400 rounded-xl flex flex-col items-center justify-center hover:bg-indigo-50 hover:border-indigo-400 hover:text-indigo-600 transition-all cursor-pointer group focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2";
+
+      box.innerHTML = `
+          <svg class="w-6 h-6 group-hover:scale-110 transition-transform mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+          </svg>
+          <span class="text-[9px] uppercase font-black tracking-wider text-indigo-500">${labelText}</span>
+      `;
+
+      box.onclick = () => {
+          // Quick choice if it's not obviously a leveled item
+          if (addType === 'key' && labelText === 'Icon') {
+              const choice = prompt("What are you adding? (e.g. icon, character, scenery)", "icon");
+              if (!choice) return;
+              uploadVal = choice.toLowerCase();
+          }
+          triggerUpload(meta.name, addType, uploadVal);
+      };
+      return box;
+  }
+
+  function createNewAsset() {
+      const name = prompt("Enter the name for the new asset:");
+      if (!name || name.trim() === '') return;
+      const sec = sectionFilter.value;
+      if (!imagesData[sec]) imagesData[sec] = {};
+      
+      const fakeId = 'temp_' + Date.now();
+      imagesData[sec][fakeId] = { name: name.trim() };
+      
+      searchInput.value = name.trim();
+      renderLab();
+  }
+
+  function triggerUpload(assetName, type, val) {
+      currentUploadContext = {
+          assetType: sectionFilter.value,
+          assetName: assetName,
+          type: type, // 'level' or 'key'
+          val: val
+      };
+      fileInput.click();
+  }
+
+  async function confirmDelete(assetName, type, val) {
+      if (!confirm(`Permanently delete ${type === 'level' ? `Level ${val}` : val} for ${assetName}?`)) return;
+
+      const payload = {
+          asset_type: sectionFilter.value,
+          asset_name: assetName,
+      };
+
+      if (type === 'level') payload.level = val;
+      else payload.key = val;
+
+      try {
+          const res = await fetch('/delete-asset', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify(payload)
+          });
+          const result = await res.json();
+          if (result.status === 'success') {
+             location.reload();
+          } else {
+              alert("Delete failed: " + result.message);
+          }
+      } catch (e) {
+          alert("Error deleting asset: " + e);
+      }
+  }
+
+  fileInput.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file || !currentUploadContext) return;
+
+      const ctx = currentUploadContext;
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('asset_type', ctx.assetType);
+      formData.append('asset_name', ctx.assetName);
+
+      const namePart = ctx.assetName.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
+      const valPart = ctx.val ? `-${ctx.val}` : '';
+      formData.append('slug', `${namePart}${valPart}`);
+
+      if (ctx.type === 'level') formData.append('level', ctx.val);
+      else if (ctx.type === 'key') formData.append('key', ctx.val);
+
+      uploadOverlay.classList.remove('hidden');
+      uploadOverlay.classList.add('flex');
+
+      try {
+          const resp = await fetch('/upload', { method: 'POST', body: formData });
+          const result = await resp.json();
+          if (result.status === 'success') {
+              location.reload(); 
+          } else {
+              alert("Processing Error: " + result.message);
+              uploadOverlay.classList.remove('flex');
+              uploadOverlay.classList.add('hidden');
+          }
+      } catch (e) {
+          alert("Upload failed: " + e);
+          uploadOverlay.classList.remove('flex');
+          uploadOverlay.classList.add('hidden');
+      } finally {
+          fileInput.value = ''; 
+          currentUploadContext = null;
+      }
+  });
+
+  sectionFilter.addEventListener('change', renderLab);
+  searchInput.addEventListener('input', renderLab);
+
+  document.addEventListener("DOMContentLoaded", renderLab);
 </script>
 {% endblock %}
