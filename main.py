@@ -249,10 +249,88 @@ async def gallery(request: Request):
 @app.get("/lab", response_class=HTMLResponse)
 async def lab(request: Request):
     image_map = load_image_map()
+    static_data = {}
+    static_path = ASSETS_DIR / "static_data.json"
+    if static_path.exists():
+        with open(static_path, "r", encoding="utf-8") as f:
+            static_data = json.load(f)
+            
+    # Group by village based on static data
+    villages = {"home": {}, "builder": {}, "capital": {}}
+    for section, items in image_map.items():
+        for eid, meta in items.items():
+            village_key = "home" # Default
+            asset_name = meta.get("name")
+            
+            # Find the item in ANY section of static_data
+            found_village = None
+            for s_key, s_items in static_data.items():
+                if isinstance(s_items, list):
+                    # Try matching by eid first (since eid in image_map corresponds to _id in static_data)
+                    static_item = next((i for i in s_items if str(i.get("_id")) == str(eid)), None)
+                    # Fallback to name match
+                    if not static_item:
+                        static_item = next((i for i in s_items if i.get("name") == asset_name), None)
+                    
+                    if static_item:
+                        found_village = static_item.get("village")
+                        break
+            
+            if found_village == "builderBase":
+                village_key = "builder"
+            elif found_village == "clanCapital":
+                village_key = "capital"
+            else:
+                village_key = "home"
+            
+            if village_key not in villages: villages[village_key] = {}
+            if section not in villages[village_key]: villages[village_key][section] = {}
+            villages[village_key][section][eid] = meta
+
     return templates.TemplateResponse("upload.html", {
         "request": request, 
-        "images": image_map
+        "villages": villages,
+        "static_data": static_data
     })
+
+@app.get("/lab_data")
+async def lab_data():
+    image_map = load_image_map()
+    static_data = {}
+    static_path = ASSETS_DIR / "static_data.json"
+    if static_path.exists():
+        with open(static_path, "r", encoding="utf-8") as f:
+            static_data = json.load(f)
+            
+    # Group by village based on static data
+    villages = {"home": {}, "builder": {}, "capital": {}}
+    for section, items in image_map.items():
+        for eid, meta in items.items():
+            village_key = "home"
+            asset_name = meta.get("name")
+            
+            found_village = None
+            for s_key, s_items in static_data.items():
+                if isinstance(s_items, list):
+                    static_item = next((i for i in s_items if str(i.get("_id")) == str(eid)), None)
+                    if not static_item:
+                        static_item = next((i for i in s_items if i.get("name") == asset_name), None)
+                    if static_item:
+                        found_village = static_item.get("village")
+                        break
+            
+            if found_village == "builderBase":
+                village_key = "builder"
+            elif found_village == "clanCapital":
+                village_key = "capital"
+            else:
+                village_key = "home"
+            
+            if village_key not in villages: villages[village_key] = {}
+            if section not in villages[village_key]: villages[village_key][section] = {}
+            villages[village_key][section][eid] = meta
+
+    return {"villages": villages}
 
 @app.post("/upload")
 async def handle_upload(

@@ -995,7 +995,8 @@
         "2c": "/home-base/buildings/spell-tower/spell-tower-2c.png",
         "3": "/home-base/buildings/spell-tower/spell-tower-3.png",
         "3b": "/home-base/buildings/spell-tower/spell-tower-3b.png",
-        "3c": "/home-base/buildings/spell-tower/spell-tower-3c.png"
+        "3c": "/home-base/buildings/spell-tower/spell-tower-3c.png",
+        "NaN": "/home-base/buildings/spell-tower/spell-tower.png"
       }
     },
     "1000077": {
@@ -1180,7 +1181,15 @@
         "2": "/home-base/traps/spring-trap/spring-trap-2.png",
         "3": "/home-base/traps/spring-trap/spring-trap-3.png",
         "4": "/home-base/traps/spring-trap/spring-trap-4.png",
-        "5": "/home-base/traps/spring-trap/spring-trap-5.png"
+        "5": "/home-base/traps/spring-trap/spring-trap-5.png",
+        "6": "/home-base/traps/spring-trap/spring-trap-6.png",
+        "7": "/home-base/traps/spring-trap/spring-trap-7.png",
+        "8": "/home-base/traps/spring-trap/spring-trap-8.png",
+        "9": "/home-base/traps/spring-trap/spring-trap-9.png",
+        "10": "/home-base/traps/spring-trap/spring-trap-10.png",
+        "11": "/home-base/traps/spring-trap/spring-trap-11.png",
+        "13": "/home-base/traps/spring-trap/spring-trap-13.png",
+        "12": "/home-base/traps/spring-trap/spring-trap-12.png"
       }
     },
     "12000002": {
@@ -1234,7 +1243,8 @@
         "1": "/home-base/traps/skeleton-trap/skeleton-trap-1.png",
         "2": "/home-base/traps/skeleton-trap/skeleton-trap-2.png",
         "3": "/home-base/traps/skeleton-trap/skeleton-trap-3.png",
-        "4": "/home-base/traps/skeleton-trap/skeleton-trap-4.png"
+        "4": "/home-base/traps/skeleton-trap/skeleton-trap-4.png",
+        "5": "/home-base/traps/skeleton-trap/skeleton-trap-5.png"
       }
     },
     "12000010": {

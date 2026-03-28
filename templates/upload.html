@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-  <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
     <div>
-      <h1 class="text-3xl font-black text-gray-900">Asset Lab</h1>
-      <p class="text-gray-500 font-medium mt-1">Visually manage and update Clash assets.</p>
+      <h1 class="text-3xl font-black text-gray-900 dark:text-white">Asset Lab</h1>
+      <p class="text-gray-500 dark:text-gray-400 font-medium mt-1">Visually manage and update Clash assets.</p>
     </div>
     
     <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
@@ -14,7 +14,7 @@
       
       <div class="relative">
         <input id="searchInput" type="text" placeholder="Search assets..." 
-          class="border border-gray-300 rounded-lg pl-10 pr-4 py-2 w-full md:w-64 focus:ring-2 focus:ring-indigo-500 transition-all shadow-sm">
+          class="border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 rounded-lg pl-10 pr-4 py-2 w-full md:w-64 focus:ring-2 focus:ring-indigo-500 transition-all shadow-sm">
         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -22,10 +22,14 @@
         </div>
       </div>
       
-      <select id="sectionFilter" class="border border-gray-300 rounded-lg px-4 py-2 bg-white w-full md:w-auto focus:ring-2 focus:ring-indigo-500 shadow-sm cursor-pointer">
-        {% for section in images.keys() %}
-        <option value="{{ section }}" {% if section == 'buildings' %}selected{% endif %}>{{ section.replace('_', ' ').title() }}</option>
-        {% endfor %}
+      <select id="villageFilter" class="border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 rounded-lg px-4 py-2 w-full md:w-auto focus:ring-2 focus:ring-indigo-500 shadow-sm cursor-pointer font-bold">
+        <option value="home">Home Village</option>
+        <option value="builder">Builder Base</option>
+        <option value="capital">Clan Capital</option>
+      </select>
+
+      <select id="sectionFilter" class="border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 rounded-lg px-4 py-2 w-full md:w-auto focus:ring-2 focus:ring-indigo-500 shadow-sm cursor-pointer">
+        <!-- populated via JS -->
       </select>
     </div>
   </div>
@@ -38,30 +42,60 @@
 <!-- Hidden File Input for Auto Uploads -->
 <input type="file" id="autoFileInput" class="hidden" accept="image/png,image/jpeg,image/webp">
 
-<!-- Upload Overlay -->
-<div id="uploadOverlay" class="fixed inset-0 bg-indigo-900 bg-opacity-80 hidden flex-col items-center justify-center z-[100] backdrop-blur-sm">
-  <div class="animate-bounce mb-4 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl">
-     <svg class="w-10 h-10 text-indigo-600 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
-     </svg>
+<!-- Notification Toast -->
+<div id="statusToast" class="fixed bottom-8 right-8 flex items-center gap-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 px-6 py-4 rounded-2xl shadow-2xl transform translate-y-32 transition-transform z-[150] duration-500">
+  <div id="toastSpinner" class="animate-spin w-5 h-5 border-2 border-indigo-500 border-t-transparent rounded-full"></div>
+  <div id="toastSuccess" class="hidden w-5 h-5 text-green-500">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
   </div>
-  <h2 class="text-white text-2xl font-black tracking-widest uppercase" id="uploadStatusText">Processing Asset...</h2>
+  <p id="toastMessage" class="text-sm font-bold text-gray-700 dark:text-gray-200">Processing Asset...</p>
 </div>
 
 <script>
-  let imagesData = {{ images | tojson }};
+  // Backend might wrap data in {"villages": ...} or send it directly
+  let rawData = {{ villages | tojson }};
+  let villagesData = rawData.villages || rawData;
+  const staticData = {{ static_data | tojson }};
   const labContainer = document.getElementById('labContainer');
+  const villageFilter = document.getElementById('villageFilter');
   const sectionFilter = document.getElementById('sectionFilter');
   const searchInput = document.getElementById('searchInput');
   const fileInput = document.getElementById('autoFileInput');
-  const uploadOverlay = document.getElementById('uploadOverlay');
 
   let currentUploadContext = null;
 
+  function updateSections() {
+      const village = villageFilter.value;
+      if (!villagesData) {
+          console.error("villagesData is not initialized!");
+          return;
+      }
+      const sections = Object.keys(villagesData[village] || {}).sort();
+      const currentSection = sectionFilter.value;
+      
+      sectionFilter.innerHTML = '';
+      if (sections.length === 0) {
+          const opt = document.createElement('option');
+          opt.value = "none";
+          opt.textContent = "No Sections";
+          sectionFilter.appendChild(opt);
+      } else {
+          sections.forEach(sec => {
+              const opt = document.createElement('option');
+              opt.value = sec;
+              opt.textContent = sec.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+              if (sec === currentSection || (currentSection === '' && sec === 'buildings')) opt.selected = true;
+              sectionFilter.appendChild(opt);
+          });
+      }
+      renderLab();
+  }
+
   function renderLab() {
+    const village = villageFilter.value;
     const section = sectionFilter.value;
     const search = searchInput.value.toLowerCase();
-    const items = imagesData[section] || {};
+    const items = (villagesData[village] && villagesData[village][section]) || {};
 
     labContainer.innerHTML = '';
 
@@ -77,15 +111,21 @@
 
     filteredItems.forEach(([id, meta]) => {
       const card = document.createElement('div');
-      card.className = "bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 p-5 transition-shadow flex flex-col md:flex-row items-start gap-6 w-full";
+      card.className = "bg-white dark:bg-slate-800 rounded-2xl shadow-sm hover:shadow-md border border-gray-100 dark:border-slate-700 p-5 transition-shadow flex flex-col md:flex-row items-start gap-6 w-full";
 
       const titleContainer = document.createElement('div');
       titleContainer.className = "w-full md:w-48 lg:w-64 flex-shrink-0 pt-1";
       
       const title = document.createElement('h2');
-      title.className = "text-xl font-black text-gray-800 tracking-tight";
+      title.className = "text-xl font-black text-gray-800 dark:text-gray-100 tracking-tight leading-tight";
       title.textContent = meta.name;
       titleContainer.appendChild(title);
+
+      const idBadge = document.createElement('div');
+      idBadge.className = "text-[10px] font-mono text-gray-400 dark:text-gray-500 mt-0.5 tracking-wider";
+      idBadge.textContent = `ID: ${id}`;
+      titleContainer.appendChild(idBadge);
+      
       card.appendChild(titleContainer);
 
       const gridInfo = document.createElement('div');
@@ -93,27 +133,40 @@
 
       const imagesToShow = [];
 
-      // Add existing levels
-      if (meta.levels) {
-        const levels = Object.keys(meta.levels).map(Number).sort((a,b) => a-b);
-        levels.forEach(lvl => {
-          imagesToShow.push({ type: 'level', val: lvl, src: meta.levels[lvl], label: `Lv ${lvl}` });
-        });
+      // Determine max level from static_data if available
+      let staticLevels = [];
+      if (staticData[section]) {
+          const staticItem = staticData[section].find(i => i.name === meta.name);
+          if (staticItem && staticItem.levels) {
+              staticLevels = staticItem.levels.map(l => l.level);
+          }
       }
+
+      // Add existing levels or placeholders
+      const existingLevels = meta.levels ? Object.keys(meta.levels).map(Number) : [];
+      const allLevels = Array.from(new Set([...existingLevels, ...staticLevels])).sort((a,b) => a-b);
+
+      allLevels.forEach(lvl => {
+          if (meta.levels && meta.levels[lvl]) {
+              imagesToShow.push({ type: 'level', val: lvl, src: meta.levels[lvl], label: `Lv ${lvl}`, exists: true });
+          } else {
+              imagesToShow.push({ type: 'level', val: lvl, src: null, label: `Lv ${lvl}`, exists: false });
+          }
+      });
 
       // Add non-level existing images
       Object.entries(meta).forEach(([key, src]) => {
         if (key === 'levels' || key === 'name' || key === 'poses' || !src) return;
         if (typeof src === 'string' && (src.endsWith('.png') || src.endsWith('.jpg') || src.endsWith('.webp'))) {
            let label = key.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
-           imagesToShow.push({ type: 'key', val: key, src: src, label: label });
+           imagesToShow.push({ type: 'key', val: key, src: src, label: label, exists: true });
         }
       });
 
       // Add poses
       if (meta.poses) {
           Object.entries(meta.poses).forEach(([pNum, src]) => {
-              imagesToShow.push({ type: 'key', val: `poses.${pNum}`, src: src, label: `Pose ${pNum}` });
+              imagesToShow.push({ type: 'key', val: `poses.${pNum}`, src: src, label: `Pose ${pNum}`, exists: true });
           });
       }
 
@@ -121,7 +174,7 @@
          gridInfo.appendChild(createImageBox(meta.name, imgData));
       });
 
-      // Render "+" button
+      // ALWAYS show the generic "+" button to allow manual level/pose additions
       gridInfo.appendChild(createPlusBox(meta));
 
       card.appendChild(gridInfo);
@@ -130,8 +183,12 @@
   }
 
   function createImageBox(assetName, imgData) {
+      if (!imgData.exists) {
+          return createMissingPlaceholder(assetName, imgData);
+      }
+
       const box = document.createElement('div');
-      box.className = "group relative flex-shrink-0 w-[72px] h-[72px] bg-indigo-50/50 border border-gray-200 rounded-xl flex items-center justify-center p-2 transition-all hover:border-indigo-300";
+      box.className = "group relative flex-shrink-0 w-[72px] h-[72px] bg-indigo-50/50 dark:bg-indigo-900/20 border border-gray-200 dark:border-slate-700 rounded-xl flex items-center justify-center p-2 transition-all hover:border-indigo-300 dark:hover:border-indigo-500";
 
       const img = document.createElement('img');
       img.src = imgData.src;
@@ -170,6 +227,23 @@
       return box;
   }
 
+  function createMissingPlaceholder(assetName, imgData) {
+      const box = document.createElement('button');
+      box.className = "flex-shrink-0 w-[72px] h-[72px] bg-red-50 dark:bg-red-900/10 border-2 border-dashed border-red-200 dark:border-red-900/30 text-red-300 dark:text-red-800 rounded-xl flex flex-col items-center justify-center hover:bg-red-100 dark:hover:bg-red-900/20 hover:border-red-400 dark:hover:border-red-700 hover:text-red-500 dark:hover:text-red-500 transition-all cursor-pointer group focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2";
+
+      box.innerHTML = `
+          <svg class="w-6 h-6 group-hover:scale-110 transition-transform mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+          </svg>
+          <span class="text-[9px] uppercase font-black tracking-wider">${imgData.label}</span>
+      `;
+
+      box.onclick = () => {
+          triggerUpload(assetName, imgData.type, imgData.val);
+      };
+      return box;
+  }
+
   function createPlusBox(meta) {
       let nextLevelNum = 1;
       let addType = 'level';
@@ -191,7 +265,7 @@
       }
 
       const box = document.createElement('button');
-      box.className = "flex-shrink-0 w-[72px] h-[72px] bg-slate-50 border-2 border-dashed border-indigo-200 text-indigo-400 rounded-xl flex flex-col items-center justify-center hover:bg-indigo-50 hover:border-indigo-400 hover:text-indigo-600 transition-all cursor-pointer group focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2";
+      box.className = "flex-shrink-0 w-[72px] h-[72px] bg-slate-50 dark:bg-slate-800/50 border-2 border-dashed border-indigo-200 dark:border-slate-700 text-indigo-400 dark:text-slate-500 rounded-xl flex flex-col items-center justify-center hover:bg-indigo-50 dark:hover:bg-slate-800 hover:border-indigo-400 dark:hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all cursor-pointer group focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2";
 
       box.innerHTML = `
           <svg class="w-6 h-6 group-hover:scale-110 transition-transform mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -215,11 +289,13 @@
   function createNewAsset() {
       const name = prompt("Enter the name for the new asset:");
       if (!name || name.trim() === '') return;
+      const village = villageFilter.value;
       const sec = sectionFilter.value;
-      if (!imagesData[sec]) imagesData[sec] = {};
+      if (!villagesData[village]) villagesData[village] = {};
+      if (!villagesData[village][sec]) villagesData[village][sec] = {};
       
       const fakeId = 'temp_' + Date.now();
-      imagesData[sec][fakeId] = { name: name.trim() };
+      villagesData[village][sec][fakeId] = { name: name.trim() };
       
       searchInput.value = name.trim();
       renderLab();
@@ -263,6 +339,24 @@
       }
   }
 
+  const statusToast = document.getElementById('statusToast');
+  const toastMessage = document.getElementById('toastMessage');
+  const toastSpinner = document.getElementById('toastSpinner');
+  const toastSuccess = document.getElementById('toastSuccess');
+
+  function showToast(msg, loading = true) {
+      toastMessage.textContent = msg;
+      statusToast.classList.remove('translate-y-32');
+      if (loading) {
+          toastSpinner.classList.remove('hidden');
+          toastSuccess.classList.add('hidden');
+      } else {
+          toastSpinner.classList.add('hidden');
+          toastSuccess.classList.remove('hidden');
+          setTimeout(() => statusToast.classList.add('translate-y-32'), 3000);
+      }
+  }
+
   fileInput.addEventListener('change', async (e) => {
       const file = e.target.files[0];
       if (!file || !currentUploadContext) return;
@@ -280,32 +374,38 @@
       if (ctx.type === 'level') formData.append('level', ctx.val);
       else if (ctx.type === 'key') formData.append('key', ctx.val);
 
-      uploadOverlay.classList.remove('hidden');
-      uploadOverlay.classList.add('flex');
+      showToast(`Uploading ${ctx.assetName}...`);
 
       try {
           const resp = await fetch('/upload', { method: 'POST', body: formData });
           const result = await resp.json();
           if (result.status === 'success') {
-              location.reload(); 
+              showToast("Success! Refreshing data...", false);
+              
+              const freshResp = await fetch('/lab_data');
+              const freshData = await freshResp.json();
+              // Standardize extraction
+              villagesData = freshData.villages || freshData;
+              renderLab();
           } else {
-              alert("Processing Error: " + result.message);
-              uploadOverlay.classList.remove('flex');
-              uploadOverlay.classList.add('hidden');
+              alert("Error: " + result.message);
+              statusToast.classList.add('translate-y-32');
           }
       } catch (e) {
           alert("Upload failed: " + e);
-          uploadOverlay.classList.remove('flex');
-          uploadOverlay.classList.add('hidden');
+          statusToast.classList.add('translate-y-32');
       } finally {
           fileInput.value = ''; 
           currentUploadContext = null;
       }
   });
 
+  villageFilter.addEventListener('change', updateSections);
   sectionFilter.addEventListener('change', renderLab);
   searchInput.addEventListener('input', renderLab);
 
-  document.addEventListener("DOMContentLoaded", renderLab);
+  document.addEventListener("DOMContentLoaded", () => {
+    updateSections();
+  });
 </script>
 {% endblock %}
