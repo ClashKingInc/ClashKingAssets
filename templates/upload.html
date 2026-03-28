@@ -384,8 +384,10 @@
               
               const freshResp = await fetch('/lab_data');
               const freshData = await freshResp.json();
-              // Standardize extraction
               villagesData = freshData.villages || freshData;
+              
+              // Force full synchronization of filters and grid
+              updateSections(); 
               renderLab();
           } else {
               alert("Error: " + result.message);

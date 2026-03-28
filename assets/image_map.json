@@ -1314,7 +1314,8 @@
       "levels": {
         "1": "/home-base/traps/giga-bomb/giga-bomb-1.png",
         "2": "/home-base/traps/giga-bomb/giga-bomb-2.png",
-        "3": "/home-base/traps/giga-bomb/giga-bomb-3.png"
+        "3": "/home-base/traps/giga-bomb/giga-bomb-3.png",
+        "4": "/home-base/traps/giga-bomb/giga-bomb-4.png"
       }
     }
   },
