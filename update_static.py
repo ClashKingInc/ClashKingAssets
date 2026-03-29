@@ -402,6 +402,9 @@ class StaticUpdater:
                 ),
                 "village": "home" if not village_type else "builderBase",
                 "width": building_data.get("Width", 1), #walls are null for some reason, so let's make it 1
+                "range": building_data.get("Range") or building_data.get("AttackRange"),
+                "min_range": building_data.get("MinRange") or building_data.get("MinAttackRange"),
+                "attack_speed": building_data.get("AttackSpeed"),
                 "superchargeable": superchargeable,
                 "levels": []
             }
@@ -432,6 +435,9 @@ class StaticUpdater:
                     "required_townhall": level_data.get("TownHallLevel"),
                     "hitpoints": level_data.get("Hitpoints", 0),
                     "dps": level_data.get("DPS", 0) or level_data.get("Damage", 0),
+                    "range": level_data.get("Range") or level_data.get("AttackRange"),
+                    "min_range": level_data.get("MinRange") or level_data.get("MinAttackRange"),
+                    "attack_speed": level_data.get("AttackSpeed"),
                 }
 
                 if "StrengthWeight" in level_data:
@@ -474,6 +480,9 @@ class StaticUpdater:
                             },
                             "upgrade_resource": self._parse_resource(resource=building_data.get("BuildResource")),
                             "strength_weight": level_data.get("StrengthWeight", 0),
+                            "range": weapon_data.get("Range") or weapon_data.get("AttackRange"),
+                            "min_range": weapon_data.get("MinRange") or weapon_data.get("MinAttackRange"),
+                            "attack_speed": weapon_data.get("AttackSpeed"),
                             "levels": []
                         }
                         for weapon_level, weapon_level_data in weapon_data.items():
@@ -486,6 +495,9 @@ class StaticUpdater:
                                 "build_cost": level_data.get("BuildCost"),
                                 "build_time": upgrade_time_seconds,
                                 "dps": weapon_level_data.get("DPS"),
+                                "range": weapon_level_data.get("Range") or weapon_level_data.get("AttackRange"),
+                                "min_range": weapon_level_data.get("MinRange") or weapon_level_data.get("MinAttackRange"),
+                                "attack_speed": weapon_level_data.get("AttackSpeed"),
                             })
                         hold_level_data["weapon"] = hold_weapon_data
 
