@@ -319,6 +319,46 @@ func TestUIWrapperChangePointsStayComposite(t *testing.T) {
 	}
 }
 
+func TestPrepareTargetsSkipsNamedUISurfacesOnlyForUISources(t *testing.T) {
+	uiSWF := &sc.SWF{
+		Filename: "ui.sc",
+		Resources: map[uint16]sc.Resource{
+			1: &sc.Shape{ID: 1},
+			2: &sc.Shape{ID: 2},
+		},
+		Exports: map[uint16][]string{
+			1: {"league_promoted_screen"},
+			2: {"troop_card"},
+		},
+	}
+	uiExporter := NewExporter(uiSWF)
+	uiTargets, uiSkipped := uiExporter.prepareTargets()
+	if len(uiTargets) != 1 || uiTargets[0].Name != "troop_card" {
+		t.Fatalf("ui targets = %v, want only troop_card", targetNames(uiTargets))
+	}
+	if len(uiSkipped) != 1 || uiSkipped[0].ExportName != "league_promoted_screen" {
+		t.Fatalf("ui skipped = %+v, want league_promoted_screen skipped", uiSkipped)
+	}
+
+	otherSWF := &sc.SWF{
+		Filename: "buildings.sc",
+		Resources: map[uint16]sc.Resource{
+			1: &sc.Shape{ID: 1},
+		},
+		Exports: map[uint16][]string{
+			1: {"league_promoted_screen"},
+		},
+	}
+	otherExporter := NewExporter(otherSWF)
+	otherTargets, otherSkipped := otherExporter.prepareTargets()
+	if len(otherSkipped) != 0 {
+		t.Fatalf("non-ui source unexpectedly skipped: %+v", otherSkipped)
+	}
+	if len(otherTargets) != 1 || otherTargets[0].Name != "league_promoted_screen" {
+		t.Fatalf("non-ui targets = %v, want league_promoted_screen retained", targetNames(otherTargets))
+	}
+}
+
 func TestDragonGoldenFirstFrameHash(t *testing.T) {
 	swf := mustLoadSWF(t, "../../sc/chr_dragon.sc")
 	exporter := NewExporter(swf)
@@ -430,6 +470,14 @@ func mustTargets(tb testing.TB, exporter *Exporter) []Target {
 		tb.Fatalf("prepareTargets skipped assets unexpectedly: %+v", skipped[:minInt(len(skipped), 3)])
 	}
 	return targets
+}
+
+func targetNames(targets []Target) []string {
+	names := make([]string, 0, len(targets))
+	for _, target := range targets {
+		names = append(names, target.Name)
+	}
+	return names
 }
 
 func fmtHash(hash [20]byte) string {

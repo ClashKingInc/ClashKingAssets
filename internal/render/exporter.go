@@ -718,6 +718,15 @@ func (e *Exporter) prepareTargets() ([]Target, []SkippedEntry) {
 				})
 				continue
 			}
+			if shouldSkipUIScreenTarget(e.swf.Filename, target.Name) {
+				skipped = append(skipped, SkippedEntry{
+					SourceSC:   e.swf.Filename,
+					ExportName: target.Name,
+					ResourceID: target.ResourceID,
+					Reason:     "skipped ui screen/window/popup/darkener target",
+				})
+				continue
+			}
 			targets = append(targets, target)
 			targets = append(targets, e.splitBindTargets(target)...)
 		}
@@ -729,6 +738,20 @@ func (e *Exporter) prepareTargets() ([]Target, []SkippedEntry) {
 		return targets[i].Name < targets[j].Name
 	})
 	return targets, skipped
+}
+
+func shouldSkipUIScreenTarget(sourceSC, exportName string) bool {
+	base := strings.ToLower(filepath.Base(sourceSC))
+	if !strings.HasPrefix(base, "ui") {
+		return false
+	}
+	name := strings.ToLower(exportName)
+	for _, needle := range []string{"screen", "window", "popup", "darkener"} {
+		if strings.Contains(name, needle) {
+			return true
+		}
+	}
+	return false
 }
 
 func (e *Exporter) splitBindTargets(target Target) []Target {
