@@ -23,6 +23,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            .github
+            go.mod
+            go.sum
+            main.go
+            update_all.py
+            update_assets.py
+            update_utils.py
+            internal
+            lib
 
       - name: Setup Python
         uses: actions/setup-python@v5
