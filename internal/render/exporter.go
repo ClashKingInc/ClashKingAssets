@@ -7,10 +7,12 @@ import (
 	"image"
 	"image/color"
 	"image/png"
+	"io"
 	"math"
 	"os"
 	"path/filepath"
 	"runtime"
+	"runtime/debug"
 	"sort"
 	"strings"
 	"sync"
@@ -496,6 +498,10 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 			manifest.Exports = append(manifest.Exports, *res.entry)
 		}
 		processed++
+		if processed%50 == 0 {
+			runtime.GC()
+			debug.FreeOSMemory()
+		}
 		if processed == len(targets) || processed%25 == 0 {
 			fmt.Printf("  Progress: %d/%d\n", processed, len(targets))
 		}
@@ -720,6 +726,119 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		ResourceID: target.ResourceID,
 		Status:     "failed",
 	}
+	fileBase := allocator.Next(target.Name, target.ResourceID)
+	outputPath := filepath.Join(exportsDir, fileBase)
+	entry := &ManifestEntry{
+		SourceSC:            e.swf.Filename,
+		ExportName:          target.Name,
+		ResourceID:          target.ResourceID,
+		ResourceType:        target.Resource.ResourceType(),
+		ResolvedTimelineID:  target.ResolvedTimeline,
+		IsWrapperExport:     target.IsWrapper,
+		BindLabels:          target.BindLabels,
+		FrameLabels:         target.FrameLabels,
+		AncestorResourceIDs: target.AncestorIDs,
+	}
+
+	if _, ok := target.Resource.(*sc.MovieClip); ok && target.Duration > 0 {
+		tempDir, err := os.MkdirTemp("", "sc-export-webp-*")
+		if err != nil {
+			return nil, nil, profile, err
+		}
+		defer os.RemoveAll(tempDir)
+
+		frameFiles, durationMS, skipReason, renderStats, err := e.renderAnimatedTargetToFiles(target, tempDir)
+		profile.PrepareDuration = renderStats.PrepareDuration
+		profile.BoundsDuration = renderStats.BoundsDuration
+		profile.RenderDuration = renderStats.RenderDuration
+		profile.ChangePoints = renderStats.ChangePoints
+		profile.SampledSteps = renderStats.SampledSteps
+		profile.Frames = renderStats.Frames
+		profile.CanvasWidth = renderStats.CanvasWidth
+		profile.CanvasHeight = renderStats.CanvasHeight
+		if err != nil {
+			profile.TotalDuration = time.Since(start)
+			return nil, &SkippedEntry{
+				SourceSC:   e.swf.Filename,
+				ExportName: target.Name,
+				ResourceID: target.ResourceID,
+				Reason:     err.Error(),
+			}, profile, nil
+		}
+		if skipReason != "" {
+			if err := removeIfExists(filepath.Join(exportsDir, fileBase+".png")); err != nil {
+				return nil, nil, profile, err
+			}
+			if err := removeIfExists(filepath.Join(exportsDir, fileBase+".webp")); err != nil {
+				return nil, nil, profile, err
+			}
+			profile.Status = "skipped"
+			profile.TotalDuration = time.Since(start)
+			return nil, &SkippedEntry{
+				SourceSC:   e.swf.Filename,
+				ExportName: target.Name,
+				ResourceID: target.ResourceID,
+				Reason:     skipReason,
+			}, profile, nil
+		}
+		if len(frameFiles) == 0 {
+			profile.Status = "skipped"
+			profile.TotalDuration = time.Since(start)
+			return nil, &SkippedEntry{
+				SourceSC:   e.swf.Filename,
+				ExportName: target.Name,
+				ResourceID: target.ResourceID,
+				Reason:     "no frames rendered",
+			}, profile, nil
+		}
+
+		if len(frameFiles) == 1 {
+			outputPath += ".png"
+			encodeStart := time.Now()
+			if err := copyFileContents(filepath.Join(tempDir, frameFiles[0].Path), outputPath); err != nil {
+				return nil, nil, profile, err
+			}
+			profile.EncodeDuration = time.Since(encodeStart)
+			profile.Status = "png"
+			entry.OutputFile = filepath.Base(outputPath)
+			entry.FrameCount = 1
+			entry.DurationMS = 0
+			profile.OutputFile = entry.OutputFile
+			profile.TotalDuration = time.Since(start)
+			return entry, nil, profile, nil
+		}
+
+		outputPath += ".webp"
+		encodeStart := time.Now()
+		file, err := os.Create(outputPath)
+		if err != nil {
+			return nil, nil, profile, err
+		}
+		webpFrames := make([]renderedFrame, 0, len(frameFiles))
+		for _, frameFile := range frameFiles {
+			webpFrames = append(webpFrames, renderedFrame{DelayCS: frameFile.DelayCS})
+		}
+		frameNames := make([]string, 0, len(frameFiles))
+		for _, frameFile := range frameFiles {
+			frameNames = append(frameNames, frameFile.Path)
+		}
+		if err := writeAnimatedWebPFromFiles(file, tempDir, frameNames, webpFrames); err != nil {
+			file.Close()
+			return nil, nil, profile, err
+		}
+		if err := file.Close(); err != nil {
+			return nil, nil, profile, err
+		}
+		profile.EncodeDuration = time.Since(encodeStart)
+		profile.Status = "webp"
+		entry.OutputFile = filepath.Base(outputPath)
+		entry.FrameCount = len(frameFiles)
+		entry.DurationMS = durationMS
+		profile.OutputFile = entry.OutputFile
+		profile.TotalDuration = time.Since(start)
+		return entry, nil, profile, nil
+	}
+
 	frames, durationMS, skipReason, renderStats, err := e.renderTarget(target)
 	profile.PrepareDuration = renderStats.PrepareDuration
 	profile.BoundsDuration = renderStats.BoundsDuration
@@ -739,7 +858,6 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		}, profile, nil
 	}
 	if skipReason != "" {
-		fileBase := allocator.Next(target.Name, target.ResourceID)
 		if err := removeIfExists(filepath.Join(exportsDir, fileBase+".png")); err != nil {
 			return nil, nil, profile, err
 		}
@@ -764,20 +882,6 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 			ResourceID: target.ResourceID,
 			Reason:     "no frames rendered",
 		}, profile, nil
-	}
-
-	fileBase := allocator.Next(target.Name, target.ResourceID)
-	outputPath := filepath.Join(exportsDir, fileBase)
-	entry := &ManifestEntry{
-		SourceSC:            e.swf.Filename,
-		ExportName:          target.Name,
-		ResourceID:          target.ResourceID,
-		ResourceType:        target.Resource.ResourceType(),
-		ResolvedTimelineID:  target.ResolvedTimeline,
-		IsWrapperExport:     target.IsWrapper,
-		BindLabels:          target.BindLabels,
-		FrameLabels:         target.FrameLabels,
-		AncestorResourceIDs: target.AncestorIDs,
 	}
 
 	switch len(frames) {
@@ -836,6 +940,11 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 
 type renderedFrame struct {
 	Image   *image.NRGBA
+	DelayCS int
+}
+
+type encodedFrameFile struct {
+	Path    string
 	DelayCS int
 }
 
@@ -946,6 +1055,117 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 	default:
 		return nil, 0, "", renderProfile{}, fmt.Errorf("unsupported resource type %s", target.Resource.ResourceType())
 	}
+}
+
+func (e *Exporter) renderAnimatedTargetToFiles(target Target, tempDir string) ([]encodedFrameFile, int, string, renderProfile, error) {
+	spriteCache := map[bitmapCacheKey]*bitmapRenderable{}
+	profile := renderProfile{}
+	duration := target.Duration
+	if duration <= 0 {
+		return nil, 0, "", profile, fmt.Errorf("renderAnimatedTargetToFiles requires animated target")
+	}
+
+	prepareStart := time.Now()
+	changePoints := e.collectChangePoints(target, duration)
+	if len(changePoints) == 0 {
+		changePoints = []float64{0}
+	}
+	steps, err := e.collapseVisualStates(target, changePoints, duration)
+	if err != nil {
+		return nil, 0, "", profile, err
+	}
+	profile.PrepareDuration = time.Since(prepareStart)
+	profile.ChangePoints = len(changePoints)
+	profile.SampledSteps = len(steps)
+
+	sampleTimes := make([]float64, 0, len(steps))
+	for _, step := range steps {
+		sampleTimes = append(sampleTimes, step.Time)
+	}
+
+	boundsStart := time.Now()
+	bounds, err := e.collectBounds(target, duration, sampleTimes, spriteCache)
+	if err != nil {
+		return nil, 0, "", profile, err
+	}
+	profile.BoundsDuration = time.Since(boundsStart)
+
+	encodedFrames := make([]encodedFrameFile, 0, len(steps))
+	totalDuration := 0
+	var lastHash [20]byte
+	var haveLast bool
+	var renderElapsed time.Duration
+	var canvas *image.NRGBA
+
+	for index, step := range steps {
+		renderStart := time.Now()
+		canvas, err := e.renderAtInto(target, step.Time, bounds, spriteCache, canvas)
+		renderElapsed += time.Since(renderStart)
+		if err != nil {
+			return nil, 0, "", profile, err
+		}
+		img := canvas
+		if profile.CanvasWidth == 0 && profile.CanvasHeight == 0 {
+			profile.CanvasWidth = img.Bounds().Dx()
+			profile.CanvasHeight = img.Bounds().Dy()
+			if reason := tinyOutputReason(img.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
+				return nil, 0, reason, profile, nil
+			}
+		}
+
+		hash := sha1.Sum(img.Pix)
+		if haveLast && hash == lastHash {
+			encodedFrames[len(encodedFrames)-1].DelayCS += step.DelayCS
+			totalDuration += step.DelayCS * 10
+			img = nil
+			continue
+		}
+
+		frameName := fmt.Sprintf("%x.png", index)
+		framePath := filepath.Join(tempDir, frameName)
+		file, err := os.Create(framePath)
+		if err != nil {
+			return nil, 0, "", profile, err
+		}
+		if err := png.Encode(file, img); err != nil {
+			file.Close()
+			return nil, 0, "", profile, err
+		}
+		if err := file.Close(); err != nil {
+			return nil, 0, "", profile, err
+		}
+
+		encodedFrames = append(encodedFrames, encodedFrameFile{Path: frameName, DelayCS: step.DelayCS})
+		lastHash = hash
+		haveLast = true
+		totalDuration += step.DelayCS * 10
+		img = nil
+	}
+
+	profile.RenderDuration = renderElapsed
+	profile.Frames = len(encodedFrames)
+	if len(encodedFrames) == 0 {
+		return nil, 0, "no frames rendered", profile, nil
+	}
+	return encodedFrames, totalDuration, "", profile, nil
+}
+
+func copyFileContents(srcPath, dstPath string) error {
+	srcFile, err := os.Open(srcPath)
+	if err != nil {
+		return err
+	}
+	defer srcFile.Close()
+
+	dstFile, err := os.Create(dstPath)
+	if err != nil {
+		return err
+	}
+	if _, err := io.Copy(dstFile, srcFile); err != nil {
+		dstFile.Close()
+		return err
+	}
+	return dstFile.Close()
 }
 
 func (e *Exporter) collapseVisualStates(target Target, changePoints []float64, duration float64) ([]renderStep, error) {
@@ -1155,10 +1375,18 @@ func (e *Exporter) collectBounds(target Target, duration float64, sampleTimes []
 }
 
 func (e *Exporter) renderAt(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable) (*image.NRGBA, error) {
+	return e.renderAtInto(target, t, worldBounds, spriteCache, nil)
+}
+
+func (e *Exporter) renderAtInto(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, canvas *image.NRGBA) (*image.NRGBA, error) {
 	renderScale := float64(maxInt(e.opts.RenderScale, 1))
 	canvasWidth := maxInt(1, int(math.Ceil(float64(worldBounds.Dx())*renderScale)))
 	canvasHeight := maxInt(1, int(math.Ceil(float64(worldBounds.Dy())*renderScale)))
-	canvas := image.NewNRGBA(image.Rect(0, 0, canvasWidth, canvasHeight))
+	if canvas == nil || canvas.Bounds().Dx() != canvasWidth || canvas.Bounds().Dy() != canvasHeight {
+		canvas = image.NewNRGBA(image.Rect(0, 0, canvasWidth, canvasHeight))
+	} else {
+		clear(canvas.Pix)
+	}
 	offset := sc.Matrix{A: 1, D: 1, Tx: float64(-worldBounds.Min.X), Ty: float64(-worldBounds.Min.Y)}
 	if renderScale > 1 {
 		offset = sc.Matrix{A: renderScale, D: renderScale}.Multiply(offset)

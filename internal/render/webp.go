@@ -57,6 +57,25 @@ func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
 	return copyAnimatedWebPOutput(w, filepath.Join(tempDir, outputName))
 }
 
+func writeAnimatedWebPFromFiles(w io.Writer, tempDir string, framePaths []string, frames []renderedFrame) error {
+	if len(framePaths) == 0 {
+		return fmt.Errorf("webp requires at least one frame")
+	}
+	img2webpPath, err := lookupWebPTools()
+	if err != nil {
+		return err
+	}
+	outputName := "o.webp"
+	argsPath := filepath.Join(tempDir, "args.txt")
+	if err := os.WriteFile(argsPath, []byte(buildImg2WebPArgsFile(framePaths, frames, outputName)), 0o600); err != nil {
+		return err
+	}
+	if err := runCommandInDir(tempDir, img2webpPath, filepath.Base(argsPath)); err != nil {
+		return err
+	}
+	return copyAnimatedWebPOutput(w, filepath.Join(tempDir, outputName))
+}
+
 func copyAnimatedWebPOutput(w io.Writer, outputPath string) error {
 	outputFile, err := os.Open(outputPath)
 	if err != nil {
