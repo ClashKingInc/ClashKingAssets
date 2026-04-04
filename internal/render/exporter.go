@@ -411,6 +411,64 @@ func topTargetProfiles(profiles []TargetProfile, limit int) []TargetProfile {
 	return sorted[:limit]
 }
 
+func formatTailTargetDescriptor(target Target) string {
+	durationSeconds := target.Duration
+	resourceType := target.Resource.ResourceType()
+	frameCount := tailTimelineFrames(target)
+	if frameCount > 0 {
+		return fmt.Sprintf("%s type=%s timeline_frames=%d seconds=%.2f", target.Name, resourceType, frameCount, durationSeconds)
+	}
+	return fmt.Sprintf("%s type=%s seconds=%.2f", target.Name, resourceType, durationSeconds)
+}
+
+func tailTimelineFrames(target Target) int {
+	clip, ok := target.Resource.(*sc.MovieClip)
+	if !ok {
+		return 0
+	}
+	return len(clip.Frames)
+}
+
+func tailStatusLabel(entry *ManifestEntry, skipped *SkippedEntry, profile TargetProfile, err error) string {
+	if err != nil {
+		return "failed"
+	}
+	if skipped != nil {
+		return "skipped"
+	}
+	if entry != nil && entry.OutputFile != "" {
+		return filepath.Ext(entry.OutputFile)
+	}
+	if profile.Status != "" {
+		return profile.Status
+	}
+	return "done"
+}
+
+func tailFrameCount(entry *ManifestEntry, profile TargetProfile) int {
+	if entry != nil && entry.FrameCount > 0 {
+		return entry.FrameCount
+	}
+	return profile.Frames
+}
+
+func tailDurationSeconds(target Target, entry *ManifestEntry) float64 {
+	if entry != nil && entry.DurationMS > 0 {
+		return float64(entry.DurationMS) / 1000
+	}
+	if target.Duration > 0 {
+		return target.Duration
+	}
+	return 0
+}
+
+func tailCanvasSize(profile TargetProfile) string {
+	if profile.CanvasWidth <= 0 || profile.CanvasHeight <= 0 {
+		return "-"
+	}
+	return fmt.Sprintf("%dx%d", profile.CanvasWidth, profile.CanvasHeight)
+}
+
 func (h *stateHasher) add(v uint64) {
 	h.value ^= v + 0x9e3779b97f4a7c15 + (h.value << 6) + (h.value >> 2)
 }
@@ -443,6 +501,18 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	fmt.Printf("  Workers: %d\n", maxInt(workers, 1))
 	fmt.Printf("  Output:  %s\n", assetDir)
 	nameAllocator := newNameAllocator(assetDir)
+	tailTargetCount := minInt(15, len(targets))
+	tailStartIndex := len(targets) - tailTargetCount
+	tailPositions := make(map[targetKey]int, tailTargetCount)
+	if tailTargetCount > 0 {
+		fmt.Printf("  Tail Targets (%d):\n", tailTargetCount)
+		for index := tailStartIndex; index < len(targets); index++ {
+			target := targets[index]
+			position := index + 1
+			tailPositions[targetKey{Name: target.Name, ResourceID: target.ResourceID}] = position
+			fmt.Printf("    %d/%d %s\n", position, len(targets), formatTailTargetDescriptor(target))
+		}
+	}
 	manifest := &Manifest{
 		SourceSC: e.swf.Filename,
 		AssetDir: assetDir,
@@ -452,6 +522,7 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	}
 
 	type result struct {
+		target  Target
 		entry   *ManifestEntry
 		skipped *SkippedEntry
 		profile TargetProfile
@@ -469,8 +540,11 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 		go func() {
 			defer wg.Done()
 			for target := range jobs {
+				if position, ok := tailPositions[targetKey{Name: target.Name, ResourceID: target.ResourceID}]; ok {
+					fmt.Printf("  Tail Start %d/%d: %s\n", position, len(targets), formatTailTargetDescriptor(target))
+				}
 				entry, skip, profile, err := e.exportTarget(target, assetDir, nameAllocator)
-				results <- result{entry: entry, skipped: skip, profile: profile, err: err}
+				results <- result{target: target, entry: entry, skipped: skip, profile: profile, err: err}
 			}
 		}()
 	}
@@ -486,7 +560,17 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 
 	processed := 0
 	for res := range results {
+		tailPosition, isTail := tailPositions[targetKey{Name: res.profile.ExportName, ResourceID: res.profile.ResourceID}]
 		if res.err != nil {
+			if isTail {
+				fmt.Printf(
+					"  Tail Failed %d/%d: %s error=%v\n",
+					tailPosition,
+					len(targets),
+					res.profile.ExportName,
+					res.err,
+				)
+			}
 			return nil, res.err
 		}
 		if e.opts.Profile {
@@ -496,6 +580,18 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 			manifest.Skipped = append(manifest.Skipped, *res.skipped)
 		} else if res.entry != nil {
 			manifest.Exports = append(manifest.Exports, *res.entry)
+		}
+		if isTail {
+			fmt.Printf(
+				"  Tail Done %d/%d: %s status=%s frames=%d seconds=%.2f size=%s\n",
+				tailPosition,
+				len(targets),
+				res.profile.ExportName,
+				tailStatusLabel(res.entry, res.skipped, res.profile, res.err),
+				tailFrameCount(res.entry, res.profile),
+				tailDurationSeconds(res.target, res.entry),
+				tailCanvasSize(res.profile),
+			)
 		}
 		processed++
 		if processed%50 == 0 {
@@ -946,6 +1042,11 @@ type renderedFrame struct {
 type encodedFrameFile struct {
 	Path    string
 	DelayCS int
+}
+
+type targetKey struct {
+	Name       string
+	ResourceID uint16
 }
 
 func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, renderProfile, error) {

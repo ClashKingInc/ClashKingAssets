@@ -125,7 +125,17 @@ func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, d
 		}
 		files = append(files, filepath.Join(root, name))
 	}
-	sort.Strings(files)
+	sort.Slice(files, func(i, j int) bool {
+		leftBase := filepath.Base(files[i])
+		rightBase := filepath.Base(files[j])
+		if leftBase == "ui.sc" && rightBase != "ui.sc" {
+			return true
+		}
+		if rightBase == "ui.sc" && leftBase != "ui.sc" {
+			return false
+		}
+		return files[i] < files[j]
+	})
 
 	if workers <= 0 {
 		workers = runtime.NumCPU()
