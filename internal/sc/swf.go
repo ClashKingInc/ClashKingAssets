@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 	"sort"
 	"strings"
+	"time"
 )
 
 const (
@@ -30,7 +31,21 @@ var (
 	modifierTags = map[uint8]bool{38: true, 39: true, 40: true}
 )
 
+type LoadStats struct {
+	MainPrepareDuration    time.Duration
+	MainLoadDuration       time.Duration
+	TexturePrepareDuration time.Duration
+	TextureLoadDuration    time.Duration
+	TotalDuration          time.Duration
+}
+
 func Load(path string) (*SWF, error) {
+	swf, _, err := LoadWithStats(path)
+	return swf, err
+}
+
+func LoadWithStats(path string) (*SWF, LoadStats, error) {
+	totalStart := time.Now()
 	swf := &SWF{
 		Filename:              path,
 		Resources:             map[uint16]Resource{},
@@ -39,16 +54,21 @@ func Load(path string) (*SWF, error) {
 		HighResTexturePostfix: "_highres",
 		LowResTexturePostfix:  "_lowres",
 	}
+	stats := LoadStats{}
 
+	mainPrepareStart := time.Now()
 	resolvedPath, cleanup, err := prepareMainAssetPath(path)
 	if err != nil {
-		return nil, err
+		return nil, stats, err
 	}
+	stats.MainPrepareDuration = time.Since(mainPrepareStart)
 	defer cleanup()
 
-	if err := swf.loadInternal(resolvedPath, false); err != nil {
-		return nil, err
+	mainLoadStart := time.Now()
+	if err := swf.loadResolvedAsset(resolvedPath, false); err != nil {
+		return nil, stats, err
 	}
+	stats.MainLoadDuration = time.Since(mainLoadStart)
 
 	if swf.HasExternalTexture {
 		base := strings.TrimSuffix(swf.Filename, filepath.Ext(swf.Filename))
@@ -59,43 +79,49 @@ func Load(path string) (*SWF, error) {
 		switch {
 		case swf.UseUncommonTexture:
 			if fileExists(highResPath) {
-				if err := swf.loadInternal(highResPath, true); err != nil {
-					return nil, err
+				if err := swf.loadTextureAsset(highResPath, &stats); err != nil {
+					return nil, stats, err
 				}
 			} else if fileExists(lowResPath) {
-				if err := swf.loadInternal(lowResPath, true); err != nil {
-					return nil, err
+				if err := swf.loadTextureAsset(lowResPath, &stats); err != nil {
+					return nil, stats, err
 				}
 			} else {
-				return nil, fmt.Errorf("cannot find external texture asset for %s", swf.Filename)
+				return nil, stats, fmt.Errorf("cannot find external texture asset for %s", swf.Filename)
 			}
 		default:
 			if swf.UseLowResTexture && !fileExists(textureFile) && fileExists(lowResPath) {
 				textureFile = lowResPath
 			}
 			if !fileExists(textureFile) {
-				return nil, fmt.Errorf("cannot find external texture file %s", textureFile)
+				return nil, stats, fmt.Errorf("cannot find external texture file %s", textureFile)
 			}
-			if err := swf.loadInternal(textureFile, true); err != nil {
-				return nil, err
+			if err := swf.loadTextureAsset(textureFile, &stats); err != nil {
+				return nil, stats, err
 			}
 		}
 	}
 
-	return swf, nil
+	stats.TotalDuration = time.Since(totalStart)
+	return swf, stats, nil
 }
 
-func (s *SWF) loadInternal(path string, isTexture bool) error {
-	cleanup := func() {}
-	if isTexture {
-		var err error
-		path, cleanup, err = prepareTextureAssetPath(path)
-		if err != nil {
-			return err
-		}
+func (s *SWF) loadTextureAsset(path string, stats *LoadStats) error {
+	prepareStart := time.Now()
+	resolvedPath, cleanup, err := prepareTextureAssetPath(path)
+	if err != nil {
+		return err
 	}
+	stats.TexturePrepareDuration += time.Since(prepareStart)
 	defer cleanup()
 
+	loadStart := time.Now()
+	err = s.loadResolvedAsset(resolvedPath, true)
+	stats.TextureLoadDuration += time.Since(loadStart)
+	return err
+}
+
+func (s *SWF) loadResolvedAsset(path string, isTexture bool) error {
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return err

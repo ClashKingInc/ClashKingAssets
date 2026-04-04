@@ -10,6 +10,13 @@ import (
 	"sync"
 )
 
+var exportSingleFunc = exportSingle
+
+type scRootResult struct {
+	source string
+	err    error
+}
+
 func ProcessImageRoot(root string, workers int, opts ExportOptions, deleteSource bool) error {
 	files := make([]string, 0)
 	if err := filepath.WalkDir(root, func(path string, d os.DirEntry, err error) error {
@@ -97,6 +104,7 @@ func ProcessImageRoot(root string, workers int, opts ExportOptions, deleteSource
 }
 
 func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, deleteSctx bool) error {
+	opts = normalizeExportOptions(opts)
 	entries, err := os.ReadDir(root)
 	if err != nil {
 		return err
@@ -111,6 +119,9 @@ func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, d
 		if !strings.HasSuffix(name, ".sc") || strings.HasSuffix(name, "_tex.sc") {
 			continue
 		}
+		if !matchesIncludePrefix(name, opts.IncludePrefixes) {
+			continue
+		}
 		files = append(files, filepath.Join(root, name))
 	}
 	sort.Strings(files)
@@ -120,12 +131,12 @@ func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, d
 	}
 	if len(files) == 0 {
 		if deleteSctx {
-			return deleteSCRootSctx(root)
+			return deleteSCRootSctx(root, opts.IncludePrefixes)
 		}
 		return nil
 	}
 
-	fileConcurrency := workers
+	fileConcurrency := opts.FileConcurrency
 	if fileConcurrency > len(files) {
 		fileConcurrency = len(files)
 	}
@@ -141,7 +152,7 @@ func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, d
 	fmt.Printf("  Concurrency: %d files x %d workers\n", fileConcurrency, perFileWorkers)
 
 	jobs := make(chan string)
-	results := make(chan error, len(files))
+	results := make(chan scRootResult, len(files))
 	var wg sync.WaitGroup
 
 	for i := 0; i < fileConcurrency; i++ {
@@ -150,33 +161,26 @@ func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, d
 			defer wg.Done()
 			for source := range jobs {
 				outputDir := strings.TrimSuffix(source, filepath.Ext(source))
-				manifestPath := filepath.Join(outputDir, "manifest.json")
-				if _, err := os.Stat(manifestPath); err == nil {
-					if deleteSource {
-						_ = os.Remove(source)
-					}
-					results <- nil
-					continue
-				}
 				if _, err := os.Stat(outputDir); err == nil {
 					if err := os.RemoveAll(outputDir); err != nil {
-						results <- fmt.Errorf("%s: %w", outputDir, err)
+						results <- scRootResult{source: source, err: fmt.Errorf("%s: %w", outputDir, err)}
 						continue
 					}
 				}
-				stats, err := exportSingle(source, outputDir, perFileWorkers, opts)
+				stats, err := exportSingleFunc(source, outputDir, perFileWorkers, opts)
 				if err != nil {
-					results <- fmt.Errorf("%s: %w", source, err)
+					results <- scRootResult{source: source, err: fmt.Errorf("%s: %w", source, err)}
 					continue
 				}
+				fmt.Printf("\n[SC] Done: %s\n", source)
 				printAssetStats(stats)
 				if deleteSource {
 					if err := os.Remove(source); err != nil && !os.IsNotExist(err) {
-						results <- fmt.Errorf("%s: %w", source, err)
+						results <- scRootResult{source: source, err: fmt.Errorf("%s: %w", source, err)}
 						continue
 					}
 				}
-				results <- nil
+				results <- scRootResult{source: source}
 			}
 		}()
 	}
@@ -192,25 +196,33 @@ func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, d
 
 	var firstErr error
 	processed := 0
-	for err := range results {
-		if err != nil && firstErr == nil {
-			firstErr = err
+	successes := 0
+	failures := 0
+	for result := range results {
+		if result.err != nil {
+			if firstErr == nil {
+				firstErr = result.err
+			}
+			failures++
+			fmt.Printf("\n[SC] Failed: %s\n  Error: %v\n", result.source, result.err)
+		} else {
+			successes++
 		}
 		processed++
 		if processed == len(files) || processed%10 == 0 {
-			fmt.Printf("  Progress: %d/%d\n", processed, len(files))
+			fmt.Printf("  Progress: %d/%d (ok=%d failed=%d)\n", processed, len(files), successes, failures)
 		}
 	}
 	if firstErr != nil {
 		return firstErr
 	}
 	if deleteSctx {
-		return deleteSCRootSctx(root)
+		return deleteSCRootSctx(root, opts.IncludePrefixes)
 	}
 	return nil
 }
 
-func deleteSCRootSctx(root string) error {
+func deleteSCRootSctx(root string, includePrefixes []string) error {
 	entries, err := os.ReadDir(root)
 	if err != nil {
 		return err
@@ -219,11 +231,25 @@ func deleteSCRootSctx(root string) error {
 		if entry.IsDir() {
 			continue
 		}
-		if strings.EqualFold(filepath.Ext(entry.Name()), ".sctx") {
+		name := entry.Name()
+		if strings.EqualFold(filepath.Ext(name), ".sctx") && matchesIncludePrefix(name, includePrefixes) {
 			if err := os.Remove(filepath.Join(root, entry.Name())); err != nil && !os.IsNotExist(err) {
 				return err
 			}
 		}
 	}
 	return nil
+}
+
+func matchesIncludePrefix(name string, includePrefixes []string) bool {
+	if len(includePrefixes) == 0 {
+		return true
+	}
+	base := strings.TrimSuffix(name, filepath.Ext(name))
+	for _, prefix := range includePrefixes {
+		if strings.HasPrefix(base, prefix) {
+			return true
+		}
+	}
+	return false
 }

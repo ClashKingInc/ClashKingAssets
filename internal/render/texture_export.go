@@ -12,6 +12,8 @@ import (
 	"sc2fla/internal/sc"
 )
 
+var decodeTextureFile = sc.DecodeTextureFile
+
 func isDirectTextureInput(path string) bool {
 	switch strings.ToLower(filepath.Ext(path)) {
 	case ".sctx", ".ktx", ".zktx":
@@ -23,7 +25,7 @@ func isDirectTextureInput(path string) bool {
 
 func exportTextureFile(inputPath, outPath string, opts ExportOptions) error {
 	start := time.Now()
-	img, err := sc.DecodeTextureFile(inputPath)
+	img, err := decodeTextureFile(inputPath)
 	if err != nil {
 		return err
 	}
@@ -42,6 +44,16 @@ func exportTextureFile(inputPath, outPath string, opts ExportOptions) error {
 	}
 
 	outputPath := filepath.Join(assetDir, strings.TrimSuffix(filepath.Base(inputPath), filepath.Ext(inputPath))+".png")
+	if reason := tinyOutputReason(img.Bounds(), opts.SkipTinyOutputThreshold); reason != "" {
+		if err := removeIfExists(outputPath); err != nil {
+			return err
+		}
+		fmt.Printf("Skipped %s\n", inputPath)
+		fmt.Printf("  Type:    texture\n")
+		fmt.Printf("  Reason:  %s\n", reason)
+		fmt.Printf("  Total:   %s\n", time.Since(start).Round(time.Millisecond))
+		return nil
+	}
 	file, err := os.Create(outputPath)
 	if err != nil {
 		return err

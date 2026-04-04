@@ -24,6 +24,7 @@ type Manifest struct {
 	AssetDir string          `json:"asset_dir"`
 	Exports  []ManifestEntry `json:"exports"`
 	Skipped  []SkippedEntry  `json:"skipped,omitempty"`
+	Profile  []TargetProfile `json:"-"`
 }
 
 type ManifestEntry struct {
@@ -78,11 +79,38 @@ type Exporter struct {
 	opts        ExportOptions
 }
 
+type ParseProfile struct {
+	MainPrepare    time.Duration
+	MainLoad       time.Duration
+	TexturePrepare time.Duration
+	TextureLoad    time.Duration
+}
+
+type TargetProfile struct {
+	ExportName      string
+	ResourceID      uint16
+	Status          string
+	OutputFile      string
+	Frames          int
+	ChangePoints    int
+	SampledSteps    int
+	CanvasWidth     int
+	CanvasHeight    int
+	PrepareDuration time.Duration
+	BoundsDuration  time.Duration
+	RenderDuration  time.Duration
+	EncodeDuration  time.Duration
+	TotalDuration   time.Duration
+}
+
 type AssetStats struct {
 	Source         string
 	AssetDir       string
 	ExportsDir     string
 	ManifestPath   string
+	ProfileEnabled bool
+	ParseProfile   ParseProfile
+	TopTargets     []TargetProfile
 	ParseDuration  time.Duration
 	ExportDuration time.Duration
 	TotalDuration  time.Duration
@@ -95,6 +123,26 @@ type AssetStats struct {
 	Frames         int
 	DurationMS     int
 	BytesWritten   int64
+}
+
+type renderStep struct {
+	Time    float64
+	DelayCS int
+}
+
+type renderProfile struct {
+	Frames          int
+	ChangePoints    int
+	SampledSteps    int
+	CanvasWidth     int
+	CanvasHeight    int
+	PrepareDuration time.Duration
+	BoundsDuration  time.Duration
+	RenderDuration  time.Duration
+}
+
+type stateHasher struct {
+	value uint64
 }
 
 func NewExporter(swf *sc.SWF) *Exporter {
@@ -170,7 +218,7 @@ func ExportPath(inputPath, outPath string, workers int, opts ExportOptions) erro
 func exportSingle(source, assetDir string, workers int, opts ExportOptions) (AssetStats, error) {
 	start := time.Now()
 	parseStart := time.Now()
-	swf, err := sc.Load(source)
+	swf, loadStats, err := sc.LoadWithStats(source)
 	if err != nil {
 		return AssetStats{}, err
 	}
@@ -197,6 +245,14 @@ func exportSingle(source, assetDir string, workers int, opts ExportOptions) (Ass
 		AssetDir:       assetDir,
 		ExportsDir:     assetDir,
 		ManifestPath:   manifestPath,
+		ProfileEnabled: runOpts.Profile,
+		ParseProfile: ParseProfile{
+			MainPrepare:    loadStats.MainPrepareDuration,
+			MainLoad:       loadStats.MainLoadDuration,
+			TexturePrepare: loadStats.TexturePrepareDuration,
+			TextureLoad:    loadStats.TextureLoadDuration,
+		},
+		TopTargets:     topTargetProfiles(manifest.Profile, runOpts.ProfileTopN),
 		ParseDuration:  parseDuration,
 		ExportDuration: exportDuration,
 		TotalDuration:  time.Since(start),
@@ -246,6 +302,9 @@ func printAssetStats(stats AssetStats) {
 	fmt.Printf("  Size:    %.2f MB\n", float64(stats.BytesWritten)/(1024*1024))
 	fmt.Printf("  Exports: %s\n", stats.ExportsDir)
 	fmt.Printf("  Manifest: %s\n", stats.ManifestPath)
+	if stats.ProfileEnabled {
+		printProfileSummary(stats)
+	}
 }
 
 func printRunSummary(allStats []AssetStats, total time.Duration) {
@@ -292,6 +351,88 @@ func safeAverage(total time.Duration, count int) time.Duration {
 	return time.Duration(int64(total) / int64(count))
 }
 
+func printProfileSummary(stats AssetStats) {
+	parseOther := stats.ParseDuration - stats.ParseProfile.MainPrepare - stats.ParseProfile.MainLoad - stats.ParseProfile.TexturePrepare - stats.ParseProfile.TextureLoad
+	if parseOther < 0 {
+		parseOther = 0
+	}
+	fmt.Printf("  Profile:\n")
+	fmt.Printf(
+		"    Parse: prepare-main=%s load-main=%s prepare-tex=%s load-tex=%s other=%s\n",
+		stats.ParseProfile.MainPrepare.Round(time.Millisecond),
+		stats.ParseProfile.MainLoad.Round(time.Millisecond),
+		stats.ParseProfile.TexturePrepare.Round(time.Millisecond),
+		stats.ParseProfile.TextureLoad.Round(time.Millisecond),
+		parseOther.Round(time.Millisecond),
+	)
+	if len(stats.TopTargets) == 0 {
+		fmt.Printf("    Slowest: none\n")
+		return
+	}
+	fmt.Printf("    Slowest (%d):\n", len(stats.TopTargets))
+	for _, profile := range stats.TopTargets {
+		size := "-"
+		if profile.CanvasWidth > 0 && profile.CanvasHeight > 0 {
+			size = fmt.Sprintf("%dx%d", profile.CanvasWidth, profile.CanvasHeight)
+		}
+		fmt.Printf(
+			"      %s [%s] total=%s prepare=%s bounds=%s render=%s encode=%s frames=%d steps=%d/%d size=%s\n",
+			profile.ExportName,
+			profile.Status,
+			profile.TotalDuration.Round(time.Millisecond),
+			profile.PrepareDuration.Round(time.Millisecond),
+			profile.BoundsDuration.Round(time.Millisecond),
+			profile.RenderDuration.Round(time.Millisecond),
+			profile.EncodeDuration.Round(time.Millisecond),
+			profile.Frames,
+			profile.SampledSteps,
+			profile.ChangePoints,
+			size,
+		)
+	}
+}
+
+func topTargetProfiles(profiles []TargetProfile, limit int) []TargetProfile {
+	if len(profiles) == 0 || limit <= 0 {
+		return nil
+	}
+	sorted := append([]TargetProfile(nil), profiles...)
+	sort.Slice(sorted, func(i, j int) bool {
+		if sorted[i].TotalDuration == sorted[j].TotalDuration {
+			if sorted[i].ExportName == sorted[j].ExportName {
+				return sorted[i].ResourceID < sorted[j].ResourceID
+			}
+			return sorted[i].ExportName < sorted[j].ExportName
+		}
+		return sorted[i].TotalDuration > sorted[j].TotalDuration
+	})
+	if limit > len(sorted) {
+		limit = len(sorted)
+	}
+	return sorted[:limit]
+}
+
+func (h *stateHasher) add(v uint64) {
+	h.value ^= v + 0x9e3779b97f4a7c15 + (h.value << 6) + (h.value >> 2)
+}
+
+func tinyOutputReason(bounds image.Rectangle, threshold int) string {
+	if threshold <= 0 {
+		return ""
+	}
+	if bounds.Dx() <= threshold && bounds.Dy() <= threshold {
+		return fmt.Sprintf("tiny output %dx%d <= %d", bounds.Dx(), bounds.Dy(), threshold)
+	}
+	return ""
+}
+
+func removeIfExists(path string) error {
+	if err := os.Remove(path); err != nil && !os.IsNotExist(err) {
+		return err
+	}
+	return nil
+}
+
 func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	if err := os.MkdirAll(assetDir, 0o755); err != nil {
 		return nil, err
@@ -308,11 +449,13 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 		AssetDir: assetDir,
 		Exports:  []ManifestEntry{},
 		Skipped:  skipped,
+		Profile:  []TargetProfile{},
 	}
 
 	type result struct {
 		entry   *ManifestEntry
 		skipped *SkippedEntry
+		profile TargetProfile
 		err     error
 	}
 
@@ -327,8 +470,8 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 		go func() {
 			defer wg.Done()
 			for target := range jobs {
-				entry, skip, err := e.exportTarget(target, assetDir, nameAllocator)
-				results <- result{entry: entry, skipped: skip, err: err}
+				entry, skip, profile, err := e.exportTarget(target, assetDir, nameAllocator)
+				results <- result{entry: entry, skipped: skip, profile: profile, err: err}
 			}
 		}()
 	}
@@ -346,6 +489,9 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	for res := range results {
 		if res.err != nil {
 			return nil, res.err
+		}
+		if e.opts.Profile {
+			manifest.Profile = append(manifest.Profile, res.profile)
 		}
 		if res.skipped != nil {
 			manifest.Skipped = append(manifest.Skipped, *res.skipped)
@@ -570,23 +716,57 @@ func sortedKeys(m map[string]bool) []string {
 	return out
 }
 
-func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nameAllocator) (*ManifestEntry, *SkippedEntry, error) {
-	frames, durationMS, err := e.renderTarget(target)
+func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nameAllocator) (*ManifestEntry, *SkippedEntry, TargetProfile, error) {
+	start := time.Now()
+	profile := TargetProfile{
+		ExportName: target.Name,
+		ResourceID: target.ResourceID,
+		Status:     "failed",
+	}
+	frames, durationMS, skipReason, renderStats, err := e.renderTarget(target)
+	profile.PrepareDuration = renderStats.PrepareDuration
+	profile.BoundsDuration = renderStats.BoundsDuration
+	profile.RenderDuration = renderStats.RenderDuration
+	profile.ChangePoints = renderStats.ChangePoints
+	profile.SampledSteps = renderStats.SampledSteps
+	profile.Frames = renderStats.Frames
+	profile.CanvasWidth = renderStats.CanvasWidth
+	profile.CanvasHeight = renderStats.CanvasHeight
 	if err != nil {
+		profile.TotalDuration = time.Since(start)
 		return nil, &SkippedEntry{
 			SourceSC:   e.swf.Filename,
 			ExportName: target.Name,
 			ResourceID: target.ResourceID,
 			Reason:     err.Error(),
-		}, nil
+		}, profile, nil
+	}
+	if skipReason != "" {
+		fileBase := allocator.Next(target.Name, target.ResourceID)
+		if err := removeIfExists(filepath.Join(exportsDir, fileBase+".png")); err != nil {
+			return nil, nil, profile, err
+		}
+		if err := removeIfExists(filepath.Join(exportsDir, fileBase+".webp")); err != nil {
+			return nil, nil, profile, err
+		}
+		profile.Status = "skipped"
+		profile.TotalDuration = time.Since(start)
+		return nil, &SkippedEntry{
+			SourceSC:   e.swf.Filename,
+			ExportName: target.Name,
+			ResourceID: target.ResourceID,
+			Reason:     skipReason,
+		}, profile, nil
 	}
 	if len(frames) == 0 {
+		profile.Status = "skipped"
+		profile.TotalDuration = time.Since(start)
 		return nil, &SkippedEntry{
 			SourceSC:   e.swf.Filename,
 			ExportName: target.Name,
 			ResourceID: target.ResourceID,
 			Reason:     "no frames rendered",
-		}, nil
+		}, profile, nil
 	}
 
 	fileBase := allocator.Next(target.Name, target.ResourceID)
@@ -606,17 +786,20 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 	switch len(frames) {
 	case 1:
 		outputPath += ".png"
+		encodeStart := time.Now()
 		file, err := os.Create(outputPath)
 		if err != nil {
-			return nil, nil, err
+			return nil, nil, profile, err
 		}
 		if err := png.Encode(file, frames[0].Image); err != nil {
 			file.Close()
-			return nil, nil, err
+			return nil, nil, profile, err
 		}
 		if err := file.Close(); err != nil {
-			return nil, nil, err
+			return nil, nil, profile, err
 		}
+		profile.EncodeDuration = time.Since(encodeStart)
+		profile.Status = "png"
 		entry.OutputFile = filepath.Base(outputPath)
 		entry.FrameCount = 1
 		entry.DurationMS = 0
@@ -626,17 +809,20 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		for _, frame := range frames {
 			totalDuration += frame.DelayCS * 10
 		}
+		encodeStart := time.Now()
 		file, err := os.Create(outputPath)
 		if err != nil {
-			return nil, nil, err
+			return nil, nil, profile, err
 		}
 		if err := writeAnimatedWebP(file, frames); err != nil {
 			file.Close()
-			return nil, nil, err
+			return nil, nil, profile, err
 		}
 		if err := file.Close(); err != nil {
-			return nil, nil, err
+			return nil, nil, profile, err
 		}
+		profile.EncodeDuration = time.Since(encodeStart)
+		profile.Status = "webp"
 		entry.OutputFile = filepath.Base(outputPath)
 		entry.FrameCount = len(frames)
 		if durationMS > 0 {
@@ -646,7 +832,9 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		}
 	}
 
-	return entry, nil, nil
+	profile.OutputFile = entry.OutputFile
+	profile.TotalDuration = time.Since(start)
+	return entry, nil, profile, nil
 }
 
 type renderedFrame struct {
@@ -654,74 +842,143 @@ type renderedFrame struct {
 	DelayCS int
 }
 
-func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, error) {
+func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, renderProfile, error) {
 	switch target.Resource.(type) {
 	case *sc.Shape:
+		boundsStart := time.Now()
 		bounds, err := e.collectBounds(target, 0, nil)
 		if err != nil {
-			return nil, 0, err
+			return nil, 0, "", renderProfile{}, err
 		}
+		profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
+		renderStart := time.Now()
 		frame, err := e.renderAt(target, 0, bounds)
 		if err != nil {
-			return nil, 0, err
+			return nil, 0, "", profile, err
 		}
-		return []renderedFrame{{Image: frame, DelayCS: 0}}, 0, nil
+		profile.RenderDuration = time.Since(renderStart)
+		profile.Frames = 1
+		profile.CanvasWidth = frame.Bounds().Dx()
+		profile.CanvasHeight = frame.Bounds().Dy()
+		if reason := tinyOutputReason(frame.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
+			return nil, 0, reason, profile, nil
+		}
+		return []renderedFrame{{Image: frame, DelayCS: 0}}, 0, "", profile, nil
 	case *sc.MovieClip:
 		duration := target.Duration
 		if duration <= 0 {
+			boundsStart := time.Now()
 			bounds, err := e.collectBounds(target, 0, nil)
 			if err != nil {
-				return nil, 0, err
+				return nil, 0, "", renderProfile{}, err
 			}
+			profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
+			renderStart := time.Now()
 			frame, err := e.renderAt(target, 0, bounds)
 			if err != nil {
-				return nil, 0, err
+				return nil, 0, "", profile, err
 			}
-			return []renderedFrame{{Image: frame, DelayCS: 0}}, 0, nil
+			profile.RenderDuration = time.Since(renderStart)
+			profile.Frames = 1
+			profile.CanvasWidth = frame.Bounds().Dx()
+			profile.CanvasHeight = frame.Bounds().Dy()
+			if reason := tinyOutputReason(frame.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
+				return nil, 0, reason, profile, nil
+			}
+			return []renderedFrame{{Image: frame, DelayCS: 0}}, 0, "", profile, nil
 		}
 
+		profile := renderProfile{}
+		prepareStart := time.Now()
 		changePoints := e.collectChangePoints(target, duration)
 		if len(changePoints) == 0 {
 			changePoints = []float64{0}
 		}
-		bounds, err := e.collectBounds(target, duration, changePoints)
+		steps, err := e.collapseVisualStates(target, changePoints, duration)
 		if err != nil {
-			return nil, 0, err
+			return nil, 0, "", profile, err
 		}
+		profile.PrepareDuration = time.Since(prepareStart)
+		profile.ChangePoints = len(changePoints)
+		profile.SampledSteps = len(steps)
+		sampleTimes := make([]float64, 0, len(steps))
+		for _, step := range steps {
+			sampleTimes = append(sampleTimes, step.Time)
+		}
+		boundsStart := time.Now()
+		bounds, err := e.collectBounds(target, duration, sampleTimes)
+		if err != nil {
+			return nil, 0, "", profile, err
+		}
+		profile.BoundsDuration = time.Since(boundsStart)
 
-		rawFrames := make([]renderedFrame, 0, len(changePoints))
+		rawFrames := make([]renderedFrame, 0, len(steps))
 		totalDuration := 0
 		var lastHash [20]byte
-		for i, t := range changePoints {
-			next := duration
-			if i+1 < len(changePoints) {
-				next = changePoints[i+1]
-			}
-			delayCS := int(math.Round((next - t) * 100))
-			if delayCS <= 0 {
-				delayCS = 1
-			}
-			img, err := e.renderAt(target, t, bounds)
+		renderStart := time.Now()
+		for _, step := range steps {
+			img, err := e.renderAt(target, step.Time, bounds)
 			if err != nil {
-				return nil, 0, err
+				return nil, 0, "", profile, err
 			}
 			hash := sha1.Sum(img.Pix)
 			if len(rawFrames) > 0 && hash == lastHash {
-				rawFrames[len(rawFrames)-1].DelayCS += delayCS
-				totalDuration += delayCS * 10
+				rawFrames[len(rawFrames)-1].DelayCS += step.DelayCS
+				totalDuration += step.DelayCS * 10
 				continue
 			}
-			rawFrames = append(rawFrames, renderedFrame{Image: img, DelayCS: delayCS})
+			rawFrames = append(rawFrames, renderedFrame{Image: img, DelayCS: step.DelayCS})
 			lastHash = hash
-			totalDuration += delayCS * 10
+			totalDuration += step.DelayCS * 10
 		}
+		profile.RenderDuration = time.Since(renderStart)
+		if len(rawFrames) > 0 {
+			profile.CanvasWidth = rawFrames[0].Image.Bounds().Dx()
+			profile.CanvasHeight = rawFrames[0].Image.Bounds().Dy()
+			if reason := tinyOutputReason(rawFrames[0].Image.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
+				profile.Frames = len(rawFrames)
+				return nil, 0, reason, profile, nil
+			}
+		}
+		profile.Frames = len(rawFrames)
 		if len(rawFrames) == 1 {
-			return []renderedFrame{{Image: rawFrames[0].Image, DelayCS: 0}}, 0, nil
+			return []renderedFrame{{Image: rawFrames[0].Image, DelayCS: 0}}, 0, "", profile, nil
 		}
-		return rawFrames, totalDuration, nil
+		return rawFrames, totalDuration, "", profile, nil
 	default:
-		return nil, 0, fmt.Errorf("unsupported resource type %s", target.Resource.ResourceType())
+		return nil, 0, "", renderProfile{}, fmt.Errorf("unsupported resource type %s", target.Resource.ResourceType())
 	}
+}
+
+func (e *Exporter) collapseVisualStates(target Target, changePoints []float64, duration float64) ([]renderStep, error) {
+	steps := make([]renderStep, 0, len(changePoints))
+	var lastSignature uint64
+	haveSignature := false
+
+	for i, t := range changePoints {
+		next := duration
+		if i+1 < len(changePoints) {
+			next = changePoints[i+1]
+		}
+		delayCS := int(math.Round((next - t) * 100))
+		if delayCS <= 0 {
+			delayCS = 1
+		}
+
+		signature, err := e.visualStateSignature(target, t)
+		if err != nil {
+			return nil, err
+		}
+		if haveSignature && signature == lastSignature {
+			steps[len(steps)-1].DelayCS += delayCS
+			continue
+		}
+		steps = append(steps, renderStep{Time: t, DelayCS: delayCS})
+		lastSignature = signature
+		haveSignature = true
+	}
+
+	return steps, nil
 }
 
 func (e *Exporter) collectChangePoints(target Target, duration float64) []float64 {
@@ -772,6 +1029,64 @@ func quantizeTime(t float64) int64 {
 
 func dequantizeTime(v int64) float64 {
 	return float64(v) / 1_000_000
+}
+
+func (e *Exporter) visualStateSignature(target Target, t float64) (uint64, error) {
+	hasher := &stateHasher{value: 1469598103934665603}
+	if err := e.hashVisualState(target, target.ResourceID, t, map[uint16]int{}, target.SelectedBind == "", hasher); err != nil {
+		return 0, err
+	}
+	return hasher.value, nil
+}
+
+func (e *Exporter) hashVisualState(target Target, resourceID uint16, t float64, seen map[uint16]int, selected bool, hasher *stateHasher) error {
+	resource := e.swf.Resources[resourceID]
+	switch res := resource.(type) {
+	case *sc.Shape:
+		if !selected {
+			return nil
+		}
+		hasher.add(1)
+		hasher.add(uint64(resourceID))
+		hasher.add(uint64(len(res.Bitmaps)))
+	case *sc.MovieClip:
+		if seen[resourceID] > 4 {
+			return nil
+		}
+		seen[resourceID]++
+		defer func() { seen[resourceID]-- }()
+
+		frameIndex := clipFrameIndexAt(res, t)
+		hasher.add(2)
+		hasher.add(uint64(resourceID))
+		hasher.add(uint64(frameIndex))
+		if selected {
+			hasher.add(1)
+		} else {
+			hasher.add(0)
+		}
+
+		frame := res.Frames[frameIndex]
+		for _, element := range frame.Elements {
+			if int(element.Bind) >= len(res.Binds) {
+				continue
+			}
+			bind := res.Binds[element.Bind]
+			child := e.swf.Resources[bind.ID]
+			if _, ok := child.(*sc.MovieClipModifier); ok {
+				continue
+			}
+			childSelected := selected || bind.Name == target.SelectedBind
+			if err := e.hashVisualState(target, bind.ID, t, seen, childSelected, hasher); err != nil {
+				return err
+			}
+		}
+	case *sc.TextField:
+		return nil
+	case *sc.MovieClipModifier:
+		return nil
+	}
+	return nil
 }
 
 type renderBounds struct {
@@ -922,11 +1237,19 @@ func (e *Exporter) visitResource(target Target, resourceID uint16, t float64, ma
 }
 
 func clipFrameAt(target Target, resourceID uint16, clip *sc.MovieClip, t float64) sc.MovieClipFrame {
-	if len(clip.Frames) == 0 {
+	idx := clipFrameIndexAt(clip, t)
+	if idx < 0 {
 		return sc.MovieClipFrame{}
 	}
+	return clip.Frames[idx]
+}
+
+func clipFrameIndexAt(clip *sc.MovieClip, t float64) int {
+	if len(clip.Frames) == 0 {
+		return -1
+	}
 	if len(clip.Frames) == 1 {
-		return clip.Frames[0]
+		return 0
 	}
 	fps := clip.FrameRate
 	if fps <= 0 {
@@ -934,7 +1257,7 @@ func clipFrameAt(target Target, resourceID uint16, clip *sc.MovieClip, t float64
 	}
 	idx := int(math.Floor(t*float64(fps) + 1e-9))
 	idx %= len(clip.Frames)
-	return clip.Frames[idx]
+	return idx
 }
 
 func (e *Exporter) bitmapRenderable(shape *sc.Shape, idx int) (*bitmapRenderable, error) {
@@ -1000,33 +1323,53 @@ func drawBitmap(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTr
 		return nil
 	}
 
+	identityColor := isIdentityColorTransform(colorTransform)
 	for y := top; y < bottom; y++ {
+		sx := inv.A*(float64(left)+0.5) + inv.C*(float64(y)+0.5) + inv.Tx
+		sy := inv.B*(float64(left)+0.5) + inv.D*(float64(y)+0.5) + inv.Ty
 		for x := left; x < right; x++ {
-			sx, sy := inv.Apply(float64(x)+0.5, float64(y)+0.5)
 			if sx < 0 || sy < 0 || sx >= w || sy >= h {
+				sx += inv.A
+				sy += inv.B
 				continue
 			}
-			src := sampleNearest(sprite, sx, sy)
-			if src.A == 0 {
+			ix := int(math.Round(sx - 0.5))
+			iy := int(math.Round(sy - 0.5))
+			if ix < 0 || iy < 0 || ix >= sprite.Bounds().Dx() || iy >= sprite.Bounds().Dy() {
+				sx += inv.A
+				sy += inv.B
 				continue
 			}
-			src = colorTransform.Apply(src)
+			src := sprite.NRGBAAt(ix, iy)
 			if src.A == 0 {
+				sx += inv.A
+				sy += inv.B
+				continue
+			}
+			if !identityColor {
+				src = colorTransform.Apply(src)
+			}
+			if src.A == 0 {
+				sx += inv.A
+				sy += inv.B
 				continue
 			}
 			composeOver(dst, x, y, src)
+			sx += inv.A
+			sy += inv.B
 		}
 	}
 	return nil
 }
 
-func sampleNearest(img *image.NRGBA, x, y float64) color.NRGBA {
-	ix := int(math.Round(x - 0.5))
-	iy := int(math.Round(y - 0.5))
-	if ix < 0 || iy < 0 || ix >= img.Bounds().Dx() || iy >= img.Bounds().Dy() {
-		return color.NRGBA{}
-	}
-	return img.NRGBAAt(ix, iy)
+func isIdentityColorTransform(c sc.ColorTransform) bool {
+	return c.RAdd == 0 &&
+		c.GAdd == 0 &&
+		c.BAdd == 0 &&
+		c.AMul == 1 &&
+		c.RMul == 1 &&
+		c.GMul == 1 &&
+		c.BMul == 1
 }
 
 func composeOver(dst *image.NRGBA, x, y int, src color.NRGBA) {

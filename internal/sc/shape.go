@@ -207,12 +207,19 @@ func (b ShapeBitmap) SpriteImage(textures []*Texture) (*image.NRGBA, error) {
 }
 
 func (b ShapeBitmap) LocalTransform() (Matrix, error) {
-	left, top, _, _ := b.UVBounds()
+	left, top, right, bottom := b.UVBounds()
 	local := make([]Point, len(b.UVCoords))
 	for i, p := range b.UVCoords {
 		local[i] = Point{X: p.X - float64(left), Y: p.Y - float64(top)}
 	}
-	return solveAffine(local, b.XYCoords)
+	transform, err := solveAffine(local, b.XYCoords)
+	if err == nil {
+		return transform, nil
+	}
+	if fallback, ok := fallbackAffine(local, b.XYCoords); ok {
+		return fallback, nil
+	}
+	return IdentityMatrix(), b.wrapLocalTransformError(local, left, top, right, bottom, err)
 }
 
 func (b ShapeBitmap) uvSize() (int, int) {
@@ -299,6 +306,42 @@ func solveAffine(src, dst []Point) (Matrix, error) {
 	}, nil
 }
 
+func fallbackAffine(src, dst []Point) (Matrix, bool) {
+	if len(src) != len(dst) || len(src) == 0 {
+		return Matrix{}, false
+	}
+
+	srcMinX, srcMinY, srcMaxX, srcMaxY, ok := pointBounds(src)
+	if !ok {
+		return Matrix{}, false
+	}
+	dstMinX, dstMinY, dstMaxX, dstMaxY, ok := pointBounds(dst)
+	if !ok {
+		return Matrix{}, false
+	}
+
+	matrix := IdentityMatrix()
+	srcWidth := srcMaxX - srcMinX
+	dstWidth := dstMaxX - dstMinX
+	if math.Abs(srcWidth) > 1e-6 {
+		matrix.A = dstWidth / srcWidth
+		matrix.Tx = dstMinX - matrix.A*srcMinX
+	} else {
+		matrix.Tx = dstMinX - srcMinX
+	}
+
+	srcHeight := srcMaxY - srcMinY
+	dstHeight := dstMaxY - dstMinY
+	if math.Abs(srcHeight) > 1e-6 {
+		matrix.D = dstHeight / srcHeight
+		matrix.Ty = dstMinY - matrix.D*srcMinY
+	} else {
+		matrix.Ty = dstMinY - srcMinY
+	}
+
+	return matrix, true
+}
+
 func solve3x3(m [3][3]float64, b [3]float64) ([3]float64, error) {
 	aug := [3][4]float64{}
 	for i := 0; i < 3; i++ {
@@ -337,6 +380,59 @@ func solve3x3(m [3][3]float64, b [3]float64) ([3]float64, error) {
 	}
 
 	return [3]float64{aug[0][3], aug[1][3], aug[2][3]}, nil
+}
+
+func pointBounds(points []Point) (minX, minY, maxX, maxY float64, ok bool) {
+	if len(points) == 0 {
+		return 0, 0, 0, 0, false
+	}
+	minX, maxX = points[0].X, points[0].X
+	minY, maxY = points[0].Y, points[0].Y
+	for _, point := range points[1:] {
+		if point.X < minX {
+			minX = point.X
+		}
+		if point.X > maxX {
+			maxX = point.X
+		}
+		if point.Y < minY {
+			minY = point.Y
+		}
+		if point.Y > maxY {
+			maxY = point.Y
+		}
+	}
+	return minX, minY, maxX, maxY, true
+}
+
+func (b ShapeBitmap) wrapLocalTransformError(local []Point, left, top, right, bottom int, err error) error {
+	return fmt.Errorf(
+		"%w local=%s world=%s uv_bounds=[%d,%d,%d,%d] max_rects=%t texture_index=%d",
+		err,
+		formatPoints(local),
+		formatPoints(b.XYCoords),
+		left,
+		top,
+		right,
+		bottom,
+		b.MaxRects,
+		b.TextureIndex,
+	)
+}
+
+func formatPoints(points []Point) string {
+	if len(points) == 0 {
+		return "[]"
+	}
+	out := "["
+	for i, point := range points {
+		if i > 0 {
+			out += ","
+		}
+		out += fmt.Sprintf("(%.3f,%.3f)", point.X, point.Y)
+	}
+	out += "]"
+	return out
 }
 
 func toNRGBA(img image.Image) *image.NRGBA {

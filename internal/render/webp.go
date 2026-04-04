@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strconv"
 )
 
 func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
@@ -14,7 +15,7 @@ func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
 		return fmt.Errorf("webp requires at least one frame")
 	}
 
-	img2webpPath, webpmuxPath, err := lookupWebPTools()
+	img2webpPath, err := lookupWebPTools()
 	if err != nil {
 		return err
 	}
@@ -43,18 +44,8 @@ func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
 		framePaths = append(framePaths, pngPath)
 	}
 
-	rawPath := filepath.Join(tempDir, "animation_raw.webp")
-	if err := runCommand(img2webpPath, buildImg2WebPArgs(framePaths, frames, rawPath)...); err != nil {
-		return err
-	}
-
-	timedPath := filepath.Join(tempDir, "animation_timed.webp")
-	if err := runCommand(webpmuxPath, buildWebPMuxDurationArgs(frames, rawPath, timedPath)...); err != nil {
-		return err
-	}
-
 	outputPath := filepath.Join(tempDir, "animation.webp")
-	if err := runCommand(webpmuxPath, buildWebPMuxColorArgs(timedPath, outputPath)...); err != nil {
+	if err := runCommand(img2webpPath, buildImg2WebPArgs(framePaths, frames, outputPath)...); err != nil {
 		return err
 	}
 
@@ -68,51 +59,43 @@ func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
 	return err
 }
 
-func lookupWebPTools() (string, string, error) {
+func lookupWebPTools() (string, error) {
 	img2webpPath, err := exec.LookPath("img2webp")
 	if err != nil {
-		return "", "", fmt.Errorf("img2webp not found in PATH")
+		return "", fmt.Errorf("img2webp not found in PATH")
 	}
-	webpmuxPath, err := exec.LookPath("webpmux")
-	if err != nil {
-		return "", "", fmt.Errorf("webpmux not found in PATH")
+	return img2webpPath, nil
+}
+
+func animatedWebPQuality() string {
+	return getEnvOrDefault("SC_ANIM_WEBP_QUALITY", "88")
+}
+
+func animatedWebPMethod() string {
+	return getEnvOrDefault("SC_ANIM_WEBP_METHOD", "0")
+}
+
+func getEnvOrDefault(key, fallback string) string {
+	if value := os.Getenv(key); value != "" {
+		return value
 	}
-	return img2webpPath, webpmuxPath, nil
+	return fallback
 }
 
 func buildImg2WebPArgs(framePaths []string, frames []renderedFrame, outputPath string) []string {
 	if len(framePaths) == 0 {
 		return []string{"-o", outputPath}
 	}
-	args := make([]string, 0, len(framePaths)*5+4)
-	args = append(args, "-loop", "0", "-lossless", "-m", "0", "-exact", framePaths[0])
-	for i := 1; i < len(framePaths); i++ {
+	args := make([]string, 0, len(framePaths)*7+4)
+	args = append(args, "-loop", "0", "-lossy", "-q", animatedWebPQuality(), "-m", animatedWebPMethod())
+	for i, framePath := range framePaths {
 		delayMS := 10
 		if i < len(frames) && frames[i].DelayCS > 0 {
 			delayMS = frames[i].DelayCS * 10
 		}
-		args = append(args, "-d", fmt.Sprintf("%d", delayMS), "-lossless", "-m", "0", "-exact", framePaths[i])
+		args = append(args, "-d", strconv.Itoa(delayMS), framePath)
 	}
 	args = append(args, "-o", outputPath)
-	return args
-}
-
-func buildWebPMuxDurationArgs(frames []renderedFrame, inputPath, outputPath string) []string {
-	args := make([]string, 0, len(frames)*2+3)
-	for i := range frames {
-		delayMS := 10
-		if frames[i].DelayCS > 0 {
-			delayMS = frames[i].DelayCS * 10
-		}
-		frameIndex := i + 1
-		args = append(args, "-duration", fmt.Sprintf("%d,%d,%d", delayMS, frameIndex, frameIndex))
-	}
-	args = append(args, inputPath, "-o", outputPath)
-	return args
-}
-
-func buildWebPMuxColorArgs(inputPath, outputPath string) []string {
-	args := []string{"-set", "bgcolor", "0,0,0,0", inputPath, "-o", outputPath}
 	return args
 }
 

@@ -1,16 +1,18 @@
 import json
+import mimetypes
 import os
 import zipfile
 from pathlib import Path
 
 import aiohttp
-from dotenv import load_dotenv
 import boto3
+from dotenv import load_dotenv
+
 load_dotenv()
 
 
 def apk_url() -> str:
-    return f"https://d.apkpure.net/b/APK/com.supercell.clashofclans?version=latest"
+    return "https://d.apkpure.net/b/APK/com.supercell.clashofclans?version=latest"
 
 
 async def download_file(url: str, as_json: bool = False):
@@ -77,13 +79,58 @@ def load_r2_existing_keys(client, bucket: str, prefix: str) -> set[str]:
     return keys
 
 
+def load_r2_existing_keys_for_prefixes(
+    client,
+    bucket: str,
+    prefix: str,
+    prefixes: list[str] | tuple[str, ...],
+) -> set[str]:
+    if client is None or not bucket:
+        return set()
+
+    keys: set[str] = set()
+    paginator = client.get_paginator("list_objects_v2")
+    bucket_prefix = f"{prefix}/" if prefix else ""
+
+    for requested_prefix in prefixes:
+        full_prefix = prefixed_r2_key(requested_prefix, prefix)
+        for page in paginator.paginate(Bucket=bucket, Prefix=full_prefix):
+            for item in page.get("Contents", []):
+                key = item["Key"]
+                if bucket_prefix and key.startswith(bucket_prefix):
+                    key = key[len(bucket_prefix):]
+                keys.add(key)
+
+    return keys
+
+
 def upload_file_to_r2(client, bucket: str, prefix: str, local_path: Path, key: str | None = None):
     if client is None or not bucket:
         return
 
     upload_key = key or local_path.as_posix()
+    extra_args = {}
+    content_type, _ = mimetypes.guess_type(upload_key)
+    if content_type:
+        extra_args["ContentType"] = content_type
     client.upload_file(
         Filename=str(local_path),
         Bucket=bucket,
         Key=prefixed_r2_key(upload_key, prefix),
+        ExtraArgs=extra_args or None,
     )
+
+
+def upload_bytes_to_r2(client, bucket: str, prefix: str, data: bytes, key: str):
+    if client is None or not bucket:
+        return
+
+    kwargs = {
+        "Bucket": bucket,
+        "Key": prefixed_r2_key(key, prefix),
+        "Body": data,
+    }
+    content_type, _ = mimetypes.guess_type(key)
+    if content_type:
+        kwargs["ContentType"] = content_type
+    client.put_object(**kwargs)

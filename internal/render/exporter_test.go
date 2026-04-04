@@ -42,7 +42,7 @@ func findTarget(t *testing.T, exporter *Exporter, name string) Target {
 
 func requireWebPTools(t *testing.T) {
 	t.Helper()
-	if _, _, err := lookupWebPTools(); err != nil {
+	if _, err := lookupWebPTools(); err != nil {
 		t.Skipf("webp tools unavailable: %v", err)
 	}
 }
@@ -112,11 +112,11 @@ func TestPlayerHousePartSplitRendersSubtreeOnly(t *testing.T) {
 	baseTarget := findTarget(t, exporter, "playerhouse_parts")
 	partTarget := findTarget(t, exporter, "playerhouse_parts/deco_winter01")
 
-	baseFrames, _, err := exporter.renderTarget(baseTarget)
+	baseFrames, _, _, _, err := exporter.renderTarget(baseTarget)
 	if err != nil {
 		t.Fatalf("base renderTarget failed: %v", err)
 	}
-	partFrames, _, err := exporter.renderTarget(partTarget)
+	partFrames, _, _, _, err := exporter.renderTarget(partTarget)
 	if err != nil {
 		t.Fatalf("part renderTarget failed: %v", err)
 	}
@@ -172,34 +172,20 @@ func TestWriteAnimatedWebPProducesRIFF(t *testing.T) {
 	}
 }
 
-func TestBuildImg2WebPArgsUsesFastLosslessEncoding(t *testing.T) {
+func TestBuildImg2WebPArgsUsesFastLossyEncoding(t *testing.T) {
 	args := buildImg2WebPArgs([]string{"a.png", "b.png"}, []renderedFrame{
 		{DelayCS: 4},
 		{DelayCS: 5},
 	}, "out.webp")
 
-	if !slices.Contains(args, "-lossless") || !slices.Contains(args, "-exact") {
-		t.Fatalf("expected lossless exact flags, args=%v", args)
+	if !slices.Contains(args, "-lossy") || !slices.Contains(args, "-q") {
+		t.Fatalf("expected lossy quality flags, args=%v", args)
 	}
 	if !slices.Contains(args, "-m") || !slices.Contains(args, "0") {
 		t.Fatalf("expected fast method flag, args=%v", args)
 	}
-	if !slices.Contains(args, "-d") || !slices.Contains(args, "50") {
-		t.Fatalf("expected later frame duration flag, args=%v", args)
-	}
-}
-
-func TestBuildWebPMuxDurationArgsSetsEveryFrame(t *testing.T) {
-	args := buildWebPMuxDurationArgs([]renderedFrame{
-		{DelayCS: 4},
-		{DelayCS: 5},
-	}, "in.webp", "out.webp")
-
-	if !slices.Contains(args, "40,1,1") {
-		t.Fatalf("expected first frame duration override, args=%v", args)
-	}
-	if !slices.Contains(args, "50,2,2") {
-		t.Fatalf("expected second frame duration override, args=%v", args)
+	if !slices.Contains(args, "40") || !slices.Contains(args, "50") {
+		t.Fatalf("expected frame duration flags, args=%v", args)
 	}
 }
 
@@ -278,7 +264,7 @@ func TestBattleBlimpDirectCompositeExport(t *testing.T) {
 	}
 
 	outDir := t.TempDir()
-	entry, skipped, err := exporter.exportTarget(target, outDir, newNameAllocator(outDir))
+	entry, skipped, _, err := exporter.exportTarget(target, outDir, newNameAllocator(outDir))
 	if err != nil {
 		t.Fatalf("exportTarget failed: %v", err)
 	}
@@ -337,7 +323,7 @@ func TestDragonGoldenFirstFrameHash(t *testing.T) {
 	swf := mustLoadSWF(t, "../../sc/chr_dragon.sc")
 	exporter := NewExporter(swf)
 	target := findTarget(t, exporter, "dragonx_fly1_3")
-	frames, _, err := exporter.renderTarget(target)
+	frames, _, _, _, err := exporter.renderTarget(target)
 	if err != nil {
 		t.Fatalf("renderTarget failed: %v", err)
 	}
@@ -360,11 +346,11 @@ func TestRenderScaleIncreasesOutputDimensions(t *testing.T) {
 	baseTarget := findTarget(t, baseExporter, "dragonx_fly1_3")
 	scaledTarget := findTarget(t, scaledExporter, "dragonx_fly1_3")
 
-	baseFrames, _, err := baseExporter.renderTarget(baseTarget)
+	baseFrames, _, _, _, err := baseExporter.renderTarget(baseTarget)
 	if err != nil {
 		t.Fatalf("base renderTarget failed: %v", err)
 	}
-	scaledFrames, _, err := scaledExporter.renderTarget(scaledTarget)
+	scaledFrames, _, _, _, err := scaledExporter.renderTarget(scaledTarget)
 	if err != nil {
 		t.Fatalf("scaled renderTarget failed: %v", err)
 	}
@@ -410,7 +396,7 @@ func BenchmarkRenderDragonWrapper(b *testing.B) {
 	}
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		if _, _, err := exporter.renderTarget(target); err != nil {
+		if _, _, _, _, err := exporter.renderTarget(target); err != nil {
 			b.Fatalf("renderTarget failed: %v", err)
 		}
 	}
