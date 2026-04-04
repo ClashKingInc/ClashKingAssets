@@ -8,16 +8,12 @@ import (
 	"os/exec"
 	"path/filepath"
 	"strconv"
+	"strings"
 )
 
 func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
 	if len(frames) == 0 {
 		return fmt.Errorf("webp requires at least one frame")
-	}
-
-	img2webpPath, err := lookupWebPTools()
-	if err != nil {
-		return err
 	}
 
 	tempDir, err := os.MkdirTemp("", "sc-export-webp-*")
@@ -46,11 +42,22 @@ func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
 	}
 
 	outputName := "o.webp"
-	if err := runCommandInDir(tempDir, img2webpPath, buildImg2WebPArgs(framePaths, frames, outputName)...); err != nil {
+	img2webpPath, err := lookupWebPTools()
+	if err != nil {
+		return err
+	}
+	argsPath := filepath.Join(tempDir, "args.txt")
+	if err := os.WriteFile(argsPath, []byte(buildImg2WebPArgsFile(framePaths, frames, outputName)), 0o600); err != nil {
+		return err
+	}
+	if err := runCommandInDir(tempDir, img2webpPath, filepath.Base(argsPath)); err != nil {
 		return err
 	}
 
-	outputPath := filepath.Join(tempDir, outputName)
+	return copyAnimatedWebPOutput(w, filepath.Join(tempDir, outputName))
+}
+
+func copyAnimatedWebPOutput(w io.Writer, outputPath string) error {
 	outputFile, err := os.Open(outputPath)
 	if err != nil {
 		return err
@@ -99,6 +106,11 @@ func buildImg2WebPArgs(framePaths []string, frames []renderedFrame, outputPath s
 	}
 	args = append(args, "-o", outputPath)
 	return args
+}
+
+func buildImg2WebPArgsFile(framePaths []string, frames []renderedFrame, outputPath string) string {
+	args := buildImg2WebPArgs(framePaths, frames, outputPath)
+	return strings.Join(args, "\n")
 }
 
 func runCommand(name string, args ...string) error {
