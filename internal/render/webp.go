@@ -29,7 +29,8 @@ func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
 	pngEncoder := png.Encoder{CompressionLevel: png.BestSpeed}
 	framePaths := make([]string, 0, len(frames))
 	for i, frame := range frames {
-		pngPath := filepath.Join(tempDir, fmt.Sprintf("frame_%04d.png", i))
+		frameName := fmt.Sprintf("%x.png", i)
+		pngPath := filepath.Join(tempDir, frameName)
 		pngFile, err := os.Create(pngPath)
 		if err != nil {
 			return err
@@ -41,14 +42,15 @@ func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
 		if err := pngFile.Close(); err != nil {
 			return err
 		}
-		framePaths = append(framePaths, pngPath)
+		framePaths = append(framePaths, frameName)
 	}
 
-	outputPath := filepath.Join(tempDir, "animation.webp")
-	if err := runCommand(img2webpPath, buildImg2WebPArgs(framePaths, frames, outputPath)...); err != nil {
+	outputName := "o.webp"
+	if err := runCommandInDir(tempDir, img2webpPath, buildImg2WebPArgs(framePaths, frames, outputName)...); err != nil {
 		return err
 	}
 
+	outputPath := filepath.Join(tempDir, outputName)
 	outputFile, err := os.Open(outputPath)
 	if err != nil {
 		return err
@@ -101,6 +103,16 @@ func buildImg2WebPArgs(framePaths []string, frames []renderedFrame, outputPath s
 
 func runCommand(name string, args ...string) error {
 	cmd := exec.Command(name, args...)
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		return fmt.Errorf("%s failed: %w: %s", filepath.Base(name), err, string(output))
+	}
+	return nil
+}
+
+func runCommandInDir(dir, name string, args ...string) error {
+	cmd := exec.Command(name, args...)
+	cmd.Dir = dir
 	output, err := cmd.CombinedOutput()
 	if err != nil {
 		return fmt.Errorf("%s failed: %w: %s", filepath.Base(name), err, string(output))
