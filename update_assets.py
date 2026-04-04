@@ -48,6 +48,7 @@ class AssetsUpdater:
     def __init__(self):
         self.base_dir = Path(__file__).resolve().parent
         self.download_concurrency = int(os.getenv("ASSET_DOWNLOAD_CONCURRENCY", "32"))
+        self.upload_concurrency = int(os.getenv("ASSET_UPLOAD_CONCURRENCY", "32"))
         self.render_scale = os.getenv("SC_RENDER_SCALE", "2")
         self.sc_workers = int(os.getenv("SC_WORKERS", str(os.cpu_count() or 1)))
         self.sc_file_concurrency = int(os.getenv("SC_FILE_CONCURRENCY", "1"))
@@ -269,12 +270,16 @@ class AssetsUpdater:
 
         uploaded = 0
         tiny_skipped = 0
+        upload_jobs: list[tuple[Path, str]] = []
         for file_path in pending_files:
             output_key = self.image_output_key(file_path)
             local_png = self.base_dir / output_key
             if not local_png.exists():
                 tiny_skipped += 1
                 continue
+            upload_jobs.append((local_png, output_key))
+
+        async def upload_job(local_png: Path, output_key: str):
             await asyncio.to_thread(
                 upload_file_to_r2,
                 self.r2_client,
@@ -284,7 +289,16 @@ class AssetsUpdater:
                 output_key,
             )
             self.mark_uploaded(output_key)
-            uploaded += 1
+
+        if upload_jobs:
+            semaphore = asyncio.Semaphore(max(1, min(self.upload_concurrency, len(upload_jobs))))
+
+            async def worker(local_png: Path, output_key: str):
+                async with semaphore:
+                    await upload_job(local_png, output_key)
+
+            await asyncio.gather(*(worker(local_png, output_key) for local_png, output_key in upload_jobs))
+            uploaded = len(upload_jobs)
 
         print(
             f"[Assets] Image complete: uploaded={uploaded} skipped={skipped} tiny={tiny_skipped}",
@@ -339,7 +353,7 @@ class AssetsUpdater:
             subprocess.run(retry_command, check=True, cwd=self.base_dir)
 
     async def upload_sc_outputs(self, sc_main_files: tuple[str, ...]) -> int:
-        uploaded = 0
+        upload_jobs: list[tuple[Path, str]] = []
         for output_dir in self.sc_output_dirs(sc_main_files):
             if not output_dir.exists():
                 continue
@@ -347,6 +361,15 @@ class AssetsUpdater:
                 if local_path.suffix.lower() not in self.MEDIA_SUFFIXES:
                     continue
                 key = local_path.relative_to(self.base_dir).as_posix()
+                upload_jobs.append((local_path, key))
+
+        if not upload_jobs:
+            return 0
+
+        semaphore = asyncio.Semaphore(max(1, min(self.upload_concurrency, len(upload_jobs))))
+
+        async def worker(local_path: Path, key: str):
+            async with semaphore:
                 await asyncio.to_thread(
                     upload_file_to_r2,
                     self.r2_client,
@@ -355,8 +378,9 @@ class AssetsUpdater:
                     local_path,
                     key,
                 )
-                uploaded += 1
-        return uploaded
+
+        await asyncio.gather(*(worker(local_path, key) for local_path, key in upload_jobs))
+        return len(upload_jobs)
 
     async def sync_sc(
         self,

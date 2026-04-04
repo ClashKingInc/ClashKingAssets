@@ -75,9 +75,8 @@ type bitmapRenderable struct {
 }
 
 type Exporter struct {
-	swf          *sc.SWF
-	opts         ExportOptions
-	progressHook func(Target, renderProfile, string)
+	swf  *sc.SWF
+	opts ExportOptions
 }
 
 type ParseProfile struct {
@@ -412,82 +411,6 @@ func topTargetProfiles(profiles []TargetProfile, limit int) []TargetProfile {
 	return sorted[:limit]
 }
 
-func formatTailTargetDescriptor(target Target) string {
-	durationSeconds := target.Duration
-	resourceType := target.Resource.ResourceType()
-	frameCount := tailTimelineFrames(target)
-	if frameCount > 0 {
-		return fmt.Sprintf("%s type=%s timeline_frames=%d seconds=%.2f", target.Name, resourceType, frameCount, durationSeconds)
-	}
-	return fmt.Sprintf("%s type=%s seconds=%.2f", target.Name, resourceType, durationSeconds)
-}
-
-func tailTimelineFrames(target Target) int {
-	clip, ok := target.Resource.(*sc.MovieClip)
-	if !ok {
-		return 0
-	}
-	return len(clip.Frames)
-}
-
-func tailStatusLabel(entry *ManifestEntry, skipped *SkippedEntry, profile TargetProfile, err error) string {
-	if err != nil {
-		return "failed"
-	}
-	if skipped != nil {
-		return "skipped"
-	}
-	if entry != nil && entry.OutputFile != "" {
-		return filepath.Ext(entry.OutputFile)
-	}
-	if profile.Status != "" {
-		return profile.Status
-	}
-	return "done"
-}
-
-func tailFrameCount(entry *ManifestEntry, profile TargetProfile) int {
-	if entry != nil && entry.FrameCount > 0 {
-		return entry.FrameCount
-	}
-	return profile.Frames
-}
-
-func tailDurationSeconds(target Target, entry *ManifestEntry) float64 {
-	if entry != nil && entry.DurationMS > 0 {
-		return float64(entry.DurationMS) / 1000
-	}
-	if target.Duration > 0 {
-		return target.Duration
-	}
-	return 0
-}
-
-func tailCanvasSize(profile TargetProfile) string {
-	if profile.CanvasWidth <= 0 || profile.CanvasHeight <= 0 {
-		return "-"
-	}
-	return fmt.Sprintf("%dx%d", profile.CanvasWidth, profile.CanvasHeight)
-}
-
-func formatActiveTargetDescriptor(current activeTarget) string {
-	parts := []string{formatTailTargetDescriptor(current.Target)}
-	if current.CanvasWidth > 0 && current.CanvasHeight > 0 {
-		parts = append(parts, fmt.Sprintf("size=%dx%d", current.CanvasWidth, current.CanvasHeight))
-	}
-	if current.Stage != "" {
-		parts = append(parts, fmt.Sprintf("stage=%s", current.Stage))
-	}
-	return strings.Join(parts, " ")
-}
-
-func (e *Exporter) reportProgress(target Target, profile renderProfile, stage string) {
-	if e.progressHook == nil {
-		return
-	}
-	e.progressHook(target, profile, stage)
-}
-
 func (h *stateHasher) add(v uint64) {
 	h.value ^= v + 0x9e3779b97f4a7c15 + (h.value << 6) + (h.value >> 2)
 }
@@ -516,26 +439,9 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 
 	targets, skipped := e.prepareTargets()
 	fmt.Printf("Starting %s\n", e.swf.Filename)
-	fmt.Printf("  Targets: %d\n", len(targets))
 	fmt.Printf("  Workers: %d\n", maxInt(workers, 1))
 	fmt.Printf("  Output:  %s\n", assetDir)
 	nameAllocator := newNameAllocator(assetDir)
-	targetPositions := make(map[targetKey]int, len(targets))
-	for index, target := range targets {
-		targetPositions[targetKey{Name: target.Name, ResourceID: target.ResourceID}] = index + 1
-	}
-	tailTargetCount := minInt(15, len(targets))
-	tailStartIndex := len(targets) - tailTargetCount
-	tailPositions := make(map[targetKey]int, tailTargetCount)
-	if tailTargetCount > 0 {
-		fmt.Printf("  Tail Targets (%d):\n", tailTargetCount)
-		for index := tailStartIndex; index < len(targets); index++ {
-			target := targets[index]
-			position := index + 1
-			tailPositions[targetKey{Name: target.Name, ResourceID: target.ResourceID}] = position
-			fmt.Printf("    %d/%d %s\n", position, len(targets), formatTailTargetDescriptor(target))
-		}
-	}
 	manifest := &Manifest{
 		SourceSC: e.swf.Filename,
 		AssetDir: assetDir,
@@ -554,27 +460,6 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 
 	jobs := make(chan Target)
 	results := make(chan result, len(targets))
-	active := map[targetKey]activeTarget{}
-	var activeMu sync.Mutex
-	e.progressHook = func(target Target, profile renderProfile, stage string) {
-		key := targetKey{Name: target.Name, ResourceID: target.ResourceID}
-		activeMu.Lock()
-		current, ok := active[key]
-		if ok {
-			current.Stage = stage
-			if profile.CanvasWidth > 0 {
-				current.CanvasWidth = profile.CanvasWidth
-			}
-			if profile.CanvasHeight > 0 {
-				current.CanvasHeight = profile.CanvasHeight
-			}
-			active[key] = current
-		}
-		activeMu.Unlock()
-	}
-	defer func() {
-		e.progressHook = nil
-	}()
 	var wg sync.WaitGroup
 	if workers <= 0 {
 		workers = 1
@@ -584,18 +469,6 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 		go func() {
 			defer wg.Done()
 			for target := range jobs {
-				key := targetKey{Name: target.Name, ResourceID: target.ResourceID}
-				activeMu.Lock()
-				active[key] = activeTarget{
-					Target:    target,
-					Position:  targetPositions[key],
-					StartedAt: time.Now(),
-					Stage:     "prepare",
-				}
-				activeMu.Unlock()
-				if position, ok := tailPositions[targetKey{Name: target.Name, ResourceID: target.ResourceID}]; ok {
-					fmt.Printf("  Tail Start %d/%d: %s\n", position, len(targets), formatTailTargetDescriptor(target))
-				}
 				entry, skip, profile, err := e.exportTarget(target, assetDir, nameAllocator)
 				results <- result{target: target, entry: entry, skipped: skip, profile: profile, err: err}
 			}
@@ -613,24 +486,7 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 
 	processed := 0
 	for res := range results {
-		tailPosition, isTail := tailPositions[targetKey{Name: res.profile.ExportName, ResourceID: res.profile.ResourceID}]
-		activeMu.Lock()
-		delete(active, targetKey{Name: res.target.Name, ResourceID: res.target.ResourceID})
-		activeSnapshot := make([]activeTarget, 0, len(active))
-		for _, current := range active {
-			activeSnapshot = append(activeSnapshot, current)
-		}
-		activeMu.Unlock()
 		if res.err != nil {
-			if isTail {
-				fmt.Printf(
-					"  Tail Failed %d/%d: %s error=%v\n",
-					tailPosition,
-					len(targets),
-					res.profile.ExportName,
-					res.err,
-				)
-			}
 			return nil, res.err
 		}
 		if e.opts.Profile {
@@ -641,39 +497,10 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 		} else if res.entry != nil {
 			manifest.Exports = append(manifest.Exports, *res.entry)
 		}
-		if isTail {
-			fmt.Printf(
-				"  Tail Done %d/%d: %s status=%s frames=%d seconds=%.2f size=%s\n",
-				tailPosition,
-				len(targets),
-				res.profile.ExportName,
-				tailStatusLabel(res.entry, res.skipped, res.profile, res.err),
-				tailFrameCount(res.entry, res.profile),
-				tailDurationSeconds(res.target, res.entry),
-				tailCanvasSize(res.profile),
-			)
-		}
 		processed++
 		if processed%50 == 0 {
 			runtime.GC()
 			debug.FreeOSMemory()
-		}
-		remaining := len(targets) - processed
-		if remaining <= 50 && len(activeSnapshot) > 0 {
-			sort.Slice(activeSnapshot, func(i, j int) bool {
-				return activeSnapshot[i].StartedAt.Before(activeSnapshot[j].StartedAt)
-			})
-			fmt.Printf("  Active Jobs (%d remaining, %d running):\n", remaining, len(activeSnapshot))
-			for _, current := range activeSnapshot {
-				elapsed := time.Since(current.StartedAt).Round(time.Millisecond)
-				fmt.Printf(
-					"    %d/%d %s elapsed=%s\n",
-					current.Position,
-					len(targets),
-					formatActiveTargetDescriptor(current),
-					elapsed,
-				)
-			}
 		}
 		if processed == len(targets) || processed%25 == 0 {
 			fmt.Printf("  Progress: %d/%d\n", processed, len(targets))
@@ -1144,20 +971,6 @@ type encodedFrameFile struct {
 	DelayCS int
 }
 
-type targetKey struct {
-	Name       string
-	ResourceID uint16
-}
-
-type activeTarget struct {
-	Target       Target
-	Position     int
-	StartedAt    time.Time
-	Stage        string
-	CanvasWidth  int
-	CanvasHeight int
-}
-
 func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, renderProfile, error) {
 	spriteCache := map[bitmapCacheKey]*bitmapRenderable{}
 	switch target.Resource.(type) {
@@ -1168,7 +981,6 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 			return nil, 0, "", renderProfile{}, err
 		}
 		profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
-		e.reportProgress(target, profile, "render")
 		renderStart := time.Now()
 		frame, err := e.renderAt(target, 0, bounds, spriteCache)
 		if err != nil {
@@ -1191,7 +1003,6 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 				return nil, 0, "", renderProfile{}, err
 			}
 			profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
-			e.reportProgress(target, profile, "render")
 			renderStart := time.Now()
 			frame, err := e.renderAt(target, 0, bounds, spriteCache)
 			if err != nil {
@@ -1230,7 +1041,6 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 			return nil, 0, "", profile, err
 		}
 		profile.BoundsDuration = time.Since(boundsStart)
-		e.reportProgress(target, profile, "render")
 
 		rawFrames := make([]renderedFrame, 0, len(steps))
 		totalDuration := 0
@@ -1255,7 +1065,6 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 		if len(rawFrames) > 0 {
 			profile.CanvasWidth = rawFrames[0].Image.Bounds().Dx()
 			profile.CanvasHeight = rawFrames[0].Image.Bounds().Dy()
-			e.reportProgress(target, profile, "encode")
 			if reason := tinyOutputReason(rawFrames[0].Image.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
 				profile.Frames = len(rawFrames)
 				return nil, 0, reason, profile, nil
@@ -1305,7 +1114,6 @@ func (e *Exporter) renderAnimatedTargetToFiles(target Target, tempDir string) ([
 	profile.BoundsDuration = time.Since(boundsStart)
 	profile.CanvasWidth = bounds.Dx()
 	profile.CanvasHeight = bounds.Dy()
-	e.reportProgress(target, profile, "render")
 
 	encodedFrames := make([]encodedFrameFile, 0, len(steps))
 	totalDuration := 0
@@ -1325,7 +1133,6 @@ func (e *Exporter) renderAnimatedTargetToFiles(target Target, tempDir string) ([
 		if profile.CanvasWidth == 0 && profile.CanvasHeight == 0 {
 			profile.CanvasWidth = img.Bounds().Dx()
 			profile.CanvasHeight = img.Bounds().Dy()
-			e.reportProgress(target, profile, "render")
 			if reason := tinyOutputReason(img.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
 				return nil, 0, reason, profile, nil
 			}
@@ -1365,7 +1172,6 @@ func (e *Exporter) renderAnimatedTargetToFiles(target Target, tempDir string) ([
 	if len(encodedFrames) == 0 {
 		return nil, 0, "no frames rendered", profile, nil
 	}
-	e.reportProgress(target, profile, "encode")
 	return encodedFrames, totalDuration, "", profile, nil
 }
 

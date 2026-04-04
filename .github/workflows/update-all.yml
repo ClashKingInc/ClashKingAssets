@@ -76,6 +76,7 @@ jobs:
           SC_RENDER_SCALE=1
           SC_WORKERS=32
           SC_FILE_CONCURRENCY=1
+          ASSET_UPLOAD_CONCURRENCY=250
           SC_PROFILE=false
           ASSET_DOWNLOAD_CONCURRENCY=32
           "@ | Set-Content -Path .env
