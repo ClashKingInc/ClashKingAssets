@@ -501,6 +501,10 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	fmt.Printf("  Workers: %d\n", maxInt(workers, 1))
 	fmt.Printf("  Output:  %s\n", assetDir)
 	nameAllocator := newNameAllocator(assetDir)
+	targetPositions := make(map[targetKey]int, len(targets))
+	for index, target := range targets {
+		targetPositions[targetKey{Name: target.Name, ResourceID: target.ResourceID}] = index + 1
+	}
 	tailTargetCount := minInt(15, len(targets))
 	tailStartIndex := len(targets) - tailTargetCount
 	tailPositions := make(map[targetKey]int, tailTargetCount)
@@ -531,6 +535,8 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 
 	jobs := make(chan Target)
 	results := make(chan result, len(targets))
+	active := map[targetKey]activeTarget{}
+	var activeMu sync.Mutex
 	var wg sync.WaitGroup
 	if workers <= 0 {
 		workers = 1
@@ -540,6 +546,14 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 		go func() {
 			defer wg.Done()
 			for target := range jobs {
+				key := targetKey{Name: target.Name, ResourceID: target.ResourceID}
+				activeMu.Lock()
+				active[key] = activeTarget{
+					Target:    target,
+					Position:  targetPositions[key],
+					StartedAt: time.Now(),
+				}
+				activeMu.Unlock()
 				if position, ok := tailPositions[targetKey{Name: target.Name, ResourceID: target.ResourceID}]; ok {
 					fmt.Printf("  Tail Start %d/%d: %s\n", position, len(targets), formatTailTargetDescriptor(target))
 				}
@@ -561,6 +575,13 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	processed := 0
 	for res := range results {
 		tailPosition, isTail := tailPositions[targetKey{Name: res.profile.ExportName, ResourceID: res.profile.ResourceID}]
+		activeMu.Lock()
+		delete(active, targetKey{Name: res.target.Name, ResourceID: res.target.ResourceID})
+		activeSnapshot := make([]activeTarget, 0, len(active))
+		for _, current := range active {
+			activeSnapshot = append(activeSnapshot, current)
+		}
+		activeMu.Unlock()
 		if res.err != nil {
 			if isTail {
 				fmt.Printf(
@@ -597,6 +618,23 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 		if processed%50 == 0 {
 			runtime.GC()
 			debug.FreeOSMemory()
+		}
+		remaining := len(targets) - processed
+		if remaining <= 50 && len(activeSnapshot) > 0 {
+			sort.Slice(activeSnapshot, func(i, j int) bool {
+				return activeSnapshot[i].StartedAt.Before(activeSnapshot[j].StartedAt)
+			})
+			fmt.Printf("  Active Jobs (%d remaining, %d running):\n", remaining, len(activeSnapshot))
+			for _, current := range activeSnapshot {
+				elapsed := time.Since(current.StartedAt).Round(time.Millisecond)
+				fmt.Printf(
+					"    %d/%d %s elapsed=%s\n",
+					current.Position,
+					len(targets),
+					formatTailTargetDescriptor(current.Target),
+					elapsed,
+				)
+			}
 		}
 		if processed == len(targets) || processed%25 == 0 {
 			fmt.Printf("  Progress: %d/%d\n", processed, len(targets))
@@ -1047,6 +1085,12 @@ type encodedFrameFile struct {
 type targetKey struct {
 	Name       string
 	ResourceID uint16
+}
+
+type activeTarget struct {
+	Target    Target
+	Position  int
+	StartedAt time.Time
 }
 
 func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, renderProfile, error) {
