@@ -75,8 +75,9 @@ type bitmapRenderable struct {
 }
 
 type Exporter struct {
-	swf  *sc.SWF
-	opts ExportOptions
+	swf          *sc.SWF
+	opts         ExportOptions
+	progressHook func(Target, renderProfile, string)
 }
 
 type ParseProfile struct {
@@ -469,6 +470,24 @@ func tailCanvasSize(profile TargetProfile) string {
 	return fmt.Sprintf("%dx%d", profile.CanvasWidth, profile.CanvasHeight)
 }
 
+func formatActiveTargetDescriptor(current activeTarget) string {
+	parts := []string{formatTailTargetDescriptor(current.Target)}
+	if current.CanvasWidth > 0 && current.CanvasHeight > 0 {
+		parts = append(parts, fmt.Sprintf("size=%dx%d", current.CanvasWidth, current.CanvasHeight))
+	}
+	if current.Stage != "" {
+		parts = append(parts, fmt.Sprintf("stage=%s", current.Stage))
+	}
+	return strings.Join(parts, " ")
+}
+
+func (e *Exporter) reportProgress(target Target, profile renderProfile, stage string) {
+	if e.progressHook == nil {
+		return
+	}
+	e.progressHook(target, profile, stage)
+}
+
 func (h *stateHasher) add(v uint64) {
 	h.value ^= v + 0x9e3779b97f4a7c15 + (h.value << 6) + (h.value >> 2)
 }
@@ -537,6 +556,25 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	results := make(chan result, len(targets))
 	active := map[targetKey]activeTarget{}
 	var activeMu sync.Mutex
+	e.progressHook = func(target Target, profile renderProfile, stage string) {
+		key := targetKey{Name: target.Name, ResourceID: target.ResourceID}
+		activeMu.Lock()
+		current, ok := active[key]
+		if ok {
+			current.Stage = stage
+			if profile.CanvasWidth > 0 {
+				current.CanvasWidth = profile.CanvasWidth
+			}
+			if profile.CanvasHeight > 0 {
+				current.CanvasHeight = profile.CanvasHeight
+			}
+			active[key] = current
+		}
+		activeMu.Unlock()
+	}
+	defer func() {
+		e.progressHook = nil
+	}()
 	var wg sync.WaitGroup
 	if workers <= 0 {
 		workers = 1
@@ -552,6 +590,7 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 					Target:    target,
 					Position:  targetPositions[key],
 					StartedAt: time.Now(),
+					Stage:     "prepare",
 				}
 				activeMu.Unlock()
 				if position, ok := tailPositions[targetKey{Name: target.Name, ResourceID: target.ResourceID}]; ok {
@@ -631,7 +670,7 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 					"    %d/%d %s elapsed=%s\n",
 					current.Position,
 					len(targets),
-					formatTailTargetDescriptor(current.Target),
+					formatActiveTargetDescriptor(current),
 					elapsed,
 				)
 			}
@@ -1088,9 +1127,12 @@ type targetKey struct {
 }
 
 type activeTarget struct {
-	Target    Target
-	Position  int
-	StartedAt time.Time
+	Target       Target
+	Position     int
+	StartedAt    time.Time
+	Stage        string
+	CanvasWidth  int
+	CanvasHeight int
 }
 
 func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, renderProfile, error) {
@@ -1103,6 +1145,7 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 			return nil, 0, "", renderProfile{}, err
 		}
 		profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
+		e.reportProgress(target, profile, "render")
 		renderStart := time.Now()
 		frame, err := e.renderAt(target, 0, bounds, spriteCache)
 		if err != nil {
@@ -1125,6 +1168,7 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 				return nil, 0, "", renderProfile{}, err
 			}
 			profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
+			e.reportProgress(target, profile, "render")
 			renderStart := time.Now()
 			frame, err := e.renderAt(target, 0, bounds, spriteCache)
 			if err != nil {
@@ -1163,6 +1207,7 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 			return nil, 0, "", profile, err
 		}
 		profile.BoundsDuration = time.Since(boundsStart)
+		e.reportProgress(target, profile, "render")
 
 		rawFrames := make([]renderedFrame, 0, len(steps))
 		totalDuration := 0
@@ -1187,6 +1232,7 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 		if len(rawFrames) > 0 {
 			profile.CanvasWidth = rawFrames[0].Image.Bounds().Dx()
 			profile.CanvasHeight = rawFrames[0].Image.Bounds().Dy()
+			e.reportProgress(target, profile, "encode")
 			if reason := tinyOutputReason(rawFrames[0].Image.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
 				profile.Frames = len(rawFrames)
 				return nil, 0, reason, profile, nil
@@ -1234,6 +1280,9 @@ func (e *Exporter) renderAnimatedTargetToFiles(target Target, tempDir string) ([
 		return nil, 0, "", profile, err
 	}
 	profile.BoundsDuration = time.Since(boundsStart)
+	profile.CanvasWidth = bounds.Dx()
+	profile.CanvasHeight = bounds.Dy()
+	e.reportProgress(target, profile, "render")
 
 	encodedFrames := make([]encodedFrameFile, 0, len(steps))
 	totalDuration := 0
@@ -1253,6 +1302,7 @@ func (e *Exporter) renderAnimatedTargetToFiles(target Target, tempDir string) ([
 		if profile.CanvasWidth == 0 && profile.CanvasHeight == 0 {
 			profile.CanvasWidth = img.Bounds().Dx()
 			profile.CanvasHeight = img.Bounds().Dy()
+			e.reportProgress(target, profile, "render")
 			if reason := tinyOutputReason(img.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
 				return nil, 0, reason, profile, nil
 			}
@@ -1292,6 +1342,7 @@ func (e *Exporter) renderAnimatedTargetToFiles(target Target, tempDir string) ([
 	if len(encodedFrames) == 0 {
 		return nil, 0, "no frames rendered", profile, nil
 	}
+	e.reportProgress(target, profile, "encode")
 	return encodedFrames, totalDuration, "", profile, nil
 }
 
