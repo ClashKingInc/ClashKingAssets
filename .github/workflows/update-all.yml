@@ -2,6 +2,12 @@ name: Update Assets
 
 on:
   workflow_dispatch:
+    inputs:
+      fingerprint:
+        description: "Optional fingerprint override. Leave blank to fetch latest from the APK URL."
+        required: false
+        default: ""
+        type: string
 
 concurrency:
   group: update-assets
@@ -49,20 +55,30 @@ jobs:
         shell: pwsh
         run: |
           @"
-          FINGERPRINT=${{ secrets.FINGERPRINT }}
-          APK_URL=${{ secrets.APK_URL }}
+          FINGERPRINT=${{ inputs.fingerprint }}
           R2_ENDPOINT_URL=${{ secrets.R2_ENDPOINT_URL }}
-          R2_ACCOUNT_ID=${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID=${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY=${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET=${{ secrets.R2_BUCKET }}
-          R2_PREFIX=${{ secrets.R2_PREFIX }}
           SC_RENDER_SCALE=1
           SC_WORKERS=32
           SC_FILE_CONCURRENCY=1
           SC_PROFILE=false
           ASSET_DOWNLOAD_CONCURRENCY=32
           "@ | Set-Content -Path .env
+
+      - name: Show effective config
+        shell: pwsh
+        run: |
+          if ("${{ inputs.fingerprint }}") {
+            Write-Host "FINGERPRINT override provided"
+          } else {
+            Write-Host "FINGERPRINT will be fetched from the project APK URL"
+          }
+          Write-Host "SC_WORKERS: 32"
+          Write-Host "SC_FILE_CONCURRENCY: 1"
+          Write-Host "SC_RENDER_SCALE: 1"
+          Write-Host "ASSET_DOWNLOAD_CONCURRENCY: 32"
 
       - name: Run update pipeline
         shell: pwsh
