@@ -5,6 +5,7 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+	"runtime/debug"
 	"sort"
 	"strings"
 	"sync"
@@ -174,6 +175,8 @@ func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, d
 				}
 				fmt.Printf("\n[SC] Done: %s\n", source)
 				printAssetStats(stats)
+				runtime.GC()
+				debug.FreeOSMemory()
 				if deleteSource {
 					if err := os.Remove(source); err != nil && !os.IsNotExist(err) {
 						results <- scRootResult{source: source, err: fmt.Errorf("%s: %w", source, err)}

@@ -73,10 +73,8 @@ type bitmapRenderable struct {
 }
 
 type Exporter struct {
-	swf         *sc.SWF
-	spriteMu    sync.Mutex
-	spriteCache map[bitmapCacheKey]*bitmapRenderable
-	opts        ExportOptions
+	swf  *sc.SWF
+	opts ExportOptions
 }
 
 type ParseProfile struct {
@@ -152,9 +150,8 @@ func NewExporter(swf *sc.SWF) *Exporter {
 func NewExporterWithOptions(swf *sc.SWF, opts ExportOptions) *Exporter {
 	opts = normalizeExportOptions(opts)
 	return &Exporter{
-		swf:         swf,
-		spriteCache: map[bitmapCacheKey]*bitmapRenderable{},
-		opts:        opts,
+		swf:  swf,
+		opts: opts,
 	}
 }
 
@@ -843,16 +840,17 @@ type renderedFrame struct {
 }
 
 func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, renderProfile, error) {
+	spriteCache := map[bitmapCacheKey]*bitmapRenderable{}
 	switch target.Resource.(type) {
 	case *sc.Shape:
 		boundsStart := time.Now()
-		bounds, err := e.collectBounds(target, 0, nil)
+		bounds, err := e.collectBounds(target, 0, nil, spriteCache)
 		if err != nil {
 			return nil, 0, "", renderProfile{}, err
 		}
 		profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
 		renderStart := time.Now()
-		frame, err := e.renderAt(target, 0, bounds)
+		frame, err := e.renderAt(target, 0, bounds, spriteCache)
 		if err != nil {
 			return nil, 0, "", profile, err
 		}
@@ -868,13 +866,13 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 		duration := target.Duration
 		if duration <= 0 {
 			boundsStart := time.Now()
-			bounds, err := e.collectBounds(target, 0, nil)
+			bounds, err := e.collectBounds(target, 0, nil, spriteCache)
 			if err != nil {
 				return nil, 0, "", renderProfile{}, err
 			}
 			profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
 			renderStart := time.Now()
-			frame, err := e.renderAt(target, 0, bounds)
+			frame, err := e.renderAt(target, 0, bounds, spriteCache)
 			if err != nil {
 				return nil, 0, "", profile, err
 			}
@@ -906,7 +904,7 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 			sampleTimes = append(sampleTimes, step.Time)
 		}
 		boundsStart := time.Now()
-		bounds, err := e.collectBounds(target, duration, sampleTimes)
+		bounds, err := e.collectBounds(target, duration, sampleTimes, spriteCache)
 		if err != nil {
 			return nil, 0, "", profile, err
 		}
@@ -917,7 +915,7 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 		var lastHash [20]byte
 		renderStart := time.Now()
 		for _, step := range steps {
-			img, err := e.renderAt(target, step.Time, bounds)
+			img, err := e.renderAt(target, step.Time, bounds, spriteCache)
 			if err != nil {
 				return nil, 0, "", profile, err
 			}
@@ -1118,14 +1116,14 @@ func (b *renderBounds) add(x, y float64) {
 	}
 }
 
-func (e *Exporter) collectBounds(target Target, duration float64, sampleTimes []float64) (image.Rectangle, error) {
+func (e *Exporter) collectBounds(target Target, duration float64, sampleTimes []float64, spriteCache map[bitmapCacheKey]*bitmapRenderable) (image.Rectangle, error) {
 	if len(sampleTimes) == 0 {
 		sampleTimes = []float64{0}
 	}
 	var bounds renderBounds
 	for _, t := range sampleTimes {
 		err := e.visitResource(target, target.ResourceID, t, sc.IdentityMatrix(), sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, _ sc.ColorTransform) error {
-			sprite, err := e.bitmapRenderable(shape, idx)
+			sprite, err := e.bitmapRenderable(shape, idx, spriteCache)
 			if err != nil {
 				return err
 			}
@@ -1156,7 +1154,7 @@ func (e *Exporter) collectBounds(target Target, duration float64, sampleTimes []
 	), nil
 }
 
-func (e *Exporter) renderAt(target Target, t float64, worldBounds image.Rectangle) (*image.NRGBA, error) {
+func (e *Exporter) renderAt(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable) (*image.NRGBA, error) {
 	renderScale := float64(maxInt(e.opts.RenderScale, 1))
 	canvasWidth := maxInt(1, int(math.Ceil(float64(worldBounds.Dx())*renderScale)))
 	canvasHeight := maxInt(1, int(math.Ceil(float64(worldBounds.Dy())*renderScale)))
@@ -1166,7 +1164,7 @@ func (e *Exporter) renderAt(target Target, t float64, worldBounds image.Rectangl
 		offset = sc.Matrix{A: renderScale, D: renderScale}.Multiply(offset)
 	}
 	err := e.visitResource(target, target.ResourceID, t, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform) error {
-		renderable, err := e.bitmapRenderable(shape, idx)
+		renderable, err := e.bitmapRenderable(shape, idx, spriteCache)
 		if err != nil {
 			return err
 		}
@@ -1260,14 +1258,11 @@ func clipFrameIndexAt(clip *sc.MovieClip, t float64) int {
 	return idx
 }
 
-func (e *Exporter) bitmapRenderable(shape *sc.Shape, idx int) (*bitmapRenderable, error) {
+func (e *Exporter) bitmapRenderable(shape *sc.Shape, idx int, spriteCache map[bitmapCacheKey]*bitmapRenderable) (*bitmapRenderable, error) {
 	key := bitmapCacheKey{shapeID: shape.ID, index: idx}
-	e.spriteMu.Lock()
-	if cached, ok := e.spriteCache[key]; ok {
-		e.spriteMu.Unlock()
+	if cached, ok := spriteCache[key]; ok {
 		return cached, nil
 	}
-	e.spriteMu.Unlock()
 
 	if idx < 0 || idx >= len(shape.Bitmaps) {
 		return nil, fmt.Errorf("bitmap index %d out of range for shape %d", idx, shape.ID)
@@ -1281,10 +1276,7 @@ func (e *Exporter) bitmapRenderable(shape *sc.Shape, idx int) (*bitmapRenderable
 		return nil, err
 	}
 	renderable := &bitmapRenderable{sprite: sprite, transform: transform}
-
-	e.spriteMu.Lock()
-	e.spriteCache[key] = renderable
-	e.spriteMu.Unlock()
+	spriteCache[key] = renderable
 	return renderable, nil
 }
 
