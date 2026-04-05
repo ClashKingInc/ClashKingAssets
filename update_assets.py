@@ -5,8 +5,6 @@ Selective asset sync pipeline:
 - download/process/upload approved image icon assets
 - download/process/upload approved SC bundle outputs
 """
-from __future__ import annotations
-
 import asyncio
 import os
 import subprocess
@@ -15,7 +13,7 @@ from pathlib import Path
 
 import aiohttp
 
-from update_utils import (
+from utils import (
     apk_url,
     build_r2_client,
     download_file,

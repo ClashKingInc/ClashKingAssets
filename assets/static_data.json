@@ -10779,6 +10779,8 @@
         "name": "TID_BARBARIAN",
         "info": "TID_CHARACTER_INFO_BARBARIAN"
       },
+      "icon": "sc/ui/icon_unit_barbarian.png",
+      "image": "sc/info_barbarian/unit_barbarian_big.png",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -11005,6 +11007,8 @@
         "name": "TID_ARCHER",
         "info": "TID_CHARACTER_INFO_ARCHER"
       },
+      "icon": "sc/ui/icon_unit_archer.png",
+      "image": "sc/info_archer/unit_archer_big.png",
       "production_building": "Barracks",
       "production_building_level": 2,
       "upgrade_resource": "Elixir",
@@ -11251,6 +11255,8 @@
         "name": "TID_GOBLIN",
         "info": "TID_CHARACTER_INFO_GOBLIN"
       },
+      "icon": "sc/ui/icon_unit_goblin.png",
+      "image": "sc/info_goblin/unit_goblin_big.png",
       "production_building": "Barracks",
       "production_building_level": 4,
       "upgrade_resource": "Elixir",
@@ -11408,6 +11414,8 @@
         "name": "TID_GIANT",
         "info": "TID_CHARACTER_INFO_GIANT"
       },
+      "icon": "sc/ui/icon_unit_giant.png",
+      "image": "sc/info_giant/unit_giant_big.png",
       "production_building": "Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Elixir",
@@ -11654,6 +11662,8 @@
         "name": "TID_WALL_BREAKER",
         "info": "TID_CHARACTER_INFO_WALLBREAKER"
       },
+      "icon": "sc/ui/icon_unit_wallbreaker.png",
+      "image": "sc/info_wallbreaker/unit_skeleton_big.png",
       "production_building": "Barracks",
       "production_building_level": 5,
       "upgrade_resource": "Elixir",
@@ -11886,6 +11896,8 @@
         "name": "TID_GOBLIN_BALLOON",
         "info": "TID_CHARACTER_INFO_BALLOON"
       },
+      "icon": "sc/ui/icon_unit_balloon.png",
+      "image": "sc/info_balloon/unit_balloon_big.png",
       "production_building": "Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Elixir",
@@ -12040,6 +12052,8 @@
         "name": "TID_WIZARD",
         "info": "TID_CHARACTER_INFO_WIZARD"
       },
+      "icon": "sc/ui/icon_unit_wizard.png",
+      "image": "sc/info_wizard/unit_wizard_big.png",
       "production_building": "Barracks",
       "production_building_level": 7,
       "upgrade_resource": "Elixir",
@@ -12272,6 +12286,8 @@
         "name": "TID_HEALER",
         "info": "TID_CHARACTER_INFO_HEALER"
       },
+      "icon": "sc/ui/icon_unit_healer.png",
+      "image": "sc/info_healer/unit_healer_big.png",
       "production_building": "Barracks",
       "production_building_level": 8,
       "upgrade_resource": "Elixir",
@@ -12459,6 +12475,8 @@
         "name": "TID_DRAGON",
         "info": "TID_CHARACTER_INFO_DRAGON"
       },
+      "icon": "sc/ui/icon_unit_dragon.png",
+      "image": "sc/info_dragon/unit_dragon_big.png",
       "production_building": "Barracks",
       "production_building_level": 9,
       "upgrade_resource": "Elixir",
@@ -12637,6 +12655,8 @@
         "name": "TID_PEKKA",
         "info": "TID_CHARACTER_INFO_PEKKA"
       },
+      "icon": "sc/ui/icon_unit_pekka.png",
+      "image": "sc/info_pekka/unit_pekka_big.png",
       "production_building": "Barracks",
       "production_building_level": 10,
       "upgrade_resource": "Elixir",
@@ -12864,6 +12884,8 @@
         "name": "TID_GARGOYLE",
         "info": "TID_CHARACTER_INFO_MINION"
       },
+      "icon": "sc/ui/icon_unit_gargoyle.png",
+      "image": "sc/info_minion/unit_flyingF_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Dark Elixir",
@@ -13096,6 +13118,8 @@
         "name": "TID_BOARRIDER",
         "info": "TID_CHARACTER_INFO_RIDER"
       },
+      "icon": "sc/ui/icon_unit_boarRider.png",
+      "image": "sc/info_hogrider/unit_boarRider_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 2,
       "upgrade_resource": "Dark Elixir",
@@ -13328,6 +13352,8 @@
         "name": "TID_WARRIORGIRL",
         "info": "TID_CHARACTER_INFO_VALKYRIE"
       },
+      "icon": "sc/ui/icon_unit_warriorGirl.png",
+      "image": "sc/info_valkyrie/unit_warriorGirl_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Dark Elixir",
@@ -13504,6 +13530,8 @@
         "name": "TID_GOLEM",
         "info": "TID_CHARACTER_INFO_GOLEM"
       },
+      "icon": "sc/ui/icon_unit_golem.png",
+      "image": "sc/info_golem/unit_golem_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 4,
       "upgrade_resource": "Dark Elixir",
@@ -13736,6 +13764,8 @@
         "name": "TID_WARLOCK",
         "info": "TID_CHARACTER_INFO_WARLOCK"
       },
+      "icon": "sc/ui/icon_unit_witch.png",
+      "image": "sc/info_witch/unit_witch_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 5,
       "upgrade_resource": "Dark Elixir",
@@ -13886,6 +13916,8 @@
         "name": "TID_AD_SEEKER",
         "info": "TID_CHARACTER_INFO_AD_SEEKER_WITH_EXPLOSION"
       },
+      "icon": "sc/ui/icon_unit_tiny.png",
+      "image": "sc/info_tiny/unit_tiny_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Dark Elixir",
@@ -14013,6 +14045,8 @@
         "name": "TID_BOWLER",
         "info": "TID_CHARACTER_INFO_BOWLER"
       },
+      "icon": "sc/ui/icon_unit_troll.png",
+      "image": "sc/info_troll/unit_troll_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 7,
       "upgrade_resource": "Dark Elixir",
@@ -14185,6 +14219,8 @@
         "name": "TID_BABY_DRAGON",
         "info": "TID_BABY_DRAGON_INFO"
       },
+      "icon": "sc/ui/icon_unit_babydragon.png",
+      "image": "sc/info_babydragon/unit_babydragon_big.png",
       "production_building": "Barracks",
       "production_building_level": 11,
       "upgrade_resource": "Elixir",
@@ -14375,6 +14411,8 @@
         "name": "TID_MINER",
         "info": "TID_MINER_INFO"
       },
+      "icon": "sc/ui/icon_unit_miner.png",
+      "image": "sc/info_miner/unit_miner_big.png",
       "production_building": "Barracks",
       "production_building_level": 12,
       "upgrade_resource": "Elixir",
@@ -14589,6 +14627,8 @@
         "name": "TID_CHARACTER_ELITE_BARBARIAN",
         "info": "TID_CHARACTER_INFO_ELITE_BARBARIAN"
       },
+      "icon": "sc/ui/icon_unit_elite_barbarian.png",
+      "image": "sc/info_elite_barbarian/unit_elite_barbarian_big.png",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -14751,6 +14791,8 @@
         "name": "TID_CHARACTER_MAGIC_ARCHER",
         "info": "TID_CHARACTER_INFO_MAGIC_ARCHER"
       },
+      "icon": "sc/ui/icon_unit_elite_archer.png",
+      "image": "sc/info_elite_archer/unit_elite_archer_big.png",
       "production_building": "Barracks",
       "production_building_level": 2,
       "upgrade_resource": "Elixir",
@@ -14937,6 +14979,8 @@
         "name": "TID_CHARACTER_ELITE_WALLBREAKER",
         "info": "TID_CHARACTER_INFO_ELITE_WALLBREAKER"
       },
+      "icon": "sc/ui/icon_unit_elite_wallbreaker.png",
+      "image": "sc/info_wallbreaker_elite/unit_skeleton_elite_big.png",
       "production_building": "Barracks",
       "production_building_level": 5,
       "upgrade_resource": "Elixir",
@@ -15113,6 +15157,8 @@
         "name": "TID_CHARACTER_ELITE_GIANT",
         "info": "TID_CHARACTER_INFO_ELITE_GIANT"
       },
+      "icon": "sc/ui/icon_unit_elite_giant.png",
+      "image": "sc/info_giant_elite/unit_giant_elite_big.png",
       "production_building": "Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Elixir",
@@ -15299,6 +15345,8 @@
         "name": "TID_WIZARD2",
         "info": "TID_CHARACTER_INFO_WIZARD2"
       },
+      "icon": "sc/ui/icon_unit_icewizard.png",
+      "image": "sc/info_icewizard/unit_icewizard_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -15517,6 +15565,8 @@
         "name": "TID_RAGED_BARBARIAN",
         "info": "TID_CHARACTER_INFO_RAGED_BARBARIAN"
       },
+      "icon": "sc/ui/icon_unit_raged_barbarian.png",
+      "image": "sc/info_raged_barbarian/unit_raged_barbarian_big.png",
       "production_building": "Builder Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Builder Elixir",
@@ -15879,6 +15929,8 @@
         "name": "TID_SNEAKY_ARCHER",
         "info": "TID_CHARACTER_INFO_SNEAKY_ARCHER"
       },
+      "icon": "sc/ui/icon_unit_stealthy_archer.png",
+      "image": "sc/info_sneaky_archer/unit_sneaky_archer_big.png",
       "production_building": "Builder Barracks",
       "production_building_level": 2,
       "upgrade_resource": "Builder Elixir",
@@ -16221,6 +16273,8 @@
         "name": "TID_TOXIC_MINION",
         "info": "TID_CHARACTER_INFO_TOXIC_MINION"
       },
+      "icon": "sc/ui/icon_unit_glowing_minion.png",
+      "image": "sc/info_glowing_minion/unit_glow_minion_big.png",
       "production_building": "Builder Barracks",
       "production_building_level": 4,
       "upgrade_resource": "Builder Elixir",
@@ -16513,6 +16567,8 @@
         "name": "TID_IRONFIST_GIANT",
         "info": "TID_CHARACTER_INFO_IRONFIST_GIANT"
       },
+      "icon": "sc/ui/icon_unit_boxergiant.png",
+      "image": "sc/info_ironfist_giant/unit_boxer_giant_big.png",
       "production_building": "Builder Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Builder Elixir",
@@ -16840,6 +16896,8 @@
         "name": "TID_BOMBER",
         "info": "TID_CHARACTER_INFO_BOMBER"
       },
+      "icon": "sc/ui/icon_unit_bomber.png",
+      "image": "sc/info_bomber/unit_bomber_big.png",
       "production_building": "Builder Barracks",
       "production_building_level": 5,
       "upgrade_resource": "Builder Elixir",
@@ -17102,6 +17160,8 @@
         "name": "TID_SUPER_CHARGED_PEKKA",
         "info": "TID_CHARACTER_INFO_SUPER_CHARGED_PEKKA"
       },
+      "icon": "sc/ui/icon_unit_electric_pekka.png",
+      "image": "sc/info_super_charged_pekka/unit_charged_pekka_big.png",
       "production_building": "Builder Barracks",
       "production_building_level": 10,
       "upgrade_resource": "Builder Elixir",
@@ -17252,6 +17312,8 @@
         "name": "TID_MOVING_CANNON",
         "info": "TID_CHARACTER_INFO_MOVING_CANNON"
       },
+      "icon": "sc/ui/icon_unit_moving_cannon_mortar_a.png",
+      "image": "sc/info_moving_cannon/unit_movingCannon_big.png",
       "production_building": "Builder Barracks",
       "production_building_level": 7,
       "upgrade_resource": "Builder Elixir",
@@ -17498,6 +17560,8 @@
         "name": "TID_BALLOON_CARRIER",
         "info": "TID_INFO_BALLOON_CARRIER"
       },
+      "icon": "sc/ui/icon_unit_skeletonBalloon.png",
+      "image": "sc/info_witch/unit_skeletonCarrier_big.png",
       "production_building": "Builder Barracks",
       "production_building_level": 9,
       "upgrade_resource": "Builder Elixir",
@@ -17630,6 +17694,8 @@
         "name": "TID_BABY_DRAGON2",
         "info": "TID_CHARACTER_INFO_BABY_DRAGON2"
       },
+      "icon": "sc/ui/icon_unit_babydragon.png",
+      "image": "sc/info_babydragon/unit_babydragon_big.png",
       "production_building": "Builder Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Builder Elixir",
@@ -17876,6 +17942,8 @@
         "name": "TID_DARK_WITCH",
         "info": "TID_CHARACTER_INFO_DARK_WITCH"
       },
+      "icon": "sc/ui/icon_unit_nightwitch.png",
+      "image": "sc/info_nightwitch/unit_nightwitch_big.png",
       "production_building": "Builder Barracks",
       "production_building_level": 8,
       "upgrade_resource": "Builder Elixir",
@@ -18090,6 +18158,8 @@
         "name": "TID_BATTLERAM",
         "info": "TID_CHARACTER_INFO_BATTLERAM"
       },
+      "icon": "sc/ui/icon_unit_battleram_cc.png",
+      "image": "sc/info_battleram/unit_battleram_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -18308,6 +18378,8 @@
         "name": "TID_GHOST",
         "info": "TID_CHARACTER_INFO_GHOST"
       },
+      "icon": "sc/ui/icon_unit_royale_ghost.png",
+      "image": "sc/info_royale_ghost/unit_royale_ghost_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -18526,6 +18598,8 @@
         "name": "TID_PUMPKIN_BARBARIAN",
         "info": "TID_CHARACTER_INFO_PUMPKIN_BARBARIAN"
       },
+      "icon": "sc/ui/icon_unit_pumpkin_barbarian.png",
+      "image": "sc/info_barbarian/unit_barbarian_big.png",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -18770,6 +18844,8 @@
         "name": "TID_GIANT_SKELETON",
         "info": "TID_CHARACTER_INFO_GIANT_SKELETON"
       },
+      "icon": "sc/ui/icon_unit_giant_skeleton.png",
+      "image": "sc/info_giant_skeleton/unit_giant_skeleton_big.png",
       "production_building": "Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Elixir",
@@ -18988,6 +19064,8 @@
         "name": "TID_SIEGE_MACHINE_RAM",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_RAM"
       },
+      "icon": "sc/ui/icon_unit_siege_machine_ram.png",
+      "image": "sc/info_siege_machine_ram/unit_siege_machine_ram_big.png",
       "production_building": "Workshop",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -19100,6 +19178,8 @@
         "name": "TID_SIEGE_MACHINE_FLYER",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_FLYER"
       },
+      "icon": "sc/ui/icon_unit_siege_machine_flyer.png",
+      "image": "sc/info_siege_machine_flyer/unit_siege_machine_flyer_big.png",
       "production_building": "Workshop",
       "production_building_level": 2,
       "upgrade_resource": "Elixir",
@@ -19197,6 +19277,8 @@
         "name": "TID_CHARACTER_YETI",
         "info": "TID_CHARACTER_INFO_YETI"
       },
+      "icon": "sc/ui/icon_unit_yeti.png",
+      "image": "sc/info_yeti/unit_yeti_big.png",
       "production_building": "Barracks",
       "production_building_level": 14,
       "upgrade_resource": "Elixir",
@@ -19331,6 +19413,8 @@
         "name": "TID_CHARACTER_ELITE_GOBLIN",
         "info": "TID_CHARACTER_INFO_ELITE_GOBLIN"
       },
+      "icon": "sc/ui/icon_unit_elite_goblin.png",
+      "image": "sc/info_goblin_elite/unit_goblin_elite_big.png",
       "production_building": "Barracks",
       "production_building_level": 4,
       "upgrade_resource": "Elixir",
@@ -19432,6 +19516,8 @@
         "name": "TID_SUPER_MINER",
         "info": "TID_SUPER_MINER_INFO"
       },
+      "icon": "sc/ui/icon_unit_elite_miner.png",
+      "image": "sc/info_elite_miner/unit_elite_miner_big.png",
       "production_building": "Barracks",
       "production_building_level": 12,
       "upgrade_resource": "Elixir",
@@ -19650,6 +19736,8 @@
         "name": "TID_CHARACTER_HASTY_BALLOON",
         "info": "TID_CHARACTER_INFO_HASTY_BALLOON"
       },
+      "icon": "sc/ui/icon_unit_elite_balloon.png",
+      "image": "sc/info_rocket_balloon/unit_rocketBalloon_big.png",
       "production_building": "Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Elixir",
@@ -19804,6 +19892,8 @@
         "name": "TID_ICEGOLEM",
         "info": "TID_CHARACTER_INFO_ICEGOLEM"
       },
+      "icon": "sc/ui/icon_unit_iceGolem.png",
+      "image": "sc/info_ice_golem/unit_ice_golem_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 8,
       "upgrade_resource": "Dark Elixir",
@@ -19970,6 +20060,8 @@
         "name": "TID_LIGHTNINGDRAGON",
         "info": "TID_CHARACTER_INFO_LIGHTNINGDRAGON"
       },
+      "icon": "sc/ui/icon_unit_lightningDragon.png",
+      "image": "sc/info_electro_dragon/unit_electro_dragon_big.png",
       "production_building": "Barracks",
       "production_building_level": 13,
       "upgrade_resource": "Elixir",
@@ -20127,6 +20219,8 @@
         "name": "TID_CHARACTER_SKELETON_BARREL",
         "info": "TID_CHARACTER_INFO_SKELETON_BARREL"
       },
+      "icon": "sc/ui/icon_unit_skeletonBarrel.png",
+      "image": "sc/info_skeleton_barrel/unit_skeleton_barrel_big.png",
       "production_building": "Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Elixir",
@@ -20293,6 +20387,8 @@
         "name": "TID_SIEGE_MACHINE_BALLOON",
         "info": "TID_SIEGE_MACHINE_BALLOON_INFO"
       },
+      "icon": "sc/ui/icon_unit_siege_machine_balloon.png",
+      "image": "sc/info_siege_machine_balloon/unit_siege_machine_balloon_big.png",
       "production_building": "Workshop",
       "production_building_level": 3,
       "upgrade_resource": "Elixir",
@@ -20381,6 +20477,8 @@
         "name": "TID_CHARACTER_INFERNO_DRAGON",
         "info": "TID_CHARACTER_INFERNO_DRAGON_INFO"
       },
+      "icon": "sc/ui/icon_unit_elite_infernodragon.png",
+      "image": "sc/info_elite_infernodragon/unit_elite_infernodragon_big.png",
       "production_building": "Barracks",
       "production_building_level": 11,
       "upgrade_resource": "Elixir",
@@ -20575,6 +20673,8 @@
         "name": "TID_CHARACTER_SUPER_VALKYRIE",
         "info": "TID_CHARACTER_SUPER_VALKYRIE_INFO"
       },
+      "icon": "sc/ui/icon_unit_elite_valkyrie.png",
+      "image": "sc/info_elite_valkyrie/unit_elite_valkyrie_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Dark Elixir",
@@ -20755,6 +20855,8 @@
         "name": "TID_CHARACTER_MECHA_DRAGON",
         "info": "TID_CHARACTER_MECHA_DRAGON_INFO"
       },
+      "icon": "sc/ui/icon_unit_dragon_rider.png",
+      "image": "sc/info_dragon_rider/unit_dragon_rider_big.png",
       "production_building": "Barracks",
       "production_building_level": 15,
       "upgrade_resource": "Elixir",
@@ -20873,6 +20975,8 @@
         "name": "TID_CHARACTER_SUPER_WITCH",
         "info": "TID_CHARACTER_SUPER_WITCH_INFO"
       },
+      "icon": "sc/ui/icon_unit_elite_witch.png",
+      "image": "sc/info_elite_witch/unit_elite_witch_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 5,
       "upgrade_resource": "Dark Elixir",
@@ -21027,6 +21131,8 @@
         "name": "TID_MECHA",
         "info": "TID_CHARACTER_INFO_MECHA"
       },
+      "icon": "sc/ui/icon_unit_mecha.png",
+      "image": "sc/info_mecha/unit_mecha_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -21258,6 +21364,8 @@
         "name": "TID_HOG_GLIDER",
         "info": "TID_CHARACTER_INFO_HOG_GLIDER"
       },
+      "icon": "sc/ui/icon_unit_hog_glider.png",
+      "image": "sc/info_hog_glider/unit_hog_glider_big.png",
       "production_building": "Builder Barracks",
       "production_building_level": 11,
       "upgrade_resource": "Builder Elixir",
@@ -21358,6 +21466,8 @@
         "name": "TID_PARTY_WIZARD",
         "info": "TID_CHARACTER_INFO_PARTY_WIZARD"
       },
+      "icon": "sc/ui/icon_unit_partyWizard.png",
+      "image": "sc/info_party_wizard/unit_party_wizard_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -21576,6 +21686,8 @@
         "name": "TID_SIEGE_MACHINE_CARRIER",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_CARRIER"
       },
+      "icon": "sc/ui/icon_unit_siege_machine_carrier.png",
+      "image": "sc/info_siege_clan_carrier/unit_siege_machine_clan_carrier_big.png",
       "production_building": "Workshop",
       "production_building_level": 4,
       "upgrade_resource": "Elixir",
@@ -21653,6 +21765,8 @@
         "name": "TID_ICE_HOUND",
         "info": "TID_ICE_HOUND_INFO"
       },
+      "icon": "sc/ui/icon_unit_elite_icehound.png",
+      "image": "sc/info_elite_icehound/unit_elite_icehound_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Dark Elixir",
@@ -21783,6 +21897,8 @@
         "name": "TID_SUPER_BOWLER",
         "info": "TID_SUPER_BOWLER_INFO"
       },
+      "icon": "sc/ui/icon_unit_elite_bowler.png",
+      "image": "sc/info_elite_bowler/unit_elite_bowler_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 7,
       "upgrade_resource": "Dark Elixir",
@@ -21959,6 +22075,8 @@
         "name": "TID_SUPER_DRAGON",
         "info": "TID_SUPER_DRAGON_INFO"
       },
+      "icon": "sc/ui/icon_unit_elite_dragon.png",
+      "image": "sc/info_super_dragon/unit_superdragon_big.png",
       "production_building": "Barracks",
       "production_building_level": 9,
       "upgrade_resource": "Elixir",
@@ -22115,6 +22233,8 @@
         "name": "TID_CHARACTER_HEADHUNTER",
         "info": "TID_CHARACTER_INFO_HEADHUNTER"
       },
+      "icon": "sc/ui/icon_unit_headhunter.png",
+      "image": "sc/info_headhunter/unit_head_hunter_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 9,
       "upgrade_resource": "Dark Elixir",
@@ -22182,6 +22302,8 @@
         "name": "TID_SUPER_WIZARD",
         "info": "TID_SUPER_WIZARD_INFO"
       },
+      "icon": "sc/ui/icon_unit_elite_wizard.png",
+      "image": "sc/info_elite_wizard/unit_elite_wizard_big.png",
       "production_building": "Barracks",
       "production_building_level": 7,
       "upgrade_resource": "Elixir",
@@ -22358,6 +22480,8 @@
         "name": "TID_SUPER_MINION",
         "info": "TID_CHARACTER_INFO_SUPER_MINION"
       },
+      "icon": "sc/ui/icon_unit_elite_minion.png",
+      "image": "sc/info_elite_minion/unit_elite_minion_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Dark Elixir",
@@ -22549,6 +22673,8 @@
         "name": "TID_SIEGE_MACHINE_LOG_LAUNCHER",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_LOG_LAUNCHER"
       },
+      "icon": "sc/ui/icon_unit_siege_machine_LogLauncher.png",
+      "image": "sc/info_siege_machine_loglauncher/unit_siege_machine_loglauncher_big.png",
       "production_building": "Workshop",
       "production_building_level": 5,
       "upgrade_resource": "Elixir",
@@ -22646,6 +22772,8 @@
         "name": "TID_CHARACTER_SIEGE_MACHINE_CATAPULT",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_CATAPULT"
       },
+      "icon": "sc/ui/icon_unit_siege_machine_catapult.png",
+      "image": "sc/info_siege_machine_catapult/unit_siege_machine_catapult_big.png",
       "production_building": "Workshop",
       "production_building_level": 6,
       "upgrade_resource": "Elixir",
@@ -22743,6 +22871,8 @@
         "name": "TID_CHARACTER_SIEGE_BATTLE_DRILL",
         "info": "TID_CHARACTER_SIEGE_BATTLE_DRILL_INFO"
       },
+      "icon": "sc/ui/icon_unit_siege_machine_BattleDrill.png",
+      "image": "sc/info_siege_machine_battledrill/unit_siege_machine_battledrill_big.png",
       "production_building": "Workshop",
       "production_building_level": 7,
       "upgrade_resource": "Elixir",
@@ -22850,6 +22980,8 @@
         "name": "TID_CHARACTER_RAM_RIDER",
         "info": "TID_CHARACTER_INFO_RAM_RIDER"
       },
+      "icon": "sc/ui/icon_unit_cookie_ramrider.png",
+      "image": "sc/info_cookie_ramrider/unit_cookie_ramrider_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -23068,6 +23200,8 @@
         "name": "TID_CHARACTER_ELECTRO_TITAN",
         "info": "TID_CHARACTER_ELECTRO_TITAN_INFO"
       },
+      "icon": "sc/ui/icon_unit_electrotitan.png",
+      "image": "sc/info_electro_titan/unit_electro_titan_big.png",
       "production_building": "Barracks",
       "production_building_level": 16,
       "upgrade_resource": "Elixir",
@@ -23170,6 +23304,8 @@
         "name": "TID_CHARACTER_APPRENTICE_WARDEN",
         "info": "TID_CHARACTER_APPRENTICE_WARDEN_INFO"
       },
+      "icon": "sc/ui/icon_unit_apprentice.png",
+      "image": "sc/info_apprentice/unit_apprentice_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 10,
       "upgrade_resource": "Dark Elixir",
@@ -23252,6 +23388,8 @@
         "name": "TID_CHARACTER_SUPER_HOG_RIDER",
         "info": "TID_CHARACTER_SUPER_HOG_RIDER_INFO"
       },
+      "icon": "sc/ui/icon_unit_elite_hogrider.png",
+      "image": "sc/info_elite_hogrider/unit_elite_hogrider_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 2,
       "upgrade_resource": "Dark Elixir",
@@ -23470,6 +23608,8 @@
         "name": "TID_CHARACTER_BARCHER",
         "info": "TID_CHARACTER_INFO_BARCHER"
       },
+      "icon": "sc/ui/icon_unit_barcher.png",
+      "image": "sc/info_barcher/unit_barcher_big.png",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -23688,6 +23828,8 @@
         "name": "TID_CHARACTER_GRAVE_GOLEM",
         "info": "TID_CHARACTER_INFO_GRAVE_GOLEM"
       },
+      "icon": "sc/ui/icon_unit_gravegolem.png",
+      "image": "sc/info_witchgolem/unit_witchgolem_big.png",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -23932,6 +24074,8 @@
         "name": "TID_CHARACTER_HOG_WIZARD",
         "info": "TID_CHARACTER_INFO_HOG_WIZARD"
       },
+      "icon": "sc/ui/icon_unit_hogwizard.png",
+      "image": "sc/info_hogwizard/unit_hogwizard_big.png",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -24150,6 +24294,8 @@
         "name": "TID_CHARACTER_LAVALOON",
         "info": "TID_CHARACTER_INFO_LAVALOON"
       },
+      "icon": "sc/ui/icon_unit_lavaloon.png",
+      "image": "sc/info_lavaloon/unit_lavaloon_big.png",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -24368,6 +24514,8 @@
         "name": "TID_ELECTROFIRE_WIZARD",
         "info": "TID_ELECTROFIRE_WIZARD_INFO"
       },
+      "icon": "sc/ui/icon_unit_electrofire_wizard_fire.png",
+      "image": "sc/info_electrofire_wizard/unit_electrofire_wizard_fire.png",
       "production_building": "Builder Barracks",
       "production_building_level": 12,
       "upgrade_resource": "Builder Elixir",
@@ -24450,6 +24598,8 @@
         "name": "TID_CHARACTER_TREANT",
         "info": "TID_CHARACTER_INFO_TREANT"
       },
+      "icon": "sc/ui/icon_unit_root_rider.png",
+      "image": "sc/info_root_rider/unit_root_rider_big.png",
       "production_building": "Barracks",
       "production_building_level": 17,
       "upgrade_resource": "Elixir",
@@ -24517,6 +24667,8 @@
         "name": "TID_CHARACTER_COOKIE_PEKKA",
         "info": "TID_CHARACTER_INFO_COOKIE_PEKKA"
       },
+      "icon": "sc/ui/icon_unit_cookie_pekka.png",
+      "image": "sc/info_cookie_pekka/unit_cookie_pekka_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -24735,6 +24887,8 @@
         "name": "TID_CHARACTER_FIRECRACKER",
         "info": "TID_CHARACTER_INFO_FIRECRACKER"
       },
+      "icon": "sc/ui/icon_unit_firecracker.png",
+      "image": "sc/info_firecracker/unit_firecracker_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -24953,6 +25107,8 @@
         "name": "TID_CHARACTER_WATER_DRAGON",
         "info": "TID_CHARACTER_INFO_WATER_DRAGON"
       },
+      "icon": "sc/ui/icon_unit_lny_dragon.png",
+      "image": "sc/info_lny_dragon/unit_lny_dragon_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -25145,6 +25301,8 @@
         "name": "TID_CHARACTER_FREE_KICKER",
         "info": "TID_CHARACTER_INFO_FREE_KICKER"
       },
+      "icon": "sc/ui/icon_unit_footballbarbarian.png",
+      "image": "sc/info_football_barbarian/unit_football_barbarian_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -25376,6 +25534,8 @@
         "name": "TID_CHARACTER_SIDE_THROWER",
         "info": "TID_CHARACTER_INFO_SIDE_THROWER"
       },
+      "icon": "sc/ui/icon_unit_footballgiant.png",
+      "image": "sc/info_football_giant/unit_football_giant_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -25607,6 +25767,8 @@
         "name": "TID_CHARACTER_SHAPESHIFTER_DRUID",
         "info": "TID_CHARACTER_SHAPESHIFTER_DRUID_INFO"
       },
+      "icon": "sc/ui/icon_unit_druid_bear.png",
+      "image": "sc/info_druid_bear/unit_druid_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 11,
       "upgrade_resource": "Dark Elixir",
@@ -25714,6 +25876,8 @@
         "name": "TID_CHARACTER_COURIER",
         "info": "TID_CHARACTER_INFO_COURIER"
       },
+      "icon": "sc/ui/icon_unit_majo.png",
+      "image": "sc/info_broom_witch/unit_broom_witch_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -25945,6 +26109,8 @@
         "name": "TID_ICEMINION",
         "info": "TID_CHARACTER_INFO_ICEMINION"
       },
+      "icon": "sc/ui/icon_unit_ice_minion.png",
+      "image": "sc/info_ice_minion/unit_ice_minion_big.png",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -26163,6 +26329,8 @@
         "name": "TID_CHARACTER_THROWER",
         "info": "TID_CHARACTER_INFO_THROWER"
       },
+      "icon": "sc/ui/icon_unit_thrower.png",
+      "image": "sc/info_thrower/unit_thrower_big.png",
       "production_building": "Barracks",
       "production_building_level": 18,
       "upgrade_resource": "Elixir",
@@ -26249,6 +26417,8 @@
         "name": "TID_CHARACTER_SIEGE_MACHINE_TROOP_CATAPULT",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_TROOP_CATAPULT"
       },
+      "icon": "sc/ui/icon_unit_siege_machine_commandtower.png",
+      "image": "sc/info_siege_machine_commandtower/unit_siege_machine_commandtower_big.png",
       "production_building": "Workshop",
       "production_building_level": 8,
       "upgrade_resource": "Elixir",
@@ -26331,6 +26501,8 @@
         "name": "TID_TAX_COLLECTOR",
         "info": "TID_CHARACTER_INFO_TAX_COLLECTOR"
       },
+      "icon": "sc/ui/icon_unit_goblin_tax_collector.png",
+      "image": "sc/info_goblin_tax_collector/unit_goblin_tax_collector_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -26549,6 +26721,8 @@
         "name": "TID_CHARACTER_SNAKE_BARREL",
         "info": "TID_CHARACTER_INFO_SNAKE_BARREL"
       },
+      "icon": "sc/ui/icon_unit_lny_snake_barrel.png",
+      "image": "sc/info_snake_barrel/unit_lny_snake_barrel_big.png",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -26715,6 +26889,8 @@
         "name": "TID_CHARACTER_SUPER_YETI",
         "info": "TID_CHARACTER_INFO_SUPER_YETI"
       },
+      "icon": "sc/ui/icon_unit_elite_yeti.png",
+      "image": "sc/info_super_yeti/unit_super_yeti_big.png",
       "production_building": "Barracks",
       "production_building_level": 14,
       "upgrade_resource": "Elixir",
@@ -26853,6 +27029,8 @@
         "name": "TID_CHARACTER_FURNACE",
         "info": "TID_CHARACTER_INFO_FURNACE"
       },
+      "icon": "sc/ui/icon_unit_furnace.png",
+      "image": "sc/info_furnace/unit_furnace_big.png",
       "production_building": "Dark Barracks",
       "production_building_level": 12,
       "upgrade_resource": "Dark Elixir",
@@ -26935,6 +27113,8 @@
         "name": "TID_CHARACTER_APRIL25GTG",
         "info": "TID_CHARACTER_INFO_APRIL25GTG"
       },
+      "icon": "sc/ui/icon_unit_april25_giant.png",
+      "image": "sc/info_april25_giant/unit_april25_giant_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -27230,6 +27410,8 @@
         "name": "TID_CHARACTER_APRIL25TBRM",
         "info": "TID_CHARACTER_INFO_APRIL25TBRM"
       },
+      "icon": "sc/ui/icon_unit_april25_pekka.png",
+      "image": "sc/info_april25_pekka/unit_april25_pekka_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -27429,6 +27611,8 @@
         "name": "TID_CHARACTER_APRIL25BLTM",
         "info": "TID_CHARACTER_INFO_APRIL25BLTM"
       },
+      "icon": "sc/ui/icon_unit_april25_valkyrie.png",
+      "image": "sc/info_april25_valkyrie/unit_april25_valkyrie_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -27595,6 +27779,8 @@
         "name": "TID_CHARACTER_APRIL25RRBL",
         "info": "TID_CHARACTER_INFO_APRIL25RRBL"
       },
+      "icon": "sc/ui/icon_unit_april25_thrower.png",
+      "image": "sc/info_april25_thrower/unit_april25_thrower_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -27794,6 +27980,8 @@
         "name": "TID_CHARACTER_APRIL25RRBL",
         "info": "TID_CHARACTER_INFO_APRIL25RRBL"
       },
+      "icon": "sc/ui/icon_unit_april25_thrower.png",
+      "image": "sc/info_april25_thrower/unit_april25_thrower_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -27993,6 +28181,8 @@
         "name": "TID_CHARACTER_APRIL25BLTM",
         "info": "TID_CHARACTER_INFO_APRIL25BLTM"
       },
+      "icon": "sc/ui/icon_unit_april25_valkyrie.png",
+      "image": "sc/info_april25_valkyrie/unit_april25_valkyrie_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -28159,6 +28349,8 @@
         "name": "TID_METEOR_GOLEM",
         "info": "TID_METEOR_GOLEM_INFO"
       },
+      "icon": "sc/ui/icon_unit_splitgolem.png",
+      "image": "sc/info_meteor_golem/unit_meteorgolem_big.png",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -28390,6 +28582,8 @@
         "name": "TID_METEOR_GOLEM",
         "info": "TID_METEOR_GOLEM_INFO"
       },
+      "icon": "sc/ui/icon_unit_splitgolem.png",
+      "image": "sc/info_meteor_golem/unit_meteorgolem_big.png",
       "production_building": "Barracks",
       "production_building_level": 19,
       "upgrade_resource": "Elixir",

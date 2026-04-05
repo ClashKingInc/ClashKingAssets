@@ -12,14 +12,14 @@ import zstandard
 import lzma
 from pathlib import Path
 
-from update_utils import apk_url, download_file, fetch_fingerprint
+from utils import apk_url, download_file, fetch_fingerprint
 
 class StaticUpdater:
     def __init__(self):
         self.USED_TIDS = set()
 
         # keep the raw CSV files
-        self.KEEP_CSV = False
+        self.KEEP_CSV = True
         # keep the raw JSON files
         self.KEEP_JSON = True
         # removes any TIDs not used in the static files
@@ -674,7 +674,7 @@ class StaticUpdater:
 
         return new_seasonal_defense_data
 
-    def _parse_troop_data(self):
+    def _parse_troop_data(self) -> dict:
         self.full_troop_data = self.open_file("logic/characters.json")
         full_super_troop_data = self.open_file("logic/super_licences.json")
         full_super_troop_data = {v.get("Replacement"): v for k, v in full_super_troop_data.items()}
@@ -688,6 +688,14 @@ class StaticUpdater:
             production_building = self.full_building_data.get(troop_data.get("ProductionBuilding")).get("TID")
 
             name_to_id[(troop_name, village_type)] = troop_data.get("GlobalID")
+
+            troop_icon_file = troop_data.get("IconSWF") #afaik always ui.sc
+            troop_icon_target = troop_data.get("IconExportName")
+
+            troop_image_file = troop_data.get("BigPictureSWF")
+            troop_image_target = troop_data.get("BigPicture")
+
+            #this is where we need to do processing, go to the file & grab that target file
             hold_data = {
                 "_id": troop_data.get("GlobalID"),
                 "name": self._translate(tid=troop_data.get("TID")),
@@ -696,6 +704,9 @@ class StaticUpdater:
                     "name": troop_data.get("TID"),
                     "info": troop_data.get("InfoTID"),
                 },
+                "icon": f"{troop_icon_file.replace(".sc", "/")}{troop_icon_target}.png",
+                "image": f"{troop_image_file.replace(".sc", "/")}{troop_image_target}.png",
+
                 "production_building": self._translate(tid=production_building),
                 "production_building_level": troop_data.get("BarrackLevel"),
                 "upgrade_resource": self._parse_resource(resource=troop_data.get("UpgradeResource")),
@@ -727,7 +738,7 @@ class StaticUpdater:
             if troop_data.get("ProductionBuilding") == "Barrack2":
                 max_townhall_converter = self.bb_lab_to_townhall
 
-            for level, level_data in troop_data.items():
+            for level, level_data in troop_data.items(): #type: str, dict
                 if not isinstance(level_data, dict):
                     continue
                 #convert times to seconds, all times for all things will be in seconds
@@ -746,12 +757,16 @@ class StaticUpdater:
                 else:
                     continue
 
+                #happens in the case of the troop only having one animation key for all levels
                 animation_key = level_data.get("Animation") or troop_data.get("Animation")
                 animation_data = self.animations_data.get(animation_key, {})
+                if not animation_data:
+                    print(troop_data) #what troop has no animations lol
                 animations = []
                 swf = animation_data.get("swf", "").replace(".sc", "")
                 for animation in animation_data.get("animations", []):
                     animations.append(f"{swf}/{animation}.webp")
+
                 new_level_data = {
                     "level": int(level),
                     "hitpoints": level_data.get("Hitpoints", 0),
@@ -1376,6 +1391,38 @@ class StaticUpdater:
 
         return new_league_tier_data
 
+    def _parse_builder_league_data(self):
+        full_builder_league_data = self.open_file("logic/leagues2.json")
+
+    def _parse_capital_league_data(self):
+        full_capital_league_data = self.open_file("logic/capital_leagues.json")
+
+    def _parse_magic_items_data(self):
+        full_magic_items_data = self.open_file("logic/boosters.json")
+
+    def _parse_magic_snacks_data(self):
+        full_magic_snacks_data = self.open_file("logic/consumables.json")
+
+    def _parse_capital_districts(self):
+        full_district_data = self.open_file("logic/capital_districts.json")
+
+    def _parse_locale_mapping(self):
+        full_locale_data = self.open_file("logic/chat_locales.json")
+
+    def _parse_clan_labels(self):
+        full_label_data = self.open_file("logic/clan_tags.json")
+
+    def _parse_player_labels(self):
+        full_label_data = self.open_file("logic/player_tags.json")
+
+    def _parse_chests_data(self):
+        full_chest_data = self.open_file("logic/random_reward_pools.json")
+        full_chest_reward_data = self.open_file("logic/random_reward_boxes.json")
+
+    def _parrse_resource_data(self):
+        full_resource_data = self.open_file("logic/resources.json")
+
+
     def _parse_hall_data(self):
         builderhall_data = []
         townhall_data = []
@@ -1551,7 +1598,8 @@ class StaticUpdater:
             if (
                 not file_path.startswith("logic/")
                 and not file_path.startswith("localization/")
-                and file_path != "csv/animations.csv"
+                #and file_path != "csv/animations.csv"
+                and not file_path.endswith("csv")
             ):
                 continue
 
