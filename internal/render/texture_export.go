@@ -39,11 +39,18 @@ func exportTextureFile(inputPath, outPath string, opts ExportOptions) error {
 	if assetDir == "" {
 		assetDir = strings.TrimSuffix(inputPath, filepath.Ext(inputPath)) + "_assets"
 	}
-	if err := os.MkdirAll(assetDir, 0o755); err != nil {
-		return err
+	outputPath := ""
+	if opts.PreferWebP {
+		outputPath = assetDir + ".webp"
+		if err := os.MkdirAll(filepath.Dir(outputPath), 0o755); err != nil {
+			return err
+		}
+	} else {
+		if err := os.MkdirAll(assetDir, 0o755); err != nil {
+			return err
+		}
+		outputPath = filepath.Join(assetDir, strings.TrimSuffix(filepath.Base(inputPath), filepath.Ext(inputPath))+".png")
 	}
-
-	outputPath := filepath.Join(assetDir, strings.TrimSuffix(filepath.Base(inputPath), filepath.Ext(inputPath))+".png")
 	if reason := tinyOutputReason(img.Bounds(), opts.SkipTinyOutputThreshold); reason != "" {
 		if err := removeIfExists(outputPath); err != nil {
 			return err
@@ -58,9 +65,16 @@ func exportTextureFile(inputPath, outPath string, opts ExportOptions) error {
 	if err != nil {
 		return err
 	}
-	if err := png.Encode(file, img); err != nil {
-		file.Close()
-		return err
+	if opts.PreferWebP {
+		if err := writeAnimatedWebP(file, []renderedFrame{{Image: img, DelayCS: 0}}); err != nil {
+			file.Close()
+			return err
+		}
+	} else {
+		if err := png.Encode(file, img); err != nil {
+			file.Close()
+			return err
+		}
 	}
 	if err := file.Close(); err != nil {
 		return err

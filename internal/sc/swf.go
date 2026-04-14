@@ -129,6 +129,10 @@ func (s *SWF) loadResolvedAsset(path string, isTexture bool) error {
 	if idx := strings.Index(string(data), "START"); idx >= 0 {
 		data = data[:idx]
 	}
+	version := DetectSCVersion(data)
+	if version >= 5 {
+		return s.loadSC2Asset(data, path, isTexture)
+	}
 	decompressed, err := DecompressAsset(data)
 	if err != nil {
 		return err
@@ -196,10 +200,10 @@ func prepareMainAssetPath(path string) (string, func(), error) {
 	if err != nil {
 		return "", nil, err
 	}
-	if version <= 4 {
+	if version <= 4 || version == 0 {
 		return path, func() {}, nil
 	}
-	return downgradeAssetBundle(path)
+	return path, func() {}, nil
 }
 
 func prepareTextureAssetPath(path string) (string, func(), error) {
@@ -207,10 +211,10 @@ func prepareTextureAssetPath(path string) (string, func(), error) {
 	if err != nil {
 		return "", nil, err
 	}
-	if version <= 4 {
+	if version <= 4 || version == 0 {
 		return path, func() {}, nil
 	}
-	return downgradeSingleAsset(path)
+	return path, func() {}, nil
 }
 
 func fileSCVersion(path string) (int, error) {
@@ -294,10 +298,24 @@ func bundleAssets(path string) ([]string, error) {
 		if info.IsDir() {
 			continue
 		}
+		if !isBundleAssetMatch(base, filepath.Base(match)) {
+			continue
+		}
 		assets = append(assets, match)
 	}
 	sort.Strings(assets)
 	return assets, nil
+}
+
+func isBundleAssetMatch(base, name string) bool {
+	if name == base+".sc" || name == base+textureExtension {
+		return true
+	}
+	if strings.HasPrefix(name, base+"_") {
+		remainder := strings.TrimPrefix(name, base+"_")
+		return strings.HasSuffix(remainder, ".sctx")
+	}
+	return false
 }
 
 func downgradeSingleAsset(path string) (string, func(), error) {
@@ -369,7 +387,7 @@ func (s *SWF) loadTags(reader *Reader) error {
 			if texturesLoaded >= len(s.Textures) {
 				return fmt.Errorf("too many textures in %s", s.Filename)
 			}
-			texture, err := loadTexture(reader, tag, s.HasExternalTexture, s.Filename)
+			texture, err := loadTexture(reader, tag, tagEnd, s.HasExternalTexture, s.Filename)
 			if err != nil {
 				return fmt.Errorf("texture tag %d at pos %d in %s: %w", tag, reader.Pos(), s.Filename, err)
 			}

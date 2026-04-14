@@ -3,29 +3,81 @@ Automates updating the static files.
 Now saves both the raw CSV and the generated JSON files.
 If new files need to be added, then place them in the TARGETS list.
 """
+
 import asyncio
 import json
 import logging
 import csv
 import os
+import hashlib
+import shutil
+import subprocess
+import tempfile
 import zstandard
 import lzma
+from dataclasses import dataclass
 from pathlib import Path
 
-from utils import apk_url, download_file, fetch_fingerprint
+from utils import apk_url, build_r2_client, download_file, fetch_fingerprint, load_r2_existing_keys, upload_file_to_r2
+
+
+@dataclass(frozen=True)
+class SCAssetRequest:
+    source_sc: str
+    asset_name: str | None
+    save_path: str
+
+
+DIRECT_ASSET_EXTENSIONS = {".sctx", ".ttf", ".otf", ".woff", ".woff2", ".mp4", ".ogg"}
+DIRECT_WEBP_EXTENSIONS = {".sctx"}
+
+
+def is_sc_bundle_file(source_sc: str, candidate: str) -> bool:
+    source_path = Path(source_sc)
+    candidate_path = Path(candidate)
+    if candidate_path.parent.as_posix() != source_path.parent.as_posix():
+        return False
+
+    base = source_path.stem
+    name = candidate_path.name
+    if name == f"{base}.sc" or name == f"{base}_tex.sc":
+        return True
+    return name.startswith(f"{base}_") and name.endswith(".sctx")
+
+
+def remove_empty_parents(path: Path, stop_at: Path) -> None:
+    current = path.resolve()
+    stop_at = stop_at.resolve()
+    while current != stop_at:
+        try:
+            current.rmdir()
+        except OSError:
+            return
+        parent = current.parent
+        if parent == current:
+            return
+        current = parent
+
+
+def is_exported_via_go(source_sc: str) -> bool:
+    return source_sc.endswith((".sc", ".sctx"))
+
+def hash_15_digits(s: str) -> int:
+    digest = hashlib.blake2b(s.encode("utf-8"), digest_size=8).digest()
+    return int.from_bytes(digest, "big") % 10**15
 
 class StaticUpdater:
     def __init__(self):
         self.USED_TIDS = set()
 
         # keep the raw CSV files
-        self.KEEP_CSV = True
+        self.KEEP_CSV = False
         # keep the raw JSON files
-        self.KEEP_JSON = True
+        self.KEEP_JSON = False
         # removes any TIDs not used in the static files
         self.PRUNE_TRANSLATIONS = True
         # base path for the static files to be stored in
-        self.BASE_PATH = "assets/"
+        self.BASE_PATH = "assets"
 
         self.FINGERPRINT = os.getenv("FINGERPRINT", "")
         self.APK_URL = apk_url()
@@ -45,6 +97,152 @@ class StaticUpdater:
         self.pethouse_to_townhall = {}
 
         self.animations_data = {}
+        self.sc_asset_requests: dict[tuple[str, str | None], list[SCAssetRequest]] = {}
+        self.r2_bucket = os.getenv("R2_BUCKET", "")
+        self.r2_prefix = os.getenv("R2_PREFIX", "")
+        self.r2_client = build_r2_client(self.r2_bucket)
+        self.r2_existing_keys: set[str] = set()
+
+    def register_sc_asset(self, source_sc: str, asset_name: str, save_path: str) -> str:
+        source_sc = source_sc.strip()
+        normalized_asset_name = (asset_name or "").strip()
+        save_path = save_path.strip()
+        source_ext = Path(source_sc).suffix.lower()
+        if source_ext != ".sc" and source_ext not in DIRECT_ASSET_EXTENSIONS:
+            raise ValueError(f"invalid asset source: {source_sc!r}")
+        if source_ext == ".sc" and not normalized_asset_name:
+            raise ValueError(f"invalid SC asset name for {source_sc!r}")
+        request_asset_name = normalized_asset_name if source_ext == ".sc" else None
+        if not save_path:
+            raise ValueError(f"save_path must not be empty for {source_sc}:{normalized_asset_name}")
+        if source_ext in DIRECT_WEBP_EXTENSIONS or source_ext == ".sc":
+            if Path(save_path).suffix.lower() != ".webp":
+                save_path = f"{save_path}.webp"
+        elif Path(save_path).suffix.lower() != source_ext:
+            save_path = f"{save_path}{source_ext}"
+
+        key = (source_sc, request_asset_name)
+        request = SCAssetRequest(source_sc=source_sc, asset_name=request_asset_name, save_path=save_path)
+        requests = self.sc_asset_requests.setdefault(key, [])
+        if any(existing.save_path == save_path for existing in requests):
+            return save_path
+        requests.append(request)
+        return save_path
+
+    def should_skip_registered_asset(self, save_path: str) -> bool:
+        return save_path in self.r2_existing_keys
+
+    def upload_registered_asset(self, request: SCAssetRequest, local_path: Path) -> None:
+        if request.save_path in self.r2_existing_keys:
+            return
+        upload_file_to_r2(self.r2_client, self.r2_bucket, self.r2_prefix, local_path, request.save_path)
+        self.r2_existing_keys.add(request.save_path)
+
+    async def _download_sc_bundle(self, base_url: str, source_sc: str, available_files: set[str]) -> list[Path]:
+        downloaded: list[Path] = []
+
+        bundle_files = sorted(file_path for file_path in available_files if is_sc_bundle_file(source_sc, file_path))
+        if source_sc not in bundle_files:
+            raise FileNotFoundError(f"missing source bundle file in fingerprint: {source_sc}")
+
+        for remote_path in bundle_files:
+            data = await download_file(url=f"{base_url}/{remote_path}")
+            local_path = Path(remote_path)
+            local_path.parent.mkdir(parents=True, exist_ok=True)
+            local_path.write_bytes(data)
+            downloaded.append(local_path)
+
+        return downloaded
+
+    async def extract_assets(self):
+        if not self.sc_asset_requests:
+            return
+
+        self.r2_existing_keys = load_r2_existing_keys(self.r2_client, self.r2_bucket, self.r2_prefix)
+
+        if not self.FINGERPRINT:
+            self.FINGERPRINT = await fetch_fingerprint(self.APK_URL)
+        base_url = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
+        fingerprint_file: dict = await download_file(url=f"{base_url}/fingerprint.json", as_json=True)
+        available_files = {item.get("file") for item in fingerprint_file.get("files", []) if item.get("file")}
+
+        grouped: dict[str, dict[str | None, list[SCAssetRequest]]] = {}
+        for requests in self.sc_asset_requests.values():
+            pending_requests = [
+                request for request in requests if not self.should_skip_registered_asset(request.save_path)
+            ]
+            if not pending_requests:
+                continue
+            primary = pending_requests[0]
+            grouped.setdefault(primary.source_sc, {})[primary.asset_name] = pending_requests
+
+        for source_sc, asset_requests in sorted(grouped.items()):
+            downloaded_files: list[Path] = []
+            legacy_assets_dir = Path(source_sc).parent / f"{Path(source_sc).stem}_assets"
+            try:
+                if source_sc.endswith(".sc"):
+                    downloaded_files = await self._download_sc_bundle(base_url, source_sc, available_files)
+                else:
+                    data = await download_file(url=f"{base_url}/{source_sc}")
+                    local_path = Path(source_sc)
+                    local_path.parent.mkdir(parents=True, exist_ok=True)
+                    local_path.write_bytes(data)
+                    downloaded_files = [local_path]
+                if not is_exported_via_go(source_sc):
+                    for requests in asset_requests.values():
+                        for request in requests:
+                            self.upload_registered_asset(request, downloaded_files[0])
+                    continue
+                with tempfile.TemporaryDirectory(prefix="update-static-sc-") as temp_dir:
+                    command = ["go", "run", "main.go", "--workers", str(max(1, os.cpu_count() or 1)), "--prefer-webp"]
+                    if source_sc.endswith(".sc"):
+                        command.extend(["--out", temp_dir])
+                        for asset_name, requests in sorted(asset_requests.items()):
+                            if asset_name is None:
+                                raise ValueError(f"missing asset name for SC source {source_sc}")
+                            temp_output_base = str(Path(temp_dir) / asset_name)
+                            command.extend(["--asset", asset_name])
+                            command.extend(["--asset-output", f"{asset_name}={temp_output_base}"])
+                    else:
+                        direct_output = str(Path(temp_dir) / Path(source_sc).stem)
+                        command.extend(["--out", direct_output])
+                    command.append(source_sc)
+                    subprocess.run(command, check=True)
+
+                    if source_sc.endswith(".sc"):
+                        manifest_path = Path(temp_dir) / "manifest.json"
+                        manifest_data = json.loads(manifest_path.read_text())
+                        exported_files = {
+                            entry["export_name"]: entry["output_file"] for entry in manifest_data.get("exports", [])
+                        }
+                        skipped_exports = {
+                            entry["export_name"]: entry.get("reason", "unknown reason")
+                            for entry in manifest_data.get("skipped", [])
+                        }
+
+                        for asset_name, requests in asset_requests.items():
+                            exported_file = exported_files.get(asset_name)
+                            if not exported_file:
+                                skip_reason = skipped_exports.get(asset_name)
+                                if skip_reason:
+                                    raise RuntimeError(f"asset {source_sc}:{asset_name} was skipped: {skip_reason}")
+                                raise FileNotFoundError(f"asset output missing for {source_sc}:{asset_name}")
+                            for request in asset_requests[asset_name]:
+                                self.upload_registered_asset(request, Path(exported_file))
+                    else:
+                        exported_file = str(Path(temp_dir) / f"{Path(source_sc).stem}.webp")
+                        for request in next(iter(asset_requests.values())):
+                            self.upload_registered_asset(request, Path(exported_file))
+                shutil.rmtree(legacy_assets_dir, ignore_errors=True)
+            finally:
+                for path in downloaded_files:
+                    try:
+                        path.unlink()
+                    except OSError:
+                        pass
+                shutil.rmtree(legacy_assets_dir, ignore_errors=True)
+                if downloaded_files:
+                    remove_empty_parents(Path(downloaded_files[0]).parent, Path.cwd())
 
     def decompress(self, data):
         """
@@ -59,18 +257,12 @@ class StaticUpdater:
             uncompressed_size = int.from_bytes(data[5:9], byteorder="little")
 
             decompressed = lzham.decompress(data[9:], uncompressed_size, {"dict_size_log2": dict_size})
-            return decompressed, {
-                "dict_size": dict_size,
-                "uncompressed_size": uncompressed_size,
-            }
+            return decompressed, {"dict_size": dict_size, "uncompressed_size": uncompressed_size}
 
         if int.from_bytes(data[0:4], byteorder="little") == zstandard.MAGIC_NUMBER:
             logging.debug("Decompressing using ZSTD ...")
             decompressed = zstandard.decompress(data)
-            return decompressed, {
-                "dict_size": None,
-                "uncompressed_size": None,
-            }
+            return decompressed, {"dict_size": None, "uncompressed_size": None}
 
         # Otherwise, assume LZMA
         logging.debug("Decompressing using LZMA ...")
@@ -116,7 +308,7 @@ class StaticUpdater:
         if len(rows) < 2:
             return
 
-        columns   = rows[0]
+        columns = rows[0]
         types_row = rows[1]
 
         # If GlobalID column exists at position 1, move it to the end
@@ -136,15 +328,12 @@ class StaticUpdater:
             rows = rows[:2] + reordered_rows
 
         # detect if col[1] really is a numeric level
-        is_numeric_level = (
-            types_row[1].lower() == "int"
-            or "level" in columns[1].lower()
-        )
+        is_numeric_level = types_row[1].lower() == "int" or "level" in columns[1].lower()
 
-        final_data     = {}
-        current_troop  = None
-        level_counter  = None
-        current_level  = None
+        final_data = {}
+        current_troop = None
+        level_counter = None
+        current_level = None
 
         # 3) Parse & build final_data
         for row in rows[2:]:
@@ -278,9 +467,21 @@ class StaticUpdater:
                 if data_row and data_row[0].strip():
                     break
 
-                has_directions = data_row[column_map["HasDirections"]].strip().upper() if len(data_row) > column_map["HasDirections"] else ""
-                export_name = data_row[column_map["ExportName"]].strip() if "ExportName" in column_map and len(data_row) > column_map["ExportName"] else ""
-                swf_value = data_row[column_map["SWF"]].strip() if "SWF" in column_map and len(data_row) > column_map["SWF"] else ""
+                has_directions = (
+                    data_row[column_map["HasDirections"]].strip().upper()
+                    if len(data_row) > column_map["HasDirections"]
+                    else ""
+                )
+                export_name = (
+                    data_row[column_map["ExportName"]].strip()
+                    if "ExportName" in column_map and len(data_row) > column_map["ExportName"]
+                    else ""
+                )
+                swf_value = (
+                    data_row[column_map["SWF"]].strip()
+                    if "SWF" in column_map and len(data_row) > column_map["SWF"]
+                    else ""
+                )
 
                 if export_name:
                     current_export_name = export_name
@@ -294,10 +495,7 @@ class StaticUpdater:
                 next_index += 1
 
             if character_swf:
-                final_data[character_name] = {
-                    "swf": character_swf,
-                    "animations": animations,
-                }
+                final_data[character_name] = {"swf": character_swf, "animations": animations}
 
             index = next_index
 
@@ -370,7 +568,8 @@ class StaticUpdater:
                 if not language_data.get(translation_key):
                     continue
                 new_translation_data[translation_key][lang.upper()] = language_data.get(translation_key).get(
-                    lang.upper())
+                    lang.upper()
+                )
 
         self.translation_data = new_translation_data
         return new_translation_data
@@ -393,22 +592,26 @@ class StaticUpdater:
                     },
                     "village": group_map.get(achievement_data["UIGroup"]),
                     "ui_priority": achievement_data.get("UIPriority", 0),
-                    "levels" : [{
+                    "levels": [
+                        {
+                            "level": achievement_data.get("Level") + 1,
+                            "action_count": achievement_data.get("ActionCount"),
+                            "action_data": achievement_data.get("ActionData"),
+                            "xp": achievement_data.get("ExpReward", 0),
+                            "gems": achievement_data.get("DiamondReward", 0),
+                        }
+                    ],
+                }
+            else:
+                new_achievement_data[tid]["levels"].append(
+                    {
                         "level": achievement_data.get("Level") + 1,
                         "action_count": achievement_data.get("ActionCount"),
                         "action_data": achievement_data.get("ActionData"),
                         "xp": achievement_data.get("ExpReward", 0),
-                        "gems": achievement_data.get("DiamondReward", 0)
-                    }]
-                }
-            else:
-                new_achievement_data[tid]["levels"].append({
-                    "level": achievement_data.get("Level") + 1,
-                    "action_count": achievement_data.get("ActionCount"),
-                    "action_data": achievement_data.get("ActionData"),
-                    "xp": achievement_data.get("ExpReward", 0),
-                    "gems": achievement_data.get("DiamondReward", 0)
-                })
+                        "gems": achievement_data.get("DiamondReward", 0),
+                    }
+                )
 
         return list(new_achievement_data.values())
 
@@ -421,8 +624,10 @@ class StaticUpdater:
         new_building_data = []
 
         for building_name, building_data in self.full_building_data.items():
-            if building_data.get("BuildingClass") in ["Npc", "NonFunctional",
-                                                      "Npc Town Hall"] or "Unused" in building_name:
+            if (
+                building_data.get("BuildingClass") in ["Npc", "NonFunctional", "Npc Town Hall"]
+                or "Unused" in building_name
+            ):
                 continue
 
             village_type = building_data.get("VillageType", 0)
@@ -434,7 +639,7 @@ class StaticUpdater:
                     superchargeable = True
                     hold_data = {
                         "upgrade_resource": self._parse_resource(resource=supercharge_data.get("BuildResource")),
-                        "levels": []
+                        "levels": [],
                     }
                     for level, level_data in supercharge_data.items():
                         if not isinstance(level_data, dict):
@@ -446,17 +651,19 @@ class StaticUpdater:
                         # unless it is a resource pump, but we dont handle those anyways
                         if not DPS and not level_data.get("Hitpoints"):
                             DPS = supercharge_data.get("DPS", 0)
-                        hold_data["levels"].append({
-                            "level": int(level),
-                            "build_cost": level_data.get("BuildCost"),
-                            "build_time": upgrade_time_seconds,
-                            "hitpoints_buff": level_data.get("Hitpoints", 0),
-                            "dps_buff": DPS,
-                        })
+                        hold_data["levels"].append(
+                            {
+                                "level": int(level),
+                                "build_cost": level_data.get("BuildCost"),
+                                "build_time": upgrade_time_seconds,
+                                "hitpoints_buff": level_data.get("Hitpoints", 0),
+                                "dps_buff": DPS,
+                            }
+                        )
                     supercharge_level_data = hold_data
                     break
 
-            #for merged buildings, move the requirement to level 1 since that is when the requirement is actually needed
+            # for merged buildings, move the requirement to level 1 since that is when the requirement is actually needed
             if building_data.get("MergeRequirement") is not None:
                 building_data["1"]["MergeRequirement"] = building_data.get("MergeRequirement")
 
@@ -464,19 +671,16 @@ class StaticUpdater:
                 "_id": building_data.get("GlobalID"),
                 "name": self._translate(tid=building_data.get("TID")),
                 "info": self._translate(tid=building_data.get("InfoTID")),
-                "TID": {
-                    "name": building_data.get("TID"),
-                    "info": building_data.get("InfoTID"),
-                },
+                "TID": {"name": building_data.get("TID"), "info": building_data.get("InfoTID")},
                 "type": building_data.get("BuildingClass"),
                 # we are going to do this purely for builder hut purposes bc lv 1 is gems
                 "upgrade_resource": self._parse_resource(
                     resource=building_data.get("BuildResource") or building_data.get("2").get("BuildResource")
                 ),
                 "village": "home" if not village_type else "builderBase",
-                "width": building_data.get("Width", 1), #walls are null for some reason, so let's make it 1
+                "width": building_data.get("Width", 1),  # walls are null for some reason, so let's make it 1
                 "superchargeable": superchargeable,
-                "levels": []
+                "levels": [],
             }
 
             # put seasonal defense onto the crafting station
@@ -489,9 +693,8 @@ class StaticUpdater:
                 hold_data["gear_up"] = {
                     "level_required": building_data.get("GearUpLevelRequirement"),
                     "resource": self._parse_resource(resource=building_data.get("GearUpResource")),
-                    "building_id": self.full_building_data.get(building_data.get("GearUpBuilding")).get("GlobalID")
+                    "building_id": self.full_building_data.get(building_data.get("GearUpBuilding")).get("GlobalID"),
                 }
-
 
             for level, level_data in building_data.items():
                 if not isinstance(level_data, dict):
@@ -512,7 +715,9 @@ class StaticUpdater:
 
                 if "AltBuildResource" in level_data:
                     # a wall specific thing since they can use gold + elixir at certain levels
-                    hold_level_data["alt_upgrade_resource"] = self._parse_resource(resource=level_data["AltBuildResource"])
+                    hold_level_data["alt_upgrade_resource"] = self._parse_resource(
+                        resource=level_data["AltBuildResource"]
+                    )
 
                 if merge_requirement := level_data.get("MergeRequirement"):
                     merge_list = []
@@ -520,20 +725,21 @@ class StaticUpdater:
                     for building in buildings:
                         name, level, geared_up = building.split(":")
                         merge_building_data = self.full_building_data.get(name)
-                        merge_list.append({
-                            "name": self._translate(tid=merge_building_data.get("TID")),
-                            "_id": merge_building_data.get("GlobalID"),
-                            "geared_up": True if geared_up == "1" else False,
-                            "level": int(level)
-                        })
+                        merge_list.append(
+                            {
+                                "name": self._translate(tid=merge_building_data.get("TID")),
+                                "_id": merge_building_data.get("GlobalID"),
+                                "geared_up": True if geared_up == "1" else False,
+                                "level": int(level),
+                            }
+                        )
 
                     hold_level_data["merge_requirement"] = merge_list
 
                 if (weapon_name := level_data.get("Weapon")) is not None:
-
                     weapon_data: dict = full_weapon_data[weapon_name]
 
-                    #if the townhall only has 1 level of weapon, then it is inherently part of the base level,
+                    # if the townhall only has 1 level of weapon, then it is inherently part of the base level,
                     # so just set the dps and continue
                     if weapon_data.get("1") is None:
                         hold_level_data["dps"] = weapon_data.get("DPS")
@@ -541,59 +747,61 @@ class StaticUpdater:
                         hold_weapon_data = {
                             "name": self._translate(tid=weapon_data["TID"]),
                             "info": self._translate(tid=weapon_data["InfoTID"]),
-                            "TID": {
-                                "name": weapon_data.get("TID"),
-                                "info": weapon_data.get("InfoTID"),
-                            },
+                            "TID": {"name": weapon_data.get("TID"), "info": weapon_data.get("InfoTID")},
                             "upgrade_resource": self._parse_resource(resource=building_data.get("BuildResource")),
                             "strength_weight": level_data.get("StrengthWeight", 0),
-                            "levels": []
+                            "levels": [],
                         }
                         for weapon_level, weapon_level_data in weapon_data.items():
                             if not isinstance(weapon_level_data, dict):
                                 continue
 
                             upgrade_time_seconds = self._parse_upgrade_time(weapon_level_data)
-                            hold_weapon_data["levels"].append({
-                                "level": weapon_level_data.get("Level"),
-                                "build_cost": level_data.get("BuildCost"),
-                                "build_time": upgrade_time_seconds,
-                                "dps": weapon_level_data.get("DPS"),
-                            })
+                            hold_weapon_data["levels"].append(
+                                {
+                                    "level": weapon_level_data.get("Level"),
+                                    "build_cost": level_data.get("BuildCost"),
+                                    "build_time": upgrade_time_seconds,
+                                    "dps": weapon_level_data.get("DPS"),
+                                }
+                            )
                         hold_level_data["weapon"] = hold_weapon_data
 
                 hold_data["levels"].append(hold_level_data)
 
             if superchargeable:
-                #supercharges are always on the last available level
+                # supercharges are always on the last available level
                 hold_data["levels"][-1]["supercharge"] = supercharge_level_data
             new_building_data.append(hold_data)
 
         lab_data = next((item for item in new_building_data if item["name"] == "Laboratory")).get("levels")
-        lab_to_townhall = {spot : level_data.get("required_townhall") for spot, level_data in enumerate(lab_data, 1)}
-        lab_to_townhall[-1] = 1 # there are troops with no lab ...
+        lab_to_townhall = {spot: level_data.get("required_townhall") for spot, level_data in enumerate(lab_data, 1)}
+        lab_to_townhall[-1] = 1  # there are troops with no lab ...
         lab_to_townhall[0] = 2
         self.lab_to_townhall = lab_to_townhall
 
         blacksmith_data = next((item for item in new_building_data if item["name"] == "Blacksmith")).get("levels")
-        self.smithy_to_townhall = {spot: level_data.get("required_townhall") for spot, level_data in
-                              enumerate(blacksmith_data, 1)}
+        self.smithy_to_townhall = {
+            spot: level_data.get("required_townhall") for spot, level_data in enumerate(blacksmith_data, 1)
+        }
 
         pet_house_data = next((item for item in new_building_data if item["name"] == "Pet House")).get("levels")
-        self.pethouse_to_townhall = {spot: level_data.get("required_townhall") for spot, level_data in
-                                enumerate(pet_house_data, 1)}
+        self.pethouse_to_townhall = {
+            spot: level_data.get("required_townhall") for spot, level_data in enumerate(pet_house_data, 1)
+        }
 
         bb_lab_data = next((item for item in new_building_data if item["name"] == "Star Laboratory")).get("levels")
-        self.bb_lab_to_townhall = {spot: level_data.get("required_townhall") for spot, level_data in
-                              enumerate(bb_lab_data, 1)}
+        self.bb_lab_to_townhall = {
+            spot: level_data.get("required_townhall") for spot, level_data in enumerate(bb_lab_data, 1)
+        }
 
         townhall_unlocks, builderhall_unlocks = self._parse_hall_data()
 
         for building in new_building_data:
             unlocks = []
-            if building["_id"] == 1000001: #townhall id
+            if building["_id"] == 1000001:  # townhall id
                 unlocks = townhall_unlocks
-            elif building["_id"] == 1000034: #builderhall id
+            elif building["_id"] == 1000034:  # builderhall id
                 unlocks = builderhall_unlocks
 
             for unlock_data in unlocks:
@@ -619,7 +827,6 @@ class StaticUpdater:
         current_max_townhall = int(list(self.full_townhall_data.keys())[-1])
         new_seasonal_defense_data = []
         for _id, (seasonal_def_name, seasonal_def_data) in enumerate(full_seasonal_defenses.items(), 103000000):
-
             if seasonal_def_name not in current_seasonal_defenses:
                 continue
 
@@ -632,12 +839,9 @@ class StaticUpdater:
                 "_id": _id,
                 "name": self._translate(tid=name_TID),
                 "info": self._translate(tid=info_TID),
-                "TID": {
-                    "name": name_TID,
-                    "info": info_TID,
-                },
+                "TID": {"name": name_TID, "info": info_TID},
                 "required_townhall": current_max_townhall,
-                "modules" : []
+                "modules": [],
             }
             for count, module in enumerate(seasonal_def_data.get("Modules").split(";"), 1):
                 module_data = full_seasonal_modules.get(module)
@@ -645,11 +849,9 @@ class StaticUpdater:
                 module_hold_data = {
                     "_id": module_data.get("_id"),
                     "name": self._translate(tid=module_data.get("TID")),
-                    "TID": {
-                        "name": module_data.get("TID"),
-                    },
+                    "TID": {"name": module_data.get("TID")},
                     "upgrade_resource": self._parse_resource(module_data.get("BuildResource")),
-                    "levels": []
+                    "levels": [],
                 }
                 for level, level_data in module_data.items():
                     if not isinstance(level_data, dict):
@@ -661,12 +863,14 @@ class StaticUpdater:
                     ability_data.pop("DeactivateFromGameSystem", None)
                     ability_data.pop("Level", None)
 
-                    module_hold_data["levels"].append({
-                        "level": int(level),
-                        "build_cost": level_data.get("BuildCost"),
-                        "build_time": upgrade_time_seconds,
-                        "ability_data": ability_data
-                    })
+                    module_hold_data["levels"].append(
+                        {
+                            "level": int(level),
+                            "build_cost": level_data.get("BuildCost"),
+                            "build_time": upgrade_time_seconds,
+                            "ability_data": ability_data,
+                        }
+                    )
 
                 hold_data["modules"].append(module_hold_data)
 
@@ -689,47 +893,43 @@ class StaticUpdater:
 
             name_to_id[(troop_name, village_type)] = troop_data.get("GlobalID")
 
-            troop_icon_file = troop_data.get("IconSWF") #afaik always ui.sc
+            troop_icon_file = troop_data.get("IconSWF")  # afaik always ui.sc
             troop_icon_target = troop_data.get("IconExportName")
+            troop_icon_path = self.register_sc_asset(
+                source_sc=troop_icon_file,
+                asset_name=troop_icon_target,
+                save_path=f'troops/{troop_data.get("GlobalID")}/icon.webp',
+            )
 
-            troop_image_file = troop_data.get("BigPictureSWF")
-            troop_image_target = troop_data.get("BigPicture")
-
-            #this is where we need to do processing, go to the file & grab that target file
+            # this is where we need to do processing, go to the file & grab that target file
             hold_data = {
                 "_id": troop_data.get("GlobalID"),
                 "name": self._translate(tid=troop_data.get("TID")),
                 "info": self._translate(tid=troop_data.get("InfoTID")),
-                "TID": {
-                    "name": troop_data.get("TID"),
-                    "info": troop_data.get("InfoTID"),
-                },
-                "icon": f"{troop_icon_file.replace(".sc", "/")}{troop_icon_target}.png",
-                "image": f"{troop_image_file.replace(".sc", "/")}{troop_image_target}.png",
-
+                "TID": {"name": troop_data.get("TID"), "info": troop_data.get("InfoTID")},
+                "icon": troop_icon_path,
                 "production_building": self._translate(tid=production_building),
                 "production_building_level": troop_data.get("BarrackLevel"),
                 "upgrade_resource": self._parse_resource(resource=troop_data.get("UpgradeResource")),
-
                 "is_flying": troop_data.get("IsFlying"),
                 "is_air_targeting": troop_data.get("AirTargets"),
                 "is_ground_targeting": troop_data.get("GroundTargets"),
-
                 "movement_speed": troop_data.get("Speed", 0),
-
                 "attack_speed": troop_data.get("AttackSpeed", 0),
                 "attack_range": troop_data.get("AttackRange", 0),
                 "housing_space": troop_data.get("HousingSpace"),
-
                 "village": "home" if not village_type else "builderBase",
             }
+
             is_super_troop = troop_data.get("EnabledBySuperLicence", False)
             is_seasonal_troop = troop_data.get("EnabledByCalendar", False)
             super_troop_data = None
             if is_super_troop:
                 super_troop_data = full_super_troop_data.get(troop_name)
-                hold_data["super_troop"] = {"original_id": name_to_id[(super_troop_data["Original"], 0)],
-                                            "original_min_level": super_troop_data["MinOriginalLevel"]}
+                hold_data["super_troop"] = {
+                    "original_id": name_to_id[(super_troop_data["Original"], 0)],
+                    "original_min_level": super_troop_data["MinOriginalLevel"],
+                }
             if is_seasonal_troop:
                 hold_data["is_seasonal"] = True
             hold_data["levels"] = []
@@ -738,16 +938,16 @@ class StaticUpdater:
             if troop_data.get("ProductionBuilding") == "Barrack2":
                 max_townhall_converter = self.bb_lab_to_townhall
 
-            for level, level_data in troop_data.items(): #type: str, dict
+            for level, level_data in troop_data.items():  # type: str, dict
                 if not isinstance(level_data, dict):
                     continue
-                #convert times to seconds, all times for all things will be in seconds
+                # convert times to seconds, all times for all things will be in seconds
                 upgrade_time_seconds = self._parse_upgrade_time(level_data)
 
                 if not is_super_troop and not is_seasonal_troop:
                     required_lab_level = level_data.get("LaboratoryLevel")
                     required_townhall = max_townhall_converter[level_data.get("LaboratoryLevel")]
-                elif is_super_troop: #for super troops use the original troop's lab level'
+                elif is_super_troop:  # for super troops use the original troop's lab level'
                     original_troop = self.full_troop_data.get(super_troop_data["Original"])
                     required_lab_level = original_troop.get(level).get("LaboratoryLevel")
                     required_townhall = max_townhall_converter[required_lab_level]
@@ -756,16 +956,6 @@ class StaticUpdater:
                     required_townhall = level_data.get("UpgradeLevelByTH")
                 else:
                     continue
-
-                #happens in the case of the troop only having one animation key for all levels
-                animation_key = level_data.get("Animation") or troop_data.get("Animation")
-                animation_data = self.animations_data.get(animation_key, {})
-                if not animation_data:
-                    print(troop_data) #what troop has no animations lol
-                animations = []
-                swf = animation_data.get("swf", "").replace(".sc", "")
-                for animation in animation_data.get("animations", []):
-                    animations.append(f"{swf}/{animation}.webp")
 
                 new_level_data = {
                     "level": int(level),
@@ -776,7 +966,6 @@ class StaticUpdater:
                     "required_lab_level": required_lab_level,
                     "required_townhall": required_townhall,
                     "strength_weight": level_data.get("StrengthWeight", 0),
-                    "animations" : animations
                 }
                 hold_data["levels"].append(new_level_data)
 
@@ -794,41 +983,42 @@ class StaticUpdater:
             if guardian_data.get("Deprecated", False):
                 continue
             character_data = self.full_troop_data.get(guardian_data.get("CharacterDatas"))
+
+            guardian_icon_file = guardian_data.get("IconSWF")  # afaik always ui.sc
+            guardian_icon_target = guardian_data.get("IconExportName")
+            guardian_icon_path = self.register_sc_asset(
+                source_sc=guardian_icon_file, asset_name=guardian_icon_target, save_path=f"guardians/{_id}/icon.webp"
+            )
+
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=guardian_data.get("TID")),
                 "info": self._translate(tid=guardian_data.get("InfoTID")),
-                "TID": {
-                    "name": guardian_data.get("TID"),
-                    "info": guardian_data.get("InfoTID"),
-                },
+                "TID": {"name": guardian_data.get("TID"), "info": guardian_data.get("InfoTID")},
+                "icon": guardian_icon_path,
                 "upgrade_resource": self._parse_resource(resource=character_data.get("UpgradeResource")),
-
                 "is_flying": character_data.get("IsFlying"),
                 "is_air_targeting": character_data.get("AirTargets"),
                 "is_ground_targeting": character_data.get("GroundTargets"),
-
                 "movement_speed": character_data.get("Speed"),
-
                 "attack_speed": character_data.get("AttackSpeed"),
                 "attack_range": character_data.get("AttackRange"),
-                "levels": []
+                "levels": [],
             }
 
             for level, level_data in character_data.items():
                 if not isinstance(level_data, dict):
                     continue
-                #convert times to seconds, all times for all things will be in seconds
+                # convert times to seconds, all times for all things will be in seconds
                 upgrade_time_seconds = self._parse_upgrade_time(level_data)
 
-                #hard coded for now, didn't find where this is defined, except "HousesGuardians" on the Townhall data
+                # hard coded for now, didn't find where this is defined, except "HousesGuardians" on the Townhall data
                 required_townhall = 18
 
                 new_level_data = {
                     "level": int(level),
                     "hitpoints": level_data.get("Hitpoints"),
                     "dps": level_data.get("DPS"),
-
                     "upgrade_time": upgrade_time_seconds,
                     "upgrade_cost": level_data.get("UpgradeCost", 0),
                     "required_townhall": required_townhall,
@@ -847,15 +1037,21 @@ class StaticUpdater:
             if spell_data.get("DisableProduction", False):
                 continue
 
+            spell_icon_file = spell_data.get("IconSWF")  # afaik always ui.sc
+            spell_icon_target = spell_data.get("IconExportName")
+            spell_icon_path = self.register_sc_asset(
+                source_sc=spell_icon_file,
+                asset_name=spell_icon_target,
+                save_path=f'spells/{spell_data.get("GlobalID")}/icon.webp',
+            )
+
             production_building = self.full_building_data.get(spell_data.get("ProductionBuilding")).get("TID")
             hold_data = {
                 "_id": spell_data.get("GlobalID"),
                 "name": self._translate(spell_data.get("TID")),
                 "info": self._translate(spell_data.get("InfoTID")),
-                "TID": {
-                    "name": spell_data.get("TID"),
-                    "info": spell_data.get("InfoTID"),
-                },
+                "TID": {"name": spell_data.get("TID"), "info": spell_data.get("InfoTID")},
+                "icon": spell_icon_path,
                 "production_building": self._translate(production_building),
                 "production_building_level": spell_data.get("SpellForgeLevel"),
                 "upgrade_resource": self._parse_resource(resource=spell_data.get("UpgradeResource")),
@@ -882,9 +1078,9 @@ class StaticUpdater:
                     "upgrade_time": upgrade_time_seconds,
                     "upgrade_cost": level_data.get("UpgradeCost", 0),
                     "required_lab_level": level_data.get("LaboratoryLevel"),
-                    "required_townhall": level_data.get("UpgradeLevelByTH") or self.lab_to_townhall[level_data.get("LaboratoryLevel")],
+                    "required_townhall": level_data.get("UpgradeLevelByTH")
+                    or self.lab_to_townhall[level_data.get("LaboratoryLevel")],
                     "strength_weight": level_data.get("StrengthWeight", 0),
-
                 }
                 hold_data["levels"].append(new_level_data)
 
@@ -899,28 +1095,30 @@ class StaticUpdater:
 
         new_hero_data = []
         for _id, (hero_name, hero_data) in enumerate(self.full_hero_data.items(), 28000000):
+            hero_icon_file = hero_data.get("SquarePictureSWF") or hero_data.get("IconSWF")
+            hero_icon_target = hero_data.get("SquarePicture") or hero_data.get("IconExportName")
+            hero_icon_path = self.register_sc_asset(
+                source_sc=hero_icon_file, asset_name=hero_icon_target, save_path=f"heroes/{_id}/{hero_icon_target}.webp"
+            )
+
             village_type = hero_data.get("VillageType", 0)
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=hero_data.get("TID")),
                 "info": self._translate(hero_data.get("InfoTID")),
-                "TID": {
-                    "name": hero_data.get("TID"),
-                    "info": hero_data.get("InfoTID"),
-                },
+                "TID": {"name": hero_data.get("TID"), "info": hero_data.get("InfoTID")},
+                "icon": hero_icon_path,
                 "production_building": self._translate(tid="TID_HERO_TAVERN") if not village_type else None,
                 "production_building_level": hero_data.get("1", {}).get("RequiredHeroTavernLevel"),
                 "upgrade_resource": self._parse_resource(resource=hero_data.get("UpgradeResource")),
-
                 "is_flying": hero_data.get("IsFlying"),
                 "is_air_targeting": hero_data.get("AirTargets"),
                 "is_ground_targeting": hero_data.get("GroundTargets"),
-
                 "movement_speed": hero_data.get("Speed"),
                 "attack_speed": hero_data.get("AttackSpeed"),
                 "attack_range": hero_data.get("AttackRange"),
                 "village": "home" if not village_type else "builderBase",
-                "levels": []
+                "levels": [],
             }
 
             for level, level_data in hero_data.items():
@@ -933,13 +1131,10 @@ class StaticUpdater:
                     "level": int(level),
                     "hitpoints": level_data.get("Hitpoints"),
                     "dps": level_data.get("DPS"),
-
                     "upgrade_time": upgrade_time_seconds,
                     "upgrade_cost": level_data.get("UpgradeCost", 0),
-
                     "required_townhall": level_data.get("RequiredTownHallLevel"),
                     "required_hero_tavern_level": level_data.get("RequiredHeroTavernLevel"),
-
                     "strength_weight": level_data.get("StrengthWeight", 0),
                 }
                 hold_data["levels"].append(new_level_data)
@@ -956,26 +1151,28 @@ class StaticUpdater:
             if pet_data.get("Deprecated", False) or pet_name in ["Phoenix Egg"]:
                 continue
 
+            pet_icon_file = pet_data.get("IconSWF")  # afaik always ui.sc
+            pet_icon_target = pet_data.get("IconExportName")
+            pet_icon_path = self.register_sc_asset(
+                source_sc=pet_icon_file, asset_name=pet_icon_target, save_path=f"pets/{_id}/{pet_icon_target}.webp"
+            )
+
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=pet_data.get("TID")),
                 "info": self._translate(tid=pet_data.get("InfoTID")),
-                "TID": {
-                    "name": pet_data.get("TID"),
-                    "info": pet_data.get("InfoTID"),
-                },
+                "TID": {"name": pet_data.get("TID"), "info": pet_data.get("InfoTID")},
+                "icon": pet_icon_path,
                 "production_building": self._translate(tid="TID_PET_SHOP"),
                 "production_building_level": pet_data.get("1").get("LaboratoryLevel"),
                 "upgrade_resource": self._parse_resource('DarkElixir'),
-
                 "is_flying": pet_data.get("IsFlying"),
                 "is_air_targeting": pet_data.get("AirTargets"),
                 "is_ground_targeting": pet_data.get("GroundTargets"),
-
                 "movement_speed": pet_data.get("Speed"),
                 "attack_speed": pet_data.get("AttackSpeed"),
                 "attack_range": pet_data.get("AttackRange"),
-                "levels": []
+                "levels": [],
             }
 
             for level, level_data in pet_data.items():
@@ -988,12 +1185,10 @@ class StaticUpdater:
                     "level": int(level),
                     "hitpoints": level_data.get("Hitpoints"),
                     "dps": level_data.get("DPS"),
-
                     "upgrade_time": upgrade_time_seconds,
                     "upgrade_cost": level_data.get("UpgradeCost", 0),
                     "required_pet_house_level": level_data.get("LaboratoryLevel"),
                     "required_townhall": self.pethouse_to_townhall[level_data.get("LaboratoryLevel")],
-
                     "strength_weight": level_data.get("StrengthWeight", 0),
                 }
                 hold_data["levels"].append(new_level_data)
@@ -1010,6 +1205,12 @@ class StaticUpdater:
             if equipment_data.get("Deprecated", False):
                 continue
 
+            equipment_icon_file = equipment_data.get("IconSWF")  # afaik always ui.sc
+            equipment_icon_target = equipment_data.get("IconExportName")
+            equipment_icon_path = self.register_sc_asset(
+                source_sc=equipment_icon_file, asset_name=equipment_icon_target, save_path=f"equipment/{_id}/icon.webp"
+            )
+
             main_abilities = equipment_data.get("MainAbilities").split(";")
             extra_abilities = equipment_data.get("ExtraAbilities", "").split(";")
             hero_TID = self.full_hero_data.get(equipment_data.get("AllowedCharacters").split(";")[0]).get("TID")
@@ -1022,11 +1223,12 @@ class StaticUpdater:
                     "info": equipment_data.get("InfoTID"),
                     "production_building": "TID_SMITHY",
                 },
+                "icon": equipment_icon_path,
                 "production_building": self._translate(tid="TID_SMITHY"),
                 "production_building_level": equipment_data.get("1").get("RequiredBlacksmithLevel"),
                 "rarity": equipment_data.get("Rarity"),
                 "hero": self._translate(tid=hero_TID),
-                "levels": []
+                "levels": [],
             }
 
             for level, level_data in equipment_data.items():
@@ -1054,15 +1256,11 @@ class StaticUpdater:
                     "level": int(level),
                     "hitpoints": level_data.get("Hitpoints", 0),
                     "dps": level_data.get("DPS", 0),
-                    "heal_on_activation" : level_data.get("HealOnActivation", 0),
+                    "heal_on_activation": level_data.get("HealOnActivation", 0),
                     "required_blacksmith_level": level_data.get("RequiredBlacksmithLevel"),
                     "required_townhall": self.smithy_to_townhall[level_data.get("RequiredBlacksmithLevel")],
                     "strength_weight": level_data.get("StrengthWeight", 0),
-                    "upgrade_cost": {
-                        "shiny_ore": shiny_ore,
-                        "glowy_ore": glowy_ore,
-                        "starry_ore": starry_ore
-                    }
+                    "upgrade_cost": {"shiny_ore": shiny_ore, "glowy_ore": glowy_ore, "starry_ore": starry_ore},
                 }
 
                 main_ability_levels = str(level_data.get("MainAbilityLevels", "")).split(";")
@@ -1111,19 +1309,15 @@ class StaticUpdater:
                 "_id": trap_data.get("GlobalID"),
                 "name": self._translate(tid=trap_data.get("TID")),
                 "info": self._translate(tid=trap_data.get("InfoTID")),
-                "TID" : {
-                    "name" : trap_data.get("TID"),
-                    "info" : trap_data.get("InfoTID"),
-                },
+                "TID": {"name": trap_data.get("TID"), "info": trap_data.get("InfoTID")},
                 "width": trap_data.get("Width"),
                 "air_trigger": trap_data.get("AirTrigger", False),
                 "ground_trigger": trap_data.get("GroundTrigger", False),
                 "damage_radius": trap_data.get("DamageRadius"),
                 "trigger_radius": trap_data.get("TriggerRadius"),
                 "village": "home" if not village_type else "builderBase",
-
                 "upgrade_resource": self._parse_resource(resource=trap_data.get("BuildResource")),
-                "levels" : []
+                "levels": [],
             }
             for level, level_data in trap_data.items():
                 if not isinstance(level_data, dict):
@@ -1131,14 +1325,16 @@ class StaticUpdater:
 
                 upgrade_time_seconds = self._parse_upgrade_time(level_data)
 
-                hold_data["levels"].append({
-                    "level": int(level),
-                    "build_cost": level_data.get("BuildCost"),
-                    "build_time": upgrade_time_seconds,
-                    "required_townhall": level_data.get("TownHallLevel"),
-                    "damage": level_data.get("Damage", 0),
-                    "strength_weight": level_data.get("StrengthWeight", 0),
-                })
+                hold_data["levels"].append(
+                    {
+                        "level": int(level),
+                        "build_cost": level_data.get("BuildCost"),
+                        "build_time": upgrade_time_seconds,
+                        "required_townhall": level_data.get("TownHallLevel"),
+                        "damage": level_data.get("Damage", 0),
+                        "strength_weight": level_data.get("StrengthWeight", 0),
+                    }
+                )
 
             new_trap_data.append(hold_data)
 
@@ -1151,19 +1347,18 @@ class StaticUpdater:
             if deco_data.get("TID") in ["TID_DECORATION_GENERIC", "TID_DECORATION_NATIONAL_FLAG"]:
                 continue
             village_type = deco_data.get("VillageType", 0)
+
             hold_data = {
                 "_id": _id,
                 "name": self._translate(deco_data.get("TID")),
-                "TID": {
-                    "name": deco_data.get("TID"),
-                },
+                "TID": {"name": deco_data.get("TID")},
                 "width": deco_data.get("Width"),
                 "not_in_shop": deco_data.get("NotInShop", False),
                 "pass_reward": deco_data.get("BPReward", False),
                 "max_count": deco_data.get("MaxCount", 1),
                 "build_resource": self._parse_resource(resource=deco_data.get("BuildResource")),
                 "build_cost": deco_data.get("BuildCost"),
-                "village": "home" if not village_type else "builderBase"
+                "village": "home" if not village_type else "builderBase",
             }
             new_deco_data.append(hold_data)
 
@@ -1175,6 +1370,14 @@ class StaticUpdater:
         for _id, (part_name, part_data) in enumerate(full_capital_part_data.items(), 82000000):
             if part_data.get("Deprecated", False):
                 continue
+
+            sprite_ref = part_data.get("Sprite")
+            source_sc, asset_name = sprite_ref.split("#", 1)
+
+            sprite_path = self.register_sc_asset(
+                source_sc=source_sc, asset_name=asset_name, save_path=f'capital_house_parts/{_id}/icon.webp'
+            )
+
             name = part_name.replace("PlayerHouse_", "").replace("_", " ").title()
             nums = 0
             for phrase in ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]:
@@ -1187,14 +1390,17 @@ class StaticUpdater:
                 name = f"{name} {nums}"
 
             # make it match the API enums
-            type_mapping = {"Deco" : "decoration"}
+            type_mapping = {"Deco": "decoration"}
             slot_type = type_mapping.get(part_data.get("LayoutSlot"), part_data.get("LayoutSlot").lower())
-            new_capital_part_data.append({
-                "_id": _id,
-                "name": name.title(),
-                "slot_type": slot_type,
-                "pass_reward": part_data.get("BattlePassReward", False),
-            })
+            new_capital_part_data.append(
+                {
+                    "_id": _id,
+                    "name": name.title(),
+                    "slot_type": slot_type,
+                    "export": sprite_path,
+                    "pass_reward": part_data.get("BattlePassReward", False),
+                }
+            )
 
         return new_capital_part_data
 
@@ -1204,18 +1410,17 @@ class StaticUpdater:
         new_obstacle_data = []
         for _id, (obstacle_name, obstacle_data) in enumerate(full_obstacle_data.items(), 8000000):
             village_type = obstacle_data.get("VillageType", 0)
+
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=obstacle_data.get("TID")),
-                "TID": {
-                    "name": obstacle_data.get("TID"),
-                },
+                "TID": {"name": obstacle_data.get("TID")},
                 "width": obstacle_data.get("Width"),
                 "clear_resource": self._parse_resource(resource=obstacle_data.get("ClearResource")),
                 "clear_cost": obstacle_data.get("ClearCost"),
                 "loot_resource": self._parse_resource(resource=obstacle_data.get("LootResource")),
                 "loot_count": obstacle_data.get("LootCount"),
-                "village": "home" if not village_type else "builderBase"
+                "village": "home" if not village_type else "builderBase",
             }
             new_obstacle_data.append(hold_data)
 
@@ -1226,29 +1431,41 @@ class StaticUpdater:
 
         new_scenery_data = []
         for _id, (scenery_name, scenery_data) in enumerate(full_scenery_data.items(), 60000000):
-            type_map = {
-                "WAR" : "war",
-                "BB" : "builderBase",
-                "HOME" : "home"
-            }
+            type_map = {"WAR": "war", "BB": "builderBase", "HOME": "home"}
             if scenery_data.get("HomeType") not in type_map:
                 continue
 
             if not self._translate(tid=scenery_data.get("TID")):
                 continue
 
+            if "Icon" in scenery_data:
+                icon_path = self.register_sc_asset(
+                    source_sc=scenery_data["Icon"], asset_name="", save_path=f"sceneries/{_id}/icon.webp"
+                )
+            else:
+                icon_path = self.register_sc_asset(
+                    source_sc=scenery_data["IconAnimSWF"], asset_name=scenery_data["IconAnimExportName"], save_path=f"sceneries/{_id}/icon.webp"
+                )
+            thumbnail_path = self.register_sc_asset(
+                source_sc=scenery_data["Thumbnail"], asset_name="", save_path=f"sceneries/{_id}/thumbnail.webp"
+            )
+
+            music_path = None
+            if "Music" in scenery_data:
+                music_path = self.register_sc_asset(
+                    source_sc=scenery_data["Music"], asset_name="", save_path=f"sceneries/{_id}/music"
+                )
+
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=scenery_data.get("TID")),
-                "TID": {
-                    "name": scenery_data.get("TID"),
-                },
+                "TID": {"name": scenery_data.get("TID")},
                 "type": type_map.get(scenery_data.get("HomeType")),
-                "music" : scenery_data.get("Music"),
-                "icon": scenery_data.get("Icon", "").replace(".sctx", ".png"),
-                "thumbnail": scenery_data.get("Thumbnail", "").replace(".sctx", ".png"),
+                "music": music_path,
+                "icon": icon_path,
+                "thumbnail": thumbnail_path,
             }
-            if  scenery_data.get("FreeBackground", False):
+            if scenery_data.get("FreeBackground", False):
                 scenery_data["free"] = True
             if scenery_data.get("DefaultBackground", False):
                 scenery_data["default"] = True
@@ -1265,14 +1482,18 @@ class StaticUpdater:
             character = skin_data.get("character") or skin_data.get("Character")
             if not skin_data.get("TID") or character not in self.full_hero_data.keys() or not skin_data.get("Tier"):
                 continue
+
+            icon_path = self.register_sc_asset(
+                source_sc=skin_data["Icon"], asset_name="", save_path=f"skins/{_id}/icon.webp"
+            )
+
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=skin_data.get("TID")),
-                "TID": {
-                    "name": skin_data.get("TID"),
-                },
+                "TID": {"name": skin_data.get("TID")},
+                "icon": icon_path,
                 "tier": skin_data.get("Tier").title(),
-                "character" : character,
+                "character": character,
             }
             new_skins_data.append(hold_data)
 
@@ -1283,27 +1504,33 @@ class StaticUpdater:
 
         new_helper_data = []
         for _id, (helper_name, helper_data) in enumerate(full_helper_data.items(), 93000000):
+            icon_file = helper_data.get("IconSWF")
+            icon_target = helper_data.get("IconExportNameSelect")
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"helpers/{_id}/icon.webp"
+            )
+
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=helper_data.get("TID")),
                 "info": self._translate(tid=helper_data.get("InfoTID")),
-                "TID": {
-                    "name": helper_data.get("TID"),
-                    "info": helper_data.get("InfoTID"),
-                },
+                "TID": {"name": helper_data.get("TID"), "info": helper_data.get("InfoTID")},
+                "icon": icon_path,
                 "upgrade_resource": self._parse_resource(resource=helper_data.get("CostResource")),
-                "levels": []
+                "levels": [],
             }
             for level, level_data in helper_data.items():
                 if not isinstance(level_data, dict):
                     continue
-                hold_data["levels"].append({
-                    "level": int(level),
-                    "required_townhall": level_data.get("RequiredTownHallLevel"),
-                    "upgrade_cost": level_data.get("Cost"),
-                    "boost_time_seconds": level_data.get("BoostTimeSeconds"),
-                    "boost_multiplier": level_data.get("BoostMultiplier"),
-                })
+                hold_data["levels"].append(
+                    {
+                        "level": int(level),
+                        "required_townhall": level_data.get("RequiredTownHallLevel"),
+                        "upgrade_cost": level_data.get("Cost"),
+                        "boost_time_seconds": level_data.get("BoostTimeSeconds"),
+                        "boost_multiplier": level_data.get("BoostMultiplier"),
+                    }
+                )
 
             new_helper_data.append(hold_data)
 
@@ -1314,24 +1541,33 @@ class StaticUpdater:
 
         new_war_league_data = []
         for _id, (war_league_name, war_league_data) in enumerate(full_war_league_data.items(), 48000000):
-            if not war_league_data.get("Name"): #skip Unranked, no data
+            if not war_league_data.get("Name"):  # skip Unranked, no data
                 continue
-            new_war_league_data.append({
-                "_id": _id,
-                "name": self._translate(tid=war_league_data.get("TID")),
-                "TID": {
-                    "name": war_league_data.get("TID"),
-                },
-                "cwl_medals": {
-                    "first_place": war_league_data.get("LeagueWinReward"),
-                    "position_medal_diff": war_league_data.get("LeaguePosRewardEffect"),
-                    "bonus_reward": war_league_data.get("BonusMedalReward"),
-                    "minimum_bonus_amount": war_league_data.get("MinNumMedalBonuses"),
-                },
-                "promotions": war_league_data.get("NumPromotions"),
-                "demotions": war_league_data.get("NumDemotions"),
-                "15v15_only": war_league_data.get("AllowFirstWarSizeOnly")
-            })
+            icon_file = war_league_data.get("IconSWF")
+            icon_target = war_league_data.get("SmallIconExportName")
+            icon_tier = war_league_data.get("Tier")
+            if icon_tier:
+                icon_target = f"{icon_target}@wl_tier_{icon_tier}"
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"war_leagues/{_id}/icon.webp"
+            )
+            new_war_league_data.append(
+                {
+                    "_id": _id,
+                    "name": self._translate(tid=war_league_data.get("TID")),
+                    "TID": {"name": war_league_data.get("TID")},
+                    "icon": icon_path,
+                    "cwl_medals": {
+                        "first_place": war_league_data.get("LeagueWinReward"),
+                        "position_medal_diff": war_league_data.get("LeaguePosRewardEffect"),
+                        "bonus_reward": war_league_data.get("BonusMedalReward"),
+                        "minimum_bonus_amount": war_league_data.get("MinNumMedalBonuses"),
+                    },
+                    "promotions": war_league_data.get("NumPromotions"),
+                    "demotions": war_league_data.get("NumDemotions"),
+                    "15v15_only": war_league_data.get("AllowFirstWarSizeOnly"),
+                }
+            )
 
         return new_war_league_data
 
@@ -1340,14 +1576,19 @@ class StaticUpdater:
 
         new_league_tier_data = []
         for _id, (league_name, league_data) in enumerate(full_league_tier_data.items(), 105000000):
+            icon_file = league_data.get("IconSWF")
+            icon_target = league_data.get("IconExportName")
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"league_tiers/{_id}/icon.webp"
+            )
+
             league_tier = _id - 105000000
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=league_data.get("TID")),
                 "league_tier": league_tier,
-                "TID": {
-                    "name": league_data.get("TID"),
-                },
+                "TID": {"name": league_data.get("TID")},
+                "icon": icon_path,
                 "group_size": league_data.get("GroupSizeMax"),
                 "demote_percentage": league_data.get("DemotePercentage"),
                 "promote_percentage": league_data.get("PromotePercentage"),
@@ -1355,36 +1596,38 @@ class StaticUpdater:
                 "trophy_start": league_data.get("TrophyFloor"),
                 "clan_score": league_data.get("TopClanScore"),
                 "townhall_cap": None,
-                "rewards" : []
+                "rewards": [],
             }
             highest_townhall = 0
             rewards = []
             for tier, level_data in league_data.items():
                 if not isinstance(level_data, dict):
                     continue
-                if tier == "1": #always empty idky
+                if tier == "1":  # always empty idky
                     continue
                 townhall_level = level_data.get("TH")
                 th_min_league_tier = self.full_townhall_data.get(str(townhall_level)).get("LeagueTier", 0)
                 if league_tier < th_min_league_tier and league_tier != 0:
                     continue
                 highest_townhall = max(townhall_level, highest_townhall)
-                rewards.append({
-                    "townhall_level": townhall_level,
-                    "resources": {
-                        "gold": level_data.get("GoldReward"),
-                        "elixir": level_data.get("ElixirReward"),
-                        "dark_elixir": level_data.get("DarkElixirReward")
-                    },
-                    "star_bonus": {
-                        "gold": level_data.get("GoldRewardStarBonus"),
-                        "elixir": level_data.get("ElixirRewardStarBonus"),
-                        "dark_elixir": level_data.get("DarkElixirRewardStarBonus"),
-                        "shiny_ore": level_data.get("CommonOreRewardStarBonus"),
-                        "glowy_ore": level_data.get("RareOreRewardStarBonus"),
-                        "starry_ore": level_data.get("EpicOreRewardStarBonus")
+                rewards.append(
+                    {
+                        "townhall_level": townhall_level,
+                        "resources": {
+                            "gold": level_data.get("GoldReward"),
+                            "elixir": level_data.get("ElixirReward"),
+                            "dark_elixir": level_data.get("DarkElixirReward"),
+                        },
+                        "star_bonus": {
+                            "gold": level_data.get("GoldRewardStarBonus"),
+                            "elixir": level_data.get("ElixirRewardStarBonus"),
+                            "dark_elixir": level_data.get("DarkElixirRewardStarBonus"),
+                            "shiny_ore": level_data.get("CommonOreRewardStarBonus"),
+                            "glowy_ore": level_data.get("RareOreRewardStarBonus"),
+                            "starry_ore": level_data.get("EpicOreRewardStarBonus"),
+                        },
                     }
-                })
+                )
             hold_data["townhall_cap"] = highest_townhall
             hold_data["rewards"] = rewards
             new_league_tier_data.append(hold_data)
@@ -1394,34 +1637,218 @@ class StaticUpdater:
     def _parse_builder_league_data(self):
         full_builder_league_data = self.open_file("logic/leagues2.json")
 
+        new_league_data = []
+        for _id, (league_name, league_data) in enumerate(full_builder_league_data.items(), 44000000):
+            icon_file = league_data.get("IconSWF")
+            icon_target = league_data.get("IconExportName")
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"builder_leagues/{_id}/icon.webp"
+            )
+
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=league_data.get("TID")),
+                "TID": {"name": league_data.get("TID")},
+                "icon": icon_path,
+                "trophy_start": league_data.get("TrophyLimitLow", 0),
+            }
+            new_league_data.append(hold_data)
+
+        return new_league_data
+
     def _parse_capital_league_data(self):
         full_capital_league_data = self.open_file("logic/capital_leagues.json")
+
+        new_league_data = []
+        for _id, (league_name, league_data) in enumerate(full_capital_league_data.items(), 85000000):
+            icon_file = league_data.get("IconSWF")
+            icon_target = league_data.get("IconExportName")
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"capital_leagues/{_id}/icon.webp"
+            )
+
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=league_data.get("TID")),
+                "TID": {"name": league_data.get("TID")},
+                "icon": icon_path,
+                "trophy_start": league_data.get("RequiredTrophies", 0),
+                "clan_xp": league_data.get("ClanXP")
+            }
+            new_league_data.append(hold_data)
+
+        return new_league_data
 
     def _parse_magic_items_data(self):
         full_magic_items_data = self.open_file("logic/boosters.json")
 
+        new_magic_items_data = []
+        for name, magic_item_data in full_magic_items_data.items():
+            _id = hash_15_digits(s=name)
+            icon_file = magic_item_data.get("IconSWF")
+            icon_target = magic_item_data.get("IconExportName")
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"magic_items/{_id}/icon.webp"
+            )
+
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=magic_item_data.get("TID")),
+                "info": self._translate(tid=magic_item_data.get("InfoTID")),
+                "TID": {"name": magic_item_data.get("TID"), "info": magic_item_data.get("InfoTID")},
+                "icon": icon_path,
+                "max_inventory": magic_item_data.get("MaxItems"),
+                "gem_value": magic_item_data.get("DiamondValue"),
+            }
+            new_magic_items_data.append(hold_data)
+
+        return new_magic_items_data
+
     def _parse_magic_snacks_data(self):
         full_magic_snacks_data = self.open_file("logic/consumables.json")
+
+        new_magic_snacks_data = []
+        for name, magic_snack_data in full_magic_snacks_data.items():
+            _id = hash_15_digits(s=name)
+            icon_file = magic_snack_data.get("IconSWF")
+            icon_target = magic_snack_data.get("IconExportName")
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"magic_snacks/{_id}/icon.webp"
+            )
+
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=magic_snack_data.get("TID")),
+                "info": self._translate(tid=magic_snack_data.get("InfoTID")),
+                "TID": {"name": magic_snack_data.get("TID"), "info": magic_snack_data.get("InfoTID")},
+                "icon": icon_path,
+                "duration": magic_snack_data.get("DurationSeconds", 0),
+            }
+            new_magic_snacks_data.append(hold_data)
+
+        return new_magic_snacks_data
 
     def _parse_capital_districts(self):
         full_district_data = self.open_file("logic/capital_districts.json")
 
+        new_district_data = []
+        for _id, (district_name, district_data) in enumerate(full_district_data.items(), 70000000):
+            icon_file = district_data.get("IconSWF")
+            icon_target = district_data.get("IconExportName")
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"capital_districts/{_id}/icon.webp"
+            )
+
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=district_data.get("TID")),
+                "TID": {"name": district_data.get("TID")},
+                "icon": icon_path
+            }
+            new_district_data.append(hold_data)
+
+        return new_district_data
+
     def _parse_locale_mapping(self):
         full_locale_data = self.open_file("logic/chat_locales.json")
+        locales = []
+        for locale_data in full_locale_data.values():
+            locales.append({
+                "locale": locale_data.get("Name"),
+                "name": locale_data.get("DisplayName"),
+            })
+        return locales
 
     def _parse_clan_labels(self):
         full_label_data = self.open_file("logic/clan_tags.json")
 
+        new_label_data = []
+        for name, label_data in full_label_data.items():
+            _id = hash_15_digits(s=name)
+            icon_file = label_data.get("IconSWF")
+            icon_target = label_data.get("IconExportName")
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"clan_labels/{_id}/icon.webp"
+            )
+
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=label_data.get("TID")),
+                "TID": {"name": label_data.get("TID")},
+                "icon": icon_path,
+            }
+            new_label_data.append(hold_data)
+
+        return new_label_data
+
     def _parse_player_labels(self):
         full_label_data = self.open_file("logic/player_tags.json")
 
+        new_label_data = []
+        for name, label_data in full_label_data.items():
+            _id = hash_15_digits(s=name)
+            icon_file = label_data.get("IconSWF")
+            icon_target = label_data.get("IconExportName")
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"player_labels/{_id}/icon.webp"
+            )
+
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=label_data.get("TID")),
+                "TID": {"name": label_data.get("TID")},
+                "icon": icon_path,
+            }
+            new_label_data.append(hold_data)
+
+        return new_label_data
+
     def _parse_chests_data(self):
         full_chest_data = self.open_file("logic/random_reward_pools.json")
-        full_chest_reward_data = self.open_file("logic/random_reward_boxes.json")
+        # full_chest_reward_data = self.open_file("logic/random_reward_boxes.json")
 
-    def _parrse_resource_data(self):
+        new_chests_data = []
+        for name, chest_data in full_chest_data.items():
+            _id = hash_15_digits(s=name)
+            icon_file = chest_data.get("IconSWF")
+            icon_target = chest_data.get("IconExportName")
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"chests/{_id}/icon.webp"
+            )
+
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=chest_data.get("TID")),
+                "info": self._translate(tid=chest_data.get("InfoTID")),
+                "TID": {"name": chest_data.get("TID"), "info": chest_data.get("InfoTID")},
+                "icon": icon_path,
+            }
+            new_chests_data.append(hold_data)
+
+        return new_chests_data
+
+    def _parse_resource_data(self):
         full_resource_data = self.open_file("logic/resources.json")
 
+        new_resources_data = []
+        for name, resource_data in full_resource_data.items():
+            _id = hash_15_digits(s=name)
+            if not resource_data.get("TID") or not resource_data.get("IconExportName"):
+                continue
+            icon_file = resource_data.get("IconSWF")
+            icon_target = resource_data.get("IconExportName")
+            icon_path = self.register_sc_asset(
+                source_sc=icon_file, asset_name=icon_target, save_path=f"resources/{_id}/icon.webp"
+            )
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=resource_data.get("TID")),
+                "TID": {"name": resource_data.get("TID")},
+                "icon": icon_path,
+            }
+            new_resources_data.append(hold_data)
+
+        return new_resources_data
 
     def _parse_hall_data(self):
         builderhall_data = []
@@ -1450,18 +1877,14 @@ class StaticUpdater:
                 else:
                     id_quantity_map[id] += new_quantity
 
-                if not village_type: #is home village
-                    townhall_unlocks.append({
-                        "name": self._translate(tid=building_data.get("TID")),
-                        "_id": id,
-                        "quantity": new_quantity
-                    })
+                if not village_type:  # is home village
+                    townhall_unlocks.append(
+                        {"name": self._translate(tid=building_data.get("TID")), "_id": id, "quantity": new_quantity}
+                    )
                 else:
-                    builderhall_unlocks.append({
-                        "name": self._translate(tid=building_data.get("TID")),
-                        "_id": id,
-                        "quantity": new_quantity
-                    })
+                    builderhall_unlocks.append(
+                        {"name": self._translate(tid=building_data.get("TID")), "_id": id, "quantity": new_quantity}
+                    )
             townhall_data.append({"level": _id, "buildings_unlocked": townhall_unlocks})
             if builderhall_unlocks:
                 builderhall_data.append({"level": _id, "buildings_unlocked": builderhall_unlocks})
@@ -1476,11 +1899,11 @@ class StaticUpdater:
         self.animations_data = self.open_file("csv/animations.json")
 
         master_data = {
-            "buildings": sorted(self._parse_building_data(), key=lambda x : x["_id"]),
-            "traps" : self._parse_trap_data(),
-            "troops": sorted(self._parse_troop_data(), key=lambda x : x["_id"]),
+            "buildings": sorted(self._parse_building_data(), key=lambda x: x["_id"]),
+            "traps": self._parse_trap_data(),
+            "troops": sorted(self._parse_troop_data(), key=lambda x: x["_id"]),
             "guardians": self._parse_guardian_data(),
-            "spells" : sorted(self._parse_spell_data(), key=lambda x : x["_id"]),
+            "spells": sorted(self._parse_spell_data(), key=lambda x: x["_id"]),
             "heroes": self._parse_hero_data(),
             "pets": self._parse_pet_data(),
             "equipment": self._parse_equipment_data(),
@@ -1492,9 +1915,18 @@ class StaticUpdater:
             "helpers": self._parse_helper_data(),
             "war_leagues": self._parse_war_league_data(),
             "league_tiers": self._parse_league_tier_data(),
+            "builder_leagues": self._parse_builder_league_data(),
+            "capital_leagues": self._parse_capital_league_data(),
+            "magic_items": self._parse_magic_items_data(),
+            "magic_snacks": self._parse_magic_snacks_data(),
+            "player_labels": self._parse_player_labels(),
+            "clan_labels": self._parse_clan_labels(),
+            "locales": self._parse_locale_mapping(),
+            "chests": self._parse_chests_data(),
+            "resources": self._parse_resource_data(),
             "achievements": self._parse_achievement_data(),
         }
-        with open(f"{self.BASE_PATH}static_data.json", "w", encoding="utf-8") as jf:
+        with open(f"{self.BASE_PATH}/static_data.json", "w", encoding="utf-8") as jf:
             jf.write(json.dumps(master_data, indent=2))
 
         if self.PRUNE_TRANSLATIONS:
@@ -1502,7 +1934,7 @@ class StaticUpdater:
                 if key not in self.USED_TIDS:
                     del self.translation_data[key]
 
-        with open(f"{self.BASE_PATH}translations.json", "w", encoding="utf-8") as jf:
+        with open(f"{self.BASE_PATH}/translations.json", "w", encoding="utf-8") as jf:
             jf.write(json.dumps(self.translation_data, indent=2))
 
         if not self.KEEP_JSON:
@@ -1528,14 +1960,14 @@ class StaticUpdater:
         achievements = static_data["achievements"]
 
         lists_to_write = {
-            'ELIXIR_TROOP_ORDER':  [
-                t["name"] for t in troops
-                if t["production_building"] == "Barracks"
-                and not t.get("is_seasonal", False)
-                and not "super_troop" in t
+            'ELIXIR_TROOP_ORDER': [
+                t["name"]
+                for t in troops
+                if t["production_building"] == "Barracks" and not t.get("is_seasonal", False) and not "super_troop" in t
             ],
             'DARK_ELIXIR_TROOP_ORDER': [
-                t["name"] for t in troops
+                t["name"]
+                for t in troops
                 if t["production_building"] == "Dark Barracks"
                 and not t.get("is_seasonal", False)
                 and not "super_troop" in t
@@ -1547,15 +1979,14 @@ class StaticUpdater:
             'SEASONAL_TROOP_ORDER': [t["name"] for t in troops if t.get("is_seasonal", False)],
             'BUILDER_TROOPS_ORDER': [t["name"] for t in troops if t["village"] == "builderBase"],
             'ELIXIR_SPELL_ORDER': [
-                s["name"] for s in spells
-                if s["upgrade_resource"] == "Elixir"
-                and not s.get("is_seasonal", False)
+                s["name"] for s in spells if s["upgrade_resource"] == "Elixir" and not s.get("is_seasonal", False)
             ],
             'DARK_ELIXIR_SPELL_ORDER': [s["name"] for s in spells if s["upgrade_resource"] == "Dark Elixir"],
             'SEASONAL_SPELL_ORDER': [s["name"] for s in spells if s.get("is_seasonal", False)],
             'SPELL_ORDER': 'ELIXIR_SPELL_ORDER + DARK_ELIXIR_SPELL_ORDER',
             'HOME_BASE_HERO_ORDER': [
-                h["name"] for h in sorted(heroes, key=lambda x: x["levels"][0]["required_townhall"])
+                h["name"]
+                for h in sorted(heroes, key=lambda x: x["levels"][0]["required_townhall"])
                 if h["village"] == "home"
             ],
             'BUILDER_BASE_HERO_ORDER': [h["name"] for h in heroes if h["village"] == "builderBase"],
@@ -1564,10 +1995,15 @@ class StaticUpdater:
             'EQUIPMENT': [e["name"] for e in equipment],
             'HV_BUILDINGS': [b["name"] for b in buildings if b["village"] == "home"],
             'ACHIEVEMENT_ORDER': [
-                a["name"] for a in sorted(achievements,
-                key=lambda x: ({'home': 0, 'builderBase': 1, 'clanCapital': 2}.get(
-                x["village"], 0), -x["ui_priority"]))
-            ], # same order as in-game
+                a["name"]
+                for a in sorted(
+                    achievements,
+                    key=lambda x: (
+                        {'home': 0, 'builderBase': 1, 'clanCapital': 2}.get(x["village"], 0),
+                        -x["ui_priority"],
+                    ),
+                )
+            ],  # same order as in-game
         }
         constants_path = Path(__file__).parent.parent / "constants.py"
 
@@ -1598,7 +2034,7 @@ class StaticUpdater:
             if (
                 not file_path.startswith("logic/")
                 and not file_path.startswith("localization/")
-                #and file_path != "csv/animations.csv"
+                # and file_path != "csv/animations.csv"
                 and not file_path.endswith("csv")
             ):
                 continue
@@ -1618,9 +2054,11 @@ class StaticUpdater:
                 self.process_csv(data=data, file_path=file_path)
 
         self.create_master_json()
+        await self.extract_assets()
 
     def run(self):
         asyncio.run(self.download_files())
+
 
 if __name__ == "__main__":
     StaticUpdater().run()

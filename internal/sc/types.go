@@ -147,6 +147,7 @@ type MatrixBank struct {
 	ColorTransforms      []ColorTransform
 	MatricesCount        int
 	ColorTransformsCount int
+	MovieClipElements    []byte
 }
 
 type Shape struct {

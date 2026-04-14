@@ -30,18 +30,31 @@ type Manifest struct {
 }
 
 type ManifestEntry struct {
-	SourceSC            string   `json:"source_sc"`
-	ExportName          string   `json:"export_name"`
-	OutputFile          string   `json:"output_file"`
-	ResourceID          uint16   `json:"resource_id"`
-	ResourceType        string   `json:"resource_type"`
-	ResolvedTimelineID  uint16   `json:"resolved_timeline_id"`
-	IsWrapperExport     bool     `json:"is_wrapper_export"`
-	FrameCount          int      `json:"frame_count"`
-	DurationMS          int      `json:"duration_ms"`
-	BindLabels          []string `json:"bind_labels,omitempty"`
-	FrameLabels         []string `json:"frame_labels,omitempty"`
-	AncestorResourceIDs []uint16 `json:"ancestor_resource_ids"`
+	SourceSC            string         `json:"source_sc"`
+	ExportName          string         `json:"export_name"`
+	OutputFile          string         `json:"output_file"`
+	ResourceID          uint16         `json:"resource_id"`
+	ResourceType        string         `json:"resource_type"`
+	ResolvedTimelineID  uint16         `json:"resolved_timeline_id"`
+	IsWrapperExport     bool           `json:"is_wrapper_export"`
+	FrameCount          int            `json:"frame_count"`
+	DurationMS          int            `json:"duration_ms"`
+	BindLabels          []string       `json:"bind_labels,omitempty"`
+	FrameLabels         []string       `json:"frame_labels,omitempty"`
+	FrameSegments       []FrameSegment `json:"frame_segments,omitempty"`
+	AncestorResourceIDs []uint16       `json:"ancestor_resource_ids"`
+}
+
+type FrameSegment struct {
+	Label      string `json:"label"`
+	StartFrame int    `json:"start_frame"`
+	EndFrame   int    `json:"end_frame"`
+}
+
+type FrameLabelTarget struct {
+	Label      string
+	ResourceID uint16
+	FrameIndex int
 }
 
 type SkippedEntry struct {
@@ -60,8 +73,11 @@ type Target struct {
 	AncestorIDs      []uint16
 	BindLabels       []string
 	FrameLabels      []string
+	FrameSegments    []FrameSegment
+	FrameLabelLookup map[string]FrameLabelTarget
 	Duration         float64
 	SelectedBind     string
+	SelectedFrame    *FrameLabelTarget
 }
 
 type bitmapCacheKey struct {
@@ -74,9 +90,18 @@ type bitmapRenderable struct {
 	transform sc.Matrix
 }
 
+type sceneryBaseImage struct {
+	name   string
+	swf    *sc.SWF
+	target Target
+	bounds image.Rectangle
+	frames map[string]*image.NRGBA
+}
+
 type Exporter struct {
-	swf  *sc.SWF
-	opts ExportOptions
+	swf              *sc.SWF
+	opts             ExportOptions
+	sceneryBaseCache map[string]*sceneryBaseImage
 }
 
 type ParseProfile struct {
@@ -145,6 +170,10 @@ type stateHasher struct {
 	value uint64
 }
 
+func (s *stateHasher) addFloat(v float64) {
+	s.add(math.Float64bits(v))
+}
+
 func NewExporter(swf *sc.SWF) *Exporter {
 	return NewExporterWithOptions(swf, ExportOptions{})
 }
@@ -152,9 +181,106 @@ func NewExporter(swf *sc.SWF) *Exporter {
 func NewExporterWithOptions(swf *sc.SWF, opts ExportOptions) *Exporter {
 	opts = normalizeExportOptions(opts)
 	return &Exporter{
-		swf:  swf,
-		opts: opts,
+		swf:              swf,
+		opts:             opts,
+		sceneryBaseCache: map[string]*sceneryBaseImage{},
 	}
+}
+
+func (e *Exporter) PrepareTargetsForDebug() ([]Target, []SkippedEntry) {
+	return e.prepareTargets()
+}
+
+func (e *Exporter) CollectChangePointsForDebug(target Target, duration float64) []float64 {
+	return e.collectChangePoints(target, duration)
+}
+
+func (e *Exporter) CollectBoundsForDebug(target Target, duration float64, sampleTimes []float64) (image.Rectangle, error) {
+	return e.collectBounds(target, duration, sampleTimes, map[bitmapCacheKey]*bitmapRenderable{})
+}
+
+func (e *Exporter) RenderTargetForDebug(target Target) ([]renderedFrame, int, string, renderProfile, error) {
+	return e.renderTarget(target)
+}
+
+func (e *Exporter) FirstVisualLoopForDebug(target Target) (float64, int, error) {
+	if target.Duration <= 0 {
+		return 0, 0, nil
+	}
+	changePoints := e.collectChangePoints(target, target.Duration)
+	if len(changePoints) == 0 {
+		return 0, 0, nil
+	}
+	initial, err := e.visualStateSignature(target, changePoints[0])
+	if err != nil {
+		return 0, 0, err
+	}
+	for i := 1; i < len(changePoints); i++ {
+		sig, err := e.visualStateSignature(target, changePoints[i])
+		if err != nil {
+			return 0, 0, err
+		}
+		if sig == initial {
+			return changePoints[i], i, nil
+		}
+	}
+	return 0, 0, nil
+}
+
+func (e *Exporter) RenderFrameAtForDebug(target Target, t float64) (*image.NRGBA, image.Rectangle, error) {
+	spriteCache := map[bitmapCacheKey]*bitmapRenderable{}
+	bounds, err := e.collectBounds(target, target.Duration, []float64{t}, spriteCache)
+	if err != nil {
+		return nil, image.Rectangle{}, err
+	}
+	frame, err := e.renderAt(target, t, bounds, spriteCache)
+	if err != nil {
+		return nil, image.Rectangle{}, err
+	}
+	frame, err = e.compositeSceneryBaseIfNeeded(target, frame)
+	if err != nil {
+		return nil, image.Rectangle{}, err
+	}
+	return frame, bounds, nil
+}
+
+func (e *Exporter) CollectAnimatedBoundsForDebug(target Target, sampleTimes []float64) (image.Rectangle, error) {
+	animatedResources := e.collectAnimatedResourceSet(target.ResourceID)
+	if len(sampleTimes) == 0 {
+		sampleTimes = []float64{0}
+	}
+	var bounds renderBounds
+	spriteCache := map[bitmapCacheKey]*bitmapRenderable{}
+	for _, t := range sampleTimes {
+		err := e.visitResourceFiltered(target, target.ResourceID, t, sc.IdentityMatrix(), sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", animatedResources, true, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, _ sc.ColorTransform) error {
+			sprite, err := e.bitmapRenderable(shape, idx, spriteCache)
+			if err != nil {
+				return err
+			}
+			fullMatrix := matrix.Multiply(sprite.transform)
+			w := float64(sprite.sprite.Bounds().Dx())
+			h := float64(sprite.sprite.Bounds().Dy())
+			corners := [][2]float64{{0, 0}, {w, 0}, {w, h}, {0, h}}
+			for _, corner := range corners {
+				x, y := fullMatrix.Apply(corner[0], corner[1])
+				bounds.add(x, y)
+			}
+			return nil
+		})
+		if err != nil {
+			return image.Rectangle{}, err
+		}
+	}
+	if !bounds.set {
+		return image.Rect(0, 0, 1, 1), nil
+	}
+	padding := 2
+	return image.Rect(
+		int(math.Floor(bounds.minX))-padding,
+		int(math.Floor(bounds.minY))-padding,
+		int(math.Ceil(bounds.maxX))+padding,
+		int(math.Ceil(bounds.maxY))+padding,
+	), nil
 }
 
 func ExportPath(inputPath, outPath string, workers int, opts ExportOptions) error {
@@ -271,7 +397,7 @@ func exportSingle(source, assetDir string, workers int, opts ExportOptions) (Ass
 		if strings.Contains(entry.ExportName, "__") || strings.Contains(entry.ExportName, "/") {
 			stats.SplitOutputs++
 		}
-		if info, err := os.Stat(filepath.Join(stats.ExportsDir, entry.OutputFile)); err == nil {
+		if info, err := os.Stat(manifestOutputPath(stats.ExportsDir, entry.OutputFile)); err == nil {
 			stats.BytesWritten += info.Size()
 		}
 	}
@@ -438,10 +564,14 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	}
 
 	targets, skipped := e.prepareTargets()
+	targets, skipped, err := filterRequestedTargets(targets, skipped, e.opts.AssetNames, e.swf.Filename)
+	if err != nil {
+		return nil, err
+	}
 	fmt.Printf("Starting %s\n", e.swf.Filename)
 	fmt.Printf("  Workers: %d\n", maxInt(workers, 1))
 	fmt.Printf("  Output:  %s\n", assetDir)
-	nameAllocator := newNameAllocator(assetDir)
+	nameAllocator := newNameAllocator(assetDir, e.opts.AssetOutputPaths)
 	manifest := &Manifest{
 		SourceSC: e.swf.Filename,
 		AssetDir: assetDir,
@@ -518,6 +648,101 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	})
 
 	return manifest, nil
+}
+
+func filterRequestedTargets(targets []Target, skipped []SkippedEntry, requested []string, sourceSC string) ([]Target, []SkippedEntry, error) {
+	if len(requested) == 0 {
+		return targets, skipped, nil
+	}
+
+	requestedSet := make(map[string]struct{}, len(requested))
+	for _, name := range requested {
+		requestedSet[name] = struct{}{}
+	}
+
+	filteredTargets := make([]Target, 0, len(requested))
+	filteredSkipped := make([]SkippedEntry, 0, len(requested))
+	matched := make(map[string]bool, len(requested))
+
+	for _, requestedName := range requested {
+		exactMatched := false
+		for _, target := range targets {
+			if target.Name != requestedName {
+				continue
+			}
+			filteredTargets = append(filteredTargets, target)
+			matched[requestedName] = true
+			exactMatched = true
+		}
+		if exactMatched {
+			continue
+		}
+
+		baseName, frameLabel, ok := parseFrameLabelSelector(requestedName)
+		if !ok {
+			continue
+		}
+		for _, target := range targets {
+			if target.Name != baseName {
+				continue
+			}
+			selected, ok := target.selectFrameLabel(requestedName, frameLabel)
+			if !ok {
+				continue
+			}
+			filteredTargets = append(filteredTargets, selected)
+			matched[requestedName] = true
+		}
+	}
+	for _, entry := range skipped {
+		if _, ok := requestedSet[entry.ExportName]; ok {
+			filteredSkipped = append(filteredSkipped, entry)
+			matched[entry.ExportName] = true
+		}
+	}
+
+	missing := make([]string, 0)
+	for _, name := range requested {
+		if !matched[name] {
+			missing = append(missing, name)
+		}
+	}
+	if len(missing) > 0 {
+		return nil, nil, fmt.Errorf("requested asset(s) not found in %s: %s", sourceSC, strings.Join(missing, ", "))
+	}
+
+	return filteredTargets, filteredSkipped, nil
+}
+
+func parseFrameLabelSelector(name string) (string, string, bool) {
+	baseName, frameLabel, ok := strings.Cut(name, "@")
+	if !ok {
+		return "", "", false
+	}
+	baseName = strings.TrimSpace(baseName)
+	frameLabel = strings.TrimSpace(frameLabel)
+	if baseName == "" || frameLabel == "" {
+		return "", "", false
+	}
+	return baseName, frameLabel, true
+}
+
+func (t Target) selectFrameLabel(requestedName, frameLabel string) (Target, bool) {
+	labelTarget, ok := t.FrameLabelLookup[frameLabel]
+	if !ok {
+		return Target{}, false
+	}
+	selected := t
+	selected.Name = requestedName
+	selected.Duration = 0
+	selected.IsWrapper = false
+	selected.ResolvedTimeline = t.ResourceID
+	selected.AncestorIDs = []uint16{t.ResourceID}
+	selected.FrameLabels = nil
+	selected.FrameSegments = nil
+	selected.FrameLabelLookup = nil
+	selected.SelectedFrame = &labelTarget
+	return selected, true
 }
 
 func (e *Exporter) prepareTargets() ([]Target, []SkippedEntry) {
@@ -627,9 +852,11 @@ func (e *Exporter) prepareTarget(name string, resourceID uint16, resource sc.Res
 	case *sc.Shape:
 		return target, nil
 	case *sc.MovieClip:
-		bindLabels, frameLabels := e.collectLabels(resourceID)
+		bindLabels, frameLabels, frameSegments, frameLabelLookup := e.collectLabels(resourceID)
 		target.BindLabels = bindLabels
 		target.FrameLabels = frameLabels
+		target.FrameSegments = frameSegments
+		target.FrameLabelLookup = frameLabelLookup
 
 		if len(res.Frames) > 1 {
 			target.Duration = clipDuration(res)
@@ -699,9 +926,10 @@ func (e *Exporter) findLongestAnimatedDescendant(rootID uint16) ([]uint16, uint1
 	return best.path, best.id, best.duration
 }
 
-func (e *Exporter) collectLabels(rootID uint16) ([]string, []string) {
+func (e *Exporter) collectLabels(rootID uint16) ([]string, []string, []FrameSegment, map[string]FrameLabelTarget) {
 	bindSet := map[string]bool{}
 	frameSet := map[string]bool{}
+	frameLookup := map[string]FrameLabelTarget{}
 	var visit func(id uint16, seen map[uint16]bool)
 	visit = func(id uint16, seen map[uint16]bool) {
 		if seen[id] {
@@ -722,15 +950,62 @@ func (e *Exporter) collectLabels(rootID uint16) ([]string, []string) {
 				visit(bind.ID, seen)
 			}
 		}
-		for _, frame := range clip.Frames {
+		for idx, frame := range clip.Frames {
 			if frame.Name != "" {
 				frameSet[frame.Name] = true
+				if _, exists := frameLookup[frame.Name]; !exists {
+					frameLookup[frame.Name] = FrameLabelTarget{
+						Label:      frame.Name,
+						ResourceID: id,
+						FrameIndex: idx,
+					}
+				}
 			}
 		}
 	}
 
 	visit(rootID, map[uint16]bool{})
-	return sortedKeys(bindSet), sortedKeys(frameSet)
+	var segments []FrameSegment
+	if clip, ok := e.swf.Resources[rootID].(*sc.MovieClip); ok {
+		segments = frameSegments(clip)
+	}
+	return sortedKeys(bindSet), sortedKeys(frameSet), segments, frameLookup
+}
+
+func clipFrameIndexForLabel(clip *sc.MovieClip, label string) (int, bool) {
+	if clip == nil || label == "" {
+		return 0, false
+	}
+	for idx, frame := range clip.Frames {
+		if frame.Name == label {
+			return idx, true
+		}
+	}
+	return 0, false
+}
+
+func frameSegments(clip *sc.MovieClip) []FrameSegment {
+	if clip == nil || len(clip.Frames) == 0 {
+		return nil
+	}
+	labelFrames := make([]FrameSegment, 0)
+	for idx, frame := range clip.Frames {
+		if frame.Name == "" {
+			continue
+		}
+		labelFrames = append(labelFrames, FrameSegment{Label: frame.Name, StartFrame: idx})
+	}
+	if len(labelFrames) == 0 {
+		return nil
+	}
+	for i := range labelFrames {
+		end := len(clip.Frames)
+		if i+1 < len(labelFrames) {
+			end = labelFrames[i+1].StartFrame
+		}
+		labelFrames[i].EndFrame = end
+	}
+	return labelFrames
 }
 
 func sortedKeys(m map[string]bool) []string {
@@ -749,8 +1024,11 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		ResourceID: target.ResourceID,
 		Status:     "failed",
 	}
-	fileBase := allocator.Next(target.Name, target.ResourceID)
-	outputPath := filepath.Join(exportsDir, fileBase)
+	outputBase, entryOutputBase, err := allocator.Next(target.Name, target.ResourceID)
+	if err != nil {
+		return nil, nil, profile, err
+	}
+	outputPath := outputBase
 	entry := &ManifestEntry{
 		SourceSC:            e.swf.Filename,
 		ExportName:          target.Name,
@@ -760,6 +1038,7 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		IsWrapperExport:     target.IsWrapper,
 		BindLabels:          target.BindLabels,
 		FrameLabels:         target.FrameLabels,
+		FrameSegments:       target.FrameSegments,
 		AncestorResourceIDs: target.AncestorIDs,
 	}
 
@@ -789,10 +1068,10 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 			}, profile, nil
 		}
 		if skipReason != "" {
-			if err := removeIfExists(filepath.Join(exportsDir, fileBase+".png")); err != nil {
+			if err := removeIfExists(outputPath + ".png"); err != nil {
 				return nil, nil, profile, err
 			}
-			if err := removeIfExists(filepath.Join(exportsDir, fileBase+".webp")); err != nil {
+			if err := removeIfExists(outputPath + ".webp"); err != nil {
 				return nil, nil, profile, err
 			}
 			profile.Status = "skipped"
@@ -823,7 +1102,7 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 			}
 			profile.EncodeDuration = time.Since(encodeStart)
 			profile.Status = "png"
-			entry.OutputFile = filepath.Base(outputPath)
+			entry.OutputFile = entryOutputBase + ".png"
 			entry.FrameCount = 1
 			entry.DurationMS = 0
 			profile.OutputFile = entry.OutputFile
@@ -854,7 +1133,7 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		}
 		profile.EncodeDuration = time.Since(encodeStart)
 		profile.Status = "webp"
-		entry.OutputFile = filepath.Base(outputPath)
+		entry.OutputFile = entryOutputBase + ".webp"
 		entry.FrameCount = len(frameFiles)
 		entry.DurationMS = durationMS
 		profile.OutputFile = entry.OutputFile
@@ -881,10 +1160,10 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		}, profile, nil
 	}
 	if skipReason != "" {
-		if err := removeIfExists(filepath.Join(exportsDir, fileBase+".png")); err != nil {
+		if err := removeIfExists(outputPath + ".png"); err != nil {
 			return nil, nil, profile, err
 		}
-		if err := removeIfExists(filepath.Join(exportsDir, fileBase+".webp")); err != nil {
+		if err := removeIfExists(outputPath + ".webp"); err != nil {
 			return nil, nil, profile, err
 		}
 		profile.Status = "skipped"
@@ -909,8 +1188,29 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 
 	switch len(frames) {
 	case 1:
-		outputPath += ".png"
 		encodeStart := time.Now()
+		if e.opts.PreferWebP {
+			outputPath += ".webp"
+			file, err := os.Create(outputPath)
+			if err != nil {
+				return nil, nil, profile, err
+			}
+			if err := writeAnimatedWebP(file, frames); err != nil {
+				file.Close()
+				return nil, nil, profile, err
+			}
+			if err := file.Close(); err != nil {
+				return nil, nil, profile, err
+			}
+			profile.EncodeDuration = time.Since(encodeStart)
+			profile.Status = "webp"
+			entry.OutputFile = entryOutputBase + ".webp"
+			entry.FrameCount = 1
+			entry.DurationMS = 0
+			break
+		}
+
+		outputPath += ".png"
 		file, err := os.Create(outputPath)
 		if err != nil {
 			return nil, nil, profile, err
@@ -924,7 +1224,7 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		}
 		profile.EncodeDuration = time.Since(encodeStart)
 		profile.Status = "png"
-		entry.OutputFile = filepath.Base(outputPath)
+		entry.OutputFile = entryOutputBase + ".png"
 		entry.FrameCount = 1
 		entry.DurationMS = 0
 	default:
@@ -947,7 +1247,7 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		}
 		profile.EncodeDuration = time.Since(encodeStart)
 		profile.Status = "webp"
-		entry.OutputFile = filepath.Base(outputPath)
+		entry.OutputFile = entryOutputBase + ".webp"
 		entry.FrameCount = len(frames)
 		if durationMS > 0 {
 			entry.DurationMS = durationMS
@@ -1046,8 +1346,23 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 		totalDuration := 0
 		var lastHash [20]byte
 		renderStart := time.Now()
+		animatedResources := e.collectAnimatedResourceSet(target.ResourceID)
+		staticBackdrop, err := e.renderStaticBackdrop(target, bounds, spriteCache, animatedResources)
+		if err != nil {
+			return nil, 0, "", profile, err
+		}
+		if staticBackdrop != nil {
+			staticBackdrop, err = e.compositeSceneryBaseIfNeeded(target, staticBackdrop)
+			if err != nil {
+				return nil, 0, "", profile, err
+			}
+		}
 		for _, step := range steps {
-			img, err := e.renderAt(target, step.Time, bounds, spriteCache)
+			img, err := cloneOrClearBackdrop(staticBackdrop, bounds)
+			if err != nil {
+				return nil, 0, "", profile, err
+			}
+			img, err = e.renderDynamicAtInto(target, step.Time, bounds, spriteCache, animatedResources, img)
 			if err != nil {
 				return nil, 0, "", profile, err
 			}
@@ -1099,7 +1414,6 @@ func (e *Exporter) renderAnimatedTargetToFiles(target Target, tempDir string) ([
 	}
 	profile.PrepareDuration = time.Since(prepareStart)
 	profile.ChangePoints = len(changePoints)
-	profile.SampledSteps = len(steps)
 
 	sampleTimes := make([]float64, 0, len(steps))
 	for _, step := range steps {
@@ -1114,17 +1428,30 @@ func (e *Exporter) renderAnimatedTargetToFiles(target Target, tempDir string) ([
 	profile.BoundsDuration = time.Since(boundsStart)
 	profile.CanvasWidth = bounds.Dx()
 	profile.CanvasHeight = bounds.Dy()
+	animatedResources := e.collectAnimatedResourceSet(target.ResourceID)
+	staticBackdrop, err := e.renderStaticBackdrop(target, bounds, spriteCache, animatedResources)
+	if err != nil {
+		return nil, 0, "", profile, err
+	}
+	if staticBackdrop != nil {
+		staticBackdrop, err = e.compositeSceneryBaseIfNeeded(target, staticBackdrop)
+		if err != nil {
+			return nil, 0, "", profile, err
+		}
+	}
 
 	encodedFrames := make([]encodedFrameFile, 0, len(steps))
 	totalDuration := 0
 	var lastHash [20]byte
 	var haveLast bool
 	var renderElapsed time.Duration
-	var canvas *image.NRGBA
 
 	for index, step := range steps {
 		renderStart := time.Now()
-		canvas, err := e.renderAtInto(target, step.Time, bounds, spriteCache, canvas)
+		canvas, err := cloneOrClearBackdrop(staticBackdrop, bounds)
+		if err == nil {
+			canvas, err = e.renderDynamicAtInto(target, step.Time, bounds, spriteCache, animatedResources, canvas)
+		}
 		renderElapsed += time.Since(renderStart)
 		if err != nil {
 			return nil, 0, "", profile, err
@@ -1276,13 +1603,13 @@ func dequantizeTime(v int64) float64 {
 
 func (e *Exporter) visualStateSignature(target Target, t float64) (uint64, error) {
 	hasher := &stateHasher{value: 1469598103934665603}
-	if err := e.hashVisualState(target, target.ResourceID, t, map[uint16]int{}, target.SelectedBind == "", hasher); err != nil {
+	if err := e.hashVisualState(target, target.ResourceID, t, sc.IdentityMatrix(), sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", hasher); err != nil {
 		return 0, err
 	}
 	return hasher.value, nil
 }
 
-func (e *Exporter) hashVisualState(target Target, resourceID uint16, t float64, seen map[uint16]int, selected bool, hasher *stateHasher) error {
+func (e *Exporter) hashVisualState(target Target, resourceID uint16, t float64, matrix sc.Matrix, colorTransform sc.ColorTransform, seen map[uint16]int, selected bool, hasher *stateHasher) error {
 	resource := e.swf.Resources[resourceID]
 	switch res := resource.(type) {
 	case *sc.Shape:
@@ -1292,6 +1619,19 @@ func (e *Exporter) hashVisualState(target Target, resourceID uint16, t float64, 
 		hasher.add(1)
 		hasher.add(uint64(resourceID))
 		hasher.add(uint64(len(res.Bitmaps)))
+		hasher.addFloat(matrix.A)
+		hasher.addFloat(matrix.B)
+		hasher.addFloat(matrix.C)
+		hasher.addFloat(matrix.D)
+		hasher.addFloat(matrix.Tx)
+		hasher.addFloat(matrix.Ty)
+		hasher.addFloat(colorTransform.RAdd)
+		hasher.addFloat(colorTransform.GAdd)
+		hasher.addFloat(colorTransform.BAdd)
+		hasher.addFloat(colorTransform.AMul)
+		hasher.addFloat(colorTransform.RMul)
+		hasher.addFloat(colorTransform.GMul)
+		hasher.addFloat(colorTransform.BMul)
 	case *sc.MovieClip:
 		if seen[resourceID] > 4 {
 			return nil
@@ -1299,7 +1639,7 @@ func (e *Exporter) hashVisualState(target Target, resourceID uint16, t float64, 
 		seen[resourceID]++
 		defer func() { seen[resourceID]-- }()
 
-		frameIndex := clipFrameIndexAt(res, t)
+		frameIndex := targetClipFrameIndex(target, resourceID, res, t)
 		hasher.add(2)
 		hasher.add(uint64(resourceID))
 		hasher.add(uint64(frameIndex))
@@ -1319,8 +1659,20 @@ func (e *Exporter) hashVisualState(target Target, resourceID uint16, t float64, 
 			if _, ok := child.(*sc.MovieClipModifier); ok {
 				continue
 			}
+			childMatrix := matrix
+			if bank := matrixBankForClip(e.swf, res); bank != nil {
+				if int(element.Matrix) < len(bank.Matrices) {
+					childMatrix = matrix.Multiply(bank.Matrices[element.Matrix])
+				}
+			}
+			childColor := colorTransform
+			if bank := matrixBankForClip(e.swf, res); bank != nil {
+				if int(element.Color) < len(bank.ColorTransforms) {
+					childColor = colorTransform.Combine(bank.ColorTransforms[element.Color])
+				}
+			}
 			childSelected := selected || bind.Name == target.SelectedBind
-			if err := e.hashVisualState(target, bind.ID, t, seen, childSelected, hasher); err != nil {
+			if err := e.hashVisualState(target, bind.ID, t, childMatrix, childColor, seen, childSelected, hasher); err != nil {
 				return err
 			}
 		}
@@ -1330,6 +1682,13 @@ func (e *Exporter) hashVisualState(target Target, resourceID uint16, t float64, 
 		return nil
 	}
 	return nil
+}
+
+func matrixBankForClip(swf *sc.SWF, clip *sc.MovieClip) *sc.MatrixBank {
+	if clip == nil || clip.MatrixBank < 0 || clip.MatrixBank >= len(swf.MatrixBanks) {
+		return nil
+	}
+	return swf.MatrixBanks[clip.MatrixBank]
 }
 
 type renderBounds struct {
@@ -1430,6 +1789,187 @@ func (e *Exporter) renderAtInto(target Target, t float64, worldBounds image.Rect
 	return canvas, nil
 }
 
+func (e *Exporter) renderDynamicAtInto(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, animatedResources map[uint16]bool, canvas *image.NRGBA) (*image.NRGBA, error) {
+	renderScale := float64(maxInt(e.opts.RenderScale, 1))
+	canvasWidth := maxInt(1, int(math.Ceil(float64(worldBounds.Dx())*renderScale)))
+	canvasHeight := maxInt(1, int(math.Ceil(float64(worldBounds.Dy())*renderScale)))
+	if canvas == nil || canvas.Bounds().Dx() != canvasWidth || canvas.Bounds().Dy() != canvasHeight {
+		canvas = image.NewNRGBA(image.Rect(0, 0, canvasWidth, canvasHeight))
+	} else {
+		clear(canvas.Pix)
+	}
+	offset := sc.Matrix{A: 1, D: 1, Tx: float64(-worldBounds.Min.X), Ty: float64(-worldBounds.Min.Y)}
+	if renderScale > 1 {
+		offset = sc.Matrix{A: renderScale, D: renderScale}.Multiply(offset)
+	}
+	err := e.visitResourceFiltered(target, target.ResourceID, t, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", animatedResources, true, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform) error {
+		renderable, err := e.bitmapRenderable(shape, idx, spriteCache)
+		if err != nil {
+			return err
+		}
+		full := matrix.Multiply(renderable.transform)
+		return drawBitmap(canvas, renderable.sprite, full, colorTransform)
+	})
+	if err != nil {
+		return nil, err
+	}
+	return canvas, nil
+}
+
+func (e *Exporter) renderStaticBackdrop(target Target, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, animatedResources map[uint16]bool) (*image.NRGBA, error) {
+	canvas, err := cloneOrClearBackdrop(nil, worldBounds)
+	if err != nil {
+		return nil, err
+	}
+	renderScale := float64(maxInt(e.opts.RenderScale, 1))
+	offset := sc.Matrix{A: 1, D: 1, Tx: float64(-worldBounds.Min.X), Ty: float64(-worldBounds.Min.Y)}
+	if renderScale > 1 {
+		offset = sc.Matrix{A: renderScale, D: renderScale}.Multiply(offset)
+	}
+	err = e.visitResourceFiltered(target, target.ResourceID, 0, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", animatedResources, false, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform) error {
+		renderable, err := e.bitmapRenderable(shape, idx, spriteCache)
+		if err != nil {
+			return err
+		}
+		full := matrix.Multiply(renderable.transform)
+		return drawBitmap(canvas, renderable.sprite, full, colorTransform)
+	})
+	if err != nil {
+		return nil, err
+	}
+	return canvas, nil
+}
+
+func cloneOrClearBackdrop(backdrop *image.NRGBA, worldBounds image.Rectangle) (*image.NRGBA, error) {
+	width := maxInt(1, worldBounds.Dx())
+	height := maxInt(1, worldBounds.Dy())
+	if backdrop == nil {
+		return image.NewNRGBA(image.Rect(0, 0, width, height)), nil
+	}
+	if backdrop.Bounds().Dx() != width || backdrop.Bounds().Dy() != height {
+		return nil, fmt.Errorf("backdrop bounds mismatch: have=%dx%d want=%dx%d", backdrop.Bounds().Dx(), backdrop.Bounds().Dy(), width, height)
+	}
+	return cloneNRGBA(backdrop), nil
+}
+
+func (e *Exporter) collectAnimatedResourceSet(rootID uint16) map[uint16]bool {
+	animated := map[uint16]bool{}
+	var visit func(id uint16, seen map[uint16]bool)
+	visit = func(id uint16, seen map[uint16]bool) {
+		if seen[id] {
+			return
+		}
+		seen[id] = true
+		defer delete(seen, id)
+		clip, ok := e.swf.Resources[id].(*sc.MovieClip)
+		if !ok {
+			return
+		}
+		isAnimated := len(clip.Frames) > 1
+		for _, bind := range clip.Binds {
+			if _, ok := e.swf.Resources[bind.ID].(*sc.MovieClip); ok {
+				isAnimated = true
+			}
+			visit(bind.ID, seen)
+		}
+		if isAnimated {
+			animated[id] = true
+		}
+	}
+	visit(rootID, map[uint16]bool{})
+	return animated
+}
+
+func (e *Exporter) visitResourceFiltered(target Target, resourceID uint16, t float64, matrix sc.Matrix, colorTransform sc.ColorTransform, seen map[uint16]int, selected bool, animatedResources map[uint16]bool, wantAnimated bool, drawFn func(uint16, *sc.Shape, int, sc.Matrix, sc.ColorTransform) error) error {
+	resource := e.swf.Resources[resourceID]
+	switch res := resource.(type) {
+	case *sc.Shape:
+		if !selected {
+			return nil
+		}
+		for idx := range res.Bitmaps {
+			if err := drawFn(resourceID, res, idx, matrix, colorTransform); err != nil {
+				return err
+			}
+		}
+	case *sc.MovieClip:
+		if seen[resourceID] > 4 {
+			return nil
+		}
+		if animatedResources[resourceID] == wantAnimated && resourceID != target.ResourceID {
+			if wantAnimated {
+				seen[resourceID]++
+				defer func() { seen[resourceID]-- }()
+				frame := clipFrameAt(target, resourceID, res, t)
+				for _, element := range frame.Elements {
+					if int(element.Bind) >= len(res.Binds) {
+						continue
+					}
+					bind := res.Binds[element.Bind]
+					child := e.swf.Resources[bind.ID]
+					if _, ok := child.(*sc.MovieClipModifier); ok {
+						continue
+					}
+					childMatrix := matrix
+					if element.Matrix != 0xFFFF {
+						if res.MatrixBank < len(e.swf.MatrixBanks) && int(element.Matrix) < len(e.swf.MatrixBanks[res.MatrixBank].Matrices) {
+							childMatrix = matrix.Multiply(e.swf.MatrixBanks[res.MatrixBank].Matrices[element.Matrix])
+						}
+					}
+					childColor := colorTransform
+					if element.Color != 0xFFFF {
+						if res.MatrixBank < len(e.swf.MatrixBanks) && int(element.Color) < len(e.swf.MatrixBanks[res.MatrixBank].ColorTransforms) {
+							childColor = colorTransform.Combine(e.swf.MatrixBanks[res.MatrixBank].ColorTransforms[element.Color])
+						}
+					}
+					childSelected := selected || bind.Name == target.SelectedBind
+					if err := e.visitResourceFiltered(target, bind.ID, t, childMatrix, childColor, seen, childSelected, animatedResources, wantAnimated, drawFn); err != nil {
+						return err
+					}
+				}
+				return nil
+			}
+			return nil
+		}
+		seen[resourceID]++
+		defer func() { seen[resourceID]-- }()
+		frame := clipFrameAt(target, resourceID, res, t)
+		for _, element := range frame.Elements {
+			if int(element.Bind) >= len(res.Binds) {
+				continue
+			}
+			bind := res.Binds[element.Bind]
+			child := e.swf.Resources[bind.ID]
+			if _, ok := child.(*sc.MovieClipModifier); ok {
+				continue
+			}
+			childMatrix := matrix
+			if element.Matrix != 0xFFFF {
+				if res.MatrixBank < len(e.swf.MatrixBanks) && int(element.Matrix) < len(e.swf.MatrixBanks[res.MatrixBank].Matrices) {
+					childMatrix = matrix.Multiply(e.swf.MatrixBanks[res.MatrixBank].Matrices[element.Matrix])
+				}
+			}
+			childColor := colorTransform
+			if element.Color != 0xFFFF {
+				if res.MatrixBank < len(e.swf.MatrixBanks) && int(element.Color) < len(e.swf.MatrixBanks[res.MatrixBank].ColorTransforms) {
+					childColor = colorTransform.Combine(e.swf.MatrixBanks[res.MatrixBank].ColorTransforms[element.Color])
+				}
+			}
+			childSelected := selected || bind.Name == target.SelectedBind
+			if err := e.visitResourceFiltered(target, bind.ID, t, childMatrix, childColor, seen, childSelected, animatedResources, wantAnimated, drawFn); err != nil {
+				return err
+			}
+		}
+	case *sc.TextField:
+		return nil
+	case *sc.MovieClipModifier:
+		return nil
+	default:
+		return nil
+	}
+	return nil
+}
+
 func (e *Exporter) visitResource(target Target, resourceID uint16, t float64, matrix sc.Matrix, colorTransform sc.ColorTransform, seen map[uint16]int, selected bool, drawFn func(uint16, *sc.Shape, int, sc.Matrix, sc.ColorTransform) error) error {
 	resource := e.swf.Resources[resourceID]
 	switch res := resource.(type) {
@@ -1488,11 +2028,20 @@ func (e *Exporter) visitResource(target Target, resourceID uint16, t float64, ma
 }
 
 func clipFrameAt(target Target, resourceID uint16, clip *sc.MovieClip, t float64) sc.MovieClipFrame {
-	idx := clipFrameIndexAt(clip, t)
+	idx := targetClipFrameIndex(target, resourceID, clip, t)
 	if idx < 0 {
 		return sc.MovieClipFrame{}
 	}
 	return clip.Frames[idx]
+}
+
+func targetClipFrameIndex(target Target, resourceID uint16, clip *sc.MovieClip, t float64) int {
+	if target.SelectedFrame != nil && target.SelectedFrame.ResourceID == resourceID {
+		if idx := target.SelectedFrame.FrameIndex; idx >= 0 && idx < len(clip.Frames) {
+			return idx
+		}
+	}
+	return clipFrameIndexAt(clip, t)
 }
 
 func clipFrameIndexAt(clip *sc.MovieClip, t float64) int {
@@ -1637,19 +2186,177 @@ func composeOver(dst *image.NRGBA, x, y int, src color.NRGBA) {
 	})
 }
 
+func (e *Exporter) compositeSceneryBaseIfNeeded(target Target, frame *image.NRGBA) (*image.NRGBA, error) {
+	if frame == nil || frame.Bounds().Dx() <= 0 || frame.Bounds().Dy() <= 0 {
+		return frame, nil
+	}
+	base, err := e.loadMappedSceneryBase(target.Name)
+	if err != nil || base == nil || base.swf == nil {
+		return frame, err
+	}
+	cacheKey := fmt.Sprintf("%d:%d:%d:%d", frame.Bounds().Min.X, frame.Bounds().Min.Y, frame.Bounds().Dx(), frame.Bounds().Dy())
+	baseFrame, ok := base.frames[cacheKey]
+	if !ok {
+		baseExporter := NewExporterWithOptions(base.swf, e.opts)
+		baseCache := map[bitmapCacheKey]*bitmapRenderable{}
+		baseFrame, err = baseExporter.renderAt(base.target, 0, frame.Bounds(), baseCache)
+		if err != nil {
+			return nil, err
+		}
+		base.frames[cacheKey] = cloneNRGBA(baseFrame)
+	}
+	if baseFrame == nil {
+		return frame, nil
+	}
+	canvas := cloneNRGBA(baseFrame)
+	drawOpaqueOver(canvas, frame)
+	return canvas, nil
+}
+
+func (e *Exporter) loadMappedSceneryBase(exportName string) (*sceneryBaseImage, error) {
+	if exportName == "" || exportName != "Player_Background" {
+		return nil, nil
+	}
+	if cached, ok := e.sceneryBaseCache[e.swf.Filename]; ok {
+		return cached, nil
+	}
+	basePath, err := lookupSceneryBaseSWF(e.swf.Filename, exportName)
+	if err != nil || basePath == "" {
+		if err == nil {
+			e.sceneryBaseCache[e.swf.Filename] = nil
+		}
+		return nil, err
+	}
+	baseSWF, err := sc.Load(basePath)
+	if err != nil {
+		return nil, err
+	}
+	baseExporter := NewExporterWithOptions(baseSWF, e.opts)
+	resourceID, resource := findExportedResource(baseSWF, "Player_village_bg")
+	if resource == nil {
+		return nil, nil
+	}
+	target, err := baseExporter.prepareTarget("Player_village_bg", resourceID, resource)
+	if err != nil {
+		return nil, err
+	}
+	bounds, err := baseExporter.collectBounds(target, target.Duration, nil, map[bitmapCacheKey]*bitmapRenderable{})
+	if err != nil {
+		return nil, err
+	}
+	out := &sceneryBaseImage{name: filepath.Base(basePath), swf: baseSWF, target: target, bounds: bounds, frames: map[string]*image.NRGBA{}}
+	e.sceneryBaseCache[e.swf.Filename] = out
+	return out, nil
+}
+
+func lookupSceneryBaseSWF(sourceSC, exportName string) (string, error) {
+	if exportName != "Player_Background" {
+		return "", nil
+	}
+	backgroundsPath := filepath.Join(filepath.Dir(filepath.Dir(sourceSC)), "logic", "village_backgrounds.json")
+	raw, err := os.ReadFile(backgroundsPath)
+	if err != nil {
+		return "", err
+	}
+	var backgrounds map[string]map[string]any
+	if err := json.Unmarshal(raw, &backgrounds); err != nil {
+		return "", err
+	}
+	for _, entry := range backgrounds {
+		swf, _ := entry["SWF"].(string)
+		foreground, _ := entry["Foreground"].(string)
+		if swf != sourceSC || foreground != exportName {
+			continue
+		}
+		baseSWF, _ := entry["BaseSWF"].(string)
+		if baseSWF == "" {
+			return "", nil
+		}
+		root := filepath.Dir(filepath.Dir(sourceSC))
+		if !filepath.IsAbs(baseSWF) {
+			baseSWF = filepath.Join(root, baseSWF)
+		}
+		return baseSWF, nil
+	}
+	return "", nil
+}
+
+func findExportedResource(swf *sc.SWF, exportName string) (uint16, sc.Resource) {
+	for resourceID, names := range swf.Exports {
+		for _, name := range names {
+			if name == exportName {
+				return resourceID, swf.Resources[resourceID]
+			}
+		}
+	}
+	return 0, nil
+}
+
+func drawOpaqueOver(dst, src *image.NRGBA) {
+	if dst == nil || src == nil {
+		return
+	}
+	for y := 0; y < minInt(dst.Bounds().Dy(), src.Bounds().Dy()); y++ {
+		for x := 0; x < minInt(dst.Bounds().Dx(), src.Bounds().Dx()); x++ {
+			px := src.NRGBAAt(src.Bounds().Min.X+x, src.Bounds().Min.Y+y)
+			if px.A == 0 {
+				continue
+			}
+			dst.SetNRGBA(dst.Bounds().Min.X+x, dst.Bounds().Min.Y+y, px)
+		}
+	}
+}
+
+func overlayOpaque(bottom, top *image.NRGBA) *image.NRGBA {
+	result := cloneNRGBA(bottom)
+	drawOpaqueOver(result, top)
+	return result
+}
+
+func cloneNRGBA(src *image.NRGBA) *image.NRGBA {
+	if src == nil {
+		return nil
+	}
+	dst := image.NewNRGBA(src.Bounds())
+	copy(dst.Pix, src.Pix)
+	return dst
+}
+
+func manifestOutputPath(exportsDir, outputFile string) string {
+	if filepath.IsAbs(outputFile) {
+		return outputFile
+	}
+	return filepath.Join(exportsDir, outputFile)
+}
+
 type nameAllocator struct {
-	mu   sync.Mutex
-	used map[string]int
-	dir  string
+	mu      sync.Mutex
+	used    map[string]int
+	dir     string
+	mapped  map[string]string
+	claimed map[string]string
 }
 
-func newNameAllocator(dir string) *nameAllocator {
-	return &nameAllocator{used: map[string]int{}, dir: dir}
+func newNameAllocator(dir string, mapped map[string]string) *nameAllocator {
+	return &nameAllocator{used: map[string]int{}, dir: dir, mapped: mapped, claimed: map[string]string{}}
 }
 
-func (n *nameAllocator) Next(raw string, resourceID uint16) string {
+func (n *nameAllocator) Next(raw string, resourceID uint16) (string, string, error) {
 	n.mu.Lock()
 	defer n.mu.Unlock()
+
+	if mappedPath, ok := n.mapped[raw]; ok {
+		cleanPath := filepath.Clean(mappedPath)
+		if existing, claimed := n.claimed[cleanPath]; claimed && existing != raw {
+			return "", "", fmt.Errorf("output path %q already claimed by %q", cleanPath, existing)
+		}
+		n.claimed[cleanPath] = raw
+		if err := os.MkdirAll(filepath.Dir(cleanPath), 0o755); err != nil {
+			return "", "", err
+		}
+		basePath := strings.TrimSuffix(cleanPath, filepath.Ext(cleanPath))
+		return basePath, basePath, nil
+	}
 
 	base := sanitizeFilename(raw)
 	if base == "" {
@@ -1657,20 +2364,20 @@ func (n *nameAllocator) Next(raw string, resourceID uint16) string {
 	}
 	if _, ok := n.used[base]; !ok {
 		n.used[base] = 1
-		return base
+		return filepath.Join(n.dir, base), base, nil
 	}
 
 	withID := fmt.Sprintf("%s__%d", base, resourceID)
 	if _, ok := n.used[withID]; !ok {
 		n.used[withID] = 1
-		return withID
+		return filepath.Join(n.dir, withID), withID, nil
 	}
 
 	for i := 2; ; i++ {
 		candidate := fmt.Sprintf("%s__%d", withID, i)
 		if _, ok := n.used[candidate]; !ok {
 			n.used[candidate] = 1
-			return candidate
+			return filepath.Join(n.dir, candidate), candidate, nil
 		}
 	}
 }

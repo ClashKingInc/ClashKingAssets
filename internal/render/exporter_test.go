@@ -18,6 +18,12 @@ import (
 
 func mustLoadSWF(t *testing.T, path string) *sc.SWF {
 	t.Helper()
+	if _, err := os.Stat(path); err != nil {
+		if os.IsNotExist(err) {
+			t.Skipf("fixture not present: %s", path)
+		}
+		t.Fatalf("Stat(%s) failed: %v", path, err)
+	}
 	swf, err := sc.Load(path)
 	if err != nil {
 		t.Fatalf("Load(%s) failed: %v", path, err)
@@ -76,6 +82,251 @@ func TestBuildingsSpellFactoryKeepsSingleTargetWithLabels(t *testing.T) {
 	want := []string{"idle", "production", "transition"}
 	if !slices.Equal(target.FrameLabels, want) {
 		t.Fatalf("spell_factory_lvl9 labels = %v, want %v", target.FrameLabels, want)
+	}
+	if len(target.FrameSegments) != 3 {
+		t.Fatalf("spell_factory_lvl9 segment count = %d, want 3", len(target.FrameSegments))
+	}
+	for _, segment := range target.FrameSegments {
+		if segment.StartFrame >= segment.EndFrame {
+			t.Fatalf("invalid segment %+v", segment)
+		}
+	}
+}
+
+func TestVisualStateSignatureIncludesTransforms(t *testing.T) {
+	exporter := NewExporter(&sc.SWF{
+		Resources: map[uint16]sc.Resource{
+			1: &sc.MovieClip{
+				ID:         1,
+				FrameRate:  1,
+				MatrixBank: 0,
+				Binds:      []sc.Bind{{ID: 2}},
+				Frames: []sc.MovieClipFrame{
+					{Elements: []sc.FrameElement{{Bind: 0, Matrix: 0}}},
+					{Elements: []sc.FrameElement{{Bind: 0, Matrix: 1}}},
+				},
+			},
+			2: &sc.Shape{ID: 2, Bitmaps: []sc.ShapeBitmap{{}, {}}},
+		},
+		MatrixBanks: []*sc.MatrixBank{{
+			Matrices: []sc.Matrix{
+				{A: 1, D: 1, Tx: 0, Ty: 0},
+				{A: 1, D: 1, Tx: 10, Ty: 0},
+			},
+		}},
+	})
+	target := Target{ResourceID: 1, Resource: exporter.swf.Resources[1]}
+
+	sig0, err := exporter.visualStateSignature(target, 0)
+	if err != nil {
+		t.Fatalf("visualStateSignature at t=0 failed: %v", err)
+	}
+	sig1, err := exporter.visualStateSignature(target, 1)
+	if err != nil {
+		t.Fatalf("visualStateSignature at t=1 failed: %v", err)
+	}
+	if sig0 == sig1 {
+		t.Fatal("expected different visual signatures for different child transforms")
+	}
+}
+
+func TestCollectAnimatedResourceSetIncludesSingleFrameWrappers(t *testing.T) {
+	exporter := NewExporter(&sc.SWF{
+		Resources: map[uint16]sc.Resource{
+			1: &sc.MovieClip{
+				ID:         1,
+				FrameRate:  1,
+				MatrixBank: 0,
+				Binds:      []sc.Bind{{ID: 2}},
+				Frames:     []sc.MovieClipFrame{{Elements: []sc.FrameElement{{Bind: 0, Matrix: 0}}}},
+			},
+			2: &sc.MovieClip{
+				ID:         2,
+				FrameRate:  2,
+				MatrixBank: 0,
+				Frames: []sc.MovieClipFrame{
+					{},
+					{},
+				},
+			},
+		},
+		MatrixBanks: []*sc.MatrixBank{{Matrices: []sc.Matrix{{A: 1, D: 1}}}},
+	})
+
+	animated := exporter.collectAnimatedResourceSet(1)
+	if !animated[1] {
+		t.Fatal("expected single-frame wrapper with animated child to be treated as animated")
+	}
+	if !animated[2] {
+		t.Fatal("expected animated child clip to be treated as animated")
+	}
+}
+
+func TestFilterRequestedTargetsIncludesExactMatchesOnly(t *testing.T) {
+	targets := []Target{{Name: "foo", ResourceID: 1}, {Name: "bar", ResourceID: 2}, {Name: "bar", ResourceID: 3}}
+	skipped := []SkippedEntry{{ExportName: "baz", ResourceID: 4, Reason: "unsupported"}}
+
+	filteredTargets, filteredSkipped, err := filterRequestedTargets(targets, skipped, []string{"bar", "baz"}, "test.sc")
+	if err != nil {
+		t.Fatalf("filterRequestedTargets failed: %v", err)
+	}
+	if len(filteredTargets) != 2 {
+		t.Fatalf("filtered target count = %d, want 2", len(filteredTargets))
+	}
+	for _, target := range filteredTargets {
+		if target.Name != "bar" {
+			t.Fatalf("unexpected filtered target %q", target.Name)
+		}
+	}
+	if len(filteredSkipped) != 1 || filteredSkipped[0].ExportName != "baz" {
+		t.Fatalf("filtered skipped = %+v, want baz", filteredSkipped)
+	}
+}
+
+func TestFilterRequestedTargetsReturnsMissingNames(t *testing.T) {
+	_, _, err := filterRequestedTargets([]Target{{Name: "foo", ResourceID: 1}}, nil, []string{"missing"}, "test.sc")
+	if err == nil {
+		t.Fatal("expected missing asset error")
+	}
+	if !strings.Contains(err.Error(), "missing") {
+		t.Fatalf("error %q should mention missing asset", err)
+	}
+}
+
+func TestFilterRequestedTargetsSelectsFrameLabelOnAnimatedDescendant(t *testing.T) {
+	exporter := NewExporter(&sc.SWF{
+		Resources: map[uint16]sc.Resource{
+			1: &sc.MovieClip{
+				ID:         1,
+				FrameRate:  1,
+				MatrixBank: 0,
+				Binds:      []sc.Bind{{ID: 2}},
+				Frames:     []sc.MovieClipFrame{{Elements: []sc.FrameElement{{Bind: 0, Matrix: 0}}}},
+			},
+			2: &sc.MovieClip{
+				ID:         2,
+				FrameRate:  1,
+				MatrixBank: 0,
+				Binds:      []sc.Bind{{ID: 3}},
+				Frames: []sc.MovieClipFrame{
+					{Name: "wl_tier_1", Elements: []sc.FrameElement{{Bind: 0, Matrix: 0}}},
+					{Name: "wl_tier_2", Elements: []sc.FrameElement{{Bind: 0, Matrix: 1}}},
+					{Name: "wl_tier_3", Elements: []sc.FrameElement{{Bind: 0, Matrix: 2}}},
+				},
+			},
+			3: &sc.Shape{ID: 3, Bitmaps: []sc.ShapeBitmap{{}}},
+		},
+		MatrixBanks: []*sc.MatrixBank{{
+			Matrices: []sc.Matrix{
+				{A: 1, D: 1, Tx: 0, Ty: 0},
+				{A: 1, D: 1, Tx: 10, Ty: 0},
+				{A: 1, D: 1, Tx: 20, Ty: 0},
+			},
+		}},
+	})
+
+	target, err := exporter.prepareTarget("badge", 1, exporter.swf.Resources[1])
+	if err != nil {
+		t.Fatalf("prepareTarget failed: %v", err)
+	}
+	if !target.IsWrapper {
+		t.Fatal("expected wrapper target")
+	}
+	if !slices.Equal(target.FrameLabels, []string{"wl_tier_1", "wl_tier_2", "wl_tier_3"}) {
+		t.Fatalf("frame labels = %v", target.FrameLabels)
+	}
+
+	filtered, _, err := filterRequestedTargets([]Target{target}, nil, []string{"badge@wl_tier_2"}, "test.sc")
+	if err != nil {
+		t.Fatalf("filterRequestedTargets failed: %v", err)
+	}
+	if len(filtered) != 1 {
+		t.Fatalf("filtered count = %d, want 1", len(filtered))
+	}
+
+	selected := filtered[0]
+	if selected.Name != "badge@wl_tier_2" {
+		t.Fatalf("selected name = %q", selected.Name)
+	}
+	if selected.Duration != 0 {
+		t.Fatalf("selected duration = %v, want 0", selected.Duration)
+	}
+	if selected.SelectedFrame == nil {
+		t.Fatal("expected selected frame metadata")
+	}
+	if selected.SelectedFrame.ResourceID != 2 || selected.SelectedFrame.FrameIndex != 1 {
+		t.Fatalf("selected frame = %+v, want resource 2 frame 1", *selected.SelectedFrame)
+	}
+
+	baseSig, err := exporter.visualStateSignature(target, 1)
+	if err != nil {
+		t.Fatalf("visualStateSignature base failed: %v", err)
+	}
+	selectedSig, err := exporter.visualStateSignature(selected, 0)
+	if err != nil {
+		t.Fatalf("visualStateSignature selected failed: %v", err)
+	}
+	if selectedSig != baseSig {
+		t.Fatalf("selected frame target should match the requested labeled frame: selected=%d base=%d", selectedSig, baseSig)
+	}
+}
+
+func TestNameAllocatorUsesMappedOutputPath(t *testing.T) {
+	outDir := t.TempDir()
+	mapped := filepath.Join(outDir, "nested", "unit_barbarian_big.png")
+	allocator := newNameAllocator(outDir, map[string]string{"unit_barbarian_big": mapped})
+
+	outputBase, outputFile, err := allocator.Next("unit_barbarian_big", 9)
+	if err != nil {
+		t.Fatalf("allocator.Next failed: %v", err)
+	}
+	if outputBase != strings.TrimSuffix(mapped, filepath.Ext(mapped)) {
+		t.Fatalf("outputBase = %q, want %q", outputBase, strings.TrimSuffix(mapped, filepath.Ext(mapped)))
+	}
+	if outputFile != strings.TrimSuffix(mapped, filepath.Ext(mapped)) {
+		t.Fatalf("outputFile = %q, want %q", outputFile, strings.TrimSuffix(mapped, filepath.Ext(mapped)))
+	}
+	if _, err := os.Stat(filepath.Dir(mapped)); err != nil {
+		t.Fatalf("expected mapped output dir to exist: %v", err)
+	}
+}
+
+func TestNameAllocatorRejectsSharedMappedPath(t *testing.T) {
+	outDir := t.TempDir()
+	mapped := filepath.Join(outDir, "shared", "asset.png")
+	allocator := newNameAllocator(outDir, map[string]string{"foo": mapped, "bar": mapped})
+
+	if _, _, err := allocator.Next("foo", 1); err != nil {
+		t.Fatalf("allocator.Next for foo failed: %v", err)
+	}
+	if _, _, err := allocator.Next("bar", 2); err == nil {
+		t.Fatal("expected shared mapped path conflict")
+	}
+}
+
+func TestSingleFramePreferWebPUsesWebPOutput(t *testing.T) {
+	requireWebPTools(t)
+
+	swf := mustLoadSWF(t, "../../sc/info_barbarian.sc")
+	exporter := NewExporterWithOptions(swf, ExportOptions{PreferWebP: true})
+	target := findTarget(t, exporter, "unit_barbarian_big")
+
+	outDir := t.TempDir()
+	entry, skipped, _, err := exporter.exportTarget(target, outDir, newNameAllocator(outDir, nil))
+	if err != nil {
+		t.Fatalf("exportTarget failed: %v", err)
+	}
+	if skipped != nil {
+		t.Fatalf("expected export, got skipped %+v", skipped)
+	}
+	if entry == nil {
+		t.Fatal("expected manifest entry")
+	}
+	if filepath.Ext(entry.OutputFile) != ".webp" {
+		t.Fatalf("output file = %q, want .webp", entry.OutputFile)
+	}
+	if _, err := os.Stat(filepath.Join(outDir, entry.OutputFile)); err != nil {
+		t.Fatalf("expected webp output on disk: %v", err)
 	}
 }
 
@@ -208,10 +459,13 @@ func TestExportDragonNamedOutputsAndManifest(t *testing.T) {
 		t.Fatalf("expected no skipped exports, got %d", len(manifest.Skipped))
 	}
 
-	files, err := os.ReadDir(filepath.Join(tempDir, "exports"))
+	files, err := os.ReadDir(tempDir)
 	if err != nil {
 		t.Fatalf("ReadDir failed: %v", err)
 	}
+	files = slices.DeleteFunc(files, func(entry os.DirEntry) bool {
+		return filepath.Ext(entry.Name()) != ".webp"
+	})
 	if len(files) != 39 {
 		t.Fatalf("exported file count = %d, want 39", len(files))
 	}
@@ -244,6 +498,9 @@ func TestExportDragonNamedOutputsAndManifest(t *testing.T) {
 				t.Fatalf("unexpected output file %s", entry.OutputFile)
 			}
 		}
+		if entry.ExportName == "spell_factory_lvl1" && len(entry.FrameSegments) == 0 {
+			t.Fatal("spell_factory_lvl1 should expose frame segments in manifest")
+		}
 	}
 	if !found {
 		t.Fatal("manifest missing dragonx_fly1_3")
@@ -264,7 +521,7 @@ func TestBattleBlimpDirectCompositeExport(t *testing.T) {
 	}
 
 	outDir := t.TempDir()
-	entry, skipped, _, err := exporter.exportTarget(target, outDir, newNameAllocator(outDir))
+	entry, skipped, _, err := exporter.exportTarget(target, outDir, newNameAllocator(outDir, nil))
 	if err != nil {
 		t.Fatalf("exportTarget failed: %v", err)
 	}
@@ -305,7 +562,17 @@ func TestLoadingLabelsAppearInPreparedTargets(t *testing.T) {
 func TestUIWrapperChangePointsStayComposite(t *testing.T) {
 	swf := mustLoadSWF(t, "../../sc/ui.sc")
 	exporter := NewExporter(swf)
-	target := findTarget(t, exporter, "wl_trophy_banner")
+	targets, _ := exporter.prepareTargets()
+	var target Target
+	for _, candidate := range targets {
+		if candidate.Name == "wl_trophy_banner" {
+			target = candidate
+			break
+		}
+	}
+	if target.Name == "" {
+		t.Fatal("wl_trophy_banner target not found")
+	}
 	if !target.IsWrapper {
 		t.Fatal("wl_trophy_banner should be treated as a wrapper export")
 	}
@@ -372,7 +639,7 @@ func TestDragonGoldenFirstFrameHash(t *testing.T) {
 	}
 
 	hash := sha1.Sum(frames[0].Image.Pix)
-	const want = "2e09eaba617bd0272a3901943592d0ac05908970"
+	const want = "7032aab2b264e3b8c375189f916f9cdd24f8bf00"
 	if got := fmtHash(hash); got == want {
 		return
 	}
