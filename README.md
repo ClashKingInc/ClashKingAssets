@@ -23,6 +23,22 @@ does cost us time & money please credit us somewhere in your project. Thanks!
 
 ## Extractor
 
+### Prerequisite: `astcenc`
+
+Install `astcenc` so it is available on your `PATH`.
+
+macOS:
+
+```bash
+brew install astc-encoder
+```
+
+Linux:
+
+```bash
+sudo snap install astc-encoder
+```
+
 Build the CLI:
 
 ```bash
