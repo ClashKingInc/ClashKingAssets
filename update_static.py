@@ -18,7 +18,7 @@ import lzma
 from dataclasses import dataclass
 from pathlib import Path
 
-from utils import apk_url, build_r2_client, download_file, fetch_fingerprint, load_r2_existing_keys, upload_file_to_r2
+from utils import apk_url, download_file, fetch_fingerprint
 
 
 @dataclass(frozen=True)
@@ -98,10 +98,8 @@ class StaticUpdater:
 
         self.animations_data = {}
         self.sc_asset_requests: dict[tuple[str, str | None], list[SCAssetRequest]] = {}
-        self.r2_bucket = os.getenv("R2_BUCKET", "")
-        self.r2_prefix = os.getenv("R2_PREFIX", "")
-        self.r2_client = build_r2_client(self.r2_bucket)
-        self.r2_existing_keys: set[str] = set()
+
+        self.build_mappping = {}
 
     def register_sc_asset(self, source_sc: str, asset_name: str, save_path: str) -> str:
         source_sc = source_sc.strip()
@@ -130,13 +128,18 @@ class StaticUpdater:
         return save_path
 
     def should_skip_registered_asset(self, save_path: str) -> bool:
-        return save_path in self.r2_existing_keys
+        return self.resolve_asset_output_path(save_path).exists()
 
-    def upload_registered_asset(self, request: SCAssetRequest, local_path: Path) -> None:
-        if request.save_path in self.r2_existing_keys:
+    def resolve_asset_output_path(self, save_path: str) -> Path:
+        normalized = Path(save_path.strip().lstrip("/"))
+        return Path(self.BASE_PATH) / normalized
+
+    def save_registered_asset(self, request: SCAssetRequest, local_path: Path) -> None:
+        destination = self.resolve_asset_output_path(request.save_path)
+        if destination.exists():
             return
-        upload_file_to_r2(self.r2_client, self.r2_bucket, self.r2_prefix, local_path, request.save_path)
-        self.r2_existing_keys.add(request.save_path)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(local_path, destination)
 
     async def _download_sc_bundle(self, base_url: str, source_sc: str, available_files: set[str]) -> list[Path]:
         downloaded: list[Path] = []
@@ -157,8 +160,6 @@ class StaticUpdater:
     async def extract_assets(self):
         if not self.sc_asset_requests:
             return
-
-        self.r2_existing_keys = load_r2_existing_keys(self.r2_client, self.r2_bucket, self.r2_prefix)
 
         if not self.FINGERPRINT:
             self.FINGERPRINT = await fetch_fingerprint(self.APK_URL)
@@ -191,7 +192,7 @@ class StaticUpdater:
                 if not is_exported_via_go(source_sc):
                     for requests in asset_requests.values():
                         for request in requests:
-                            self.upload_registered_asset(request, downloaded_files[0])
+                            self.save_registered_asset(request, downloaded_files[0])
                     continue
                 with tempfile.TemporaryDirectory(prefix="update-static-sc-") as temp_dir:
                     command = ["go", "run", "main.go", "--workers", str(max(1, os.cpu_count() or 1)), "--prefer-webp"]
@@ -228,11 +229,11 @@ class StaticUpdater:
                                     raise RuntimeError(f"asset {source_sc}:{asset_name} was skipped: {skip_reason}")
                                 raise FileNotFoundError(f"asset output missing for {source_sc}:{asset_name}")
                             for request in asset_requests[asset_name]:
-                                self.upload_registered_asset(request, Path(exported_file))
+                                self.save_registered_asset(request, Path(exported_file))
                     else:
                         exported_file = str(Path(temp_dir) / f"{Path(source_sc).stem}.webp")
                         for request in next(iter(asset_requests.values())):
-                            self.upload_registered_asset(request, Path(exported_file))
+                            self.save_registered_asset(request, Path(exported_file))
                 shutil.rmtree(legacy_assets_dir, ignore_errors=True)
             finally:
                 for path in downloaded_files:
@@ -264,7 +265,6 @@ class StaticUpdater:
             decompressed = zstandard.decompress(data)
             return decompressed, {"dict_size": None, "uncompressed_size": None}
 
-        # Otherwise, assume LZMA
         logging.debug("Decompressing using LZMA ...")
         data = data[0:9] + (b"\x00" * 4) + data[9:]
         prop = data[0]
@@ -275,34 +275,18 @@ class StaticUpdater:
         return decompressed, {"lzma_prop": o_prop}
 
     def process_csv(self, data, file_path: str):
-        """
-        1. Decompress data -> raw CSV
-        2. Write raw CSV to disk
-        3. Parse disk CSV -> final_data with levels:
-        - If columns[1] is an int-type (e.g. “Level”), use that for your level keys.
-        - Otherwise auto-enumerate each row under the same troop as levels “1”, “2”, …
-        4. Post-process:
-        - Promote any column that only appears in level “1” up to troop-level.
-        - If a troop ends up with only one level, flatten it.
-        5. Write out JSON with (troop → levels + troop-level props).
-        6. Delete the CSV file.
-        """
-        # Check if data is compressed
         if self.is_compressed(data):
-            # Strip signature header if present (Sig: + 64 bytes signature)
             if data[:4] == b"Sig:":
                 logging.debug("Stripping Sig: header and signature...")
-                data = data[68:]  # Skip "Sig:" (4 bytes) + 64-byte signature
+                data = data[68:]
             decompressed_data, _ = self.decompress(data)
         else:
             decompressed_data = data
 
-        # 1) Write out the raw CSV
         Path(file_path).parent.mkdir(parents=True, exist_ok=True)
         with open(file_path, "wb") as f:
             f.write(decompressed_data)
 
-        # 2) Load rows and grab the header + type row
         with open(file_path, encoding="utf-8") as csvf:
             rows = list(csv.reader(csvf))
         if len(rows) < 2:
@@ -311,13 +295,10 @@ class StaticUpdater:
         columns = rows[0]
         types_row = rows[1]
 
-        # If GlobalID column exists at position 1, move it to the end
         if len(columns) > 1 and columns[1] == "GlobalID":
-            # Reorder columns: [Name, GlobalID, Level, ...] -> [Name, Level, ..., GlobalID]
             columns = [columns[0]] + columns[2:] + [columns[1]]
             types_row = [types_row[0]] + types_row[2:] + [types_row[1]]
 
-            # Reorder all data rows to match
             reordered_rows = []
             for row in rows[2:]:
                 if len(row) > 1:
@@ -327,7 +308,6 @@ class StaticUpdater:
                     reordered_rows.append(row)
             rows = rows[:2] + reordered_rows
 
-        # detect if col[1] really is a numeric level
         is_numeric_level = types_row[1].lower() == "int" or "level" in columns[1].lower()
 
         final_data = {}
@@ -335,16 +315,13 @@ class StaticUpdater:
         level_counter = None
         current_level = None
 
-        # 3) Parse & build final_data
         for row in rows[2:]:
             if not any(cell.strip() for cell in row):
                 continue
 
-            # new troop?
             if row[0].strip():
                 current_troop = row[0].strip()
                 final_data[current_troop] = {}
-                # reset counters
                 if not is_numeric_level:
                     level_counter = 1
                 current_level = None
@@ -352,23 +329,18 @@ class StaticUpdater:
             if current_troop is None:
                 continue
 
-            # pick level key
             if is_numeric_level:
-                # existing behavior: use col[1]
                 if len(row) > 1 and row[1].strip():
                     current_level = row[1].strip()
                 if not current_level:
                     continue
                 lvl_key = current_level
             else:
-                # auto-enumerate each data-row
                 lvl_key = str(level_counter)
                 level_counter += 1
 
-            # grab/create dict for this level
             level_dict = final_data[current_troop].setdefault(lvl_key, {})
 
-            # fill in columns
             for idx, col_name in enumerate(columns):
                 if idx >= len(row):
                     break
@@ -386,7 +358,6 @@ class StaticUpdater:
                     conv = val
                 level_dict[col_name] = conv
 
-        # 4a) Promote any base-level-only columns up to troop-level
         for troop, levels in list(final_data.items()):
             lvl_keys = sorted(levels.keys(), key=lambda x: int(x) if x.isdigit() else 999999)
             if len(lvl_keys) <= 1:
@@ -397,7 +368,6 @@ class StaticUpdater:
                     final_data[troop][col] = levels[base][col]
                     del levels[base][col]
 
-        # 4b) Flatten troops with exactly one level
         for troop in list(final_data.keys()):
             levels = final_data[troop]
             if isinstance(levels, dict) and len(levels) == 1:
@@ -405,12 +375,10 @@ class StaticUpdater:
                 if isinstance(data_dict, dict):
                     final_data[troop] = data_dict
 
-        # 5) Write final JSON
         save_file = file_path.replace(".csv", ".json")
         with open(save_file, "w", encoding="utf-8") as jf:
             json.dump(final_data, jf, indent=2)
 
-        # 6) Delete the CSV
         if not self.KEEP_CSV:
             try:
                 os.remove(file_path)
@@ -510,32 +478,27 @@ class StaticUpdater:
                 logging.warning(f"Could not delete {file_path}: {e}")
 
     def is_compressed(self, data):
-        """Check if data is compressed by looking for compression signatures."""
-        # Check for Sig: header (signed compressed data)
         if data[:4] == b"Sig:":
             return True
-        # Check for SCLZ (LZHAM)
         if data[:4] == b"SCLZ":
             return True
-        # Check for ZSTD magic number
         if len(data) >= 4 and int.from_bytes(data[0:4], byteorder="little") == zstandard.MAGIC_NUMBER:
             return True
-        # Check for LZMA (starts with 0x5D)
         if data[0] == 0x5D:
             return True
-        # Check for SC header (Supercell compression)
         if data[:2] == b"\x53\x43":
             return True
-        # If it looks like plain CSV text, it's not compressed
         if data[:6] == b'"Name"' or data[:6] == b'"name"' or data[:5] == b'"TID"':
             return False
-        # Default to compressed if we're not sure
         return True
 
     def open_file(self, file_path: str) -> dict:
         with open(file_path, "r", encoding="utf-8") as f:
             data: dict = json.load(f)
         return data
+
+    def clean_name(self, s: str) -> str:
+        return s.lower().replace(" ", "_").replace(".", "")
 
     def _translate(self, tid: str):
         self.USED_TIDS.add(tid)
@@ -878,7 +841,7 @@ class StaticUpdater:
 
         return new_seasonal_defense_data
 
-    def _parse_troop_data(self) -> dict:
+    def _parse_troop_data(self):
         self.full_troop_data = self.open_file("logic/characters.json")
         full_super_troop_data = self.open_file("logic/super_licences.json")
         full_super_troop_data = {v.get("Replacement"): v for k, v in full_super_troop_data.items()}
@@ -893,12 +856,10 @@ class StaticUpdater:
 
             name_to_id[(troop_name, village_type)] = troop_data.get("GlobalID")
 
-            troop_icon_file = troop_data.get("IconSWF")  # afaik always ui.sc
-            troop_icon_target = troop_data.get("IconExportName")
-            troop_icon_path = self.register_sc_asset(
-                source_sc=troop_icon_file,
-                asset_name=troop_icon_target,
-                save_path=f'troops/{troop_data.get("GlobalID")}/icon.webp',
+            self.register_sc_asset(
+                source_sc=troop_data.get("IconSWF"),
+                asset_name=troop_data.get("IconExportName"),
+                save_path=f'troops/{self.clean_name(self._translate(tid=troop_data.get("TID")))}/icon',
             )
 
             # this is where we need to do processing, go to the file & grab that target file
@@ -907,7 +868,6 @@ class StaticUpdater:
                 "name": self._translate(tid=troop_data.get("TID")),
                 "info": self._translate(tid=troop_data.get("InfoTID")),
                 "TID": {"name": troop_data.get("TID"), "info": troop_data.get("InfoTID")},
-                "icon": troop_icon_path,
                 "production_building": self._translate(tid=production_building),
                 "production_building_level": troop_data.get("BarrackLevel"),
                 "upgrade_resource": self._parse_resource(resource=troop_data.get("UpgradeResource")),
@@ -984,10 +944,10 @@ class StaticUpdater:
                 continue
             character_data = self.full_troop_data.get(guardian_data.get("CharacterDatas"))
 
-            guardian_icon_file = guardian_data.get("IconSWF")  # afaik always ui.sc
-            guardian_icon_target = guardian_data.get("IconExportName")
-            guardian_icon_path = self.register_sc_asset(
-                source_sc=guardian_icon_file, asset_name=guardian_icon_target, save_path=f"guardians/{_id}/icon.webp"
+            self.register_sc_asset(
+                source_sc=guardian_data.get("IconSWF"),
+                asset_name=guardian_data.get("IconExportName"),
+                save_path=f'guardians/{self.clean_name(self._translate(tid=guardian_data.get("TID")))}/icon'
             )
 
             hold_data = {
@@ -995,7 +955,6 @@ class StaticUpdater:
                 "name": self._translate(tid=guardian_data.get("TID")),
                 "info": self._translate(tid=guardian_data.get("InfoTID")),
                 "TID": {"name": guardian_data.get("TID"), "info": guardian_data.get("InfoTID")},
-                "icon": guardian_icon_path,
                 "upgrade_resource": self._parse_resource(resource=character_data.get("UpgradeResource")),
                 "is_flying": character_data.get("IsFlying"),
                 "is_air_targeting": character_data.get("AirTargets"),
@@ -1037,12 +996,10 @@ class StaticUpdater:
             if spell_data.get("DisableProduction", False):
                 continue
 
-            spell_icon_file = spell_data.get("IconSWF")  # afaik always ui.sc
-            spell_icon_target = spell_data.get("IconExportName")
-            spell_icon_path = self.register_sc_asset(
-                source_sc=spell_icon_file,
-                asset_name=spell_icon_target,
-                save_path=f'spells/{spell_data.get("GlobalID")}/icon.webp',
+            self.register_sc_asset(
+                source_sc=spell_data.get("IconSWF"),
+                asset_name=spell_data.get("IconExportName"),
+                save_path=f'spells/{self.clean_name(self._translate(spell_data.get("TID")))}',
             )
 
             production_building = self.full_building_data.get(spell_data.get("ProductionBuilding")).get("TID")
@@ -1051,7 +1008,6 @@ class StaticUpdater:
                 "name": self._translate(spell_data.get("TID")),
                 "info": self._translate(spell_data.get("InfoTID")),
                 "TID": {"name": spell_data.get("TID"), "info": spell_data.get("InfoTID")},
-                "icon": spell_icon_path,
                 "production_building": self._translate(production_building),
                 "production_building_level": spell_data.get("SpellForgeLevel"),
                 "upgrade_resource": self._parse_resource(resource=spell_data.get("UpgradeResource")),
@@ -1095,19 +1051,12 @@ class StaticUpdater:
 
         new_hero_data = []
         for _id, (hero_name, hero_data) in enumerate(self.full_hero_data.items(), 28000000):
-            hero_icon_file = hero_data.get("SquarePictureSWF") or hero_data.get("IconSWF")
-            hero_icon_target = hero_data.get("SquarePicture") or hero_data.get("IconExportName")
-            hero_icon_path = self.register_sc_asset(
-                source_sc=hero_icon_file, asset_name=hero_icon_target, save_path=f"heroes/{_id}/{hero_icon_target}.webp"
-            )
-
             village_type = hero_data.get("VillageType", 0)
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=hero_data.get("TID")),
                 "info": self._translate(hero_data.get("InfoTID")),
                 "TID": {"name": hero_data.get("TID"), "info": hero_data.get("InfoTID")},
-                "icon": hero_icon_path,
                 "production_building": self._translate(tid="TID_HERO_TAVERN") if not village_type else None,
                 "production_building_level": hero_data.get("1", {}).get("RequiredHeroTavernLevel"),
                 "upgrade_resource": self._parse_resource(resource=hero_data.get("UpgradeResource")),
@@ -1151,10 +1100,10 @@ class StaticUpdater:
             if pet_data.get("Deprecated", False) or pet_name in ["Phoenix Egg"]:
                 continue
 
-            pet_icon_file = pet_data.get("IconSWF")  # afaik always ui.sc
-            pet_icon_target = pet_data.get("IconExportName")
-            pet_icon_path = self.register_sc_asset(
-                source_sc=pet_icon_file, asset_name=pet_icon_target, save_path=f"pets/{_id}/{pet_icon_target}.webp"
+            self.register_sc_asset(
+                source_sc=pet_data.get("IconSWF") ,
+                asset_name=pet_data.get("IconExportName"),
+                save_path=f'pets/{self.clean_name(self._translate(tid=pet_data.get("TID")))}/icon'
             )
 
             hold_data = {
@@ -1162,7 +1111,6 @@ class StaticUpdater:
                 "name": self._translate(tid=pet_data.get("TID")),
                 "info": self._translate(tid=pet_data.get("InfoTID")),
                 "TID": {"name": pet_data.get("TID"), "info": pet_data.get("InfoTID")},
-                "icon": pet_icon_path,
                 "production_building": self._translate(tid="TID_PET_SHOP"),
                 "production_building_level": pet_data.get("1").get("LaboratoryLevel"),
                 "upgrade_resource": self._parse_resource('DarkElixir'),
@@ -1205,10 +1153,10 @@ class StaticUpdater:
             if equipment_data.get("Deprecated", False):
                 continue
 
-            equipment_icon_file = equipment_data.get("IconSWF")  # afaik always ui.sc
-            equipment_icon_target = equipment_data.get("IconExportName")
-            equipment_icon_path = self.register_sc_asset(
-                source_sc=equipment_icon_file, asset_name=equipment_icon_target, save_path=f"equipment/{_id}/icon.webp"
+            self.register_sc_asset(
+                source_sc=equipment_data.get("IconSWF"),
+                asset_name=equipment_data.get("IconExportName"),
+                save_path=f'equipment/{self.clean_name(self._translate(tid=equipment_data.get("TID")))}'
             )
 
             main_abilities = equipment_data.get("MainAbilities").split(";")
@@ -1223,7 +1171,6 @@ class StaticUpdater:
                     "info": equipment_data.get("InfoTID"),
                     "production_building": "TID_SMITHY",
                 },
-                "icon": equipment_icon_path,
                 "production_building": self._translate(tid="TID_SMITHY"),
                 "production_building_level": equipment_data.get("1").get("RequiredBlacksmithLevel"),
                 "rarity": equipment_data.get("Rarity"),
@@ -1371,13 +1318,12 @@ class StaticUpdater:
             if part_data.get("Deprecated", False):
                 continue
 
-            sprite_ref = part_data.get("Sprite")
-            source_sc, asset_name = sprite_ref.split("#", 1)
-
-            sprite_path = self.register_sc_asset(
-                source_sc=source_sc, asset_name=asset_name, save_path=f'capital_house_parts/{_id}/icon.webp'
+            source_sc, asset_name = part_data.get("Sprite").split("#", 1)
+            self.register_sc_asset(
+                source_sc=source_sc,
+                asset_name=asset_name,
+                save_path=f'capital_house_parts/{_id}'
             )
-
             name = part_name.replace("PlayerHouse_", "").replace("_", " ").title()
             nums = 0
             for phrase in ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]:
@@ -1397,7 +1343,6 @@ class StaticUpdater:
                     "_id": _id,
                     "name": name.title(),
                     "slot_type": slot_type,
-                    "export": sprite_path,
                     "pass_reward": part_data.get("BattlePassReward", False),
                 }
             )
@@ -1438,22 +1383,31 @@ class StaticUpdater:
             if not self._translate(tid=scenery_data.get("TID")):
                 continue
 
+            path_name = self.clean_name(self._translate(tid=scenery_data.get("TID")))
             if "Icon" in scenery_data:
-                icon_path = self.register_sc_asset(
-                    source_sc=scenery_data["Icon"], asset_name="", save_path=f"sceneries/{_id}/icon.webp"
+                self.register_sc_asset(
+                    source_sc=scenery_data["Icon"],
+                    asset_name="",
+                    save_path=f"sceneries/{path_name}/icon"
                 )
             else:
-                icon_path = self.register_sc_asset(
-                    source_sc=scenery_data["IconAnimSWF"], asset_name=scenery_data["IconAnimExportName"], save_path=f"sceneries/{_id}/icon.webp"
+                self.register_sc_asset(
+                    source_sc=scenery_data["IconAnimSWF"],
+                    asset_name=scenery_data["IconAnimExportName"],
+                    save_path=f"sceneries/{path_name}/icon"
                 )
             thumbnail_path = self.register_sc_asset(
-                source_sc=scenery_data["Thumbnail"], asset_name="", save_path=f"sceneries/{_id}/thumbnail.webp"
+                source_sc=scenery_data["Thumbnail"],
+                asset_name="",
+                save_path=f"sceneries/{path_name}/thumbnail"
             )
 
             music_path = None
             if "Music" in scenery_data:
-                music_path = self.register_sc_asset(
-                    source_sc=scenery_data["Music"], asset_name="", save_path=f"sceneries/{_id}/music"
+                self.register_sc_asset(
+                    source_sc=scenery_data["Music"],
+                    asset_name="",
+                    save_path=f"sceneries/{path_name}/music"
                 )
 
             hold_data = {
@@ -1462,7 +1416,6 @@ class StaticUpdater:
                 "TID": {"name": scenery_data.get("TID")},
                 "type": type_map.get(scenery_data.get("HomeType")),
                 "music": music_path,
-                "icon": icon_path,
                 "thumbnail": thumbnail_path,
             }
             if scenery_data.get("FreeBackground", False):
@@ -1483,15 +1436,17 @@ class StaticUpdater:
             if not skin_data.get("TID") or character not in self.full_hero_data.keys() or not skin_data.get("Tier"):
                 continue
 
-            icon_path = self.register_sc_asset(
-                source_sc=skin_data["Icon"], asset_name="", save_path=f"skins/{_id}/icon.webp"
+
+            self.register_sc_asset(
+                source_sc=skin_data["Icon"],
+                asset_name="",
+                save_path=f'skins/{self.clean_name(self._translate(tid=skin_data.get("TID")))}/icon'
             )
 
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=skin_data.get("TID")),
                 "TID": {"name": skin_data.get("TID")},
-                "icon": icon_path,
                 "tier": skin_data.get("Tier").title(),
                 "character": character,
             }
@@ -1504,10 +1459,11 @@ class StaticUpdater:
 
         new_helper_data = []
         for _id, (helper_name, helper_data) in enumerate(full_helper_data.items(), 93000000):
-            icon_file = helper_data.get("IconSWF")
-            icon_target = helper_data.get("IconExportNameSelect")
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"helpers/{_id}/icon.webp"
+
+            self.register_sc_asset(
+                source_sc=helper_data.get("IconSWF"),
+                asset_name=helper_data.get("IconExportNameSelect"),
+                save_path=f'helpers/{self.clean_name(self._translate(tid=helper_data.get("TID")))}'
             )
 
             hold_data = {
@@ -1515,7 +1471,6 @@ class StaticUpdater:
                 "name": self._translate(tid=helper_data.get("TID")),
                 "info": self._translate(tid=helper_data.get("InfoTID")),
                 "TID": {"name": helper_data.get("TID"), "info": helper_data.get("InfoTID")},
-                "icon": icon_path,
                 "upgrade_resource": self._parse_resource(resource=helper_data.get("CostResource")),
                 "levels": [],
             }
@@ -1543,20 +1498,12 @@ class StaticUpdater:
         for _id, (war_league_name, war_league_data) in enumerate(full_war_league_data.items(), 48000000):
             if not war_league_data.get("Name"):  # skip Unranked, no data
                 continue
-            icon_file = war_league_data.get("IconSWF")
-            icon_target = war_league_data.get("SmallIconExportName")
-            icon_tier = war_league_data.get("Tier")
-            if icon_tier:
-                icon_target = f"{icon_target}@wl_tier_{icon_tier}"
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"war_leagues/{_id}/icon.webp"
-            )
+
             new_war_league_data.append(
                 {
                     "_id": _id,
                     "name": self._translate(tid=war_league_data.get("TID")),
                     "TID": {"name": war_league_data.get("TID")},
-                    "icon": icon_path,
                     "cwl_medals": {
                         "first_place": war_league_data.get("LeagueWinReward"),
                         "position_medal_diff": war_league_data.get("LeaguePosRewardEffect"),
@@ -1576,19 +1523,12 @@ class StaticUpdater:
 
         new_league_tier_data = []
         for _id, (league_name, league_data) in enumerate(full_league_tier_data.items(), 105000000):
-            icon_file = league_data.get("IconSWF")
-            icon_target = league_data.get("IconExportName")
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"league_tiers/{_id}/icon.webp"
-            )
-
             league_tier = _id - 105000000
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=league_data.get("TID")),
                 "league_tier": league_tier,
                 "TID": {"name": league_data.get("TID")},
-                "icon": icon_path,
                 "group_size": league_data.get("GroupSizeMax"),
                 "demote_percentage": league_data.get("DemotePercentage"),
                 "promote_percentage": league_data.get("PromotePercentage"),
@@ -1639,17 +1579,10 @@ class StaticUpdater:
 
         new_league_data = []
         for _id, (league_name, league_data) in enumerate(full_builder_league_data.items(), 44000000):
-            icon_file = league_data.get("IconSWF")
-            icon_target = league_data.get("IconExportName")
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"builder_leagues/{_id}/icon.webp"
-            )
-
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=league_data.get("TID")),
                 "TID": {"name": league_data.get("TID")},
-                "icon": icon_path,
                 "trophy_start": league_data.get("TrophyLimitLow", 0),
             }
             new_league_data.append(hold_data)
@@ -1661,17 +1594,10 @@ class StaticUpdater:
 
         new_league_data = []
         for _id, (league_name, league_data) in enumerate(full_capital_league_data.items(), 85000000):
-            icon_file = league_data.get("IconSWF")
-            icon_target = league_data.get("IconExportName")
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"capital_leagues/{_id}/icon.webp"
-            )
-
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=league_data.get("TID")),
                 "TID": {"name": league_data.get("TID")},
-                "icon": icon_path,
                 "trophy_start": league_data.get("RequiredTrophies", 0),
                 "clan_xp": league_data.get("ClanXP")
             }
@@ -1685,10 +1611,11 @@ class StaticUpdater:
         new_magic_items_data = []
         for name, magic_item_data in full_magic_items_data.items():
             _id = hash_15_digits(s=name)
-            icon_file = magic_item_data.get("IconSWF")
-            icon_target = magic_item_data.get("IconExportName")
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"magic_items/{_id}/icon.webp"
+
+            self.register_sc_asset(
+                source_sc=magic_item_data.get("IconSWF"),
+                asset_name=magic_item_data.get("IconExportName"),
+                save_path=f'magic_items/{self.clean_name(self._translate(tid=magic_item_data.get("TID")))}'
             )
 
             hold_data = {
@@ -1696,7 +1623,6 @@ class StaticUpdater:
                 "name": self._translate(tid=magic_item_data.get("TID")),
                 "info": self._translate(tid=magic_item_data.get("InfoTID")),
                 "TID": {"name": magic_item_data.get("TID"), "info": magic_item_data.get("InfoTID")},
-                "icon": icon_path,
                 "max_inventory": magic_item_data.get("MaxItems"),
                 "gem_value": magic_item_data.get("DiamondValue"),
             }
@@ -1710,10 +1636,11 @@ class StaticUpdater:
         new_magic_snacks_data = []
         for name, magic_snack_data in full_magic_snacks_data.items():
             _id = hash_15_digits(s=name)
-            icon_file = magic_snack_data.get("IconSWF")
-            icon_target = magic_snack_data.get("IconExportName")
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"magic_snacks/{_id}/icon.webp"
+
+            self.register_sc_asset(
+                source_sc=magic_snack_data.get("IconSWF"),
+                asset_name=magic_snack_data.get("IconExportName"),
+                save_path=f'magic_snacks/{self.clean_name(self._translate(tid=magic_snack_data.get("TID")))}'
             )
 
             hold_data = {
@@ -1721,7 +1648,6 @@ class StaticUpdater:
                 "name": self._translate(tid=magic_snack_data.get("TID")),
                 "info": self._translate(tid=magic_snack_data.get("InfoTID")),
                 "TID": {"name": magic_snack_data.get("TID"), "info": magic_snack_data.get("InfoTID")},
-                "icon": icon_path,
                 "duration": magic_snack_data.get("DurationSeconds", 0),
             }
             new_magic_snacks_data.append(hold_data)
@@ -1733,17 +1659,10 @@ class StaticUpdater:
 
         new_district_data = []
         for _id, (district_name, district_data) in enumerate(full_district_data.items(), 70000000):
-            icon_file = district_data.get("IconSWF")
-            icon_target = district_data.get("IconExportName")
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"capital_districts/{_id}/icon.webp"
-            )
-
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=district_data.get("TID")),
                 "TID": {"name": district_data.get("TID")},
-                "icon": icon_path
             }
             new_district_data.append(hold_data)
 
@@ -1765,17 +1684,17 @@ class StaticUpdater:
         new_label_data = []
         for name, label_data in full_label_data.items():
             _id = hash_15_digits(s=name)
-            icon_file = label_data.get("IconSWF")
-            icon_target = label_data.get("IconExportName")
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"clan_labels/{_id}/icon.webp"
+            self.register_sc_asset(
+                source_sc=label_data.get("IconSWF"),
+                asset_name=label_data.get("IconExportName"),
+                save_path=f"clan_labels/{self.clean_name(self._translate(tid=label_data.get("TID")))}"
             )
 
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=label_data.get("TID")),
                 "TID": {"name": label_data.get("TID")},
-                "icon": icon_path,
+
             }
             new_label_data.append(hold_data)
 
@@ -1787,17 +1706,16 @@ class StaticUpdater:
         new_label_data = []
         for name, label_data in full_label_data.items():
             _id = hash_15_digits(s=name)
-            icon_file = label_data.get("IconSWF")
-            icon_target = label_data.get("IconExportName")
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"player_labels/{_id}/icon.webp"
+            self.register_sc_asset(
+                source_sc=label_data.get("IconSWF"),
+                asset_name=label_data.get("IconExportName"),
+                save_path=f'player_labels/{self.clean_name(self._translate(tid=label_data.get("TID")))}'
             )
 
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=label_data.get("TID")),
                 "TID": {"name": label_data.get("TID")},
-                "icon": icon_path,
             }
             new_label_data.append(hold_data)
 
@@ -1810,10 +1728,10 @@ class StaticUpdater:
         new_chests_data = []
         for name, chest_data in full_chest_data.items():
             _id = hash_15_digits(s=name)
-            icon_file = chest_data.get("IconSWF")
-            icon_target = chest_data.get("IconExportName")
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"chests/{_id}/icon.webp"
+            self.register_sc_asset(
+                source_sc=chest_data.get("IconSWF"),
+                asset_name=chest_data.get("IconExportName"),
+                save_path=f'chests/{self.clean_name(self._translate(tid=chest_data.get("TID")))}'
             )
 
             hold_data = {
@@ -1821,7 +1739,6 @@ class StaticUpdater:
                 "name": self._translate(tid=chest_data.get("TID")),
                 "info": self._translate(tid=chest_data.get("InfoTID")),
                 "TID": {"name": chest_data.get("TID"), "info": chest_data.get("InfoTID")},
-                "icon": icon_path,
             }
             new_chests_data.append(hold_data)
 
@@ -1835,16 +1752,16 @@ class StaticUpdater:
             _id = hash_15_digits(s=name)
             if not resource_data.get("TID") or not resource_data.get("IconExportName"):
                 continue
-            icon_file = resource_data.get("IconSWF")
-            icon_target = resource_data.get("IconExportName")
-            icon_path = self.register_sc_asset(
-                source_sc=icon_file, asset_name=icon_target, save_path=f"resources/{_id}/icon.webp"
+
+            self.register_sc_asset(
+                source_sc=resource_data.get("IconSWF"),
+                asset_name=resource_data.get("IconExportName"),
+                save_path=f'resources/{self.clean_name(self._translate(tid=resource_data.get("TID")))}'
             )
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=resource_data.get("TID")),
                 "TID": {"name": resource_data.get("TID")},
-                "icon": icon_path,
             }
             new_resources_data.append(hold_data)
 
