@@ -10779,7 +10779,6 @@
         "name": "TID_BARBARIAN",
         "info": "TID_CHARACTER_INFO_BARBARIAN"
       },
-      "icon": "troops/4000000/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -10922,7 +10921,6 @@
         "name": "TID_ARCHER",
         "info": "TID_CHARACTER_INFO_ARCHER"
       },
-      "icon": "troops/4000001/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 2,
       "upgrade_resource": "Elixir",
@@ -11085,7 +11083,6 @@
         "name": "TID_GOBLIN",
         "info": "TID_CHARACTER_INFO_GOBLIN"
       },
-      "icon": "troops/4000002/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 4,
       "upgrade_resource": "Elixir",
@@ -11198,7 +11195,6 @@
         "name": "TID_GIANT",
         "info": "TID_CHARACTER_INFO_GIANT"
       },
-      "icon": "troops/4000003/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Elixir",
@@ -11361,7 +11357,6 @@
         "name": "TID_WALL_BREAKER",
         "info": "TID_CHARACTER_INFO_WALLBREAKER"
       },
-      "icon": "troops/4000004/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 5,
       "upgrade_resource": "Elixir",
@@ -11524,7 +11519,6 @@
         "name": "TID_GOBLIN_BALLOON",
         "info": "TID_CHARACTER_INFO_BALLOON"
       },
-      "icon": "troops/4000005/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Elixir",
@@ -11667,7 +11661,6 @@
         "name": "TID_WIZARD",
         "info": "TID_CHARACTER_INFO_WIZARD"
       },
-      "icon": "troops/4000006/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 7,
       "upgrade_resource": "Elixir",
@@ -11830,7 +11823,6 @@
         "name": "TID_HEALER",
         "info": "TID_CHARACTER_INFO_HEALER"
       },
-      "icon": "troops/4000007/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 8,
       "upgrade_resource": "Elixir",
@@ -11963,7 +11955,6 @@
         "name": "TID_DRAGON",
         "info": "TID_CHARACTER_INFO_DRAGON"
       },
-      "icon": "troops/4000008/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 9,
       "upgrade_resource": "Elixir",
@@ -12106,7 +12097,6 @@
         "name": "TID_PEKKA",
         "info": "TID_CHARACTER_INFO_PEKKA"
       },
-      "icon": "troops/4000009/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 10,
       "upgrade_resource": "Elixir",
@@ -12259,7 +12249,6 @@
         "name": "TID_GARGOYLE",
         "info": "TID_CHARACTER_INFO_MINION"
       },
-      "icon": "troops/4000010/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Dark Elixir",
@@ -12422,7 +12411,6 @@
         "name": "TID_BOARRIDER",
         "info": "TID_CHARACTER_INFO_RIDER"
       },
-      "icon": "troops/4000011/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 2,
       "upgrade_resource": "Dark Elixir",
@@ -12595,7 +12583,6 @@
         "name": "TID_WARRIORGIRL",
         "info": "TID_CHARACTER_INFO_VALKYRIE"
       },
-      "icon": "troops/4000012/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Dark Elixir",
@@ -12728,7 +12715,6 @@
         "name": "TID_GOLEM",
         "info": "TID_CHARACTER_INFO_GOLEM"
       },
-      "icon": "troops/4000013/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 4,
       "upgrade_resource": "Dark Elixir",
@@ -12891,7 +12877,6 @@
         "name": "TID_WARLOCK",
         "info": "TID_CHARACTER_INFO_WARLOCK"
       },
-      "icon": "troops/4000015/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 5,
       "upgrade_resource": "Dark Elixir",
@@ -12994,7 +12979,6 @@
         "name": "TID_AD_SEEKER",
         "info": "TID_CHARACTER_INFO_AD_SEEKER_WITH_EXPLOSION"
       },
-      "icon": "troops/4000017/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Dark Elixir",
@@ -13097,7 +13081,6 @@
         "name": "TID_BOWLER",
         "info": "TID_CHARACTER_INFO_BOWLER"
       },
-      "icon": "troops/4000022/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 7,
       "upgrade_resource": "Dark Elixir",
@@ -13220,7 +13203,6 @@
         "name": "TID_BABY_DRAGON",
         "info": "TID_BABY_DRAGON_INFO"
       },
-      "icon": "troops/4000023/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 11,
       "upgrade_resource": "Elixir",
@@ -13363,7 +13345,6 @@
         "name": "TID_MINER",
         "info": "TID_MINER_INFO"
       },
-      "icon": "troops/4000024/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 12,
       "upgrade_resource": "Elixir",
@@ -13506,7 +13487,6 @@
         "name": "TID_CHARACTER_ELITE_BARBARIAN",
         "info": "TID_CHARACTER_INFO_ELITE_BARBARIAN"
       },
-      "icon": "troops/4000026/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -13613,7 +13593,6 @@
         "name": "TID_CHARACTER_MAGIC_ARCHER",
         "info": "TID_CHARACTER_INFO_MAGIC_ARCHER"
       },
-      "icon": "troops/4000027/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 2,
       "upgrade_resource": "Elixir",
@@ -13740,7 +13719,6 @@
         "name": "TID_CHARACTER_ELITE_WALLBREAKER",
         "info": "TID_CHARACTER_INFO_ELITE_WALLBREAKER"
       },
-      "icon": "troops/4000028/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 5,
       "upgrade_resource": "Elixir",
@@ -13867,7 +13845,6 @@
         "name": "TID_CHARACTER_ELITE_GIANT",
         "info": "TID_CHARACTER_INFO_ELITE_GIANT"
       },
-      "icon": "troops/4000029/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Elixir",
@@ -13994,7 +13971,6 @@
         "name": "TID_WIZARD2",
         "info": "TID_CHARACTER_INFO_WIZARD2"
       },
-      "icon": "troops/4000030/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -14148,7 +14124,6 @@
         "name": "TID_RAGED_BARBARIAN",
         "info": "TID_CHARACTER_INFO_RAGED_BARBARIAN"
       },
-      "icon": "troops/4000031/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Builder Elixir",
@@ -14371,7 +14346,6 @@
         "name": "TID_SNEAKY_ARCHER",
         "info": "TID_CHARACTER_INFO_SNEAKY_ARCHER"
       },
-      "icon": "troops/4000032/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 2,
       "upgrade_resource": "Builder Elixir",
@@ -14594,7 +14568,6 @@
         "name": "TID_TOXIC_MINION",
         "info": "TID_CHARACTER_INFO_TOXIC_MINION"
       },
-      "icon": "troops/4000033/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 4,
       "upgrade_resource": "Builder Elixir",
@@ -14797,7 +14770,6 @@
         "name": "TID_IRONFIST_GIANT",
         "info": "TID_CHARACTER_INFO_IRONFIST_GIANT"
       },
-      "icon": "troops/4000034/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Builder Elixir",
@@ -15000,7 +14972,6 @@
         "name": "TID_BOMBER",
         "info": "TID_CHARACTER_INFO_BOMBER"
       },
-      "icon": "troops/4000035/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 5,
       "upgrade_resource": "Builder Elixir",
@@ -15183,7 +15154,6 @@
         "name": "TID_SUPER_CHARGED_PEKKA",
         "info": "TID_CHARACTER_INFO_SUPER_CHARGED_PEKKA"
       },
-      "icon": "troops/4000036/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 10,
       "upgrade_resource": "Builder Elixir",
@@ -15286,7 +15256,6 @@
         "name": "TID_MOVING_CANNON",
         "info": "TID_CHARACTER_INFO_MOVING_CANNON"
       },
-      "icon": "troops/4000037/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 7,
       "upgrade_resource": "Builder Elixir",
@@ -15449,7 +15418,6 @@
         "name": "TID_BALLOON_CARRIER",
         "info": "TID_INFO_BALLOON_CARRIER"
       },
-      "icon": "troops/4000038/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 9,
       "upgrade_resource": "Builder Elixir",
@@ -15572,7 +15540,6 @@
         "name": "TID_BABY_DRAGON2",
         "info": "TID_CHARACTER_INFO_BABY_DRAGON2"
       },
-      "icon": "troops/4000041/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Builder Elixir",
@@ -15755,7 +15722,6 @@
         "name": "TID_DARK_WITCH",
         "info": "TID_CHARACTER_INFO_DARK_WITCH"
       },
-      "icon": "troops/4000042/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 8,
       "upgrade_resource": "Builder Elixir",
@@ -15898,7 +15864,6 @@
         "name": "TID_BATTLERAM",
         "info": "TID_CHARACTER_INFO_BATTLERAM"
       },
-      "icon": "troops/4000045/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -16052,7 +16017,6 @@
         "name": "TID_GHOST",
         "info": "TID_CHARACTER_INFO_GHOST"
       },
-      "icon": "troops/4000047/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -16206,7 +16170,6 @@
         "name": "TID_PUMPKIN_BARBARIAN",
         "info": "TID_CHARACTER_INFO_PUMPKIN_BARBARIAN"
       },
-      "icon": "troops/4000048/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -16360,7 +16323,6 @@
         "name": "TID_GIANT_SKELETON",
         "info": "TID_CHARACTER_INFO_GIANT_SKELETON"
       },
-      "icon": "troops/4000050/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Elixir",
@@ -16514,7 +16476,6 @@
         "name": "TID_SIEGE_MACHINE_RAM",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_RAM"
       },
-      "icon": "troops/4000051/icon.webp",
       "production_building": "Workshop",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -16597,7 +16558,6 @@
         "name": "TID_SIEGE_MACHINE_FLYER",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_FLYER"
       },
-      "icon": "troops/4000052/icon.webp",
       "production_building": "Workshop",
       "production_building_level": 2,
       "upgrade_resource": "Elixir",
@@ -16670,7 +16630,6 @@
         "name": "TID_CHARACTER_YETI",
         "info": "TID_CHARACTER_INFO_YETI"
       },
-      "icon": "troops/4000053/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 14,
       "upgrade_resource": "Elixir",
@@ -16763,7 +16722,6 @@
         "name": "TID_CHARACTER_ELITE_GOBLIN",
         "info": "TID_CHARACTER_INFO_ELITE_GOBLIN"
       },
-      "icon": "troops/4000055/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 4,
       "upgrade_resource": "Elixir",
@@ -16840,7 +16798,6 @@
         "name": "TID_SUPER_MINER",
         "info": "TID_SUPER_MINER_INFO"
       },
-      "icon": "troops/4000056/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 12,
       "upgrade_resource": "Elixir",
@@ -16987,7 +16944,6 @@
         "name": "TID_CHARACTER_HASTY_BALLOON",
         "info": "TID_CHARACTER_INFO_HASTY_BALLOON"
       },
-      "icon": "troops/4000057/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Elixir",
@@ -17094,7 +17050,6 @@
         "name": "TID_ICEGOLEM",
         "info": "TID_CHARACTER_INFO_ICEGOLEM"
       },
-      "icon": "troops/4000058/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 8,
       "upgrade_resource": "Dark Elixir",
@@ -17207,7 +17162,6 @@
         "name": "TID_LIGHTNINGDRAGON",
         "info": "TID_CHARACTER_INFO_LIGHTNINGDRAGON"
       },
-      "icon": "troops/4000059/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 13,
       "upgrade_resource": "Elixir",
@@ -17320,7 +17274,6 @@
         "name": "TID_CHARACTER_SKELETON_BARREL",
         "info": "TID_CHARACTER_INFO_SKELETON_BARREL"
       },
-      "icon": "troops/4000061/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Elixir",
@@ -17474,7 +17427,6 @@
         "name": "TID_SIEGE_MACHINE_BALLOON",
         "info": "TID_SIEGE_MACHINE_BALLOON_INFO"
       },
-      "icon": "troops/4000062/icon.webp",
       "production_building": "Workshop",
       "production_building_level": 3,
       "upgrade_resource": "Elixir",
@@ -17557,7 +17509,6 @@
         "name": "TID_CHARACTER_INFERNO_DRAGON",
         "info": "TID_CHARACTER_INFERNO_DRAGON_INFO"
       },
-      "icon": "troops/4000063/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 11,
       "upgrade_resource": "Elixir",
@@ -17704,7 +17655,6 @@
         "name": "TID_CHARACTER_SUPER_VALKYRIE",
         "info": "TID_CHARACTER_SUPER_VALKYRIE_INFO"
       },
-      "icon": "troops/4000064/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 3,
       "upgrade_resource": "Dark Elixir",
@@ -17841,7 +17791,6 @@
         "name": "TID_CHARACTER_MECHA_DRAGON",
         "info": "TID_CHARACTER_MECHA_DRAGON_INFO"
       },
-      "icon": "troops/4000065/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 15,
       "upgrade_resource": "Elixir",
@@ -17924,7 +17873,6 @@
         "name": "TID_CHARACTER_SUPER_WITCH",
         "info": "TID_CHARACTER_SUPER_WITCH_INFO"
       },
-      "icon": "troops/4000066/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 5,
       "upgrade_resource": "Dark Elixir",
@@ -18031,7 +17979,6 @@
         "name": "TID_MECHA",
         "info": "TID_CHARACTER_INFO_MECHA"
       },
-      "icon": "troops/4000067/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -18185,7 +18132,6 @@
         "name": "TID_HOG_GLIDER",
         "info": "TID_CHARACTER_INFO_HOG_GLIDER"
       },
-      "icon": "troops/4000070/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 11,
       "upgrade_resource": "Builder Elixir",
@@ -18268,7 +18214,6 @@
         "name": "TID_PARTY_WIZARD",
         "info": "TID_CHARACTER_INFO_PARTY_WIZARD"
       },
-      "icon": "troops/4000072/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -18422,7 +18367,6 @@
         "name": "TID_SIEGE_MACHINE_CARRIER",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_CARRIER"
       },
-      "icon": "troops/4000075/icon.webp",
       "production_building": "Workshop",
       "production_building_level": 4,
       "upgrade_resource": "Elixir",
@@ -18495,7 +18439,6 @@
         "name": "TID_ICE_HOUND",
         "info": "TID_ICE_HOUND_INFO"
       },
-      "icon": "troops/4000076/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 6,
       "upgrade_resource": "Dark Elixir",
@@ -18602,7 +18545,6 @@
         "name": "TID_SUPER_BOWLER",
         "info": "TID_SUPER_BOWLER_INFO"
       },
-      "icon": "troops/4000080/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 7,
       "upgrade_resource": "Dark Elixir",
@@ -18729,7 +18671,6 @@
         "name": "TID_SUPER_DRAGON",
         "info": "TID_SUPER_DRAGON_INFO"
       },
-      "icon": "troops/4000081/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 9,
       "upgrade_resource": "Elixir",
@@ -18856,7 +18797,6 @@
         "name": "TID_CHARACTER_HEADHUNTER",
         "info": "TID_CHARACTER_INFO_HEADHUNTER"
       },
-      "icon": "troops/4000082/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 9,
       "upgrade_resource": "Dark Elixir",
@@ -18909,7 +18849,6 @@
         "name": "TID_SUPER_WIZARD",
         "info": "TID_SUPER_WIZARD_INFO"
       },
-      "icon": "troops/4000083/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 7,
       "upgrade_resource": "Elixir",
@@ -19036,7 +18975,6 @@
         "name": "TID_SUPER_MINION",
         "info": "TID_CHARACTER_INFO_SUPER_MINION"
       },
-      "icon": "troops/4000084/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Dark Elixir",
@@ -19173,7 +19111,6 @@
         "name": "TID_SIEGE_MACHINE_LOG_LAUNCHER",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_LOG_LAUNCHER"
       },
-      "icon": "troops/4000087/icon.webp",
       "production_building": "Workshop",
       "production_building_level": 5,
       "upgrade_resource": "Elixir",
@@ -19246,7 +19183,6 @@
         "name": "TID_CHARACTER_SIEGE_MACHINE_CATAPULT",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_CATAPULT"
       },
-      "icon": "troops/4000091/icon.webp",
       "production_building": "Workshop",
       "production_building_level": 6,
       "upgrade_resource": "Elixir",
@@ -19319,7 +19255,6 @@
         "name": "TID_CHARACTER_SIEGE_BATTLE_DRILL",
         "info": "TID_CHARACTER_SIEGE_BATTLE_DRILL_INFO"
       },
-      "icon": "troops/4000092/icon.webp",
       "production_building": "Workshop",
       "production_building_level": 7,
       "upgrade_resource": "Elixir",
@@ -19392,7 +19327,6 @@
         "name": "TID_CHARACTER_RAM_RIDER",
         "info": "TID_CHARACTER_INFO_RAM_RIDER"
       },
-      "icon": "troops/4000094/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -19546,7 +19480,6 @@
         "name": "TID_CHARACTER_ELECTRO_TITAN",
         "info": "TID_CHARACTER_ELECTRO_TITAN_INFO"
       },
-      "icon": "troops/4000095/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 16,
       "upgrade_resource": "Elixir",
@@ -19619,7 +19552,6 @@
         "name": "TID_CHARACTER_APPRENTICE_WARDEN",
         "info": "TID_CHARACTER_APPRENTICE_WARDEN_INFO"
       },
-      "icon": "troops/4000097/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 10,
       "upgrade_resource": "Dark Elixir",
@@ -19682,7 +19614,6 @@
         "name": "TID_CHARACTER_SUPER_HOG_RIDER",
         "info": "TID_CHARACTER_SUPER_HOG_RIDER_INFO"
       },
-      "icon": "troops/4000098/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 2,
       "upgrade_resource": "Dark Elixir",
@@ -19829,7 +19760,6 @@
         "name": "TID_CHARACTER_BARCHER",
         "info": "TID_CHARACTER_INFO_BARCHER"
       },
-      "icon": "troops/4000101/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -19983,7 +19913,6 @@
         "name": "TID_CHARACTER_GRAVE_GOLEM",
         "info": "TID_CHARACTER_INFO_GRAVE_GOLEM"
       },
-      "icon": "troops/4000102/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -20137,7 +20066,6 @@
         "name": "TID_CHARACTER_HOG_WIZARD",
         "info": "TID_CHARACTER_INFO_HOG_WIZARD"
       },
-      "icon": "troops/4000103/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -20291,7 +20219,6 @@
         "name": "TID_CHARACTER_LAVALOON",
         "info": "TID_CHARACTER_INFO_LAVALOON"
       },
-      "icon": "troops/4000104/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -20445,7 +20372,6 @@
         "name": "TID_ELECTROFIRE_WIZARD",
         "info": "TID_ELECTROFIRE_WIZARD_INFO"
       },
-      "icon": "troops/4000106/icon.webp",
       "production_building": "Builder Barracks",
       "production_building_level": 12,
       "upgrade_resource": "Builder Elixir",
@@ -20508,7 +20434,6 @@
         "name": "TID_CHARACTER_TREANT",
         "info": "TID_CHARACTER_INFO_TREANT"
       },
-      "icon": "troops/4000110/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 17,
       "upgrade_resource": "Elixir",
@@ -20561,7 +20486,6 @@
         "name": "TID_CHARACTER_COOKIE_PEKKA",
         "info": "TID_CHARACTER_INFO_COOKIE_PEKKA"
       },
-      "icon": "troops/4000118/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -20715,7 +20639,6 @@
         "name": "TID_CHARACTER_FIRECRACKER",
         "info": "TID_CHARACTER_INFO_FIRECRACKER"
       },
-      "icon": "troops/4000119/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -20869,7 +20792,6 @@
         "name": "TID_CHARACTER_WATER_DRAGON",
         "info": "TID_CHARACTER_INFO_WATER_DRAGON"
       },
-      "icon": "troops/4000120/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -21023,7 +20945,6 @@
         "name": "TID_CHARACTER_FREE_KICKER",
         "info": "TID_CHARACTER_INFO_FREE_KICKER"
       },
-      "icon": "troops/4000121/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -21177,7 +21098,6 @@
         "name": "TID_CHARACTER_SIDE_THROWER",
         "info": "TID_CHARACTER_INFO_SIDE_THROWER"
       },
-      "icon": "troops/4000122/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -21331,7 +21251,6 @@
         "name": "TID_CHARACTER_SHAPESHIFTER_DRUID",
         "info": "TID_CHARACTER_SHAPESHIFTER_DRUID_INFO"
       },
-      "icon": "troops/4000123/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 11,
       "upgrade_resource": "Dark Elixir",
@@ -21404,7 +21323,6 @@
         "name": "TID_CHARACTER_COURIER",
         "info": "TID_CHARACTER_INFO_COURIER"
       },
-      "icon": "troops/4000125/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -21558,7 +21476,6 @@
         "name": "TID_ICEMINION",
         "info": "TID_CHARACTER_INFO_ICEMINION"
       },
-      "icon": "troops/4000130/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -21712,7 +21629,6 @@
         "name": "TID_CHARACTER_THROWER",
         "info": "TID_CHARACTER_INFO_THROWER"
       },
-      "icon": "troops/4000132/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 18,
       "upgrade_resource": "Elixir",
@@ -21775,7 +21691,6 @@
         "name": "TID_CHARACTER_SIEGE_MACHINE_TROOP_CATAPULT",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_TROOP_CATAPULT"
       },
-      "icon": "troops/4000135/icon.webp",
       "production_building": "Workshop",
       "production_building_level": 8,
       "upgrade_resource": "Elixir",
@@ -21838,7 +21753,6 @@
         "name": "TID_TAX_COLLECTOR",
         "info": "TID_CHARACTER_INFO_TAX_COLLECTOR"
       },
-      "icon": "troops/4000136/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -21992,7 +21906,6 @@
         "name": "TID_CHARACTER_SNAKE_BARREL",
         "info": "TID_CHARACTER_INFO_SNAKE_BARREL"
       },
-      "icon": "troops/4000142/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -22146,7 +22059,6 @@
         "name": "TID_CHARACTER_SUPER_YETI",
         "info": "TID_CHARACTER_INFO_SUPER_YETI"
       },
-      "icon": "troops/4000147/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 14,
       "upgrade_resource": "Elixir",
@@ -22243,7 +22155,6 @@
         "name": "TID_CHARACTER_FURNACE",
         "info": "TID_CHARACTER_INFO_FURNACE"
       },
-      "icon": "troops/4000150/icon.webp",
       "production_building": "Dark Barracks",
       "production_building_level": 12,
       "upgrade_resource": "Dark Elixir",
@@ -22306,7 +22217,6 @@
         "name": "TID_CHARACTER_APRIL25GTG",
         "info": "TID_CHARACTER_INFO_APRIL25GTG"
       },
-      "icon": "troops/4000156/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -22490,7 +22400,6 @@
         "name": "TID_CHARACTER_APRIL25TBRM",
         "info": "TID_CHARACTER_INFO_APRIL25TBRM"
       },
-      "icon": "troops/4000157/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -22674,7 +22583,6 @@
         "name": "TID_CHARACTER_APRIL25BLTM",
         "info": "TID_CHARACTER_INFO_APRIL25BLTM"
       },
-      "icon": "troops/4000158/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -22828,7 +22736,6 @@
         "name": "TID_CHARACTER_APRIL25RRBL",
         "info": "TID_CHARACTER_INFO_APRIL25RRBL"
       },
-      "icon": "troops/4000159/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -23012,7 +22919,6 @@
         "name": "TID_CHARACTER_APRIL25RRBL",
         "info": "TID_CHARACTER_INFO_APRIL25RRBL"
       },
-      "icon": "troops/4000164/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -23196,7 +23102,6 @@
         "name": "TID_CHARACTER_APRIL25BLTM",
         "info": "TID_CHARACTER_INFO_APRIL25BLTM"
       },
-      "icon": "troops/4000165/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -23350,7 +23255,6 @@
         "name": "TID_METEOR_GOLEM",
         "info": "TID_METEOR_GOLEM_INFO"
       },
-      "icon": "troops/4000167/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 0,
       "upgrade_resource": "Elixir",
@@ -23504,7 +23408,6 @@
         "name": "TID_METEOR_GOLEM",
         "info": "TID_METEOR_GOLEM_INFO"
       },
-      "icon": "troops/4000177/icon.webp",
       "production_building": "Barracks",
       "production_building_level": 19,
       "upgrade_resource": "Elixir",
@@ -23559,7 +23462,6 @@
         "name": "TID_INFERNO_GUARDIAN",
         "info": "TID_INFERNO_GUARDIAN_INFO"
       },
-      "icon": "guardians/107000000/icon.webp",
       "upgrade_resource": "Elixir",
       "is_flying": false,
       "is_air_targeting": true,
@@ -23618,7 +23520,6 @@
         "name": "TID_MELEE_AREA_GUARDIAN",
         "info": "TID_MELEE_AREA_GUARDIAN_INFO"
       },
-      "icon": "guardians/107000001/icon.webp",
       "upgrade_resource": "Elixir",
       "is_flying": false,
       "is_air_targeting": true,
@@ -23679,7 +23580,6 @@
         "name": "TID_LIGHTNING_STORM",
         "info": "TID_LIGHTNING_STORM_INFO"
       },
-      "icon": "spells/26000000/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -23838,7 +23738,6 @@
         "name": "TID_HEALING_WAVE",
         "info": "TID_HEALING_WAVE_INFO"
       },
-      "icon": "spells/26000001/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 2,
       "upgrade_resource": "Elixir",
@@ -23986,7 +23885,6 @@
         "name": "TID_HASTE",
         "info": "TID_HASTE_INFO"
       },
-      "icon": "spells/26000002/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 3,
       "upgrade_resource": "Elixir",
@@ -24068,7 +23966,6 @@
         "name": "TID_JUMP_SPELL",
         "info": "TID_JUMP_SPELL_INFO"
       },
-      "icon": "spells/26000003/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 4,
       "upgrade_resource": "Elixir",
@@ -24139,7 +24036,6 @@
         "name": "TID_FREEZE_SPELL",
         "info": "TID_FREEZE_SPELL_INFO"
       },
-      "icon": "spells/26000005/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 4,
       "upgrade_resource": "Elixir",
@@ -24232,7 +24128,6 @@
         "name": "TID_XMAS_SPELL",
         "info": "TID_XMAS_SPELL_INFO"
       },
-      "icon": "spells/26000006/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -24392,7 +24287,6 @@
         "name": "TID_POISON_CLOUD",
         "info": "TID_POISON_CLOUD_INFO"
       },
-      "icon": "spells/26000009/icon.webp",
       "production_building": "Dark Spell Factory",
       "production_building_level": 1,
       "upgrade_resource": "Dark Elixir",
@@ -24540,7 +24434,6 @@
         "name": "TID_EARTHQUAKE",
         "info": "TID_EARTHQUAKE_INFO"
       },
-      "icon": "spells/26000010/icon.webp",
       "production_building": "Dark Spell Factory",
       "production_building_level": 2,
       "upgrade_resource": "Dark Elixir",
@@ -24644,7 +24537,6 @@
         "name": "TID_SPEEDUP",
         "info": "TID_SPEEDUP_INFO"
       },
-      "icon": "spells/26000011/icon.webp",
       "production_building": "Dark Spell Factory",
       "production_building_level": 3,
       "upgrade_resource": "Dark Elixir",
@@ -24737,7 +24629,6 @@
         "name": "TID_DUPLICATE_SPELL",
         "info": "TID_DUPLICATE_SPELL_INFO"
       },
-      "icon": "spells/26000016/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 5,
       "upgrade_resource": "Elixir",
@@ -24841,7 +24732,6 @@
         "name": "TID_CREATE_SKELETONS_SPELL",
         "info": "TID_CREATE_SKELETONS_SPELL_INFO"
       },
-      "icon": "spells/26000017/icon.webp",
       "production_building": "Dark Spell Factory",
       "production_building_level": 4,
       "upgrade_resource": "Dark Elixir",
@@ -24945,7 +24835,6 @@
         "name": "TID_SPELL_BATS",
         "info": "TID_SPELL_BATS_INFO"
       },
-      "icon": "spells/26000028/icon.webp",
       "production_building": "Dark Spell Factory",
       "production_building_level": 5,
       "upgrade_resource": "Dark Elixir",
@@ -25049,7 +24938,6 @@
         "name": "TID_INVISIBILITY_SPELL",
         "info": "TID_INVISIBILITY_SPELL_INFO"
       },
-      "icon": "spells/26000035/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 6,
       "upgrade_resource": "Elixir",
@@ -25109,7 +24997,6 @@
         "name": "TID_SPELL_RECALL",
         "info": "TID_SPELL_RECALL_INFO"
       },
-      "icon": "spells/26000053/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 7,
       "upgrade_resource": "Elixir",
@@ -25191,7 +25078,6 @@
         "name": "TID_SPELL_OVERGROWTH",
         "info": "TID_SPELL_OVERGROWTH_INFO"
       },
-      "icon": "spells/26000070/icon.webp",
       "production_building": "Dark Spell Factory",
       "production_building_level": 6,
       "upgrade_resource": "Dark Elixir",
@@ -25251,7 +25137,6 @@
         "name": "TID_SPELL_BAG_OF_FROSTMITES",
         "info": "TID_SPELL_BAG_OF_FROSTMITES_INFO"
       },
-      "icon": "spells/26000073/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 1,
       "upgrade_resource": "Elixir",
@@ -25411,7 +25296,6 @@
         "name": "TID_SPELL_REVIVE",
         "info": "TID_SPELL_REVIVE_INFO"
       },
-      "icon": "spells/26000098/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 8,
       "upgrade_resource": "Elixir",
@@ -25482,7 +25366,6 @@
         "name": "TID_ICE_BLOCK_SPELL",
         "info": "TID_ICE_BLOCK_SPELL_INFO"
       },
-      "icon": "spells/26000109/icon.webp",
       "production_building": "Dark Spell Factory",
       "production_building_level": 7,
       "upgrade_resource": "Dark Elixir",
@@ -25553,7 +25436,6 @@
         "name": "TID_TOTEM_SPELL",
         "info": "TID_TOTEM_SPELL_INFO"
       },
-      "icon": "spells/26000120/icon.webp",
       "production_building": "Spell Factory",
       "production_building_level": 9,
       "upgrade_resource": "Elixir",
@@ -25615,7 +25497,6 @@
         "name": "TID_BARBARIAN_KING",
         "info": "TID_HERO_INSTRUCTIONS_BARBARIAN"
       },
-      "icon": "heroes/28000000/icon_hero_barbarianKing_profile.webp",
       "production_building": "Hero Hall",
       "production_building_level": 1,
       "upgrade_resource": "Dark Elixir",
@@ -26687,7 +26568,6 @@
         "name": "TID_ARCHER_QUEEN",
         "info": "TID_HERO_INSTRUCTIONS_QUEEN"
       },
-      "icon": "heroes/28000001/icon_hero_archerQueen_profile.webp",
       "production_building": "Hero Hall",
       "production_building_level": 2,
       "upgrade_resource": "Dark Elixir",
@@ -27759,7 +27639,6 @@
         "name": "TID_GRAND_WARDEN",
         "info": "TID_HERO_INSTRUCTIONS_WARDEN"
       },
-      "icon": "heroes/28000002/icon_hero_grandwarden_profile.webp",
       "production_building": "Hero Hall",
       "production_building_level": 5,
       "upgrade_resource": "Elixir",
@@ -28581,7 +28460,6 @@
         "name": "TID_WARMACHINE",
         "info": "TID_HERO_INSTRUCTIONS_WARMACHINE"
       },
-      "icon": "heroes/28000003/icon_hero_warmachine.webp",
       "production_building": null,
       "production_building_level": null,
       "upgrade_resource": "Builder Elixir",
@@ -28953,7 +28831,6 @@
         "name": "TID_HERO_ROYAL_CHAMPION",
         "info": "TID_HERO_INSTRUCTIONS_ROYAL_CHAMPION"
       },
-      "icon": "heroes/28000004/icon_hero_warriorPrincess_profile.webp",
       "production_building": "Hero Hall",
       "production_building_level": 7,
       "upgrade_resource": "Dark Elixir",
@@ -29525,7 +29402,6 @@
         "name": "TID_HERO_BATTLE_COPTER",
         "info": "TID_HERO_INFO_BATTLE_COPTER"
       },
-      "icon": "heroes/28000005/icon_hero_battlecopter.webp",
       "production_building": null,
       "production_building_level": null,
       "upgrade_resource": "Builder Elixir",
@@ -29757,7 +29633,6 @@
         "name": "TID_MINION_HERO",
         "info": "TID_HERO_INSTRUCTIONS_MINION_HERO"
       },
-      "icon": "heroes/28000006/icon_hero_minionprince_profile.webp",
       "production_building": "Hero Hall",
       "production_building_level": 3,
       "upgrade_resource": "Dark Elixir",
@@ -30729,7 +30604,6 @@
         "name": "TID_DRAGON_DUKE",
         "info": "TID_HERO_INFO_DRAGON_DUKE"
       },
-      "icon": "heroes/28000007/icon_hero_dragonDuke_profile.webp",
       "production_building": "Hero Hall",
       "production_building_level": 9,
       "upgrade_resource": "Dark Elixir",
@@ -31003,7 +30877,6 @@
         "name": "TID_PET_MELEEJUMPER",
         "info": "TID_PET_MELEEJUMPER_INFO"
       },
-      "icon": "pets/73000000/icon_unit_pet_barksy.webp",
       "production_building": "Pet House",
       "production_building_level": 1,
       "upgrade_resource": "Dark Elixir",
@@ -31174,7 +31047,6 @@
         "name": "TID_PET_WALLBUSTER",
         "info": "TID_PET_WALLBUSTER_INFO"
       },
-      "icon": "pets/73000001/icon_unit_pet_bulldozer.webp",
       "production_building": "Pet House",
       "production_building_level": 3,
       "upgrade_resource": "Dark Elixir",
@@ -31345,7 +31217,6 @@
         "name": "TID_PET_RANGEDATTACKER",
         "info": "TID_PET_RANGEDATTACKER_INFO"
       },
-      "icon": "pets/73000002/icon_unit_pet_electrowl.webp",
       "production_building": "Pet House",
       "production_building_level": 2,
       "upgrade_resource": "Dark Elixir",
@@ -31516,7 +31387,6 @@
         "name": "TID_PET_HEALER",
         "info": "TID_PET_HEALER_INFO"
       },
-      "icon": "pets/73000003/icon_unit_pet_unipony.webp",
       "production_building": "Pet House",
       "production_building_level": 4,
       "upgrade_resource": "Dark Elixir",
@@ -31687,7 +31557,6 @@
         "name": "TID_PET_PHOENIX",
         "info": "TID_PET_PHOENIX_INFO"
       },
-      "icon": "pets/73000004/icon_unit_pet_phoenix.webp",
       "production_building": "Pet House",
       "production_building_level": 8,
       "upgrade_resource": "Dark Elixir",
@@ -31808,7 +31677,6 @@
         "name": "TID_PET_POISON_LIZARD",
         "info": "TID_PET_POISON_LIZARD_INFO"
       },
-      "icon": "pets/73000007/icon_unit_pet_poison_lizard.webp",
       "production_building": "Pet House",
       "production_building_level": 7,
       "upgrade_resource": "Dark Elixir",
@@ -31979,7 +31847,6 @@
         "name": "TID_PET_DIGGY",
         "info": "TID_PET_DIGGY_INFO"
       },
-      "icon": "pets/73000008/icon_unit_pet_diggy.webp",
       "production_building": "Pet House",
       "production_building_level": 6,
       "upgrade_resource": "Dark Elixir",
@@ -32100,7 +31967,6 @@
         "name": "TID_PET_FROSTY",
         "info": "TID_PET_FROSTY_INFO"
       },
-      "icon": "pets/73000009/icon_unit_pet_frosty.webp",
       "production_building": "Pet House",
       "production_building_level": 5,
       "upgrade_resource": "Dark Elixir",
@@ -32271,7 +32137,6 @@
         "name": "TID_PET_SPIRIT_FOX",
         "info": "TID_PET_SPIRIT_FOX_INFO"
       },
-      "icon": "pets/73000010/icon_unit_pet_phasefennec.webp",
       "production_building": "Pet House",
       "production_building_level": 9,
       "upgrade_resource": "Dark Elixir",
@@ -32392,7 +32257,6 @@
         "name": "TID_PET_ANGRY_JELLY",
         "info": "TID_PET_ANGRY_JELLY_INFO"
       },
-      "icon": "pets/73000011/icon_unit_pet_rage_jelly.webp",
       "production_building": "Pet House",
       "production_building_level": 10,
       "upgrade_resource": "Dark Elixir",
@@ -32513,7 +32377,6 @@
         "name": "TID_PET_SNEEZY",
         "info": "TID_PET_SNEEZY_INFO"
       },
-      "icon": "pets/73000016/icon_unit_pet_sneezy.webp",
       "production_building": "Pet House",
       "production_building_level": 11,
       "upgrade_resource": "Dark Elixir",
@@ -32634,7 +32497,6 @@
         "name": "TID_PET_RAVEN",
         "info": "TID_PET_RAVEN_INFO"
       },
-      "icon": "pets/73000017/icon_unit_pet_raven.webp",
       "production_building": "Pet House",
       "production_building_level": 12,
       "upgrade_resource": "Dark Elixir",
@@ -32758,7 +32620,6 @@
         "info": "TID_GEAR_INFO_BARBARIAN_CROWN",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000000/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -33189,7 +33050,6 @@
         "info": "TID_GEAR_INFO_IRON_FIST",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000001/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -33620,7 +33480,6 @@
         "info": "TID_GEAR_INFO_ARCHER_CROWN",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000002/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -34051,7 +33910,6 @@
         "info": "TID_GEAR_INFO_ROYAL_CLOAK",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000003/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -34482,7 +34340,6 @@
         "info": "TID_GEAR_INFO_ETERNAL_TOME",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000004/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -34913,7 +34770,6 @@
         "info": "TID_GEAR_INFO_LIFE_GEM",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000005/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -35326,7 +35182,6 @@
         "info": "TID_GEAR_INFO_SEEKING_SHIELD",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000006/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -35739,7 +35594,6 @@
         "info": "TID_GEAR_INFO_PROTECTIVE_CLOAK",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000007/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -36152,7 +36006,6 @@
         "info": "TID_GEAR_INFO_EARTHQUAKE_BOOTS",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000008/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -36565,7 +36418,6 @@
         "info": "TID_GEAR_INFO_HOG_TOTEM",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000009/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 7,
       "rarity": "Common",
@@ -36996,7 +36848,6 @@
         "info": "TID_GEAR_INFO_GIANT_GAUNTLET",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000010/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -37823,7 +37674,6 @@
         "info": "TID_GEAR_INFO_VAMPSTACHE",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000011/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 3,
       "rarity": "Common",
@@ -38236,7 +38086,6 @@
         "info": "TID_GEAR_INFO_HASTE_VIAL",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000012/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 8,
       "rarity": "Common",
@@ -38685,7 +38534,6 @@
         "info": "TID_GEAR_INFO_ROCKET_SPEAR",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000013/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -39323,7 +39171,6 @@
         "info": "TID_GEAR_INFO_FOOTBALL",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000014/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -39961,7 +39808,6 @@
         "info": "TID_GEAR_INFO_FROZEN_ARROW",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000015/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -40599,7 +40445,6 @@
         "info": "TID_GEAR_INFO_PIERCING_ARROW",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000017/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 2,
       "rarity": "Common",
@@ -41012,7 +40857,6 @@
         "info": "TID_GEAR_INFO_HEROIC_TORCH",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000019/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -41677,7 +41521,6 @@
         "info": "TID_GEAR_INFO_HEALER_JAR",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000020/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 5,
       "rarity": "Common",
@@ -42198,7 +42041,6 @@
         "info": "TID_GEAR_INFO_FIRE_IN_A_CAN",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000022/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -42890,7 +42732,6 @@
         "info": "TID_GEAR_INFO_ANGRY_TOME",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000024/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 4,
       "rarity": "Common",
@@ -43303,7 +43144,6 @@
         "info": "TID_GEAR_INFO_SNAKE_ARMOR",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000032/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -43941,7 +43781,6 @@
         "info": "TID_GEAR_INFO_HEALING_TOME",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000034/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 6,
       "rarity": "Common",
@@ -44372,7 +44211,6 @@
         "info": "TID_GEAR_INFO_DARK_CROWN",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000035/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -45334,7 +45172,6 @@
         "info": "TID_GEAR_INFO_CLONING_CLOAK",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000039/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -45999,7 +45836,6 @@
         "info": "TID_GEAR_INFO_ELECTRO_SHIELD",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000040/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -46745,7 +46581,6 @@
         "info": "TID_GEAR_INFO_LAVALOON_PUPPET",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000041/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -47383,7 +47218,6 @@
         "info": "TID_GEAR_INFO_MINION_BODYGUARDS",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000042/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -47814,7 +47648,6 @@
         "info": "TID_GEAR_INFO_DARK_ORB",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000043/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -48263,7 +48096,6 @@
         "info": "TID_GEAR_INFO_STONE_AMULET",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000044/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 3,
       "rarity": "Common",
@@ -48694,7 +48526,6 @@
         "info": "TID_GEAR_INFO_TURBO_START",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000047/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 5,
       "rarity": "Common",
@@ -49143,7 +48974,6 @@
         "info": "TID_GEAR_INFO_ACTION_FIGURE",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000048/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -49889,7 +49719,6 @@
         "info": "TID_GEAR_INFO_METEOR_WAND",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000049/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -50527,7 +50356,6 @@
         "info": "TID_GEAR_INFO_FROST_CHARM",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000050/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -51192,7 +51020,6 @@
         "info": "TID_GEAR_INFO_STICK_HORSE",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000051/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -51857,7 +51684,6 @@
         "info": "TID_GEAR_INFO_FIRE_HEART",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000052/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -52360,7 +52186,6 @@
         "info": "TID_GEAR_INFO_DEADLY_DASH",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000053/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Epic",
@@ -52998,7 +52823,6 @@
         "info": "TID_GEAR_INFO_STUN_BLAST",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000056/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 9,
       "rarity": "Common",
@@ -53411,7 +53235,6 @@
         "info": "TID_GEAR_INFO_FLAME_BREATH",
         "production_building": "TID_SMITHY"
       },
-      "icon": "equipment/90000057/icon.webp",
       "production_building": "Blacksmith",
       "production_building_level": 1,
       "rarity": "Common",
@@ -58101,8 +57924,7 @@
       },
       "type": "home",
       "music": null,
-      "icon": "sceneries/60000000/icon.webp",
-      "thumbnail": "sceneries/60000000/thumbnail.webp"
+      "thumbnail": "sceneries/classic_scenery/thumbnail.webp"
     },
     {
       "_id": 60000001,
@@ -58112,8 +57934,7 @@
       },
       "type": "builderBase",
       "music": null,
-      "icon": "sceneries/60000001/icon.webp",
-      "thumbnail": "sceneries/60000001/thumbnail.webp"
+      "thumbnail": "sceneries/classic_scenery/thumbnail.webp"
     },
     {
       "_id": 60000002,
@@ -58123,8 +57944,7 @@
       },
       "type": "war",
       "music": null,
-      "icon": "sceneries/60000002/icon.webp",
-      "thumbnail": "sceneries/60000002/thumbnail.webp"
+      "thumbnail": "sceneries/classic_scenery/thumbnail.webp"
     },
     {
       "_id": 60000004,
@@ -58134,8 +57954,7 @@
       },
       "type": "home",
       "music": null,
-      "icon": "sceneries/60000004/icon.webp",
-      "thumbnail": "sceneries/60000004/thumbnail.webp"
+      "thumbnail": "sceneries/clashy_constructs_scenery/thumbnail.webp"
     },
     {
       "_id": 60000005,
@@ -58145,8 +57964,7 @@
       },
       "type": "home",
       "music": null,
-      "icon": "sceneries/60000005/icon.webp",
-      "thumbnail": "sceneries/60000005/thumbnail.webp"
+      "thumbnail": "sceneries/pirate_scenery/thumbnail.webp"
     },
     {
       "_id": 60000006,
@@ -58155,9 +57973,8 @@
         "name": "TID_SCENERY_EPIC_WINTER"
       },
       "type": "home",
-      "music": "sceneries/60000006/music.ogg",
-      "icon": "sceneries/60000006/icon.webp",
-      "thumbnail": "sceneries/60000006/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/epic_winter_scenery/thumbnail.webp"
     },
     {
       "_id": 60000007,
@@ -58166,9 +57983,8 @@
         "name": "TID_SCENERY_HOG_MOUNTAIN"
       },
       "type": "home",
-      "music": "sceneries/60000007/music.ogg",
-      "icon": "sceneries/60000007/icon.webp",
-      "thumbnail": "sceneries/60000007/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/hog_mountain_scenery/thumbnail.webp"
     },
     {
       "_id": 60000008,
@@ -58177,9 +57993,8 @@
         "name": "TID_SCENERY_JUNGLE"
       },
       "type": "home",
-      "music": "sceneries/60000008/music.ogg",
-      "icon": "sceneries/60000008/icon.webp",
-      "thumbnail": "sceneries/60000008/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/jungle_scenery/thumbnail.webp"
     },
     {
       "_id": 60000009,
@@ -58188,9 +58003,8 @@
         "name": "TID_SCENERY_EPIC_JUNGLE"
       },
       "type": "home",
-      "music": "sceneries/60000009/music.ogg",
-      "icon": "sceneries/60000009/icon.webp",
-      "thumbnail": "sceneries/60000009/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/epic_jungle_scenery/thumbnail.webp"
     },
     {
       "_id": 60000010,
@@ -58199,9 +58013,8 @@
         "name": "TID_INFERNO_TOWN_SCENERY"
       },
       "type": "war",
-      "music": "sceneries/60000010/music.ogg",
-      "icon": "sceneries/60000010/icon.webp",
-      "thumbnail": "sceneries/60000010/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/inferno_war_base_scenery/thumbnail.webp"
     },
     {
       "_id": 60000011,
@@ -58210,9 +58023,8 @@
         "name": "TID_9TH_CLASHIVERSARY_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000011/music.ogg",
-      "icon": "sceneries/60000011/icon.webp",
-      "thumbnail": "sceneries/60000011/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/9th_clashiversary_scenery/thumbnail.webp"
     },
     {
       "_id": 60000012,
@@ -58221,9 +58033,8 @@
         "name": "TID_PUMPKIN_GRAVEYARD_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000012/music.ogg",
-      "icon": "sceneries/60000012/icon.webp",
-      "thumbnail": "sceneries/60000012/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/pumpkin_graveyard/thumbnail.webp"
     },
     {
       "_id": 60000013,
@@ -58232,9 +58043,8 @@
         "name": "TID_SNOWED_IN_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000013/music.ogg",
-      "icon": "sceneries/60000013/icon.webp",
-      "thumbnail": "sceneries/60000013/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/snow_day/thumbnail.webp"
     },
     {
       "_id": 60000014,
@@ -58243,9 +58053,8 @@
         "name": "TID_TIGER_MOUNTAIN_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000014/music.ogg",
-      "icon": "sceneries/60000014/icon.webp",
-      "thumbnail": "sceneries/60000014/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/tiger_mountain/thumbnail.webp"
     },
     {
       "_id": 60000015,
@@ -58254,9 +58063,8 @@
         "name": "TID_PIXEL_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000015/music.ogg",
-      "icon": "sceneries/60000015/icon.webp",
-      "thumbnail": "sceneries/60000015/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/pixel_scenery/thumbnail.webp"
     },
     {
       "_id": 60000016,
@@ -58266,8 +58074,7 @@
       },
       "type": "home",
       "music": null,
-      "icon": "sceneries/60000016/icon.webp",
-      "thumbnail": "sceneries/60000016/thumbnail.webp"
+      "thumbnail": "sceneries/primal_scenery/thumbnail.webp"
     },
     {
       "_id": 60000017,
@@ -58276,9 +58083,8 @@
         "name": "TID_SHADOW_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000017/music.ogg",
-      "icon": "sceneries/60000017/icon.webp",
-      "thumbnail": "sceneries/60000017/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/shadow_scenery/thumbnail.webp"
     },
     {
       "_id": 60000018,
@@ -58287,9 +58093,8 @@
         "name": "TID_ROYALE_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000018/music.ogg",
-      "icon": "sceneries/60000018/icon.webp",
-      "thumbnail": "sceneries/60000018/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/royale_scenery/thumbnail.webp"
     },
     {
       "_id": 60000019,
@@ -58299,8 +58104,7 @@
       },
       "type": "home",
       "music": null,
-      "icon": "sceneries/60000019/icon.webp",
-      "thumbnail": "sceneries/60000019/thumbnail.webp"
+      "thumbnail": "sceneries/summer_scenery/thumbnail.webp"
     },
     {
       "_id": 60000020,
@@ -58309,9 +58113,8 @@
         "name": "TID_10TH_CLASHIVERSARY_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000020/music.ogg",
-      "icon": "sceneries/60000020/icon.webp",
-      "thumbnail": "sceneries/60000020/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/10th_clashiversary_scenery/thumbnail.webp"
     },
     {
       "_id": 60000021,
@@ -58320,9 +58123,8 @@
         "name": "TID_CLASHFEST_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000021/music.ogg",
-      "icon": "sceneries/60000021/icon.webp",
-      "thumbnail": "sceneries/60000021/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/clash_fest_scenery/thumbnail.webp"
     },
     {
       "_id": 60000022,
@@ -58331,9 +58133,8 @@
         "name": "TID_MAGIC_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000022/music.ogg",
-      "icon": "sceneries/60000022/icon.webp",
-      "thumbnail": "sceneries/60000022/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/magic_scenery/thumbnail.webp"
     },
     {
       "_id": 60000023,
@@ -58342,9 +58143,8 @@
         "name": "TID_EPIC_MAGIC_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000023/music.ogg",
-      "icon": "sceneries/60000023/icon.webp",
-      "thumbnail": "sceneries/60000023/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/epic_magic_scenery/thumbnail.webp"
     },
     {
       "_id": 60000034,
@@ -58353,9 +58153,8 @@
         "name": "TID_SPOOKY2022_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000034/music.ogg",
-      "icon": "sceneries/60000034/icon.webp",
-      "thumbnail": "sceneries/60000034/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/spooky_scenery/thumbnail.webp"
     },
     {
       "_id": 60000035,
@@ -58364,9 +58163,8 @@
         "name": "TID_JOLLY_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000035/music.ogg",
-      "icon": "sceneries/60000035/icon.webp",
-      "thumbnail": "sceneries/60000035/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/jolly_scenery/thumbnail.webp"
     },
     {
       "_id": 60000036,
@@ -58375,9 +58173,8 @@
         "name": "TID_MAGIC_THEATRE_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000036/music.ogg",
-      "icon": "sceneries/60000036/icon.webp",
-      "thumbnail": "sceneries/60000036/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/magic_theatre_scenery/thumbnail.webp"
     },
     {
       "_id": 60000037,
@@ -58386,9 +58183,8 @@
         "name": "TID_PAINTER_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000037/music.ogg",
-      "icon": "sceneries/60000037/icon.webp",
-      "thumbnail": "sceneries/60000037/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/painter_scenery/thumbnail.webp"
     },
     {
       "_id": 60000038,
@@ -58398,8 +58194,7 @@
       },
       "type": "builderBase",
       "music": null,
-      "icon": "sceneries/60000038/icon.webp",
-      "thumbnail": "sceneries/60000038/thumbnail.webp"
+      "thumbnail": "sceneries/classic_scenery/thumbnail.webp"
     },
     {
       "_id": 60000040,
@@ -58408,9 +58203,8 @@
         "name": "TID_DARK_AGES_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000040/music.ogg",
-      "icon": "sceneries/60000040/icon.webp",
-      "thumbnail": "sceneries/60000040/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/dark_ages_scenery/thumbnail.webp"
     },
     {
       "_id": 60000041,
@@ -58419,9 +58213,8 @@
         "name": "TID_SCENERY_BOOKS_OF_CLASH"
       },
       "type": "home",
-      "music": "sceneries/60000041/music.ogg",
-      "icon": "sceneries/60000041/icon.webp",
-      "thumbnail": "sceneries/60000041/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/books_of_clash_scenery/thumbnail.webp"
     },
     {
       "_id": 60000042,
@@ -58430,9 +58223,8 @@
         "name": "TID_CWL23_SCENERY"
       },
       "type": "war",
-      "music": "sceneries/60000042/music.ogg",
-      "icon": "sceneries/60000042/icon.webp",
-      "thumbnail": "sceneries/60000042/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/war_arena_scenery/thumbnail.webp"
     },
     {
       "_id": 60000043,
@@ -58441,9 +58233,8 @@
         "name": "TID_SCENERY_GOBLIN_CAVES"
       },
       "type": "home",
-      "music": "sceneries/60000043/music.ogg",
-      "icon": "sceneries/60000043/icon.webp",
-      "thumbnail": "sceneries/60000043/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/goblin_caves_scenery/thumbnail.webp"
     },
     {
       "_id": 60000046,
@@ -58452,9 +58243,8 @@
         "name": "TID_SCENERY_CHESS"
       },
       "type": "home",
-      "music": "sceneries/60000046/music.ogg",
-      "icon": "sceneries/60000046/icon.webp",
-      "thumbnail": "sceneries/60000046/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/chess_scenery/thumbnail.webp"
     },
     {
       "_id": 60000047,
@@ -58464,8 +58254,7 @@
       },
       "type": "builderBase",
       "music": null,
-      "icon": "sceneries/60000047/icon.webp",
-      "thumbnail": "sceneries/60000047/thumbnail.webp"
+      "thumbnail": "sceneries/crystal_caverns_scenery/thumbnail.webp"
     },
     {
       "_id": 60000048,
@@ -58474,9 +58263,8 @@
         "name": "TID_SCENERY_FUTURE"
       },
       "type": "home",
-      "music": "sceneries/60000048/music.ogg",
-      "icon": "sceneries/60000048/icon.webp",
-      "thumbnail": "sceneries/60000048/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/future_scenery/thumbnail.webp"
     },
     {
       "_id": 60000049,
@@ -58485,9 +58273,8 @@
         "name": "TID_SCENERY_GHOST"
       },
       "type": "home",
-      "music": "sceneries/60000049/music.ogg",
-      "icon": "sceneries/60000049/icon.webp",
-      "thumbnail": "sceneries/60000049/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/ghost_scenery/thumbnail.webp"
     },
     {
       "_id": 60000052,
@@ -58496,9 +58283,8 @@
         "name": "TID_SCENERY_CHAMPION"
       },
       "type": "war",
-      "music": "sceneries/60000052/music.ogg",
-      "icon": "sceneries/60000052/icon.webp",
-      "thumbnail": "sceneries/60000052/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/champion_scenery/thumbnail.webp"
     },
     {
       "_id": 60000053,
@@ -58507,9 +58293,8 @@
         "name": "TID_SCENERY_GINGERBREAD"
       },
       "type": "home",
-      "music": "sceneries/60000053/music.ogg",
-      "icon": "sceneries/60000053/icon.webp",
-      "thumbnail": "sceneries/60000053/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/gingerbread_scenery/thumbnail.webp"
     },
     {
       "_id": 60000054,
@@ -58519,8 +58304,7 @@
       },
       "type": "builderBase",
       "music": null,
-      "icon": "sceneries/60000054/icon.webp",
-      "thumbnail": "sceneries/60000054/thumbnail.webp"
+      "thumbnail": "sceneries/of_the_north_scenery/thumbnail.webp"
     },
     {
       "_id": 60000055,
@@ -58529,9 +58313,8 @@
         "name": "TID_DRAGON_PALACE_SCENERY"
       },
       "type": "home",
-      "music": "sceneries/60000055/music.ogg",
-      "icon": "sceneries/60000055/icon.webp",
-      "thumbnail": "sceneries/60000055/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/dragon_palace_scenery/thumbnail.webp"
     },
     {
       "_id": 60000056,
@@ -58540,9 +58323,8 @@
         "name": "TID_SCENERY_SPACE"
       },
       "type": "home",
-      "music": "sceneries/60000056/music.ogg",
-      "icon": "sceneries/60000056/icon.webp",
-      "thumbnail": "sceneries/60000056/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/space_scenery/thumbnail.webp"
     },
     {
       "_id": 60000057,
@@ -58551,9 +58333,8 @@
         "name": "TID_SCENERY_EGYPT"
       },
       "type": "home",
-      "music": "sceneries/60000057/music.ogg",
-      "icon": "sceneries/60000057/icon.webp",
-      "thumbnail": "sceneries/60000057/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/egypt_scenery/thumbnail.webp"
     },
     {
       "_id": 60000058,
@@ -58562,9 +58343,8 @@
         "name": "TID_SCENERY_CLASHBALL"
       },
       "type": "home",
-      "music": "sceneries/60000058/music.ogg",
-      "icon": "sceneries/60000058/icon.webp",
-      "thumbnail": "sceneries/60000058/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/football_scenery/thumbnail.webp"
     },
     {
       "_id": 60000059,
@@ -58573,9 +58353,8 @@
         "name": "TID_SCENERY_WILDWEST"
       },
       "type": "home",
-      "music": "sceneries/60000059/music.ogg",
-      "icon": "sceneries/60000059/icon.webp",
-      "thumbnail": "sceneries/60000059/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/wild_west_scenery/thumbnail.webp"
     },
     {
       "_id": 60000060,
@@ -58584,9 +58363,8 @@
         "name": "TID_SCENERY_CLASHGAMES"
       },
       "type": "home",
-      "music": "sceneries/60000060/music.ogg",
-      "icon": "sceneries/60000060/icon.webp",
-      "thumbnail": "sceneries/60000060/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/clash_games_stadium/thumbnail.webp"
     },
     {
       "_id": 60000061,
@@ -58595,9 +58373,8 @@
         "name": "TID_SCENERY_ANIME"
       },
       "type": "home",
-      "music": "sceneries/60000061/music.ogg",
-      "icon": "sceneries/60000061/icon.webp",
-      "thumbnail": "sceneries/60000061/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/anime_scenery/thumbnail.webp"
     },
     {
       "_id": 60000062,
@@ -58606,9 +58383,8 @@
         "name": "TID_SCENERY_MASHUP"
       },
       "type": "home",
-      "music": "sceneries/60000062/music.ogg",
-      "icon": "sceneries/60000062/icon.webp",
-      "thumbnail": "sceneries/60000062/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/crossover_scenery/thumbnail.webp"
     },
     {
       "_id": 60000063,
@@ -58617,9 +58393,8 @@
         "name": "TID_SCENERY_TTRPG"
       },
       "type": "home",
-      "music": "sceneries/60000063/music.ogg",
-      "icon": "sceneries/60000063/icon.webp",
-      "thumbnail": "sceneries/60000063/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/clash_of_dragons/thumbnail.webp"
     },
     {
       "_id": 60000064,
@@ -58628,9 +58403,8 @@
         "name": "TID_SCENERY_CLASHOWEEN2024"
       },
       "type": "home",
-      "music": "sceneries/60000064/music.ogg",
-      "icon": "sceneries/60000064/icon.webp",
-      "thumbnail": "sceneries/60000064/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/doomed_scenery/thumbnail.webp"
     },
     {
       "_id": 60000065,
@@ -58639,9 +58413,8 @@
         "name": "TID_SCENERY_TH17"
       },
       "type": "home",
-      "music": "sceneries/60000065/music.ogg",
-      "icon": "sceneries/60000065/icon.webp",
-      "thumbnail": "sceneries/60000065/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/justice_scenery/thumbnail.webp"
     },
     {
       "_id": 60000066,
@@ -58650,9 +58423,8 @@
         "name": "TID_SCENERY_WAR_MACHINE"
       },
       "type": "war",
-      "music": "sceneries/60000066/music.ogg",
-      "icon": "sceneries/60000066/icon.webp",
-      "thumbnail": "sceneries/60000066/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/war_machine_scenery/thumbnail.webp"
     },
     {
       "_id": 60000067,
@@ -58661,9 +58433,8 @@
         "name": "TID_SCENERY_CLASHMAS2024"
       },
       "type": "home",
-      "music": "sceneries/60000067/music.ogg",
-      "icon": "sceneries/60000067/icon.webp",
-      "thumbnail": "sceneries/60000067/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/toy_workshop_scenery/thumbnail.webp"
     },
     {
       "_id": 60000068,
@@ -58672,9 +58443,8 @@
         "name": "TID_SCENERY_FIRE_ICE"
       },
       "type": "home",
-      "music": "sceneries/60000068/music.ogg",
-      "icon": "sceneries/60000068/icon.webp",
-      "thumbnail": "sceneries/60000068/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/fire_and_ice_scenery/thumbnail.webp"
     },
     {
       "_id": 60000069,
@@ -58684,8 +58454,7 @@
       },
       "type": "home",
       "music": null,
-      "icon": "sceneries/60000069/icon.webp",
-      "thumbnail": "sceneries/60000069/thumbnail.webp"
+      "thumbnail": "sceneries/clash-a-rama_scenery/thumbnail.webp"
     },
     {
       "_id": 60000070,
@@ -58694,9 +58463,8 @@
         "name": "TID_SCENERY_LNY2025"
       },
       "type": "home",
-      "music": "sceneries/60000070/music.ogg",
-      "icon": "sceneries/60000070/icon.webp",
-      "thumbnail": "sceneries/60000070/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/year_of_the_snake/thumbnail.webp"
     },
     {
       "_id": 60000071,
@@ -58705,9 +58473,8 @@
         "name": "TID_SCENERY_ACTION_HEROES"
       },
       "type": "home",
-      "music": "sceneries/60000071/music.ogg",
-      "icon": "sceneries/60000071/icon.webp",
-      "thumbnail": "sceneries/60000071/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/military_scenery/thumbnail.webp"
     },
     {
       "_id": 60000072,
@@ -58716,9 +58483,8 @@
         "name": "TID_SCENERY_APRIL25"
       },
       "type": "home",
-      "music": "sceneries/60000072/music.ogg",
-      "icon": "sceneries/60000072/icon.webp",
-      "thumbnail": "sceneries/60000072/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/clashamania_scenery/thumbnail.webp"
     },
     {
       "_id": 60000073,
@@ -58727,9 +58493,8 @@
         "name": "TID_SCENERY_JAPAN25"
       },
       "type": "home",
-      "music": "sceneries/60000073/music.ogg",
-      "icon": "sceneries/60000073/icon.webp",
-      "thumbnail": "sceneries/60000073/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/high_seas_scenery/thumbnail.webp"
     },
     {
       "_id": 60000074,
@@ -58738,9 +58503,8 @@
         "name": "TID_SCENERY_DARK_DAYS"
       },
       "type": "home",
-      "music": "sceneries/60000074/music.ogg",
-      "icon": "sceneries/60000074/icon.webp",
-      "thumbnail": "sceneries/60000074/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/dark_days_scenery/thumbnail.webp"
     },
     {
       "_id": 60000075,
@@ -58749,9 +58513,8 @@
         "name": "TID_SCENERY_CYBERCLASH"
       },
       "type": "home",
-      "music": "sceneries/60000075/music.ogg",
-      "icon": "sceneries/60000075/icon.webp",
-      "thumbnail": "sceneries/60000075/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/cyber_scenery/thumbnail.webp"
     },
     {
       "_id": 60000076,
@@ -58760,9 +58523,8 @@
         "name": "TID_SCENERY_CLASHAVERSARY2025"
       },
       "type": "home",
-      "music": "sceneries/60000076/music.ogg",
-      "icon": "sceneries/60000076/icon.webp",
-      "thumbnail": "sceneries/60000076/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/13th_clash-a-versary_scenery/thumbnail.webp"
     },
     {
       "_id": 60000077,
@@ -58771,9 +58533,8 @@
         "name": "TID_SCENERY_MASHARAMA"
       },
       "type": "home",
-      "music": "sceneries/60000077/music.ogg",
-      "icon": "sceneries/60000077/icon.webp",
-      "thumbnail": "sceneries/60000077/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/mash-a-rama_scenery/thumbnail.webp"
     },
     {
       "_id": 60000078,
@@ -58782,9 +58543,8 @@
         "name": "TID_SCENERY_COSMICCURSE"
       },
       "type": "home",
-      "music": "sceneries/60000078/music.ogg",
-      "icon": "sceneries/60000078/icon.webp",
-      "thumbnail": "sceneries/60000078/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/cosmic_scenery/thumbnail.webp"
     },
     {
       "_id": 60000079,
@@ -58793,9 +58553,8 @@
         "name": "TID_SCENERY_WAR_RUINED"
       },
       "type": "war",
-      "music": "sceneries/60000079/music.ogg",
-      "icon": "sceneries/60000079/icon.webp",
-      "thumbnail": "sceneries/60000079/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/ruined_kingdom_war_scenery/thumbnail.webp"
     },
     {
       "_id": 60000080,
@@ -58804,9 +58563,8 @@
         "name": "TID_SCENERY_WASTELANDS"
       },
       "type": "home",
-      "music": "sceneries/60000080/music.ogg",
-      "icon": "sceneries/60000080/icon.webp",
-      "thumbnail": "sceneries/60000080/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/wasteland_scenery/thumbnail.webp"
     },
     {
       "_id": 60000081,
@@ -58815,9 +58573,8 @@
         "name": "TID_SCENERY_FROSTAGE"
       },
       "type": "home",
-      "music": "sceneries/60000081/music.ogg",
-      "icon": "sceneries/60000081/icon.webp",
-      "thumbnail": "sceneries/60000081/thumbnail.webp"
+      "music": null,
+      "thumbnail": "sceneries/frost_age_scenery/thumbnail.webp"
     },
     {
       "_id": 60000082,
@@ -58827,8 +58584,7 @@
       },
       "type": "home",
       "music": null,
-      "icon": "sceneries/60000082/icon.webp",
-      "thumbnail": "sceneries/60000082/thumbnail.webp"
+      "thumbnail": "sceneries/classic_meteor_scenery/thumbnail.webp"
     },
     {
       "_id": 60000083,
@@ -58838,8 +58594,7 @@
       },
       "type": "home",
       "music": null,
-      "icon": "sceneries/60000083/icon.webp",
-      "thumbnail": "sceneries/60000083/thumbnail.webp"
+      "thumbnail": "sceneries/desert_nights_scenery/thumbnail.webp"
     },
     {
       "_id": 60000084,
@@ -58849,8 +58604,7 @@
       },
       "type": "home",
       "music": null,
-      "icon": "sceneries/60000084/icon.webp",
-      "thumbnail": "sceneries/60000084/thumbnail.webp"
+      "thumbnail": "sceneries/year_of_the_fire_horse/thumbnail.webp"
     }
   ],
   "skins": [
@@ -58860,7 +58614,6 @@
       "TID": {
         "name": "TID_BARBARIAN_KING"
       },
-      "icon": "skins/52000000/icon.webp",
       "tier": "Default",
       "character": "Barbarian King"
     },
@@ -58870,7 +58623,6 @@
       "TID": {
         "name": "TID_BARBARIAN_KING_GLADIATOR"
       },
-      "icon": "skins/52000001/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -58880,7 +58632,6 @@
       "TID": {
         "name": "TID_ARCHER_QUEEN"
       },
-      "icon": "skins/52000002/icon.webp",
       "tier": "Default",
       "character": "Archer Queen"
     },
@@ -58890,7 +58641,6 @@
       "TID": {
         "name": "TID_GRAND_WARDEN"
       },
-      "icon": "skins/52000003/icon.webp",
       "tier": "Default",
       "character": "Grand Warden"
     },
@@ -58900,7 +58650,6 @@
       "TID": {
         "name": "TID_BARBARIAN_KING_PEKKA"
       },
-      "icon": "skins/52000004/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -58910,7 +58659,6 @@
       "TID": {
         "name": "TID_SKELETON_KING"
       },
-      "icon": "skins/52000005/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -58920,7 +58668,6 @@
       "TID": {
         "name": "TID_JOLLY_KING"
       },
-      "icon": "skins/52000006/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -58930,7 +58677,6 @@
       "TID": {
         "name": "TID_PRIMAL_KING"
       },
-      "icon": "skins/52000007/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -58940,7 +58686,6 @@
       "TID": {
         "name": "TID_CLOCKWORK_KING"
       },
-      "icon": "skins/52000008/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -58950,7 +58695,6 @@
       "TID": {
         "name": "TID_PARTY_KING"
       },
-      "icon": "skins/52000009/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -58960,7 +58704,6 @@
       "TID": {
         "name": "TID_CHAMPION_KING"
       },
-      "icon": "skins/52000010/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -58970,7 +58713,6 @@
       "TID": {
         "name": "TID_PIRATE_KING"
       },
-      "icon": "skins/52000011/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -58980,7 +58722,6 @@
       "TID": {
         "name": "TID_ARCHER_QUEEN_GLADIATOR"
       },
-      "icon": "skins/52000012/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -58990,7 +58731,6 @@
       "TID": {
         "name": "TID_VALKYRIE_QUEEN"
       },
-      "icon": "skins/52000013/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59000,7 +58740,6 @@
       "TID": {
         "name": "TID_AUTUMN_QUEEN"
       },
-      "icon": "skins/52000014/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59010,7 +58749,6 @@
       "TID": {
         "name": "TID_ICE_QUEEN"
       },
-      "icon": "skins/52000015/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59020,7 +58758,6 @@
       "TID": {
         "name": "TID_WARRIOR_QUEEN"
       },
-      "icon": "skins/52000016/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59030,7 +58767,6 @@
       "TID": {
         "name": "TID_PRIMAL_QUEEN"
       },
-      "icon": "skins/52000017/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59040,7 +58776,6 @@
       "TID": {
         "name": "TID_CLOCKWORK_QUEEN"
       },
-      "icon": "skins/52000018/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59050,7 +58785,6 @@
       "TID": {
         "name": "TID_PIRATE_QUEEN"
       },
-      "icon": "skins/52000019/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59060,7 +58794,6 @@
       "TID": {
         "name": "TID_PARTY_WARDEN"
       },
-      "icon": "skins/52000020/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59070,7 +58803,6 @@
       "TID": {
         "name": "TID_PRIMAL_WARDEN"
       },
-      "icon": "skins/52000021/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59080,7 +58812,6 @@
       "TID": {
         "name": "TID_CLOCKWORK_WARDEN"
       },
-      "icon": "skins/52000022/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59090,7 +58821,6 @@
       "TID": {
         "name": "TID_GRAND_WARDEN_GLADIATOR"
       },
-      "icon": "skins/52000023/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59100,7 +58830,6 @@
       "TID": {
         "name": "TID_PIRATE_WARDEN"
       },
-      "icon": "skins/52000024/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59110,7 +58839,6 @@
       "TID": {
         "name": "TID_WARDEN_OF_THE_NORTH"
       },
-      "icon": "skins/52000025/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59120,7 +58848,6 @@
       "TID": {
         "name": "TID_JUNGLE_WARDEN"
       },
-      "icon": "skins/52000026/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59130,7 +58857,6 @@
       "TID": {
         "name": "TID_MASTER_WARDEN"
       },
-      "icon": "skins/52000027/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59140,7 +58866,6 @@
       "TID": {
         "name": "TID_HERO_ROYAL_CHAMPION"
       },
-      "icon": "skins/52000028/icon.webp",
       "tier": "Default",
       "character": "Royal Champion"
     },
@@ -59150,7 +58875,6 @@
       "TID": {
         "name": "TID_WINTER_CHAMPION"
       },
-      "icon": "skins/52000029/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -59160,7 +58884,6 @@
       "TID": {
         "name": "TID_ROGUE_CHAMPION"
       },
-      "icon": "skins/52000030/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -59170,7 +58893,6 @@
       "TID": {
         "name": "TID_JUNGLE_CHAMPION"
       },
-      "icon": "skins/52000031/icon.webp",
       "tier": "Basic",
       "character": "Royal Champion"
     },
@@ -59180,7 +58902,6 @@
       "TID": {
         "name": "TID_GLADIATOR_CHAMPION"
       },
-      "icon": "skins/52000032/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -59190,7 +58911,6 @@
       "TID": {
         "name": "TID_SHADOW_CHAMPION"
       },
-      "icon": "skins/52000033/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -59200,7 +58920,6 @@
       "TID": {
         "name": "TID_PRIMAL_CHAMPION"
       },
-      "icon": "skins/52000034/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59210,7 +58929,6 @@
       "TID": {
         "name": "TID_SUMMER_CHAMPION"
       },
-      "icon": "skins/52000035/icon.webp",
       "tier": "Basic",
       "character": "Royal Champion"
     },
@@ -59220,7 +58938,6 @@
       "TID": {
         "name": "TID_PIXEL_CHAMPION"
       },
-      "icon": "skins/52000036/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59230,7 +58947,6 @@
       "TID": {
         "name": "TID_PARTY_CHAMPION"
       },
-      "icon": "skins/52000037/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -59240,7 +58956,6 @@
       "TID": {
         "name": "TID_TH15_CHAMPION"
       },
-      "icon": "skins/52000038/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59250,7 +58965,6 @@
       "TID": {
         "name": "TID_PIRATE_CHAMPION"
       },
-      "icon": "skins/52000039/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -59260,7 +58974,6 @@
       "TID": {
         "name": "TID_JOLLY_CHAMPION"
       },
-      "icon": "skins/52000040/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59270,7 +58983,6 @@
       "TID": {
         "name": "TID_WARRIOR_CHAMPION"
       },
-      "icon": "skins/52000041/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -59280,7 +58992,6 @@
       "TID": {
         "name": "TID_PAINTER_CHAMPION"
       },
-      "icon": "skins/52000042/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59290,7 +59001,6 @@
       "TID": {
         "name": "TID_DARKAGES_CHAMPION"
       },
-      "icon": "skins/52000043/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59300,7 +59010,6 @@
       "TID": {
         "name": "TID_GHOST_CHAMPION"
       },
-      "icon": "skins/52000044/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -59310,7 +59019,6 @@
       "TID": {
         "name": "TID_WARRIOR_KING"
       },
-      "icon": "skins/52000045/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59320,7 +59028,6 @@
       "TID": {
         "name": "TID_ROGUE_KING"
       },
-      "icon": "skins/52000046/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -59330,7 +59037,6 @@
       "TID": {
         "name": "TID_SAVAGE_KING"
       },
-      "icon": "skins/52000047/icon.webp",
       "tier": "Basic",
       "character": "Barbarian King"
     },
@@ -59340,7 +59046,6 @@
       "TID": {
         "name": "TID_JUNGLE_KING"
       },
-      "icon": "skins/52000048/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -59350,7 +59055,6 @@
       "TID": {
         "name": "TID_ANNIVERSARY_KING"
       },
-      "icon": "skins/52000049/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59360,7 +59064,6 @@
       "TID": {
         "name": "TID_GOLEM_KING"
       },
-      "icon": "skins/52000050/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -59370,7 +59073,6 @@
       "TID": {
         "name": "TID_ICE_KING"
       },
-      "icon": "skins/52000051/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59380,7 +59082,6 @@
       "TID": {
         "name": "TID_TIGER_KING"
       },
-      "icon": "skins/52000052/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59390,7 +59091,6 @@
       "TID": {
         "name": "TID_SHADOW_KING"
       },
-      "icon": "skins/52000053/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -59400,7 +59100,6 @@
       "TID": {
         "name": "TID_SUMMER_KING"
       },
-      "icon": "skins/52000054/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59410,7 +59109,6 @@
       "TID": {
         "name": "TID_PIXEL_KING"
       },
-      "icon": "skins/52000055/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59420,7 +59118,6 @@
       "TID": {
         "name": "TID_CLASHFEST_KING"
       },
-      "icon": "skins/52000056/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -59430,7 +59127,6 @@
       "TID": {
         "name": "TID_ROGUE_QUEEN"
       },
-      "icon": "skins/52000057/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59440,7 +59136,6 @@
       "TID": {
         "name": "TID_JUNGLE_QUEEN"
       },
-      "icon": "skins/52000058/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59450,7 +59145,6 @@
       "TID": {
         "name": "TID_PARTY_QUEEN"
       },
-      "icon": "skins/52000059/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59460,7 +59154,6 @@
       "TID": {
         "name": "TID_CHAMPION_QUEEN"
       },
-      "icon": "skins/52000060/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59470,7 +59163,6 @@
       "TID": {
         "name": "TID_SHADOW_QUEEN"
       },
-      "icon": "skins/52000061/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59480,7 +59172,6 @@
       "TID": {
         "name": "TID_MINER_QUEEN"
       },
-      "icon": "skins/52000062/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59490,7 +59181,6 @@
       "TID": {
         "name": "TID_SUMMER_QUEEN"
       },
-      "icon": "skins/52000063/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59500,7 +59190,6 @@
       "TID": {
         "name": "TID_PIXEL_QUEEN"
       },
-      "icon": "skins/52000064/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59510,7 +59199,6 @@
       "TID": {
         "name": "TID_SPOOKY_QUEEN"
       },
-      "icon": "skins/52000065/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59520,7 +59208,6 @@
       "TID": {
         "name": "TID_TH15_QUEEN"
       },
-      "icon": "skins/52000066/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59530,7 +59217,6 @@
       "TID": {
         "name": "TID_JOLLY_QUEEN"
       },
-      "icon": "skins/52000067/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59540,7 +59226,6 @@
       "TID": {
         "name": "TID_DARKAGES_QUEEN"
       },
-      "icon": "skins/52000068/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59550,7 +59235,6 @@
       "TID": {
         "name": "TID_JOLLY_WARDEN"
       },
-      "icon": "skins/52000069/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59560,7 +59244,6 @@
       "TID": {
         "name": "TID_WARRIOR_WARDEN"
       },
-      "icon": "skins/52000070/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59570,7 +59253,6 @@
       "TID": {
         "name": "TID_SHADOW_WARDEN"
       },
-      "icon": "skins/52000071/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -59580,7 +59262,6 @@
       "TID": {
         "name": "TID_SUMMER_WARDEN"
       },
-      "icon": "skins/52000072/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59590,7 +59271,6 @@
       "TID": {
         "name": "TID_PIXEL_WARDEN"
       },
-      "icon": "skins/52000073/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -59600,7 +59280,6 @@
       "TID": {
         "name": "TID_CHAMP_WARDEN"
       },
-      "icon": "skins/52000074/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -59610,7 +59289,6 @@
       "TID": {
         "name": "TID_TH15_WARDEN"
       },
-      "icon": "skins/52000075/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -59620,7 +59298,6 @@
       "TID": {
         "name": "TID_PAINTER_WARDEN"
       },
-      "icon": "skins/52000076/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -59630,7 +59307,6 @@
       "TID": {
         "name": "TID_DARKAGES_WARDEN"
       },
-      "icon": "skins/52000077/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59640,7 +59316,6 @@
       "TID": {
         "name": "TID_GHOST_WARDEN"
       },
-      "icon": "skins/52000078/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -59650,7 +59325,6 @@
       "TID": {
         "name": "TID_GOBLIN_WARDEN"
       },
-      "icon": "skins/52000079/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -59660,7 +59334,6 @@
       "TID": {
         "name": "TID_LEAGUE_WARDEN"
       },
-      "icon": "skins/52000080/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -59670,7 +59343,6 @@
       "TID": {
         "name": "TID_TH15_KING"
       },
-      "icon": "skins/52000087/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59680,7 +59352,6 @@
       "TID": {
         "name": "TID_DARKAGES_KING"
       },
-      "icon": "skins/52000088/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -59690,7 +59361,6 @@
       "TID": {
         "name": "TID_PAINTER_KING"
       },
-      "icon": "skins/52000089/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59700,7 +59370,6 @@
       "TID": {
         "name": "TID_BEAST_KING"
       },
-      "icon": "skins/52000090/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -59710,7 +59379,6 @@
       "TID": {
         "name": "TID_LEAGUE_KING"
       },
-      "icon": "skins/52000091/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59720,7 +59388,6 @@
       "TID": {
         "name": "TID_GOBLIN_KING"
       },
-      "icon": "skins/52000092/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -59730,7 +59397,6 @@
       "TID": {
         "name": "TID_CLASHIVERSARY_KING"
       },
-      "icon": "skins/52000093/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59740,7 +59406,6 @@
       "TID": {
         "name": "TID_GINGERBREAD_KING"
       },
-      "icon": "skins/52000094/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59750,7 +59415,6 @@
       "TID": {
         "name": "TID_GHOST_KING"
       },
-      "icon": "skins/52000095/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59760,7 +59424,6 @@
       "TID": {
         "name": "TID_CHESS_KING"
       },
-      "icon": "skins/52000096/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -59770,7 +59433,6 @@
       "TID": {
         "name": "TID_LUNAR_QUEEN"
       },
-      "icon": "skins/52000097/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59780,7 +59442,6 @@
       "TID": {
         "name": "TID_PAINTER_QUEEN"
       },
-      "icon": "skins/52000098/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59790,7 +59451,6 @@
       "TID": {
         "name": "TID_VALENTINES_QUEEN"
       },
-      "icon": "skins/52000099/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59800,7 +59460,6 @@
       "TID": {
         "name": "TID_GOBLIN_QUEEN"
       },
-      "icon": "skins/52000100/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59810,7 +59469,6 @@
       "TID": {
         "name": "TID_GHOST_QUEEN"
       },
-      "icon": "skins/52000101/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59820,7 +59478,6 @@
       "TID": {
         "name": "TID_LEAGUE_QUEEN"
       },
-      "icon": "skins/52000102/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59830,7 +59487,6 @@
       "TID": {
         "name": "TID_CLASHIVERSARY_QUEEN"
       },
-      "icon": "skins/52000103/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59840,7 +59496,6 @@
       "TID": {
         "name": "TID_GINGERBREAD_QUEEN"
       },
-      "icon": "skins/52000104/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59850,7 +59505,6 @@
       "TID": {
         "name": "TID_CHESS_QUEEN"
       },
-      "icon": "skins/52000105/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -59860,7 +59514,6 @@
       "TID": {
         "name": "TID_WINTER_QUEEN"
       },
-      "icon": "skins/52000106/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -59870,7 +59523,6 @@
       "TID": {
         "name": "TID_SKIN_LEAGUE_CHAMPION"
       },
-      "icon": "skins/52000112/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59880,7 +59532,6 @@
       "TID": {
         "name": "TID_GOBLIN_CHAMPION"
       },
-      "icon": "skins/52000113/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59890,7 +59541,6 @@
       "TID": {
         "name": "TID_CLASHIVERSARY_CHAMPION"
       },
-      "icon": "skins/52000114/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59900,7 +59550,6 @@
       "TID": {
         "name": "TID_GINGERBREAD_CHAMPION"
       },
-      "icon": "skins/52000115/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59910,7 +59559,6 @@
       "TID": {
         "name": "TID_CHAMPION_CHAMPION"
       },
-      "icon": "skins/52000116/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -59920,7 +59568,6 @@
       "TID": {
         "name": "TID_LNY24_CHAMPION"
       },
-      "icon": "skins/52000117/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -59930,7 +59577,6 @@
       "TID": {
         "name": "TID_SPACE_CHAMPION"
       },
-      "icon": "skins/52000118/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59940,7 +59586,6 @@
       "TID": {
         "name": "TID_EGYPTIAN_CHAMPION"
       },
-      "icon": "skins/52000119/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59950,7 +59595,6 @@
       "TID": {
         "name": "TID_FOOTBALL_CHAMPION"
       },
-      "icon": "skins/52000120/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -59960,7 +59604,6 @@
       "TID": {
         "name": "TID_WILDWEST_CHAMPION"
       },
-      "icon": "skins/52000121/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -59970,7 +59613,6 @@
       "TID": {
         "name": "TID_CLASHIVERSARY_WARDEN"
       },
-      "icon": "skins/52000122/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59980,7 +59622,6 @@
       "TID": {
         "name": "TID_GINGERBREAD_WARDEN"
       },
-      "icon": "skins/52000123/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -59990,7 +59631,6 @@
       "TID": {
         "name": "TID_LNY24_WARDEN"
       },
-      "icon": "skins/52000124/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60000,7 +59640,6 @@
       "TID": {
         "name": "TID_SPACE_WARDEN"
       },
-      "icon": "skins/52000125/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60010,7 +59649,6 @@
       "TID": {
         "name": "TID_EGYPTIAN_WARDEN"
       },
-      "icon": "skins/52000126/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -60020,7 +59658,6 @@
       "TID": {
         "name": "TID_FOOTBALL_WARDEN"
       },
-      "icon": "skins/52000127/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60030,7 +59667,6 @@
       "TID": {
         "name": "TID_WILDWEST_WARDEN"
       },
-      "icon": "skins/52000128/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -60040,7 +59676,6 @@
       "TID": {
         "name": "TID_CLASH_GAMES_WARDEN"
       },
-      "icon": "skins/52000129/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60050,7 +59685,6 @@
       "TID": {
         "name": "TID_ANIME_WARDEN"
       },
-      "icon": "skins/52000130/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60060,7 +59694,6 @@
       "TID": {
         "name": "TID_TTRPG_WARDEN"
       },
-      "icon": "skins/52000131/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60070,7 +59703,6 @@
       "TID": {
         "name": "TID_LUNAR_KING"
       },
-      "icon": "skins/52000132/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60080,7 +59712,6 @@
       "TID": {
         "name": "TID_WINTER_KING"
       },
-      "icon": "skins/52000133/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -60090,7 +59721,6 @@
       "TID": {
         "name": "TID_EGYPT_KING"
       },
-      "icon": "skins/52000134/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60100,7 +59730,6 @@
       "TID": {
         "name": "TID_SPACE_KING"
       },
-      "icon": "skins/52000135/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60110,7 +59739,6 @@
       "TID": {
         "name": "TID_SQUAD_KING"
       },
-      "icon": "skins/52000136/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60120,7 +59748,6 @@
       "TID": {
         "name": "TID_HAALAND_KING"
       },
-      "icon": "skins/52000137/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60130,7 +59757,6 @@
       "TID": {
         "name": "TID_HAALANDCLASH_KING"
       },
-      "icon": "skins/52000138/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60140,7 +59766,6 @@
       "TID": {
         "name": "TID_WILDWEST_KING"
       },
-      "icon": "skins/52000139/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60150,7 +59775,6 @@
       "TID": {
         "name": "TID_CLASH_GAMES_KING"
       },
-      "icon": "skins/52000141/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -60160,7 +59784,6 @@
       "TID": {
         "name": "TID_LNY24_QUEEN"
       },
-      "icon": "skins/52000142/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60170,7 +59793,6 @@
       "TID": {
         "name": "TID_SPACE_QUEEN"
       },
-      "icon": "skins/52000143/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -60180,7 +59802,6 @@
       "TID": {
         "name": "TID_EGYPTIAN_QUEEN"
       },
-      "icon": "skins/52000144/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60190,7 +59811,6 @@
       "TID": {
         "name": "TID_FOOTBALL_QUEEN"
       },
-      "icon": "skins/52000145/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60200,7 +59820,6 @@
       "TID": {
         "name": "TID_WILDWEST_QUEEN"
       },
-      "icon": "skins/52000146/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60210,7 +59829,6 @@
       "TID": {
         "name": "TID_CLASH_GAMES_QUEEN"
       },
-      "icon": "skins/52000147/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60220,7 +59838,6 @@
       "TID": {
         "name": "TID_ANIME_QUEEN"
       },
-      "icon": "skins/52000148/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60230,7 +59847,6 @@
       "TID": {
         "name": "TID_TTRPG_QUEEN"
       },
-      "icon": "skins/52000149/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60240,7 +59856,6 @@
       "TID": {
         "name": "TID_CLASHOWEEN_QUEEN"
       },
-      "icon": "skins/52000150/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -60250,7 +59865,6 @@
       "TID": {
         "name": "TID_TH17_QUEEN"
       },
-      "icon": "skins/52000151/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60260,7 +59874,6 @@
       "TID": {
         "name": "TID_WARMACHINE"
       },
-      "icon": "skins/52000152/icon.webp",
       "tier": "Default",
       "character": "BB Battle Machine"
     },
@@ -60270,7 +59883,6 @@
       "TID": {
         "name": "TID_ARMOREDMACHINE"
       },
-      "icon": "skins/52000153/icon.webp",
       "tier": "Basic",
       "character": "BB Battle Machine"
     },
@@ -60280,7 +59892,6 @@
       "TID": {
         "name": "TID_GOBLINMACHINE"
       },
-      "icon": "skins/52000154/icon.webp",
       "tier": "Basic",
       "character": "BB Battle Machine"
     },
@@ -60290,7 +59901,6 @@
       "TID": {
         "name": "TID_STEAMPUNK_BATTLE_MACHINE"
       },
-      "icon": "skins/52000155/icon.webp",
       "tier": "Basic",
       "character": "BB Battle Machine"
     },
@@ -60300,7 +59910,6 @@
       "TID": {
         "name": "TID_OFTHENORTH_BATTLE_MACHINE"
       },
-      "icon": "skins/52000156/icon.webp",
       "tier": "Basic",
       "character": "BB Battle Machine"
     },
@@ -60310,7 +59919,6 @@
       "TID": {
         "name": "TID_HERO_BATTLE_COPTER"
       },
-      "icon": "skins/52000163/icon.webp",
       "tier": "Default",
       "character": "BB Battle Copter"
     },
@@ -60320,7 +59928,6 @@
       "TID": {
         "name": "TID_STEAMPUNK_BATTLE_COPTER"
       },
-      "icon": "skins/52000164/icon.webp",
       "tier": "Basic",
       "character": "BB Battle Copter"
     },
@@ -60330,7 +59937,6 @@
       "TID": {
         "name": "TID_HOTROD_BATTLE_COPTER"
       },
-      "icon": "skins/52000165/icon.webp",
       "tier": "Legendary",
       "character": "BB Battle Copter"
     },
@@ -60340,7 +59946,6 @@
       "TID": {
         "name": "TID_PIRATE_BATTLE_COPTER"
       },
-      "icon": "skins/52000166/icon.webp",
       "tier": "Basic",
       "character": "BB Battle Copter"
     },
@@ -60350,7 +59955,6 @@
       "TID": {
         "name": "TID_ANIME_CHAMPION"
       },
-      "icon": "skins/52000174/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -60360,7 +59964,6 @@
       "TID": {
         "name": "TID_TTRPG_CHAMPION"
       },
-      "icon": "skins/52000175/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -60370,7 +59973,6 @@
       "TID": {
         "name": "TID_ICE_CHAMPION"
       },
-      "icon": "skins/52000176/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -60380,7 +59982,6 @@
       "TID": {
         "name": "TID_LNY25_CHAMPION"
       },
-      "icon": "skins/52000177/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -60390,7 +59991,6 @@
       "TID": {
         "name": "TID_MILITARY_CHAMPION"
       },
-      "icon": "skins/52000178/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -60400,7 +60000,6 @@
       "TID": {
         "name": "TID_APRIL25_CHAMPION"
       },
-      "icon": "skins/52000179/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -60410,7 +60009,6 @@
       "TID": {
         "name": "TID_JAPAN_CHAMPION"
       },
-      "icon": "skins/52000180/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -60420,7 +60018,6 @@
       "TID": {
         "name": "TID_DARKDAYS_CHAMPION"
       },
-      "icon": "skins/52000181/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -60430,7 +60027,6 @@
       "TID": {
         "name": "TID_CYBERPUNK_CHAMPION"
       },
-      "icon": "skins/52000182/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -60440,7 +60036,6 @@
       "TID": {
         "name": "TID_CLASHARAMA_CHAMPION"
       },
-      "icon": "skins/52000183/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -60450,7 +60045,6 @@
       "TID": {
         "name": "TID_CLASHARAMA_2_CHAMPION"
       },
-      "icon": "skins/52000184/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -60460,7 +60054,6 @@
       "TID": {
         "name": "TID_COSMICCURSE_CHAMPION"
       },
-      "icon": "skins/52000185/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -60470,7 +60063,6 @@
       "TID": {
         "name": "TID_WASTELANDS_CHAMPION"
       },
-      "icon": "skins/52000186/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -60480,7 +60072,6 @@
       "TID": {
         "name": "TID_FROSTAGE_CHAMPION"
       },
-      "icon": "skins/52000187/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -60490,7 +60081,6 @@
       "TID": {
         "name": "TID_ANIME_KING"
       },
-      "icon": "skins/52000191/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60500,7 +60090,6 @@
       "TID": {
         "name": "TID_TTRPG_KING"
       },
-      "icon": "skins/52000192/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60510,7 +60099,6 @@
       "TID": {
         "name": "TID_CLASHOWEEN_KING"
       },
-      "icon": "skins/52000193/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60520,7 +60108,6 @@
       "TID": {
         "name": "TID_TH17_KING"
       },
-      "icon": "skins/52000194/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -60530,7 +60117,6 @@
       "TID": {
         "name": "TID_CLASHMAS_KING"
       },
-      "icon": "skins/52000195/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60540,7 +60126,6 @@
       "TID": {
         "name": "TID_FIRE_KING"
       },
-      "icon": "skins/52000196/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60550,7 +60135,6 @@
       "TID": {
         "name": "TID_LNY25_KING"
       },
-      "icon": "skins/52000197/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60560,7 +60144,6 @@
       "TID": {
         "name": "TID_MILITARY_KING"
       },
-      "icon": "skins/52000198/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -60570,7 +60153,6 @@
       "TID": {
         "name": "TID_APRIL25_KING"
       },
-      "icon": "skins/52000199/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60580,7 +60162,6 @@
       "TID": {
         "name": "TID_JAPAN_KING"
       },
-      "icon": "skins/52000200/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60590,7 +60171,6 @@
       "TID": {
         "name": "TID_DARKDAYS_KING"
       },
-      "icon": "skins/52000201/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60600,7 +60180,6 @@
       "TID": {
         "name": "TID_CYBERPUNK_KING"
       },
-      "icon": "skins/52000202/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60610,7 +60189,6 @@
       "TID": {
         "name": "TID_CLASHARAMA_KING"
       },
-      "icon": "skins/52000203/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60620,7 +60198,6 @@
       "TID": {
         "name": "TID_CLASHARAMA_2_KING"
       },
-      "icon": "skins/52000204/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60630,7 +60207,6 @@
       "TID": {
         "name": "TID_COSMICCURSE_KING"
       },
-      "icon": "skins/52000205/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60640,7 +60216,6 @@
       "TID": {
         "name": "TID_WASTELANDS_KING"
       },
-      "icon": "skins/52000206/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -60650,7 +60225,6 @@
       "TID": {
         "name": "TID_FROSTAGE_KING"
       },
-      "icon": "skins/52000207/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60660,7 +60234,6 @@
       "TID": {
         "name": "TID_DESERTNIGHTS_KING"
       },
-      "icon": "skins/52000208/icon.webp",
       "tier": "Gold",
       "character": "Barbarian King"
     },
@@ -60670,7 +60243,6 @@
       "TID": {
         "name": "TID_LNY26_KING"
       },
-      "icon": "skins/52000209/icon.webp",
       "tier": "Legendary",
       "character": "Barbarian King"
     },
@@ -60680,7 +60252,6 @@
       "TID": {
         "name": "TID_CLASHMAS_QUEEN"
       },
-      "icon": "skins/52000210/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -60690,7 +60261,6 @@
       "TID": {
         "name": "TID_FIRE_QUEEN"
       },
-      "icon": "skins/52000211/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60700,7 +60270,6 @@
       "TID": {
         "name": "TID_LNY25_QUEEN"
       },
-      "icon": "skins/52000212/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60710,7 +60279,6 @@
       "TID": {
         "name": "TID_MILITARY_QUEEN"
       },
-      "icon": "skins/52000213/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60720,7 +60288,6 @@
       "TID": {
         "name": "TID_APRIL25_QUEEN"
       },
-      "icon": "skins/52000214/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60730,7 +60297,6 @@
       "TID": {
         "name": "TID_JAPAN_QUEEN"
       },
-      "icon": "skins/52000215/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -60740,7 +60306,6 @@
       "TID": {
         "name": "TID_DARKDAYS_QUEEN"
       },
-      "icon": "skins/52000216/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60750,7 +60315,6 @@
       "TID": {
         "name": "TID_CYBERPUNK_QUEEN"
       },
-      "icon": "skins/52000217/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60760,7 +60324,6 @@
       "TID": {
         "name": "TID_CLASHARAMA_QUEEN"
       },
-      "icon": "skins/52000218/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60770,7 +60333,6 @@
       "TID": {
         "name": "TID_CLASHARAMA_2_QUEEN"
       },
-      "icon": "skins/52000219/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60780,7 +60342,6 @@
       "TID": {
         "name": "TID_COSMICCURSE_QUEEN"
       },
-      "icon": "skins/52000220/icon.webp",
       "tier": "Gold",
       "character": "Archer Queen"
     },
@@ -60790,7 +60351,6 @@
       "TID": {
         "name": "TID_WASTELANDS_QUEEN"
       },
-      "icon": "skins/52000221/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60800,7 +60360,6 @@
       "TID": {
         "name": "TID_FROSTAGE_QUEEN"
       },
-      "icon": "skins/52000222/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60810,7 +60369,6 @@
       "TID": {
         "name": "TID_DESERTNIGHTS_QUEEN"
       },
-      "icon": "skins/52000223/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60820,7 +60378,6 @@
       "TID": {
         "name": "TID_LNY26_QUEEN"
       },
-      "icon": "skins/52000224/icon.webp",
       "tier": "Legendary",
       "character": "Archer Queen"
     },
@@ -60830,7 +60387,6 @@
       "TID": {
         "name": "TID_CLASHOWEEN_WARDEN"
       },
-      "icon": "skins/52000230/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60840,7 +60396,6 @@
       "TID": {
         "name": "TID_TH17_WARDEN"
       },
-      "icon": "skins/52000231/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60850,7 +60405,6 @@
       "TID": {
         "name": "TID_ICE_WARDEN"
       },
-      "icon": "skins/52000232/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60860,7 +60414,6 @@
       "TID": {
         "name": "TID_LNY25_WARDEN"
       },
-      "icon": "skins/52000233/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -60870,7 +60423,6 @@
       "TID": {
         "name": "TID_MILITARY_WARDEN"
       },
-      "icon": "skins/52000234/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60880,7 +60432,6 @@
       "TID": {
         "name": "TID_APRIL25_WARDEN"
       },
-      "icon": "skins/52000235/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60890,7 +60441,6 @@
       "TID": {
         "name": "TID_JAPAN_WARDEN"
       },
-      "icon": "skins/52000236/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60900,7 +60450,6 @@
       "TID": {
         "name": "TID_DARKDAYS_WARDEN"
       },
-      "icon": "skins/52000237/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60910,7 +60459,6 @@
       "TID": {
         "name": "TID_CYBERPUNK_WARDEN"
       },
-      "icon": "skins/52000238/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -60920,7 +60468,6 @@
       "TID": {
         "name": "TID_CLASHARAMA_WARDEN"
       },
-      "icon": "skins/52000239/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60930,7 +60477,6 @@
       "TID": {
         "name": "TID_CLASHARAMA_2_WARDEN"
       },
-      "icon": "skins/52000240/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60940,7 +60486,6 @@
       "TID": {
         "name": "TID_COSMICCURSE_WARDEN"
       },
-      "icon": "skins/52000241/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60950,7 +60495,6 @@
       "TID": {
         "name": "TID_WASTELANDS_WARDEN"
       },
-      "icon": "skins/52000242/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60960,7 +60504,6 @@
       "TID": {
         "name": "TID_FROSTAGE_WARDEN"
       },
-      "icon": "skins/52000243/icon.webp",
       "tier": "Gold",
       "character": "Grand Warden"
     },
@@ -60970,7 +60513,6 @@
       "TID": {
         "name": "TID_DESERTNIGHTS_WARDEN"
       },
-      "icon": "skins/52000244/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60980,7 +60522,6 @@
       "TID": {
         "name": "TID_LNY26_WARDEN"
       },
-      "icon": "skins/52000245/icon.webp",
       "tier": "Legendary",
       "character": "Grand Warden"
     },
@@ -60990,7 +60531,6 @@
       "TID": {
         "name": "TID_MINION_HERO"
       },
-      "icon": "skins/52000250/icon.webp",
       "tier": "Default",
       "character": "Minion Prince"
     },
@@ -61000,7 +60540,6 @@
       "TID": {
         "name": "TID_LNY25_PRINCE"
       },
-      "icon": "skins/52000251/icon.webp",
       "tier": "Legendary",
       "character": "Minion Prince"
     },
@@ -61010,7 +60549,6 @@
       "TID": {
         "name": "TID_MILITARY_PRINCE"
       },
-      "icon": "skins/52000252/icon.webp",
       "tier": "Legendary",
       "character": "Minion Prince"
     },
@@ -61020,7 +60558,6 @@
       "TID": {
         "name": "TID_APRIL25_PRINCE"
       },
-      "icon": "skins/52000253/icon.webp",
       "tier": "Gold",
       "character": "Minion Prince"
     },
@@ -61030,7 +60567,6 @@
       "TID": {
         "name": "TID_JAPAN_MINION_PRINCE"
       },
-      "icon": "skins/52000254/icon.webp",
       "tier": "Legendary",
       "character": "Minion Prince"
     },
@@ -61040,7 +60576,6 @@
       "TID": {
         "name": "TID_DARKDAYS_MINION_PRINCE"
       },
-      "icon": "skins/52000255/icon.webp",
       "tier": "Legendary",
       "character": "Minion Prince"
     },
@@ -61050,7 +60585,6 @@
       "TID": {
         "name": "TID_CYBERPUNK_MINION_PRINCE"
       },
-      "icon": "skins/52000256/icon.webp",
       "tier": "Legendary",
       "character": "Minion Prince"
     },
@@ -61060,7 +60594,6 @@
       "TID": {
         "name": "TID_CLASHARAMA_MINION_PRINCE"
       },
-      "icon": "skins/52000257/icon.webp",
       "tier": "Legendary",
       "character": "Minion Prince"
     },
@@ -61070,7 +60603,6 @@
       "TID": {
         "name": "TID_CLASHARAMA_2_MINION_PRINCE"
       },
-      "icon": "skins/52000258/icon.webp",
       "tier": "Gold",
       "character": "Minion Prince"
     },
@@ -61080,7 +60612,6 @@
       "TID": {
         "name": "TID_COSMICCURSE_MINION_PRINCE"
       },
-      "icon": "skins/52000259/icon.webp",
       "tier": "Legendary",
       "character": "Minion Prince"
     },
@@ -61090,7 +60621,6 @@
       "TID": {
         "name": "TID_WASTELANDS_MINION_PRINCE"
       },
-      "icon": "skins/52000260/icon.webp",
       "tier": "Legendary",
       "character": "Minion Prince"
     },
@@ -61100,7 +60630,6 @@
       "TID": {
         "name": "TID_FROSTAGE_MINION_PRINCE"
       },
-      "icon": "skins/52000261/icon.webp",
       "tier": "Legendary",
       "character": "Minion Prince"
     },
@@ -61110,7 +60639,6 @@
       "TID": {
         "name": "TID_DESERTNIGHTS_MINION_PRINCE"
       },
-      "icon": "skins/52000262/icon.webp",
       "tier": "Legendary",
       "character": "Minion Prince"
     },
@@ -61120,7 +60648,6 @@
       "TID": {
         "name": "TID_LNY26_MINION_PRINCE"
       },
-      "icon": "skins/52000263/icon.webp",
       "tier": "Legendary",
       "character": "Minion Prince"
     },
@@ -61130,7 +60657,6 @@
       "TID": {
         "name": "TID_DESERTNIGHTS_CHAMPION"
       },
-      "icon": "skins/52000295/icon.webp",
       "tier": "Legendary",
       "character": "Royal Champion"
     },
@@ -61140,7 +60666,6 @@
       "TID": {
         "name": "TID_LNY26_CHAMPION"
       },
-      "icon": "skins/52000296/icon.webp",
       "tier": "Gold",
       "character": "Royal Champion"
     },
@@ -61150,7 +60675,6 @@
       "TID": {
         "name": "TID_DRAGON_DUKE"
       },
-      "icon": "skins/52000342/icon.webp",
       "tier": "Default",
       "character": "Dragon Duke"
     }
@@ -61160,1057 +60684,906 @@
       "_id": 82000000,
       "name": "Fence Ground 1",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000000/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000001,
       "name": "Terrace Ground 1",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000001/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000002,
       "name": "Stones Ground 1",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000002/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000003,
       "name": "Stones Ground 2",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000003/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000004,
       "name": "Gold Ground 1",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000004/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000005,
       "name": "Winter Ground 1",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000005/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000006,
       "name": "Clashmas Ground 1",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000006/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000007,
       "name": "Grass Ground 1",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000007/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000008,
       "name": "Classic Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000008/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000009,
       "name": "Classic Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000009/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000010,
       "name": "Classic Roof 3",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000010/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000011,
       "name": "Classic Roof 4",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000011/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000013,
       "name": "Thatch Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000013/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000014,
       "name": "Thatch Roof 4",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000014/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000015,
       "name": "Square Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000015/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000016,
       "name": "Square Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000016/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000017,
       "name": "Square Roof 3",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000017/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000019,
       "name": "Tent Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000019/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000020,
       "name": "Tent Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000020/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000021,
       "name": "Tent Roof 3",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000021/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000022,
       "name": "Tent Roof 4",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000022/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000023,
       "name": "Cross Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000023/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000024,
       "name": "Cross Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000024/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000025,
       "name": "Cross Roof 3",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000025/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000026,
       "name": "Castle Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000026/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000027,
       "name": "Castle Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000027/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000028,
       "name": "Castle Roof 3",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000028/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000029,
       "name": "Castle Roof 4",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000029/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000030,
       "name": "Castle Roof 5",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000030/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000031,
       "name": "Gold Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000031/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000032,
       "name": "Gold Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000032/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000033,
       "name": "Gold Roof 3",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000033/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000034,
       "name": "Gold Roof 4",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000034/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000035,
       "name": "Gold Roof 5",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000035/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000036,
       "name": "Gold Roof 6",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000036/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000037,
       "name": "Gold Roof 7",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000037/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000038,
       "name": "Stone Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000038/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000039,
       "name": "Grass Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000039/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000040,
       "name": "Grass Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000040/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000041,
       "name": "Windmill Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000041/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000042,
       "name": "Windmill Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000042/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000043,
       "name": "Windmill Roof 3",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000043/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000044,
       "name": "Windmill Roof 4",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000044/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000045,
       "name": "Windmill Roof 5",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000045/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000046,
       "name": "Clashmas Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000046/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000047,
       "name": "Winter Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000047/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000048,
       "name": "Classic Foot 1",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000048/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000049,
       "name": "Stone Foot 1",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000049/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000050,
       "name": "Stone Foot 2",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000050/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000051,
       "name": "Stilt Foot 1",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000051/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000052,
       "name": "Hole Foot 1",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000052/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000053,
       "name": "Thatch Foot 1",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000053/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000054,
       "name": "Grass Foot 1",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000054/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000055,
       "name": "Clashmas Foot 1",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000055/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000056,
       "name": "Winter Foot 1",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000056/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000057,
       "name": "Winter Foot 2",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000057/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000058,
       "name": "Mundane Deco 1",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000058/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000059,
       "name": "Mundane Deco 2",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000059/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000060,
       "name": "Mundane Deco 3",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000060/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000061,
       "name": "Mundane Deco 4",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000061/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000062,
       "name": "Weapon Deco 1",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000062/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000063,
       "name": "Weapon Deco 2",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000063/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000064,
       "name": "Food Deco 1",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000064/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000065,
       "name": "Tree Deco 1",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000065/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000066,
       "name": "Gold Deco 2",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000066/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000067,
       "name": "Clashmas Deco 1",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000067/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000068,
       "name": "Clashmas Deco 2",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000068/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000070,
       "name": "Winter Deco 1",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000070/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000071,
       "name": "Flamingo Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000071/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000072,
       "name": "Ground  Emptyhouse 1",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000072/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000073,
       "name": "Ground  Emptyhouse 2",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000073/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000074,
       "name": "Roof  Emptyhouse 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000074/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000075,
       "name": "Roof  Emptyhouse 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000075/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000076,
       "name": "Roof  Emptyhouse 3",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000076/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000077,
       "name": "Deco  Emptyhouse 1",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000077/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000078,
       "name": "Fancy Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000078/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000079,
       "name": "Fancy Foot 1",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000079/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000080,
       "name": "Gold Deco 1",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000080/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000081,
       "name": "Fancy Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000081/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000082,
       "name": "Fancy Roof 3",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000082/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000083,
       "name": "Stone Deco 1",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000083/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000084,
       "name": "Fence Ground 2",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000084/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000085,
       "name": "Winter Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000085/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000086,
       "name": "Gold Ground 2",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000086/icon.webp",
       "pass_reward": false
     },
     {
       "_id": 82000087,
       "name": "Goblin Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000087/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000088,
       "name": "Goblin Foot",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000088/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000089,
       "name": "Goblin Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000089/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000090,
       "name": "Goblin Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000090/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000091,
       "name": "Chess Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000091/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000092,
       "name": "Chess Foot",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000092/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000093,
       "name": "Chess Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000093/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000094,
       "name": "Chess Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000094/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000095,
       "name": "Laundry Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000095/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000096,
       "name": "Crystals Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000096/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000097,
       "name": "Cauldron Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000097/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000098,
       "name": "Chess Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000098/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000099,
       "name": "Chess Foot 2",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000099/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000100,
       "name": "Greenhouse Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000100/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000101,
       "name": "Greenhouse Foot 1",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000101/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000102,
       "name": "Greenhouse Ground 1",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000102/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000103,
       "name": "Greenhouse Deco 1",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000103/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000104,
       "name": "Summer Deco 1",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000104/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000105,
       "name": "Summer Roof 1",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000105/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000106,
       "name": "Summer Foot 1",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000106/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000107,
       "name": "Summer Deco 2",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000107/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000108,
       "name": "Halloween23 Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000108/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000109,
       "name": "Halloween23 Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000109/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000110,
       "name": "Clashmas23 Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000110/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000111,
       "name": "Clashmas23 Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000111/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000112,
       "name": "Clashmas23 Foot",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000112/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000113,
       "name": "Clashmas23 Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000113/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000114,
       "name": "Lny24 Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000114/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000115,
       "name": "Lny24 Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000115/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000116,
       "name": "Lny24 Foot",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000116/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000117,
       "name": "Lny24 Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000117/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000118,
       "name": "Wildwest Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000118/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000119,
       "name": "Wildwest Foot",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000119/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000120,
       "name": "Football Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000120/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000121,
       "name": "Football Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000121/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000122,
       "name": "Football Foot",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000122/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000123,
       "name": "Football Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000123/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000124,
       "name": "Clashgames Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000124/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000125,
       "name": "Clashgames Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000125/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000126,
       "name": "Anime Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000126/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000127,
       "name": "Anime Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000127/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000128,
       "name": "Anime Foot",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000128/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000129,
       "name": "Anime Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000129/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000130,
       "name": "Ttrpg Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000130/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000131,
       "name": "Ttrpg Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000131/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000132,
       "name": "Halloween 24 Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000132/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000133,
       "name": "Halloween 24 Deco 2",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000133/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000134,
       "name": "Clashmas 24 Roof 2",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000134/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000135,
       "name": "Clashmas 24 Deco 2",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000135/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000136,
       "name": "Lny25 Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000136/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000137,
       "name": "Lny25 Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000137/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000138,
       "name": "April25 Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000138/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000139,
       "name": "April25 Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000139/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000140,
       "name": "Darkdays Foot",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000140/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000141,
       "name": "Darkdays Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000141/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000142,
       "name": "Clasharama Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000142/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000143,
       "name": "Clasharama Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000143/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000144,
       "name": "Clasharama Foot",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000144/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000145,
       "name": "Clasharama Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000145/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000146,
       "name": "Clashoween25 Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000146/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000147,
       "name": "Clashoween25 Foot",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000147/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000148,
       "name": "Frostage Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000148/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000149,
       "name": "Frostage Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000149/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000150,
       "name": "Lny26 Ground",
       "slot_type": "ground",
-      "export": "capital_house_parts/82000150/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000151,
       "name": "Lny26 Foot",
       "slot_type": "foot",
-      "export": "capital_house_parts/82000151/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000152,
       "name": "Clash Hella Deco",
       "slot_type": "decoration",
-      "export": "capital_house_parts/82000152/icon.webp",
       "pass_reward": true
     },
     {
       "_id": 82000153,
       "name": "Clash Hella Roof",
       "slot_type": "roof",
-      "export": "capital_house_parts/82000153/icon.webp",
       "pass_reward": true
     }
   ],
@@ -62223,7 +61596,6 @@
         "name": "TID_BUILDER_APPRENTICE",
         "info": "TID_BUILDER_APPRENTICE_INFO"
       },
-      "icon": "helpers/93000000/icon.webp",
       "upgrade_resource": "Gems",
       "levels": [
         {
@@ -62292,7 +61664,6 @@
         "name": "TID_RESEARCHER_APPRENTICE",
         "info": "TID_RESEARCHER_APPRENTICE_INFO"
       },
-      "icon": "helpers/93000001/icon.webp",
       "upgrade_resource": "Gems",
       "levels": [
         {
@@ -62389,7 +61760,6 @@
         "name": "TID_ALCHEMIST_APPRENTICE",
         "info": "TID_ALCHEMIST_APPRENTICE_INFO"
       },
-      "icon": "helpers/93000002/icon.webp",
       "upgrade_resource": "Gems",
       "levels": [
         {
@@ -62451,7 +61821,6 @@
         "name": "TID_PROSPECTOR_APPRENTICE",
         "info": "TID_PROSPECTOR_APPRENTICE_INFO"
       },
-      "icon": "helpers/93000003/icon.webp",
       "upgrade_resource": "Gems",
       "levels": [
         {
@@ -62513,7 +61882,6 @@
       "TID": {
         "name": "TID_LEAGUE_BRONZE3"
       },
-      "icon": "war_leagues/48000001/icon.webp",
       "cwl_medals": {
         "first_place": 34,
         "position_medal_diff": 2,
@@ -62530,7 +61898,6 @@
       "TID": {
         "name": "TID_LEAGUE_BRONZE2"
       },
-      "icon": "war_leagues/48000002/icon.webp",
       "cwl_medals": {
         "first_place": 46,
         "position_medal_diff": 2,
@@ -62547,7 +61914,6 @@
       "TID": {
         "name": "TID_LEAGUE_BRONZE1"
       },
-      "icon": "war_leagues/48000003/icon.webp",
       "cwl_medals": {
         "first_place": 58,
         "position_medal_diff": 2,
@@ -62564,7 +61930,6 @@
       "TID": {
         "name": "TID_LEAGUE_SILVER3"
       },
-      "icon": "war_leagues/48000004/icon.webp",
       "cwl_medals": {
         "first_place": 76,
         "position_medal_diff": 3,
@@ -62581,7 +61946,6 @@
       "TID": {
         "name": "TID_LEAGUE_SILVER2"
       },
-      "icon": "war_leagues/48000005/icon.webp",
       "cwl_medals": {
         "first_place": 94,
         "position_medal_diff": 3,
@@ -62598,7 +61962,6 @@
       "TID": {
         "name": "TID_LEAGUE_SILVER1"
       },
-      "icon": "war_leagues/48000006/icon.webp",
       "cwl_medals": {
         "first_place": 112,
         "position_medal_diff": 3,
@@ -62615,7 +61978,6 @@
       "TID": {
         "name": "TID_LEAGUE_GOLD3"
       },
-      "icon": "war_leagues/48000007/icon.webp",
       "cwl_medals": {
         "first_place": 136,
         "position_medal_diff": 4,
@@ -62632,7 +61994,6 @@
       "TID": {
         "name": "TID_LEAGUE_GOLD2"
       },
-      "icon": "war_leagues/48000008/icon.webp",
       "cwl_medals": {
         "first_place": 160,
         "position_medal_diff": 4,
@@ -62649,7 +62010,6 @@
       "TID": {
         "name": "TID_LEAGUE_GOLD1"
       },
-      "icon": "war_leagues/48000009/icon.webp",
       "cwl_medals": {
         "first_place": 184,
         "position_medal_diff": 4,
@@ -62666,7 +62026,6 @@
       "TID": {
         "name": "TID_LEAGUE_CRYSTAL3"
       },
-      "icon": "war_leagues/48000010/icon.webp",
       "cwl_medals": {
         "first_place": 214,
         "position_medal_diff": 5,
@@ -62683,7 +62042,6 @@
       "TID": {
         "name": "TID_LEAGUE_CRYSTAL2"
       },
-      "icon": "war_leagues/48000011/icon.webp",
       "cwl_medals": {
         "first_place": 244,
         "position_medal_diff": 5,
@@ -62700,7 +62058,6 @@
       "TID": {
         "name": "TID_LEAGUE_CRYSTAL1"
       },
-      "icon": "war_leagues/48000012/icon.webp",
       "cwl_medals": {
         "first_place": 274,
         "position_medal_diff": 5,
@@ -62717,7 +62074,6 @@
       "TID": {
         "name": "TID_LEAGUE_MASTER3"
       },
-      "icon": "war_leagues/48000013/icon.webp",
       "cwl_medals": {
         "first_place": 310,
         "position_medal_diff": 6,
@@ -62734,7 +62090,6 @@
       "TID": {
         "name": "TID_LEAGUE_MASTER2"
       },
-      "icon": "war_leagues/48000014/icon.webp",
       "cwl_medals": {
         "first_place": 346,
         "position_medal_diff": 6,
@@ -62751,7 +62106,6 @@
       "TID": {
         "name": "TID_LEAGUE_MASTER1"
       },
-      "icon": "war_leagues/48000015/icon.webp",
       "cwl_medals": {
         "first_place": 382,
         "position_medal_diff": 6,
@@ -62768,7 +62122,6 @@
       "TID": {
         "name": "TID_LEAGUE_CHAMPION3"
       },
-      "icon": "war_leagues/48000016/icon.webp",
       "cwl_medals": {
         "first_place": 424,
         "position_medal_diff": 7,
@@ -62785,7 +62138,6 @@
       "TID": {
         "name": "TID_LEAGUE_CHAMPION2"
       },
-      "icon": "war_leagues/48000017/icon.webp",
       "cwl_medals": {
         "first_place": 466,
         "position_medal_diff": 7,
@@ -62802,7 +62154,6 @@
       "TID": {
         "name": "TID_LEAGUE_CHAMPION1"
       },
-      "icon": "war_leagues/48000018/icon.webp",
       "cwl_medals": {
         "first_place": 508,
         "position_medal_diff": 7,
@@ -62822,7 +62173,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_UNRANKED"
       },
-      "icon": "league_tiers/105000000/icon.webp",
       "group_size": 100,
       "demote_percentage": 0,
       "promote_percentage": 0,
@@ -63112,7 +62462,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_1_RANK_3"
       },
-      "icon": "league_tiers/105000001/icon.webp",
       "group_size": 100,
       "demote_percentage": 0,
       "promote_percentage": 50,
@@ -63146,7 +62495,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_1_RANK_2"
       },
-      "icon": "league_tiers/105000002/icon.webp",
       "group_size": 100,
       "demote_percentage": 10,
       "promote_percentage": 50,
@@ -63196,7 +62544,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_1_RANK_1"
       },
-      "icon": "league_tiers/105000003/icon.webp",
       "group_size": 100,
       "demote_percentage": 10,
       "promote_percentage": 50,
@@ -63262,7 +62609,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_2_RANK_3"
       },
-      "icon": "league_tiers/105000004/icon.webp",
       "group_size": 100,
       "demote_percentage": 10,
       "promote_percentage": 40,
@@ -63344,7 +62690,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_2_RANK_2"
       },
-      "icon": "league_tiers/105000005/icon.webp",
       "group_size": 100,
       "demote_percentage": 10,
       "promote_percentage": 30,
@@ -63426,7 +62771,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_2_RANK_1"
       },
-      "icon": "league_tiers/105000006/icon.webp",
       "group_size": 100,
       "demote_percentage": 10,
       "promote_percentage": 30,
@@ -63524,7 +62868,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_3_RANK_3"
       },
-      "icon": "league_tiers/105000007/icon.webp",
       "group_size": 100,
       "demote_percentage": 10,
       "promote_percentage": 30,
@@ -63622,7 +62965,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_3_RANK_2"
       },
-      "icon": "league_tiers/105000008/icon.webp",
       "group_size": 100,
       "demote_percentage": 10,
       "promote_percentage": 30,
@@ -63736,7 +63078,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_3_RANK_1"
       },
-      "icon": "league_tiers/105000009/icon.webp",
       "group_size": 100,
       "demote_percentage": 10,
       "promote_percentage": 30,
@@ -63850,7 +63191,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_4_RANK_3"
       },
-      "icon": "league_tiers/105000010/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 30,
@@ -63964,7 +63304,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_4_RANK_2"
       },
-      "icon": "league_tiers/105000011/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 30,
@@ -64094,7 +63433,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_4_RANK_1"
       },
-      "icon": "league_tiers/105000012/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 30,
@@ -64224,7 +63562,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_5_RANK_3"
       },
-      "icon": "league_tiers/105000013/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 30,
@@ -64354,7 +63691,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_5_RANK_2"
       },
-      "icon": "league_tiers/105000014/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 30,
@@ -64500,7 +63836,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_5_RANK_1"
       },
-      "icon": "league_tiers/105000015/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 30,
@@ -64646,7 +63981,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_6_RANK_3"
       },
-      "icon": "league_tiers/105000016/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 30,
@@ -64792,7 +64126,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_6_RANK_2"
       },
-      "icon": "league_tiers/105000017/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 30,
@@ -64954,7 +64287,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_6_RANK_1"
       },
-      "icon": "league_tiers/105000018/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 30,
@@ -65116,7 +64448,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_7_RANK_3"
       },
-      "icon": "league_tiers/105000019/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 30,
@@ -65278,7 +64609,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_7_RANK_2"
       },
-      "icon": "league_tiers/105000020/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 20,
@@ -65440,7 +64770,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_7_RANK_1"
       },
-      "icon": "league_tiers/105000021/icon.webp",
       "group_size": 100,
       "demote_percentage": 20,
       "promote_percentage": 25,
@@ -65618,7 +64947,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_8_RANK_3"
       },
-      "icon": "league_tiers/105000022/icon.webp",
       "group_size": 100,
       "demote_percentage": 20,
       "promote_percentage": 25,
@@ -65796,7 +65124,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_8_RANK_2"
       },
-      "icon": "league_tiers/105000023/icon.webp",
       "group_size": 100,
       "demote_percentage": 20,
       "promote_percentage": 25,
@@ -65974,7 +65301,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_8_RANK_1"
       },
-      "icon": "league_tiers/105000024/icon.webp",
       "group_size": 100,
       "demote_percentage": 20,
       "promote_percentage": 20,
@@ -66152,7 +65478,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_9_RANK_3"
       },
-      "icon": "league_tiers/105000025/icon.webp",
       "group_size": 100,
       "demote_percentage": 20,
       "promote_percentage": 20,
@@ -66362,7 +65687,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_9_RANK_2"
       },
-      "icon": "league_tiers/105000026/icon.webp",
       "group_size": 100,
       "demote_percentage": 20,
       "promote_percentage": 20,
@@ -66572,7 +65896,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_9_RANK_1"
       },
-      "icon": "league_tiers/105000027/icon.webp",
       "group_size": 100,
       "demote_percentage": 20,
       "promote_percentage": 20,
@@ -66782,7 +66105,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_10_RANK_3"
       },
-      "icon": "league_tiers/105000028/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 20,
@@ -66992,7 +66314,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_10_RANK_2"
       },
-      "icon": "league_tiers/105000029/icon.webp",
       "group_size": 100,
       "demote_percentage": 20,
       "promote_percentage": 20,
@@ -67202,7 +66523,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_10_RANK_1"
       },
-      "icon": "league_tiers/105000030/icon.webp",
       "group_size": 100,
       "demote_percentage": 20,
       "promote_percentage": 20,
@@ -67412,7 +66732,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_11_RANK_3"
       },
-      "icon": "league_tiers/105000031/icon.webp",
       "group_size": 100,
       "demote_percentage": 20,
       "promote_percentage": 20,
@@ -67622,7 +66941,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_11_RANK_2"
       },
-      "icon": "league_tiers/105000032/icon.webp",
       "group_size": 100,
       "demote_percentage": 15,
       "promote_percentage": 15,
@@ -67832,7 +67150,6 @@
       "TID": {
         "name": "TID_LEAGUE_TIER_11_RANK_1"
       },
-      "icon": "league_tiers/105000033/icon.webp",
       "group_size": 100,
       "demote_percentage": 10,
       "promote_percentage": 10,
@@ -68042,7 +67359,6 @@
       "TID": {
         "name": "TID_LEAGUE_LEGENDARY"
       },
-      "icon": "league_tiers/105000034/icon.webp",
       "group_size": 1500,
       "demote_percentage": null,
       "promote_percentage": null,
@@ -68253,7 +67569,6 @@
       "TID": {
         "name": "TID_LEAGUE_WOOD5"
       },
-      "icon": "builder_leagues/44000000/icon.webp",
       "trophy_start": 0
     },
     {
@@ -68262,7 +67577,6 @@
       "TID": {
         "name": "TID_LEAGUE_WOOD4"
       },
-      "icon": "builder_leagues/44000001/icon.webp",
       "trophy_start": 100
     },
     {
@@ -68271,7 +67585,6 @@
       "TID": {
         "name": "TID_LEAGUE_WOOD3"
       },
-      "icon": "builder_leagues/44000002/icon.webp",
       "trophy_start": 200
     },
     {
@@ -68280,7 +67593,6 @@
       "TID": {
         "name": "TID_LEAGUE_WOOD2"
       },
-      "icon": "builder_leagues/44000003/icon.webp",
       "trophy_start": 300
     },
     {
@@ -68289,7 +67601,6 @@
       "TID": {
         "name": "TID_LEAGUE_WOOD1"
       },
-      "icon": "builder_leagues/44000004/icon.webp",
       "trophy_start": 400
     },
     {
@@ -68298,7 +67609,6 @@
       "TID": {
         "name": "TID_LEAGUE_CLAY5"
       },
-      "icon": "builder_leagues/44000005/icon.webp",
       "trophy_start": 500
     },
     {
@@ -68307,7 +67617,6 @@
       "TID": {
         "name": "TID_LEAGUE_CLAY4"
       },
-      "icon": "builder_leagues/44000006/icon.webp",
       "trophy_start": 600
     },
     {
@@ -68316,7 +67625,6 @@
       "TID": {
         "name": "TID_LEAGUE_CLAY3"
       },
-      "icon": "builder_leagues/44000007/icon.webp",
       "trophy_start": 700
     },
     {
@@ -68325,7 +67633,6 @@
       "TID": {
         "name": "TID_LEAGUE_CLAY2"
       },
-      "icon": "builder_leagues/44000008/icon.webp",
       "trophy_start": 800
     },
     {
@@ -68334,7 +67641,6 @@
       "TID": {
         "name": "TID_LEAGUE_CLAY1"
       },
-      "icon": "builder_leagues/44000009/icon.webp",
       "trophy_start": 900
     },
     {
@@ -68343,7 +67649,6 @@
       "TID": {
         "name": "TID_LEAGUE_STONE5"
       },
-      "icon": "builder_leagues/44000010/icon.webp",
       "trophy_start": 1000
     },
     {
@@ -68352,7 +67657,6 @@
       "TID": {
         "name": "TID_LEAGUE_STONE4"
       },
-      "icon": "builder_leagues/44000011/icon.webp",
       "trophy_start": 1100
     },
     {
@@ -68361,7 +67665,6 @@
       "TID": {
         "name": "TID_LEAGUE_STONE3"
       },
-      "icon": "builder_leagues/44000012/icon.webp",
       "trophy_start": 1200
     },
     {
@@ -68370,7 +67673,6 @@
       "TID": {
         "name": "TID_LEAGUE_STONE2"
       },
-      "icon": "builder_leagues/44000013/icon.webp",
       "trophy_start": 1300
     },
     {
@@ -68379,7 +67681,6 @@
       "TID": {
         "name": "TID_LEAGUE_STONE1"
       },
-      "icon": "builder_leagues/44000014/icon.webp",
       "trophy_start": 1400
     },
     {
@@ -68388,7 +67689,6 @@
       "TID": {
         "name": "TID_LEAGUE_COPPER5"
       },
-      "icon": "builder_leagues/44000015/icon.webp",
       "trophy_start": 1500
     },
     {
@@ -68397,7 +67697,6 @@
       "TID": {
         "name": "TID_LEAGUE_COPPER4"
       },
-      "icon": "builder_leagues/44000016/icon.webp",
       "trophy_start": 1600
     },
     {
@@ -68406,7 +67705,6 @@
       "TID": {
         "name": "TID_LEAGUE_COPPER3"
       },
-      "icon": "builder_leagues/44000017/icon.webp",
       "trophy_start": 1700
     },
     {
@@ -68415,7 +67713,6 @@
       "TID": {
         "name": "TID_LEAGUE_COPPER2"
       },
-      "icon": "builder_leagues/44000018/icon.webp",
       "trophy_start": 1800
     },
     {
@@ -68424,7 +67721,6 @@
       "TID": {
         "name": "TID_LEAGUE_COPPER1"
       },
-      "icon": "builder_leagues/44000019/icon.webp",
       "trophy_start": 1900
     },
     {
@@ -68433,7 +67729,6 @@
       "TID": {
         "name": "TID_LEAGUE_BRASS3"
       },
-      "icon": "builder_leagues/44000020/icon.webp",
       "trophy_start": 2000
     },
     {
@@ -68442,7 +67737,6 @@
       "TID": {
         "name": "TID_LEAGUE_BRASS2"
       },
-      "icon": "builder_leagues/44000021/icon.webp",
       "trophy_start": 2200
     },
     {
@@ -68451,7 +67745,6 @@
       "TID": {
         "name": "TID_LEAGUE_BRASS1"
       },
-      "icon": "builder_leagues/44000022/icon.webp",
       "trophy_start": 2400
     },
     {
@@ -68460,7 +67753,6 @@
       "TID": {
         "name": "TID_LEAGUE_IRON3"
       },
-      "icon": "builder_leagues/44000023/icon.webp",
       "trophy_start": 2600
     },
     {
@@ -68469,7 +67761,6 @@
       "TID": {
         "name": "TID_LEAGUE_IRON2"
       },
-      "icon": "builder_leagues/44000024/icon.webp",
       "trophy_start": 2800
     },
     {
@@ -68478,7 +67769,6 @@
       "TID": {
         "name": "TID_LEAGUE_IRON1"
       },
-      "icon": "builder_leagues/44000025/icon.webp",
       "trophy_start": 3000
     },
     {
@@ -68487,7 +67777,6 @@
       "TID": {
         "name": "TID_LEAGUE_STEEL3"
       },
-      "icon": "builder_leagues/44000026/icon.webp",
       "trophy_start": 3200
     },
     {
@@ -68496,7 +67785,6 @@
       "TID": {
         "name": "TID_LEAGUE_STEEL2"
       },
-      "icon": "builder_leagues/44000027/icon.webp",
       "trophy_start": 3400
     },
     {
@@ -68505,7 +67793,6 @@
       "TID": {
         "name": "TID_LEAGUE_STEEL1"
       },
-      "icon": "builder_leagues/44000028/icon.webp",
       "trophy_start": 3600
     },
     {
@@ -68514,7 +67801,6 @@
       "TID": {
         "name": "TID_LEAGUE_TITANIUM3"
       },
-      "icon": "builder_leagues/44000029/icon.webp",
       "trophy_start": 3800
     },
     {
@@ -68523,7 +67809,6 @@
       "TID": {
         "name": "TID_LEAGUE_TITANIUM2"
       },
-      "icon": "builder_leagues/44000030/icon.webp",
       "trophy_start": 4000
     },
     {
@@ -68532,7 +67817,6 @@
       "TID": {
         "name": "TID_LEAGUE_TITANIUM1"
       },
-      "icon": "builder_leagues/44000031/icon.webp",
       "trophy_start": 4200
     },
     {
@@ -68541,7 +67825,6 @@
       "TID": {
         "name": "TID_LEAGUE_PLATINUM3"
       },
-      "icon": "builder_leagues/44000032/icon.webp",
       "trophy_start": 4400
     },
     {
@@ -68550,7 +67833,6 @@
       "TID": {
         "name": "TID_LEAGUE_PLATINUM2"
       },
-      "icon": "builder_leagues/44000033/icon.webp",
       "trophy_start": 4600
     },
     {
@@ -68559,7 +67841,6 @@
       "TID": {
         "name": "TID_LEAGUE_PLATINUM1"
       },
-      "icon": "builder_leagues/44000034/icon.webp",
       "trophy_start": 4800
     },
     {
@@ -68568,7 +67849,6 @@
       "TID": {
         "name": "TID_LEAGUE_EMERALD3"
       },
-      "icon": "builder_leagues/44000035/icon.webp",
       "trophy_start": 5000
     },
     {
@@ -68577,7 +67857,6 @@
       "TID": {
         "name": "TID_LEAGUE_EMERALD2"
       },
-      "icon": "builder_leagues/44000036/icon.webp",
       "trophy_start": 5200
     },
     {
@@ -68586,7 +67865,6 @@
       "TID": {
         "name": "TID_LEAGUE_EMERALD1"
       },
-      "icon": "builder_leagues/44000037/icon.webp",
       "trophy_start": 5400
     },
     {
@@ -68595,7 +67873,6 @@
       "TID": {
         "name": "TID_LEAGUE_RUBY3"
       },
-      "icon": "builder_leagues/44000038/icon.webp",
       "trophy_start": 5600
     },
     {
@@ -68604,7 +67881,6 @@
       "TID": {
         "name": "TID_LEAGUE_RUBY2"
       },
-      "icon": "builder_leagues/44000039/icon.webp",
       "trophy_start": 5800
     },
     {
@@ -68613,7 +67889,6 @@
       "TID": {
         "name": "TID_LEAGUE_RUBY1"
       },
-      "icon": "builder_leagues/44000040/icon.webp",
       "trophy_start": 6000
     },
     {
@@ -68622,7 +67897,6 @@
       "TID": {
         "name": "TID_LEAGUE_DIAMOND"
       },
-      "icon": "builder_leagues/44000041/icon.webp",
       "trophy_start": 6200
     }
   ],
@@ -68633,7 +67907,6 @@
       "TID": {
         "name": "TID_LEAGUE_UNRANKED"
       },
-      "icon": "capital_leagues/85000000/icon.webp",
       "trophy_start": 0,
       "clan_xp": 0
     },
@@ -68643,7 +67916,6 @@
       "TID": {
         "name": "TID_LEAGUE_BRONZE3"
       },
-      "icon": "capital_leagues/85000001/icon.webp",
       "trophy_start": 200,
       "clan_xp": 25
     },
@@ -68653,7 +67925,6 @@
       "TID": {
         "name": "TID_LEAGUE_BRONZE2"
       },
-      "icon": "capital_leagues/85000002/icon.webp",
       "trophy_start": 400,
       "clan_xp": 50
     },
@@ -68663,7 +67934,6 @@
       "TID": {
         "name": "TID_LEAGUE_BRONZE1"
       },
-      "icon": "capital_leagues/85000003/icon.webp",
       "trophy_start": 600,
       "clan_xp": 75
     },
@@ -68673,7 +67943,6 @@
       "TID": {
         "name": "TID_LEAGUE_SILVER3"
       },
-      "icon": "capital_leagues/85000004/icon.webp",
       "trophy_start": 800,
       "clan_xp": 100
     },
@@ -68683,7 +67952,6 @@
       "TID": {
         "name": "TID_LEAGUE_SILVER2"
       },
-      "icon": "capital_leagues/85000005/icon.webp",
       "trophy_start": 1000,
       "clan_xp": 125
     },
@@ -68693,7 +67961,6 @@
       "TID": {
         "name": "TID_LEAGUE_SILVER1"
       },
-      "icon": "capital_leagues/85000006/icon.webp",
       "trophy_start": 1200,
       "clan_xp": 150
     },
@@ -68703,7 +67970,6 @@
       "TID": {
         "name": "TID_LEAGUE_GOLD3"
       },
-      "icon": "capital_leagues/85000007/icon.webp",
       "trophy_start": 1400,
       "clan_xp": 175
     },
@@ -68713,7 +67979,6 @@
       "TID": {
         "name": "TID_LEAGUE_GOLD2"
       },
-      "icon": "capital_leagues/85000008/icon.webp",
       "trophy_start": 1600,
       "clan_xp": 200
     },
@@ -68723,7 +67988,6 @@
       "TID": {
         "name": "TID_LEAGUE_GOLD1"
       },
-      "icon": "capital_leagues/85000009/icon.webp",
       "trophy_start": 1800,
       "clan_xp": 225
     },
@@ -68733,7 +67997,6 @@
       "TID": {
         "name": "TID_LEAGUE_CRYSTAL3"
       },
-      "icon": "capital_leagues/85000010/icon.webp",
       "trophy_start": 2000,
       "clan_xp": 250
     },
@@ -68743,7 +68006,6 @@
       "TID": {
         "name": "TID_LEAGUE_CRYSTAL2"
       },
-      "icon": "capital_leagues/85000011/icon.webp",
       "trophy_start": 2200,
       "clan_xp": 275
     },
@@ -68753,7 +68015,6 @@
       "TID": {
         "name": "TID_LEAGUE_CRYSTAL1"
       },
-      "icon": "capital_leagues/85000012/icon.webp",
       "trophy_start": 2400,
       "clan_xp": 300
     },
@@ -68763,7 +68024,6 @@
       "TID": {
         "name": "TID_LEAGUE_MASTER3"
       },
-      "icon": "capital_leagues/85000013/icon.webp",
       "trophy_start": 2600,
       "clan_xp": 350
     },
@@ -68773,7 +68033,6 @@
       "TID": {
         "name": "TID_LEAGUE_MASTER2"
       },
-      "icon": "capital_leagues/85000014/icon.webp",
       "trophy_start": 2800,
       "clan_xp": 400
     },
@@ -68783,7 +68042,6 @@
       "TID": {
         "name": "TID_LEAGUE_MASTER1"
       },
-      "icon": "capital_leagues/85000015/icon.webp",
       "trophy_start": 3000,
       "clan_xp": 450
     },
@@ -68793,7 +68051,6 @@
       "TID": {
         "name": "TID_LEAGUE_CHAMPION3"
       },
-      "icon": "capital_leagues/85000016/icon.webp",
       "trophy_start": 3200,
       "clan_xp": 500
     },
@@ -68803,7 +68060,6 @@
       "TID": {
         "name": "TID_LEAGUE_CHAMPION2"
       },
-      "icon": "capital_leagues/85000017/icon.webp",
       "trophy_start": 3500,
       "clan_xp": 550
     },
@@ -68813,7 +68069,6 @@
       "TID": {
         "name": "TID_LEAGUE_CHAMPION1"
       },
-      "icon": "capital_leagues/85000018/icon.webp",
       "trophy_start": 3800,
       "clan_xp": 600
     },
@@ -68823,7 +68078,6 @@
       "TID": {
         "name": "TID_LEAGUE_HERO3"
       },
-      "icon": "capital_leagues/85000019/icon.webp",
       "trophy_start": 4100,
       "clan_xp": 650
     },
@@ -68833,7 +68087,6 @@
       "TID": {
         "name": "TID_LEAGUE_HERO2"
       },
-      "icon": "capital_leagues/85000020/icon.webp",
       "trophy_start": 4400,
       "clan_xp": 700
     },
@@ -68843,7 +68096,6 @@
       "TID": {
         "name": "TID_LEAGUE_HERO1"
       },
-      "icon": "capital_leagues/85000021/icon.webp",
       "trophy_start": 4700,
       "clan_xp": 750
     },
@@ -68853,7 +68105,6 @@
       "TID": {
         "name": "TID_LEAGUE_LEGENDARY"
       },
-      "icon": "capital_leagues/85000022/icon.webp",
       "trophy_start": 5000,
       "clan_xp": 800
     }
@@ -68867,7 +68118,6 @@
         "name": "TID_BOOSTER_FINISH_TROOP_UPGRADE",
         "info": "TID_BOOSTER_FINISH_TROOP_UPGRADE_INFO"
       },
-      "icon": "magic_items/537386189096351/icon.webp",
       "max_inventory": 1,
       "gem_value": 50
     },
@@ -68879,7 +68129,6 @@
         "name": "TID_BOOSTER_FINISH_BUILDING_UPGRADE",
         "info": "TID_BOOSTER_FINISH_BUILDING_UPGRADE_INFO"
       },
-      "icon": "magic_items/890343935493710/icon.webp",
       "max_inventory": 1,
       "gem_value": 50
     },
@@ -68891,7 +68140,6 @@
         "name": "TID_BOOSTER_FINISH_SPELL_UPGRADE",
         "info": "TID_BOOSTER_FINISH_SPELL_UPGRADE_INFO"
       },
-      "icon": "magic_items/753206450208602/icon.webp",
       "max_inventory": 1,
       "gem_value": 50
     },
@@ -68903,7 +68151,6 @@
         "name": "TID_BOOSTER_FINISH_HERO_UPGRADE",
         "info": "TID_BOOSTER_FINISH_HERO_UPGRADE_INFO"
       },
-      "icon": "magic_items/524139281942929/icon.webp",
       "max_inventory": 1,
       "gem_value": 50
     },
@@ -68915,7 +68162,6 @@
         "name": "TID_BOOSTER_FINISH_ANY_UPGRADE",
         "info": "TID_BOOSTER_FINISH_ANY_UPGRADE_INFO"
       },
-      "icon": "magic_items/440405123938110/icon.webp",
       "max_inventory": 1,
       "gem_value": 50
     },
@@ -68927,7 +68173,6 @@
         "name": "TID_BOOSTER_MAX_LEVEL_ARMY",
         "info": "TID_BOOSTER_MAX_LEVEL_ARMY_INFO"
       },
-      "icon": "magic_items/561696033072481/icon.webp",
       "max_inventory": 5,
       "gem_value": 10
     },
@@ -68939,7 +68184,6 @@
         "name": "TID_BOOSTER_BOOST_RESOURCES",
         "info": "TID_BOOSTER_BOOST_RESOURCES_INFO"
       },
-      "icon": "magic_items/243284571992699/icon.webp",
       "max_inventory": 5,
       "gem_value": 10
     },
@@ -68951,7 +68195,6 @@
         "name": "TID_BOOSTER_BOOST_PRODUCTION",
         "info": "TID_BOOSTER_BOOST_PRODUCTION_INFO"
       },
-      "icon": "magic_items/570452040909320/icon.webp",
       "max_inventory": 5,
       "gem_value": 10
     },
@@ -68963,7 +68206,6 @@
         "name": "TID_BOOSTER_FILL_GOLD_STORAGE",
         "info": "TID_BOOSTER_FILL_GOLD_STORAGE_INFO"
       },
-      "icon": "magic_items/676037793357332/icon.webp",
       "max_inventory": 1,
       "gem_value": 50
     },
@@ -68975,7 +68217,6 @@
         "name": "TID_BOOSTER_FILL_ELIXIR_STORAGE",
         "info": "TID_BOOSTER_FILL_ELIXIR_STORAGE_INFO"
       },
-      "icon": "magic_items/771806884803063/icon.webp",
       "max_inventory": 1,
       "gem_value": 50
     },
@@ -68987,7 +68228,6 @@
         "name": "TID_BOOSTER_FILL_DARK_ELIXIR_STORAGE",
         "info": "TID_BOOSTER_FILL_DARK_ELIXIR_STORAGE_INFO"
       },
-      "icon": "magic_items/305847136545998/icon.webp",
       "max_inventory": 1,
       "gem_value": 50
     },
@@ -68999,7 +68239,6 @@
         "name": "TID_BOOSTER_FILL_GOLD2_STORAGE",
         "info": "TID_BOOSTER_FILL_GOLD2_STORAGE_INFO"
       },
-      "icon": "magic_items/827109296898367/icon.webp",
       "max_inventory": 1,
       "gem_value": 50
     },
@@ -69011,7 +68250,6 @@
         "name": "TID_BOOSTER_FILL_ELIXIR2_STORAGE",
         "info": "TID_BOOSTER_FILL_ELIXIR2_STORAGE_INFO"
       },
-      "icon": "magic_items/469261700147929/icon.webp",
       "max_inventory": 1,
       "gem_value": 50
     },
@@ -69023,7 +68261,6 @@
         "name": "TID_BOOSTER_WALL_UPGRADE",
         "info": "TID_BOOSTER_WALL_UPGRADE_INFO"
       },
-      "icon": "magic_items/900728545460161/icon.webp",
       "max_inventory": 25,
       "gem_value": 5
     },
@@ -69035,7 +68272,6 @@
         "name": "TID_BOOSTER_BUILDERS",
         "info": "TID_BOOSTER_BUILDERS_INFO"
       },
-      "icon": "magic_items/210956642277151/icon.webp",
       "max_inventory": 5,
       "gem_value": 10
     },
@@ -69047,7 +68283,6 @@
         "name": "TID_BOOSTER_FREE_TROOP_UPGRADE",
         "info": "TID_BOOSTER_FREE_TROOP_UPGRADE_INFO"
       },
-      "icon": "magic_items/280901775918853/icon.webp",
       "max_inventory": 1,
       "gem_value": 100
     },
@@ -69059,7 +68294,6 @@
         "name": "TID_BOOSTER_FREE_BUILDING_UPGRADE",
         "info": "TID_BOOSTER_FREE_BUILDING_UPGRADE_INFO"
       },
-      "icon": "magic_items/151625849595091/icon.webp",
       "max_inventory": 1,
       "gem_value": 100
     },
@@ -69071,7 +68305,6 @@
         "name": "TID_BOOSTER_FREE_SPELL_UPGRADE",
         "info": "TID_BOOSTER_FREE_SPELL_UPGRADE_INFO"
       },
-      "icon": "magic_items/742529374013477/icon.webp",
       "max_inventory": 1,
       "gem_value": 100
     },
@@ -69083,7 +68316,6 @@
         "name": "TID_BOOSTER_FREE_HERO_UPGRADE",
         "info": "TID_BOOSTER_FREE_HERO_UPGRADE_INFO"
       },
-      "icon": "magic_items/256984620428090/icon.webp",
       "max_inventory": 1,
       "gem_value": 100
     },
@@ -69095,7 +68327,6 @@
         "name": "TID_BOOSTER_CLOCKTOWER",
         "info": "TID_BOOSTER_CLOCKTOWER_INFO"
       },
-      "icon": "magic_items/782756751511908/icon.webp",
       "max_inventory": 5,
       "gem_value": 10
     },
@@ -69107,7 +68338,6 @@
         "name": "TID_BOOSTER_MOVE_OBSTACLE",
         "info": "TID_BOOSTER_SHOVEL_OBSTACLE_INFO"
       },
-      "icon": "magic_items/635767448980463/icon.webp",
       "max_inventory": 5,
       "gem_value": 50
     },
@@ -69119,7 +68349,6 @@
         "name": "TID_BOOSTER_HERO_POTION",
         "info": "TID_BOOSTER_HERO_POTION_INFO"
       },
-      "icon": "magic_items/240454282761805/icon.webp",
       "max_inventory": 5,
       "gem_value": 10
     },
@@ -69131,7 +68360,6 @@
         "name": "TID_BOOSTER_LAB_POTION",
         "info": "TID_BOOSTER_LAB_POTION_INFO"
       },
-      "icon": "magic_items/691966405407290/icon.webp",
       "max_inventory": 5,
       "gem_value": 10
     },
@@ -69143,7 +68371,6 @@
         "name": "TID_BOOSTER_SUPER_POTION",
         "info": "TID_BOOSTER_SUPER_POTION_INFO"
       },
-      "icon": "magic_items/131106032702441/icon.webp",
       "max_inventory": 5,
       "gem_value": 10
     },
@@ -69155,7 +68382,6 @@
         "name": "TID_BOOSTER_PET_POTION",
         "info": "TID_BOOSTER_PET_POTION_INFO"
       },
-      "icon": "magic_items/495502005765862/icon.webp",
       "max_inventory": 5,
       "gem_value": 10
     },
@@ -69167,7 +68393,6 @@
         "name": "TID_BOOSTER_STAR_POTION",
         "info": "TID_BOOSTER_STAR_POTION_INFO"
       },
-      "icon": "magic_items/252268797315533/icon.webp",
       "max_inventory": 5,
       "gem_value": 10
     }
@@ -69181,7 +68406,6 @@
         "name": "TID_CONSUMABLE_BOOST_BUILDER",
         "info": "TID_CONSUMABLE_BOOST_BUILDER_INFO"
       },
-      "icon": "magic_snacks/509612545377542/icon.webp",
       "duration": 3600
     },
     {
@@ -69192,7 +68416,6 @@
         "name": "TID_CONSUMABLE_BOOST_LAB",
         "info": "TID_CONSUMABLE_BOOST_LAB_INFO"
       },
-      "icon": "magic_snacks/210152651251664/icon.webp",
       "duration": 3600
     },
     {
@@ -69203,7 +68426,6 @@
         "name": "TID_CONSUMABLE_BOOST_HERO",
         "info": "TID_CONSUMABLE_BOOST_HERO_INFO"
       },
-      "icon": "magic_snacks/84541856028440/icon.webp",
       "duration": 0
     },
     {
@@ -69214,7 +68436,6 @@
         "name": "TID_CONSUMABLE_BOOST_ARMY",
         "info": "TID_CONSUMABLE_BOOST_ARMY_INFO"
       },
-      "icon": "magic_snacks/909252305102259/icon.webp",
       "duration": 0
     },
     {
@@ -69225,7 +68446,6 @@
         "name": "TID_CONSUMABLE_INSTANT_TRAINING",
         "info": "TID_CONSUMABLE_INSTANT_TRAINING_INFO"
       },
-      "icon": "magic_snacks/860289445845268/icon.webp",
       "duration": 1200
     },
     {
@@ -69236,7 +68456,6 @@
         "name": "TID_CONSUMABLE_CC_REFILL",
         "info": "TID_CONSUMABLE_CC_REFILL_INFO"
       },
-      "icon": "magic_snacks/272344549778277/icon.webp",
       "duration": 43200
     }
   ],
@@ -69246,152 +68465,133 @@
       "name": "Clan Wars",
       "TID": {
         "name": "TID_CLAN_TAG_CLAN_WARS"
-      },
-      "icon": "player_labels/463491621057853/icon.webp"
+      }
     },
     {
       "_id": 437996266654459,
       "name": "Clan War League",
       "TID": {
         "name": "TID_CLAN_TAG_CLAN_WAR_LEAGUE"
-      },
-      "icon": "player_labels/437996266654459/icon.webp"
+      }
     },
     {
       "_id": 292087025155907,
       "name": "Trophy Pushing",
       "TID": {
         "name": "TID_CLAN_TAG_TROPHY_PUSHING"
-      },
-      "icon": "player_labels/292087025155907/icon.webp"
+      }
     },
     {
       "_id": 143403152011923,
       "name": "Friendly Wars",
       "TID": {
         "name": "TID_CLAN_TAG_FRIENDLY_WARS"
-      },
-      "icon": "player_labels/143403152011923/icon.webp"
+      }
     },
     {
       "_id": 149354055445515,
       "name": "Clan Games",
       "TID": {
         "name": "TID_CLAN_TAG_CLAN_GAMES"
-      },
-      "icon": "player_labels/149354055445515/icon.webp"
+      }
     },
     {
       "_id": 836535708449210,
       "name": "Builder Base",
       "TID": {
         "name": "TID_CLAN_TAG_BUILDER_BASE"
-      },
-      "icon": "player_labels/836535708449210/icon.webp"
+      }
     },
     {
       "_id": 255297772751276,
       "name": "Base Designing",
       "TID": {
         "name": "TID_CLAN_TAG_BASE_DESIGNING"
-      },
-      "icon": "player_labels/255297772751276/icon.webp"
+      }
     },
     {
       "_id": 231872996024440,
       "name": "Farming",
       "TID": {
         "name": "TID_CLAN_TAG_FARMING"
-      },
-      "icon": "player_labels/231872996024440/icon.webp"
+      }
     },
     {
       "_id": 52626525733554,
       "name": "Active Donator",
       "TID": {
         "name": "TID_CLAN_TAG_ACTIVE_DONATOR"
-      },
-      "icon": "player_labels/52626525733554/icon.webp"
+      }
     },
     {
       "_id": 904585117357277,
       "name": "Active Daily",
       "TID": {
         "name": "TID_CLAN_TAG_ACTIVE_DAILY"
-      },
-      "icon": "player_labels/904585117357277/icon.webp"
+      }
     },
     {
       "_id": 769823519335075,
       "name": "Hungry Learner",
       "TID": {
         "name": "TID_CLAN_TAG_HUNGRY_LEARNER"
-      },
-      "icon": "player_labels/769823519335075/icon.webp"
+      }
     },
     {
       "_id": 986971713244589,
       "name": "Friendly",
       "TID": {
         "name": "TID_CLAN_TAG_FRIENDLY"
-      },
-      "icon": "player_labels/986971713244589/icon.webp"
+      }
     },
     {
       "_id": 731284243373084,
       "name": "Talkative",
       "TID": {
         "name": "TID_CLAN_TAG_TALKATIVE"
-      },
-      "icon": "player_labels/731284243373084/icon.webp"
+      }
     },
     {
       "_id": 491135392530929,
       "name": "Teacher",
       "TID": {
         "name": "TID_CLAN_TAG_TEACHER"
-      },
-      "icon": "player_labels/491135392530929/icon.webp"
+      }
     },
     {
       "_id": 444842495826933,
       "name": "Competitive",
       "TID": {
         "name": "TID_CLAN_TAG_COMPETITIVE"
-      },
-      "icon": "player_labels/444842495826933/icon.webp"
+      }
     },
     {
       "_id": 492640556209722,
       "name": "Veteran",
       "TID": {
         "name": "TID_CLAN_TAG_VETERAN"
-      },
-      "icon": "player_labels/492640556209722/icon.webp"
+      }
     },
     {
       "_id": 168840896105715,
       "name": "Newbie",
       "TID": {
         "name": "TID_CLAN_TAG_NEWBIE"
-      },
-      "icon": "player_labels/168840896105715/icon.webp"
+      }
     },
     {
       "_id": 694259962676433,
       "name": "Amateur Attacker",
       "TID": {
         "name": "TID_CLAN_TAG_AMATEUR_ATTACKER"
-      },
-      "icon": "player_labels/694259962676433/icon.webp"
+      }
     },
     {
       "_id": 861767779462058,
       "name": "Clan Capital",
       "TID": {
         "name": "TID_CLAN_TAG_CLAN_CAPITAL"
-      },
-      "icon": "player_labels/861767779462058/icon.webp"
+      }
     }
   ],
   "clan_labels": [
@@ -69400,136 +68600,119 @@
       "name": "Clan Wars",
       "TID": {
         "name": "TID_CLAN_TAG_CLAN_WARS"
-      },
-      "icon": "clan_labels/463491621057853/icon.webp"
+      }
     },
     {
       "_id": 437996266654459,
       "name": "Clan War League",
       "TID": {
         "name": "TID_CLAN_TAG_CLAN_WAR_LEAGUE"
-      },
-      "icon": "clan_labels/437996266654459/icon.webp"
+      }
     },
     {
       "_id": 292087025155907,
       "name": "Trophy Pushing",
       "TID": {
         "name": "TID_CLAN_TAG_TROPHY_PUSHING"
-      },
-      "icon": "clan_labels/292087025155907/icon.webp"
+      }
     },
     {
       "_id": 143403152011923,
       "name": "Friendly Wars",
       "TID": {
         "name": "TID_CLAN_TAG_FRIENDLY_WARS"
-      },
-      "icon": "clan_labels/143403152011923/icon.webp"
+      }
     },
     {
       "_id": 149354055445515,
       "name": "Clan Games",
       "TID": {
         "name": "TID_CLAN_TAG_CLAN_GAMES"
-      },
-      "icon": "clan_labels/149354055445515/icon.webp"
+      }
     },
     {
       "_id": 836535708449210,
       "name": "Builder Base",
       "TID": {
         "name": "TID_CLAN_TAG_BUILDER_BASE"
-      },
-      "icon": "clan_labels/836535708449210/icon.webp"
+      }
     },
     {
       "_id": 255297772751276,
       "name": "Base Designing",
       "TID": {
         "name": "TID_CLAN_TAG_BASE_DESIGNING"
-      },
-      "icon": "clan_labels/255297772751276/icon.webp"
+      }
     },
     {
       "_id": 963341879319234,
       "name": "International",
       "TID": {
         "name": "TID_CLAN_TAG_INTERNATIONAL"
-      },
-      "icon": "clan_labels/963341879319234/icon.webp"
+      }
     },
     {
       "_id": 231872996024440,
       "name": "Farming",
       "TID": {
         "name": "TID_CLAN_TAG_FARMING"
-      },
-      "icon": "clan_labels/231872996024440/icon.webp"
+      }
     },
     {
       "_id": 633647367565811,
       "name": "Donations",
       "TID": {
         "name": "TID_CLAN_TAG_DONATIONS"
-      },
-      "icon": "clan_labels/633647367565811/icon.webp"
+      }
     },
     {
       "_id": 986971713244589,
       "name": "Friendly",
       "TID": {
         "name": "TID_CLAN_TAG_FRIENDLY"
-      },
-      "icon": "clan_labels/986971713244589/icon.webp"
+      }
     },
     {
       "_id": 731284243373084,
       "name": "Talkative",
       "TID": {
         "name": "TID_CLAN_TAG_TALKATIVE"
-      },
-      "icon": "clan_labels/731284243373084/icon.webp"
+      }
     },
     {
       "_id": 642336023839695,
       "name": "Underdog",
       "TID": {
         "name": "TID_CLAN_TAG_UNDERDOG"
-      },
-      "icon": "clan_labels/642336023839695/icon.webp"
+      }
     },
     {
       "_id": 693866906768860,
       "name": "Relaxed",
       "TID": {
         "name": "TID_CLAN_TAG_RELAXED"
-      },
-      "icon": "clan_labels/693866906768860/icon.webp"
+      }
     },
     {
       "_id": 444842495826933,
       "name": "Competitive",
       "TID": {
         "name": "TID_CLAN_TAG_COMPETITIVE"
-      },
-      "icon": "clan_labels/444842495826933/icon.webp"
+      }
     },
     {
       "_id": 730446379049719,
       "name": "Newbie Friendly",
       "TID": {
         "name": "TID_CLAN_TAG_NEWBIE_FRIENDLY"
-      },
-      "icon": "clan_labels/730446379049719/icon.webp"
+      }
     },
     {
       "_id": 861767779462058,
       "name": "Clan Capital",
       "TID": {
         "name": "TID_CLAN_TAG_CLAN_CAPITAL"
-      },
-      "icon": "clan_labels/861767779462058/icon.webp"
+      }
     }
   ],
   "locales": [
@@ -69630,8 +68813,7 @@
       "TID": {
         "name": "TID_CHEST_COMMON_NAME",
         "info": "TID_CHEST_COMMON_INFO"
-      },
-      "icon": "chests/55351255644523/icon.webp"
+      }
     },
     {
       "_id": 570943162650848,
@@ -69640,8 +68822,7 @@
       "TID": {
         "name": "TID_CHEST_RARE_NAME",
         "info": "TID_CHEST_RARE_INFO"
-      },
-      "icon": "chests/570943162650848/icon.webp"
+      }
     },
     {
       "_id": 596928362089229,
@@ -69650,8 +68831,7 @@
       "TID": {
         "name": "TID_CHEST_EPIC_NAME",
         "info": "TID_CHEST_EPIC_INFO"
-      },
-      "icon": "chests/596928362089229/icon.webp"
+      }
     }
   ],
   "resources": [
@@ -69660,168 +68840,147 @@
       "name": "Gems",
       "TID": {
         "name": "TID_DIAMONDS"
-      },
-      "icon": "resources/595449661958924/icon.webp"
+      }
     },
     {
       "_id": 994651688032341,
       "name": "Gold",
       "TID": {
         "name": "TID_GOLD"
-      },
-      "icon": "resources/994651688032341/icon.webp"
+      }
     },
     {
       "_id": 59856289643527,
       "name": "Elixir",
       "TID": {
         "name": "TID_ELIXIR"
-      },
-      "icon": "resources/59856289643527/icon.webp"
+      }
     },
     {
       "_id": 2093923633628,
       "name": "Dark Elixir",
       "TID": {
         "name": "TID_DARK_ELIXIR"
-      },
-      "icon": "resources/2093923633628/icon.webp"
+      }
     },
     {
       "_id": 174264253550509,
       "name": "Builder Gold",
       "TID": {
         "name": "TID_GOLD2"
-      },
-      "icon": "resources/174264253550509/icon.webp"
+      }
     },
     {
       "_id": 279162266021531,
       "name": "Builder Elixir",
       "TID": {
         "name": "TID_ELIXIR2"
-      },
-      "icon": "resources/279162266021531/icon.webp"
+      }
     },
     {
       "_id": 556827278025202,
       "name": "League Medals",
       "TID": {
         "name": "TID_MEDALS"
-      },
-      "icon": "resources/556827278025202/icon.webp"
+      }
     },
     {
       "_id": 555756290124419,
       "name": "Gold",
       "TID": {
         "name": "TID_GOLD"
-      },
-      "icon": "resources/555756290124419/icon.webp"
+      }
     },
     {
       "_id": 915468046959142,
       "name": "Elixir",
       "TID": {
         "name": "TID_ELIXIR"
-      },
-      "icon": "resources/915468046959142/icon.webp"
+      }
     },
     {
       "_id": 270121026397833,
       "name": "Dark Elixir",
       "TID": {
         "name": "TID_DARK_ELIXIR"
-      },
-      "icon": "resources/270121026397833/icon.webp"
+      }
     },
     {
       "_id": 982336347234275,
       "name": "Capital Gold",
       "TID": {
         "name": "TID_CAPITAL_RESOURCE"
-      },
-      "icon": "resources/982336347234275/icon.webp"
+      }
     },
     {
       "_id": 390097728729077,
       "name": "Raid Medals",
       "TID": {
         "name": "TID_CAPITAL_REWARD"
-      },
-      "icon": "resources/390097728729077/icon.webp"
+      }
     },
     {
       "_id": 494722747950492,
       "name": "Builder Gold",
       "TID": {
         "name": "TID_GOLD2"
-      },
-      "icon": "resources/494722747950492/icon.webp"
+      }
     },
     {
       "_id": 198964858096107,
       "name": "Builder Elixir",
       "TID": {
         "name": "TID_ELIXIR2"
-      },
-      "icon": "resources/198964858096107/icon.webp"
+      }
     },
     {
       "_id": 602353603032148,
       "name": "Medal Event Soft Currency",
       "TID": {
         "name": "TID_MEDAL_EVENT_SOFT_CURRENCY"
-      },
-      "icon": "resources/602353603032148/icon.webp"
+      }
     },
     {
       "_id": 412472890383292,
       "name": "Medal Event Hard Currency",
       "TID": {
         "name": "TID_MEDAL_EVENT_HARD_CURRENCY"
-      },
-      "icon": "resources/412472890383292/icon.webp"
+      }
     },
     {
       "_id": 800422311818622,
       "name": "Shiny Ore",
       "TID": {
         "name": "TID_GEAR_RESOURCE_COMMON"
-      },
-      "icon": "resources/800422311818622/icon.webp"
+      }
     },
     {
       "_id": 331255533910287,
       "name": "Glowy Ore",
       "TID": {
         "name": "TID_GEAR_RESOURCE_RARE"
-      },
-      "icon": "resources/331255533910287/icon.webp"
+      }
     },
     {
       "_id": 999804887635761,
       "name": "Starry Ore",
       "TID": {
         "name": "TID_GEAR_RESOURCE_EPIC"
-      },
-      "icon": "resources/999804887635761/icon.webp"
+      }
     },
     {
       "_id": 317628980231429,
       "name": "Clan Event Currency",
       "TID": {
         "name": "TID_CLAN_PROGRESS_EVENT_RESOURCE"
-      },
-      "icon": "resources/317628980231429/icon.webp"
+      }
     },
     {
       "_id": 171625074916432,
       "name": "Sparky Stones",
       "TID": {
         "name": "TID_PRESTIGE_RESOURCE"
-      },
-      "icon": "resources/171625074916432/icon.webp"
+      }
     }
   ],
   "achievements": [
