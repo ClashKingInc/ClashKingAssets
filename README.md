@@ -47,23 +47,11 @@ go build -o sc-export .
 
 What it can do:
 
-- Export a single `.sc` file into an output directory
-- Export every eligible `.sc` file in a directory
+- Decode & Process `.sc` files & assets
 - Decode raw `.sctx` texture files
-- Batch-process all `.sctx` files under a root with progress reporting
-- Batch-process all top-level `.sc` files in a root with configurable per-file concurrency
 - Filter exports to specific asset names
 - Route specific exports to exact output paths
 - Emit a `manifest.json` describing exported files, metadata, and skipped entries
-- Prefer WebP for still images, scale renders, skip tiny outputs, and print profiling summaries
-
-### Usage
-
-```bash
-./sc-export <file-or-dir> [flags]
-./sc-export --process-image-root <dir> [flags]
-./sc-export --process-sc-root <dir> [flags]
-```
 
 ### Flags
 
