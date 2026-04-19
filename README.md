@@ -4,7 +4,7 @@ Static Clash of Clans asset files, plus a Go extractor for turning Supercell `.s
 
 ## Asset URLs
 
-Anything under [`/assets`](/Users/matthewanderson/PycharmProjects/clashking_assets/assets) is available at `https://assets.clashk.ing/<path-under-assets>`.
+Anything under `/assets` is available at `https://assets.clashk.ing/<path-under-assets>`.
 
 Example:
 
