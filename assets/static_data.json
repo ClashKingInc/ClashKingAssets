@@ -33083,7 +33083,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Barbarian King",
       "levels": [
         {
@@ -33513,7 +33513,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Barbarian King",
       "levels": [
         {
@@ -33943,7 +33943,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Archer Queen",
       "levels": [
         {
@@ -34373,7 +34373,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Archer Queen",
       "levels": [
         {
@@ -34803,7 +34803,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Grand Warden",
       "levels": [
         {
@@ -35233,7 +35233,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Grand Warden",
       "levels": [
         {
@@ -35645,7 +35645,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Royal Champion",
       "levels": [
         {
@@ -36057,7 +36057,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Royal Champion",
       "levels": [
         {
@@ -36469,7 +36469,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Barbarian King",
       "levels": [
         {
@@ -36881,7 +36881,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 7,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Royal Champion",
       "levels": [
         {
@@ -37311,7 +37311,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Barbarian King",
       "levels": [
         {
@@ -38137,7 +38137,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 3,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Barbarian King",
       "levels": [
         {
@@ -38549,7 +38549,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 8,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Royal Champion",
       "levels": [
         {
@@ -38997,7 +38997,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Royal Champion",
       "levels": [
         {
@@ -39634,7 +39634,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Barbarian King",
       "levels": [
         {
@@ -40271,7 +40271,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Archer Queen",
       "levels": [
         {
@@ -40898,6 +40898,967 @@
       ]
     },
     {
+      "_id": 90000016,
+      "name": "Monolith Arrow",
+      "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed",
+      "TID": {
+        "name": "TID_GEAR_MONOLITH_ARROW",
+        "info": "TID_GEAR_INFO_MONOLITH_ARROW",
+        "production_building": "TID_SMITHY"
+      },
+      "production_building": "Blacksmith",
+      "production_building_level": 1,
+      "rarity": "Epic",
+      "hero": "Archer Queen",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 100,
+          "upgrade_cost": {
+            "shiny_ore": 120,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 1,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 95,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 1,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 70,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 1,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 40,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 200,
+          "upgrade_cost": {
+            "shiny_ore": 240,
+            "glowy_ore": 20,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 1,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 95,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 1,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 70,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 1,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 40,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 300,
+          "upgrade_cost": {
+            "shiny_ore": 400,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 2,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 100,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 2,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 75,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 2,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 41,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 400,
+          "upgrade_cost": {
+            "shiny_ore": 600,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 2,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 100,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 2,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 75,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 2,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 41,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 500,
+          "upgrade_cost": {
+            "shiny_ore": 840,
+            "glowy_ore": 100,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 2,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 100,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 2,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 75,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 2,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 41,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 600,
+          "upgrade_cost": {
+            "shiny_ore": 1120,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 3,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 105,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 3,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 80,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 3,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 42,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 700,
+          "upgrade_cost": {
+            "shiny_ore": 1440,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 3,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 105,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 3,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 80,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 3,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 42,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 800,
+          "upgrade_cost": {
+            "shiny_ore": 1800,
+            "glowy_ore": 200,
+            "starry_ore": 10
+          },
+          "abilities": [
+            {
+              "Level": 3,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 105,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 3,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 80,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 3,
+              "ShieldProtectionPercent": 3,
+              "DamagePermilHp": 42,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 900,
+          "upgrade_cost": {
+            "shiny_ore": 1900,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 4,
+              "ShieldProtectionPercent": 4,
+              "DamagePermilHp": 110,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 4,
+              "ShieldProtectionPercent": 4,
+              "DamagePermilHp": 85,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 4,
+              "ShieldProtectionPercent": 4,
+              "DamagePermilHp": 43,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 1000,
+          "upgrade_cost": {
+            "shiny_ore": 2000,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 4,
+              "ShieldProtectionPercent": 4,
+              "DamagePermilHp": 110,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 4,
+              "ShieldProtectionPercent": 4,
+              "DamagePermilHp": 85,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 4,
+              "ShieldProtectionPercent": 4,
+              "DamagePermilHp": 43,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 1100,
+          "upgrade_cost": {
+            "shiny_ore": 2100,
+            "glowy_ore": 400,
+            "starry_ore": 20
+          },
+          "abilities": [
+            {
+              "Level": 4,
+              "ShieldProtectionPercent": 4,
+              "DamagePermilHp": 110,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 4,
+              "ShieldProtectionPercent": 4,
+              "DamagePermilHp": 85,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 4,
+              "ShieldProtectionPercent": 4,
+              "DamagePermilHp": 43,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 1,
+          "required_townhall": 8,
+          "strength_weight": 1200,
+          "upgrade_cost": {
+            "shiny_ore": 2200,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 5,
+              "ShieldProtectionPercent": 5,
+              "DamagePermilHp": 115,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 5,
+              "ShieldProtectionPercent": 5,
+              "DamagePermilHp": 90,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 5,
+              "ShieldProtectionPercent": 5,
+              "DamagePermilHp": 44,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 3,
+          "required_townhall": 10,
+          "strength_weight": 1300,
+          "upgrade_cost": {
+            "shiny_ore": 2300,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 5,
+              "ShieldProtectionPercent": 5,
+              "DamagePermilHp": 115,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 5,
+              "ShieldProtectionPercent": 5,
+              "DamagePermilHp": 90,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 5,
+              "ShieldProtectionPercent": 5,
+              "DamagePermilHp": 44,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 3,
+          "required_townhall": 10,
+          "strength_weight": 1400,
+          "upgrade_cost": {
+            "shiny_ore": 2400,
+            "glowy_ore": 600,
+            "starry_ore": 30
+          },
+          "abilities": [
+            {
+              "Level": 5,
+              "ShieldProtectionPercent": 5,
+              "DamagePermilHp": 115,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 5,
+              "ShieldProtectionPercent": 5,
+              "DamagePermilHp": 90,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 5,
+              "ShieldProtectionPercent": 5,
+              "DamagePermilHp": 44,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 3,
+          "required_townhall": 10,
+          "strength_weight": 1900,
+          "upgrade_cost": {
+            "shiny_ore": 2500,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 6,
+              "ShieldProtectionPercent": 6,
+              "DamagePermilHp": 120,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 6,
+              "ShieldProtectionPercent": 6,
+              "DamagePermilHp": 92,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 6,
+              "ShieldProtectionPercent": 6,
+              "DamagePermilHp": 45,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 16,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 5,
+          "required_townhall": 12,
+          "strength_weight": 2000,
+          "upgrade_cost": {
+            "shiny_ore": 2600,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 6,
+              "ShieldProtectionPercent": 6,
+              "DamagePermilHp": 120,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 6,
+              "ShieldProtectionPercent": 6,
+              "DamagePermilHp": 92,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 6,
+              "ShieldProtectionPercent": 6,
+              "DamagePermilHp": 45,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 17,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 5,
+          "required_townhall": 12,
+          "strength_weight": 2100,
+          "upgrade_cost": {
+            "shiny_ore": 2700,
+            "glowy_ore": 600,
+            "starry_ore": 50
+          },
+          "abilities": [
+            {
+              "Level": 6,
+              "ShieldProtectionPercent": 6,
+              "DamagePermilHp": 120,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 6,
+              "ShieldProtectionPercent": 6,
+              "DamagePermilHp": 92,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 6,
+              "ShieldProtectionPercent": 6,
+              "DamagePermilHp": 45,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 18,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 5,
+          "required_townhall": 12,
+          "strength_weight": 2600,
+          "upgrade_cost": {
+            "shiny_ore": 2800,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 7,
+              "ShieldProtectionPercent": 7,
+              "DamagePermilHp": 125,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 7,
+              "ShieldProtectionPercent": 7,
+              "DamagePermilHp": 94,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 7,
+              "ShieldProtectionPercent": 7,
+              "DamagePermilHp": 46,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 19,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 7,
+          "required_townhall": 14,
+          "strength_weight": 2700,
+          "upgrade_cost": {
+            "shiny_ore": 2900,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 7,
+              "ShieldProtectionPercent": 7,
+              "DamagePermilHp": 125,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 7,
+              "ShieldProtectionPercent": 7,
+              "DamagePermilHp": 94,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 7,
+              "ShieldProtectionPercent": 7,
+              "DamagePermilHp": 46,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 20,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 7,
+          "required_townhall": 14,
+          "strength_weight": 2800,
+          "upgrade_cost": {
+            "shiny_ore": 3000,
+            "glowy_ore": 600,
+            "starry_ore": 100
+          },
+          "abilities": [
+            {
+              "Level": 7,
+              "ShieldProtectionPercent": 7,
+              "DamagePermilHp": 125,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 7,
+              "ShieldProtectionPercent": 7,
+              "DamagePermilHp": 94,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 7,
+              "ShieldProtectionPercent": 7,
+              "DamagePermilHp": 46,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 21,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 7,
+          "required_townhall": 14,
+          "strength_weight": 3300,
+          "upgrade_cost": {
+            "shiny_ore": 3100,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 8,
+              "ShieldProtectionPercent": 8,
+              "DamagePermilHp": 130,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 8,
+              "ShieldProtectionPercent": 8,
+              "DamagePermilHp": 96,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 8,
+              "ShieldProtectionPercent": 8,
+              "DamagePermilHp": 47,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 22,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 3400,
+          "upgrade_cost": {
+            "shiny_ore": 3200,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 8,
+              "ShieldProtectionPercent": 8,
+              "DamagePermilHp": 130,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 8,
+              "ShieldProtectionPercent": 8,
+              "DamagePermilHp": 96,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 8,
+              "ShieldProtectionPercent": 8,
+              "DamagePermilHp": 47,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 23,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 3500,
+          "upgrade_cost": {
+            "shiny_ore": 3300,
+            "glowy_ore": 600,
+            "starry_ore": 120
+          },
+          "abilities": [
+            {
+              "Level": 8,
+              "ShieldProtectionPercent": 8,
+              "DamagePermilHp": 130,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 8,
+              "ShieldProtectionPercent": 8,
+              "DamagePermilHp": 96,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 8,
+              "ShieldProtectionPercent": 8,
+              "DamagePermilHp": 47,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 24,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 4000,
+          "upgrade_cost": {
+            "shiny_ore": 3400,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 9,
+              "ShieldProtectionPercent": 9,
+              "DamagePermilHp": 135,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 9,
+              "ShieldProtectionPercent": 9,
+              "DamagePermilHp": 98,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 9,
+              "ShieldProtectionPercent": 9,
+              "DamagePermilHp": 48,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 25,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 4100,
+          "upgrade_cost": {
+            "shiny_ore": 3500,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 9,
+              "ShieldProtectionPercent": 9,
+              "DamagePermilHp": 135,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 9,
+              "ShieldProtectionPercent": 9,
+              "DamagePermilHp": 98,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 9,
+              "ShieldProtectionPercent": 9,
+              "DamagePermilHp": 48,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 26,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 4200,
+          "upgrade_cost": {
+            "shiny_ore": 3600,
+            "glowy_ore": 600,
+            "starry_ore": 150
+          },
+          "abilities": [
+            {
+              "Level": 9,
+              "ShieldProtectionPercent": 9,
+              "DamagePermilHp": 135,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 9,
+              "ShieldProtectionPercent": 9,
+              "DamagePermilHp": 98,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 9,
+              "ShieldProtectionPercent": 9,
+              "DamagePermilHp": 48,
+              "name": "Monolith Arrow"
+            }
+          ]
+        },
+        {
+          "level": 27,
+          "hitpoints": 0,
+          "dps": 0,
+          "heal_on_activation": 0,
+          "required_blacksmith_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 4700,
+          "upgrade_cost": {
+            "shiny_ore": 0,
+            "glowy_ore": 0,
+            "starry_ore": 0
+          },
+          "abilities": [
+            {
+              "Level": 10,
+              "ShieldProtectionPercent": 10,
+              "DamagePermilHp": 140,
+              "name": "Monolith Arrow",
+              "info": "Monolith Arrow's extra damage decreases when more than <num> and <num2> housing spaces of units are deployed"
+            },
+            {
+              "Level": 10,
+              "ShieldProtectionPercent": 10,
+              "DamagePermilHp": 100,
+              "name": "Monolith Arrow"
+            },
+            {
+              "Level": 10,
+              "ShieldProtectionPercent": 10,
+              "DamagePermilHp": 50,
+              "name": "Monolith Arrow"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "_id": 90000017,
       "name": "Giant Arrow",
       "info": "Shoots a giant piercing arrow that crosses the entire village",
@@ -40908,7 +41869,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 2,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Archer Queen",
       "levels": [
         {
@@ -41320,7 +42281,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Grand Warden",
       "levels": [
         {
@@ -41984,7 +42945,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 5,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Archer Queen",
       "levels": [
         {
@@ -42504,7 +43465,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Grand Warden",
       "levels": [
         {
@@ -43195,7 +44156,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 4,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Grand Warden",
       "levels": [
         {
@@ -43607,7 +44568,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Barbarian King",
       "levels": [
         {
@@ -44244,7 +45205,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 6,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Grand Warden",
       "levels": [
         {
@@ -44674,7 +45635,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Minion Prince",
       "levels": [
         {
@@ -45635,7 +46596,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Archer Queen",
       "levels": [
         {
@@ -46299,7 +47260,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Royal Champion",
       "levels": [
         {
@@ -47044,7 +48005,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Grand Warden",
       "levels": [
         {
@@ -47681,7 +48642,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Minion Prince",
       "levels": [
         {
@@ -48111,7 +49072,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Minion Prince",
       "levels": [
         {
@@ -48559,7 +49520,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 3,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Minion Prince",
       "levels": [
         {
@@ -48989,7 +49950,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 5,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Minion Prince",
       "levels": [
         {
@@ -49437,7 +50398,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Archer Queen",
       "levels": [
         {
@@ -50182,7 +51143,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Minion Prince",
       "levels": [
         {
@@ -50819,7 +51780,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Royal Champion",
       "levels": [
         {
@@ -51483,7 +52444,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Barbarian King",
       "levels": [
         {
@@ -52147,7 +53108,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Dragon Duke",
       "levels": [
         {
@@ -52649,7 +53610,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "EPIC",
+      "rarity": "Epic",
       "hero": "Dragon Duke",
       "levels": [
         {
@@ -53286,7 +54247,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 9,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Dragon Duke",
       "levels": [
         {
@@ -53698,7 +54659,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 1,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Dragon Duke",
       "levels": [
         {
@@ -54110,7 +55071,7 @@
       },
       "production_building": "Blacksmith",
       "production_building_level": 10,
-      "rarity": "COMMON",
+      "rarity": "Common",
       "hero": "Dragon Duke",
       "levels": [
         {

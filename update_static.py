@@ -1173,7 +1173,7 @@ class StaticUpdater:
                 },
                 "production_building": self._translate(tid="TID_SMITHY"),
                 "production_building_level": equipment_data.get("1").get("RequiredBlacksmithLevel"),
-                "rarity": equipment_data.get("Rarity"),
+                "rarity": equipment_data.get("Rarity", "").title(),
                 "hero": self._translate(tid=hero_TID),
                 "levels": [],
             }
