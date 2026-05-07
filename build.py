@@ -275,7 +275,7 @@ def load_r2_config() -> R2Config:
 def create_r2_client(config: R2Config):
     import boto3
 
-    session = boto3.session.Session()
+    session = boto3.Session()
     return session.client(
         "s3",
         endpoint_url=config.endpoint_url,
