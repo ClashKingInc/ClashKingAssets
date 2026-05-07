@@ -7,16 +7,9 @@ requires-python = "==3.13.7"
 dependencies = [
     "aiohttp",
     "boto3",
-    "fastapi",
-    "gunicorn",
-    "jinja2",
-    "lz4",
-    "pillow",
+    "pylzham",
     "python-dotenv",
-    "uvloop",
-    "uvicorn",
     "zstandard>=0.25.0",
-    "dotenv>=0.9.9",
 ]
 
 [project.optional-dependencies]
