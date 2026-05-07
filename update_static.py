@@ -2038,7 +2038,13 @@ class StaticUpdater:
             if "HTTP 403" in message and "AccessDenied" in message:
                 logging.warning("Skipping remote static download: access denied for fingerprint.json")
                 logging.warning("Continuing with local files to build static_data.json and translations.json")
-                self.create_master_json()
+                try:
+                    self.create_master_json()
+                except FileNotFoundError as file_error:
+                    logging.warning(
+                        "Local source files are missing, so static build was skipped: %s",
+                        file_error,
+                    )
                 return
             raise
         if not isinstance(fingerprint_file_raw, dict):
