@@ -165,7 +165,14 @@ class StaticUpdater:
         if not self.FINGERPRINT:
             self.FINGERPRINT = await fetch_fingerprint(self.APK_URL)
         base_url = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
-        fingerprint_file_raw = await download_file(url=f"{base_url}/fingerprint.json", as_json=True)
+        try:
+            fingerprint_file_raw = await download_file(url=f"{base_url}/fingerprint.json", as_json=True)
+        except RuntimeError as exc:
+            message = str(exc)
+            if "HTTP 403" in message and "AccessDenied" in message:
+                logging.warning("Skipping asset extraction: access denied for remote fingerprint.json")
+                return
+            raise
         if not isinstance(fingerprint_file_raw, dict):
             raise TypeError("fingerprint.json payload must be an object")
         fingerprint_file = cast(dict[str, Any], fingerprint_file_raw)
@@ -2024,7 +2031,16 @@ class StaticUpdater:
 
         BASE_URL = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
 
-        fingerprint_file_raw = await download_file(url=f"{BASE_URL}/fingerprint.json", as_json=True)
+        try:
+            fingerprint_file_raw = await download_file(url=f"{BASE_URL}/fingerprint.json", as_json=True)
+        except RuntimeError as exc:
+            message = str(exc)
+            if "HTTP 403" in message and "AccessDenied" in message:
+                logging.warning("Skipping remote static download: access denied for fingerprint.json")
+                logging.warning("Continuing with local files to build static_data.json and translations.json")
+                self.create_master_json()
+                return
+            raise
         if not isinstance(fingerprint_file_raw, dict):
             raise TypeError("fingerprint.json payload must be an object")
         fingerprint_file = cast(dict[str, Any], fingerprint_file_raw)
