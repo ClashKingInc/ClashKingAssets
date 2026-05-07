@@ -17,6 +17,7 @@ import zstandard
 import lzma
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any, cast
 
 from utils import apk_url, download_file, fetch_fingerprint
 
@@ -82,7 +83,7 @@ class StaticUpdater:
         self.FINGERPRINT = os.getenv("FINGERPRINT", "")
         self.APK_URL = apk_url()
 
-        self.translation_data = {}
+        self.translation_data: dict[str, dict[str, str | None]] = {}
         self.full_building_data = {}
         self.full_supercharges_data = {}
         self.full_abilities_data = {}
@@ -164,7 +165,10 @@ class StaticUpdater:
         if not self.FINGERPRINT:
             self.FINGERPRINT = await fetch_fingerprint(self.APK_URL)
         base_url = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
-        fingerprint_file: dict = await download_file(url=f"{base_url}/fingerprint.json", as_json=True)
+        fingerprint_file_raw = await download_file(url=f"{base_url}/fingerprint.json", as_json=True)
+        if not isinstance(fingerprint_file_raw, dict):
+            raise TypeError("fingerprint.json payload must be an object")
+        fingerprint_file = cast(dict[str, Any], fingerprint_file_raw)
         available_files = {item.get("file") for item in fingerprint_file.get("files", []) if item.get("file")}
 
         grouped: dict[str, dict[str | None, list[SCAssetRequest]]] = {}
@@ -312,7 +316,7 @@ class StaticUpdater:
 
         final_data = {}
         current_troop = None
-        level_counter = None
+        level_counter = 0
         current_level = None
 
         for row in rows[2:]:
@@ -336,6 +340,8 @@ class StaticUpdater:
                     continue
                 lvl_key = current_level
             else:
+                if level_counter == 0:
+                    level_counter = 1
                 lvl_key = str(level_counter)
                 level_counter += 1
 
@@ -492,15 +498,21 @@ class StaticUpdater:
             return False
         return True
 
-    def open_file(self, file_path: str) -> dict:
+    def open_file(self, file_path: str) -> dict[str, Any]:
         with open(file_path, "r", encoding="utf-8") as f:
-            data: dict = json.load(f)
+            data = json.load(f)
+        if not isinstance(data, dict):
+            raise TypeError(f"Expected object at {file_path}")
         return data
 
-    def clean_name(self, s: str) -> str:
+    def clean_name(self, s: str | None) -> str:
+        if not s:
+            return "unknown"
         return s.lower().replace(" ", "_").replace(".", "")
 
-    def _translate(self, tid: str):
+    def _translate(self, tid: str | None) -> str | None:
+        if not tid:
+            return None
         self.USED_TIDS.add(tid)
         return self.translation_data.get(tid, {}).get("EN")
 
@@ -511,8 +523,10 @@ class StaticUpdater:
         upgrade_time_seconds += level_data.get("BuildTimeS") or level_data.get("UpgradeTimeS", 0)
         return upgrade_time_seconds
 
-    def _parse_resource(self, resource: str) -> str:
-        resource_TID: str = self.full_resource_data.get(resource, {}).get("TID")
+    def _parse_resource(self, resource: str | None) -> str | None:
+        if not resource:
+            return None
+        resource_TID = self.full_resource_data.get(resource, {}).get("TID")
         return self._translate(resource_TID)
 
     def _parse_translation_data(self):
@@ -528,11 +542,10 @@ class StaticUpdater:
         for translation_key, translation_data in full_translation_data.items():
             new_translation_data[translation_key] = {"EN": translation_data.get("EN")}
             for lang, language_data in other_translations:
-                if not language_data.get(translation_key):
+                entry = language_data.get(translation_key)
+                if not isinstance(entry, dict):
                     continue
-                new_translation_data[translation_key][lang.upper()] = language_data.get(translation_key).get(
-                    lang.upper()
-                )
+                new_translation_data[translation_key][lang.upper()] = entry.get(lang.upper())
 
         self.translation_data = new_translation_data
         return new_translation_data
@@ -638,7 +651,8 @@ class StaticUpdater:
                 "type": building_data.get("BuildingClass"),
                 # we are going to do this purely for builder hut purposes bc lv 1 is gems
                 "upgrade_resource": self._parse_resource(
-                    resource=building_data.get("BuildResource") or building_data.get("2").get("BuildResource")
+                    resource=building_data.get("BuildResource")
+                    or (building_data.get("2", {}).get("BuildResource") if isinstance(building_data.get("2"), dict) else None)
                 ),
                 "village": "home" if not village_type else "builderBase",
                 "width": building_data.get("Width", 1),  # walls are null for some reason, so let's make it 1
@@ -653,10 +667,11 @@ class StaticUpdater:
                 hold_data["seasonal_defenses"] = seasonal_def_data
 
             if building_data.get("GearUpLevelRequirement"):
+                gear_up_building = self.full_building_data.get(building_data.get("GearUpBuilding"))
                 hold_data["gear_up"] = {
                     "level_required": building_data.get("GearUpLevelRequirement"),
                     "resource": self._parse_resource(resource=building_data.get("GearUpResource")),
-                    "building_id": self.full_building_data.get(building_data.get("GearUpBuilding")).get("GlobalID"),
+                    "building_id": gear_up_building.get("GlobalID") if isinstance(gear_up_building, dict) else None,
                 }
 
             for level, level_data in building_data.items():
@@ -688,6 +703,8 @@ class StaticUpdater:
                     for building in buildings:
                         name, level, geared_up = building.split(":")
                         merge_building_data = self.full_building_data.get(name)
+                        if not isinstance(merge_building_data, dict):
+                            continue
                         merge_list.append(
                             {
                                 "name": self._translate(tid=merge_building_data.get("TID")),
@@ -782,7 +799,11 @@ class StaticUpdater:
             seasons.append(season_data)
 
         current_season = next((item for item in reversed(seasons) if item.get("TID")), {})
-        current_seasonal_defenses: list[str] = [v.get("Archetypes") for k, v in current_season.items() if k.isdigit()]
+        current_seasonal_defenses = [
+            v.get("Archetypes")
+            for k, v in current_season.items()
+            if k.isdigit() and isinstance(v, dict) and isinstance(v.get("Archetypes"), str)
+        ]
 
         for _id, (n, d) in enumerate(full_seasonal_modules.items(), 102000000):
             d["_id"] = _id
@@ -794,6 +815,8 @@ class StaticUpdater:
                 continue
 
             season_defense_ability = self.full_abilities_data.get(seasonal_def_data.get("SpecialAbility"))
+            if not isinstance(season_defense_ability, dict):
+                continue
 
             name_TID = season_defense_ability.get("OverrideTID")
             info_TID = season_defense_ability.get("OverrideInfoTID")
@@ -808,6 +831,8 @@ class StaticUpdater:
             }
             for count, module in enumerate(seasonal_def_data.get("Modules").split(";"), 1):
                 module_data = full_seasonal_modules.get(module)
+                if not isinstance(module_data, dict):
+                    continue
 
                 module_hold_data = {
                     "_id": module_data.get("_id"),
@@ -821,7 +846,15 @@ class StaticUpdater:
                         continue
                     upgrade_time_seconds = self._parse_upgrade_time(level_data)
 
-                    ability_data = self.full_abilities_data.get(module_data.get("SpecialAbility")).get(level)
+                    special_ability = module_data.get("SpecialAbility")
+                    if not isinstance(special_ability, str):
+                        continue
+                    full_ability_data = self.full_abilities_data.get(special_ability)
+                    if not isinstance(full_ability_data, dict):
+                        continue
+                    ability_data = full_ability_data.get(level)
+                    if not isinstance(ability_data, dict):
+                        continue
                     ability_data.pop("ActivateFromGameSystem", None)
                     ability_data.pop("DeactivateFromGameSystem", None)
                     ability_data.pop("Level", None)
@@ -852,7 +885,8 @@ class StaticUpdater:
             if troop_data.get("DisableProduction", False):
                 continue
             village_type = troop_data.get("VillageType", 0)
-            production_building = self.full_building_data.get(troop_data.get("ProductionBuilding")).get("TID")
+            production_building_data = self.full_building_data.get(troop_data.get("ProductionBuilding"))
+            production_building = production_building_data.get("TID") if isinstance(production_building_data, dict) else None
 
             name_to_id[(troop_name, village_type)] = troop_data.get("GlobalID")
 
@@ -886,9 +920,15 @@ class StaticUpdater:
             super_troop_data = None
             if is_super_troop:
                 super_troop_data = full_super_troop_data.get(troop_name)
+                if not isinstance(super_troop_data, dict):
+                    continue
+                original_name = super_troop_data.get("Original")
+                min_original_level = super_troop_data.get("MinOriginalLevel")
+                if not isinstance(original_name, str) or min_original_level is None:
+                    continue
                 hold_data["super_troop"] = {
-                    "original_id": name_to_id[(super_troop_data["Original"], 0)],
-                    "original_min_level": super_troop_data["MinOriginalLevel"],
+                    "original_id": name_to_id[(original_name, 0)],
+                    "original_min_level": min_original_level,
                 }
             if is_seasonal_troop:
                 hold_data["is_seasonal"] = True
@@ -898,7 +938,7 @@ class StaticUpdater:
             if troop_data.get("ProductionBuilding") == "Barrack2":
                 max_townhall_converter = self.bb_lab_to_townhall
 
-            for level, level_data in troop_data.items():  # type: str, dict
+            for level, level_data in troop_data.items():
                 if not isinstance(level_data, dict):
                     continue
                 # convert times to seconds, all times for all things will be in seconds
@@ -906,11 +946,25 @@ class StaticUpdater:
 
                 if not is_super_troop and not is_seasonal_troop:
                     required_lab_level = level_data.get("LaboratoryLevel")
-                    required_townhall = max_townhall_converter[level_data.get("LaboratoryLevel")]
+                    required_townhall = (
+                        max_townhall_converter.get(required_lab_level) if isinstance(required_lab_level, int) else None
+                    )
                 elif is_super_troop:  # for super troops use the original troop's lab level'
-                    original_troop = self.full_troop_data.get(super_troop_data["Original"])
-                    required_lab_level = original_troop.get(level).get("LaboratoryLevel")
-                    required_townhall = max_townhall_converter[required_lab_level]
+                    if not isinstance(super_troop_data, dict):
+                        continue
+                    original_name = super_troop_data.get("Original")
+                    if not isinstance(original_name, str):
+                        continue
+                    original_troop = self.full_troop_data.get(original_name)
+                    if not isinstance(original_troop, dict):
+                        continue
+                    original_level_data = original_troop.get(level)
+                    if not isinstance(original_level_data, dict):
+                        continue
+                    required_lab_level = original_level_data.get("LaboratoryLevel")
+                    required_townhall = (
+                        max_townhall_converter.get(required_lab_level) if isinstance(required_lab_level, int) else None
+                    )
                 elif is_seasonal_troop:
                     required_lab_level = None
                     required_townhall = level_data.get("UpgradeLevelByTH")
@@ -943,6 +997,8 @@ class StaticUpdater:
             if guardian_data.get("Deprecated", False):
                 continue
             character_data = self.full_troop_data.get(guardian_data.get("CharacterDatas"))
+            if not isinstance(character_data, dict):
+                continue
 
             self.register_sc_asset(
                 source_sc=guardian_data.get("IconSWF"),
@@ -1002,7 +1058,8 @@ class StaticUpdater:
                 save_path=f'spells/{self.clean_name(self._translate(spell_data.get("TID")))}',
             )
 
-            production_building = self.full_building_data.get(spell_data.get("ProductionBuilding")).get("TID")
+            production_building_data = self.full_building_data.get(spell_data.get("ProductionBuilding"))
+            production_building = production_building_data.get("TID") if isinstance(production_building_data, dict) else None
             hold_data = {
                 "_id": spell_data.get("GlobalID"),
                 "name": self._translate(spell_data.get("TID")),
@@ -1026,6 +1083,7 @@ class StaticUpdater:
 
                 duration_ms = level_data.get("NumberOfHits", 0) * level_data.get("TimeBetweenHitsMS", 0)
                 radius = spell_data.get("Radius", 0) or level_data.get("Radius", 0)
+                lab_level = level_data.get("LaboratoryLevel")
                 new_level_data = {
                     "level": int(level),
                     "duration": int(duration_ms / 1000),
@@ -1033,9 +1091,9 @@ class StaticUpdater:
                     "damage": level_data.get("Damage", 0) or level_data.get("PoisonDPS", 0),
                     "upgrade_time": upgrade_time_seconds,
                     "upgrade_cost": level_data.get("UpgradeCost", 0),
-                    "required_lab_level": level_data.get("LaboratoryLevel"),
+                    "required_lab_level": lab_level,
                     "required_townhall": level_data.get("UpgradeLevelByTH")
-                    or self.lab_to_townhall[level_data.get("LaboratoryLevel")],
+                    or (self.lab_to_townhall.get(lab_level) if isinstance(lab_level, int) else None),
                     "strength_weight": level_data.get("StrengthWeight", 0),
                 }
                 hold_data["levels"].append(new_level_data)
@@ -1112,7 +1170,9 @@ class StaticUpdater:
                 "info": self._translate(tid=pet_data.get("InfoTID")),
                 "TID": {"name": pet_data.get("TID"), "info": pet_data.get("InfoTID")},
                 "production_building": self._translate(tid="TID_PET_SHOP"),
-                "production_building_level": pet_data.get("1").get("LaboratoryLevel"),
+                "production_building_level": pet_data.get("1", {}).get("LaboratoryLevel")
+                if isinstance(pet_data.get("1"), dict)
+                else None,
                 "upgrade_resource": self._parse_resource('DarkElixir'),
                 "is_flying": pet_data.get("IsFlying"),
                 "is_air_targeting": pet_data.get("AirTargets"),
@@ -1128,6 +1188,7 @@ class StaticUpdater:
                     continue
                 # convert times to seconds, all times for all things will be in seconds
                 upgrade_time_seconds = self._parse_upgrade_time(level_data)
+                pet_house_level = level_data.get("LaboratoryLevel")
 
                 new_level_data = {
                     "level": int(level),
@@ -1135,8 +1196,10 @@ class StaticUpdater:
                     "dps": level_data.get("DPS"),
                     "upgrade_time": upgrade_time_seconds,
                     "upgrade_cost": level_data.get("UpgradeCost", 0),
-                    "required_pet_house_level": level_data.get("LaboratoryLevel"),
-                    "required_townhall": self.pethouse_to_townhall[level_data.get("LaboratoryLevel")],
+                    "required_pet_house_level": pet_house_level,
+                    "required_townhall": self.pethouse_to_townhall.get(pet_house_level)
+                    if isinstance(pet_house_level, int)
+                    else None,
                     "strength_weight": level_data.get("StrengthWeight", 0),
                 }
                 hold_data["levels"].append(new_level_data)
@@ -1161,7 +1224,10 @@ class StaticUpdater:
 
             main_abilities = equipment_data.get("MainAbilities").split(";")
             extra_abilities = equipment_data.get("ExtraAbilities", "").split(";")
-            hero_TID = self.full_hero_data.get(equipment_data.get("AllowedCharacters").split(";")[0]).get("TID")
+            allowed_characters = str(equipment_data.get("AllowedCharacters", ""))
+            first_allowed_character = allowed_characters.split(";")[0] if allowed_characters else ""
+            hero_data = self.full_hero_data.get(first_allowed_character)
+            hero_TID = hero_data.get("TID") if isinstance(hero_data, dict) else None
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=equipment_data.get("TID")),
@@ -1172,7 +1238,9 @@ class StaticUpdater:
                     "production_building": "TID_SMITHY",
                 },
                 "production_building": self._translate(tid="TID_SMITHY"),
-                "production_building_level": equipment_data.get("1").get("RequiredBlacksmithLevel"),
+                "production_building_level": equipment_data.get("1", {}).get("RequiredBlacksmithLevel")
+                if isinstance(equipment_data.get("1"), dict)
+                else None,
                 "rarity": equipment_data.get("Rarity", "").title(),
                 "hero": self._translate(tid=hero_TID),
                 "levels": [],
@@ -1198,14 +1266,17 @@ class StaticUpdater:
                             glowy_ore += cost
                         elif resource == "EpicOre":
                             starry_ore += cost
+                smithy_level = level_data.get("RequiredBlacksmithLevel")
 
                 new_level_data = {
                     "level": int(level),
                     "hitpoints": level_data.get("Hitpoints", 0),
                     "dps": level_data.get("DPS", 0),
                     "heal_on_activation": level_data.get("HealOnActivation", 0),
-                    "required_blacksmith_level": level_data.get("RequiredBlacksmithLevel"),
-                    "required_townhall": self.smithy_to_townhall[level_data.get("RequiredBlacksmithLevel")],
+                    "required_blacksmith_level": smithy_level,
+                    "required_townhall": self.smithy_to_townhall.get(smithy_level)
+                    if isinstance(smithy_level, int)
+                    else None,
                     "strength_weight": level_data.get("StrengthWeight", 0),
                     "upgrade_cost": {"shiny_ore": shiny_ore, "glowy_ore": glowy_ore, "starry_ore": starry_ore},
                 }
@@ -1216,7 +1287,11 @@ class StaticUpdater:
                     main_ability_json = []
                     for main_ability, main_ability_level in zip(main_abilities, main_ability_levels):
                         full_ability = self.full_abilities_data.get(main_ability)
+                        if not isinstance(full_ability, dict):
+                            continue
                         ability = full_ability.get(main_ability_level)
+                        if not isinstance(ability, dict):
+                            continue
                         ability["name"] = self._translate(tid=full_ability.get("TID"))
                         ability["info"] = self._translate(tid=full_ability.get("InfoTID"))
                         main_ability_json.append(ability)
@@ -1229,8 +1304,10 @@ class StaticUpdater:
                     extra_ability_json = []
                     for extra_ability, extra_ability_level in zip(extra_abilities, extra_ability_levels):
                         full_ability = self.full_abilities_data.get(extra_ability)
+                        if not isinstance(full_ability, dict):
+                            continue
                         ability = full_ability.get(extra_ability_level)
-                        if ability:
+                        if isinstance(ability, dict):
                             ability["name"] = self._translate(tid=full_ability.get("TID"))
                             extra_ability_json.append(ability)
 
@@ -1546,7 +1623,10 @@ class StaticUpdater:
                 if tier == "1":  # always empty idky
                     continue
                 townhall_level = level_data.get("TH")
-                th_min_league_tier = self.full_townhall_data.get(str(townhall_level)).get("LeagueTier", 0)
+                if not isinstance(townhall_level, int):
+                    continue
+                townhall_data = self.full_townhall_data.get(str(townhall_level))
+                th_min_league_tier = townhall_data.get("LeagueTier", 0) if isinstance(townhall_data, dict) else 0
                 if league_tier < th_min_league_tier and league_tier != 0:
                     continue
                 highest_townhall = max(townhall_level, highest_townhall)
@@ -1944,9 +2024,14 @@ class StaticUpdater:
 
         BASE_URL = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
 
-        fingerprint_file = await download_file(url=f"{BASE_URL}/fingerprint.json", as_json=True)
+        fingerprint_file_raw = await download_file(url=f"{BASE_URL}/fingerprint.json", as_json=True)
+        if not isinstance(fingerprint_file_raw, dict):
+            raise TypeError("fingerprint.json payload must be an object")
+        fingerprint_file = cast(dict[str, Any], fingerprint_file_raw)
 
-        for file_data in fingerprint_file.get("files"):
+        for file_data in fingerprint_file.get("files", []):
+            if not isinstance(file_data, dict):
+                continue
             file_path: str = file_data["file"]
             if (
                 not file_path.startswith("logic/")
