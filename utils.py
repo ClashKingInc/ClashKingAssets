@@ -24,7 +24,18 @@ async def download_file(url: str, as_json: Literal[False] = False) -> bytes: ...
 async def download_file(url: str, as_json: bool = False) -> Any | bytes:
     async with aiohttp.request("GET", url) as response:
         if as_json:
-            return await response.json()
+            body = await response.text()
+            if response.status >= 400:
+                snippet = body[:300].replace("\n", " ")
+                raise RuntimeError(f"HTTP {response.status} while fetching JSON from {url}: {snippet}")
+            try:
+                return json.loads(body)
+            except json.JSONDecodeError as exc:
+                raise RuntimeError(f"Invalid JSON response from {url}") from exc
+        if response.status >= 400:
+            body = await response.text()
+            snippet = body[:300].replace("\n", " ")
+            raise RuntimeError(f"HTTP {response.status} while fetching bytes from {url}: {snippet}")
         return await response.read()
 
 
