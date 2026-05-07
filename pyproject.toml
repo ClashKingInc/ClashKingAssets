@@ -19,6 +19,7 @@ dev = [
     "isort",
     "flake8",
     "ruff",
+    "boto3-stubs[s3]",
 ]
 
 [tool.uv]
