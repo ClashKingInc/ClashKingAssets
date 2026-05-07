@@ -35,9 +35,9 @@ async def fetch_fingerprint(apk_url: str) -> str:
 
     with open("apk.zip", "wb") as f:
         f.write(data)
-    zf = zipfile.ZipFile("apk.zip")
-    with zf.open("assets/fingerprint.json") as fp:
-        fingerprint = json.loads(fp.read())["sha"]
+    with zipfile.ZipFile("apk.zip") as zf:
+        with zf.open("assets/fingerprint.json") as fp:
+            fingerprint = json.loads(fp.read())["sha"]
 
     os.remove("apk.zip")
     return fingerprint
