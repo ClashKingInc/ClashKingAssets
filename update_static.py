@@ -190,6 +190,46 @@ class StaticUpdater:
 
         return downloaded
 
+    def _build_apk_asset_index(self, members: list[str]) -> dict[str, str]:
+        index: dict[str, str] = {}
+        for member in members:
+            normalized_member = member.replace("\\", "/").lstrip("/")
+            if not normalized_member:
+                continue
+            keys = {normalized_member}
+            if normalized_member.startswith("assets/"):
+                keys.add(normalized_member.removeprefix("assets/"))
+            for key in keys:
+                if key and key not in index:
+                    index[key] = member
+        return index
+
+    def _extract_apk_asset_file(self, apk_zip: zipfile.ZipFile, apk_asset_index: dict[str, str], asset_path: str) -> Path:
+        normalized = asset_path.replace("\\", "/").lstrip("/")
+        candidates = [normalized, f"assets/{normalized}"]
+        if normalized.startswith("assets/"):
+            candidates.append(normalized.removeprefix("assets/"))
+        for candidate in candidates:
+            member = apk_asset_index.get(candidate)
+            if not member:
+                continue
+            local_path = Path(normalized)
+            local_path.parent.mkdir(parents=True, exist_ok=True)
+            local_path.write_bytes(apk_zip.read(member))
+            return local_path
+        raise FileNotFoundError(f"missing asset in APK: {asset_path}")
+
+    def _extract_sc_bundle_from_apk(
+        self, apk_zip: zipfile.ZipFile, apk_asset_index: dict[str, str], source_sc: str, available_files: set[str]
+    ) -> list[Path]:
+        extracted: list[Path] = []
+        bundle_files = sorted(file_path for file_path in available_files if is_sc_bundle_file(source_sc, file_path))
+        if source_sc not in bundle_files:
+            raise FileNotFoundError(f"missing source bundle file in APK: {source_sc}")
+        for file_path in bundle_files:
+            extracted.append(self._extract_apk_asset_file(apk_zip, apk_asset_index, file_path))
+        return extracted
+
     async def extract_assets(self):
         if not self.sc_asset_requests:
             return
@@ -202,9 +242,90 @@ class StaticUpdater:
         except RuntimeError as exc:
             message = str(exc)
             if "HTTP 403" in message and "AccessDenied" in message:
-                logging.warning("Skipping asset extraction: access denied for remote fingerprint.json")
-                return
-            raise
+                logging.warning("Remote fingerprint denied; attempting APK fallback for asset extraction")
+                fingerprint_file_raw = None
+            else:
+                raise
+        if fingerprint_file_raw is None:
+            apk_bytes = await self._get_apk_bytes()
+            with zipfile.ZipFile(io.BytesIO(apk_bytes), "r") as apk_zip:
+                apk_asset_index = self._build_apk_asset_index(apk_zip.namelist())
+                available_files = {path for path in apk_asset_index.keys() if path.endswith((".sc", ".sctx"))}
+                grouped: dict[str, dict[str | None, list[SCAssetRequest]]] = {}
+                for requests in self.sc_asset_requests.values():
+                    pending_requests = [
+                        request for request in requests if not self.should_skip_registered_asset(request.save_path)
+                    ]
+                    if not pending_requests:
+                        continue
+                    primary = pending_requests[0]
+                    grouped.setdefault(primary.source_sc, {})[primary.asset_name] = pending_requests
+
+                for source_sc, asset_requests in sorted(grouped.items()):
+                    downloaded_files: list[Path] = []
+                    legacy_assets_dir = Path(source_sc).parent / f"{Path(source_sc).stem}_assets"
+                    try:
+                        if source_sc.endswith(".sc"):
+                            downloaded_files = self._extract_sc_bundle_from_apk(
+                                apk_zip, apk_asset_index, source_sc, available_files
+                            )
+                        else:
+                            downloaded_files = [self._extract_apk_asset_file(apk_zip, apk_asset_index, source_sc)]
+                        if not is_exported_via_go(source_sc):
+                            for requests in asset_requests.values():
+                                for request in requests:
+                                    self.save_registered_asset(request, downloaded_files[0])
+                            continue
+                        with tempfile.TemporaryDirectory(prefix="update-static-sc-") as temp_dir:
+                            command = ["go", "run", "main.go", "--workers", str(max(1, os.cpu_count() or 1)), "--prefer-webp"]
+                            if source_sc.endswith(".sc"):
+                                command.extend(["--out", temp_dir])
+                                for asset_name, requests in sorted(asset_requests.items()):
+                                    if asset_name is None:
+                                        raise ValueError(f"missing asset name for SC source {source_sc}")
+                                    temp_output_base = str(Path(temp_dir) / asset_name)
+                                    command.extend(["--asset", asset_name])
+                                    command.extend(["--asset-output", f"{asset_name}={temp_output_base}"])
+                            else:
+                                direct_output = str(Path(temp_dir) / Path(source_sc).stem)
+                                command.extend(["--out", direct_output])
+                            command.append(source_sc)
+                            subprocess.run(command, check=True)
+
+                            if source_sc.endswith(".sc"):
+                                manifest_path = Path(temp_dir) / "manifest.json"
+                                manifest_data = json.loads(manifest_path.read_text())
+                                exported_files = {
+                                    entry["export_name"]: entry["output_file"] for entry in manifest_data.get("exports", [])
+                                }
+                                skipped_exports = {
+                                    entry["export_name"]: entry.get("reason", "unknown reason")
+                                    for entry in manifest_data.get("skipped", [])
+                                }
+                                for asset_name, requests in asset_requests.items():
+                                    exported_file = exported_files.get(asset_name)
+                                    if not exported_file:
+                                        skip_reason = skipped_exports.get(asset_name)
+                                        if skip_reason:
+                                            raise RuntimeError(f"asset {source_sc}:{asset_name} was skipped: {skip_reason}")
+                                        raise FileNotFoundError(f"asset output missing for {source_sc}:{asset_name}")
+                                    for request in asset_requests[asset_name]:
+                                        self.save_registered_asset(request, Path(exported_file))
+                            else:
+                                exported_file = str(Path(temp_dir) / f"{Path(source_sc).stem}.webp")
+                                for request in next(iter(asset_requests.values())):
+                                    self.save_registered_asset(request, Path(exported_file))
+                        shutil.rmtree(legacy_assets_dir, ignore_errors=True)
+                    finally:
+                        for path in downloaded_files:
+                            try:
+                                path.unlink()
+                            except OSError:
+                                pass
+                        shutil.rmtree(legacy_assets_dir, ignore_errors=True)
+                        if downloaded_files:
+                            remove_empty_parents(Path(downloaded_files[0]).parent, Path.cwd())
+            return
         if not isinstance(fingerprint_file_raw, dict):
             raise TypeError("fingerprint.json payload must be an object")
         fingerprint_file = cast(dict[str, Any], fingerprint_file_raw)
@@ -2238,6 +2359,8 @@ class StaticUpdater:
                         "Local source files are missing, so static build was skipped: %s",
                         file_error,
                     )
+                    return
+                await self.extract_assets()
                 return
             raise
         if not isinstance(fingerprint_file_raw, dict):
