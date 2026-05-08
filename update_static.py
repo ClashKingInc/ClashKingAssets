@@ -8,18 +8,20 @@ import asyncio
 import json
 import logging
 import csv
+import io
 import os
 import hashlib
 import shutil
 import subprocess
 import tempfile
+import zipfile
 import zstandard
 import lzma
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, cast
 
-from utils import apk_url, download_file, fetch_fingerprint
+from utils import apk_url, download_file
 
 
 @dataclass(frozen=True)
@@ -82,6 +84,8 @@ class StaticUpdater:
 
         self.FINGERPRINT = os.getenv("FINGERPRINT", "")
         self.APK_URL = apk_url()
+        self.APK_PATH = os.getenv("APK_PATH", "").strip()
+        self._apk_bytes_cache: bytes | None = None
 
         self.translation_data: dict[str, dict[str, str | None]] = {}
         self.full_building_data = {}
@@ -101,6 +105,34 @@ class StaticUpdater:
         self.sc_asset_requests: dict[tuple[str, str | None], list[SCAssetRequest]] = {}
 
         self.build_mappping = {}
+
+    async def _get_apk_bytes(self) -> bytes:
+        if self._apk_bytes_cache is not None:
+            return self._apk_bytes_cache
+
+        if self.APK_PATH:
+            apk_path = Path(self.APK_PATH)
+            if apk_path.exists():
+                self._apk_bytes_cache = apk_path.read_bytes()
+                return self._apk_bytes_cache
+            logging.warning("APK_PATH does not exist: %s", apk_path)
+
+        apk_bytes = await download_file(self.APK_URL, show_progress=True)
+        if not isinstance(apk_bytes, bytes):
+            raise TypeError("Expected bytes when downloading APK")
+        self._apk_bytes_cache = apk_bytes
+        return apk_bytes
+
+    async def _ensure_fingerprint(self) -> str:
+        if self.FINGERPRINT:
+            return self.FINGERPRINT
+
+        apk_bytes = await self._get_apk_bytes()
+        with zipfile.ZipFile(io.BytesIO(apk_bytes), "r") as apk_zip:
+            with apk_zip.open("assets/fingerprint.json") as fp:
+                fingerprint = json.loads(fp.read())["sha"]
+        self.FINGERPRINT = fingerprint
+        return self.FINGERPRINT
 
     def register_sc_asset(self, source_sc: str, asset_name: str, save_path: str) -> str:
         source_sc = source_sc.strip()
@@ -163,7 +195,7 @@ class StaticUpdater:
             return
 
         if not self.FINGERPRINT:
-            self.FINGERPRINT = await fetch_fingerprint(self.APK_URL)
+            self.FINGERPRINT = await self._ensure_fingerprint()
         base_url = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
         try:
             fingerprint_file_raw = await download_file(url=f"{base_url}/fingerprint.json", as_json=True)
@@ -1952,6 +1984,120 @@ class StaticUpdater:
                     except OSError as e:
                         logging.warning(f"Could not delete {file_path}: {e}")
 
+    def _check_local_source_files(self) -> list[str]:
+        required_paths = [
+            "localization/texts.json",
+            "logic/buildings.json",
+            "logic/characters.json",
+            "logic/spells.json",
+            "logic/heroes.json",
+            "logic/resources.json",
+        ]
+        missing: list[str] = []
+        for path in required_paths:
+            if not Path(path).exists():
+                missing.append(path)
+        return missing
+
+    def _bootstrap_local_json_from_csv(self) -> None:
+        csv_root = Path("csv")
+        if not csv_root.exists():
+            return
+
+        for csv_path in sorted(csv_root.rglob("*.csv")):
+            try:
+                data = csv_path.read_bytes()
+                csv_path_str = csv_path.as_posix()
+                if csv_path_str == "csv/animations.csv":
+                    self.process_animations_csv(data=data, file_path=csv_path_str)
+                else:
+                    self.process_csv(data=data, file_path=csv_path_str)
+            except Exception as exc:
+                logging.warning("Failed to process local CSV file %s: %s", csv_path, exc)
+
+    def _bootstrap_from_local_apk(self) -> bool:
+        if not self.APK_PATH:
+            return False
+        apk_path = Path(self.APK_PATH)
+        if not apk_path.exists():
+            logging.warning("APK_PATH does not exist: %s", apk_path)
+            return False
+
+        processed = 0
+        try:
+            with zipfile.ZipFile(apk_path, "r") as apk_zip:
+                for member in apk_zip.namelist():
+                    if not member.lower().endswith(".csv"):
+                        continue
+                    if not member.startswith("assets/"):
+                        continue
+
+                    relative = member[len("assets/") :]
+                    if not (
+                        relative.startswith("logic/")
+                        or relative.startswith("localization/")
+                        or relative.startswith("csv/")
+                    ):
+                        continue
+
+                    data = apk_zip.read(member)
+                    if relative == "csv/animations.csv":
+                        self.process_animations_csv(data=data, file_path=relative)
+                    else:
+                        self.process_csv(data=data, file_path=relative)
+                    processed += 1
+        except (OSError, zipfile.BadZipFile, KeyError) as exc:
+            logging.warning("Could not process local APK at %s: %s", apk_path, exc)
+            return False
+
+        if processed == 0:
+            logging.warning("No matching CSV files found inside %s", apk_path)
+            return False
+
+        logging.warning("Processed %s CSV files from local APK: %s", processed, apk_path)
+        return True
+
+    async def _bootstrap_from_downloaded_apk(self) -> bool:
+        try:
+            apk_bytes = await self._get_apk_bytes()
+        except (RuntimeError, OSError, TypeError) as exc:
+            logging.warning("Could not obtain APK bytes for local fallback: %s", exc)
+            return False
+
+        processed = 0
+        try:
+            with zipfile.ZipFile(io.BytesIO(apk_bytes), "r") as apk_zip:
+                for member in apk_zip.namelist():
+                    if not member.lower().endswith(".csv"):
+                        continue
+                    if not member.startswith("assets/"):
+                        continue
+
+                    relative = member[len("assets/") :]
+                    if not (
+                        relative.startswith("logic/")
+                        or relative.startswith("localization/")
+                        or relative.startswith("csv/")
+                    ):
+                        continue
+
+                    data = apk_zip.read(member)
+                    if relative == "csv/animations.csv":
+                        self.process_animations_csv(data=data, file_path=relative)
+                    else:
+                        self.process_csv(data=data, file_path=relative)
+                    processed += 1
+        except (OSError, zipfile.BadZipFile, KeyError) as exc:
+            logging.warning("Could not process downloaded APK payload: %s", exc)
+            return False
+
+        if processed == 0:
+            logging.warning("Downloaded APK did not contain matching CSV files under assets/")
+            return False
+
+        logging.warning("Processed %s CSV files from downloaded APK fallback", processed)
+        return True
+
     def generate_constants(self):
         static_data = self.open_file("static_data.json")
 
@@ -2027,7 +2173,7 @@ class StaticUpdater:
 
     async def download_files(self):
         if not self.FINGERPRINT:
-            self.FINGERPRINT = await fetch_fingerprint(self.APK_URL)
+            self.FINGERPRINT = await self._ensure_fingerprint()
 
         BASE_URL = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
 
@@ -2038,6 +2184,15 @@ class StaticUpdater:
             if "HTTP 403" in message and "AccessDenied" in message:
                 logging.warning("Skipping remote static download: access denied for fingerprint.json")
                 logging.warning("Continuing with local files to build static_data.json and translations.json")
+                got_apk_csv = self._bootstrap_from_local_apk()
+                if not got_apk_csv:
+                    await self._bootstrap_from_downloaded_apk()
+                self._bootstrap_local_json_from_csv()
+                missing_files = self._check_local_source_files()
+                if missing_files:
+                    logging.warning("Local source files are missing: %s", ", ".join(missing_files))
+                    logging.warning("Run once with remote access or place the required JSON files locally.")
+                    return
                 try:
                     self.create_master_json()
                 except FileNotFoundError as file_error:
@@ -2065,7 +2220,7 @@ class StaticUpdater:
 
             download_url = f"{BASE_URL}/{file_path}"
             print(f"Downloading: {download_url}")
-            data = await download_file(url=download_url)
+            data = await download_file(url=download_url, show_progress=True)
 
             Path(file_path).parent.mkdir(parents=True, exist_ok=True)
             with open(file_path, "wb") as f:
@@ -2085,4 +2240,6 @@ class StaticUpdater:
 
 
 if __name__ == "__main__":
+    if os.name == "nt":
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     StaticUpdater().run()
