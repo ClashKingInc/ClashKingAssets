@@ -1636,6 +1636,29 @@ class StaticUpdater:
 
     def _parse_league_tier_data(self):
         full_league_tier_data = self.open_file("logic/league_tiers.json")
+        full_battle_modifiers = self.open_file("logic/battle_modifiers.json")
+
+        def parse_battle_modifier(modifier_key: str | None):
+            if not modifier_key:
+                return None
+            modifier_data = full_battle_modifiers.get(modifier_key)
+            if not isinstance(modifier_data, dict):
+                return {"name": modifier_key}
+
+            effects = []
+            for effect_key, effect_data in modifier_data.items():
+                if not isinstance(effect_data, dict):
+                    continue
+                if not effect_key.isdigit():
+                    continue
+                effects.append({"index": int(effect_key), **effect_data})
+            effects.sort(key=lambda x: x["index"])
+
+            return {
+                "name": modifier_data.get("Name", modifier_key),
+                "TID": modifier_data.get("TID"),
+                "effects": effects,
+            }
 
         new_league_tier_data = []
         name_to_indices: dict[str, list[int]] = {}
@@ -1651,6 +1674,7 @@ class StaticUpdater:
                 "demote_percentage": league_data.get("DemotePercentage"),
                 "promote_percentage": league_data.get("PromotePercentage"),
                 "battle_count": league_data.get("MaxBattleCount"),
+                "battle_modifier": parse_battle_modifier(league_data.get("BattleModifier")),
                 "trophy_start": league_data.get("TrophyFloor"),
                 "clan_score": league_data.get("TopClanScore"),
                 "townhall_cap": None,
