@@ -1638,11 +1638,13 @@ class StaticUpdater:
         full_league_tier_data = self.open_file("logic/league_tiers.json")
 
         new_league_tier_data = []
+        name_to_indices: dict[str, list[int]] = {}
         for _id, (league_name, league_data) in enumerate(full_league_tier_data.items(), 105000000):
             league_tier = _id - 105000000
+            display_name = self._translate(tid=league_data.get("TID"))
             hold_data = {
                 "_id": _id,
-                "name": self._translate(tid=league_data.get("TID")),
+                "name": display_name,
                 "league_tier": league_tier,
                 "TID": {"name": league_data.get("TID")},
                 "group_size": league_data.get("GroupSizeMax"),
@@ -1689,7 +1691,19 @@ class StaticUpdater:
                 )
             hold_data["townhall_cap"] = highest_townhall
             hold_data["rewards"] = rewards
+            if isinstance(display_name, str) and display_name:
+                name_to_indices.setdefault(display_name, []).append(len(new_league_tier_data))
             new_league_tier_data.append(hold_data)
+
+        roman = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V"}
+        for base_name, indices in name_to_indices.items():
+            if len(indices) <= 1:
+                continue
+            total = len(indices)
+            for position, idx in enumerate(indices, start=1):
+                rank = total - position + 1
+                suffix = roman.get(rank, str(rank))
+                new_league_tier_data[idx]["name"] = f"{base_name} {suffix}"
 
         return new_league_tier_data
 
