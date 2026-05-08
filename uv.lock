@@ -152,7 +152,6 @@ source = { virtual = "." }
 dependencies = [
     { name = "aiohttp" },
     { name = "boto3" },
-    { name = "pylzham" },
     { name = "python-dotenv" },
     { name = "zstandard" },
 ]
@@ -175,7 +174,6 @@ requires-dist = [
     { name = "boto3-stubs", extras = ["s3"], marker = "extra == 'dev'" },
     { name = "flake8", marker = "extra == 'dev'" },
     { name = "isort", marker = "extra == 'dev'" },
-    { name = "pylzham" },
     { name = "pytest", marker = "extra == 'dev'" },
     { name = "python-dotenv" },
     { name = "ruff", marker = "extra == 'dev'" },
@@ -468,12 +466,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b014
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl", hash = "sha256:86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b", size = 1225217, upload-time = "2025-06-21T13:39:07.939Z" },
 ]
-
-[[package]]
-name = "pylzham"
-version = "0.1.3"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/57/94/0bfab1a4bb4dd12358433ac9d54a7ab928fe4bc9e89d0d11578dab335fb9/pylzham-0.1.3.tar.gz", hash = "sha256:af4828d4b0e158a938550d9299e5da82bdc9fbb375fe6e3da429012839fbade2", size = 112019, upload-time = "2023-01-28T13:17:03.074Z" }
 
 [[package]]
 name = "pytest"

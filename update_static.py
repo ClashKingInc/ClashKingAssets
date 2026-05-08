@@ -1757,7 +1757,10 @@ class StaticUpdater:
 
     def _parse_league_tier_data(self):
         full_league_tier_data = self.open_file("logic/league_tiers.json")
-        full_battle_modifiers = self.open_file("logic/battle_modifiers.json")
+        try:
+            full_battle_modifiers = self.open_file("logic/battle_modifiers.json")
+        except FileNotFoundError:
+            full_battle_modifiers = {}
 
         def parse_battle_modifier(modifier_key: str | None):
             if not modifier_key:
