@@ -1520,7 +1520,7 @@ class StaticUpdater:
 
             music_path = None
             if "Music" in scenery_data:
-                self.register_sc_asset(
+                music_path = self.register_sc_asset(
                     source_sc=scenery_data["Music"],
                     asset_name="",
                     save_path=f"sceneries/{path_name}/music"
@@ -1535,9 +1535,9 @@ class StaticUpdater:
                 "thumbnail": thumbnail_path,
             }
             if scenery_data.get("FreeBackground", False):
-                scenery_data["free"] = True
+                hold_data["free"] = True
             if scenery_data.get("DefaultBackground", False):
-                scenery_data["default"] = True
+                hold_data["default"] = True
 
             new_scenery_data.append(hold_data)
 
