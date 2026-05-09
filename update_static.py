@@ -89,6 +89,9 @@ class StaticUpdater:
         self.FINGERPRINT = (os.getenv("FINGERPRINT") or os.getenv("SHA") or "").strip()
         self.APK_URL = apk_url()
         self.APK_PATH = os.getenv("APK_PATH", "").strip()
+        self.USE_DOWNLOAD_CACHE = os.getenv("USE_DOWNLOAD_CACHE", "1").strip() == "1"
+        self.FORCE_DOWNLOAD_REFRESH = os.getenv("FORCE_DOWNLOAD_REFRESH", "0").strip() == "1"
+        self.CACHE_ROOT = Path(".cache") / "update_static"
         self._apk_bytes_cache: bytes | None = None
         self._logged_env_apk_usage = False
         self._logged_env_fingerprint_usage = False
@@ -111,6 +114,24 @@ class StaticUpdater:
         self.sc_asset_requests: dict[tuple[str, str | None], list[SCAssetRequest]] = {}
 
         self.build_mappping = {}
+
+    def _cache_path_for(self, fingerprint: str, file_path: str) -> Path:
+        return self.CACHE_ROOT / fingerprint / Path(file_path)
+
+    def _read_cached_file(self, fingerprint: str, file_path: str) -> bytes | None:
+        if not self.USE_DOWNLOAD_CACHE or self.FORCE_DOWNLOAD_REFRESH:
+            return None
+        cache_path = self._cache_path_for(fingerprint, file_path)
+        if not cache_path.exists():
+            return None
+        return cache_path.read_bytes()
+
+    def _store_cached_file(self, fingerprint: str, file_path: str, data: bytes) -> None:
+        if not self.USE_DOWNLOAD_CACHE:
+            return
+        cache_path = self._cache_path_for(fingerprint, file_path)
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        cache_path.write_bytes(data)
 
     async def _get_apk_bytes(self) -> bytes:
         if self._apk_bytes_cache is not None:
@@ -2395,8 +2416,15 @@ class StaticUpdater:
                 continue
 
             download_url = f"{BASE_URL}/{file_path}"
-            print(f"Downloading: {download_url}")
-            data = await download_file(url=download_url, show_progress=True)
+            cached_data = self._read_cached_file(self.FINGERPRINT, file_path)
+            if cached_data is not None:
+                print(f"Using cache: {file_path}")
+                data = cached_data
+            else:
+                print(f"Downloading: {download_url}")
+                data = await download_file(url=download_url, show_progress=True)
+                if isinstance(data, bytes):
+                    self._store_cached_file(self.FINGERPRINT, file_path, data)
 
             Path(file_path).parent.mkdir(parents=True, exist_ok=True)
             with open(file_path, "wb") as f:
