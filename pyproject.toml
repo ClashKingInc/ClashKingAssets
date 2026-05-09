@@ -7,6 +7,7 @@ requires-python = "==3.13.7"
 dependencies = [
     "aiohttp",
     "boto3",
+    "pylzham>=0.1.3",
     "python-dotenv",
     "zstandard>=0.25.0",
 ]
