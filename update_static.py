@@ -21,7 +21,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, cast
 
+from dotenv import load_dotenv
+
 from utils import apk_url, download_file
+
+load_dotenv()
 
 
 @dataclass(frozen=True)
@@ -82,10 +86,12 @@ class StaticUpdater:
         # base path for the static files to be stored in
         self.BASE_PATH = "assets"
 
-        self.FINGERPRINT = os.getenv("FINGERPRINT", "")
+        self.FINGERPRINT = (os.getenv("FINGERPRINT") or os.getenv("SHA") or "").strip()
         self.APK_URL = apk_url()
         self.APK_PATH = os.getenv("APK_PATH", "").strip()
         self._apk_bytes_cache: bytes | None = None
+        self._logged_env_apk_usage = False
+        self._logged_env_fingerprint_usage = False
 
         self.translation_data: dict[str, dict[str, str | None]] = {}
         self.full_building_data = {}
@@ -113,6 +119,9 @@ class StaticUpdater:
         if self.APK_PATH:
             apk_path = Path(self.APK_PATH)
             if apk_path.exists():
+                if not self._logged_env_apk_usage:
+                    logging.warning("Used APK linked in your .env file: %s", apk_path)
+                    self._logged_env_apk_usage = True
                 self._apk_bytes_cache = apk_path.read_bytes()
                 return self._apk_bytes_cache
             logging.warning("APK_PATH does not exist: %s", apk_path)
@@ -125,6 +134,9 @@ class StaticUpdater:
 
     async def _ensure_fingerprint(self) -> str:
         if self.FINGERPRINT:
+            if not self._logged_env_fingerprint_usage:
+                logging.warning("Used fingerprint (SHA/FINGERPRINT) from your .env file: %s", self.FINGERPRINT)
+                self._logged_env_fingerprint_usage = True
             return self.FINGERPRINT
 
         apk_bytes = await self._get_apk_bytes()
