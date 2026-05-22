@@ -294,21 +294,40 @@ def apply_sync_plan(plan: dict[str, Any], config: R2Config) -> None:
 
 
 def ensure_cors_policy(config: R2Config) -> None:
-    """Ensure the R2 bucket exposes CORS headers for public GET access (required for Flutter Web)."""
+    """Ensure the R2 bucket exposes CORS headers for public GET access (required for Flutter Web).
+
+    Requires the R2 token to have bucket-level CORS permissions. If the token lacks this
+    permission, a warning is printed and the sync continues — configure CORS manually via
+    the Cloudflare R2 dashboard instead.
+    """
+    import botocore.exceptions
+
     client = create_r2_client(config)
-    client.put_bucket_cors(
-        Bucket=config.bucket,
-        CORSConfiguration={
-            "CORSRules": [
-                {
-                    "AllowedHeaders": ["*"],
-                    "AllowedMethods": ["GET", "HEAD"],
-                    "AllowedOrigins": ["*"],
-                    "MaxAgeSeconds": 86400,
-                }
-            ]
-        },
-    )
+    try:
+        client.put_bucket_cors(
+            Bucket=config.bucket,
+            CORSConfiguration={
+                "CORSRules": [
+                    {
+                        "AllowedHeaders": ["*"],
+                        "AllowedMethods": ["GET", "HEAD"],
+                        "AllowedOrigins": ["*"],
+                        "MaxAgeSeconds": 86400,
+                    }
+                ]
+            },
+        )
+        print("CORS policy applied successfully.")
+    except botocore.exceptions.ClientError as exc:
+        code = exc.response.get("Error", {}).get("Code", "")
+        if code == "AccessDenied":
+            print(
+                "WARNING: Could not apply CORS policy (AccessDenied). "
+                "Configure it manually in the Cloudflare R2 dashboard: "
+                "R2 > bucket > Settings > CORS policy."
+            )
+        else:
+            raise
 
 
 def build_summary(
