@@ -293,6 +293,24 @@ def apply_sync_plan(plan: dict[str, Any], config: R2Config) -> None:
         client.delete_object(Bucket=config.bucket, Key=deletion["key"])
 
 
+def ensure_cors_policy(config: R2Config) -> None:
+    """Ensure the R2 bucket exposes CORS headers for public GET access (required for Flutter Web)."""
+    client = create_r2_client(config)
+    client.put_bucket_cors(
+        Bucket=config.bucket,
+        CORSConfiguration={
+            "CORSRules": [
+                {
+                    "AllowedHeaders": ["*"],
+                    "AllowedMethods": ["GET", "HEAD"],
+                    "AllowedOrigins": ["*"],
+                    "MaxAgeSeconds": 86400,
+                }
+            ]
+        },
+    )
+
+
 def build_summary(
     current_ref: str,
     previous_ref: str | None,
@@ -344,6 +362,7 @@ def main() -> int:
     if not args.dry_run:
         config = load_r2_config()
         apply_sync_plan(plan, config)
+        ensure_cors_policy(config)
 
     print(json.dumps(summary, indent=2, sort_keys=True))
     return 0
