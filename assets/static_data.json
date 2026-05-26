@@ -319,6 +319,11 @@
               "name": "Air Defense",
               "_id": 1000012,
               "quantity": 1
+            },
+            {
+              "name": "Hero Hall",
+              "_id": 1000071,
+              "quantity": 1
             }
           ]
         },
@@ -473,11 +478,6 @@
             {
               "name": "Dark Barracks",
               "_id": 1000026,
-              "quantity": 1
-            },
-            {
-              "name": "Hero Hall",
-              "_id": 1000071,
               "quantity": 1
             }
           ]
@@ -4865,6 +4865,11 @@
               "name": "Double Cannon",
               "_id": 1000041,
               "quantity": 1
+            },
+            {
+              "name": "B.O.T.O\u2019s Shack",
+              "_id": 1000047,
+              "quantity": 1
             }
           ]
         },
@@ -6334,13 +6339,13 @@
     },
     {
       "_id": 1000047,
-      "name": "Master Builder's Hut",
-      "info": "Nothing gets done around here without the Master Builder! You can speed up his work by using green gems.",
+      "name": "B.O.T.O\u2019s Shack",
+      "info": "Master Builder saved this little guy from the scrap heap. Despite a few loose screws, B.O.T.O is eager to help with tasks around Builder Base!",
       "TID": {
         "name": "TID_WORKER2_BUILDING",
         "info": "TID_WORKER2_INFO"
       },
-      "type": "Worker2",
+      "type": "Worker",
       "upgrade_resource": "Gems",
       "village": "builderBase",
       "width": 2,
@@ -7908,10 +7913,10 @@
       "levels": [
         {
           "level": 1,
-          "build_cost": 800000,
-          "build_time": 86400,
-          "required_townhall": 7,
-          "hitpoints": 2000,
+          "build_cost": 30000,
+          "build_time": 3600,
+          "required_townhall": 4,
+          "hitpoints": 800,
           "dps": 0
         },
         {
@@ -7919,7 +7924,7 @@
           "build_cost": 1600000,
           "build_time": 172800,
           "required_townhall": 8,
-          "hitpoints": 2400,
+          "hitpoints": 1600,
           "dps": 0
         },
         {
@@ -7927,7 +7932,7 @@
           "build_cost": 2300000,
           "build_time": 259200,
           "required_townhall": 9,
-          "hitpoints": 2800,
+          "hitpoints": 2400,
           "dps": 0
         },
         {
@@ -8888,8 +8893,8 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "AttackSpeed": 1800,
-                    "Damage": 50,
+                    "AttackSpeed": 1500,
+                    "Damage": 85,
                     "AttackEffect": "Flamer_attack",
                     "HitEffect": "Flamer_hit1-3",
                     "Projectile": "Flamer_projectile1-3"
@@ -8900,8 +8905,8 @@
                   "build_cost": 4000000,
                   "build_time": 28800,
                   "ability_data": {
-                    "AttackSpeed": 1800,
-                    "Damage": 54,
+                    "AttackSpeed": 1500,
+                    "Damage": 90,
                     "AttackEffect": "Flamer_attack",
                     "HitEffect": "Flamer_hit1-3",
                     "Projectile": "Flamer_projectile1-3"
@@ -8912,8 +8917,8 @@
                   "build_cost": 5000000,
                   "build_time": 36000,
                   "ability_data": {
-                    "AttackSpeed": 1800,
-                    "Damage": 58,
+                    "AttackSpeed": 1500,
+                    "Damage": 95,
                     "AttackEffect": "Flamer_attack",
                     "HitEffect": "Flamer_hit1-3",
                     "Projectile": "Flamer_projectile1-3"
@@ -8924,8 +8929,8 @@
                   "build_cost": 6000000,
                   "build_time": 39600,
                   "ability_data": {
-                    "AttackSpeed": 1800,
-                    "Damage": 62,
+                    "AttackSpeed": 1500,
+                    "Damage": 100,
                     "AttackEffect": "Flamer_attack",
                     "HitEffect": "Flamer_hit4-6",
                     "Projectile": "Flamer_projectile4-6"
@@ -8936,8 +8941,8 @@
                   "build_cost": 7500000,
                   "build_time": 46800,
                   "ability_data": {
-                    "AttackSpeed": 1800,
-                    "Damage": 66,
+                    "AttackSpeed": 1500,
+                    "Damage": 105,
                     "AttackEffect": "Flamer_attack",
                     "HitEffect": "Flamer_hit4-6",
                     "Projectile": "Flamer_projectile4-6"
@@ -8948,8 +8953,8 @@
                   "build_cost": 9000000,
                   "build_time": 54000,
                   "ability_data": {
-                    "AttackSpeed": 1800,
-                    "Damage": 70,
+                    "AttackSpeed": 1500,
+                    "Damage": 110,
                     "AttackEffect": "Flamer_attack",
                     "HitEffect": "Flamer_hit4-6",
                     "Projectile": "Flamer_projectile4-6"
@@ -8960,8 +8965,8 @@
                   "build_cost": 10500000,
                   "build_time": 97200,
                   "ability_data": {
-                    "AttackSpeed": 1800,
-                    "Damage": 75,
+                    "AttackSpeed": 1500,
+                    "Damage": 115,
                     "AttackEffect": "Flamer_attack",
                     "HitEffect": "Flamer_hit7-8",
                     "Projectile": "Flamer_projectile7-8"
@@ -8972,8 +8977,8 @@
                   "build_cost": 12000000,
                   "build_time": 194400,
                   "ability_data": {
-                    "AttackSpeed": 1800,
-                    "Damage": 80,
+                    "AttackSpeed": 1500,
+                    "Damage": 120,
                     "AttackEffect": "Flamer_attack",
                     "HitEffect": "Flamer_hit7-8",
                     "Projectile": "Flamer_projectile7-8"
@@ -8984,8 +8989,8 @@
                   "build_cost": 13500000,
                   "build_time": 388800,
                   "ability_data": {
-                    "AttackSpeed": 1800,
-                    "Damage": 87,
+                    "AttackSpeed": 1500,
+                    "Damage": 125,
                     "AttackEffect": "Flamer_attack",
                     "HitEffect": "Flamer_hit7-8",
                     "Projectile": "Flamer_projectile7-8"
@@ -8996,8 +9001,8 @@
                   "build_cost": 15000000,
                   "build_time": 777600,
                   "ability_data": {
-                    "AttackSpeed": 1800,
-                    "Damage": 95,
+                    "AttackSpeed": 1500,
+                    "Damage": 135,
                     "AttackEffect": "Flamer_attack",
                     "HitEffect": "Flamer_hit7-8",
                     "Projectile": "Flamer_projectile7-8"
@@ -9018,7 +9023,7 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "BurstCount": 6,
+                    "BurstCount": 8,
                     "BurstDelay": 256
                   }
                 },
@@ -9027,7 +9032,7 @@
                   "build_cost": 30000,
                   "build_time": 14400,
                   "ability_data": {
-                    "BurstCount": 7,
+                    "BurstCount": 9,
                     "BurstDelay": 256
                   }
                 },
@@ -9036,7 +9041,7 @@
                   "build_cost": 40000,
                   "build_time": 21600,
                   "ability_data": {
-                    "BurstCount": 8,
+                    "BurstCount": 10,
                     "BurstDelay": 256
                   }
                 },
@@ -9045,7 +9050,7 @@
                   "build_cost": 50000,
                   "build_time": 28800,
                   "ability_data": {
-                    "BurstCount": 9,
+                    "BurstCount": 11,
                     "BurstDelay": 256
                   }
                 },
@@ -9054,7 +9059,7 @@
                   "build_cost": 60000,
                   "build_time": 36000,
                   "ability_data": {
-                    "BurstCount": 10,
+                    "BurstCount": 12,
                     "BurstDelay": 256
                   }
                 },
@@ -9063,7 +9068,7 @@
                   "build_cost": 70000,
                   "build_time": 43200,
                   "ability_data": {
-                    "BurstCount": 11,
+                    "BurstCount": 13,
                     "BurstDelay": 256
                   }
                 },
@@ -9072,7 +9077,7 @@
                   "build_cost": 80000,
                   "build_time": 86400,
                   "ability_data": {
-                    "BurstCount": 12,
+                    "BurstCount": 14,
                     "BurstDelay": 256
                   }
                 },
@@ -9081,7 +9086,7 @@
                   "build_cost": 90000,
                   "build_time": 172800,
                   "ability_data": {
-                    "BurstCount": 13,
+                    "BurstCount": 15,
                     "BurstDelay": 256
                   }
                 },
@@ -9090,7 +9095,7 @@
                   "build_cost": 100000,
                   "build_time": 345600,
                   "ability_data": {
-                    "BurstCount": 14,
+                    "BurstCount": 16,
                     "BurstDelay": 256
                   }
                 },
@@ -9099,7 +9104,7 @@
                   "build_cost": 110000,
                   "build_time": 691200,
                   "ability_data": {
-                    "BurstCount": 15,
+                    "BurstCount": 17,
                     "BurstDelay": 256
                   }
                 }
@@ -9310,7 +9315,7 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "AttackSpeed": 3800,
+                    "AttackSpeed": 3400,
                     "Damage": 1
                   }
                 },
@@ -9319,7 +9324,7 @@
                   "build_cost": 3500000,
                   "build_time": 21600,
                   "ability_data": {
-                    "AttackSpeed": 3600,
+                    "AttackSpeed": 3200,
                     "Damage": 1
                   }
                 },
@@ -9328,7 +9333,7 @@
                   "build_cost": 4500000,
                   "build_time": 28800,
                   "ability_data": {
-                    "AttackSpeed": 3400,
+                    "AttackSpeed": 3000,
                     "Damage": 1
                   }
                 },
@@ -9337,7 +9342,7 @@
                   "build_cost": 5500000,
                   "build_time": 36000,
                   "ability_data": {
-                    "AttackSpeed": 3200,
+                    "AttackSpeed": 2800,
                     "Damage": 1
                   }
                 },
@@ -9346,7 +9351,7 @@
                   "build_cost": 6500000,
                   "build_time": 43200,
                   "ability_data": {
-                    "AttackSpeed": 3000,
+                    "AttackSpeed": 2600,
                     "Damage": 1
                   }
                 },
@@ -9355,7 +9360,7 @@
                   "build_cost": 7500000,
                   "build_time": 50400,
                   "ability_data": {
-                    "AttackSpeed": 2800,
+                    "AttackSpeed": 2400,
                     "Damage": 1
                   }
                 },
@@ -9364,7 +9369,7 @@
                   "build_cost": 8500000,
                   "build_time": 93600,
                   "ability_data": {
-                    "AttackSpeed": 2600,
+                    "AttackSpeed": 2200,
                     "Damage": 1
                   }
                 },
@@ -9373,7 +9378,7 @@
                   "build_cost": 10000000,
                   "build_time": 187200,
                   "ability_data": {
-                    "AttackSpeed": 2400,
+                    "AttackSpeed": 2000,
                     "Damage": 1
                   }
                 },
@@ -9382,7 +9387,7 @@
                   "build_cost": 11500000,
                   "build_time": 367200,
                   "ability_data": {
-                    "AttackSpeed": 2200,
+                    "AttackSpeed": 1800,
                     "Damage": 1
                   }
                 },
@@ -9391,7 +9396,7 @@
                   "build_cost": 13000000,
                   "build_time": 734400,
                   "ability_data": {
-                    "AttackSpeed": 2000,
+                    "AttackSpeed": 1600,
                     "Damage": 1
                   }
                 }
@@ -9513,7 +9518,7 @@
                   "build_time": 0,
                   "ability_data": {
                     "AttackSpeed": 7000,
-                    "DPS": 80,
+                    "DPS": 72,
                     "Projectile": "Lava Ammo1_Seasonal_Defense"
                   }
                 },
@@ -9523,7 +9528,7 @@
                   "build_time": 21600,
                   "ability_data": {
                     "AttackSpeed": 7000,
-                    "DPS": 83,
+                    "DPS": 75,
                     "Projectile": "Lava Ammo2_Seasonal_Defense"
                   }
                 },
@@ -9533,7 +9538,7 @@
                   "build_time": 28800,
                   "ability_data": {
                     "AttackSpeed": 7000,
-                    "DPS": 87,
+                    "DPS": 80,
                     "Projectile": "Lava Ammo3_Seasonal_Defense"
                   }
                 },
@@ -9543,7 +9548,7 @@
                   "build_time": 36000,
                   "ability_data": {
                     "AttackSpeed": 7000,
-                    "DPS": 91,
+                    "DPS": 85,
                     "Projectile": "Lava Ammo4_Seasonal_Defense"
                   }
                 },
@@ -9553,7 +9558,7 @@
                   "build_time": 43200,
                   "ability_data": {
                     "AttackSpeed": 7000,
-                    "DPS": 95,
+                    "DPS": 90,
                     "Projectile": "Lava Ammo5_Seasonal_Defense"
                   }
                 },
@@ -9563,7 +9568,7 @@
                   "build_time": 50400,
                   "ability_data": {
                     "AttackSpeed": 7000,
-                    "DPS": 100,
+                    "DPS": 95,
                     "Projectile": "Lava Ammo6_Seasonal_Defense"
                   }
                 },
@@ -9573,7 +9578,7 @@
                   "build_time": 93600,
                   "ability_data": {
                     "AttackSpeed": 7000,
-                    "DPS": 105,
+                    "DPS": 100,
                     "Projectile": "Lava Ammo7_Seasonal_Defense"
                   }
                 },
@@ -9583,7 +9588,7 @@
                   "build_time": 187200,
                   "ability_data": {
                     "AttackSpeed": 7000,
-                    "DPS": 111,
+                    "DPS": 105,
                     "Projectile": "Lava Ammo8_Seasonal_Defense"
                   }
                 },
@@ -9593,7 +9598,7 @@
                   "build_time": 367200,
                   "ability_data": {
                     "AttackSpeed": 7000,
-                    "DPS": 118,
+                    "DPS": 110,
                     "Projectile": "Lava Ammo9_Seasonal_Defense"
                   }
                 },
@@ -9603,7 +9608,7 @@
                   "build_time": 734400,
                   "ability_data": {
                     "AttackSpeed": 7000,
-                    "DPS": 125,
+                    "DPS": 115,
                     "Projectile": "Lava Ammo10_Seasonal_Defense"
                   }
                 }
@@ -9630,7 +9635,7 @@
                   "build_cost": 4000000,
                   "build_time": 28800,
                   "ability_data": {
-                    "AttackRange": 1200
+                    "AttackRange": 1150
                   }
                 },
                 {
@@ -9638,7 +9643,7 @@
                   "build_cost": 5000000,
                   "build_time": 36000,
                   "ability_data": {
-                    "AttackRange": 1300
+                    "AttackRange": 1200
                   }
                 },
                 {
@@ -9646,7 +9651,7 @@
                   "build_cost": 6000000,
                   "build_time": 39600,
                   "ability_data": {
-                    "AttackRange": 1400
+                    "AttackRange": 1250
                   }
                 },
                 {
@@ -9654,7 +9659,7 @@
                   "build_cost": 7500000,
                   "build_time": 46800,
                   "ability_data": {
-                    "AttackRange": 1500
+                    "AttackRange": 1300
                   }
                 },
                 {
@@ -9662,7 +9667,7 @@
                   "build_cost": 9000000,
                   "build_time": 54000,
                   "ability_data": {
-                    "AttackRange": 1600
+                    "AttackRange": 1350
                   }
                 },
                 {
@@ -9670,7 +9675,7 @@
                   "build_cost": 10500000,
                   "build_time": 97200,
                   "ability_data": {
-                    "AttackRange": 1700
+                    "AttackRange": 1400
                   }
                 },
                 {
@@ -9678,7 +9683,7 @@
                   "build_cost": 12000000,
                   "build_time": 194400,
                   "ability_data": {
-                    "AttackRange": 1800
+                    "AttackRange": 1450
                   }
                 },
                 {
@@ -9686,7 +9691,7 @@
                   "build_cost": 13500000,
                   "build_time": 388800,
                   "ability_data": {
-                    "AttackRange": 1900
+                    "AttackRange": 1500
                   }
                 },
                 {
@@ -9694,7 +9699,7 @@
                   "build_cost": 15000000,
                   "build_time": 777600,
                   "ability_data": {
-                    "AttackRange": 2000
+                    "AttackRange": 1600
                   }
                 }
               ]
@@ -18050,8 +18055,8 @@
         },
         {
           "level": 6,
-          "hitpoints": 6200,
-          "dps": 520,
+          "hitpoints": 6000,
+          "dps": 510,
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 16,
@@ -25975,7 +25980,7 @@
           "dps": 102,
           "upgrade_time": 7200,
           "upgrade_cost": 5000,
-          "required_townhall": 7,
+          "required_townhall": 4,
           "required_hero_tavern_level": 1,
           "strength_weight": 1564
         },
@@ -42064,7 +42069,7 @@
           "abilities": [
             {
               "Level": 4,
-              "Damage": 1200,
+              "Damage": 1100,
               "name": "Giant Arrow",
               "info": "Shoots a giant piercing arrow that crosses the entire village"
             }
@@ -42086,7 +42091,7 @@
           "abilities": [
             {
               "Level": 4,
-              "Damage": 1200,
+              "Damage": 1100,
               "name": "Giant Arrow",
               "info": "Shoots a giant piercing arrow that crosses the entire village"
             }
@@ -42108,7 +42113,7 @@
           "abilities": [
             {
               "Level": 4,
-              "Damage": 1200,
+              "Damage": 1100,
               "name": "Giant Arrow",
               "info": "Shoots a giant piercing arrow that crosses the entire village"
             }
@@ -42130,7 +42135,7 @@
           "abilities": [
             {
               "Level": 5,
-              "Damage": 1500,
+              "Damage": 1200,
               "name": "Giant Arrow",
               "info": "Shoots a giant piercing arrow that crosses the entire village"
             }
@@ -42152,7 +42157,7 @@
           "abilities": [
             {
               "Level": 5,
-              "Damage": 1500,
+              "Damage": 1200,
               "name": "Giant Arrow",
               "info": "Shoots a giant piercing arrow that crosses the entire village"
             }
@@ -42174,7 +42179,7 @@
           "abilities": [
             {
               "Level": 5,
-              "Damage": 1500,
+              "Damage": 1200,
               "name": "Giant Arrow",
               "info": "Shoots a giant piercing arrow that crosses the entire village"
             }
@@ -42196,7 +42201,7 @@
           "abilities": [
             {
               "Level": 6,
-              "Damage": 1750,
+              "Damage": 1350,
               "name": "Giant Arrow",
               "info": "Shoots a giant piercing arrow that crosses the entire village"
             }
@@ -42218,7 +42223,7 @@
           "abilities": [
             {
               "Level": 6,
-              "Damage": 1750,
+              "Damage": 1350,
               "name": "Giant Arrow",
               "info": "Shoots a giant piercing arrow that crosses the entire village"
             }
@@ -42240,7 +42245,7 @@
           "abilities": [
             {
               "Level": 6,
-              "Damage": 1750,
+              "Damage": 1350,
               "name": "Giant Arrow",
               "info": "Shoots a giant piercing arrow that crosses the entire village"
             }
@@ -42262,7 +42267,7 @@
           "abilities": [
             {
               "Level": 7,
-              "Damage": 2000,
+              "Damage": 1500,
               "name": "Giant Arrow",
               "info": "Shoots a giant piercing arrow that crosses the entire village"
             }
@@ -53141,7 +53146,7 @@
         {
           "level": 2,
           "hitpoints": 0,
-          "dps": 12,
+          "dps": 10,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -53168,7 +53173,7 @@
         {
           "level": 3,
           "hitpoints": 0,
-          "dps": 14,
+          "dps": 12,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -53195,7 +53200,7 @@
         {
           "level": 4,
           "hitpoints": 0,
-          "dps": 16,
+          "dps": 12,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -53222,7 +53227,7 @@
         {
           "level": 5,
           "hitpoints": 0,
-          "dps": 18,
+          "dps": 12,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -53249,7 +53254,7 @@
         {
           "level": 6,
           "hitpoints": 0,
-          "dps": 20,
+          "dps": 14,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -53276,7 +53281,7 @@
         {
           "level": 7,
           "hitpoints": 0,
-          "dps": 22,
+          "dps": 14,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -53303,7 +53308,7 @@
         {
           "level": 8,
           "hitpoints": 0,
-          "dps": 24,
+          "dps": 14,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -53330,7 +53335,7 @@
         {
           "level": 9,
           "hitpoints": 0,
-          "dps": 26,
+          "dps": 16,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -53357,7 +53362,7 @@
         {
           "level": 10,
           "hitpoints": 0,
-          "dps": 28,
+          "dps": 16,
           "heal_on_activation": 0,
           "required_blacksmith_level": 3,
           "required_townhall": 10,
@@ -53384,7 +53389,7 @@
         {
           "level": 11,
           "hitpoints": 0,
-          "dps": 30,
+          "dps": 16,
           "heal_on_activation": 0,
           "required_blacksmith_level": 3,
           "required_townhall": 10,
@@ -53411,7 +53416,7 @@
         {
           "level": 12,
           "hitpoints": 0,
-          "dps": 32,
+          "dps": 18,
           "heal_on_activation": 0,
           "required_blacksmith_level": 3,
           "required_townhall": 10,
@@ -53438,7 +53443,7 @@
         {
           "level": 13,
           "hitpoints": 0,
-          "dps": 34,
+          "dps": 18,
           "heal_on_activation": 0,
           "required_blacksmith_level": 5,
           "required_townhall": 12,
@@ -53465,7 +53470,7 @@
         {
           "level": 14,
           "hitpoints": 0,
-          "dps": 36,
+          "dps": 18,
           "heal_on_activation": 0,
           "required_blacksmith_level": 5,
           "required_townhall": 12,
@@ -53492,7 +53497,7 @@
         {
           "level": 15,
           "hitpoints": 0,
-          "dps": 38,
+          "dps": 20,
           "heal_on_activation": 0,
           "required_blacksmith_level": 5,
           "required_townhall": 12,
@@ -53511,7 +53516,7 @@
             },
             {
               "Level": 6,
-              "Regeneration": 155,
+              "Regeneration": 140,
               "name": "Ram Rider Charge"
             }
           ]
@@ -53519,7 +53524,7 @@
         {
           "level": 16,
           "hitpoints": 0,
-          "dps": 40,
+          "dps": 20,
           "heal_on_activation": 0,
           "required_blacksmith_level": 7,
           "required_townhall": 14,
@@ -53538,7 +53543,7 @@
             },
             {
               "Level": 6,
-              "Regeneration": 155,
+              "Regeneration": 140,
               "name": "Ram Rider Charge"
             }
           ]
@@ -53546,7 +53551,7 @@
         {
           "level": 17,
           "hitpoints": 0,
-          "dps": 42,
+          "dps": 20,
           "heal_on_activation": 0,
           "required_blacksmith_level": 7,
           "required_townhall": 14,
@@ -53565,7 +53570,7 @@
             },
             {
               "Level": 6,
-              "Regeneration": 155,
+              "Regeneration": 140,
               "name": "Ram Rider Charge"
             }
           ]
@@ -53573,7 +53578,7 @@
         {
           "level": 18,
           "hitpoints": 0,
-          "dps": 45,
+          "dps": 23,
           "heal_on_activation": 0,
           "required_blacksmith_level": 7,
           "required_townhall": 14,
@@ -53592,7 +53597,7 @@
             },
             {
               "Level": 7,
-              "Regeneration": 175,
+              "Regeneration": 150,
               "name": "Ram Rider Charge"
             }
           ]
@@ -54089,7 +54094,7 @@
           "abilities": [
             {
               "Level": 8,
-              "ActAsPenetratingDamage": 1925,
+              "ActAsPenetratingDamage": 1875,
               "ActAsPenetratingHitEffect": "ps_dd_rocketBP_Impact_lvl4-6",
               "name": "Rocket Backpack",
               "info": "Dashes across the center of the village breathing fire and avoiding attacks"
@@ -54112,7 +54117,7 @@
           "abilities": [
             {
               "Level": 8,
-              "ActAsPenetratingDamage": 1925,
+              "ActAsPenetratingDamage": 1875,
               "ActAsPenetratingHitEffect": "ps_dd_rocketBP_Impact_lvl4-6",
               "name": "Rocket Backpack",
               "info": "Dashes across the center of the village breathing fire and avoiding attacks"
@@ -54135,7 +54140,7 @@
           "abilities": [
             {
               "Level": 8,
-              "ActAsPenetratingDamage": 1925,
+              "ActAsPenetratingDamage": 1875,
               "ActAsPenetratingHitEffect": "ps_dd_rocketBP_Impact_lvl4-6",
               "name": "Rocket Backpack",
               "info": "Dashes across the center of the village breathing fire and avoiding attacks"
@@ -54227,7 +54232,7 @@
           "abilities": [
             {
               "Level": 10,
-              "ActAsPenetratingDamage": 2200,
+              "ActAsPenetratingDamage": 2150,
               "ActAsPenetratingHitEffect": "ps_dd_rocketBP_Impact_lvl7-8",
               "name": "Rocket Backpack",
               "info": "Dashes across the center of the village breathing fire and avoiding attacks"
