@@ -281,6 +281,11 @@
               "quantity": 1
             },
             {
+              "name": "Bomb",
+              "_id": 12000000,
+              "quantity": 2
+            },
+            {
               "name": "Laboratory",
               "_id": 1000007,
               "quantity": 1
@@ -319,6 +324,11 @@
               "name": "Air Defense",
               "_id": 1000012,
               "quantity": 1
+            },
+            {
+              "name": "Spring Trap",
+              "_id": 12000001,
+              "quantity": 2
             },
             {
               "name": "Hero Hall",
@@ -371,9 +381,19 @@
               "quantity": 1
             },
             {
+              "name": "Bomb",
+              "_id": 12000000,
+              "quantity": 2
+            },
+            {
               "name": "Spell Factory",
               "_id": 1000020,
               "quantity": 1
+            },
+            {
+              "name": "Air Bomb",
+              "_id": 12000005,
+              "quantity": 2
             }
           ]
         },
@@ -413,6 +433,16 @@
             {
               "name": "Mortar",
               "_id": 1000013,
+              "quantity": 1
+            },
+            {
+              "name": "Spring Trap",
+              "_id": 12000001,
+              "quantity": 2
+            },
+            {
+              "name": "Giant Bomb",
+              "_id": 12000002,
               "quantity": 1
             },
             {
@@ -461,6 +491,16 @@
               "quantity": 1
             },
             {
+              "name": "Giant Bomb",
+              "_id": 12000002,
+              "quantity": 1
+            },
+            {
+              "name": "Bomb",
+              "_id": 12000000,
+              "quantity": 2
+            },
+            {
               "name": "Hidden Tesla",
               "_id": 1000019,
               "quantity": 2
@@ -473,6 +513,11 @@
             {
               "name": "Dark Elixir Storage",
               "_id": 1000024,
+              "quantity": 1
+            },
+            {
+              "name": "Seeking Air Mine",
+              "_id": 12000006,
               "quantity": 1
             },
             {
@@ -521,6 +566,16 @@
               "quantity": 1
             },
             {
+              "name": "Spring Trap",
+              "_id": 12000001,
+              "quantity": 2
+            },
+            {
+              "name": "Giant Bomb",
+              "_id": 12000002,
+              "quantity": 1
+            },
+            {
               "name": "Hidden Tesla",
               "_id": 1000019,
               "quantity": 1
@@ -534,6 +589,21 @@
               "name": "Dark Elixir Drill",
               "_id": 1000023,
               "quantity": 1
+            },
+            {
+              "name": "Air Bomb",
+              "_id": 12000005,
+              "quantity": 2
+            },
+            {
+              "name": "Seeking Air Mine",
+              "_id": 12000006,
+              "quantity": 1
+            },
+            {
+              "name": "Skeleton Trap",
+              "_id": 12000008,
+              "quantity": 2
             },
             {
               "name": "Bomb Tower",
@@ -596,6 +666,11 @@
               "quantity": 1
             },
             {
+              "name": "Giant Bomb",
+              "_id": 12000002,
+              "quantity": 1
+            },
+            {
               "name": "Hidden Tesla",
               "_id": 1000019,
               "quantity": 1
@@ -609,6 +684,11 @@
               "name": "Dark Elixir Drill",
               "_id": 1000023,
               "quantity": 1
+            },
+            {
+              "name": "Seeking Air Mine",
+              "_id": 12000006,
+              "quantity": 2
             },
             {
               "name": "Air Sweeper",
@@ -646,14 +726,34 @@
               "quantity": 1
             },
             {
+              "name": "Giant Bomb",
+              "_id": 12000002,
+              "quantity": 1
+            },
+            {
               "name": "X-Bow",
               "_id": 1000021,
+              "quantity": 1
+            },
+            {
+              "name": "Air Bomb",
+              "_id": 12000005,
+              "quantity": 1
+            },
+            {
+              "name": "Seeking Air Mine",
+              "_id": 12000006,
               "quantity": 1
             },
             {
               "name": "Inferno Tower",
               "_id": 1000027,
               "quantity": 2
+            },
+            {
+              "name": "Skeleton Trap",
+              "_id": 12000008,
+              "quantity": 1
             },
             {
               "name": "Bomb Tower",
@@ -699,6 +799,11 @@
               "name": "Eagle Artillery",
               "_id": 1000031,
               "quantity": 1
+            },
+            {
+              "name": "Tornado Trap",
+              "_id": 12000016,
+              "quantity": 1
             }
           ]
         },
@@ -711,8 +816,28 @@
           "dps": 140,
           "unlocks": [
             {
+              "name": "Spring Trap",
+              "_id": 12000001,
+              "quantity": 2
+            },
+            {
+              "name": "Giant Bomb",
+              "_id": 12000002,
+              "quantity": 1
+            },
+            {
               "name": "Hidden Tesla",
               "_id": 1000019,
+              "quantity": 1
+            },
+            {
+              "name": "Air Bomb",
+              "_id": 12000005,
+              "quantity": 1
+            },
+            {
+              "name": "Seeking Air Mine",
+              "_id": 12000006,
               "quantity": 1
             },
             {
@@ -736,6 +861,21 @@
           "dps": 220,
           "unlocks": [
             {
+              "name": "Spring Trap",
+              "_id": 12000001,
+              "quantity": 1
+            },
+            {
+              "name": "Bomb",
+              "_id": 12000000,
+              "quantity": 1
+            },
+            {
+              "name": "Seeking Air Mine",
+              "_id": 12000006,
+              "quantity": 1
+            },
+            {
               "name": "Scattershot",
               "_id": 1000067,
               "quantity": 2
@@ -754,6 +894,31 @@
               "name": "Wall",
               "_id": 1000010,
               "quantity": 25
+            },
+            {
+              "name": "Giant Bomb",
+              "_id": 12000002,
+              "quantity": 1
+            },
+            {
+              "name": "Bomb",
+              "_id": 12000000,
+              "quantity": 1
+            },
+            {
+              "name": "Air Bomb",
+              "_id": 12000005,
+              "quantity": 1
+            },
+            {
+              "name": "Seeking Air Mine",
+              "_id": 12000006,
+              "quantity": 1
+            },
+            {
+              "name": "Skeleton Trap",
+              "_id": 12000008,
+              "quantity": 1
             },
             {
               "name": "Pet House",
@@ -866,6 +1031,16 @@
               "quantity": 1
             },
             {
+              "name": "Giant Bomb",
+              "_id": 12000002,
+              "quantity": 1
+            },
+            {
+              "name": "Seeking Air Mine",
+              "_id": 12000006,
+              "quantity": 1
+            },
+            {
               "name": "Multi-Archer Tower",
               "_id": 1000084,
               "quantity": 1
@@ -879,6 +1054,11 @@
               "name": "Firespitter",
               "_id": 1000089,
               "quantity": 2
+            },
+            {
+              "name": "Giga Bomb",
+              "_id": 12000020,
+              "quantity": 1
             },
             {
               "name": "Multi-Gear Tower",
@@ -898,6 +1078,11 @@
             {
               "name": "Wizard Tower",
               "_id": 1000011,
+              "quantity": 1
+            },
+            {
+              "name": "Air Bomb",
+              "_id": 12000005,
               "quantity": 1
             },
             {
@@ -4867,6 +5052,11 @@
               "quantity": 1
             },
             {
+              "name": "Push Trap",
+              "_id": 12000011,
+              "quantity": 1
+            },
+            {
               "name": "B.O.T.O\u2019s Shack",
               "_id": 1000047,
               "quantity": 1
@@ -4912,6 +5102,11 @@
               "quantity": 1
             },
             {
+              "name": "Push Trap",
+              "_id": 12000011,
+              "quantity": 1
+            },
+            {
               "name": "Firecrackers",
               "_id": 1000050,
               "quantity": 1
@@ -4922,9 +5117,19 @@
               "quantity": 1
             },
             {
+              "name": "Mine",
+              "_id": 12000013,
+              "quantity": 2
+            },
+            {
               "name": "Gem Mine",
               "_id": 1000058,
               "quantity": 1
+            },
+            {
+              "name": "Spring Trap",
+              "_id": 12000010,
+              "quantity": 2
             }
           ]
         },
@@ -4962,8 +5167,23 @@
               "quantity": 1
             },
             {
+              "name": "Push Trap",
+              "_id": 12000011,
+              "quantity": 1
+            },
+            {
+              "name": "Mine",
+              "_id": 12000013,
+              "quantity": 1
+            },
+            {
               "name": "Air Bombs",
               "_id": 1000054,
+              "quantity": 1
+            },
+            {
+              "name": "Mega Mine",
+              "_id": 12000014,
               "quantity": 1
             }
           ]
@@ -4992,6 +5212,11 @@
               "quantity": 1
             },
             {
+              "name": "Push Trap",
+              "_id": 12000011,
+              "quantity": 1
+            },
+            {
               "name": "Battle Machine",
               "_id": 1000053,
               "quantity": 1
@@ -4999,6 +5224,16 @@
             {
               "name": "Firecrackers",
               "_id": 1000050,
+              "quantity": 1
+            },
+            {
+              "name": "Mine",
+              "_id": 12000013,
+              "quantity": 1
+            },
+            {
+              "name": "Spring Trap",
+              "_id": 12000010,
               "quantity": 1
             }
           ]
@@ -5057,6 +5292,16 @@
               "quantity": 1
             },
             {
+              "name": "Mine",
+              "_id": 12000013,
+              "quantity": 1
+            },
+            {
+              "name": "Mega Mine",
+              "_id": 12000014,
+              "quantity": 1
+            },
+            {
               "name": "Roaster",
               "_id": 1000056,
               "quantity": 1
@@ -5102,8 +5347,18 @@
               "quantity": 1
             },
             {
+              "name": "Push Trap",
+              "_id": 12000011,
+              "quantity": 1
+            },
+            {
               "name": "Firecrackers",
               "_id": 1000050,
+              "quantity": 1
+            },
+            {
+              "name": "Spring Trap",
+              "_id": 12000010,
               "quantity": 1
             },
             {
@@ -5152,6 +5407,16 @@
               "quantity": 1
             },
             {
+              "name": "Mega Mine",
+              "_id": 12000014,
+              "quantity": 1
+            },
+            {
+              "name": "Spring Trap",
+              "_id": 12000010,
+              "quantity": 1
+            },
+            {
               "name": "Battle Copter",
               "_id": 1000080,
               "quantity": 1
@@ -5174,6 +5439,16 @@
             {
               "name": "Firecrackers",
               "_id": 1000050,
+              "quantity": 1
+            },
+            {
+              "name": "Mega Mine",
+              "_id": 12000014,
+              "quantity": 1
+            },
+            {
+              "name": "Spring Trap",
+              "_id": 12000010,
               "quantity": 1
             },
             {
@@ -5201,6 +5476,11 @@
           "hitpoints": 2750,
           "dps": 0,
           "unlocks": [
+            {
+              "name": "Mine",
+              "_id": 12000013,
+              "quantity": 1
+            },
             {
               "name": "X-Bow",
               "_id": 1000081,

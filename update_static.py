@@ -1772,13 +1772,17 @@ class StaticUpdater:
         townhall_data = []
         id_quantity_map = {}
 
+        trap_data = self.open_file("logic/traps.json")
+
         for _id, (hall_level, hall_data) in enumerate(self.full_townhall_data.items(), 1):
             builderhall_unlocks = []
             townhall_unlocks = []
             for field, data in hall_data.items():
                 building_data = self.full_building_data.get(field)
                 if not building_data:
-                    continue
+                    building_data = trap_data.get(field)
+                    if not building_data or building_data.get("Disabled") or building_data.get("EnabledByCalendar"):
+                        continue
                 village_type = building_data.get("VillageType", 0)
                 id = building_data.get("GlobalID")
                 quantity = data
