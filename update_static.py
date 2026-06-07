@@ -515,6 +515,75 @@ class StaticUpdater:
         resource_TID: str = self.full_resource_data.get(resource, {}).get("TID")
         return self._translate(resource_TID)
 
+    @staticmethod
+    def _first_present(key: str, *sources: dict, default=None):
+        for source in sources:
+            if not isinstance(source, dict):
+                continue
+            if key in source and source[key] is not None:
+                return source[key]
+        return default
+
+    def _has_alternate_defense_mode(self, building_data: dict) -> bool:
+        return bool(building_data.get("AltAttackMode") or building_data.get("AlternateModeTID"))
+
+    def _defense_level_stats(
+        self,
+        building_data: dict,
+        level_data: dict,
+        prefix: str = "",
+        fallback_stats: dict | None = None,
+    ) -> dict:
+        range_key = f"{prefix}AttackRange" if prefix else "AttackRange"
+        min_range_key = f"{prefix}MinAttackRange" if prefix else "MinAttackRange"
+        dps_key = f"{prefix}DPS" if prefix else "DPS"
+        damage_key = f"{prefix}Damage" if prefix else "Damage"
+        fallback_stats = fallback_stats or {}
+
+        stats = {}
+
+        damage = self._first_present(damage_key, level_data, building_data)
+        if damage is None and prefix:
+            damage = fallback_stats.get("damage")
+        if damage is not None:
+            stats["damage"] = damage
+
+        dps = self._first_present(dps_key, level_data, building_data)
+        if dps == 0 and damage is not None:
+            dps = None
+        if dps is None and prefix:
+            dps = fallback_stats.get("dps")
+        if dps is not None:
+            stats["dps"] = dps
+
+        stats["attack_range"] = self._first_present(
+            range_key,
+            level_data,
+            building_data,
+            default=fallback_stats.get("attack_range", 0),
+        )
+        min_range = self._first_present(
+            min_range_key,
+            level_data,
+            building_data,
+            default=fallback_stats.get("min_range"),
+        )
+        if min_range:
+            stats["min_range"] = min_range
+        return stats
+
+    def _spell_tower_effect_range(
+        self,
+        weapon_data: dict,
+        projectile_data: dict,
+        spell_data: dict,
+    ) -> int | None:
+        projectile_name = weapon_data.get("Projectile")
+        hit_spell = projectile_data.get(projectile_name, {}).get("HitSpell")
+        if not hit_spell:
+            return None
+        return spell_data.get(hit_spell, {}).get("Radius")
+
     def _parse_translation_data(self):
         full_translation_data = self.open_file("localization/texts.json")
         other_translations = []
@@ -583,6 +652,8 @@ class StaticUpdater:
         self.full_supercharges_data = self.open_file("logic/mini_levels.json")
         self.full_townhall_data = self.open_file("logic/townhall_levels.json")
         full_weapon_data: dict = self.open_file("logic/weapons.json")
+        full_projectile_data: dict = self.open_file("logic/projectiles.json")
+        full_spell_data: dict = self.open_file("logic/spells.json")
 
         new_building_data = []
 
@@ -594,6 +665,12 @@ class StaticUpdater:
                 continue
 
             village_type = building_data.get("VillageType", 0)
+            is_defense = building_data.get("BuildingClass") == "Defense"
+            has_alternate_mode = is_defense and self._has_alternate_defense_mode(building_data)
+            has_level_targeting = any(
+                isinstance(level_data, dict) and level_data.get("UnlockWeaponMode")
+                for level_data in building_data.values()
+            )
             superchargeable = False
 
             supercharge_level_data = {}
@@ -643,8 +720,34 @@ class StaticUpdater:
                 "village": "home" if not village_type else "builderBase",
                 "width": building_data.get("Width", 1),  # walls are null for some reason, so let's make it 1
                 "superchargeable": superchargeable,
-                "levels": [],
             }
+
+            if is_defense and not has_level_targeting:
+                hold_data.update({
+                    "is_air_targeting": self._first_present("AirTargets", building_data, default=False),
+                    "is_ground_targeting": self._first_present("GroundTargets", building_data, default=False),
+                })
+                if has_alternate_mode:
+                    alt_name_tid = (
+                        building_data.get("AlternateModeTID")
+                        or building_data.get("AltNameTID")
+                        or building_data.get("AltTID")
+                    )
+                    hold_data["alt"] = {
+                        "name": self._translate(tid=alt_name_tid),
+                        "is_air_targeting": self._first_present(
+                            "AltAirTargets",
+                            building_data,
+                            default=hold_data["is_air_targeting"],
+                        ),
+                        "is_ground_targeting": self._first_present(
+                            "AltGroundTargets",
+                            building_data,
+                            default=hold_data["is_ground_targeting"],
+                        ),
+                    }
+
+            hold_data["levels"] = []
 
             # put seasonal defense onto the crafting station
             if building_data.get("GlobalID") == 1000097:
@@ -670,8 +773,49 @@ class StaticUpdater:
                     "build_time": upgrade_time_seconds,
                     "required_townhall": level_data.get("TownHallLevel"),
                     "hitpoints": level_data.get("Hitpoints", 0),
-                    "dps": level_data.get("DPS", 0) or level_data.get("Damage", 0),
                 }
+                if is_defense:
+                    defense_stats_source = building_data
+                    defense_stats_level = level_data
+                    if weapon_name := level_data.get("UnlockWeaponMode"):
+                        weapon_data = full_weapon_data.get(weapon_name, {})
+                        defense_stats_source = weapon_data
+                        defense_stats_level = {}
+                        hold_level_data["name"] = self._translate(
+                            tid=weapon_data.get("ShortTID") or weapon_data.get("TID")
+                        )
+                        effect_range = self._spell_tower_effect_range(
+                            weapon_data=weapon_data,
+                            projectile_data=full_projectile_data,
+                            spell_data=full_spell_data,
+                        )
+                        if effect_range is not None:
+                            hold_level_data["effect_range"] = effect_range
+                        hold_level_data["is_air_targeting"] = self._first_present(
+                            "AirTargets",
+                            weapon_data,
+                            default=False,
+                        )
+                        hold_level_data["is_ground_targeting"] = self._first_present(
+                            "GroundTargets",
+                            weapon_data,
+                            default=False,
+                        )
+
+                    defense_stats = self._defense_level_stats(defense_stats_source, defense_stats_level)
+                    if level_data.get("UnlockWeaponMode"):
+                        defense_stats.pop("dps", None)
+                        defense_stats.pop("damage", None)
+                    hold_level_data.update(defense_stats)
+                    if has_alternate_mode:
+                        hold_level_data["alt"] = self._defense_level_stats(
+                            building_data,
+                            level_data,
+                            prefix="Alt",
+                            fallback_stats=defense_stats,
+                        )
+                else:
+                    hold_level_data["dps"] = level_data.get("DPS", 0) or level_data.get("Damage", 0)
 
                 if "StrengthWeight" in level_data:
                     hold_level_data["strength_weight"] = level_data["StrengthWeight"]
@@ -1772,13 +1916,16 @@ class StaticUpdater:
         townhall_data = []
         id_quantity_map = {}
 
+        trap_data = self.open_file("logic/traps.json")
+
         for _id, (hall_level, hall_data) in enumerate(self.full_townhall_data.items(), 1):
             builderhall_unlocks = []
             townhall_unlocks = []
             for field, data in hall_data.items():
-                building_data = self.full_building_data.get(field)
-                if not building_data:
+                building_data = self.full_building_data.get(field) or trap_data.get(field)
+                if not building_data or building_data.get("Disabled") or building_data.get("EnabledByCalendar"):
                     continue
+
                 village_type = building_data.get("VillageType", 0)
                 id = building_data.get("GlobalID")
                 quantity = data
