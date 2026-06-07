@@ -2121,6 +2121,13 @@
       "village": "home",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
+      "alt": {
+        "name": "Burst Cannon",
+        "is_air_targeting": false,
+        "is_ground_targeting": true
+      },
       "levels": [
         {
           "level": 1,
@@ -2129,6 +2136,11 @@
           "required_townhall": 1,
           "hitpoints": 300,
           "dps": 7,
+          "attack_range": 900,
+          "alt": {
+            "dps": 14,
+            "attack_range": 700
+          },
           "strength_weight": 195
         },
         {
@@ -2138,6 +2150,11 @@
           "required_townhall": 2,
           "hitpoints": 360,
           "dps": 10,
+          "attack_range": 900,
+          "alt": {
+            "dps": 20,
+            "attack_range": 700
+          },
           "strength_weight": 225
         },
         {
@@ -2147,6 +2164,11 @@
           "required_townhall": 2,
           "hitpoints": 420,
           "dps": 13,
+          "attack_range": 900,
+          "alt": {
+            "dps": 26,
+            "attack_range": 700
+          },
           "strength_weight": 274
         },
         {
@@ -2156,6 +2178,11 @@
           "required_townhall": 3,
           "hitpoints": 500,
           "dps": 17,
+          "attack_range": 900,
+          "alt": {
+            "dps": 34,
+            "attack_range": 700
+          },
           "strength_weight": 323
         },
         {
@@ -2165,6 +2192,11 @@
           "required_townhall": 4,
           "hitpoints": 600,
           "dps": 23,
+          "attack_range": 900,
+          "alt": {
+            "dps": 46,
+            "attack_range": 700
+          },
           "strength_weight": 389
         },
         {
@@ -2174,6 +2206,11 @@
           "required_townhall": 5,
           "hitpoints": 660,
           "dps": 30,
+          "attack_range": 900,
+          "alt": {
+            "dps": 60,
+            "attack_range": 700
+          },
           "strength_weight": 454
         },
         {
@@ -2183,6 +2220,11 @@
           "required_townhall": 6,
           "hitpoints": 730,
           "dps": 40,
+          "attack_range": 900,
+          "alt": {
+            "dps": 80,
+            "attack_range": 700
+          },
           "strength_weight": 548
         },
         {
@@ -2192,6 +2234,11 @@
           "required_townhall": 7,
           "hitpoints": 800,
           "dps": 48,
+          "attack_range": 900,
+          "alt": {
+            "dps": 96,
+            "attack_range": 700
+          },
           "strength_weight": 632
         },
         {
@@ -2201,6 +2248,11 @@
           "required_townhall": 8,
           "hitpoints": 880,
           "dps": 56,
+          "attack_range": 900,
+          "alt": {
+            "dps": 112,
+            "attack_range": 700
+          },
           "strength_weight": 710
         },
         {
@@ -2210,6 +2262,11 @@
           "required_townhall": 8,
           "hitpoints": 960,
           "dps": 64,
+          "attack_range": 900,
+          "alt": {
+            "dps": 128,
+            "attack_range": 700
+          },
           "strength_weight": 783
         },
         {
@@ -2219,6 +2276,11 @@
           "required_townhall": 9,
           "hitpoints": 1060,
           "dps": 74,
+          "attack_range": 900,
+          "alt": {
+            "dps": 148,
+            "attack_range": 700
+          },
           "strength_weight": 874
         },
         {
@@ -2228,6 +2290,11 @@
           "required_townhall": 10,
           "hitpoints": 1160,
           "dps": 85,
+          "attack_range": 900,
+          "alt": {
+            "dps": 170,
+            "attack_range": 700
+          },
           "strength_weight": 969
         },
         {
@@ -2237,6 +2304,11 @@
           "required_townhall": 10,
           "hitpoints": 1260,
           "dps": 95,
+          "attack_range": 900,
+          "alt": {
+            "dps": 190,
+            "attack_range": 700
+          },
           "strength_weight": 1050
         },
         {
@@ -2246,6 +2318,11 @@
           "required_townhall": 11,
           "hitpoints": 1380,
           "dps": 100,
+          "attack_range": 900,
+          "alt": {
+            "dps": 200,
+            "attack_range": 700
+          },
           "strength_weight": 1130
         },
         {
@@ -2255,6 +2332,11 @@
           "required_townhall": 11,
           "hitpoints": 1500,
           "dps": 105,
+          "attack_range": 900,
+          "alt": {
+            "dps": 210,
+            "attack_range": 700
+          },
           "strength_weight": 1205
         },
         {
@@ -2264,6 +2346,11 @@
           "required_townhall": 12,
           "hitpoints": 1620,
           "dps": 110,
+          "attack_range": 900,
+          "alt": {
+            "dps": 220,
+            "attack_range": 700
+          },
           "strength_weight": 1236
         },
         {
@@ -2273,6 +2360,11 @@
           "required_townhall": 12,
           "hitpoints": 1740,
           "dps": 115,
+          "attack_range": 900,
+          "alt": {
+            "dps": 230,
+            "attack_range": 700
+          },
           "strength_weight": 1297
         },
         {
@@ -2282,6 +2374,11 @@
           "required_townhall": 13,
           "hitpoints": 1870,
           "dps": 125,
+          "attack_range": 900,
+          "alt": {
+            "dps": 250,
+            "attack_range": 700
+          },
           "strength_weight": 1361
         },
         {
@@ -2291,6 +2388,11 @@
           "required_townhall": 13,
           "hitpoints": 2000,
           "dps": 135,
+          "attack_range": 900,
+          "alt": {
+            "dps": 270,
+            "attack_range": 700
+          },
           "strength_weight": 1463
         },
         {
@@ -2300,6 +2402,11 @@
           "required_townhall": 14,
           "hitpoints": 2150,
           "dps": 150,
+          "attack_range": 900,
+          "alt": {
+            "dps": 300,
+            "attack_range": 700
+          },
           "strength_weight": 1569
         },
         {
@@ -2309,6 +2416,11 @@
           "required_townhall": 15,
           "hitpoints": 2250,
           "dps": 160,
+          "attack_range": 900,
+          "alt": {
+            "dps": 320,
+            "attack_range": 700
+          },
           "strength_weight": 1665
         }
       ],
@@ -2331,6 +2443,13 @@
       "village": "home",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "alt": {
+        "name": "Fast Attack Archer Tower",
+        "is_air_targeting": true,
+        "is_ground_targeting": true
+      },
       "levels": [
         {
           "level": 1,
@@ -2339,6 +2458,11 @@
           "required_townhall": 2,
           "hitpoints": 380,
           "dps": 11,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 22,
+            "attack_range": 800
+          },
           "strength_weight": 205
         },
         {
@@ -2348,6 +2472,11 @@
           "required_townhall": 2,
           "hitpoints": 420,
           "dps": 15,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 30,
+            "attack_range": 800
+          },
           "strength_weight": 252
         },
         {
@@ -2357,6 +2486,11 @@
           "required_townhall": 3,
           "hitpoints": 460,
           "dps": 19,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 38,
+            "attack_range": 800
+          },
           "strength_weight": 299
         },
         {
@@ -2366,6 +2500,11 @@
           "required_townhall": 4,
           "hitpoints": 500,
           "dps": 25,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 50,
+            "attack_range": 800
+          },
           "strength_weight": 364
         },
         {
@@ -2375,6 +2514,11 @@
           "required_townhall": 5,
           "hitpoints": 540,
           "dps": 30,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 60,
+            "attack_range": 800
+          },
           "strength_weight": 418
         },
         {
@@ -2384,6 +2528,11 @@
           "required_townhall": 5,
           "hitpoints": 580,
           "dps": 35,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 70,
+            "attack_range": 800
+          },
           "strength_weight": 470
         },
         {
@@ -2393,6 +2542,11 @@
           "required_townhall": 6,
           "hitpoints": 630,
           "dps": 42,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 84,
+            "attack_range": 800
+          },
           "strength_weight": 543
         },
         {
@@ -2402,6 +2556,11 @@
           "required_townhall": 7,
           "hitpoints": 690,
           "dps": 48,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 96,
+            "attack_range": 800
+          },
           "strength_weight": 607
         },
         {
@@ -2411,6 +2570,11 @@
           "required_townhall": 8,
           "hitpoints": 750,
           "dps": 56,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 112,
+            "attack_range": 800
+          },
           "strength_weight": 688
         },
         {
@@ -2420,6 +2584,11 @@
           "required_townhall": 8,
           "hitpoints": 810,
           "dps": 63,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 126,
+            "attack_range": 800
+          },
           "strength_weight": 758
         },
         {
@@ -2429,6 +2598,11 @@
           "required_townhall": 9,
           "hitpoints": 890,
           "dps": 70,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 140,
+            "attack_range": 800
+          },
           "strength_weight": 830
         },
         {
@@ -2438,6 +2612,11 @@
           "required_townhall": 10,
           "hitpoints": 970,
           "dps": 74,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 150,
+            "attack_range": 800
+          },
           "strength_weight": 883
         },
         {
@@ -2447,6 +2626,11 @@
           "required_townhall": 10,
           "hitpoints": 1050,
           "dps": 78,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 160,
+            "attack_range": 800
+          },
           "strength_weight": 935
         },
         {
@@ -2456,6 +2640,11 @@
           "required_townhall": 11,
           "hitpoints": 1130,
           "dps": 82,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 180,
+            "attack_range": 800
+          },
           "strength_weight": 1029
         },
         {
@@ -2465,6 +2654,11 @@
           "required_townhall": 11,
           "hitpoints": 1230,
           "dps": 85,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 200,
+            "attack_range": 800
+          },
           "strength_weight": 1111
         },
         {
@@ -2474,6 +2668,11 @@
           "required_townhall": 12,
           "hitpoints": 1310,
           "dps": 90,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 210,
+            "attack_range": 800
+          },
           "strength_weight": 1147
         },
         {
@@ -2483,6 +2682,11 @@
           "required_townhall": 12,
           "hitpoints": 1390,
           "dps": 100,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 220,
+            "attack_range": 800
+          },
           "strength_weight": 1206
         },
         {
@@ -2492,6 +2696,11 @@
           "required_townhall": 13,
           "hitpoints": 1510,
           "dps": 110,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 240,
+            "attack_range": 800
+          },
           "strength_weight": 1309
         },
         {
@@ -2501,6 +2710,11 @@
           "required_townhall": 13,
           "hitpoints": 1600,
           "dps": 120,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 260,
+            "attack_range": 800
+          },
           "strength_weight": 1411
         },
         {
@@ -2510,6 +2724,11 @@
           "required_townhall": 14,
           "hitpoints": 1700,
           "dps": 135,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 276,
+            "attack_range": 800
+          },
           "strength_weight": 1498
         },
         {
@@ -2519,6 +2738,11 @@
           "required_townhall": 15,
           "hitpoints": 1800,
           "dps": 145,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 290,
+            "attack_range": 800
+          },
           "strength_weight": 1577
         }
       ],
@@ -2743,6 +2967,8 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -2751,6 +2977,7 @@
           "required_townhall": 5,
           "hitpoints": 620,
           "dps": 11,
+          "attack_range": 700,
           "strength_weight": 1193
         },
         {
@@ -2760,6 +2987,7 @@
           "required_townhall": 5,
           "hitpoints": 650,
           "dps": 13,
+          "attack_range": 700,
           "strength_weight": 1229
         },
         {
@@ -2769,6 +2997,7 @@
           "required_townhall": 6,
           "hitpoints": 680,
           "dps": 16,
+          "attack_range": 700,
           "strength_weight": 1287
         },
         {
@@ -2778,6 +3007,7 @@
           "required_townhall": 7,
           "hitpoints": 730,
           "dps": 20,
+          "attack_range": 700,
           "strength_weight": 1377
         },
         {
@@ -2787,6 +3017,7 @@
           "required_townhall": 8,
           "hitpoints": 840,
           "dps": 24,
+          "attack_range": 700,
           "strength_weight": 1485
         },
         {
@@ -2796,6 +3027,7 @@
           "required_townhall": 8,
           "hitpoints": 960,
           "dps": 32,
+          "attack_range": 700,
           "strength_weight": 1680
         },
         {
@@ -2805,6 +3037,7 @@
           "required_townhall": 9,
           "hitpoints": 1200,
           "dps": 40,
+          "attack_range": 700,
           "strength_weight": 1890
         },
         {
@@ -2814,6 +3047,7 @@
           "required_townhall": 10,
           "hitpoints": 1440,
           "dps": 45,
+          "attack_range": 700,
           "strength_weight": 1944
         },
         {
@@ -2823,6 +3057,7 @@
           "required_townhall": 10,
           "hitpoints": 1600,
           "dps": 50,
+          "attack_range": 700,
           "strength_weight": 2208
         },
         {
@@ -2832,6 +3067,7 @@
           "required_townhall": 11,
           "hitpoints": 1900,
           "dps": 62,
+          "attack_range": 700,
           "strength_weight": 2688
         },
         {
@@ -2841,6 +3077,7 @@
           "required_townhall": 12,
           "hitpoints": 2120,
           "dps": 70,
+          "attack_range": 700,
           "strength_weight": 3024
         },
         {
@@ -2850,6 +3087,7 @@
           "required_townhall": 13,
           "hitpoints": 2240,
           "dps": 78,
+          "attack_range": 700,
           "strength_weight": 3360
         },
         {
@@ -2859,6 +3097,7 @@
           "required_townhall": 13,
           "hitpoints": 2500,
           "dps": 84,
+          "attack_range": 700,
           "strength_weight": 3636
         },
         {
@@ -2868,6 +3107,7 @@
           "required_townhall": 14,
           "hitpoints": 2800,
           "dps": 90,
+          "attack_range": 700,
           "strength_weight": 3900
         },
         {
@@ -2877,6 +3117,7 @@
           "required_townhall": 15,
           "hitpoints": 3000,
           "dps": 95,
+          "attack_range": 700,
           "strength_weight": 4250
         },
         {
@@ -2886,6 +3127,7 @@
           "required_townhall": 16,
           "hitpoints": 3150,
           "dps": 102,
+          "attack_range": 700,
           "strength_weight": 4519
         },
         {
@@ -2895,6 +3137,7 @@
           "required_townhall": 17,
           "hitpoints": 3300,
           "dps": 110,
+          "attack_range": 700,
           "strength_weight": 4800,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -2931,6 +3174,8 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": false,
       "levels": [
         {
           "level": 1,
@@ -2939,6 +3184,7 @@
           "required_townhall": 4,
           "hitpoints": 800,
           "dps": 80,
+          "attack_range": 1000,
           "strength_weight": 500
         },
         {
@@ -2948,6 +3194,7 @@
           "required_townhall": 4,
           "hitpoints": 850,
           "dps": 110,
+          "attack_range": 1000,
           "strength_weight": 656
         },
         {
@@ -2957,6 +3204,7 @@
           "required_townhall": 5,
           "hitpoints": 900,
           "dps": 140,
+          "attack_range": 1000,
           "strength_weight": 813
         },
         {
@@ -2966,6 +3214,7 @@
           "required_townhall": 6,
           "hitpoints": 950,
           "dps": 160,
+          "attack_range": 1000,
           "strength_weight": 919
         },
         {
@@ -2975,6 +3224,7 @@
           "required_townhall": 7,
           "hitpoints": 1000,
           "dps": 190,
+          "attack_range": 1000,
           "strength_weight": 1075
         },
         {
@@ -2984,6 +3234,7 @@
           "required_townhall": 8,
           "hitpoints": 1050,
           "dps": 230,
+          "attack_range": 1000,
           "strength_weight": 1281
         },
         {
@@ -2993,6 +3244,7 @@
           "required_townhall": 9,
           "hitpoints": 1100,
           "dps": 280,
+          "attack_range": 1000,
           "strength_weight": 1538
         },
         {
@@ -3002,6 +3254,7 @@
           "required_townhall": 10,
           "hitpoints": 1210,
           "dps": 320,
+          "attack_range": 1000,
           "strength_weight": 1751
         },
         {
@@ -3011,6 +3264,7 @@
           "required_townhall": 11,
           "hitpoints": 1300,
           "dps": 360,
+          "attack_range": 1000,
           "strength_weight": 1963
         },
         {
@@ -3020,6 +3274,7 @@
           "required_townhall": 12,
           "hitpoints": 1400,
           "dps": 400,
+          "attack_range": 1000,
           "strength_weight": 2175
         },
         {
@@ -3029,6 +3284,7 @@
           "required_townhall": 13,
           "hitpoints": 1500,
           "dps": 440,
+          "attack_range": 1000,
           "strength_weight": 2388
         },
         {
@@ -3038,6 +3294,7 @@
           "required_townhall": 14,
           "hitpoints": 1650,
           "dps": 500,
+          "attack_range": 1000,
           "strength_weight": 2706
         },
         {
@@ -3047,6 +3304,7 @@
           "required_townhall": 15,
           "hitpoints": 1750,
           "dps": 540,
+          "attack_range": 1000,
           "strength_weight": 2919
         },
         {
@@ -3056,6 +3314,7 @@
           "required_townhall": 16,
           "hitpoints": 1850,
           "dps": 600,
+          "attack_range": 1000,
           "strength_weight": 3231
         },
         {
@@ -3065,6 +3324,7 @@
           "required_townhall": 17,
           "hitpoints": 1950,
           "dps": 650,
+          "attack_range": 1000,
           "strength_weight": 3550
         },
         {
@@ -3074,6 +3334,7 @@
           "required_townhall": 18,
           "hitpoints": 2000,
           "dps": 700,
+          "attack_range": 1000,
           "strength_weight": 3900,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -3110,6 +3371,13 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
+      "alt": {
+        "name": "Burst Mortar",
+        "is_air_targeting": false,
+        "is_ground_targeting": true
+      },
       "levels": [
         {
           "level": 1,
@@ -3118,6 +3386,13 @@
           "required_townhall": 3,
           "hitpoints": 400,
           "dps": 4,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 5,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 630
         },
         {
@@ -3127,6 +3402,13 @@
           "required_townhall": 4,
           "hitpoints": 450,
           "dps": 5,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 6,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 715
         },
         {
@@ -3136,6 +3418,13 @@
           "required_townhall": 5,
           "hitpoints": 500,
           "dps": 6,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 7,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 796
         },
         {
@@ -3145,6 +3434,13 @@
           "required_townhall": 6,
           "hitpoints": 550,
           "dps": 7,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 9,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 872
         },
         {
@@ -3154,6 +3450,13 @@
           "required_townhall": 7,
           "hitpoints": 600,
           "dps": 9,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 11,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 984
         },
         {
@@ -3163,6 +3466,13 @@
           "required_townhall": 8,
           "hitpoints": 650,
           "dps": 11,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 13,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 1090
         },
         {
@@ -3172,6 +3482,13 @@
           "required_townhall": 9,
           "hitpoints": 700,
           "dps": 15,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 18,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 1268
         },
         {
@@ -3181,6 +3498,13 @@
           "required_townhall": 10,
           "hitpoints": 800,
           "dps": 20,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 25,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 1520
         },
         {
@@ -3190,6 +3514,13 @@
           "required_townhall": 11,
           "hitpoints": 950,
           "dps": 25,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 31,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 1804
         },
         {
@@ -3199,6 +3530,13 @@
           "required_townhall": 11,
           "hitpoints": 1100,
           "dps": 30,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 38,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 2070
         },
         {
@@ -3208,6 +3546,13 @@
           "required_townhall": 12,
           "hitpoints": 1300,
           "dps": 35,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 43,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 2363
         },
         {
@@ -3217,6 +3562,13 @@
           "required_townhall": 12,
           "hitpoints": 1500,
           "dps": 38,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 47,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 2643
         },
         {
@@ -3226,6 +3578,13 @@
           "required_townhall": 13,
           "hitpoints": 1700,
           "dps": 42,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 52,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 2873
         },
         {
@@ -3235,6 +3594,13 @@
           "required_townhall": 14,
           "hitpoints": 1950,
           "dps": 48,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 59,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 3290
         },
         {
@@ -3244,6 +3610,13 @@
           "required_townhall": 15,
           "hitpoints": 2150,
           "dps": 54,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 66,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 3664
         },
         {
@@ -3253,6 +3626,13 @@
           "required_townhall": 16,
           "hitpoints": 2300,
           "dps": 60,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 74,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 3995
         },
         {
@@ -3262,6 +3642,13 @@
           "required_townhall": 17,
           "hitpoints": 2450,
           "dps": 66,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 81,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 4300
         },
         {
@@ -3271,6 +3658,13 @@
           "required_townhall": 18,
           "hitpoints": 2550,
           "dps": 72,
+          "attack_range": 1100,
+          "min_range": 400,
+          "alt": {
+            "dps": 89,
+            "attack_range": 1100,
+            "min_range": 400
+          },
           "strength_weight": 4500,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -3552,6 +3946,8 @@
       "village": "home",
       "width": 2,
       "superchargeable": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -3560,6 +3956,7 @@
           "required_townhall": 7,
           "hitpoints": 600,
           "dps": 34,
+          "attack_range": 700,
           "strength_weight": 490
         },
         {
@@ -3569,6 +3966,7 @@
           "required_townhall": 7,
           "hitpoints": 630,
           "dps": 40,
+          "attack_range": 700,
           "strength_weight": 558
         },
         {
@@ -3578,6 +3976,7 @@
           "required_townhall": 7,
           "hitpoints": 660,
           "dps": 48,
+          "attack_range": 700,
           "strength_weight": 645
         },
         {
@@ -3587,6 +3986,7 @@
           "required_townhall": 8,
           "hitpoints": 690,
           "dps": 55,
+          "attack_range": 700,
           "strength_weight": 723
         },
         {
@@ -3596,6 +3996,7 @@
           "required_townhall": 8,
           "hitpoints": 730,
           "dps": 64,
+          "attack_range": 700,
           "strength_weight": 823
         },
         {
@@ -3605,6 +4006,7 @@
           "required_townhall": 8,
           "hitpoints": 770,
           "dps": 75,
+          "attack_range": 700,
           "strength_weight": 943
         },
         {
@@ -3614,6 +4016,7 @@
           "required_townhall": 9,
           "hitpoints": 810,
           "dps": 87,
+          "attack_range": 700,
           "strength_weight": 1073
         },
         {
@@ -3623,6 +4026,7 @@
           "required_townhall": 10,
           "hitpoints": 850,
           "dps": 99,
+          "attack_range": 700,
           "strength_weight": 1203
         },
         {
@@ -3632,6 +4036,7 @@
           "required_townhall": 11,
           "hitpoints": 900,
           "dps": 110,
+          "attack_range": 700,
           "strength_weight": 1325
         },
         {
@@ -3641,6 +4046,7 @@
           "required_townhall": 12,
           "hitpoints": 980,
           "dps": 120,
+          "attack_range": 700,
           "strength_weight": 1445
         },
         {
@@ -3650,6 +4056,7 @@
           "required_townhall": 13,
           "hitpoints": 1100,
           "dps": 130,
+          "attack_range": 700,
           "strength_weight": 1575
         },
         {
@@ -3659,6 +4066,7 @@
           "required_townhall": 13,
           "hitpoints": 1200,
           "dps": 140,
+          "attack_range": 700,
           "strength_weight": 1700
         },
         {
@@ -3668,6 +4076,7 @@
           "required_townhall": 14,
           "hitpoints": 1350,
           "dps": 150,
+          "attack_range": 700,
           "strength_weight": 1838
         },
         {
@@ -3677,6 +4086,7 @@
           "required_townhall": 15,
           "hitpoints": 1450,
           "dps": 160,
+          "attack_range": 700,
           "strength_weight": 1963
         },
         {
@@ -3686,6 +4096,7 @@
           "required_townhall": 16,
           "hitpoints": 1550,
           "dps": 170,
+          "attack_range": 700,
           "strength_weight": 2088
         },
         {
@@ -3695,6 +4106,7 @@
           "required_townhall": 17,
           "hitpoints": 1650,
           "dps": 180,
+          "attack_range": 700,
           "strength_weight": 2200
         },
         {
@@ -3704,6 +4116,7 @@
           "required_townhall": 18,
           "hitpoints": 1750,
           "dps": 190,
+          "attack_range": 700,
           "strength_weight": 2300,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -3828,6 +4241,13 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
+      "alt": {
+        "name": "Ground & Air Targeting X-Bow",
+        "is_air_targeting": true,
+        "is_ground_targeting": true
+      },
       "levels": [
         {
           "level": 1,
@@ -3836,6 +4256,11 @@
           "required_townhall": 9,
           "hitpoints": 1500,
           "dps": 60,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 60,
+            "attack_range": 1150
+          },
           "strength_weight": 3413
         },
         {
@@ -3845,6 +4270,11 @@
           "required_townhall": 9,
           "hitpoints": 1900,
           "dps": 70,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 70,
+            "attack_range": 1150
+          },
           "strength_weight": 3819
         },
         {
@@ -3854,6 +4284,11 @@
           "required_townhall": 9,
           "hitpoints": 2300,
           "dps": 80,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 80,
+            "attack_range": 1150
+          },
           "strength_weight": 4125
         },
         {
@@ -3863,6 +4298,11 @@
           "required_townhall": 10,
           "hitpoints": 2700,
           "dps": 85,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 85,
+            "attack_range": 1150
+          },
           "strength_weight": 4725
         },
         {
@@ -3872,6 +4312,11 @@
           "required_townhall": 11,
           "hitpoints": 3100,
           "dps": 95,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 95,
+            "attack_range": 1150
+          },
           "strength_weight": 5625
         },
         {
@@ -3881,6 +4326,11 @@
           "required_townhall": 12,
           "hitpoints": 3400,
           "dps": 110,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 110,
+            "attack_range": 1150
+          },
           "strength_weight": 6450
         },
         {
@@ -3890,6 +4340,11 @@
           "required_townhall": 13,
           "hitpoints": 3700,
           "dps": 130,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 130,
+            "attack_range": 1150
+          },
           "strength_weight": 7275
         },
         {
@@ -3899,6 +4354,11 @@
           "required_townhall": 13,
           "hitpoints": 4000,
           "dps": 155,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 155,
+            "attack_range": 1150
+          },
           "strength_weight": 8100
         },
         {
@@ -3908,6 +4368,11 @@
           "required_townhall": 14,
           "hitpoints": 4200,
           "dps": 185,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 185,
+            "attack_range": 1150
+          },
           "strength_weight": 8850
         },
         {
@@ -3917,6 +4382,11 @@
           "required_townhall": 15,
           "hitpoints": 4400,
           "dps": 205,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 205,
+            "attack_range": 1150
+          },
           "strength_weight": 9450
         },
         {
@@ -3926,6 +4396,11 @@
           "required_townhall": 16,
           "hitpoints": 4600,
           "dps": 225,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 225,
+            "attack_range": 1150
+          },
           "strength_weight": 10200
         },
         {
@@ -3935,6 +4410,11 @@
           "required_townhall": 17,
           "hitpoints": 4800,
           "dps": 235,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 235,
+            "attack_range": 1150
+          },
           "strength_weight": 11000
         },
         {
@@ -3944,6 +4424,11 @@
           "required_townhall": 18,
           "hitpoints": 5000,
           "dps": 245,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 245,
+            "attack_range": 1150
+          },
           "strength_weight": 11800,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -4342,6 +4827,13 @@
       "village": "home",
       "width": 2,
       "superchargeable": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "alt": {
+        "name": "Multi Target Inferno Tower",
+        "is_air_targeting": true,
+        "is_ground_targeting": true
+      },
       "levels": [
         {
           "level": 1,
@@ -4350,6 +4842,11 @@
           "required_townhall": 10,
           "hitpoints": 1500,
           "dps": 30,
+          "attack_range": 900,
+          "alt": {
+            "dps": 30,
+            "attack_range": 1000
+          },
           "strength_weight": 18900
         },
         {
@@ -4359,6 +4856,11 @@
           "required_townhall": 10,
           "hitpoints": 1800,
           "dps": 35,
+          "attack_range": 900,
+          "alt": {
+            "dps": 35,
+            "attack_range": 1000
+          },
           "strength_weight": 20000
         },
         {
@@ -4368,6 +4870,11 @@
           "required_townhall": 10,
           "hitpoints": 2100,
           "dps": 40,
+          "attack_range": 900,
+          "alt": {
+            "dps": 40,
+            "attack_range": 1000
+          },
           "strength_weight": 20813
         },
         {
@@ -4377,6 +4884,11 @@
           "required_townhall": 11,
           "hitpoints": 2400,
           "dps": 45,
+          "attack_range": 900,
+          "alt": {
+            "dps": 45,
+            "attack_range": 1000
+          },
           "strength_weight": 23100
         },
         {
@@ -4386,6 +4898,11 @@
           "required_townhall": 11,
           "hitpoints": 2700,
           "dps": 50,
+          "attack_range": 900,
+          "alt": {
+            "dps": 50,
+            "attack_range": 1000
+          },
           "strength_weight": 25500
         },
         {
@@ -4395,6 +4912,11 @@
           "required_townhall": 12,
           "hitpoints": 3000,
           "dps": 55,
+          "attack_range": 900,
+          "alt": {
+            "dps": 55,
+            "attack_range": 1000
+          },
           "strength_weight": 27550
         },
         {
@@ -4404,6 +4926,11 @@
           "required_townhall": 13,
           "hitpoints": 3300,
           "dps": 65,
+          "attack_range": 900,
+          "alt": {
+            "dps": 65,
+            "attack_range": 1000
+          },
           "strength_weight": 30150
         },
         {
@@ -4413,6 +4940,11 @@
           "required_townhall": 14,
           "hitpoints": 3700,
           "dps": 80,
+          "attack_range": 900,
+          "alt": {
+            "dps": 80,
+            "attack_range": 1000
+          },
           "strength_weight": 32725
         },
         {
@@ -4422,6 +4954,11 @@
           "required_townhall": 15,
           "hitpoints": 4000,
           "dps": 100,
+          "attack_range": 900,
+          "alt": {
+            "dps": 100,
+            "attack_range": 1000
+          },
           "strength_weight": 34650
         },
         {
@@ -4431,6 +4968,11 @@
           "required_townhall": 16,
           "hitpoints": 4400,
           "dps": 120,
+          "attack_range": 900,
+          "alt": {
+            "dps": 120,
+            "attack_range": 1000
+          },
           "strength_weight": 37950
         },
         {
@@ -4440,6 +4982,11 @@
           "required_townhall": 17,
           "hitpoints": 4800,
           "dps": 140,
+          "attack_range": 900,
+          "alt": {
+            "dps": 140,
+            "attack_range": 1000
+          },
           "strength_weight": 39500
         },
         {
@@ -4449,6 +4996,11 @@
           "required_townhall": 18,
           "hitpoints": 5100,
           "dps": 155,
+          "attack_range": 900,
+          "alt": {
+            "dps": 155,
+            "attack_range": 1000
+          },
           "strength_weight": 40500,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -4485,6 +5037,8 @@
       "village": "home",
       "width": 2,
       "superchargeable": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": false,
       "levels": [
         {
           "level": 1,
@@ -4492,7 +5046,8 @@
           "build_time": 14400,
           "required_townhall": 6,
           "hitpoints": 750,
-          "dps": 0,
+          "attack_range": 1500,
+          "min_range": 100,
           "strength_weight": 678
         },
         {
@@ -4501,7 +5056,8 @@
           "build_time": 21600,
           "required_townhall": 6,
           "hitpoints": 800,
-          "dps": 0,
+          "attack_range": 1500,
+          "min_range": 100,
           "strength_weight": 840
         },
         {
@@ -4510,7 +5066,8 @@
           "build_time": 28800,
           "required_townhall": 7,
           "hitpoints": 850,
-          "dps": 0,
+          "attack_range": 1500,
+          "min_range": 100,
           "strength_weight": 1003
         },
         {
@@ -4519,7 +5076,8 @@
           "build_time": 43200,
           "required_townhall": 8,
           "hitpoints": 900,
-          "dps": 0,
+          "attack_range": 1500,
+          "min_range": 100,
           "strength_weight": 1165
         },
         {
@@ -4528,7 +5086,8 @@
           "build_time": 86400,
           "required_townhall": 9,
           "hitpoints": 950,
-          "dps": 0,
+          "attack_range": 1500,
+          "min_range": 100,
           "strength_weight": 1328
         },
         {
@@ -4537,7 +5096,8 @@
           "build_time": 172800,
           "required_townhall": 10,
           "hitpoints": 1000,
-          "dps": 0,
+          "attack_range": 1500,
+          "min_range": 100,
           "strength_weight": 1490
         },
         {
@@ -4546,7 +5106,8 @@
           "build_time": 259200,
           "required_townhall": 11,
           "hitpoints": 1050,
-          "dps": 0,
+          "attack_range": 1500,
+          "min_range": 100,
           "strength_weight": 1653
         }
       ]
@@ -4636,6 +5197,8 @@
       "village": "home",
       "width": 4,
       "superchargeable": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -4643,7 +5206,9 @@
           "build_time": 345600,
           "required_townhall": 11,
           "hitpoints": 4000,
-          "dps": 20,
+          "damage": 20,
+          "attack_range": 5000,
+          "min_range": 700,
           "strength_weight": 58800
         },
         {
@@ -4652,7 +5217,9 @@
           "build_time": 432000,
           "required_townhall": 11,
           "hitpoints": 4400,
-          "dps": 25,
+          "damage": 25,
+          "attack_range": 5000,
+          "min_range": 700,
           "strength_weight": 60075
         },
         {
@@ -4661,7 +5228,9 @@
           "build_time": 604800,
           "required_townhall": 12,
           "hitpoints": 4800,
-          "dps": 30,
+          "damage": 30,
+          "attack_range": 5000,
+          "min_range": 700,
           "strength_weight": 61500
         },
         {
@@ -4670,7 +5239,9 @@
           "build_time": 648000,
           "required_townhall": 13,
           "hitpoints": 5200,
-          "dps": 35,
+          "damage": 35,
+          "attack_range": 5000,
+          "min_range": 700,
           "strength_weight": 62700
         },
         {
@@ -4679,7 +5250,9 @@
           "build_time": 691200,
           "required_townhall": 14,
           "hitpoints": 5600,
-          "dps": 40,
+          "damage": 40,
+          "attack_range": 5000,
+          "min_range": 700,
           "strength_weight": 63900
         },
         {
@@ -4688,7 +5261,9 @@
           "build_time": 777600,
           "required_townhall": 15,
           "hitpoints": 5900,
-          "dps": 45,
+          "damage": 45,
+          "attack_range": 5000,
+          "min_range": 700,
           "strength_weight": 65450
         },
         {
@@ -4697,7 +5272,9 @@
           "build_time": 820800,
           "required_townhall": 16,
           "hitpoints": 6200,
-          "dps": 50,
+          "damage": 50,
+          "attack_range": 5000,
+          "min_range": 700,
           "strength_weight": 67000
         }
       ]
@@ -4715,6 +5292,8 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -4723,6 +5302,7 @@
           "required_townhall": 8,
           "hitpoints": 650,
           "dps": 24,
+          "attack_range": 600,
           "strength_weight": 1610
         },
         {
@@ -4732,6 +5312,7 @@
           "required_townhall": 8,
           "hitpoints": 700,
           "dps": 28,
+          "attack_range": 600,
           "strength_weight": 1911
         },
         {
@@ -4741,6 +5322,7 @@
           "required_townhall": 9,
           "hitpoints": 750,
           "dps": 32,
+          "attack_range": 600,
           "strength_weight": 2233
         },
         {
@@ -4750,6 +5332,7 @@
           "required_townhall": 10,
           "hitpoints": 850,
           "dps": 40,
+          "attack_range": 600,
           "strength_weight": 2818
         },
         {
@@ -4759,6 +5342,7 @@
           "required_townhall": 11,
           "hitpoints": 1050,
           "dps": 48,
+          "attack_range": 600,
           "strength_weight": 3416
         },
         {
@@ -4768,6 +5352,7 @@
           "required_townhall": 11,
           "hitpoints": 1300,
           "dps": 56,
+          "attack_range": 600,
           "strength_weight": 4071
         },
         {
@@ -4777,6 +5362,7 @@
           "required_townhall": 12,
           "hitpoints": 1600,
           "dps": 64,
+          "attack_range": 600,
           "strength_weight": 4784
         },
         {
@@ -4786,6 +5372,7 @@
           "required_townhall": 13,
           "hitpoints": 1900,
           "dps": 72,
+          "attack_range": 600,
           "strength_weight": 5497
         },
         {
@@ -4795,6 +5382,7 @@
           "required_townhall": 14,
           "hitpoints": 2300,
           "dps": 84,
+          "attack_range": 600,
           "strength_weight": 6509
         },
         {
@@ -4804,6 +5392,7 @@
           "required_townhall": 15,
           "hitpoints": 2500,
           "dps": 94,
+          "attack_range": 600,
           "strength_weight": 7199
         },
         {
@@ -4813,6 +5402,7 @@
           "required_townhall": 16,
           "hitpoints": 2700,
           "dps": 104,
+          "attack_range": 600,
           "strength_weight": 7889
         },
         {
@@ -4822,6 +5412,7 @@
           "required_townhall": 17,
           "hitpoints": 2900,
           "dps": 114,
+          "attack_range": 600,
           "strength_weight": 8600
         },
         {
@@ -4831,6 +5422,7 @@
           "required_townhall": 18,
           "hitpoints": 3050,
           "dps": 122,
+          "attack_range": 600,
           "strength_weight": 9200,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -6095,6 +6687,8 @@
       "village": "builderBase",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -6102,7 +6696,8 @@
           "build_time": 600,
           "required_townhall": 2,
           "hitpoints": 600,
-          "dps": 50,
+          "damage": 50,
+          "attack_range": 700,
           "strength_weight": 3000
         },
         {
@@ -6111,7 +6706,8 @@
           "build_time": 3600,
           "required_townhall": 3,
           "hitpoints": 690,
-          "dps": 55,
+          "damage": 55,
+          "attack_range": 700,
           "strength_weight": 3200
         },
         {
@@ -6120,7 +6716,8 @@
           "build_time": 10800,
           "required_townhall": 3,
           "hitpoints": 800,
-          "dps": 61,
+          "damage": 61,
+          "attack_range": 700,
           "strength_weight": 3400
         },
         {
@@ -6129,7 +6726,8 @@
           "build_time": 43200,
           "required_townhall": 4,
           "hitpoints": 910,
-          "dps": 67,
+          "damage": 67,
+          "attack_range": 700,
           "strength_weight": 3600
         },
         {
@@ -6138,7 +6736,8 @@
           "build_time": 86400,
           "required_townhall": 5,
           "hitpoints": 1050,
-          "dps": 74,
+          "damage": 74,
+          "attack_range": 700,
           "strength_weight": 3800
         },
         {
@@ -6147,7 +6746,8 @@
           "build_time": 172800,
           "required_townhall": 6,
           "hitpoints": 1250,
-          "dps": 81,
+          "damage": 81,
+          "attack_range": 700,
           "strength_weight": 4000
         },
         {
@@ -6156,7 +6756,8 @@
           "build_time": 345600,
           "required_townhall": 7,
           "hitpoints": 1450,
-          "dps": 89,
+          "damage": 89,
+          "attack_range": 700,
           "strength_weight": 4200
         },
         {
@@ -6165,7 +6766,8 @@
           "build_time": 518400,
           "required_townhall": 8,
           "hitpoints": 1700,
-          "dps": 98,
+          "damage": 98,
+          "attack_range": 700,
           "strength_weight": 4400
         },
         {
@@ -6174,7 +6776,8 @@
           "build_time": 691200,
           "required_townhall": 9,
           "hitpoints": 1950,
-          "dps": 108,
+          "damage": 108,
+          "attack_range": 700,
           "strength_weight": 4600
         },
         {
@@ -6183,7 +6786,8 @@
           "build_time": 864000,
           "required_townhall": 10,
           "hitpoints": 2200,
-          "dps": 120,
+          "damage": 120,
+          "attack_range": 700,
           "strength_weight": 4800
         }
       ]
@@ -6216,6 +6820,8 @@
       "village": "builderBase",
       "width": 2,
       "superchargeable": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -6223,7 +6829,8 @@
           "build_time": 1800,
           "required_townhall": 3,
           "hitpoints": 300,
-          "dps": 36,
+          "damage": 36,
+          "attack_range": 700,
           "strength_weight": 2800
         },
         {
@@ -6232,7 +6839,8 @@
           "build_time": 10800,
           "required_townhall": 3,
           "hitpoints": 350,
-          "dps": 40,
+          "damage": 40,
+          "attack_range": 700,
           "strength_weight": 3000
         },
         {
@@ -6241,7 +6849,8 @@
           "build_time": 18000,
           "required_townhall": 3,
           "hitpoints": 400,
-          "dps": 44,
+          "damage": 44,
+          "attack_range": 700,
           "strength_weight": 3200
         },
         {
@@ -6250,7 +6859,8 @@
           "build_time": 36000,
           "required_townhall": 4,
           "hitpoints": 460,
-          "dps": 48,
+          "damage": 48,
+          "attack_range": 700,
           "strength_weight": 3400
         },
         {
@@ -6259,7 +6869,8 @@
           "build_time": 86400,
           "required_townhall": 5,
           "hitpoints": 550,
-          "dps": 53,
+          "damage": 53,
+          "attack_range": 700,
           "strength_weight": 3600
         },
         {
@@ -6268,7 +6879,8 @@
           "build_time": 172800,
           "required_townhall": 6,
           "hitpoints": 650,
-          "dps": 58,
+          "damage": 58,
+          "attack_range": 700,
           "strength_weight": 3800
         },
         {
@@ -6277,7 +6889,8 @@
           "build_time": 345600,
           "required_townhall": 7,
           "hitpoints": 750,
-          "dps": 64,
+          "damage": 64,
+          "attack_range": 700,
           "strength_weight": 4000
         },
         {
@@ -6286,7 +6899,8 @@
           "build_time": 518400,
           "required_townhall": 8,
           "hitpoints": 850,
-          "dps": 70,
+          "damage": 70,
+          "attack_range": 700,
           "strength_weight": 4200
         },
         {
@@ -6295,7 +6909,8 @@
           "build_time": 691200,
           "required_townhall": 9,
           "hitpoints": 1000,
-          "dps": 77,
+          "damage": 77,
+          "attack_range": 700,
           "strength_weight": 4400
         },
         {
@@ -6304,7 +6919,8 @@
           "build_time": 864000,
           "required_townhall": 10,
           "hitpoints": 1150,
-          "dps": 85,
+          "damage": 85,
+          "attack_range": 700,
           "strength_weight": 4600
         }
       ]
@@ -6322,6 +6938,8 @@
       "village": "builderBase",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -6329,7 +6947,8 @@
           "build_time": 60,
           "required_townhall": 1,
           "hitpoints": 500,
-          "dps": 56,
+          "damage": 56,
+          "attack_range": 850,
           "strength_weight": 2000
         },
         {
@@ -6338,7 +6957,8 @@
           "build_time": 300,
           "required_townhall": 3,
           "hitpoints": 575,
-          "dps": 62,
+          "damage": 62,
+          "attack_range": 850,
           "strength_weight": 2200
         },
         {
@@ -6347,7 +6967,8 @@
           "build_time": 7200,
           "required_townhall": 3,
           "hitpoints": 660,
-          "dps": 68,
+          "damage": 68,
+          "attack_range": 850,
           "strength_weight": 2400
         },
         {
@@ -6356,7 +6977,8 @@
           "build_time": 28800,
           "required_townhall": 4,
           "hitpoints": 760,
-          "dps": 75,
+          "damage": 75,
+          "attack_range": 850,
           "strength_weight": 2600
         },
         {
@@ -6365,7 +6987,8 @@
           "build_time": 86400,
           "required_townhall": 5,
           "hitpoints": 875,
-          "dps": 82,
+          "damage": 82,
+          "attack_range": 850,
           "strength_weight": 2800
         },
         {
@@ -6374,7 +6997,8 @@
           "build_time": 172800,
           "required_townhall": 6,
           "hitpoints": 1050,
-          "dps": 90,
+          "damage": 90,
+          "attack_range": 850,
           "strength_weight": 3000
         },
         {
@@ -6383,7 +7007,8 @@
           "build_time": 345600,
           "required_townhall": 7,
           "hitpoints": 1250,
-          "dps": 99,
+          "damage": 99,
+          "attack_range": 850,
           "strength_weight": 3200
         },
         {
@@ -6392,7 +7017,8 @@
           "build_time": 518400,
           "required_townhall": 8,
           "hitpoints": 1450,
-          "dps": 109,
+          "damage": 109,
+          "attack_range": 850,
           "strength_weight": 3400
         },
         {
@@ -6401,7 +7027,8 @@
           "build_time": 691200,
           "required_townhall": 9,
           "hitpoints": 1650,
-          "dps": 120,
+          "damage": 120,
+          "attack_range": 850,
           "strength_weight": 3600
         },
         {
@@ -6410,7 +7037,8 @@
           "build_time": 777600,
           "required_townhall": 10,
           "hitpoints": 1850,
-          "dps": 132,
+          "damage": 132,
+          "attack_range": 850,
           "strength_weight": 3800
         }
       ]
@@ -6428,6 +7056,8 @@
       "village": "builderBase",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -6435,7 +7065,9 @@
           "build_time": 28800,
           "required_townhall": 5,
           "hitpoints": 500,
-          "dps": 45,
+          "damage": 45,
+          "attack_range": 1100,
+          "min_range": 400,
           "strength_weight": 3400
         },
         {
@@ -6444,7 +7076,9 @@
           "build_time": 43200,
           "required_townhall": 5,
           "hitpoints": 575,
-          "dps": 45,
+          "damage": 45,
+          "attack_range": 1100,
+          "min_range": 400,
           "strength_weight": 3600
         },
         {
@@ -6453,7 +7087,9 @@
           "build_time": 86400,
           "required_townhall": 5,
           "hitpoints": 660,
-          "dps": 50,
+          "damage": 50,
+          "attack_range": 1100,
+          "min_range": 400,
           "strength_weight": 3800
         },
         {
@@ -6462,7 +7098,9 @@
           "build_time": 172800,
           "required_townhall": 5,
           "hitpoints": 760,
-          "dps": 55,
+          "damage": 55,
+          "attack_range": 1100,
+          "min_range": 400,
           "strength_weight": 4000
         },
         {
@@ -6471,7 +7109,9 @@
           "build_time": 259200,
           "required_townhall": 5,
           "hitpoints": 875,
-          "dps": 60,
+          "damage": 60,
+          "attack_range": 1100,
+          "min_range": 400,
           "strength_weight": 4200
         },
         {
@@ -6480,7 +7120,9 @@
           "build_time": 432000,
           "required_townhall": 6,
           "hitpoints": 1050,
-          "dps": 66,
+          "damage": 66,
+          "attack_range": 1100,
+          "min_range": 400,
           "strength_weight": 4400
         },
         {
@@ -6489,7 +7131,9 @@
           "build_time": 604800,
           "required_townhall": 7,
           "hitpoints": 1250,
-          "dps": 73,
+          "damage": 73,
+          "attack_range": 1100,
+          "min_range": 400,
           "strength_weight": 4600
         },
         {
@@ -6498,7 +7142,9 @@
           "build_time": 777600,
           "required_townhall": 8,
           "hitpoints": 1450,
-          "dps": 80,
+          "damage": 80,
+          "attack_range": 1100,
+          "min_range": 400,
           "strength_weight": 4800
         },
         {
@@ -6507,7 +7153,9 @@
           "build_time": 950400,
           "required_townhall": 9,
           "hitpoints": 1650,
-          "dps": 88,
+          "damage": 88,
+          "attack_range": 1100,
+          "min_range": 400,
           "strength_weight": 5000
         },
         {
@@ -6516,7 +7164,9 @@
           "build_time": 1036800,
           "required_townhall": 10,
           "hitpoints": 1850,
-          "dps": 88,
+          "damage": 88,
+          "attack_range": 1100,
+          "min_range": 400,
           "strength_weight": 5200
         }
       ]
@@ -6645,6 +7295,13 @@
       "village": "builderBase",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "alt": {
+        "name": "Fast Attack Archer Tower",
+        "is_air_targeting": true,
+        "is_ground_targeting": true
+      },
       "levels": [
         {
           "level": 1,
@@ -6653,6 +7310,11 @@
           "required_townhall": 2,
           "hitpoints": 500,
           "dps": 40,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 89,
+            "attack_range": 700
+          },
           "strength_weight": 2400
         },
         {
@@ -6662,6 +7324,11 @@
           "required_townhall": 3,
           "hitpoints": 575,
           "dps": 44,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 98,
+            "attack_range": 700
+          },
           "strength_weight": 2600
         },
         {
@@ -6671,6 +7338,11 @@
           "required_townhall": 3,
           "hitpoints": 660,
           "dps": 48,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 107,
+            "attack_range": 700
+          },
           "strength_weight": 2800
         },
         {
@@ -6680,6 +7352,11 @@
           "required_townhall": 4,
           "hitpoints": 760,
           "dps": 53,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 118,
+            "attack_range": 700
+          },
           "strength_weight": 3000
         },
         {
@@ -6689,6 +7366,11 @@
           "required_townhall": 5,
           "hitpoints": 875,
           "dps": 59,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 131,
+            "attack_range": 700
+          },
           "strength_weight": 3200
         },
         {
@@ -6698,6 +7380,11 @@
           "required_townhall": 6,
           "hitpoints": 1050,
           "dps": 64,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 142,
+            "attack_range": 700
+          },
           "strength_weight": 3400
         },
         {
@@ -6707,6 +7394,11 @@
           "required_townhall": 7,
           "hitpoints": 1250,
           "dps": 71,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 158,
+            "attack_range": 700
+          },
           "strength_weight": 3600
         },
         {
@@ -6716,6 +7408,11 @@
           "required_townhall": 8,
           "hitpoints": 1450,
           "dps": 78,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 173,
+            "attack_range": 700
+          },
           "strength_weight": 3800
         },
         {
@@ -6725,6 +7422,11 @@
           "required_townhall": 9,
           "hitpoints": 1650,
           "dps": 86,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 191,
+            "attack_range": 700
+          },
           "strength_weight": 4000
         },
         {
@@ -6734,6 +7436,11 @@
           "required_townhall": 10,
           "hitpoints": 1850,
           "dps": 94,
+          "attack_range": 1000,
+          "alt": {
+            "dps": 209,
+            "attack_range": 700
+          },
           "strength_weight": 4200
         }
       ]
@@ -6766,6 +7473,8 @@
       "village": "builderBase",
       "width": 2,
       "superchargeable": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": false,
       "levels": [
         {
           "level": 1,
@@ -6773,7 +7482,8 @@
           "build_time": 900,
           "required_townhall": 3,
           "hitpoints": 400,
-          "dps": 19,
+          "damage": 19,
+          "attack_range": 900,
           "strength_weight": 2000
         },
         {
@@ -6782,7 +7492,8 @@
           "build_time": 7200,
           "required_townhall": 3,
           "hitpoints": 460,
-          "dps": 21,
+          "damage": 21,
+          "attack_range": 900,
           "strength_weight": 2200
         },
         {
@@ -6791,7 +7502,8 @@
           "build_time": 14400,
           "required_townhall": 3,
           "hitpoints": 530,
-          "dps": 23,
+          "damage": 23,
+          "attack_range": 900,
           "strength_weight": 2400
         },
         {
@@ -6800,7 +7512,8 @@
           "build_time": 43200,
           "required_townhall": 4,
           "hitpoints": 610,
-          "dps": 25,
+          "damage": 25,
+          "attack_range": 900,
           "strength_weight": 2600
         },
         {
@@ -6809,7 +7522,8 @@
           "build_time": 86400,
           "required_townhall": 5,
           "hitpoints": 700,
-          "dps": 27,
+          "damage": 27,
+          "attack_range": 900,
           "strength_weight": 2800
         },
         {
@@ -6818,7 +7532,8 @@
           "build_time": 172800,
           "required_townhall": 6,
           "hitpoints": 850,
-          "dps": 30,
+          "damage": 30,
+          "attack_range": 900,
           "strength_weight": 3000
         },
         {
@@ -6827,7 +7542,8 @@
           "build_time": 345600,
           "required_townhall": 7,
           "hitpoints": 1000,
-          "dps": 33,
+          "damage": 33,
+          "attack_range": 900,
           "strength_weight": 3200
         },
         {
@@ -6836,7 +7552,8 @@
           "build_time": 518400,
           "required_townhall": 8,
           "hitpoints": 1150,
-          "dps": 36,
+          "damage": 36,
+          "attack_range": 900,
           "strength_weight": 3400
         },
         {
@@ -6845,7 +7562,8 @@
           "build_time": 691200,
           "required_townhall": 9,
           "hitpoints": 1300,
-          "dps": 40,
+          "damage": 40,
+          "attack_range": 900,
           "strength_weight": 3600
         },
         {
@@ -6854,7 +7572,8 @@
           "build_time": 777600,
           "required_townhall": 10,
           "hitpoints": 1500,
-          "dps": 44,
+          "damage": 44,
+          "attack_range": 900,
           "strength_weight": 3800
         }
       ]
@@ -6978,6 +7697,8 @@
       "village": "builderBase",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -6985,7 +7706,8 @@
           "build_time": 172800,
           "required_townhall": 8,
           "hitpoints": 700,
-          "dps": 380,
+          "damage": 380,
+          "attack_range": 750,
           "strength_weight": 3600
         },
         {
@@ -6994,7 +7716,8 @@
           "build_time": 259200,
           "required_townhall": 8,
           "hitpoints": 800,
-          "dps": 418,
+          "damage": 418,
+          "attack_range": 750,
           "strength_weight": 3800
         },
         {
@@ -7003,7 +7726,8 @@
           "build_time": 345600,
           "required_townhall": 8,
           "hitpoints": 950,
-          "dps": 460,
+          "damage": 460,
+          "attack_range": 750,
           "strength_weight": 4000
         },
         {
@@ -7012,7 +7736,8 @@
           "build_time": 432000,
           "required_townhall": 8,
           "hitpoints": 1100,
-          "dps": 506,
+          "damage": 506,
+          "attack_range": 750,
           "strength_weight": 4200
         },
         {
@@ -7021,7 +7746,8 @@
           "build_time": 518400,
           "required_townhall": 8,
           "hitpoints": 1300,
-          "dps": 556,
+          "damage": 556,
+          "attack_range": 750,
           "strength_weight": 4400
         },
         {
@@ -7030,7 +7756,8 @@
           "build_time": 604800,
           "required_townhall": 8,
           "hitpoints": 1500,
-          "dps": 612,
+          "damage": 612,
+          "attack_range": 750,
           "strength_weight": 4600
         },
         {
@@ -7039,7 +7766,8 @@
           "build_time": 691200,
           "required_townhall": 8,
           "hitpoints": 1700,
-          "dps": 673,
+          "damage": 673,
+          "attack_range": 750,
           "strength_weight": 4800
         },
         {
@@ -7048,7 +7776,8 @@
           "build_time": 864000,
           "required_townhall": 8,
           "hitpoints": 1900,
-          "dps": 741,
+          "damage": 741,
+          "attack_range": 750,
           "strength_weight": 5000
         },
         {
@@ -7057,7 +7786,8 @@
           "build_time": 950400,
           "required_townhall": 9,
           "hitpoints": 2150,
-          "dps": 816,
+          "damage": 816,
+          "attack_range": 750,
           "strength_weight": 5200
         },
         {
@@ -7066,7 +7796,8 @@
           "build_time": 1036800,
           "required_townhall": 10,
           "hitpoints": 2400,
-          "dps": 896,
+          "damage": 896,
+          "attack_range": 750,
           "strength_weight": 5400
         }
       ]
@@ -7099,6 +7830,8 @@
       "village": "builderBase",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": false,
       "levels": [
         {
           "level": 1,
@@ -7106,7 +7839,8 @@
           "build_time": 21600,
           "required_townhall": 4,
           "hitpoints": 1000,
-          "dps": 270,
+          "damage": 270,
+          "attack_range": 750,
           "strength_weight": 3400
         },
         {
@@ -7115,7 +7849,8 @@
           "build_time": 43200,
           "required_townhall": 4,
           "hitpoints": 1100,
-          "dps": 297,
+          "damage": 297,
+          "attack_range": 750,
           "strength_weight": 3600
         },
         {
@@ -7124,7 +7859,8 @@
           "build_time": 86400,
           "required_townhall": 4,
           "hitpoints": 1250,
-          "dps": 327,
+          "damage": 327,
+          "attack_range": 750,
           "strength_weight": 3800
         },
         {
@@ -7133,7 +7869,8 @@
           "build_time": 172800,
           "required_townhall": 4,
           "hitpoints": 1400,
-          "dps": 359,
+          "damage": 359,
+          "attack_range": 750,
           "strength_weight": 4000
         },
         {
@@ -7142,7 +7879,8 @@
           "build_time": 259200,
           "required_townhall": 5,
           "hitpoints": 1600,
-          "dps": 395,
+          "damage": 395,
+          "attack_range": 750,
           "strength_weight": 4200
         },
         {
@@ -7151,7 +7889,8 @@
           "build_time": 432000,
           "required_townhall": 6,
           "hitpoints": 1850,
-          "dps": 435,
+          "damage": 435,
+          "attack_range": 750,
           "strength_weight": 4400
         },
         {
@@ -7160,7 +7899,8 @@
           "build_time": 604800,
           "required_townhall": 7,
           "hitpoints": 2100,
-          "dps": 478,
+          "damage": 478,
+          "attack_range": 750,
           "strength_weight": 4600
         },
         {
@@ -7169,7 +7909,8 @@
           "build_time": 691200,
           "required_townhall": 8,
           "hitpoints": 2350,
-          "dps": 526,
+          "damage": 526,
+          "attack_range": 750,
           "strength_weight": 4800
         },
         {
@@ -7178,7 +7919,8 @@
           "build_time": 864000,
           "required_townhall": 9,
           "hitpoints": 2600,
-          "dps": 579,
+          "damage": 579,
+          "attack_range": 750,
           "strength_weight": 5000
         },
         {
@@ -7187,7 +7929,8 @@
           "build_time": 1036800,
           "required_townhall": 10,
           "hitpoints": 2900,
-          "dps": 637,
+          "damage": 637,
+          "attack_range": 750,
           "strength_weight": 5200
         }
       ]
@@ -7205,6 +7948,8 @@
       "village": "builderBase",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -7212,7 +7957,8 @@
           "build_time": 7200,
           "required_townhall": 3,
           "hitpoints": 1000,
-          "dps": 440,
+          "damage": 440,
+          "attack_range": 230,
           "strength_weight": 3200
         },
         {
@@ -7221,7 +7967,8 @@
           "build_time": 18000,
           "required_townhall": 3,
           "hitpoints": 1100,
-          "dps": 484,
+          "damage": 484,
+          "attack_range": 230,
           "strength_weight": 3400
         },
         {
@@ -7230,7 +7977,8 @@
           "build_time": 43200,
           "required_townhall": 3,
           "hitpoints": 1250,
-          "dps": 532,
+          "damage": 532,
+          "attack_range": 230,
           "strength_weight": 3600
         },
         {
@@ -7239,7 +7987,8 @@
           "build_time": 86400,
           "required_townhall": 4,
           "hitpoints": 1400,
-          "dps": 586,
+          "damage": 586,
+          "attack_range": 230,
           "strength_weight": 3800
         },
         {
@@ -7248,7 +7997,8 @@
           "build_time": 172800,
           "required_townhall": 5,
           "hitpoints": 1600,
-          "dps": 644,
+          "damage": 644,
+          "attack_range": 230,
           "strength_weight": 4000
         },
         {
@@ -7257,7 +8007,8 @@
           "build_time": 345600,
           "required_townhall": 6,
           "hitpoints": 1850,
-          "dps": 709,
+          "damage": 709,
+          "attack_range": 230,
           "strength_weight": 4200
         },
         {
@@ -7266,7 +8017,8 @@
           "build_time": 518400,
           "required_townhall": 7,
           "hitpoints": 2100,
-          "dps": 779,
+          "damage": 779,
+          "attack_range": 230,
           "strength_weight": 4400
         },
         {
@@ -7275,7 +8027,8 @@
           "build_time": 691200,
           "required_townhall": 8,
           "hitpoints": 2350,
-          "dps": 857,
+          "damage": 857,
+          "attack_range": 230,
           "strength_weight": 4600
         },
         {
@@ -7284,7 +8037,8 @@
           "build_time": 864000,
           "required_townhall": 9,
           "hitpoints": 2600,
-          "dps": 943,
+          "damage": 943,
+          "attack_range": 230,
           "strength_weight": 4800
         },
         {
@@ -7293,7 +8047,8 @@
           "build_time": 1036800,
           "required_townhall": 10,
           "hitpoints": 2900,
-          "dps": 1037,
+          "damage": 1037,
+          "attack_range": 230,
           "strength_weight": 5000
         }
       ]
@@ -7311,6 +8066,8 @@
       "village": "builderBase",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -7318,7 +8075,8 @@
           "build_time": 86400,
           "required_townhall": 6,
           "hitpoints": 800,
-          "dps": 15,
+          "damage": 15,
+          "attack_range": 700,
           "strength_weight": 3600
         },
         {
@@ -7327,7 +8085,8 @@
           "build_time": 172800,
           "required_townhall": 6,
           "hitpoints": 950,
-          "dps": 17,
+          "damage": 17,
+          "attack_range": 700,
           "strength_weight": 3800
         },
         {
@@ -7336,7 +8095,8 @@
           "build_time": 259200,
           "required_townhall": 6,
           "hitpoints": 1100,
-          "dps": 19,
+          "damage": 19,
+          "attack_range": 700,
           "strength_weight": 4000
         },
         {
@@ -7345,7 +8105,8 @@
           "build_time": 345600,
           "required_townhall": 6,
           "hitpoints": 1300,
-          "dps": 21,
+          "damage": 21,
+          "attack_range": 700,
           "strength_weight": 4200
         },
         {
@@ -7354,7 +8115,8 @@
           "build_time": 432000,
           "required_townhall": 6,
           "hitpoints": 1500,
-          "dps": 23,
+          "damage": 23,
+          "attack_range": 700,
           "strength_weight": 4400
         },
         {
@@ -7363,7 +8125,8 @@
           "build_time": 518400,
           "required_townhall": 6,
           "hitpoints": 1700,
-          "dps": 25,
+          "damage": 25,
+          "attack_range": 700,
           "strength_weight": 4600
         },
         {
@@ -7372,7 +8135,8 @@
           "build_time": 691200,
           "required_townhall": 7,
           "hitpoints": 1900,
-          "dps": 27,
+          "damage": 27,
+          "attack_range": 700,
           "strength_weight": 4800
         },
         {
@@ -7381,7 +8145,8 @@
           "build_time": 864000,
           "required_townhall": 8,
           "hitpoints": 2100,
-          "dps": 30,
+          "damage": 30,
+          "attack_range": 700,
           "strength_weight": 5000
         },
         {
@@ -7390,7 +8155,8 @@
           "build_time": 950400,
           "required_townhall": 9,
           "hitpoints": 2350,
-          "dps": 33,
+          "damage": 33,
+          "attack_range": 700,
           "strength_weight": 5200
         },
         {
@@ -7399,7 +8165,8 @@
           "build_time": 1036800,
           "required_townhall": 10,
           "hitpoints": 2600,
-          "dps": 36,
+          "damage": 36,
+          "attack_range": 700,
           "strength_weight": 5400
         }
       ]
@@ -7417,6 +8184,8 @@
       "village": "builderBase",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -7424,7 +8193,8 @@
           "build_time": 86400,
           "required_townhall": 7,
           "hitpoints": 700,
-          "dps": 205,
+          "damage": 205,
+          "attack_range": 950,
           "strength_weight": 3600
         },
         {
@@ -7433,7 +8203,8 @@
           "build_time": 172800,
           "required_townhall": 7,
           "hitpoints": 800,
-          "dps": 226,
+          "damage": 226,
+          "attack_range": 950,
           "strength_weight": 3800
         },
         {
@@ -7442,7 +8213,8 @@
           "build_time": 259200,
           "required_townhall": 7,
           "hitpoints": 950,
-          "dps": 248,
+          "damage": 248,
+          "attack_range": 950,
           "strength_weight": 4000
         },
         {
@@ -7451,7 +8223,8 @@
           "build_time": 345600,
           "required_townhall": 7,
           "hitpoints": 1100,
-          "dps": 273,
+          "damage": 273,
+          "attack_range": 950,
           "strength_weight": 4200
         },
         {
@@ -7460,7 +8233,8 @@
           "build_time": 432000,
           "required_townhall": 7,
           "hitpoints": 1300,
-          "dps": 300,
+          "damage": 300,
+          "attack_range": 950,
           "strength_weight": 4400
         },
         {
@@ -7469,7 +8243,8 @@
           "build_time": 518400,
           "required_townhall": 7,
           "hitpoints": 1500,
-          "dps": 330,
+          "damage": 330,
+          "attack_range": 950,
           "strength_weight": 4600
         },
         {
@@ -7478,7 +8253,8 @@
           "build_time": 691200,
           "required_townhall": 7,
           "hitpoints": 1700,
-          "dps": 363,
+          "damage": 363,
+          "attack_range": 950,
           "strength_weight": 4800
         },
         {
@@ -7487,7 +8263,8 @@
           "build_time": 864000,
           "required_townhall": 8,
           "hitpoints": 1900,
-          "dps": 399,
+          "damage": 399,
+          "attack_range": 950,
           "strength_weight": 5000
         },
         {
@@ -7496,7 +8273,8 @@
           "build_time": 950400,
           "required_townhall": 9,
           "hitpoints": 2150,
-          "dps": 439,
+          "damage": 439,
+          "attack_range": 950,
           "strength_weight": 5200
         },
         {
@@ -7505,7 +8283,8 @@
           "build_time": 1036800,
           "required_townhall": 10,
           "hitpoints": 2400,
-          "dps": 483,
+          "damage": 483,
+          "attack_range": 950,
           "strength_weight": 5400
         }
       ]
@@ -7707,6 +8486,8 @@
       "village": "builderBase",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -7714,7 +8495,9 @@
           "build_time": 172800,
           "required_townhall": 9,
           "hitpoints": 500,
-          "dps": 50,
+          "damage": 50,
+          "attack_range": 1300,
+          "min_range": 600,
           "strength_weight": 3600
         },
         {
@@ -7723,7 +8506,9 @@
           "build_time": 259200,
           "required_townhall": 9,
           "hitpoints": 575,
-          "dps": 55,
+          "damage": 55,
+          "attack_range": 1300,
+          "min_range": 600,
           "strength_weight": 3800
         },
         {
@@ -7732,7 +8517,9 @@
           "build_time": 345600,
           "required_townhall": 9,
           "hitpoints": 660,
-          "dps": 61,
+          "damage": 61,
+          "attack_range": 1300,
+          "min_range": 600,
           "strength_weight": 4000
         },
         {
@@ -7741,7 +8528,9 @@
           "build_time": 432000,
           "required_townhall": 9,
           "hitpoints": 760,
-          "dps": 67,
+          "damage": 67,
+          "attack_range": 1300,
+          "min_range": 600,
           "strength_weight": 4200
         },
         {
@@ -7750,7 +8539,9 @@
           "build_time": 518400,
           "required_townhall": 9,
           "hitpoints": 875,
-          "dps": 73,
+          "damage": 73,
+          "attack_range": 1300,
+          "min_range": 600,
           "strength_weight": 4400
         },
         {
@@ -7759,7 +8550,9 @@
           "build_time": 604800,
           "required_townhall": 9,
           "hitpoints": 1050,
-          "dps": 81,
+          "damage": 81,
+          "attack_range": 1300,
+          "min_range": 600,
           "strength_weight": 4600
         },
         {
@@ -7768,7 +8561,9 @@
           "build_time": 691200,
           "required_townhall": 9,
           "hitpoints": 1250,
-          "dps": 89,
+          "damage": 89,
+          "attack_range": 1300,
+          "min_range": 600,
           "strength_weight": 4800
         },
         {
@@ -7777,7 +8572,9 @@
           "build_time": 864000,
           "required_townhall": 9,
           "hitpoints": 1450,
-          "dps": 97,
+          "damage": 97,
+          "attack_range": 1300,
+          "min_range": 600,
           "strength_weight": 5000
         },
         {
@@ -7786,7 +8583,9 @@
           "build_time": 950400,
           "required_townhall": 9,
           "hitpoints": 1650,
-          "dps": 107,
+          "damage": 107,
+          "attack_range": 1300,
+          "min_range": 600,
           "strength_weight": 5200
         },
         {
@@ -7795,7 +8594,9 @@
           "build_time": 1036800,
           "required_townhall": 10,
           "hitpoints": 1850,
-          "dps": 118,
+          "damage": 118,
+          "attack_range": 1300,
+          "min_range": 600,
           "strength_weight": 5400
         }
       ]
@@ -7884,6 +8685,8 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -7892,6 +8695,8 @@
           "required_townhall": 13,
           "hitpoints": 3600,
           "dps": 125,
+          "attack_range": 1000,
+          "min_range": 300,
           "strength_weight": 15050
         },
         {
@@ -7901,6 +8706,8 @@
           "required_townhall": 13,
           "hitpoints": 4200,
           "dps": 150,
+          "attack_range": 1000,
+          "min_range": 300,
           "strength_weight": 17850
         },
         {
@@ -7910,6 +8717,8 @@
           "required_townhall": 14,
           "hitpoints": 4800,
           "dps": 170,
+          "attack_range": 1000,
+          "min_range": 300,
           "strength_weight": 20650
         },
         {
@@ -7919,6 +8728,8 @@
           "required_townhall": 15,
           "hitpoints": 5100,
           "dps": 175,
+          "attack_range": 1000,
+          "min_range": 300,
           "strength_weight": 21875
         },
         {
@@ -7928,6 +8739,8 @@
           "required_townhall": 16,
           "hitpoints": 5410,
           "dps": 180,
+          "attack_range": 1000,
+          "min_range": 300,
           "strength_weight": 22575
         },
         {
@@ -7937,6 +8750,8 @@
           "required_townhall": 17,
           "hitpoints": 5600,
           "dps": 185,
+          "attack_range": 1000,
+          "min_range": 300,
           "strength_weight": 23200
         },
         {
@@ -7946,6 +8761,8 @@
           "required_townhall": 18,
           "hitpoints": 5800,
           "dps": 190,
+          "attack_range": 1000,
+          "min_range": 300,
           "strength_weight": 23850,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -8309,7 +9126,11 @@
           "build_time": 604800,
           "required_townhall": 15,
           "hitpoints": 2500,
-          "dps": 0,
+          "name": "Rage",
+          "effect_range": 501,
+          "is_air_targeting": true,
+          "is_ground_targeting": true,
+          "attack_range": 900,
           "strength_weight": 6250
         },
         {
@@ -8318,7 +9139,11 @@
           "build_time": 691200,
           "required_townhall": 15,
           "hitpoints": 2800,
-          "dps": 0,
+          "name": "Poison",
+          "effect_range": 500,
+          "is_air_targeting": true,
+          "is_ground_targeting": true,
+          "attack_range": 900,
           "strength_weight": 9800
         },
         {
@@ -8327,7 +9152,11 @@
           "build_time": 734400,
           "required_townhall": 15,
           "hitpoints": 3100,
-          "dps": 0,
+          "name": "Invisibility",
+          "effect_range": 450,
+          "is_air_targeting": true,
+          "is_ground_targeting": true,
+          "attack_range": 450,
           "strength_weight": 13950
         },
         {
@@ -8336,7 +9165,11 @@
           "build_time": 864000,
           "required_townhall": 17,
           "hitpoints": 3200,
-          "dps": 0,
+          "name": "Earthquake",
+          "effect_range": 470,
+          "is_air_targeting": false,
+          "is_ground_targeting": true,
+          "attack_range": 900,
           "strength_weight": 15000
         }
       ]
@@ -8354,6 +9187,8 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -8362,6 +9197,7 @@
           "required_townhall": 15,
           "hitpoints": 4747,
           "dps": 150,
+          "attack_range": 1100,
           "strength_weight": 37615
         },
         {
@@ -8371,6 +9207,7 @@
           "required_townhall": 15,
           "hitpoints": 5050,
           "dps": 175,
+          "attack_range": 1100,
           "strength_weight": 39163
         },
         {
@@ -8380,6 +9217,7 @@
           "required_townhall": 16,
           "hitpoints": 5353,
           "dps": 193,
+          "attack_range": 1100,
           "strength_weight": 40750
         },
         {
@@ -8389,6 +9227,7 @@
           "required_townhall": 17,
           "hitpoints": 5656,
           "dps": 209,
+          "attack_range": 1100,
           "strength_weight": 43000,
           "supercharge": {
             "upgrade_resource": "Dark Elixir",
@@ -8521,6 +9360,13 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "alt": {
+        "name": "Fast Attack Multi-Gear Tower",
+        "is_air_targeting": true,
+        "is_ground_targeting": true
+      },
       "levels": [
         {
           "level": 1,
@@ -8529,6 +9375,11 @@
           "required_townhall": 17,
           "hitpoints": 4000,
           "dps": 350,
+          "attack_range": 1200,
+          "alt": {
+            "dps": 650,
+            "attack_range": 800
+          },
           "strength_weight": 15000,
           "merge_requirement": [
             {
@@ -8552,6 +9403,11 @@
           "required_townhall": 17,
           "hitpoints": 4200,
           "dps": 370,
+          "attack_range": 1200,
+          "alt": {
+            "dps": 690,
+            "attack_range": 800
+          },
           "strength_weight": 17000
         },
         {
@@ -8561,6 +9417,11 @@
           "required_townhall": 18,
           "hitpoints": 4350,
           "dps": 390,
+          "attack_range": 1200,
+          "alt": {
+            "dps": 710,
+            "attack_range": 800
+          },
           "strength_weight": 18000,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -8612,6 +9473,13 @@
       "village": "builderBase",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
+      "alt": {
+        "name": "Air Targeting X-Bow",
+        "is_air_targeting": true,
+        "is_ground_targeting": false
+      },
       "levels": [
         {
           "level": 1,
@@ -8620,6 +9488,11 @@
           "required_townhall": 10,
           "hitpoints": 1700,
           "dps": 80,
+          "attack_range": 1200,
+          "alt": {
+            "dps": 80,
+            "attack_range": 1200
+          },
           "strength_weight": 4600
         },
         {
@@ -8629,6 +9502,11 @@
           "required_townhall": 10,
           "hitpoints": 1900,
           "dps": 89,
+          "attack_range": 1200,
+          "alt": {
+            "dps": 89,
+            "attack_range": 1200
+          },
           "strength_weight": 4800
         },
         {
@@ -8638,6 +9516,11 @@
           "required_townhall": 10,
           "hitpoints": 2100,
           "dps": 97,
+          "attack_range": 1200,
+          "alt": {
+            "dps": 97,
+            "attack_range": 1200
+          },
           "strength_weight": 5000
         },
         {
@@ -8647,6 +9530,11 @@
           "required_townhall": 10,
           "hitpoints": 2350,
           "dps": 107,
+          "attack_range": 1200,
+          "alt": {
+            "dps": 107,
+            "attack_range": 1200
+          },
           "strength_weight": 5200
         },
         {
@@ -8656,6 +9544,11 @@
           "required_townhall": 10,
           "hitpoints": 2600,
           "dps": 117,
+          "attack_range": 1200,
+          "alt": {
+            "dps": 117,
+            "attack_range": 1200
+          },
           "strength_weight": 5400
         }
       ]
@@ -8758,6 +9651,8 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -8765,7 +9660,8 @@
           "build_time": 604800,
           "required_townhall": 16,
           "hitpoints": 5000,
-          "dps": 60,
+          "damage": 60,
+          "attack_range": 1000,
           "strength_weight": 9400,
           "merge_requirement": [
             {
@@ -8788,7 +9684,8 @@
           "build_time": 691200,
           "required_townhall": 16,
           "hitpoints": 5200,
-          "dps": 65,
+          "damage": 65,
+          "attack_range": 1000,
           "strength_weight": 11000
         },
         {
@@ -8797,7 +9694,8 @@
           "build_time": 777600,
           "required_townhall": 17,
           "hitpoints": 5400,
-          "dps": 70,
+          "damage": 70,
+          "attack_range": 1000,
           "strength_weight": 13000
         },
         {
@@ -8806,7 +9704,8 @@
           "build_time": 1209600,
           "required_townhall": 18,
           "hitpoints": 5500,
-          "dps": 73,
+          "damage": 73,
+          "attack_range": 1000,
           "strength_weight": 14500,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -8843,6 +9742,8 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -8851,6 +9752,7 @@
           "required_townhall": 16,
           "hitpoints": 5400,
           "dps": 360,
+          "attack_range": 900,
           "strength_weight": 9900,
           "merge_requirement": [
             {
@@ -8874,6 +9776,7 @@
           "required_townhall": 16,
           "hitpoints": 5700,
           "dps": 390,
+          "attack_range": 900,
           "strength_weight": 11715
         },
         {
@@ -8883,6 +9786,7 @@
           "required_townhall": 17,
           "hitpoints": 6000,
           "dps": 405,
+          "attack_range": 900,
           "strength_weight": 14000
         },
         {
@@ -8892,6 +9796,7 @@
           "required_townhall": 18,
           "hitpoints": 6100,
           "dps": 412,
+          "attack_range": 900,
           "strength_weight": 15000,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -8928,6 +9833,8 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -8935,7 +9842,8 @@
           "build_time": 1123205,
           "required_townhall": 18,
           "hitpoints": 5800,
-          "dps": 50,
+          "damage": 50,
+          "attack_range": 1100,
           "strength_weight": 50000
         },
         {
@@ -8944,7 +9852,8 @@
           "build_time": 1209600,
           "required_townhall": 18,
           "hitpoints": 6200,
-          "dps": 60,
+          "damage": 60,
+          "attack_range": 1100,
           "strength_weight": 52500,
           "supercharge": {
             "upgrade_resource": "Dark Elixir",
@@ -8981,6 +9890,8 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -8989,6 +9900,7 @@
           "required_townhall": 17,
           "hitpoints": 4500,
           "dps": 411,
+          "attack_range": 1600,
           "strength_weight": 35000
         },
         {
@@ -8998,6 +9910,7 @@
           "required_townhall": 17,
           "hitpoints": 5000,
           "dps": 438,
+          "attack_range": 1600,
           "strength_weight": 38000
         },
         {
@@ -9007,6 +9920,7 @@
           "required_townhall": 18,
           "hitpoints": 5300,
           "dps": 456,
+          "attack_range": 1600,
           "strength_weight": 39500,
           "supercharge": {
             "upgrade_resource": "Gold",
@@ -9058,6 +9972,8 @@
       "village": "home",
       "width": 3,
       "superchargeable": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": false,
       "levels": [],
       "seasonal_defenses": [
         {
@@ -10001,6 +10917,8 @@
       "village": "home",
       "width": 3,
       "superchargeable": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
       "levels": [
         {
           "level": 1,
@@ -10009,6 +10927,7 @@
           "required_townhall": 18,
           "hitpoints": 6000,
           "dps": 290,
+          "attack_range": 800,
           "strength_weight": 12000,
           "merge_requirement": [
             {
@@ -10032,6 +10951,7 @@
           "required_townhall": 18,
           "hitpoints": 6300,
           "dps": 320,
+          "attack_range": 800,
           "strength_weight": 14000,
           "supercharge": {
             "upgrade_resource": "Gold",
