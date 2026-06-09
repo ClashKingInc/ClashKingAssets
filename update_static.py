@@ -654,6 +654,10 @@ class StaticUpdater:
         full_weapon_data: dict = self.open_file("logic/weapons.json")
         full_projectile_data: dict = self.open_file("logic/projectiles.json")
         full_spell_data: dict = self.open_file("logic/spells.json")
+        full_globals_data: dict = self.open_file("logic/globals.json")
+
+        clan_castle_radius = full_globals_data.get("CLAN_CASTLE_RADIUS", {}).get("NumberValue")
+        clan_castle_attack_range = clan_castle_radius * 100 if clan_castle_radius is not None else None
 
         new_building_data = []
 
@@ -820,7 +824,15 @@ class StaticUpdater:
                             fallback_stats=defense_stats,
                         )
                 else:
-                    hold_level_data["dps"] = level_data.get("DPS", 0) or level_data.get("Damage", 0)
+                    dps = level_data.get("DPS", 0) or level_data.get("Damage", 0)
+                    hold_level_data["dps"] = dps
+                    # only weaponized levels get the archetype range (e.g. the Builder's Hut is
+                    # unarmed at level 1 and only becomes a defense at level 2)
+                    attack_range = self._first_present("AttackRange", level_data, building_data) if dps else None
+                    if attack_range is None and building_data.get("GlobalID") == 1000014:  # clan castle
+                        attack_range = clan_castle_attack_range
+                    if attack_range is not None:
+                        hold_level_data["attack_range"] = attack_range
 
                 if "StrengthWeight" in level_data:
                     hold_level_data["strength_weight"] = level_data["StrengthWeight"]
@@ -850,6 +862,10 @@ class StaticUpdater:
 
                 if (weapon_name := level_data.get("Weapon")) is not None:
                     weapon_data: dict = full_weapon_data[weapon_name]
+
+                    weapon_range = weapon_data.get("AttackRange")
+                    if weapon_range is not None:
+                        hold_level_data["attack_range"] = weapon_range
 
                     # if the townhall only has 1 level of weapon, then it is inherently part of the base level,
                     # so just set the dps and continue

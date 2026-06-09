@@ -850,7 +850,8 @@
               "_id": 1000059,
               "quantity": 1
             }
-          ]
+          ],
+          "attack_range": 1000
         },
         {
           "level": 13,
@@ -880,7 +881,8 @@
               "_id": 1000067,
               "quantity": 2
             }
-          ]
+          ],
+          "attack_range": 1000
         },
         {
           "level": 14,
@@ -925,7 +927,8 @@
               "_id": 1000068,
               "quantity": 1
             }
-          ]
+          ],
+          "attack_range": 1000
         },
         {
           "level": 15,
@@ -945,7 +948,8 @@
               "_id": 1000077,
               "quantity": 1
             }
-          ]
+          ],
+          "attack_range": 1000
         },
         {
           "level": 16,
@@ -965,7 +969,8 @@
               "_id": 1000085,
               "quantity": 2
             }
-          ]
+          ],
+          "attack_range": 1000
         },
         {
           "level": 17,
@@ -1065,7 +1070,8 @@
               "_id": 1000079,
               "quantity": 1
             }
-          ]
+          ],
+          "attack_range": 1200
         },
         {
           "level": 18,
@@ -3714,7 +3720,8 @@
           "required_townhall": 3,
           "hitpoints": 600,
           "dps": 0,
-          "strength_weight": 200
+          "strength_weight": 200,
+          "attack_range": 1300
         },
         {
           "level": 2,
@@ -3723,7 +3730,8 @@
           "required_townhall": 4,
           "hitpoints": 1200,
           "dps": 0,
-          "strength_weight": 400
+          "strength_weight": 400,
+          "attack_range": 1300
         },
         {
           "level": 3,
@@ -3732,7 +3740,8 @@
           "required_townhall": 6,
           "hitpoints": 1800,
           "dps": 0,
-          "strength_weight": 600
+          "strength_weight": 600,
+          "attack_range": 1300
         },
         {
           "level": 4,
@@ -3741,7 +3750,8 @@
           "required_townhall": 8,
           "hitpoints": 2600,
           "dps": 0,
-          "strength_weight": 800
+          "strength_weight": 800,
+          "attack_range": 1300
         },
         {
           "level": 5,
@@ -3750,7 +3760,8 @@
           "required_townhall": 9,
           "hitpoints": 3000,
           "dps": 0,
-          "strength_weight": 2000
+          "strength_weight": 2000,
+          "attack_range": 1300
         },
         {
           "level": 6,
@@ -3759,7 +3770,8 @@
           "required_townhall": 10,
           "hitpoints": 3400,
           "dps": 0,
-          "strength_weight": 2400
+          "strength_weight": 2400,
+          "attack_range": 1300
         },
         {
           "level": 7,
@@ -3768,7 +3780,8 @@
           "required_townhall": 11,
           "hitpoints": 4000,
           "dps": 0,
-          "strength_weight": 4200
+          "strength_weight": 4200,
+          "attack_range": 1300
         },
         {
           "level": 8,
@@ -3777,7 +3790,8 @@
           "required_townhall": 12,
           "hitpoints": 4400,
           "dps": 0,
-          "strength_weight": 4800
+          "strength_weight": 4800,
+          "attack_range": 1300
         },
         {
           "level": 9,
@@ -3786,7 +3800,8 @@
           "required_townhall": 13,
           "hitpoints": 4800,
           "dps": 0,
-          "strength_weight": 5400
+          "strength_weight": 5400,
+          "attack_range": 1300
         },
         {
           "level": 10,
@@ -3795,7 +3810,8 @@
           "required_townhall": 14,
           "hitpoints": 5200,
           "dps": 0,
-          "strength_weight": 6000
+          "strength_weight": 6000,
+          "attack_range": 1300
         },
         {
           "level": 11,
@@ -3804,7 +3820,8 @@
           "required_townhall": 15,
           "hitpoints": 5400,
           "dps": 0,
-          "strength_weight": 6600
+          "strength_weight": 6600,
+          "attack_range": 1300
         },
         {
           "level": 12,
@@ -3813,7 +3830,8 @@
           "required_townhall": 16,
           "hitpoints": 5600,
           "dps": 0,
-          "strength_weight": 7200
+          "strength_weight": 7200,
+          "attack_range": 1300
         },
         {
           "level": 13,
@@ -3822,7 +3840,8 @@
           "required_townhall": 17,
           "hitpoints": 5800,
           "dps": 0,
-          "strength_weight": 7800
+          "strength_weight": 7800,
+          "attack_range": 1300
         },
         {
           "level": 14,
@@ -3831,7 +3850,8 @@
           "required_townhall": 18,
           "hitpoints": 6000,
           "dps": 0,
-          "strength_weight": 8400
+          "strength_weight": 8400,
+          "attack_range": 1300
         }
       ]
     },
@@ -3865,7 +3885,8 @@
           "required_townhall": 14,
           "hitpoints": 1000,
           "dps": 80,
-          "strength_weight": 4600
+          "strength_weight": 4600,
+          "attack_range": 700
         },
         {
           "level": 3,
@@ -3874,7 +3895,8 @@
           "required_townhall": 14,
           "hitpoints": 1300,
           "dps": 100,
-          "strength_weight": 5795
+          "strength_weight": 5795,
+          "attack_range": 700
         },
         {
           "level": 4,
@@ -3883,7 +3905,8 @@
           "required_townhall": 14,
           "hitpoints": 1600,
           "dps": 120,
-          "strength_weight": 6840
+          "strength_weight": 6840,
+          "attack_range": 700
         },
         {
           "level": 5,
@@ -3892,7 +3915,8 @@
           "required_townhall": 15,
           "hitpoints": 1800,
           "dps": 135,
-          "strength_weight": 7480
+          "strength_weight": 7480,
+          "attack_range": 700
         },
         {
           "level": 6,
@@ -3901,7 +3925,8 @@
           "required_townhall": 16,
           "hitpoints": 1900,
           "dps": 150,
-          "strength_weight": 8000
+          "strength_weight": 8000,
+          "attack_range": 700
         },
         {
           "level": 7,
@@ -3929,7 +3954,8 @@
                 "dps_buff": 0
               }
             ]
-          }
+          },
+          "attack_range": 700
         }
       ]
     },
