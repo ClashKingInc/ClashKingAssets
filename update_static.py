@@ -747,6 +747,11 @@ class StaticUpdater:
                         ),
                     }
 
+            if is_defense and building_data.get("TargetingConeAngle"):
+                hold_data["cone_angle"] = building_data.get("TargetingConeAngle")
+                if building_data.get("AimRotateStep") is not None:
+                    hold_data["aim_rotate_step"] = building_data.get("AimRotateStep")
+
             hold_data["levels"] = []
 
             # put seasonal defense onto the crafting station

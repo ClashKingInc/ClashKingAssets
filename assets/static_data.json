@@ -5039,6 +5039,8 @@
       "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": false,
+      "cone_angle": 105,
+      "aim_rotate_step": 45,
       "levels": [
         {
           "level": 1,
@@ -9892,6 +9894,8 @@
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": true,
+      "cone_angle": 150,
+      "aim_rotate_step": 90,
       "levels": [
         {
           "level": 1,
