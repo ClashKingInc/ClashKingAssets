@@ -1656,6 +1656,61 @@ class StaticUpdater:
 
         return new_helper_data
 
+    def _parse_battle_modifier_type(self, modifier_data: dict) -> str:
+        if modifier_data.get("Heroes"):
+            return "heroes"
+        if modifier_data.get("Guardians"):
+            return "guardians"
+        return "buildings"
+
+    def _parse_battle_modifiers(self):
+        full_battle_modifier_data = self.open_file("logic/battle_modifiers.json")
+
+        new_battle_modifier_data = []
+        for battle_modifier_data in full_battle_modifier_data.values():
+            hold_data = {
+                "name": battle_modifier_data.get("Name"),
+                "TID": {"name": battle_modifier_data.get("TID")},
+                "modifiers": [],
+            }
+
+            for modifier_data in battle_modifier_data.values():
+                if not isinstance(modifier_data, dict):
+                    continue
+
+                hold_modifier_data = {"type": self._parse_battle_modifier_type(modifier_data)}
+                if modifier_data.get("Attacker") is not None:
+                    hold_modifier_data["attacker"] = modifier_data.get("Attacker")
+                if modifier_data.get("Defender") is not None:
+                    hold_modifier_data["defender"] = modifier_data.get("Defender")
+                if modifier_data.get("DamageMultiplier") is not None:
+                    hold_modifier_data["damage_multiplier"] = modifier_data.get("DamageMultiplier")
+                if modifier_data.get("HPMultiplier") is not None:
+                    hold_modifier_data["hp_multiplier"] = modifier_data.get("HPMultiplier")
+
+                hold_data["modifiers"].append(hold_modifier_data)
+
+            if battle_modifier_data.get("CommonEquipmentMinusLevels") is not None:
+                hold_data["modifiers"].append(
+                    {
+                        "type": "common_equipment",
+                        "attacker": True,
+                        "minus_levels": battle_modifier_data.get("CommonEquipmentMinusLevels"),
+                    }
+                )
+            if battle_modifier_data.get("EpicEquipmentMinusLevels") is not None:
+                hold_data["modifiers"].append(
+                    {
+                        "type": "epic_equipment",
+                        "attacker": True,
+                        "minus_levels": battle_modifier_data.get("EpicEquipmentMinusLevels"),
+                    }
+                )
+
+            new_battle_modifier_data.append(hold_data)
+
+        return new_battle_modifier_data
+
     def _parse_war_league_data(self):
         full_war_league_data = self.open_file("logic/war_leagues.json")
 
@@ -1664,22 +1719,24 @@ class StaticUpdater:
             if not war_league_data.get("Name"):  # skip Unranked, no data
                 continue
 
-            new_war_league_data.append(
-                {
-                    "_id": _id,
-                    "name": self._translate(tid=war_league_data.get("TID")),
-                    "TID": {"name": war_league_data.get("TID")},
-                    "cwl_medals": {
-                        "first_place": war_league_data.get("LeagueWinReward"),
-                        "position_medal_diff": war_league_data.get("LeaguePosRewardEffect"),
-                        "bonus_reward": war_league_data.get("BonusMedalReward"),
-                        "minimum_bonus_amount": war_league_data.get("MinNumMedalBonuses"),
-                    },
-                    "promotions": war_league_data.get("NumPromotions"),
-                    "demotions": war_league_data.get("NumDemotions"),
-                    "15v15_only": war_league_data.get("AllowFirstWarSizeOnly"),
-                }
-            )
+            hold_data = {
+                "_id": _id,
+                "name": self._translate(tid=war_league_data.get("TID")),
+                "TID": {"name": war_league_data.get("TID")},
+                "cwl_medals": {
+                    "first_place": war_league_data.get("LeagueWinReward"),
+                    "position_medal_diff": war_league_data.get("LeaguePosRewardEffect"),
+                    "bonus_reward": war_league_data.get("BonusMedalReward"),
+                    "minimum_bonus_amount": war_league_data.get("MinNumMedalBonuses"),
+                },
+                "promotions": war_league_data.get("NumPromotions"),
+                "demotions": war_league_data.get("NumDemotions"),
+                "15v15_only": war_league_data.get("AllowFirstWarSizeOnly"),
+            }
+            if war_league_data.get("BattleModifier") is not None:
+                hold_data["battle_modifier"] = war_league_data.get("BattleModifier")
+
+            new_war_league_data.append(hold_data)
 
         return new_war_league_data
 
@@ -1703,6 +1760,9 @@ class StaticUpdater:
                 "townhall_cap": None,
                 "rewards": [],
             }
+            if league_data.get("BattleModifier") is not None:
+                hold_data["battle_modifier"] = league_data.get("BattleModifier")
+
             highest_townhall = 0
             rewards = []
             for tier, level_data in league_data.items():
@@ -1998,6 +2058,7 @@ class StaticUpdater:
             "skins": self._parse_skin_data(),
             "capital_house_parts": self._parse_capital_part_data(),
             "helpers": self._parse_helper_data(),
+            "battle_modifiers": self._parse_battle_modifiers(),
             "war_leagues": self._parse_war_league_data(),
             "league_tiers": self._parse_league_tier_data(),
             "builder_leagues": self._parse_builder_league_data(),

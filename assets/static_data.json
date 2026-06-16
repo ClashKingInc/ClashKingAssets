@@ -66063,6 +66063,142 @@
       ]
     }
   ],
+  "battle_modifiers": [
+    {
+      "name": "Hard Mode",
+      "TID": {
+        "name": "TID_CHALLENGE_TITLE_HARD_MODE"
+      },
+      "modifiers": [
+        {
+          "type": "buildings",
+          "defender": true,
+          "damage_multiplier": 125
+        },
+        {
+          "type": "heroes",
+          "attacker": true,
+          "damage_multiplier": 80,
+          "hp_multiplier": 80
+        },
+        {
+          "type": "heroes",
+          "defender": true,
+          "damage_multiplier": 125,
+          "hp_multiplier": 125
+        },
+        {
+          "type": "guardians",
+          "defender": true,
+          "damage_multiplier": 120,
+          "hp_multiplier": 120
+        },
+        {
+          "type": "common_equipment",
+          "attacker": true,
+          "minus_levels": 3
+        },
+        {
+          "type": "epic_equipment",
+          "attacker": true,
+          "minus_levels": 6
+        }
+      ]
+    },
+    {
+      "name": "Minus One",
+      "TID": {
+        "name": "TID_MODE_TITLE_MINUS_ONE"
+      },
+      "modifiers": [
+        {
+          "type": "buildings",
+          "defender": true,
+          "damage_multiplier": 120
+        },
+        {
+          "type": "heroes",
+          "attacker": true,
+          "damage_multiplier": 80,
+          "hp_multiplier": 80
+        },
+        {
+          "type": "heroes",
+          "defender": true,
+          "damage_multiplier": 120,
+          "hp_multiplier": 120
+        },
+        {
+          "type": "guardians",
+          "defender": true,
+          "damage_multiplier": 120,
+          "hp_multiplier": 120
+        }
+      ]
+    },
+    {
+      "name": "Minus Two",
+      "TID": {
+        "name": "TID_MODE_TITLE_MINUS_TWO"
+      },
+      "modifiers": [
+        {
+          "type": "buildings",
+          "defender": true,
+          "damage_multiplier": 115
+        },
+        {
+          "type": "heroes",
+          "attacker": true,
+          "damage_multiplier": 90,
+          "hp_multiplier": 90
+        },
+        {
+          "type": "heroes",
+          "defender": true,
+          "damage_multiplier": 115,
+          "hp_multiplier": 115
+        },
+        {
+          "type": "guardians",
+          "defender": true,
+          "damage_multiplier": 110,
+          "hp_multiplier": 110
+        }
+      ]
+    },
+    {
+      "name": "Minus Three",
+      "TID": {
+        "name": "TID_MODE_TITLE_MINUS_THREE"
+      },
+      "modifiers": [
+        {
+          "type": "buildings",
+          "defender": true,
+          "damage_multiplier": 110
+        },
+        {
+          "type": "heroes",
+          "attacker": true,
+          "damage_multiplier": 95,
+          "hp_multiplier": 95
+        },
+        {
+          "type": "heroes",
+          "defender": true,
+          "damage_multiplier": 110,
+          "hp_multiplier": 110
+        },
+        {
+          "type": "guardians",
+          "defender": true,
+          "damage_multiplier": 105,
+          "hp_multiplier": 105
+        }
+      ]
+    }
+  ],
   "war_leagues": [
     {
       "_id": 48000001,
@@ -66366,7 +66502,8 @@
       },
       "promotions": 1,
       "demotions": 2,
-      "15v15_only": true
+      "15v15_only": true,
+      "battle_modifier": "Minus Two"
     },
     {
       "_id": 48000020,
@@ -66382,7 +66519,8 @@
       },
       "promotions": 1,
       "demotions": 2,
-      "15v15_only": true
+      "15v15_only": true,
+      "battle_modifier": "Minus Two"
     },
     {
       "_id": 48000021,
@@ -66398,7 +66536,8 @@
       },
       "promotions": 1,
       "demotions": 2,
-      "15v15_only": true
+      "15v15_only": true,
+      "battle_modifier": "Minus One"
     },
     {
       "_id": 48000022,
@@ -66414,7 +66553,8 @@
       },
       "promotions": 0,
       "demotions": 2,
-      "15v15_only": true
+      "15v15_only": true,
+      "battle_modifier": "Minus One"
     }
   ],
   "league_tiers": [
@@ -71843,7 +71983,8 @@
             "starry_ore": 2
           }
         }
-      ]
+      ],
+      "battle_modifier": "Minus Three"
     },
     {
       "_id": 105000035,
@@ -72052,7 +72193,8 @@
             "starry_ore": 2
           }
         }
-      ]
+      ],
+      "battle_modifier": "Minus Two"
     },
     {
       "_id": 105000036,
@@ -72261,7 +72403,8 @@
             "starry_ore": 2
           }
         }
-      ]
+      ],
+      "battle_modifier": "Minus One"
     }
   ],
   "builder_leagues": [
