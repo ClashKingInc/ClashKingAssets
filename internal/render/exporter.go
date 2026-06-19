@@ -559,13 +559,17 @@ func removeIfExists(path string) error {
 }
 
 func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
-	if err := os.MkdirAll(assetDir, 0o755); err != nil {
-		return nil, err
-	}
-
 	targets, skipped := e.prepareTargets()
 	targets, skipped, err := filterRequestedTargets(targets, skipped, e.opts.AssetNames, e.swf.Filename)
 	if err != nil {
+		return nil, err
+	}
+	if targetsRequireWebPTools(targets, e.opts) {
+		if err := ensureWebPToolsAvailable(); err != nil {
+			return nil, err
+		}
+	}
+	if err := os.MkdirAll(assetDir, 0o755); err != nil {
 		return nil, err
 	}
 	fmt.Printf("Starting %s\n", e.swf.Filename)
@@ -648,6 +652,18 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	})
 
 	return manifest, nil
+}
+
+func targetsRequireWebPTools(targets []Target, opts ExportOptions) bool {
+	if opts.PreferWebP {
+		return true
+	}
+	for _, target := range targets {
+		if _, ok := target.Resource.(*sc.MovieClip); ok && target.Duration > 0 {
+			return true
+		}
+	}
+	return false
 }
 
 func filterRequestedTargets(targets []Target, skipped []SkippedEntry, requested []string, sourceSC string) ([]Target, []SkippedEntry, error) {

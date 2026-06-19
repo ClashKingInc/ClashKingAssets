@@ -8,7 +8,6 @@ import (
 	"os/exec"
 	"path/filepath"
 	"strconv"
-	"strings"
 )
 
 func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
@@ -46,11 +45,7 @@ func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
 	if err != nil {
 		return err
 	}
-	argsPath := filepath.Join(tempDir, "args.txt")
-	if err := os.WriteFile(argsPath, []byte(buildImg2WebPArgsFile(framePaths, frames, outputName)), 0o600); err != nil {
-		return err
-	}
-	if err := runCommandInDir(tempDir, img2webpPath, filepath.Base(argsPath)); err != nil {
+	if err := runImg2WebPInDir(tempDir, img2webpPath, framePaths, frames, outputName); err != nil {
 		return err
 	}
 
@@ -66,11 +61,7 @@ func writeAnimatedWebPFromFiles(w io.Writer, tempDir string, framePaths []string
 		return err
 	}
 	outputName := "o.webp"
-	argsPath := filepath.Join(tempDir, "args.txt")
-	if err := os.WriteFile(argsPath, []byte(buildImg2WebPArgsFile(framePaths, frames, outputName)), 0o600); err != nil {
-		return err
-	}
-	if err := runCommandInDir(tempDir, img2webpPath, filepath.Base(argsPath)); err != nil {
+	if err := runImg2WebPInDir(tempDir, img2webpPath, framePaths, frames, outputName); err != nil {
 		return err
 	}
 	return copyAnimatedWebPOutput(w, filepath.Join(tempDir, outputName))
@@ -93,6 +84,11 @@ func lookupWebPTools() (string, error) {
 		return "", fmt.Errorf("img2webp not found in PATH")
 	}
 	return img2webpPath, nil
+}
+
+func ensureWebPToolsAvailable() error {
+	_, err := lookupWebPTools()
+	return err
 }
 
 func animatedWebPQuality() string {
@@ -127,9 +123,8 @@ func buildImg2WebPArgs(framePaths []string, frames []renderedFrame, outputPath s
 	return args
 }
 
-func buildImg2WebPArgsFile(framePaths []string, frames []renderedFrame, outputPath string) string {
-	args := buildImg2WebPArgs(framePaths, frames, outputPath)
-	return strings.Join(args, "\n")
+func runImg2WebPInDir(dir, name string, framePaths []string, frames []renderedFrame, outputPath string) error {
+	return runCommandInDir(dir, name, buildImg2WebPArgs(framePaths, frames, outputPath)...)
 }
 
 func runCommand(name string, args ...string) error {

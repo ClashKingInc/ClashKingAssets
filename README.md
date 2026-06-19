@@ -23,7 +23,7 @@ does cost us time & money please credit us somewhere in your project. Thanks!
 
 ## Extractor
 
-### Prerequisite: `astcenc`
+### Prerequisites: `astcenc` and `img2webp`
 
 Install `astcenc` so it is available on your `PATH`.
 
@@ -37,6 +37,30 @@ Linux:
 
 ```bash
 sudo snap install astc-encoder
+```
+
+Animated WebP exports also require `img2webp` from the WebP tools to be available on your `PATH`.
+
+macOS:
+
+```bash
+brew install webp
+```
+
+Windows:
+
+```powershell
+# Chocolatey
+choco install webp
+
+# or Scoop
+scoop install libwebp
+```
+
+Verify the exporter can find it:
+
+```bash
+img2webp -version
 ```
 
 Build the CLI:
