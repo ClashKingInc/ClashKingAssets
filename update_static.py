@@ -556,6 +556,15 @@ class StaticUpdater:
         if dps is not None:
             stats["dps"] = dps
 
+        attack_speed = self._first_present(
+            f"{prefix}AttackSpeed" if prefix else "AttackSpeed",
+            level_data,
+            building_data,
+            default=fallback_stats.get("attack_speed"),
+        )
+        if attack_speed is not None:
+            stats["attack_speed"] = attack_speed
+
         stats["attack_range"] = self._first_present(
             range_key,
             level_data,
@@ -826,6 +835,9 @@ class StaticUpdater:
                 else:
                     dps = level_data.get("DPS", 0) or level_data.get("Damage", 0)
                     hold_level_data["dps"] = dps
+                    attack_speed = self._first_present("AttackSpeed", level_data, building_data) if dps else None
+                    if attack_speed is not None:
+                        hold_level_data["attack_speed"] = attack_speed
                     # only weaponized levels get the archetype range (e.g. the Builder's Hut is
                     # unarmed at level 1 and only becomes a defense at level 2)
                     attack_range = self._first_present("AttackRange", level_data, building_data) if dps else None
@@ -863,15 +875,18 @@ class StaticUpdater:
                 if (weapon_name := level_data.get("Weapon")) is not None:
                     weapon_data: dict = full_weapon_data[weapon_name]
 
-                    weapon_range = weapon_data.get("AttackRange")
-                    if weapon_range is not None:
-                        hold_level_data["attack_range"] = weapon_range
-
                     # if the townhall only has 1 level of weapon, then it is inherently part of the base level,
                     # so just set the dps and continue
                     if weapon_data.get("1") is None:
                         hold_level_data["dps"] = weapon_data.get("DPS")
-                    else:
+                    weapon_attack_speed = weapon_data.get("AttackSpeed")
+                    if weapon_attack_speed is not None:
+                        hold_level_data["attack_speed"] = weapon_attack_speed
+                    weapon_range = weapon_data.get("AttackRange")
+                    if weapon_range is not None:
+                        hold_level_data["attack_range"] = weapon_range
+
+                    if weapon_data.get("1") is not None:
                         hold_weapon_data = {
                             "name": self._translate(tid=weapon_data["TID"]),
                             "info": self._translate(tid=weapon_data["InfoTID"]),
@@ -885,14 +900,16 @@ class StaticUpdater:
                                 continue
 
                             upgrade_time_seconds = self._parse_upgrade_time(weapon_level_data)
-                            hold_weapon_data["levels"].append(
-                                {
-                                    "level": weapon_level_data.get("Level"),
-                                    "build_cost": level_data.get("BuildCost"),
-                                    "build_time": upgrade_time_seconds,
-                                    "dps": weapon_level_data.get("DPS"),
-                                }
-                            )
+                            hold_weapon_level_data = {
+                                "level": weapon_level_data.get("Level"),
+                                "build_cost": level_data.get("BuildCost"),
+                                "build_time": upgrade_time_seconds,
+                                "dps": weapon_level_data.get("DPS"),
+                            }
+                            weapon_level_attack_speed = weapon_level_data.get("AttackSpeed")
+                            if weapon_level_attack_speed is not None:
+                                hold_weapon_level_data["attack_speed"] = weapon_level_attack_speed
+                            hold_weapon_data["levels"].append(hold_weapon_level_data)
                         hold_level_data["weapon"] = hold_weapon_data
 
                 hold_data["levels"].append(hold_level_data)
@@ -1912,7 +1929,7 @@ class StaticUpdater:
             self.register_sc_asset(
                 source_sc=label_data.get("IconSWF"),
                 asset_name=label_data.get("IconExportName"),
-                save_path=f"clan_labels/{self.clean_name(self._translate(tid=label_data.get("TID")))}"
+                save_path=f"clan_labels/{self.clean_name(self._translate(tid=label_data.get('TID')))}"
             )
 
             hold_data = {
