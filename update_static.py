@@ -1233,7 +1233,15 @@ class StaticUpdater:
 
         new_hero_data = []
         for _id, (hero_name, hero_data) in enumerate(self.full_hero_data.items(), 28000000):
+
             village_type = hero_data.get("VillageType", 0)
+            if not village_type: #we can only do hv hero icons for now
+                self.register_sc_asset(
+                    source_sc=hero_data.get("SquarePictureSWF"),
+                    asset_name=hero_data.get("SquarePicture"),
+                    save_path=f"heroes/{self.clean_name(self._translate(hero_data.get("TID")))}/icon.webp"
+                )
+
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=hero_data.get("TID")),
