@@ -190,7 +190,7 @@ class StaticUpdater:
         if building_data.get("BuildingClass") == "Wall":
             return f"{asset_name}_3"
         if building_data.get("TID") == "TID_WORKER_BUILDING" and asset_name.startswith("worker_building_armed_lvl"):
-            return f"{asset_name}/builder_out"
+            return f"{asset_name}/turret_load"
         return asset_name
 
     def building_icon_uses_last_frame(self, building_data: dict) -> bool:
