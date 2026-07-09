@@ -371,11 +371,24 @@ func TestFirstFrameOnlyBypassesAnimatedExport(t *testing.T) {
 }
 
 func TestLastFrameOnlyUsesEndOfTimeline(t *testing.T) {
-	if got := stillRenderTime(5, ExportOptions{LastFrameOnly: true}); got <= 4.999 || got >= 5 {
+	if got := stillRenderTime(nil, 5, ExportOptions{LastFrameOnly: true}); got <= 4.999 || got >= 5 {
 		t.Fatalf("last frame render time = %f, want just before duration", got)
 	}
-	if got := stillRenderTime(5, ExportOptions{FirstFrameOnly: true}); got != 0 {
+	if got := stillRenderTime(nil, 5, ExportOptions{FirstFrameOnly: true}); got != 0 {
 		t.Fatalf("first frame render time = %f, want 0", got)
+	}
+}
+
+func TestSpecificFrameUsesOneBasedFrameIndex(t *testing.T) {
+	clip := &sc.MovieClip{
+		FrameRate: 10,
+		Frames:    make([]sc.MovieClipFrame, 8),
+	}
+	if got := stillRenderTime(clip, 2, ExportOptions{FrameIndex: 5}); got != 0.4 {
+		t.Fatalf("frame 5 render time = %f, want 0.4", got)
+	}
+	if got := stillRenderTime(clip, 0.8, ExportOptions{FrameIndex: 99}); got <= 0.799 || got >= 0.8 {
+		t.Fatalf("out-of-range frame render time = %f, want just before duration", got)
 	}
 }
 

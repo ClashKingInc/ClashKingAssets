@@ -1,6 +1,6 @@
 const GITHUB_TREE_URL = "https://api.github.com/repos/ClashKingInc/ClashKingAssets/git/trees/main?recursive=1";
 const ASSET_BASE_URL = "https://assets.clashk.ing";
-const CACHE_KEY = "clashking-asset-viewer-tree-v1";
+const CACHE_KEY = "clashking-asset-viewer-tree-v2";
 const CACHE_TTL_MS = 30 * 60 * 1000;
 const IMAGE_EXTENSIONS = new Set(["gif", "jpeg", "jpg", "png", "svg", "webp"]);
 
@@ -60,6 +60,9 @@ function readCachedAssets() {
   try {
     const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
     if (!cached || !Array.isArray(cached.assets) || Date.now() - cached.saved_at > CACHE_TTL_MS) {
+      return null;
+    }
+    if (!cached.assets.some((asset) => asset.path?.startsWith("obstacles/"))) {
       return null;
     }
     return cached.assets;

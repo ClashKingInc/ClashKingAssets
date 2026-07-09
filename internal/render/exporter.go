@@ -1059,7 +1059,7 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		AncestorResourceIDs: target.AncestorIDs,
 	}
 
-	if _, ok := target.Resource.(*sc.MovieClip); ok && target.Duration > 0 && !e.opts.FirstFrameOnly && !e.opts.LastFrameOnly {
+	if _, ok := target.Resource.(*sc.MovieClip); ok && target.Duration > 0 && !e.opts.FirstFrameOnly && !e.opts.LastFrameOnly && e.opts.FrameIndex <= 0 {
 		tempDir, err := os.MkdirTemp("", "sc-export-webp-*")
 		if err != nil {
 			return nil, nil, profile, err
@@ -1313,8 +1313,9 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 		return []renderedFrame{{Image: frame, DelayCS: 0}}, 0, "", profile, nil
 	case *sc.MovieClip:
 		duration := target.Duration
-		if duration <= 0 || e.opts.FirstFrameOnly || e.opts.LastFrameOnly {
-			renderTime := stillRenderTime(duration, e.opts)
+		clip := target.Resource.(*sc.MovieClip)
+		if duration <= 0 || e.opts.FirstFrameOnly || e.opts.LastFrameOnly || e.opts.FrameIndex > 0 {
+			renderTime := stillRenderTime(clip, duration, e.opts)
 			boundsStart := time.Now()
 			bounds, err := e.collectBounds(target, duration, []float64{renderTime}, spriteCache)
 			if err != nil {
@@ -1413,7 +1414,18 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 	}
 }
 
-func stillRenderTime(duration float64, opts ExportOptions) float64 {
+func stillRenderTime(clip *sc.MovieClip, duration float64, opts ExportOptions) float64 {
+	if opts.FrameIndex > 0 && clip != nil {
+		fps := clip.FrameRate
+		if fps <= 0 {
+			fps = 30
+		}
+		renderTime := float64(opts.FrameIndex-1) / float64(fps)
+		if duration > 0 && renderTime >= duration {
+			return duration - 1e-6
+		}
+		return renderTime
+	}
 	if !opts.LastFrameOnly || duration <= 0 {
 		return 0
 	}

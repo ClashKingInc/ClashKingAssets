@@ -28,6 +28,7 @@ class SCAssetRequest:
     save_path: str
     first_frame: bool = False
     last_frame: bool = False
+    frame_index: int | None = None
 
 
 DIRECT_ASSET_EXTENSIONS = {".sctx", ".ttf", ".otf", ".woff", ".woff2", ".mp4", ".ogg"}
@@ -121,7 +122,7 @@ class StaticUpdater:
         self.pethouse_to_townhall = {}
 
         self.animations_data = {}
-        self.sc_asset_requests: dict[tuple[str, str | None, bool, bool], list[SCAssetRequest]] = {}
+        self.sc_asset_requests: dict[tuple[str, str | None, bool, bool, int | None], list[SCAssetRequest]] = {}
 
         self.build_mappping = {}
 
@@ -132,12 +133,16 @@ class StaticUpdater:
         save_path: str,
         first_frame: bool = False,
         last_frame: bool = False,
+        frame_index: int | None = None,
     ) -> str:
         source_sc = source_sc.strip()
         normalized_asset_name = (asset_name or "").strip()
         save_path = save_path.strip()
-        if first_frame and last_frame:
-            raise ValueError(f"asset cannot request both first and last frame: {source_sc}:{normalized_asset_name}")
+        frame_modes = [first_frame, last_frame, frame_index is not None]
+        if sum(1 for enabled in frame_modes if enabled) > 1:
+            raise ValueError(f"asset cannot request multiple frame modes: {source_sc}:{normalized_asset_name}")
+        if frame_index is not None and frame_index < 1:
+            raise ValueError(f"frame_index must be 1 or greater: {source_sc}:{normalized_asset_name}")
         source_ext = Path(source_sc).suffix.lower()
         if source_ext != ".sc" and source_ext not in DIRECT_ASSET_EXTENSIONS:
             raise ValueError(f"invalid asset source: {source_sc!r}")
@@ -152,13 +157,14 @@ class StaticUpdater:
         elif Path(save_path).suffix.lower() != source_ext:
             save_path = f"{save_path}{source_ext}"
 
-        key = (source_sc, request_asset_name, first_frame, last_frame)
+        key = (source_sc, request_asset_name, first_frame, last_frame, frame_index)
         request = SCAssetRequest(
             source_sc=source_sc,
             asset_name=request_asset_name,
             save_path=save_path,
             first_frame=first_frame,
             last_frame=last_frame,
+            frame_index=frame_index,
         )
         requests = self.sc_asset_requests.setdefault(key, [])
         if any(existing.save_path == save_path for existing in requests):
@@ -171,6 +177,8 @@ class StaticUpdater:
         if not destination.exists():
             return False
         if request.last_frame:
+            return False
+        if request.frame_index is not None:
             return False
         if request.first_frame and request.asset_name and "/" in request.asset_name:
             return False
@@ -276,7 +284,7 @@ class StaticUpdater:
         fingerprint_file: dict = await download_file(url=f"{base_url}/fingerprint.json", as_json=True)
         available_files = {item.get("file") for item in fingerprint_file.get("files", []) if item.get("file")}
 
-        grouped: dict[tuple[str, bool, bool], dict[str | None, list[SCAssetRequest]]] = {}
+        grouped: dict[tuple[str, bool, bool, int | None], dict[str | None, list[SCAssetRequest]]] = {}
         for requests in self.sc_asset_requests.values():
             pending_requests = [
                 request for request in requests if not self.should_skip_registered_asset(request)
@@ -284,9 +292,12 @@ class StaticUpdater:
             if not pending_requests:
                 continue
             primary = pending_requests[0]
-            grouped.setdefault((primary.source_sc, primary.first_frame, primary.last_frame), {})[primary.asset_name] = pending_requests
+            grouped.setdefault(
+                (primary.source_sc, primary.first_frame, primary.last_frame, primary.frame_index),
+                {},
+            )[primary.asset_name] = pending_requests
 
-        for (source_sc, first_frame, last_frame), asset_requests in sorted(grouped.items()):
+        for (source_sc, first_frame, last_frame, frame_index), asset_requests in sorted(grouped.items()):
             downloaded_files: list[Path] = []
             legacy_assets_dir = Path(source_sc).parent / f"{Path(source_sc).stem}_assets"
             try:
@@ -309,6 +320,8 @@ class StaticUpdater:
                         command.append("--first-frame")
                     if last_frame:
                         command.append("--last-frame")
+                    if frame_index is not None:
+                        command.extend(["--frame", str(frame_index)])
                     if source_sc.endswith(".sc"):
                         command.extend(["--out", temp_dir])
                         for asset_name, requests in sorted(asset_requests.items()):
@@ -1641,6 +1654,9 @@ class StaticUpdater:
         for _id, (deco_name, deco_data) in enumerate(full_deco_data.items(), 18000000):
             if deco_data.get("TID") in ["TID_DECORATION_GENERIC", "TID_DECORATION_NATIONAL_FLAG"]:
                 continue
+            if "placeholder" in self._translate(deco_data.get("TID")):
+                continue
+
             source_sc = deco_data.get("SWF")
             asset_name = deco_data.get("ExportName")
             village_type = deco_data.get("VillageType", 0)
@@ -1712,6 +1728,15 @@ class StaticUpdater:
         new_obstacle_data = []
         for _id, (obstacle_name, obstacle_data) in enumerate(full_obstacle_data.items(), 8000000):
             village_type = obstacle_data.get("VillageType", 0)
+            source_sc = obstacle_data.get("SWF")
+            asset_name = obstacle_data.get("ExportName")
+            if source_sc and asset_name:
+                self.register_sc_asset(
+                    source_sc=source_sc,
+                    asset_name=asset_name,
+                    save_path=f"{self.village_asset_folder('obstacles', village_type)}/{self.clean_name(obstacle_name)}",
+                    first_frame=True,
+                )
 
             hold_data = {
                 "_id": _id,
