@@ -2,6 +2,7 @@ package render
 
 import (
 	"fmt"
+	"image"
 	"image/png"
 	"io"
 	"os"
@@ -9,6 +10,38 @@ import (
 	"path/filepath"
 	"strconv"
 )
+
+func writeStillWebP(w io.Writer, img image.Image) error {
+	tempDir, err := os.MkdirTemp("", "sc-export-webp-*")
+	if err != nil {
+		return err
+	}
+	defer os.RemoveAll(tempDir)
+
+	inputPath := filepath.Join(tempDir, "i.png")
+	inputFile, err := os.Create(inputPath)
+	if err != nil {
+		return err
+	}
+	if err := png.Encode(inputFile, img); err != nil {
+		inputFile.Close()
+		return err
+	}
+	if err := inputFile.Close(); err != nil {
+		return err
+	}
+
+	outputPath := filepath.Join(tempDir, "o.webp")
+	cwebpPath, err := lookupCWebPTool()
+	if err != nil {
+		return err
+	}
+	if err := runCommand(cwebpPath, "-quiet", "-q", animatedWebPQuality(), "-m", animatedWebPMethod(), inputPath, "-o", outputPath); err != nil {
+		return err
+	}
+
+	return copyWebPOutput(w, outputPath)
+}
 
 func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
 	if len(frames) == 0 {
@@ -49,7 +82,7 @@ func writeAnimatedWebP(w io.Writer, frames []renderedFrame) error {
 		return err
 	}
 
-	return copyAnimatedWebPOutput(w, filepath.Join(tempDir, outputName))
+	return copyWebPOutput(w, filepath.Join(tempDir, outputName))
 }
 
 func writeAnimatedWebPFromFiles(w io.Writer, tempDir string, framePaths []string, frames []renderedFrame) error {
@@ -64,10 +97,10 @@ func writeAnimatedWebPFromFiles(w io.Writer, tempDir string, framePaths []string
 	if err := runImg2WebPInDir(tempDir, img2webpPath, framePaths, frames, outputName); err != nil {
 		return err
 	}
-	return copyAnimatedWebPOutput(w, filepath.Join(tempDir, outputName))
+	return copyWebPOutput(w, filepath.Join(tempDir, outputName))
 }
 
-func copyAnimatedWebPOutput(w io.Writer, outputPath string) error {
+func copyWebPOutput(w io.Writer, outputPath string) error {
 	outputFile, err := os.Open(outputPath)
 	if err != nil {
 		return err
@@ -76,6 +109,14 @@ func copyAnimatedWebPOutput(w io.Writer, outputPath string) error {
 
 	_, err = io.Copy(w, outputFile)
 	return err
+}
+
+func lookupCWebPTool() (string, error) {
+	cwebpPath, err := exec.LookPath("cwebp")
+	if err != nil {
+		return "", fmt.Errorf("cwebp not found in PATH")
+	}
+	return cwebpPath, nil
 }
 
 func lookupWebPTools() (string, error) {
@@ -87,7 +128,10 @@ func lookupWebPTools() (string, error) {
 }
 
 func ensureWebPToolsAvailable() error {
-	_, err := lookupWebPTools()
+	if _, err := lookupWebPTools(); err != nil {
+		return err
+	}
+	_, err := lookupCWebPTool()
 	return err
 }
 

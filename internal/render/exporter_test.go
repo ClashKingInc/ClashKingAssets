@@ -328,6 +328,64 @@ func TestSingleFramePreferWebPUsesWebPOutput(t *testing.T) {
 	if _, err := os.Stat(filepath.Join(outDir, entry.OutputFile)); err != nil {
 		t.Fatalf("expected webp output on disk: %v", err)
 	}
+	data, err := os.ReadFile(filepath.Join(outDir, entry.OutputFile))
+	if err != nil {
+		t.Fatalf("read webp output failed: %v", err)
+	}
+	if bytes.Contains(data, []byte("ANIM")) {
+		t.Fatal("single-frame webp should not contain animation metadata")
+	}
+}
+
+func TestFirstFrameOnlyBypassesAnimatedExport(t *testing.T) {
+	requireWebPTools(t)
+
+	swf := mustLoadSWF(t, "../../sc/chr_dragon.sc")
+	exporter := NewExporterWithOptions(swf, ExportOptions{PreferWebP: true, FirstFrameOnly: true})
+	target := findTarget(t, exporter, "dragonx_fly1_3")
+	if target.Duration <= 0 {
+		t.Fatal("test target should be animated")
+	}
+
+	outDir := t.TempDir()
+	entry, skipped, _, err := exporter.exportTarget(target, outDir, newNameAllocator(outDir, nil))
+	if err != nil {
+		t.Fatalf("exportTarget failed: %v", err)
+	}
+	if skipped != nil {
+		t.Fatalf("expected export, got skipped %+v", skipped)
+	}
+	if entry.FrameCount != 1 {
+		t.Fatalf("frame count = %d, want 1", entry.FrameCount)
+	}
+	if entry.DurationMS != 0 {
+		t.Fatalf("duration = %d, want 0", entry.DurationMS)
+	}
+	data, err := os.ReadFile(filepath.Join(outDir, entry.OutputFile))
+	if err != nil {
+		t.Fatalf("read webp output failed: %v", err)
+	}
+	if bytes.Contains(data, []byte("ANIM")) {
+		t.Fatal("first-frame webp should not contain animation metadata")
+	}
+}
+
+func TestLastFrameOnlyUsesEndOfTimeline(t *testing.T) {
+	if got := stillRenderTime(5, ExportOptions{LastFrameOnly: true}); got <= 4.999 || got >= 5 {
+		t.Fatalf("last frame render time = %f, want just before duration", got)
+	}
+	if got := stillRenderTime(5, ExportOptions{FirstFrameOnly: true}); got != 0 {
+		t.Fatalf("first frame render time = %f, want 0", got)
+	}
+}
+
+func TestWeaponizedBuilderHutBindSplitsAreEnabled(t *testing.T) {
+	if !shouldSplitNamedBinds("worker_building_armed_lvl7") {
+		t.Fatal("expected weaponized builder hut exports to support bind splits")
+	}
+	if shouldSplitNamedBinds("worker_building") {
+		t.Fatal("did not expect plain builder hut export to split binds")
+	}
 }
 
 func TestPrepareTargetsIncludePlayerHousePartSplits(t *testing.T) {
@@ -420,6 +478,30 @@ func TestWriteAnimatedWebPProducesRIFF(t *testing.T) {
 	}
 	if !bytes.Contains(data, []byte("WEBP")) {
 		t.Fatal("webp should contain WEBP signature")
+	}
+}
+
+func TestWriteStillWebPDoesNotWriteAnimationChunk(t *testing.T) {
+	requireWebPTools(t)
+
+	img := image.NewNRGBA(image.Rect(0, 0, 2, 1))
+	img.SetNRGBA(0, 0, color.NRGBA{})
+	img.SetNRGBA(1, 0, color.NRGBA{R: 255, G: 64, B: 32, A: 255})
+
+	var buf bytes.Buffer
+	if err := writeStillWebP(&buf, img); err != nil {
+		t.Fatalf("writeStillWebP failed: %v", err)
+	}
+
+	data := buf.Bytes()
+	if !bytes.HasPrefix(data, []byte("RIFF")) {
+		t.Fatal("webp should start with RIFF")
+	}
+	if !bytes.Contains(data, []byte("WEBP")) {
+		t.Fatal("webp should contain WEBP signature")
+	}
+	if bytes.Contains(data, []byte("ANIM")) {
+		t.Fatal("still webp should not contain animation metadata")
 	}
 }
 

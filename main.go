@@ -66,6 +66,8 @@ func main() {
 	fileConcurrency := flag.Int("file-concurrency", 1, "number of SC files to process concurrently for --process-sc-root")
 	renderScale := flag.Int("render-scale", 1, "final output canvas scale")
 	preferWebP := flag.Bool("prefer-webp", false, "write still images as webp instead of png")
+	firstFrame := flag.Bool("first-frame", false, "render only the first frame of movie clips")
+	lastFrame := flag.Bool("last-frame", false, "render only the last frame of movie clips")
 	profile := flag.Bool("profile", false, "print compact bottleneck timing summaries")
 	profileTopN := flag.Int("profile-top-n", 5, "number of slowest targets to include when --profile is enabled")
 	skipTinyThreshold := flag.Int("skip-tiny-threshold", 0, "skip writing outputs whose width and height are both <= this threshold")
@@ -87,6 +89,8 @@ func main() {
 		AssetNames:              assetNames,
 		AssetOutputPaths:        map[string]string(assetOutputs),
 		PreferWebP:              *preferWebP,
+		FirstFrameOnly:          *firstFrame,
+		LastFrameOnly:           *lastFrame,
 		FileConcurrency:         *fileConcurrency,
 		Profile:                 *profile,
 		ProfileTopN:             *profileTopN,
@@ -101,9 +105,9 @@ func main() {
 		err = render.ProcessSCRoot(*processSCRoot, *workers, opts, *deleteSource, *deleteSctx)
 	default:
 		if flag.NArg() != 1 {
-			fmt.Fprintln(os.Stderr, "usage: sc-export <file-or-dir> [--out DIR] [--workers N] [--render-scale N] [--prefer-webp] [--asset NAME] [--asset-output NAME=PATH]")
+			fmt.Fprintln(os.Stderr, "usage: sc-export <file-or-dir> [--out DIR] [--workers N] [--render-scale N] [--prefer-webp] [--first-frame] [--last-frame] [--asset NAME] [--asset-output NAME=PATH]")
 			fmt.Fprintln(os.Stderr, "   or: sc-export --process-image-root DIR [--workers N] [--render-scale N] [--profile] [--profile-top-n N] [--delete-source]")
-			fmt.Fprintln(os.Stderr, "   or: sc-export --process-sc-root DIR [--workers N] [--file-concurrency N] [--render-scale N] [--skip-tiny-threshold N] [--profile] [--profile-top-n N] [--include-prefix PREFIX] [--delete-source] [--delete-sctx]")
+			fmt.Fprintln(os.Stderr, "   or: sc-export --process-sc-root DIR [--workers N] [--file-concurrency N] [--render-scale N] [--first-frame] [--last-frame] [--skip-tiny-threshold N] [--profile] [--profile-top-n N] [--include-prefix PREFIX] [--delete-source] [--delete-sctx]")
 			os.Exit(2)
 		}
 		input := flag.Arg(0)

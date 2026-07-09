@@ -26,6 +26,8 @@ class SCAssetRequest:
     source_sc: str
     asset_name: str | None
     save_path: str
+    first_frame: bool = False
+    last_frame: bool = False
 
 
 DIRECT_ASSET_EXTENSIONS = {".sctx", ".ttf", ".otf", ".woff", ".woff2", ".mp4", ".ogg"}
@@ -62,6 +64,28 @@ def remove_empty_parents(path: Path, stop_at: Path) -> None:
 def is_exported_via_go(source_sc: str) -> bool:
     return source_sc.endswith((".sc", ".sctx"))
 
+
+def is_animated_webp(path: Path) -> bool:
+    try:
+        with path.open("rb") as f:
+            header = f.read(12)
+            if len(header) != 12 or header[:4] != b"RIFF" or header[8:] != b"WEBP":
+                return False
+
+            while chunk_header := f.read(8):
+                if len(chunk_header) != 8:
+                    return False
+                chunk_type = chunk_header[:4]
+                chunk_size = int.from_bytes(chunk_header[4:], "little")
+                if chunk_type == b"ANIM":
+                    return True
+                f.seek(chunk_size + (chunk_size % 2), os.SEEK_CUR)
+    except OSError:
+        return False
+
+    return False
+
+
 def hash_15_digits(s: str) -> int:
     digest = hashlib.blake2b(s.encode("utf-8"), digest_size=8).digest()
     return int.from_bytes(digest, "big") % 10**15
@@ -97,14 +121,23 @@ class StaticUpdater:
         self.pethouse_to_townhall = {}
 
         self.animations_data = {}
-        self.sc_asset_requests: dict[tuple[str, str | None], list[SCAssetRequest]] = {}
+        self.sc_asset_requests: dict[tuple[str, str | None, bool, bool], list[SCAssetRequest]] = {}
 
         self.build_mappping = {}
 
-    def register_sc_asset(self, source_sc: str, asset_name: str, save_path: str) -> str:
+    def register_sc_asset(
+        self,
+        source_sc: str,
+        asset_name: str,
+        save_path: str,
+        first_frame: bool = False,
+        last_frame: bool = False,
+    ) -> str:
         source_sc = source_sc.strip()
         normalized_asset_name = (asset_name or "").strip()
         save_path = save_path.strip()
+        if first_frame and last_frame:
+            raise ValueError(f"asset cannot request both first and last frame: {source_sc}:{normalized_asset_name}")
         source_ext = Path(source_sc).suffix.lower()
         if source_ext != ".sc" and source_ext not in DIRECT_ASSET_EXTENSIONS:
             raise ValueError(f"invalid asset source: {source_sc!r}")
@@ -119,24 +152,100 @@ class StaticUpdater:
         elif Path(save_path).suffix.lower() != source_ext:
             save_path = f"{save_path}{source_ext}"
 
-        key = (source_sc, request_asset_name)
-        request = SCAssetRequest(source_sc=source_sc, asset_name=request_asset_name, save_path=save_path)
+        key = (source_sc, request_asset_name, first_frame, last_frame)
+        request = SCAssetRequest(
+            source_sc=source_sc,
+            asset_name=request_asset_name,
+            save_path=save_path,
+            first_frame=first_frame,
+            last_frame=last_frame,
+        )
         requests = self.sc_asset_requests.setdefault(key, [])
         if any(existing.save_path == save_path for existing in requests):
             return save_path
         requests.append(request)
         return save_path
 
-    def should_skip_registered_asset(self, save_path: str) -> bool:
-        return self.resolve_asset_output_path(save_path).exists()
+    def should_skip_registered_asset(self, request: SCAssetRequest) -> bool:
+        destination = self.resolve_asset_output_path(request.save_path)
+        if not destination.exists():
+            return False
+        if request.last_frame:
+            return False
+        if request.first_frame and request.asset_name and "/" in request.asset_name:
+            return False
+        if (request.first_frame or request.last_frame) and destination.suffix.lower() == ".webp" and is_animated_webp(destination):
+            return False
+        return True
 
     def resolve_asset_output_path(self, save_path: str) -> Path:
         normalized = Path(save_path.strip().lstrip("/"))
         return Path(self.BASE_PATH) / normalized
 
+    def village_asset_folder(self, root: str, village_type: int) -> str:
+        village_folder = "builder-base" if village_type else "home-village"
+        return f"{root}/{village_folder}"
+
+    def building_icon_asset_name(self, building_data: dict, level_data: dict, asset_name: str) -> str:
+        if building_data.get("BuildingClass") == "Wall":
+            return f"{asset_name}_3"
+        if building_data.get("TID") == "TID_WORKER_BUILDING" and asset_name.startswith("worker_building_armed_lvl"):
+            return f"{asset_name}/builder_out"
+        return asset_name
+
+    def building_icon_uses_last_frame(self, building_data: dict) -> bool:
+        return building_data.get("TID") in {
+            "TID_BUILDING_GOLD_STORAGE",
+            "TID_BUILDING_ELIXIR_STORAGE",
+            "TID_BUILDING_DARK_ELIXIR_STORAGE",
+        }
+
+    def season_defense_archetypes_to_export(self) -> set[str]:
+        full_season_data = self.open_file("logic/seasonal_defense.json")
+        archetypes: set[str] = set()
+        seen_tids = set()
+        for season_data in full_season_data.values():
+            season_tid = season_data.get("TID")
+            if not season_tid or season_tid in seen_tids:
+                continue
+            seen_tids.add(season_tid)
+            for key, value in season_data.items():
+                if key.isdigit() and value.get("Archetypes"):
+                    archetypes.add(value.get("Archetypes"))
+        return archetypes
+
+    def register_seasonal_defense_assets(self) -> None:
+        full_seasonal_defenses = self.open_file("logic/seasonal_defense_archetypes.json")
+        archetypes_to_export = self.season_defense_archetypes_to_export()
+        for archetype_name, archetype_data in full_seasonal_defenses.items():
+            if archetype_name not in archetypes_to_export:
+                continue
+
+            ability_data = self.full_abilities_data.get(archetype_data.get("SpecialAbility"), {})
+            name_tid = ability_data.get("OverrideTID")
+            if not name_tid:
+                continue
+
+            for level, level_data in ability_data.items():
+                if not isinstance(level_data, dict):
+                    continue
+                asset_name = level_data.get("OverrideExportName")
+                if not asset_name:
+                    continue
+                self.register_sc_asset(
+                    source_sc=level_data.get("OverrideSWF") or "sc/buildings.sc",
+                    asset_name=asset_name,
+                    save_path=(
+                        "buildings/seasonal-defense/"
+                        f"{self.clean_name(self._translate(tid=name_tid))}/"
+                        f"level_{level_data.get('Level') or level}"
+                    ),
+                    first_frame=True,
+                )
+
     def save_registered_asset(self, request: SCAssetRequest, local_path: Path) -> None:
         destination = self.resolve_asset_output_path(request.save_path)
-        if destination.exists():
+        if self.should_skip_registered_asset(request):
             return
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(local_path, destination)
@@ -167,17 +276,17 @@ class StaticUpdater:
         fingerprint_file: dict = await download_file(url=f"{base_url}/fingerprint.json", as_json=True)
         available_files = {item.get("file") for item in fingerprint_file.get("files", []) if item.get("file")}
 
-        grouped: dict[str, dict[str | None, list[SCAssetRequest]]] = {}
+        grouped: dict[tuple[str, bool, bool], dict[str | None, list[SCAssetRequest]]] = {}
         for requests in self.sc_asset_requests.values():
             pending_requests = [
-                request for request in requests if not self.should_skip_registered_asset(request.save_path)
+                request for request in requests if not self.should_skip_registered_asset(request)
             ]
             if not pending_requests:
                 continue
             primary = pending_requests[0]
-            grouped.setdefault(primary.source_sc, {})[primary.asset_name] = pending_requests
+            grouped.setdefault((primary.source_sc, primary.first_frame, primary.last_frame), {})[primary.asset_name] = pending_requests
 
-        for source_sc, asset_requests in sorted(grouped.items()):
+        for (source_sc, first_frame, last_frame), asset_requests in sorted(grouped.items()):
             downloaded_files: list[Path] = []
             legacy_assets_dir = Path(source_sc).parent / f"{Path(source_sc).stem}_assets"
             try:
@@ -196,6 +305,10 @@ class StaticUpdater:
                     continue
                 with tempfile.TemporaryDirectory(prefix="update-static-sc-") as temp_dir:
                     command = ["go", "run", "main.go", "--workers", str(max(1, os.cpu_count() or 1)), "--prefer-webp"]
+                    if first_frame:
+                        command.append("--first-frame")
+                    if last_frame:
+                        command.append("--last-frame")
                     if source_sc.endswith(".sc"):
                         command.extend(["--out", temp_dir])
                         for asset_name, requests in sorted(asset_requests.items()):
@@ -664,6 +777,7 @@ class StaticUpdater:
         full_projectile_data: dict = self.open_file("logic/projectiles.json")
         full_spell_data: dict = self.open_file("logic/spells.json")
         full_globals_data: dict = self.open_file("logic/globals.json")
+        self.register_seasonal_defense_assets()
 
         clan_castle_radius = full_globals_data.get("CLAN_CASTLE_RADIUS", {}).get("NumberValue")
         clan_castle_attack_range = clan_castle_radius * 100 if clan_castle_radius is not None else None
@@ -783,6 +897,25 @@ class StaticUpdater:
             for level, level_data in building_data.items():
                 if not isinstance(level_data, dict):
                     continue
+
+                source_sc = level_data.get("SWF") or building_data.get("SWF")
+                asset_name = level_data.get("ExportName") or building_data.get("ExportName")
+                if source_sc and asset_name:
+                    building_level = level_data.get("BuildingLevel") or level
+                    building_folder = self.village_asset_folder("buildings", village_type)
+                    icon_asset_name = self.building_icon_asset_name(building_data, level_data, asset_name)
+                    last_frame = self.building_icon_uses_last_frame(building_data)
+                    self.register_sc_asset(
+                        source_sc=source_sc,
+                        asset_name=icon_asset_name,
+                        save_path=(
+                            f"{building_folder}/"
+                            f"{self.clean_name(self._translate(tid=building_data.get('TID')))}/"
+                            f"level_{building_level}"
+                        ),
+                        first_frame=not last_frame,
+                        last_frame=last_frame,
+                    )
 
                 upgrade_time_seconds = self._parse_upgrade_time(level_data)
                 hold_level_data = {
@@ -963,7 +1096,14 @@ class StaticUpdater:
         for season_data in full_season_data.values():
             seasons.append(season_data)
 
-        current_season = next((item for item in reversed(seasons) if item.get("TID")), {})
+        seen_tids = set()
+        current_season = {}
+        for season_data in seasons:
+            season_tid = season_data.get("TID")
+            if not season_tid or season_tid in seen_tids:
+                continue
+            seen_tids.add(season_tid)
+            current_season = season_data
         current_seasonal_defenses: list[str] = [v.get("Archetypes") for k, v in current_season.items() if k.isdigit()]
 
         for _id, (n, d) in enumerate(full_seasonal_modules.items(), 102000000):
@@ -1239,7 +1379,7 @@ class StaticUpdater:
                 self.register_sc_asset(
                     source_sc=hero_data.get("SquarePictureSWF"),
                     asset_name=hero_data.get("SquarePicture"),
-                    save_path=f"heroes/{self.clean_name(self._translate(hero_data.get("TID")))}/icon.webp"
+                    save_path=f"heroes/{self.clean_name(self._translate(hero_data.get('TID')))}/icon.webp"
                 )
 
             hold_data = {
@@ -1460,6 +1600,24 @@ class StaticUpdater:
                 if not isinstance(level_data, dict):
                     continue
 
+                source_sc = level_data.get("SWF") or trap_data.get("SWF")
+                asset_name = level_data.get("ExportName") or trap_data.get("ExportName")
+                if source_sc and asset_name:
+                    trap_folder = self.village_asset_folder("traps", village_type)
+                    trap_level = level_data.get("TrapLevel") or level_data.get("Level") or level
+                    if trap_data.get("TID") == "TID_PUSHER" and asset_name.endswith("_idle"):
+                        asset_name = f"{asset_name}_0"
+                    self.register_sc_asset(
+                        source_sc=source_sc,
+                        asset_name=asset_name,
+                        save_path=(
+                            f"{trap_folder}/"
+                            f"{self.clean_name(self._translate(tid=trap_data.get('TID')))}/"
+                            f"level_{trap_level}"
+                        ),
+                        first_frame=True,
+                    )
+
                 upgrade_time_seconds = self._parse_upgrade_time(level_data)
 
                 hold_data["levels"].append(
@@ -1483,7 +1641,16 @@ class StaticUpdater:
         for _id, (deco_name, deco_data) in enumerate(full_deco_data.items(), 18000000):
             if deco_data.get("TID") in ["TID_DECORATION_GENERIC", "TID_DECORATION_NATIONAL_FLAG"]:
                 continue
+            source_sc = deco_data.get("SWF")
+            asset_name = deco_data.get("ExportName")
             village_type = deco_data.get("VillageType", 0)
+            if source_sc and asset_name:
+                self.register_sc_asset(
+                    source_sc=source_sc,
+                    asset_name=asset_name,
+                    save_path=f"{self.village_asset_folder('decorations', village_type)}/{self.clean_name(deco_name)}",
+                    first_frame=True,
+                )
 
             hold_data = {
                 "_id": _id,

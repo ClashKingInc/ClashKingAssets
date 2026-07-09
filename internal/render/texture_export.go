@@ -66,7 +66,7 @@ func exportTextureFile(inputPath, outPath string, opts ExportOptions) error {
 		return err
 	}
 	if opts.PreferWebP {
-		if err := writeAnimatedWebP(file, []renderedFrame{{Image: img, DelayCS: 0}}); err != nil {
+		if err := writeStillWebP(file, img); err != nil {
 			file.Close()
 			return err
 		}

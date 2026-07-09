@@ -842,12 +842,13 @@ func (e *Exporter) splitBindTargets(target Target) []Target {
 }
 
 func shouldSplitNamedBinds(exportName string) bool {
-	switch exportName {
-	case "playerhouse_parts":
+	if exportName == "playerhouse_parts" {
 		return true
-	default:
-		return false
 	}
+	if strings.HasPrefix(exportName, "worker_building_armed_lvl") {
+		return true
+	}
+	return false
 }
 
 func isRenderableBindLabel(name string) bool {
@@ -1058,7 +1059,7 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		AncestorResourceIDs: target.AncestorIDs,
 	}
 
-	if _, ok := target.Resource.(*sc.MovieClip); ok && target.Duration > 0 {
+	if _, ok := target.Resource.(*sc.MovieClip); ok && target.Duration > 0 && !e.opts.FirstFrameOnly && !e.opts.LastFrameOnly {
 		tempDir, err := os.MkdirTemp("", "sc-export-webp-*")
 		if err != nil {
 			return nil, nil, profile, err
@@ -1211,7 +1212,7 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 			if err != nil {
 				return nil, nil, profile, err
 			}
-			if err := writeAnimatedWebP(file, frames); err != nil {
+			if err := writeStillWebP(file, frames[0].Image); err != nil {
 				file.Close()
 				return nil, nil, profile, err
 			}
@@ -1312,15 +1313,16 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 		return []renderedFrame{{Image: frame, DelayCS: 0}}, 0, "", profile, nil
 	case *sc.MovieClip:
 		duration := target.Duration
-		if duration <= 0 {
+		if duration <= 0 || e.opts.FirstFrameOnly || e.opts.LastFrameOnly {
+			renderTime := stillRenderTime(duration, e.opts)
 			boundsStart := time.Now()
-			bounds, err := e.collectBounds(target, 0, nil, spriteCache)
+			bounds, err := e.collectBounds(target, duration, []float64{renderTime}, spriteCache)
 			if err != nil {
 				return nil, 0, "", renderProfile{}, err
 			}
 			profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
 			renderStart := time.Now()
-			frame, err := e.renderAt(target, 0, bounds, spriteCache)
+			frame, err := e.renderAt(target, renderTime, bounds, spriteCache)
 			if err != nil {
 				return nil, 0, "", profile, err
 			}
@@ -1409,6 +1411,17 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 	default:
 		return nil, 0, "", renderProfile{}, fmt.Errorf("unsupported resource type %s", target.Resource.ResourceType())
 	}
+}
+
+func stillRenderTime(duration float64, opts ExportOptions) float64 {
+	if !opts.LastFrameOnly || duration <= 0 {
+		return 0
+	}
+	lastFrameTime := duration - 1e-6
+	if lastFrameTime <= 0 {
+		return 0
+	}
+	return lastFrameTime
 }
 
 func (e *Exporter) renderAnimatedTargetToFiles(target Target, tempDir string) ([]encodedFrameFile, int, string, renderProfile, error) {

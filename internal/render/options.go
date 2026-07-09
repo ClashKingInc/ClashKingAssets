@@ -15,6 +15,8 @@ type ExportOptions struct {
 	Profile                 bool
 	ProfileTopN             int
 	SkipTinyOutputThreshold int
+	FirstFrameOnly          bool
+	LastFrameOnly           bool
 }
 
 func normalizeExportOptions(opts ExportOptions) ExportOptions {
@@ -29,6 +31,9 @@ func normalizeExportOptions(opts ExportOptions) ExportOptions {
 	}
 	if opts.SkipTinyOutputThreshold < 0 {
 		opts.SkipTinyOutputThreshold = 0
+	}
+	if opts.FirstFrameOnly && opts.LastFrameOnly {
+		opts.LastFrameOnly = false
 	}
 	opts.AssetNames = normalizeNames(opts.AssetNames)
 	opts.AssetOutputPaths = normalizeAssetOutputPaths(opts.AssetOutputPaths)
