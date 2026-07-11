@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import json
 import os
 import subprocess
@@ -53,6 +54,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--previous-ref", help="Previous release ref/tag to diff against.")
     parser.add_argument("--assets-root", default="assets", help="Repo-relative assets root. Default: assets")
     parser.add_argument("--dry-run", action="store_true", help="Print the sync plan without writing to R2.")
+    parser.add_argument("--workers", type=int, default=32, help="Concurrent R2 uploads. Default: 32")
     return parser.parse_args()
 
 
@@ -225,7 +227,11 @@ def build_sync_plan(entries: list[DiffEntry], assets_root: str) -> dict[str, Any
                     skipped.append({"path": new_path, "reason": "not_a_file"})
                     continue
                 uploads.append(
-                    UploadOperation(local_path=local_path.as_posix(), key=key_for_path(new_path, assets_root), reason="renamed")
+                    UploadOperation(
+                        local_path=local_path.as_posix(),
+                        key=key_for_path(new_path, assets_root),
+                        reason="renamed",
+                    )
                 )
             counts["renamed"] += 1
             continue
@@ -240,7 +246,13 @@ def build_sync_plan(entries: list[DiffEntry], assets_root: str) -> dict[str, Any
             if not local_path.is_file():
                 skipped.append({"path": new_path, "reason": "not_a_file"})
                 continue
-            uploads.append(UploadOperation(local_path=local_path.as_posix(), key=key_for_path(new_path, assets_root), reason="copied"))
+            uploads.append(
+                UploadOperation(
+                    local_path=local_path.as_posix(),
+                    key=key_for_path(new_path, assets_root),
+                    reason="copied",
+                )
+            )
             counts["added"] += 1
             continue
 
@@ -285,12 +297,30 @@ def create_r2_client(config: R2Config):
     )
 
 
-def apply_sync_plan(plan: dict[str, Any], config: R2Config) -> None:
+def apply_sync_plan(plan: dict[str, Any], config: R2Config, workers: int) -> None:
+    if workers < 1:
+        raise BuildError("workers must be at least 1")
     client = create_r2_client(config)
-    for upload in plan["uploads"]:
+
+    def upload_file(upload: dict[str, str]) -> None:
         client.upload_file(upload["local_path"], config.bucket, upload["key"])
-    for deletion in plan["deletes"]:
-        client.delete_object(Bucket=config.bucket, Key=deletion["key"])
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = [executor.submit(upload_file, upload) for upload in plan["uploads"]]
+        for future in concurrent.futures.as_completed(futures):
+            future.result()
+
+    deletions = plan["deletes"]
+    for offset in range(0, len(deletions), 1000):
+        batch = deletions[offset : offset + 1000]
+        response = client.delete_objects(
+            Bucket=config.bucket,
+            Delete={"Objects": [{"Key": deletion["key"]} for deletion in batch], "Quiet": True},
+        )
+        errors = response.get("Errors", [])
+        if errors:
+            details = ", ".join(f"{error.get('Key')}: {error.get('Message')}" for error in errors)
+            raise BuildError(f"R2 delete failed: {details}")
 
 
 def build_summary(
@@ -343,7 +373,7 @@ def main() -> int:
 
     if not args.dry_run:
         config = load_r2_config()
-        apply_sync_plan(plan, config)
+        apply_sync_plan(plan, config, args.workers)
 
     print(json.dumps(summary, indent=2, sort_keys=True))
     return 0
