@@ -1059,7 +1059,7 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		AncestorResourceIDs: target.AncestorIDs,
 	}
 
-	if _, ok := target.Resource.(*sc.MovieClip); ok && target.Duration > 0 && !e.opts.FirstFrameOnly && !e.opts.LastFrameOnly && e.opts.FrameIndex <= 0 {
+	if _, ok := target.Resource.(*sc.MovieClip); ok && target.Duration > 0 && !e.opts.FirstFrameOnly && !e.opts.LastFrameOnly && e.opts.FrameIndex <= 0 && !e.opts.StaticOnly {
 		tempDir, err := os.MkdirTemp("", "sc-export-webp-*")
 		if err != nil {
 			return nil, nil, profile, err
@@ -1314,6 +1314,28 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 	case *sc.MovieClip:
 		duration := target.Duration
 		clip := target.Resource.(*sc.MovieClip)
+		if e.opts.StaticOnly {
+			staticContainers := e.staticOnlyContainers(target)
+			boundsStart := time.Now()
+			bounds, err := e.collectStaticOnlyBounds(target, spriteCache, staticContainers)
+			if err != nil {
+				return nil, 0, "", renderProfile{}, err
+			}
+			profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
+			renderStart := time.Now()
+			frame, err := e.renderStaticBackdrop(target, bounds, spriteCache, staticContainers)
+			if err != nil {
+				return nil, 0, "", profile, err
+			}
+			profile.RenderDuration = time.Since(renderStart)
+			profile.Frames = 1
+			profile.CanvasWidth = frame.Bounds().Dx()
+			profile.CanvasHeight = frame.Bounds().Dy()
+			if reason := tinyOutputReason(frame.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
+				return nil, 0, reason, profile, nil
+			}
+			return []renderedFrame{{Image: frame, DelayCS: 0}}, 0, "", profile, nil
+		}
 		if duration <= 0 || e.opts.FirstFrameOnly || e.opts.LastFrameOnly || e.opts.FrameIndex > 0 {
 			renderTime := stillRenderTime(clip, duration, e.opts)
 			boundsStart := time.Now()
@@ -1919,6 +1941,48 @@ func (e *Exporter) collectAnimatedResourceSet(rootID uint16) map[uint16]bool {
 	}
 	visit(rootID, map[uint16]bool{})
 	return animated
+}
+
+func (e *Exporter) staticOnlyContainers(target Target) map[uint16]bool {
+	containers := map[uint16]bool{}
+	if len(target.AncestorIDs) <= 2 {
+		return containers
+	}
+	for _, resourceID := range target.AncestorIDs[1 : len(target.AncestorIDs)-1] {
+		containers[resourceID] = true
+	}
+	return containers
+}
+
+func (e *Exporter) collectStaticOnlyBounds(target Target, spriteCache map[bitmapCacheKey]*bitmapRenderable, animatedResources map[uint16]bool) (image.Rectangle, error) {
+	var bounds renderBounds
+	err := e.visitResourceFiltered(target, target.ResourceID, 0, sc.IdentityMatrix(), sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", animatedResources, false, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, _ sc.ColorTransform) error {
+		sprite, err := e.bitmapRenderable(shape, idx, spriteCache)
+		if err != nil {
+			return err
+		}
+		fullMatrix := matrix.Multiply(sprite.transform)
+		width := float64(sprite.sprite.Bounds().Dx())
+		height := float64(sprite.sprite.Bounds().Dy())
+		for _, corner := range [][2]float64{{0, 0}, {width, 0}, {width, height}, {0, height}} {
+			x, y := fullMatrix.Apply(corner[0], corner[1])
+			bounds.add(x, y)
+		}
+		return nil
+	})
+	if err != nil {
+		return image.Rectangle{}, err
+	}
+	if !bounds.set {
+		return image.Rect(0, 0, 1, 1), nil
+	}
+	const padding = 2
+	return image.Rect(
+		int(math.Floor(bounds.minX))-padding,
+		int(math.Floor(bounds.minY))-padding,
+		int(math.Ceil(bounds.maxX))+padding,
+		int(math.Ceil(bounds.maxY))+padding,
+	), nil
 }
 
 func (e *Exporter) visitResourceFiltered(target Target, resourceID uint16, t float64, matrix sc.Matrix, colorTransform sc.ColorTransform, seen map[uint16]int, selected bool, animatedResources map[uint16]bool, wantAnimated bool, drawFn func(uint16, *sc.Shape, int, sc.Matrix, sc.ColorTransform) error) error {

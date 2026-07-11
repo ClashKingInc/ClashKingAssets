@@ -770,6 +770,17 @@ func TestRenderScaleIncreasesOutputDimensions(t *testing.T) {
 	}
 }
 
+func TestStaticOnlyContainersKeepWrappersBeforeAnimatedTimeline(t *testing.T) {
+	exporter := &Exporter{}
+	target := Target{AncestorIDs: []uint16{10, 20, 30}, ResolvedTimeline: 30}
+
+	containers := exporter.staticOnlyContainers(target)
+
+	if len(containers) != 1 || !containers[20] {
+		t.Fatalf("static containers = %v, want only wrapper 20", containers)
+	}
+}
+
 func BenchmarkParseDragon(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		swf, err := sc.Load("../../sc/chr_dragon.sc")

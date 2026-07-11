@@ -5,20 +5,21 @@ If new files need to be added, then place them in the TARGETS list.
 """
 
 import asyncio
+import csv
+import hashlib
 import json
 import logging
-import csv
+import lzma
 import os
-import hashlib
 import shutil
 import subprocess
 import tempfile
-import zstandard
-import lzma
 from dataclasses import dataclass
 from pathlib import Path
 
-from utils import apk_url, download_file, fetch_fingerprint
+import zstandard
+
+from utils import apk_url, download_file, fetch_fingerprint_manifest
 
 
 @dataclass(frozen=True)
@@ -29,6 +30,7 @@ class SCAssetRequest:
     first_frame: bool = False
     last_frame: bool = False
     frame_index: int | None = None
+    static_only: bool = False
 
 
 DIRECT_ASSET_EXTENSIONS = {".sctx", ".ttf", ".otf", ".woff", ".woff2", ".mp4", ".ogg"}
@@ -122,7 +124,7 @@ class StaticUpdater:
         self.pethouse_to_townhall = {}
 
         self.animations_data = {}
-        self.sc_asset_requests: dict[tuple[str, str | None, bool, bool, int | None], list[SCAssetRequest]] = {}
+        self.sc_asset_requests: dict[tuple[str, str | None, bool, bool, int | None, bool], list[SCAssetRequest]] = {}
 
         self.build_mappping = {}
 
@@ -134,11 +136,12 @@ class StaticUpdater:
         first_frame: bool = False,
         last_frame: bool = False,
         frame_index: int | None = None,
+        static_only: bool = False,
     ) -> str:
         source_sc = source_sc.strip()
         normalized_asset_name = (asset_name or "").strip()
         save_path = save_path.strip()
-        frame_modes = [first_frame, last_frame, frame_index is not None]
+        frame_modes = [first_frame, last_frame, frame_index is not None, static_only]
         if sum(1 for enabled in frame_modes if enabled) > 1:
             raise ValueError(f"asset cannot request multiple frame modes: {source_sc}:{normalized_asset_name}")
         if frame_index is not None and frame_index < 1:
@@ -157,7 +160,7 @@ class StaticUpdater:
         elif Path(save_path).suffix.lower() != source_ext:
             save_path = f"{save_path}{source_ext}"
 
-        key = (source_sc, request_asset_name, first_frame, last_frame, frame_index)
+        key = (source_sc, request_asset_name, first_frame, last_frame, frame_index, static_only)
         request = SCAssetRequest(
             source_sc=source_sc,
             asset_name=request_asset_name,
@@ -165,6 +168,7 @@ class StaticUpdater:
             first_frame=first_frame,
             last_frame=last_frame,
             frame_index=frame_index,
+            static_only=static_only,
         )
         requests = self.sc_asset_requests.setdefault(key, [])
         if any(existing.save_path == save_path for existing in requests):
@@ -179,6 +183,8 @@ class StaticUpdater:
         if request.last_frame:
             return False
         if request.frame_index is not None:
+            return False
+        if request.static_only and destination.suffix.lower() == ".webp" and is_animated_webp(destination):
             return False
         if request.first_frame and request.asset_name and "/" in request.asset_name:
             return False
@@ -278,13 +284,11 @@ class StaticUpdater:
         if not self.sc_asset_requests:
             return
 
-        if not self.FINGERPRINT:
-            self.FINGERPRINT = await fetch_fingerprint(self.APK_URL)
+        self.FINGERPRINT, fingerprint_file = await fetch_fingerprint_manifest(self.APK_URL, self.FINGERPRINT)
         base_url = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
-        fingerprint_file: dict = await download_file(url=f"{base_url}/fingerprint.json", as_json=True)
         available_files = {item.get("file") for item in fingerprint_file.get("files", []) if item.get("file")}
 
-        grouped: dict[tuple[str, bool, bool, int | None], dict[str | None, list[SCAssetRequest]]] = {}
+        grouped: dict[tuple[str, bool, bool, int | None, bool], dict[str | None, list[SCAssetRequest]]] = {}
         for requests in self.sc_asset_requests.values():
             pending_requests = [
                 request for request in requests if not self.should_skip_registered_asset(request)
@@ -293,11 +297,17 @@ class StaticUpdater:
                 continue
             primary = pending_requests[0]
             grouped.setdefault(
-                (primary.source_sc, primary.first_frame, primary.last_frame, primary.frame_index),
+                (
+                    primary.source_sc,
+                    primary.first_frame,
+                    primary.last_frame,
+                    primary.frame_index,
+                    primary.static_only,
+                ),
                 {},
             )[primary.asset_name] = pending_requests
 
-        for (source_sc, first_frame, last_frame, frame_index), asset_requests in sorted(grouped.items()):
+        for (source_sc, first_frame, last_frame, frame_index, static_only), asset_requests in sorted(grouped.items()):
             downloaded_files: list[Path] = []
             legacy_assets_dir = Path(source_sc).parent / f"{Path(source_sc).stem}_assets"
             try:
@@ -322,6 +332,8 @@ class StaticUpdater:
                         command.append("--last-frame")
                     if frame_index is not None:
                         command.extend(["--frame", str(frame_index)])
+                    if static_only:
+                        command.append("--static-only")
                     if source_sc.endswith(".sc"):
                         command.extend(["--out", temp_dir])
                         for asset_name, requests in sorted(asset_requests.items()):
@@ -624,7 +636,7 @@ class StaticUpdater:
         return data
 
     def clean_name(self, s: str) -> str:
-        return s.lower().replace(" ", "_").replace(".", "")
+        return s.lower().replace(" ", "_").replace(".", "").replace("?", "")
 
     def _translate(self, tid: str):
         self.USED_TIDS.add(tid)
@@ -1654,7 +1666,7 @@ class StaticUpdater:
         for _id, (deco_name, deco_data) in enumerate(full_deco_data.items(), 18000000):
             if deco_data.get("TID") in ["TID_DECORATION_GENERIC", "TID_DECORATION_NATIONAL_FLAG"]:
                 continue
-            if "placeholder" in self._translate(deco_data.get("TID")):
+            if "placeholder" in deco_name:
                 continue
 
             source_sc = deco_data.get("SWF")
@@ -1664,7 +1676,7 @@ class StaticUpdater:
                 self.register_sc_asset(
                     source_sc=source_sc,
                     asset_name=asset_name,
-                    save_path=f"{self.village_asset_folder('decorations', village_type)}/{self.clean_name(deco_name)}",
+                    save_path=f"{self.village_asset_folder('decorations', village_type)}/{self.clean_name(self._translate(tid=deco_data.get("TID")))}",
                     first_frame=True,
                 )
 
@@ -1734,7 +1746,7 @@ class StaticUpdater:
                 self.register_sc_asset(
                     source_sc=source_sc,
                     asset_name=asset_name,
-                    save_path=f"{self.village_asset_folder('obstacles', village_type)}/{self.clean_name(obstacle_name)}",
+                    save_path=f"{self.village_asset_folder('obstacles', village_type)}/{self.clean_name(self._translate(tid=obstacle_data.get("TID")))}",
                     first_frame=True,
                 )
 
@@ -2057,7 +2069,8 @@ class StaticUpdater:
             self.register_sc_asset(
                 source_sc=magic_item_data.get("IconSWF"),
                 asset_name=magic_item_data.get("IconExportName"),
-                save_path=f'magic_items/{self.clean_name(self._translate(tid=magic_item_data.get("TID")))}'
+                save_path=f'magic_items/{self.clean_name(self._translate(tid=magic_item_data.get("TID")))}',
+                static_only=True,
             )
 
             hold_data = {
@@ -2385,14 +2398,12 @@ class StaticUpdater:
         print(f"Constants written to {constants_path}")
 
     async def download_files(self):
-        if not self.FINGERPRINT:
-            self.FINGERPRINT = await fetch_fingerprint(self.APK_URL)
+        self.FINGERPRINT, fingerprint_file = await fetch_fingerprint_manifest(self.APK_URL, self.FINGERPRINT)
 
         BASE_URL = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
 
-        fingerprint_file = await download_file(url=f"{BASE_URL}/fingerprint.json", as_json=True)
-
-        for file_data in fingerprint_file.get("files"):
+        file_paths = []
+        for file_data in fingerprint_file.get("files", []):
             file_path: str = file_data["file"]
             if (
                 not file_path.startswith("logic/")
@@ -2401,20 +2412,23 @@ class StaticUpdater:
                 and not file_path.endswith("csv")
             ):
                 continue
+            file_paths.append(file_path)
 
+        async def download_and_process(file_path: str):
             download_url = f"{BASE_URL}/{file_path}"
             print(f"Downloading: {download_url}")
             data = await download_file(url=download_url)
 
-            Path(file_path).parent.mkdir(parents=True, exist_ok=True)
-            with open(file_path, "wb") as f:
-                f.write(data)
+            def process():
+                print(f"Processing: {file_path}")
+                if file_path == "csv/animations.csv":
+                    self.process_animations_csv(data=data, file_path=file_path)
+                else:
+                    self.process_csv(data=data, file_path=file_path)
 
-            print(f"Processing: {file_path}")
-            if file_path == "csv/animations.csv":
-                self.process_animations_csv(data=data, file_path=file_path)
-            else:
-                self.process_csv(data=data, file_path=file_path)
+            await asyncio.to_thread(process)
+
+        await asyncio.gather(*(download_and_process(file_path) for file_path in file_paths))
 
         self.create_master_json()
         await self.extract_assets()

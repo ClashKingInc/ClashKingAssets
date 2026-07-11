@@ -18,6 +18,7 @@ type ExportOptions struct {
 	FirstFrameOnly          bool
 	LastFrameOnly           bool
 	FrameIndex              int
+	StaticOnly              bool
 }
 
 func normalizeExportOptions(opts ExportOptions) ExportOptions {
@@ -36,7 +37,11 @@ func normalizeExportOptions(opts ExportOptions) ExportOptions {
 	if opts.FrameIndex < 0 {
 		opts.FrameIndex = 0
 	}
-	if opts.FrameIndex > 0 {
+	if opts.StaticOnly {
+		opts.FirstFrameOnly = false
+		opts.LastFrameOnly = false
+		opts.FrameIndex = 0
+	} else if opts.FrameIndex > 0 {
 		opts.FirstFrameOnly = false
 		opts.LastFrameOnly = false
 	} else if opts.FirstFrameOnly && opts.LastFrameOnly {
