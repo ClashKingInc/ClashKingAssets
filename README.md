@@ -23,7 +23,7 @@ Names are standardized so URLs can be generated from static data names.
 Use this cleanup rule:
 
 ```python
-cleaned_name = s.lower().replace(" ", "_").replace(".", "").replace("?", "")
+cleaned_name = s.lower().replace(" ", "_").replace(".", "").replace("?", "").replace("\\q", "").replace("’", "")
 ```
 
 Then insert `cleaned_name` into the path template for the asset type.

@@ -31,6 +31,9 @@ class SCAssetRequest:
     last_frame: bool = False
     frame_index: int | None = None
     static_only: bool = False
+    preferred_frame_label: str | None = None
+    base_asset_name: str | None = None
+    base_source_sc: str | None = None
 
 
 DIRECT_ASSET_EXTENSIONS = {".sctx", ".ttf", ".otf", ".woff", ".woff2", ".mp4", ".ogg"}
@@ -124,7 +127,9 @@ class StaticUpdater:
         self.pethouse_to_townhall = {}
 
         self.animations_data = {}
-        self.sc_asset_requests: dict[tuple[str, str | None, bool, bool, int | None, bool], list[SCAssetRequest]] = {}
+        self.sc_asset_requests: dict[
+            tuple[str, str | None, bool, bool, int | None, bool, str | None, str | None, str | None], list[SCAssetRequest]
+        ] = {}
 
         self.build_mappping = {}
 
@@ -137,6 +142,9 @@ class StaticUpdater:
         last_frame: bool = False,
         frame_index: int | None = None,
         static_only: bool = False,
+        preferred_frame_label: str | None = None,
+        base_asset_name: str | None = None,
+        base_source_sc: str | None = None,
     ) -> str:
         source_sc = source_sc.strip()
         normalized_asset_name = (asset_name or "").strip()
@@ -160,7 +168,22 @@ class StaticUpdater:
         elif Path(save_path).suffix.lower() != source_ext:
             save_path = f"{save_path}{source_ext}"
 
-        key = (source_sc, request_asset_name, first_frame, last_frame, frame_index, static_only)
+        preferred_frame_label = (preferred_frame_label or "").strip() or None
+        base_asset_name = (base_asset_name or "").strip() or None
+        base_source_sc = (base_source_sc or "").strip() or None
+        if base_source_sc and not base_asset_name:
+            raise ValueError("base_source_sc requires base_asset_name")
+        key = (
+            source_sc,
+            request_asset_name,
+            first_frame,
+            last_frame,
+            frame_index,
+            static_only,
+            preferred_frame_label,
+            base_asset_name,
+            base_source_sc,
+        )
         request = SCAssetRequest(
             source_sc=source_sc,
             asset_name=request_asset_name,
@@ -169,6 +192,9 @@ class StaticUpdater:
             last_frame=last_frame,
             frame_index=frame_index,
             static_only=static_only,
+            preferred_frame_label=preferred_frame_label,
+            base_asset_name=base_asset_name,
+            base_source_sc=base_source_sc,
         )
         requests = self.sc_asset_requests.setdefault(key, [])
         if any(existing.save_path == save_path for existing in requests):
@@ -180,11 +206,15 @@ class StaticUpdater:
         destination = self.resolve_asset_output_path(request.save_path)
         if not destination.exists():
             return False
+        if request.base_asset_name:
+            return False
         if request.last_frame:
             return False
         if request.frame_index is not None:
             return False
         if request.static_only and destination.suffix.lower() == ".webp" and is_animated_webp(destination):
+            return False
+        if request.preferred_frame_label:
             return False
         if request.first_frame and request.asset_name and "/" in request.asset_name:
             return False
@@ -288,7 +318,7 @@ class StaticUpdater:
         base_url = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
         available_files = {item.get("file") for item in fingerprint_file.get("files", []) if item.get("file")}
 
-        grouped: dict[tuple[str, bool, bool, int | None, bool], dict[str | None, list[SCAssetRequest]]] = {}
+        grouped: dict[tuple[str, bool, bool, int | None, bool, str | None], dict[str | None, list[SCAssetRequest]]] = {}
         for requests in self.sc_asset_requests.values():
             pending_requests = [
                 request for request in requests if not self.should_skip_registered_asset(request)
@@ -303,11 +333,19 @@ class StaticUpdater:
                     primary.last_frame,
                     primary.frame_index,
                     primary.static_only,
+                    primary.preferred_frame_label,
                 ),
                 {},
             )[primary.asset_name] = pending_requests
 
-        for (source_sc, first_frame, last_frame, frame_index, static_only), asset_requests in sorted(grouped.items()):
+        for (
+            source_sc,
+            first_frame,
+            last_frame,
+            frame_index,
+            static_only,
+            preferred_frame_label,
+        ), asset_requests in sorted(grouped.items()):
             downloaded_files: list[Path] = []
             legacy_assets_dir = Path(source_sc).parent / f"{Path(source_sc).stem}_assets"
             try:
@@ -319,6 +357,19 @@ class StaticUpdater:
                     local_path.parent.mkdir(parents=True, exist_ok=True)
                     local_path.write_bytes(data)
                     downloaded_files = [local_path]
+                base_sources = {
+                    request.base_source_sc
+                    for requests in asset_requests.values()
+                    for request in requests
+                    if request.base_source_sc
+                }
+                if len(base_sources) > 1:
+                    raise ValueError(f"multiple base SC sources in one export group: {sorted(base_sources)}")
+                if base_sources:
+                    base_source_sc = next(iter(base_sources))
+                    downloaded_files.extend(
+                        await self._download_sc_bundle(base_url, base_source_sc, available_files)
+                    )
                 if not is_exported_via_go(source_sc):
                     for requests in asset_requests.values():
                         for request in requests:
@@ -334,6 +385,10 @@ class StaticUpdater:
                         command.extend(["--frame", str(frame_index)])
                     if static_only:
                         command.append("--static-only")
+                    if preferred_frame_label:
+                        command.extend(["--prefer-frame-label", preferred_frame_label])
+                    if base_sources:
+                        command.extend(["--base-sc", next(iter(base_sources))])
                     if source_sc.endswith(".sc"):
                         command.extend(["--out", temp_dir])
                         for asset_name, requests in sorted(asset_requests.items()):
@@ -342,6 +397,8 @@ class StaticUpdater:
                             temp_output_base = str(Path(temp_dir) / asset_name)
                             command.extend(["--asset", asset_name])
                             command.extend(["--asset-output", f"{asset_name}={temp_output_base}"])
+                            if requests[0].base_asset_name:
+                                command.extend(["--base-asset", f"{asset_name}={requests[0].base_asset_name}"])
                     else:
                         direct_output = str(Path(temp_dir) / Path(source_sc).stem)
                         command.extend(["--out", direct_output])
@@ -636,7 +693,7 @@ class StaticUpdater:
         return data
 
     def clean_name(self, s: str) -> str:
-        return s.lower().replace(" ", "_").replace(".", "").replace("?", "")
+        return s.lower().replace(" ", "_").replace(".", "").replace("?", "").replace("\\q", "").replace("’", "")
 
     def _translate(self, tid: str):
         self.USED_TIDS.add(tid)
@@ -929,6 +986,13 @@ class StaticUpdater:
                     building_level = level_data.get("BuildingLevel") or level
                     building_folder = self.village_asset_folder("buildings", village_type)
                     icon_asset_name = self.building_icon_asset_name(building_data, level_data, asset_name)
+                    base_asset_name = None
+                    if building_data.get("TID") in {
+                        "TID_BUILDING_HOUSING",
+                        "TID_SIEGE_WORKSHOP",
+                        "TID_PET_SHOP",
+                    }:
+                        base_asset_name = level_data.get("ExportNameBase") or building_data.get("ExportNameBase")
                     last_frame = self.building_icon_uses_last_frame(building_data)
                     self.register_sc_asset(
                         source_sc=source_sc,
@@ -940,6 +1004,8 @@ class StaticUpdater:
                         ),
                         first_frame=not last_frame,
                         last_frame=last_frame,
+                        base_asset_name=base_asset_name,
+                        base_source_sc="sc/building_bases.sc" if base_asset_name else None,
                     )
 
                 upgrade_time_seconds = self._parse_upgrade_time(level_data)
@@ -1673,11 +1739,15 @@ class StaticUpdater:
             asset_name = deco_data.get("ExportName")
             village_type = deco_data.get("VillageType", 0)
             if source_sc and asset_name:
+                preferred_frame_label = "store_idle,idle_end,idle_start"
+                static_only = asset_name == "wastelands_the_cogulator_superdeco_3x3"
                 self.register_sc_asset(
                     source_sc=source_sc,
                     asset_name=asset_name,
                     save_path=f"{self.village_asset_folder('decorations', village_type)}/{self.clean_name(self._translate(tid=deco_data.get("TID")))}",
-                    first_frame=True,
+                    first_frame=not static_only,
+                    static_only=static_only,
+                    preferred_frame_label=None if static_only else preferred_frame_label,
                 )
 
             hold_data = {

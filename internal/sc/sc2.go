@@ -586,9 +586,23 @@ func triangulateShapeStrip(points []shapeVertex, textureIndex int, textures []*T
 		if i%2 == 1 {
 			tri[1], tri[2] = tri[2], tri[1]
 		}
+		if degenerateShapeTriangle(tri) {
+			continue
+		}
 		result = append(result, shapeBitmapFromTriangle(tri, textureIndex, textures))
 	}
 	return result
+}
+
+func degenerateShapeTriangle(points []shapeVertex) bool {
+	if len(points) != 3 {
+		return true
+	}
+	xyArea := (points[1].X-points[0].X)*(points[2].Y-points[0].Y) -
+		(points[1].Y-points[0].Y)*(points[2].X-points[0].X)
+	uvArea := float64(int(points[1].U)-int(points[0].U))*float64(int(points[2].V)-int(points[0].V)) -
+		float64(int(points[1].V)-int(points[0].V))*float64(int(points[2].U)-int(points[0].U))
+	return math.Abs(xyArea) < 1e-8 || math.Abs(uvArea) < 1e-8
 }
 
 func shapeBitmapFromTriangle(points []shapeVertex, textureIndex int, textures []*Texture) ShapeBitmap {

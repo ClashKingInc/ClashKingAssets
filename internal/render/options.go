@@ -10,6 +10,8 @@ type ExportOptions struct {
 	IncludePrefixes         []string
 	AssetNames              []string
 	AssetOutputPaths        map[string]string
+	AssetBaseNames          map[string]string
+	BaseSCPath              string
 	PreferWebP              bool
 	FileConcurrency         int
 	Profile                 bool
@@ -19,6 +21,7 @@ type ExportOptions struct {
 	LastFrameOnly           bool
 	FrameIndex              int
 	StaticOnly              bool
+	PreferredFrameLabel     string
 }
 
 func normalizeExportOptions(opts ExportOptions) ExportOptions {
@@ -37,6 +40,8 @@ func normalizeExportOptions(opts ExportOptions) ExportOptions {
 	if opts.FrameIndex < 0 {
 		opts.FrameIndex = 0
 	}
+	opts.PreferredFrameLabel = strings.TrimSpace(opts.PreferredFrameLabel)
+	opts.BaseSCPath = strings.TrimSpace(opts.BaseSCPath)
 	if opts.StaticOnly {
 		opts.FirstFrameOnly = false
 		opts.LastFrameOnly = false
@@ -49,6 +54,7 @@ func normalizeExportOptions(opts ExportOptions) ExportOptions {
 	}
 	opts.AssetNames = normalizeNames(opts.AssetNames)
 	opts.AssetOutputPaths = normalizeAssetOutputPaths(opts.AssetOutputPaths)
+	opts.AssetBaseNames = normalizeAssetOutputPaths(opts.AssetBaseNames)
 	if len(opts.AssetNames) == 0 && len(opts.AssetOutputPaths) > 0 {
 		opts.AssetNames = sortedAssetOutputNames(opts.AssetOutputPaths)
 	}

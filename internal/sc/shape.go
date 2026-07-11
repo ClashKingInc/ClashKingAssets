@@ -194,7 +194,7 @@ func (b ShapeBitmap) SpriteImage(textures []*Texture) (*image.NRGBA, error) {
 	sprite := image.NewNRGBA(image.Rect(0, 0, right-left, bottom-top))
 	for y := top; y < bottom; y++ {
 		for x := left; x < right; x++ {
-			if !pointInPolygon(float64(x)+0.5, float64(y)+0.5, b.UVCoords) && !pointOnPolygonEdge(float64(x)+0.5, float64(y)+0.5, b.UVCoords) {
+			if !pointInPolygon(float64(x)+0.5, float64(y)+0.5, b.UVCoords) && !pointNearPolygonEdge(float64(x)+0.5, float64(y)+0.5, b.UVCoords, 0.75) {
 				continue
 			}
 			if !image.Pt(x, y).In(src.Rect) {
@@ -248,6 +248,30 @@ func pointOnPolygonEdge(x, y float64, poly []Point) bool {
 		}
 	}
 	return false
+}
+
+func pointNearPolygonEdge(x, y float64, poly []Point, tolerance float64) bool {
+	for i, a := range poly {
+		b := poly[(i+1)%len(poly)]
+		if pointSegmentDistance(x, y, a, b) <= tolerance {
+			return true
+		}
+	}
+	return false
+}
+
+func pointSegmentDistance(x, y float64, a, b Point) float64 {
+	dx := b.X - a.X
+	dy := b.Y - a.Y
+	lengthSq := dx*dx + dy*dy
+	if lengthSq == 0 {
+		return math.Hypot(x-a.X, y-a.Y)
+	}
+	t := ((x-a.X)*dx + (y-a.Y)*dy) / lengthSq
+	t = math.Max(0, math.Min(1, t))
+	closestX := a.X + t*dx
+	closestY := a.Y + t*dy
+	return math.Hypot(x-closestX, y-closestY)
 }
 
 func pointOnSegment(x, y float64, a, b Point) bool {

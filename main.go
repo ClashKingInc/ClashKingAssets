@@ -70,6 +70,8 @@ func main() {
 	lastFrame := flag.Bool("last-frame", false, "render only the last frame of movie clips")
 	frameIndex := flag.Int("frame", 0, "render a specific 1-based frame of movie clips")
 	staticOnly := flag.Bool("static-only", false, "render static layers while excluding animated child clips")
+	preferredFrameLabel := flag.String("prefer-frame-label", "", "render the first available comma-separated frame label, otherwise use normal frame selection")
+	baseSC := flag.String("base-sc", "", "load base assets from a companion SC file")
 	profile := flag.Bool("profile", false, "print compact bottleneck timing summaries")
 	profileTopN := flag.Int("profile-top-n", 5, "number of slowest targets to include when --profile is enabled")
 	skipTinyThreshold := flag.Int("skip-tiny-threshold", 0, "skip writing outputs whose width and height are both <= this threshold")
@@ -80,9 +82,11 @@ func main() {
 	var includePrefixes stringSliceFlag
 	var assetNames stringSliceFlag
 	var assetOutputs assetOutputFlag
+	var baseAssets assetOutputFlag
 	flag.Var(&includePrefixes, "include-prefix", "limit SC root processing to top-level basenames with this prefix; repeatable")
 	flag.Var(&assetNames, "asset", "limit export to a specific asset/export name; repeatable")
 	flag.Var(&assetOutputs, "asset-output", "write a specific asset/export name to an exact output path; format NAME=PATH; repeatable")
+	flag.Var(&baseAssets, "base-asset", "render a base export beneath an asset; format NAME=BASE; repeatable")
 	flag.Parse()
 	if *frameIndex < 0 {
 		fmt.Fprintln(os.Stderr, "--frame must be 1 or greater")
@@ -102,11 +106,14 @@ func main() {
 		IncludePrefixes:         includePrefixes,
 		AssetNames:              assetNames,
 		AssetOutputPaths:        map[string]string(assetOutputs),
+		AssetBaseNames:          map[string]string(baseAssets),
+		BaseSCPath:              *baseSC,
 		PreferWebP:              *preferWebP,
 		FirstFrameOnly:          *firstFrame,
 		LastFrameOnly:           *lastFrame,
 		FrameIndex:              *frameIndex,
 		StaticOnly:              *staticOnly,
+		PreferredFrameLabel:     *preferredFrameLabel,
 		FileConcurrency:         *fileConcurrency,
 		Profile:                 *profile,
 		ProfileTopN:             *profileTopN,
@@ -121,7 +128,7 @@ func main() {
 		err = render.ProcessSCRoot(*processSCRoot, *workers, opts, *deleteSource, *deleteSctx)
 	default:
 		if flag.NArg() != 1 {
-			fmt.Fprintln(os.Stderr, "usage: sc-export <file-or-dir> [--out DIR] [--workers N] [--render-scale N] [--prefer-webp] [--first-frame] [--last-frame] [--frame N] [--static-only] [--asset NAME] [--asset-output NAME=PATH]")
+			fmt.Fprintln(os.Stderr, "usage: sc-export <file-or-dir> [--out DIR] [--workers N] [--render-scale N] [--prefer-webp] [--first-frame] [--last-frame] [--frame N] [--static-only] [--prefer-frame-label LABEL] [--asset NAME] [--asset-output NAME=PATH] [--base-asset NAME=BASE] [--base-sc FILE]")
 			fmt.Fprintln(os.Stderr, "   or: sc-export --process-image-root DIR [--workers N] [--render-scale N] [--profile] [--profile-top-n N] [--delete-source]")
 			fmt.Fprintln(os.Stderr, "   or: sc-export --process-sc-root DIR [--workers N] [--file-concurrency N] [--render-scale N] [--first-frame] [--last-frame] [--frame N] [--skip-tiny-threshold N] [--profile] [--profile-top-n N] [--include-prefix PREFIX] [--delete-source] [--delete-sctx]")
 			os.Exit(2)

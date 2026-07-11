@@ -781,6 +781,89 @@ func TestStaticOnlyContainersKeepWrappersBeforeAnimatedTimeline(t *testing.T) {
 	}
 }
 
+func TestComposeAddDoesNotCreateBlackAlpha(t *testing.T) {
+	canvas := image.NewNRGBA(image.Rect(0, 0, 1, 1))
+
+	composeAdd(canvas, 0, 0, color.NRGBA{R: 24, G: 12, B: 4, A: 200})
+
+	if got := canvas.NRGBAAt(0, 0); got != (color.NRGBA{}) {
+		t.Fatalf("additive black pixel = %#v, want transparent", got)
+	}
+}
+
+func TestComposeAddDoesNotCreateCoverage(t *testing.T) {
+	canvas := image.NewNRGBA(image.Rect(0, 0, 1, 1))
+	composeAdd(canvas, 0, 0, color.NRGBA{R: 255, G: 100, A: 255})
+	if got := canvas.NRGBAAt(0, 0); got != (color.NRGBA{}) {
+		t.Fatalf("additive pixel on transparency = %#v, want transparent", got)
+	}
+}
+
+func TestInheritedBlendUsesNearestOverride(t *testing.T) {
+	if got := inheritedBlend("add", ""); got != "add" {
+		t.Fatalf("inherited blend = %q, want add", got)
+	}
+	if got := inheritedBlend("add", "multiply"); got != "multiply" {
+		t.Fatalf("overridden blend = %q, want multiply", got)
+	}
+}
+
+func TestPreferFrameLabelUsesLabelAndPreservesFallback(t *testing.T) {
+	targets := []Target{
+		{
+			Name:     "animated_deco",
+			Duration: 2,
+			FrameLabelLookup: map[string]FrameLabelTarget{
+				"store_idle": {Label: "store_idle", ResourceID: 2, FrameIndex: 8},
+				"idle_start": {Label: "idle_start", ResourceID: 2, FrameIndex: 4},
+			},
+		},
+		{Name: "unlabeled_deco", Duration: 2},
+	}
+
+	selected := preferFrameLabel(targets, "store_idle, idle_end, idle_start")
+
+	if selected[0].SelectedFrame == nil || selected[0].SelectedFrame.FrameIndex != 8 || selected[0].Duration != 0 {
+		t.Fatalf("idle target was not selected: %+v", selected[0])
+	}
+	if selected[1].SelectedFrame != nil || selected[1].Duration != 2 {
+		t.Fatalf("unlabeled target did not preserve fallback: %+v", selected[1])
+	}
+}
+
+func TestComposeScreenTreatsBlackAsTransparent(t *testing.T) {
+	canvas := image.NewNRGBA(image.Rect(0, 0, 1, 1))
+	composeScreen(canvas, 0, 0, color.NRGBA{A: 255})
+	if got := canvas.NRGBAAt(0, 0); got != (color.NRGBA{}) {
+		t.Fatalf("screen black pixel = %#v, want transparent", got)
+	}
+}
+
+func TestComposeMultiplyDoesNotCreateCoverage(t *testing.T) {
+	canvas := image.NewNRGBA(image.Rect(0, 0, 1, 1))
+	composeMultiply(canvas, 0, 0, color.NRGBA{R: 20, G: 40, B: 80, A: 255})
+	if got := canvas.NRGBAAt(0, 0); got != (color.NRGBA{}) {
+		t.Fatalf("multiply pixel on transparency = %#v, want transparent", got)
+	}
+}
+
+func TestUnmaskedFrameElementsOmitsMaskGroups(t *testing.T) {
+	clip := &sc.MovieClip{Binds: []sc.Bind{{ID: 1}, {ID: 2}, {ID: 3}, {ID: 4}, {ID: 5}, {ID: 6}}}
+	exporter := NewExporter(&sc.SWF{Resources: map[uint16]sc.Resource{
+		1: &sc.Shape{ID: 1},
+		2: &sc.MovieClipModifier{ID: 2, Modifier: 38},
+		3: &sc.Shape{ID: 3},
+		4: &sc.MovieClipModifier{ID: 4, Modifier: 39},
+		5: &sc.Shape{ID: 5},
+		6: &sc.MovieClipModifier{ID: 6, Modifier: 40},
+	}})
+	elements := []sc.FrameElement{{Bind: 0}, {Bind: 1}, {Bind: 2}, {Bind: 3}, {Bind: 4}, {Bind: 5}, {Bind: 0}}
+	visible := exporter.unmaskedFrameElements(clip, elements)
+	if len(visible) != 2 || visible[0].Bind != 0 || visible[1].Bind != 0 {
+		t.Fatalf("visible elements = %+v, want only unmasked shapes", visible)
+	}
+}
+
 func BenchmarkParseDragon(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		swf, err := sc.Load("../../sc/chr_dragon.sc")

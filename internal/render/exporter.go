@@ -99,9 +99,12 @@ type sceneryBaseImage struct {
 }
 
 type Exporter struct {
-	swf              *sc.SWF
-	opts             ExportOptions
-	sceneryBaseCache map[string]*sceneryBaseImage
+	swf               *sc.SWF
+	opts              ExportOptions
+	sceneryBaseCache  map[string]*sceneryBaseImage
+	assetBaseOnce     sync.Once
+	assetBaseExporter *Exporter
+	assetBaseError    error
 }
 
 type ParseProfile struct {
@@ -252,7 +255,7 @@ func (e *Exporter) CollectAnimatedBoundsForDebug(target Target, sampleTimes []fl
 	var bounds renderBounds
 	spriteCache := map[bitmapCacheKey]*bitmapRenderable{}
 	for _, t := range sampleTimes {
-		err := e.visitResourceFiltered(target, target.ResourceID, t, sc.IdentityMatrix(), sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", animatedResources, true, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, _ sc.ColorTransform) error {
+		err := e.visitResourceFiltered(target, target.ResourceID, t, sc.IdentityMatrix(), sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", "", animatedResources, true, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, _ sc.ColorTransform, _ string) error {
 			sprite, err := e.bitmapRenderable(shape, idx, spriteCache)
 			if err != nil {
 				return err
@@ -564,6 +567,7 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	if err != nil {
 		return nil, err
 	}
+	targets = preferFrameLabel(targets, e.opts.PreferredFrameLabel)
 	if targetsRequireWebPTools(targets, e.opts) {
 		if err := ensureWebPToolsAvailable(); err != nil {
 			return nil, err
@@ -728,6 +732,29 @@ func filterRequestedTargets(targets []Target, skipped []SkippedEntry, requested 
 	}
 
 	return filteredTargets, filteredSkipped, nil
+}
+
+func preferFrameLabel(targets []Target, label string) []Target {
+	if label == "" {
+		return targets
+	}
+	labels := strings.Split(label, ",")
+	selectedTargets := make([]Target, 0, len(targets))
+	for _, target := range targets {
+		selected := target
+		for _, candidate := range labels {
+			candidate = strings.TrimSpace(candidate)
+			if candidate == "" {
+				continue
+			}
+			if labeled, ok := target.selectFrameLabel(target.Name, candidate); ok {
+				selected = labeled
+				break
+			}
+		}
+		selectedTargets = append(selectedTargets, selected)
+	}
+	return selectedTargets
 }
 
 func parseFrameLabelSelector(name string) (string, string, bool) {
@@ -1789,7 +1816,7 @@ func (e *Exporter) collectBounds(target Target, duration float64, sampleTimes []
 	}
 	var bounds renderBounds
 	for _, t := range sampleTimes {
-		err := e.visitResource(target, target.ResourceID, t, sc.IdentityMatrix(), sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, _ sc.ColorTransform) error {
+		err := e.visitResource(target, target.ResourceID, t, sc.IdentityMatrix(), sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", "", func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, _ sc.ColorTransform, _ string) error {
 			sprite, err := e.bitmapRenderable(shape, idx, spriteCache)
 			if err != nil {
 				return err
@@ -1822,7 +1849,113 @@ func (e *Exporter) collectBounds(target Target, duration float64, sampleTimes []
 }
 
 func (e *Exporter) renderAt(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable) (*image.NRGBA, error) {
+	baseName := e.opts.AssetBaseNames[target.Name]
+	if baseName != "" {
+		baseExporter, err := e.assetBaseRenderer()
+		if err != nil {
+			return nil, err
+		}
+		baseID, baseResource := findExportedResource(baseExporter.swf, baseName)
+		if baseResource == nil {
+			return nil, fmt.Errorf("base asset %q for %q not found", baseName, target.Name)
+		}
+		baseTarget, err := baseExporter.prepareTarget(baseName, baseID, baseResource)
+		if err != nil {
+			return nil, err
+		}
+		baseCache := spriteCache
+		if baseExporter != e {
+			baseCache = map[bitmapCacheKey]*bitmapRenderable{}
+		}
+		baseBounds, err := baseExporter.collectBounds(baseTarget, 0, nil, baseCache)
+		if err != nil {
+			return nil, err
+		}
+		baseFrame, err := baseExporter.renderAtInto(baseTarget, 0, baseBounds, baseCache, nil)
+		if err != nil {
+			return nil, err
+		}
+		mainFrame, err := e.renderAtInto(target, t, worldBounds, spriteCache, nil)
+		if err != nil {
+			return nil, err
+		}
+		return compositeBuildingBase(baseName, baseFrame, mainFrame), nil
+	}
 	return e.renderAtInto(target, t, worldBounds, spriteCache, nil)
+}
+
+func compositeBuildingBase(baseName string, baseFrame, mainFrame *image.NRGBA) *image.NRGBA {
+	if !strings.HasPrefix(baseName, "fireplace_") {
+		width := maxInt(baseFrame.Bounds().Dx(), mainFrame.Bounds().Dx())
+		height := maxInt(baseFrame.Bounds().Dy(), mainFrame.Bounds().Dy())
+		canvas := image.NewNRGBA(image.Rect(0, 0, width, height))
+		drawFrameAt(canvas, baseFrame, (width-baseFrame.Bounds().Dx())/2, height-baseFrame.Bounds().Dy())
+		drawFrameAt(canvas, mainFrame, (width-mainFrame.Bounds().Dx())/2, height-mainFrame.Bounds().Dy())
+		return canvas
+	}
+	mainAnchorX, mainAnchorY := alphaCentroid(mainFrame, 0)
+	baseAnchorX, baseAnchorY := alphaCentroid(baseFrame, 0)
+	baseX := int(math.Round(mainAnchorX - baseAnchorX))
+	baseY := int(math.Round(mainAnchorY - baseAnchorY))
+	minX := minInt(0, baseX)
+	minY := minInt(0, baseY)
+	maxX := maxInt(mainFrame.Bounds().Dx(), baseX+baseFrame.Bounds().Dx())
+	maxY := maxInt(mainFrame.Bounds().Dy(), baseY+baseFrame.Bounds().Dy())
+	width := maxX - minX
+	height := maxY - minY
+	canvas := image.NewNRGBA(image.Rect(0, 0, width, height))
+	drawFrameAt(canvas, baseFrame, baseX-minX, baseY-minY)
+	drawFrameAt(canvas, mainFrame, -minX, -minY)
+	return canvas
+}
+
+func alphaCentroid(frame *image.NRGBA, minimumYFraction float64) (float64, float64) {
+	minimumY := int(math.Floor(float64(frame.Bounds().Dy()) * minimumYFraction))
+	var weightedX, weightedY, totalAlpha float64
+	for y := minimumY; y < frame.Bounds().Dy(); y++ {
+		for x := 0; x < frame.Bounds().Dx(); x++ {
+			alpha := float64(frame.NRGBAAt(frame.Bounds().Min.X+x, frame.Bounds().Min.Y+y).A)
+			weightedX += float64(x) * alpha
+			weightedY += float64(y) * alpha
+			totalAlpha += alpha
+		}
+	}
+	if totalAlpha == 0 {
+		return float64(frame.Bounds().Dx()-1) / 2, float64(frame.Bounds().Dy()-1) / 2
+	}
+	return weightedX / totalAlpha, weightedY / totalAlpha
+}
+
+func drawFrameAt(dst, src *image.NRGBA, offsetX, offsetY int) {
+	for y := 0; y < src.Bounds().Dy(); y++ {
+		for x := 0; x < src.Bounds().Dx(); x++ {
+			pixel := src.NRGBAAt(src.Bounds().Min.X+x, src.Bounds().Min.Y+y)
+			if pixel.A != 0 {
+				composeOver(dst, offsetX+x, offsetY+y, pixel)
+			}
+		}
+	}
+}
+
+func (e *Exporter) assetBaseRenderer() (*Exporter, error) {
+	if e.opts.BaseSCPath == "" {
+		return e, nil
+	}
+	e.assetBaseOnce.Do(func() {
+		baseSWF, err := sc.Load(e.opts.BaseSCPath)
+		if err != nil {
+			e.assetBaseError = err
+			return
+		}
+		baseOptions := e.opts
+		baseOptions.AssetBaseNames = nil
+		baseOptions.BaseSCPath = ""
+		e.assetBaseExporter = NewExporterWithOptions(baseSWF, baseOptions)
+	})
+	if e.assetBaseError != nil {
+		return nil, e.assetBaseError
+	}
+	return e.assetBaseExporter, nil
 }
 
 func (e *Exporter) renderAtInto(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, canvas *image.NRGBA) (*image.NRGBA, error) {
@@ -1838,13 +1971,13 @@ func (e *Exporter) renderAtInto(target Target, t float64, worldBounds image.Rect
 	if renderScale > 1 {
 		offset = sc.Matrix{A: renderScale, D: renderScale}.Multiply(offset)
 	}
-	err := e.visitResource(target, target.ResourceID, t, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform) error {
+	err := e.visitResource(target, target.ResourceID, t, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", "", func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string) error {
 		renderable, err := e.bitmapRenderable(shape, idx, spriteCache)
 		if err != nil {
 			return err
 		}
 		full := matrix.Multiply(renderable.transform)
-		return drawBitmap(canvas, renderable.sprite, full, colorTransform)
+		return drawBitmap(canvas, renderable.sprite, full, colorTransform, blend)
 	})
 	if err != nil {
 		return nil, err
@@ -1865,13 +1998,13 @@ func (e *Exporter) renderDynamicAtInto(target Target, t float64, worldBounds ima
 	if renderScale > 1 {
 		offset = sc.Matrix{A: renderScale, D: renderScale}.Multiply(offset)
 	}
-	err := e.visitResourceFiltered(target, target.ResourceID, t, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", animatedResources, true, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform) error {
+	err := e.visitResourceFiltered(target, target.ResourceID, t, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", "", animatedResources, true, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string) error {
 		renderable, err := e.bitmapRenderable(shape, idx, spriteCache)
 		if err != nil {
 			return err
 		}
 		full := matrix.Multiply(renderable.transform)
-		return drawBitmap(canvas, renderable.sprite, full, colorTransform)
+		return drawBitmap(canvas, renderable.sprite, full, colorTransform, blend)
 	})
 	if err != nil {
 		return nil, err
@@ -1889,13 +2022,13 @@ func (e *Exporter) renderStaticBackdrop(target Target, worldBounds image.Rectang
 	if renderScale > 1 {
 		offset = sc.Matrix{A: renderScale, D: renderScale}.Multiply(offset)
 	}
-	err = e.visitResourceFiltered(target, target.ResourceID, 0, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", animatedResources, false, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform) error {
+	err = e.visitResourceFiltered(target, target.ResourceID, 0, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", "", animatedResources, false, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string) error {
 		renderable, err := e.bitmapRenderable(shape, idx, spriteCache)
 		if err != nil {
 			return err
 		}
 		full := matrix.Multiply(renderable.transform)
-		return drawBitmap(canvas, renderable.sprite, full, colorTransform)
+		return drawBitmap(canvas, renderable.sprite, full, colorTransform, blend)
 	})
 	if err != nil {
 		return nil, err
@@ -1956,7 +2089,7 @@ func (e *Exporter) staticOnlyContainers(target Target) map[uint16]bool {
 
 func (e *Exporter) collectStaticOnlyBounds(target Target, spriteCache map[bitmapCacheKey]*bitmapRenderable, animatedResources map[uint16]bool) (image.Rectangle, error) {
 	var bounds renderBounds
-	err := e.visitResourceFiltered(target, target.ResourceID, 0, sc.IdentityMatrix(), sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", animatedResources, false, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, _ sc.ColorTransform) error {
+	err := e.visitResourceFiltered(target, target.ResourceID, 0, sc.IdentityMatrix(), sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", "", animatedResources, false, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, _ sc.ColorTransform, _ string) error {
 		sprite, err := e.bitmapRenderable(shape, idx, spriteCache)
 		if err != nil {
 			return err
@@ -1985,7 +2118,7 @@ func (e *Exporter) collectStaticOnlyBounds(target Target, spriteCache map[bitmap
 	), nil
 }
 
-func (e *Exporter) visitResourceFiltered(target Target, resourceID uint16, t float64, matrix sc.Matrix, colorTransform sc.ColorTransform, seen map[uint16]int, selected bool, animatedResources map[uint16]bool, wantAnimated bool, drawFn func(uint16, *sc.Shape, int, sc.Matrix, sc.ColorTransform) error) error {
+func (e *Exporter) visitResourceFiltered(target Target, resourceID uint16, t float64, matrix sc.Matrix, colorTransform sc.ColorTransform, seen map[uint16]int, selected bool, blend string, animatedResources map[uint16]bool, wantAnimated bool, drawFn func(uint16, *sc.Shape, int, sc.Matrix, sc.ColorTransform, string) error) error {
 	resource := e.swf.Resources[resourceID]
 	switch res := resource.(type) {
 	case *sc.Shape:
@@ -1993,7 +2126,7 @@ func (e *Exporter) visitResourceFiltered(target Target, resourceID uint16, t flo
 			return nil
 		}
 		for idx := range res.Bitmaps {
-			if err := drawFn(resourceID, res, idx, matrix, colorTransform); err != nil {
+			if err := drawFn(resourceID, res, idx, matrix, colorTransform, blend); err != nil {
 				return err
 			}
 		}
@@ -2006,7 +2139,11 @@ func (e *Exporter) visitResourceFiltered(target Target, resourceID uint16, t flo
 				seen[resourceID]++
 				defer func() { seen[resourceID]-- }()
 				frame := clipFrameAt(target, resourceID, res, t)
-				for _, element := range frame.Elements {
+				elements := frame.Elements
+				if !wantAnimated {
+					elements = e.unmaskedFrameElements(res, elements)
+				}
+				for _, element := range elements {
 					if int(element.Bind) >= len(res.Binds) {
 						continue
 					}
@@ -2028,7 +2165,8 @@ func (e *Exporter) visitResourceFiltered(target Target, resourceID uint16, t flo
 						}
 					}
 					childSelected := selected || bind.Name == target.SelectedBind
-					if err := e.visitResourceFiltered(target, bind.ID, t, childMatrix, childColor, seen, childSelected, animatedResources, wantAnimated, drawFn); err != nil {
+					childBlend := inheritedBlend(blend, bind.Blend)
+					if err := e.visitResourceFiltered(target, bind.ID, t, childMatrix, childColor, seen, childSelected, childBlend, animatedResources, wantAnimated, drawFn); err != nil {
 						return err
 					}
 				}
@@ -2039,7 +2177,11 @@ func (e *Exporter) visitResourceFiltered(target Target, resourceID uint16, t flo
 		seen[resourceID]++
 		defer func() { seen[resourceID]-- }()
 		frame := clipFrameAt(target, resourceID, res, t)
-		for _, element := range frame.Elements {
+		elements := frame.Elements
+		if !wantAnimated {
+			elements = e.unmaskedFrameElements(res, elements)
+		}
+		for _, element := range elements {
 			if int(element.Bind) >= len(res.Binds) {
 				continue
 			}
@@ -2061,7 +2203,8 @@ func (e *Exporter) visitResourceFiltered(target Target, resourceID uint16, t flo
 				}
 			}
 			childSelected := selected || bind.Name == target.SelectedBind
-			if err := e.visitResourceFiltered(target, bind.ID, t, childMatrix, childColor, seen, childSelected, animatedResources, wantAnimated, drawFn); err != nil {
+			childBlend := inheritedBlend(blend, bind.Blend)
+			if err := e.visitResourceFiltered(target, bind.ID, t, childMatrix, childColor, seen, childSelected, childBlend, animatedResources, wantAnimated, drawFn); err != nil {
 				return err
 			}
 		}
@@ -2075,7 +2218,31 @@ func (e *Exporter) visitResourceFiltered(target Target, resourceID uint16, t flo
 	return nil
 }
 
-func (e *Exporter) visitResource(target Target, resourceID uint16, t float64, matrix sc.Matrix, colorTransform sc.ColorTransform, seen map[uint16]int, selected bool, drawFn func(uint16, *sc.Shape, int, sc.Matrix, sc.ColorTransform) error) error {
+func (e *Exporter) unmaskedFrameElements(clip *sc.MovieClip, elements []sc.FrameElement) []sc.FrameElement {
+	visible := make([]sc.FrameElement, 0, len(elements))
+	insideMaskGroup := false
+	for _, element := range elements {
+		if int(element.Bind) >= len(clip.Binds) {
+			continue
+		}
+		resource := e.swf.Resources[clip.Binds[element.Bind].ID]
+		if modifier, ok := resource.(*sc.MovieClipModifier); ok {
+			switch modifier.Modifier {
+			case 38, 39:
+				insideMaskGroup = true
+			case 40:
+				insideMaskGroup = false
+			}
+			continue
+		}
+		if !insideMaskGroup {
+			visible = append(visible, element)
+		}
+	}
+	return visible
+}
+
+func (e *Exporter) visitResource(target Target, resourceID uint16, t float64, matrix sc.Matrix, colorTransform sc.ColorTransform, seen map[uint16]int, selected bool, blend string, drawFn func(uint16, *sc.Shape, int, sc.Matrix, sc.ColorTransform, string) error) error {
 	resource := e.swf.Resources[resourceID]
 	switch res := resource.(type) {
 	case *sc.Shape:
@@ -2083,7 +2250,7 @@ func (e *Exporter) visitResource(target Target, resourceID uint16, t float64, ma
 			return nil
 		}
 		for idx := range res.Bitmaps {
-			if err := drawFn(resourceID, res, idx, matrix, colorTransform); err != nil {
+			if err := drawFn(resourceID, res, idx, matrix, colorTransform, blend); err != nil {
 				return err
 			}
 		}
@@ -2118,7 +2285,8 @@ func (e *Exporter) visitResource(target Target, resourceID uint16, t float64, ma
 				}
 			}
 			childSelected := selected || bind.Name == target.SelectedBind
-			if err := e.visitResource(target, bind.ID, t, childMatrix, childColor, seen, childSelected, drawFn); err != nil {
+			childBlend := inheritedBlend(blend, bind.Blend)
+			if err := e.visitResource(target, bind.ID, t, childMatrix, childColor, seen, childSelected, childBlend, drawFn); err != nil {
 				return err
 			}
 		}
@@ -2130,6 +2298,13 @@ func (e *Exporter) visitResource(target Target, resourceID uint16, t float64, ma
 		return nil
 	}
 	return nil
+}
+
+func inheritedBlend(parent, child string) string {
+	if child != "" {
+		return child
+	}
+	return parent
 }
 
 func clipFrameAt(target Target, resourceID uint16, clip *sc.MovieClip, t float64) sc.MovieClipFrame {
@@ -2187,7 +2362,7 @@ func (e *Exporter) bitmapRenderable(shape *sc.Shape, idx int, spriteCache map[bi
 	return renderable, nil
 }
 
-func drawBitmap(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTransform sc.ColorTransform) error {
+func drawBitmap(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string) error {
 	inv, err := matrix.Inverse()
 	if err != nil {
 		return nil
@@ -2253,12 +2428,104 @@ func drawBitmap(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTr
 				sy += inv.B
 				continue
 			}
-			composeOver(dst, x, y, src)
+			switch blend {
+			case "add":
+				composeAdd(dst, x, y, src)
+			case "screen":
+				composeScreen(dst, x, y, src)
+			case "multiply":
+				composeMultiply(dst, x, y, src)
+			default:
+				composeOver(dst, x, y, src)
+			}
 			sx += inv.A
 			sy += inv.B
 		}
 	}
 	return nil
+}
+
+func composeAdd(dst *image.NRGBA, x, y int, src color.NRGBA) {
+	if src.A == 0 {
+		return
+	}
+	dstColor := dst.NRGBAAt(x, y)
+	if dstColor.A == 0 {
+		return
+	}
+	maxChannel := maxInt(int(src.R), maxInt(int(src.G), int(src.B)))
+	if maxChannel <= 24 {
+		return
+	}
+	lightAlpha := math.Min(1, float64(maxChannel-24)/64)
+	srcAlpha := int(math.Round(float64(src.A) * lightAlpha))
+	if srcAlpha == 0 {
+		return
+	}
+
+	dst.SetNRGBA(x, y, color.NRGBA{
+		R: uint8(minInt(255, int(dstColor.R)+int(src.R)*srcAlpha/255)),
+		G: uint8(minInt(255, int(dstColor.G)+int(src.G)*srcAlpha/255)),
+		B: uint8(minInt(255, int(dstColor.B)+int(src.B)*srcAlpha/255)),
+		A: dstColor.A,
+	})
+}
+
+func composeScreen(dst *image.NRGBA, x, y int, src color.NRGBA) {
+	intensity := float64(maxInt(int(src.R), maxInt(int(src.G), int(src.B)))) / 255
+	sa := float64(src.A) / 255 * intensity
+	if sa <= 0 {
+		return
+	}
+	dstColor := dst.NRGBAAt(x, y)
+	da := float64(dstColor.A) / 255
+	outA := sa + da*(1-sa)
+	if outA <= 0 {
+		return
+	}
+
+	channel := func(srcChannel, dstChannel uint8) uint8 {
+		cs := float64(srcChannel) / 255
+		cb := float64(dstChannel) / 255
+		screen := 1 - (1-cb)*(1-cs)
+		premultiplied := (1-sa)*cb*da + (1-da)*cs*sa + sa*da*screen
+		return clampColorByte(premultiplied / outA * 255)
+	}
+	dst.SetNRGBA(x, y, color.NRGBA{
+		R: channel(src.R, dstColor.R),
+		G: channel(src.G, dstColor.G),
+		B: channel(src.B, dstColor.B),
+		A: clampColorByte(outA * 255),
+	})
+}
+
+func composeMultiply(dst *image.NRGBA, x, y int, src color.NRGBA) {
+	dstColor := dst.NRGBAAt(x, y)
+	if dstColor.A == 0 || src.A == 0 {
+		return
+	}
+	sa := float64(src.A) / 255
+	channel := func(srcChannel, dstChannel uint8) uint8 {
+		base := float64(dstChannel)
+		multiplied := base * float64(srcChannel) / 255
+		return clampColorByte(base*(1-sa) + multiplied*sa)
+	}
+	dst.SetNRGBA(x, y, color.NRGBA{
+		R: channel(src.R, dstColor.R),
+		G: channel(src.G, dstColor.G),
+		B: channel(src.B, dstColor.B),
+		A: dstColor.A,
+	})
+}
+
+func clampColorByte(value float64) uint8 {
+	if value <= 0 {
+		return 0
+	}
+	if value >= 255 {
+		return 255
+	}
+	return uint8(math.Round(value))
 }
 
 func isIdentityColorTransform(c sc.ColorTransform) bool {
