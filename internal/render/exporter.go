@@ -1977,7 +1977,7 @@ func (e *Exporter) renderAtInto(target Target, t float64, worldBounds image.Rect
 			return err
 		}
 		full := matrix.Multiply(renderable.transform)
-		return drawBitmap(canvas, renderable.sprite, full, colorTransform, blend)
+		return drawBitmapWithCoverage(canvas, renderable.sprite, full, colorTransform, blend, target.Name == "bonus_gembox")
 	})
 	if err != nil {
 		return nil, err
@@ -2363,6 +2363,14 @@ func (e *Exporter) bitmapRenderable(shape *sc.Shape, idx int, spriteCache map[bi
 }
 
 func drawBitmap(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string) error {
+	return drawBitmapWithCoverage(dst, sprite, matrix, colorTransform, blend, false)
+}
+
+func drawBitmapWithCoverage(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string, allowAdditiveCoverage bool) error {
+	return drawBitmapMasked(dst, sprite, matrix, colorTransform, blend, nil, allowAdditiveCoverage)
+}
+
+func drawBitmapMasked(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string, alphaMask *image.NRGBA, allowAdditiveCoverage bool) error {
 	inv, err := matrix.Inverse()
 	if err != nil {
 		return nil
@@ -2398,6 +2406,11 @@ func drawBitmap(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTr
 	}
 
 	identityColor := isIdentityColorTransform(colorTransform)
+	adjustBlendCoverage := blend == "add" || blend == "screen"
+	blendLuminanceFloor := 0
+	if adjustBlendCoverage {
+		blendLuminanceFloor = borderLuminanceFloor(sprite)
+	}
 	for y := top; y < bottom; y++ {
 		sx := inv.A*(float64(left)+0.5) + inv.C*(float64(y)+0.5) + inv.Tx
 		sy := inv.B*(float64(left)+0.5) + inv.D*(float64(y)+0.5) + inv.Ty
@@ -2407,18 +2420,18 @@ func drawBitmap(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTr
 				sy += inv.B
 				continue
 			}
-			ix := int(math.Round(sx - 0.5))
-			iy := int(math.Round(sy - 0.5))
-			if ix < 0 || iy < 0 || ix >= sprite.Bounds().Dx() || iy >= sprite.Bounds().Dy() {
-				sx += inv.A
-				sy += inv.B
-				continue
+			src := sampleNRGBABilinear(sprite, sx-0.5, sy-0.5)
+			if alphaMask != nil {
+				src.A = uint8(int(src.A) * int(alphaMask.NRGBAAt(x, y).A) / 255)
 			}
-			src := sprite.NRGBAAt(ix, iy)
 			if src.A == 0 {
 				sx += inv.A
 				sy += inv.B
 				continue
+			}
+			if adjustBlendCoverage {
+				coverage := maxInt(0, maxInt(int(src.R), maxInt(int(src.G), int(src.B)))-blendLuminanceFloor)
+				src.A = uint8(int(src.A) * coverage / 255)
 			}
 			if !identityColor {
 				src = colorTransform.Apply(src)
@@ -2430,7 +2443,7 @@ func drawBitmap(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTr
 			}
 			switch blend {
 			case "add":
-				composeAdd(dst, x, y, src)
+				composeAddWithCoverage(dst, x, y, src, allowAdditiveCoverage)
 			case "screen":
 				composeScreen(dst, x, y, src)
 			case "multiply":
@@ -2445,12 +2458,80 @@ func drawBitmap(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTr
 	return nil
 }
 
+func sampleNRGBABilinear(sprite *image.NRGBA, x, y float64) color.NRGBA {
+	x0 := int(math.Floor(x))
+	y0 := int(math.Floor(y))
+	fx := x - float64(x0)
+	fy := y - float64(y0)
+	x1 := x0 + 1
+	y1 := y0 + 1
+	x0 = minInt(maxInt(x0, 0), sprite.Bounds().Dx()-1)
+	x1 = minInt(maxInt(x1, 0), sprite.Bounds().Dx()-1)
+	y0 = minInt(maxInt(y0, 0), sprite.Bounds().Dy()-1)
+	y1 = minInt(maxInt(y1, 0), sprite.Bounds().Dy()-1)
+
+	type sample struct {
+		color  color.NRGBA
+		weight float64
+	}
+	samples := []sample{
+		{sprite.NRGBAAt(sprite.Bounds().Min.X+x0, sprite.Bounds().Min.Y+y0), (1 - fx) * (1 - fy)},
+		{sprite.NRGBAAt(sprite.Bounds().Min.X+x1, sprite.Bounds().Min.Y+y0), fx * (1 - fy)},
+		{sprite.NRGBAAt(sprite.Bounds().Min.X+x0, sprite.Bounds().Min.Y+y1), (1 - fx) * fy},
+		{sprite.NRGBAAt(sprite.Bounds().Min.X+x1, sprite.Bounds().Min.Y+y1), fx * fy},
+	}
+	var alpha, red, green, blue float64
+	for _, sample := range samples {
+		a := float64(sample.color.A) / 255
+		alpha += a * sample.weight
+		red += float64(sample.color.R) / 255 * a * sample.weight
+		green += float64(sample.color.G) / 255 * a * sample.weight
+		blue += float64(sample.color.B) / 255 * a * sample.weight
+	}
+	if alpha == 0 {
+		return color.NRGBA{}
+	}
+	return color.NRGBA{
+		R: clampColorByte(red / alpha * 255),
+		G: clampColorByte(green / alpha * 255),
+		B: clampColorByte(blue / alpha * 255),
+		A: clampColorByte(alpha * 255),
+	}
+}
+
+func borderLuminanceFloor(sprite *image.NRGBA) int {
+	width := sprite.Bounds().Dx()
+	height := sprite.Bounds().Dy()
+	if width == 0 || height == 0 {
+		return 0
+	}
+	border := make([]int, 0, 2*width+2*maxInt(0, height-2))
+	add := func(x, y int) {
+		pixel := sprite.NRGBAAt(sprite.Bounds().Min.X+x, sprite.Bounds().Min.Y+y)
+		border = append(border, maxInt(int(pixel.R), maxInt(int(pixel.G), int(pixel.B))))
+	}
+	for x := 0; x < width; x++ {
+		add(x, 0)
+		add(x, height-1)
+	}
+	for y := 1; y < height-1; y++ {
+		add(0, y)
+		add(width-1, y)
+	}
+	sort.Ints(border)
+	return border[len(border)/2]
+}
+
 func composeAdd(dst *image.NRGBA, x, y int, src color.NRGBA) {
+	composeAddWithCoverage(dst, x, y, src, false)
+}
+
+func composeAddWithCoverage(dst *image.NRGBA, x, y int, src color.NRGBA, allowCoverage bool) {
 	if src.A == 0 {
 		return
 	}
 	dstColor := dst.NRGBAAt(x, y)
-	if dstColor.A == 0 {
+	if dstColor.A == 0 && !allowCoverage {
 		return
 	}
 	maxChannel := maxInt(int(src.R), maxInt(int(src.G), int(src.B)))
@@ -2463,11 +2544,18 @@ func composeAdd(dst *image.NRGBA, x, y int, src color.NRGBA) {
 		return
 	}
 
+	sa := float64(srcAlpha) / 255
+	da := float64(dstColor.A) / 255
+	outA := sa + da*(1-sa)
+	channel := func(srcChannel, dstChannel uint8) uint8 {
+		premultiplied := float64(dstChannel)/255*da + float64(srcChannel)/255*sa
+		return clampColorByte(math.Min(premultiplied, outA) / outA * 255)
+	}
 	dst.SetNRGBA(x, y, color.NRGBA{
-		R: uint8(minInt(255, int(dstColor.R)+int(src.R)*srcAlpha/255)),
-		G: uint8(minInt(255, int(dstColor.G)+int(src.G)*srcAlpha/255)),
-		B: uint8(minInt(255, int(dstColor.B)+int(src.B)*srcAlpha/255)),
-		A: dstColor.A,
+		R: channel(src.R, dstColor.R),
+		G: channel(src.G, dstColor.G),
+		B: channel(src.B, dstColor.B),
+		A: clampColorByte(outA * 255),
 	})
 }
 

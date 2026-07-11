@@ -791,11 +791,30 @@ func TestComposeAddDoesNotCreateBlackAlpha(t *testing.T) {
 	}
 }
 
-func TestComposeAddDoesNotCreateCoverage(t *testing.T) {
+func TestComposeAddDoesNotCreateCoverageByDefault(t *testing.T) {
 	canvas := image.NewNRGBA(image.Rect(0, 0, 1, 1))
 	composeAdd(canvas, 0, 0, color.NRGBA{R: 255, G: 100, A: 255})
 	if got := canvas.NRGBAAt(0, 0); got != (color.NRGBA{}) {
 		t.Fatalf("additive pixel on transparency = %#v, want transparent", got)
+	}
+}
+
+func TestComposeAddCanCreateVisibleCoverage(t *testing.T) {
+	canvas := image.NewNRGBA(image.Rect(0, 0, 1, 1))
+	composeAddWithCoverage(canvas, 0, 0, color.NRGBA{R: 255, G: 100, A: 255}, true)
+	if got := canvas.NRGBAAt(0, 0); got.A == 0 || got.R == 0 {
+		t.Fatalf("additive coverage = %#v, want visible color", got)
+	}
+}
+
+func TestSampleNRGBABilinearInterpolatesPremultipliedColor(t *testing.T) {
+	sprite := image.NewNRGBA(image.Rect(0, 0, 2, 1))
+	sprite.SetNRGBA(0, 0, color.NRGBA{R: 255, A: 255})
+	sprite.SetNRGBA(1, 0, color.NRGBA{B: 255, A: 255})
+
+	got := sampleNRGBABilinear(sprite, 0.5, 0)
+	if got.R < 126 || got.R > 129 || got.B < 126 || got.B > 129 || got.A != 255 {
+		t.Fatalf("bilinear midpoint = %#v, want equal opaque red and blue", got)
 	}
 }
 

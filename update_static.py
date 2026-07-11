@@ -345,7 +345,10 @@ class StaticUpdater:
             frame_index,
             static_only,
             preferred_frame_label,
-        ), asset_requests in sorted(grouped.items()):
+        ), asset_requests in sorted(
+            grouped.items(),
+            key=lambda item: tuple("" if value is None else str(value) for value in item[0]),
+        ):
             downloaded_files: list[Path] = []
             legacy_assets_dir = Path(source_sc).parent / f"{Path(source_sc).stem}_assets"
             try:
@@ -1571,7 +1574,7 @@ class StaticUpdater:
 
         new_equipment_data = []
         for _id, (equipment_name, equipment_data) in enumerate(full_equipment_data.items(), 90000000):
-            if equipment_data.get("Deprecated", False):
+            if equipment_data.get("Deprecated", False) or equipment_name.startswith("UNUSED"):
                 continue
 
             self.register_sc_asset(
@@ -1732,7 +1735,7 @@ class StaticUpdater:
         for _id, (deco_name, deco_data) in enumerate(full_deco_data.items(), 18000000):
             if deco_data.get("TID") in ["TID_DECORATION_GENERIC", "TID_DECORATION_NATIONAL_FLAG"]:
                 continue
-            if "placeholder" in deco_name:
+            if "placeholder" in deco_name.lower() or deco_name == "Unused":
                 continue
 
             source_sc = deco_data.get("SWF")
@@ -1740,6 +1743,8 @@ class StaticUpdater:
             village_type = deco_data.get("VillageType", 0)
             if source_sc and asset_name:
                 preferred_frame_label = "store_idle,idle_end,idle_start"
+                if asset_name == "clasharama_superdeco_paint_3x3":
+                    preferred_frame_label = "tap_end_01"
                 static_only = asset_name == "wastelands_the_cogulator_superdeco_3x3"
                 self.register_sc_asset(
                     source_sc=source_sc,
