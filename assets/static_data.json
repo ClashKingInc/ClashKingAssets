@@ -5963,7 +5963,7 @@
               "quantity": 1
             },
             {
-              "name": "B.O.T.O\u2019s Shack",
+              "name": "B.O.T.O’s Shack",
               "_id": 1000047,
               "quantity": 1
             }
@@ -7623,7 +7623,7 @@
     },
     {
       "_id": 1000047,
-      "name": "B.O.T.O\u2019s Shack",
+      "name": "B.O.T.O’s Shack",
       "info": "Master Builder saved this little guy from the scrap heap. Despite a few loose screws, B.O.T.O is eager to help with tasks around Builder Base!",
       "TID": {
         "name": "TID_WORKER2_BUILDING",
@@ -9724,7 +9724,7 @@
     {
       "_id": 1000078,
       "name": "O.T.T.O's Outpost",
-      "info": "O.T.T.O\u00b4s home and the main building of the second stage. May contain additional feisty robots.\\n\\nDestroying O.T.T.O\u00b4s Outpost awards an extra star in attacks.",
+      "info": "O.T.T.O´s home and the main building of the second stage. May contain additional feisty robots.\\n\\nDestroying O.T.T.O´s Outpost awards an extra star in attacks.",
       "TID": {
         "name": "TID_BUILDING_OTTOS_OUTPOST",
         "info": "TID_BUILDING_OTTOS_OUTPOST_INFO"
@@ -10812,7 +10812,7 @@
         {
           "_id": 103000009,
           "name": "Air Bombs",
-          "info": "Barrel after barrel, Air Bombs blast even the mightiest flying enemies out of the sky. Your village airspace isn\u2019t safe with this Builder Base classic around!",
+          "info": "Barrel after barrel, Air Bombs blast even the mightiest flying enemies out of the sky. Your village airspace isn’t safe with this Builder Base classic around!",
           "TID": {
             "name": "TID_BUILDING_SD_AIR_BOMBS",
             "info": "TID_BUILDING_SD_AIR_BOMBS_INFO"
@@ -11408,7 +11408,7 @@
     {
       "_id": 1000102,
       "name": "Super Wizard Tower",
-      "info": "Super Wizard\u2019s first strike can shock up to fifteen nearby enemies. Chained targets take less damage.",
+      "info": "Super Wizard’s first strike can shock up to fifteen nearby enemies. Chained targets take less damage.",
       "TID": {
         "name": "TID_BUILDING_MERGED_WIZARD_TOWER",
         "info": "TID_MERGED_WIZARD_TOWER_INFO"
@@ -12993,7 +12993,7 @@
     {
       "_id": 4000003,
       "name": "Giant",
-      "info": "These big guys may seem calm, but show them a Cannon or Archer Tower and you\u00b4ll see their fury unleashed! Slow yet durable, these warriors are best used to soak up hits.",
+      "info": "These big guys may seem calm, but show them a Cannon or Archer Tower and you´ll see their fury unleashed! Slow yet durable, these warriors are best used to soak up hits.",
       "TID": {
         "name": "TID_GIANT",
         "info": "TID_CHARACTER_INFO_GIANT"
@@ -13915,7 +13915,7 @@
     {
       "_id": 4000009,
       "name": "P.E.K.K.A",
-      "info": "Is P.E.K.K.A a knight? A samurai? A robot? No one knows! P.E.K.K.A\u00b4s armor absorbs even the mightiest of blows.",
+      "info": "Is P.E.K.K.A a knight? A samurai? A robot? No one knows! P.E.K.K.A´s armor absorbs even the mightiest of blows.",
       "TID": {
         "name": "TID_PEKKA",
         "info": "TID_CHARACTER_INFO_PEKKA"
@@ -17104,7 +17104,7 @@
     {
       "_id": 4000037,
       "name": "Cannon Cart",
-      "info": "A Cannon on wheels?! Wait, did it just turn into a Mortar?? Bet they won\u00b4t see that coming! Both powerful and versatile!",
+      "info": "A Cannon on wheels?! Wait, did it just turn into a Mortar?? Bet they won´t see that coming! Both powerful and versatile!",
       "TID": {
         "name": "TID_MOVING_CANNON",
         "info": "TID_CHARACTER_INFO_MOVING_CANNON"
@@ -23936,7 +23936,7 @@
     {
       "_id": 4000142,
       "name": "Snake Barrel",
-      "info": "This Lunar New Year, it\u2019s raining snakes! These green menaces are barrels of fun, and bite chunks out of Defenses. They\u2019ll slither over Walls, and are effective in groups!",
+      "info": "This Lunar New Year, it’s raining snakes! These green menaces are barrels of fun, and bite chunks out of Defenses. They’ll slither over Walls, and are effective in groups!",
       "TID": {
         "name": "TID_CHARACTER_SNAKE_BARREL",
         "info": "TID_CHARACTER_INFO_SNAKE_BARREL"
@@ -24195,7 +24195,7 @@
     {
       "_id": 4000150,
       "name": "Furnace",
-      "info": "Furnace doesn\u2019t move, but it does spawn Firemites over time that target buildings. These curious little guys leave pools of fire where they visit!",
+      "info": "Furnace doesn’t move, but it does spawn Firemites over time that target buildings. These curious little guys leave pools of fire where they visit!",
       "TID": {
         "name": "TID_CHARACTER_FURNACE",
         "info": "TID_CHARACTER_INFO_FURNACE"
@@ -24257,7 +24257,7 @@
     {
       "_id": 4000156,
       "name": "Giant Giant",
-      "info": "With the might of 10 Giants, the Giant Giant clobbers Defenses with massive splash damage. Uh-oh! If he loses half of his max health, he\u2019ll rage out with increased speed and power.",
+      "info": "With the might of 10 Giants, the Giant Giant clobbers Defenses with massive splash damage. Uh-oh! If he loses half of his max health, he’ll rage out with increased speed and power.",
       "TID": {
         "name": "TID_CHARACTER_APRIL25GTG",
         "info": "TID_CHARACTER_INFO_APRIL25GTG"
@@ -24623,7 +24623,7 @@
     {
       "_id": 4000158,
       "name": "The Disarmer",
-      "info": "She is THE MAN! The Disarmer targets Defenses with spiteful blows of her bat and makes easy work of Walls by jumping right over them! She must be put down 3 times before she\u2019s out. Talk about tough!",
+      "info": "She is THE MAN! The Disarmer targets Defenses with spiteful blows of her bat and makes easy work of Walls by jumping right over them! She must be put down 3 times before she’s out. Talk about tough!",
       "TID": {
         "name": "TID_CHARACTER_APRIL25BLTM",
         "info": "TID_CHARACTER_INFO_APRIL25BLTM"
@@ -25142,7 +25142,7 @@
     {
       "_id": 4000165,
       "name": "The Disarmer",
-      "info": "She is THE MAN! The Disarmer targets Defenses with spiteful blows of her bat and makes easy work of Walls by jumping right over them! She must be put down 3 times before she\u2019s out. Talk about tough!",
+      "info": "She is THE MAN! The Disarmer targets Defenses with spiteful blows of her bat and makes easy work of Walls by jumping right over them! She must be put down 3 times before she’s out. Talk about tough!",
       "TID": {
         "name": "TID_CHARACTER_APRIL25BLTM",
         "info": "TID_CHARACTER_INFO_APRIL25BLTM"
@@ -25500,7 +25500,7 @@
     {
       "_id": 4000188,
       "name": "Sky Wagon",
-      "info": "Tell walls to take a hike and drop troops from above. Sky Wagon delivery services are fast, reliable, and destructive!\\n\\nThough its wooden body can\u2019t withstand a lot of damage, its mastery of the skies and immunity to spells more than make up for it.",
+      "info": "Tell walls to take a hike and drop troops from above. Sky Wagon delivery services are fast, reliable, and destructive!\\n\\nThough its wooden body can’t withstand a lot of damage, its mastery of the skies and immunity to spells more than make up for it.",
       "TID": {
         "name": "TID_SIEGE_MACHINE_AIR_TROOP_LAUNCHER",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_AIR_TROOP_LAUNCHER"
@@ -25680,7 +25680,7 @@
     {
       "_id": 107000008,
       "name": "Logger",
-      "info": "A hardened meteorite hunk with a fascination for forestry. When Logger isn\u2019t petting his mustache woodpeckers, he\u2019s lobbing bouncing logs that push and crush all troop types.\\n\\nThe timber may be slow, but it strikes with the full force of nature!",
+      "info": "A hardened meteorite hunk with a fascination for forestry. When Logger isn’t petting his mustache woodpeckers, he’s lobbing bouncing logs that push and crush all troop types.\\n\\nThe timber may be slow, but it strikes with the full force of nature!",
       "TID": {
         "name": "TID_LOGGER_GUARDIAN",
         "info": "TID_LOGGER_GUARDIAN_INFO"
@@ -27282,7 +27282,7 @@
     {
       "_id": 26000070,
       "name": "Overgrowth Spell",
-      "info": "Ever wish you could ignore a whole chunk of the enemy\u2019s base? The Overgrowth Spell traps nearby buildings in tough roots, preventing defenses from attacking. Troops ignore trapped buildings.",
+      "info": "Ever wish you could ignore a whole chunk of the enemy’s base? The Overgrowth Spell traps nearby buildings in tough roots, preventing defenses from attacking. Troops ignore trapped buildings.",
       "TID": {
         "name": "TID_SPELL_OVERGROWTH",
         "info": "TID_SPELL_OVERGROWTH_INFO"
@@ -27662,7 +27662,7 @@
     {
       "_id": 26000120,
       "name": "Totem Spell",
-      "info": "Incoming! Ground and air defenses in a Totem\u2019s landing zone are damaged and stunned. Stunned defenses will redirect their focus to the closest available unit. Forged from dense cosmic rock, Totems can soak up a lot of damage.",
+      "info": "Incoming! Ground and air defenses in a Totem’s landing zone are damaged and stunned. Stunned defenses will redirect their focus to the closest available unit. Forged from dense cosmic rock, Totems can soak up a lot of damage.",
       "TID": {
         "name": "TID_TOTEM_SPELL",
         "info": "TID_TOTEM_SPELL_INFO"
@@ -27721,7 +27721,7 @@
     {
       "_id": 26000123,
       "name": "Angry Spell",
-      "info": "Why I oughta!\\n\\n Distilled from the jelly of the Pet House\u2019s grumpiest resident, the Angry Spell infuriates troops within its ironically sweet-smelling radius, making them target defenses temporarily.",
+      "info": "Why I oughta!\\n\\n Distilled from the jelly of the Pet House’s grumpiest resident, the Angry Spell infuriates troops within its ironically sweet-smelling radius, making them target defenses temporarily.",
       "TID": {
         "name": "TID_ANGRY_SPELL_ANGER",
         "info": "TID_ANGRY_SPELL_ANGER_INFO"
@@ -30024,7 +30024,7 @@
     {
       "_id": 28000002,
       "name": "Grand Warden",
-      "info": "This powerful master of magic supports troops by blasting enemies with his staff! Grand Warden can even walk or fly over walls! He\u2019ll make a majestic stand at his Hero Banner when defending.",
+      "info": "This powerful master of magic supports troops by blasting enemies with his staff! Grand Warden can even walk or fly over walls! He’ll make a majestic stand at his Hero Banner when defending.",
       "TID": {
         "name": "TID_GRAND_WARDEN",
         "info": "TID_HERO_INSTRUCTIONS_WARDEN"
@@ -34932,7 +34932,7 @@
     {
       "_id": 73000017,
       "name": "Greedy Raven",
-      "info": "No scarecrow is frightening enough to keep Greedy Raven away from shiny loot! This masked bandit\u2019s swift feathers target and deal extra damage to resource buildings and egos.",
+      "info": "No scarecrow is frightening enough to keep Greedy Raven away from shiny loot! This masked bandit’s swift feathers target and deal extra damage to resource buildings and egos.",
       "TID": {
         "name": "TID_PET_RAVEN",
         "info": "TID_PET_RAVEN_INFO"
@@ -51921,7 +51921,7 @@
     {
       "_id": 90000047,
       "name": "Noble Iron",
-      "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks",
+      "info": "Increases the speed, range, and power of Minion Prince’s first few attacks",
       "TID": {
         "name": "TID_GEAR_TITLE_TURBO_START",
         "info": "TID_GEAR_INFO_TURBO_START",
@@ -51952,7 +51952,7 @@
               "ExtraDamageFlat": 350,
               "DeactivateAfterNumberOfHits": 5,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51976,7 +51976,7 @@
               "ExtraDamageFlat": 350,
               "DeactivateAfterNumberOfHits": 5,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52000,7 +52000,7 @@
               "ExtraDamageFlat": 420,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52024,7 +52024,7 @@
               "ExtraDamageFlat": 420,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52048,7 +52048,7 @@
               "ExtraDamageFlat": 420,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52072,7 +52072,7 @@
               "ExtraDamageFlat": 490,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52096,7 +52096,7 @@
               "ExtraDamageFlat": 490,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52120,7 +52120,7 @@
               "ExtraDamageFlat": 490,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52144,7 +52144,7 @@
               "ExtraDamageFlat": 560,
               "DeactivateAfterNumberOfHits": 7,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52168,7 +52168,7 @@
               "ExtraDamageFlat": 560,
               "DeactivateAfterNumberOfHits": 7,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52192,7 +52192,7 @@
               "ExtraDamageFlat": 560,
               "DeactivateAfterNumberOfHits": 7,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52216,7 +52216,7 @@
               "ExtraDamageFlat": 630,
               "DeactivateAfterNumberOfHits": 8,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52240,7 +52240,7 @@
               "ExtraDamageFlat": 630,
               "DeactivateAfterNumberOfHits": 8,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52264,7 +52264,7 @@
               "ExtraDamageFlat": 630,
               "DeactivateAfterNumberOfHits": 8,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52288,7 +52288,7 @@
               "ExtraDamageFlat": 700,
               "DeactivateAfterNumberOfHits": 9,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52312,7 +52312,7 @@
               "ExtraDamageFlat": 700,
               "DeactivateAfterNumberOfHits": 9,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52336,7 +52336,7 @@
               "ExtraDamageFlat": 700,
               "DeactivateAfterNumberOfHits": 9,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -52360,7 +52360,7 @@
               "ExtraDamageFlat": 770,
               "DeactivateAfterNumberOfHits": 10,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         }
@@ -52369,7 +52369,7 @@
     {
       "_id": 90000048,
       "name": "Action Figure",
-      "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side",
+      "info": "Summons Giant Giant to fight by the Archer Queen’s side",
       "TID": {
         "name": "TID_GEAR_ACTION_FIGURE",
         "info": "TID_GEAR_INFO_ACTION_FIGURE",
@@ -52398,7 +52398,7 @@
               "Level": 1,
               "TroopLevel": 1,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 1,
@@ -52425,7 +52425,7 @@
               "Level": 1,
               "TroopLevel": 1,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 2,
@@ -52452,7 +52452,7 @@
               "Level": 2,
               "TroopLevel": 2,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 3,
@@ -52479,7 +52479,7 @@
               "Level": 2,
               "TroopLevel": 2,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 4,
@@ -52506,7 +52506,7 @@
               "Level": 2,
               "TroopLevel": 2,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 5,
@@ -52533,7 +52533,7 @@
               "Level": 3,
               "TroopLevel": 3,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 6,
@@ -52560,7 +52560,7 @@
               "Level": 3,
               "TroopLevel": 3,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 7,
@@ -52587,7 +52587,7 @@
               "Level": 3,
               "TroopLevel": 3,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 8,
@@ -52614,7 +52614,7 @@
               "Level": 4,
               "TroopLevel": 4,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 9,
@@ -52641,7 +52641,7 @@
               "Level": 4,
               "TroopLevel": 4,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 10,
@@ -52668,7 +52668,7 @@
               "Level": 4,
               "TroopLevel": 4,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 11,
@@ -52695,7 +52695,7 @@
               "Level": 5,
               "TroopLevel": 5,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 12,
@@ -52722,7 +52722,7 @@
               "Level": 5,
               "TroopLevel": 5,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 13,
@@ -52749,7 +52749,7 @@
               "Level": 5,
               "TroopLevel": 5,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 14,
@@ -52776,7 +52776,7 @@
               "Level": 6,
               "TroopLevel": 6,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 15,
@@ -52803,7 +52803,7 @@
               "Level": 6,
               "TroopLevel": 6,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 16,
@@ -52830,7 +52830,7 @@
               "Level": 6,
               "TroopLevel": 6,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 17,
@@ -52857,7 +52857,7 @@
               "Level": 7,
               "TroopLevel": 7,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 18,
@@ -52884,7 +52884,7 @@
               "Level": 7,
               "TroopLevel": 7,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 19,
@@ -52911,7 +52911,7 @@
               "Level": 7,
               "TroopLevel": 7,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 20,
@@ -52938,7 +52938,7 @@
               "Level": 8,
               "TroopLevel": 8,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 21,
@@ -52965,7 +52965,7 @@
               "Level": 8,
               "TroopLevel": 8,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 22,
@@ -52992,7 +52992,7 @@
               "Level": 8,
               "TroopLevel": 8,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 23,
@@ -53019,7 +53019,7 @@
               "Level": 9,
               "TroopLevel": 9,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 24,
@@ -53046,7 +53046,7 @@
               "Level": 9,
               "TroopLevel": 9,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 25,
@@ -53073,7 +53073,7 @@
               "Level": 9,
               "TroopLevel": 9,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 26,
@@ -53100,7 +53100,7 @@
               "Level": 10,
               "TroopLevel": 10,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 27,
@@ -57042,7 +57042,7 @@
     {
       "_id": 90000059,
       "name": "Electro Fangs",
-      "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain",
+      "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain",
       "TID": {
         "name": "TID_GEAR_TITLE_ELECTRO_ATTACK",
         "info": "TID_GEAR_INFO_ELECTRO_ATTACK",
@@ -57072,7 +57072,7 @@
               "Damage": 330,
               "ChainAttackDepth": 2,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57095,7 +57095,7 @@
               "Damage": 330,
               "ChainAttackDepth": 2,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57118,7 +57118,7 @@
               "Damage": 340,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57141,7 +57141,7 @@
               "Damage": 340,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57164,7 +57164,7 @@
               "Damage": 340,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57187,7 +57187,7 @@
               "Damage": 350,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57210,7 +57210,7 @@
               "Damage": 350,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57233,7 +57233,7 @@
               "Damage": 350,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57256,7 +57256,7 @@
               "Damage": 360,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57279,7 +57279,7 @@
               "Damage": 360,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57302,7 +57302,7 @@
               "Damage": 360,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57325,7 +57325,7 @@
               "Damage": 370,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57348,7 +57348,7 @@
               "Damage": 370,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57371,7 +57371,7 @@
               "Damage": 370,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57394,7 +57394,7 @@
               "Damage": 380,
               "ChainAttackDepth": 5,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57417,7 +57417,7 @@
               "Damage": 380,
               "ChainAttackDepth": 5,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57440,7 +57440,7 @@
               "Damage": 380,
               "ChainAttackDepth": 5,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -57463,7 +57463,7 @@
               "Damage": 400,
               "ChainAttackDepth": 5,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         }
@@ -58677,7 +58677,7 @@
     },
     {
       "_id": 18000113,
-      "name": "Woodcutter\u2019s Pile",
+      "name": "Woodcutter’s Pile",
       "TID": {
         "name": "TID_DECO_HD_WOOD_PILE"
       },
@@ -59796,20 +59796,6 @@
       "village": "home"
     },
     {
-      "_id": 18000193,
-      "name": "Card Collector",
-      "TID": {
-        "name": "TID_DECO_QUEST_COLLECTOR"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 1,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
       "_id": 18000194,
       "name": "The Master Statue",
       "TID": {
@@ -60189,7 +60175,7 @@
     },
     {
       "_id": 18000221,
-      "name": "Medusa\u2019s Masterpiece",
+      "name": "Medusa’s Masterpiece",
       "TID": {
         "name": "TID_DECO_ODD_CHALLENGE_VALKYRIE"
       },
@@ -60350,20 +60336,6 @@
       "width": 2,
       "not_in_shop": true,
       "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000233,
-      "name": "Card Flipper",
-      "TID": {
-        "name": "TID_SUPERDECO_CARD_CONJUROR"
-      },
-      "width": 3,
-      "not_in_shop": true,
-      "pass_reward": true,
       "max_count": 1,
       "build_resource": "Gems",
       "build_cost": 500,
@@ -73727,7 +73699,7 @@
     {
       "_id": 509612545377542,
       "name": "Builder Bite",
-      "info": "A hearty bite that makes your Builders work <num>x as fast for <time>. Works in the Home Village! Sadly, the Builder\u2019s Apprentice is a vegetarian and won't be boosted!",
+      "info": "A hearty bite that makes your Builders work <num>x as fast for <time>. Works in the Home Village! Sadly, the Builder’s Apprentice is a vegetarian and won't be boosted!",
       "TID": {
         "name": "TID_CONSUMABLE_BOOST_BUILDER",
         "info": "TID_CONSUMABLE_BOOST_BUILDER_INFO"
@@ -74048,7 +74020,7 @@
     },
     {
       "locale": "FR",
-      "name": "Fran\u00e7ais"
+      "name": "Français"
     },
     {
       "locale": "DE",
@@ -74056,7 +74028,7 @@
     },
     {
       "locale": "ES",
-      "name": "Espa\u00f1ol"
+      "name": "Español"
     },
     {
       "locale": "IT",
@@ -74072,39 +74044,39 @@
     },
     {
       "locale": "PT",
-      "name": "Portugu\u00eas"
+      "name": "Português"
     },
     {
       "locale": "TR",
-      "name": "T\u00fcrk\u00e7e"
+      "name": "Türkçe"
     },
     {
       "locale": "CN",
-      "name": "\u7b80\u4f53\u4e2d\u6587"
+      "name": "简体中文"
     },
     {
       "locale": "JP",
-      "name": "\u65e5\u672c\u8a9e"
+      "name": "日本語"
     },
     {
       "locale": "KR",
-      "name": "\ud55c\uad6d\uc5b4"
+      "name": "한국어"
     },
     {
       "locale": "RU",
-      "name": "P\u0443\u0441\u0441\u043a\u0438\u0439"
+      "name": "Pусский"
     },
     {
       "locale": "CNT",
-      "name": "\u7e41\u9ad4\u4e2d\u6587"
+      "name": "繁體中文"
     },
     {
       "locale": "AR",
-      "name": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+      "name": "العربية"
     },
     {
       "locale": "FA",
-      "name": "\u0641\u0627\u0631\u0633\u06cc"
+      "name": "فارسی"
     },
     {
       "locale": "ID",
@@ -74116,11 +74088,11 @@
     },
     {
       "locale": "VI",
-      "name": "Ti\u1ebfng Vi\u1ec7t"
+      "name": "Tiếng Việt"
     },
     {
       "locale": "TH",
-      "name": "\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"
+      "name": "ภาษาไทย"
     },
     {
       "locale": "FI",
@@ -76131,7 +76103,7 @@
       ]
     },
     {
-      "name": "Crafter\u2019s Nightmare",
+      "name": "Crafter’s Nightmare",
       "info": "Destroy <number> Crafted Defenses in Multiplayer Battles",
       "completed_message": "Total Crafted Defenses Destroyed: <value>",
       "TID": {
