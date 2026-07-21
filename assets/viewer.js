@@ -1,6 +1,5 @@
-const GITHUB_TREE_URL = "https://api.github.com/repos/ClashKingInc/ClashKingAssets/git/trees/main?recursive=1";
-const ASSET_BASE_URL = "https://assets.clashk.ing";
-const CACHE_KEY = "clashking-asset-viewer-tree-v2";
+const MANIFEST_URL = "https://assets.clashk.ing/manifest.json";
+const CACHE_KEY = "clashking-asset-viewer-manifest-v1";
 const CACHE_TTL_MS = 30 * 60 * 1000;
 const IMAGE_EXTENSIONS = new Set(["gif", "jpeg", "jpg", "png", "svg", "webp"]);
 
@@ -31,28 +30,30 @@ function labelForCategory(category) {
   return category.replaceAll("-", " ").replaceAll("_", " ");
 }
 
-function assetFromTreeEntry(entry, index) {
-  if (entry.type !== "blob" || !entry.path.startsWith("assets/") || entry.path.startsWith("assets/bot/")) {
+function assetFromManifestEntry(entry, index) {
+  if (!entry || typeof entry.path !== "string" || entry.path.startsWith("bot/")) {
     return null;
   }
 
-  const extension = entry.path.split(".").pop()?.toLowerCase();
-  if (!extension || !IMAGE_EXTENSIONS.has(extension)) {
+  const extension = entry.extension?.toLowerCase();
+  if (
+    !extension
+    || !IMAGE_EXTENSIONS.has(extension)
+    || typeof entry.category !== "string"
+    || typeof entry.display_name !== "string"
+    || typeof entry.url !== "string"
+  ) {
     return null;
   }
 
-  const path = entry.path.slice("assets/".length);
-  const filename = path.split("/").pop() || "";
-  const name = filename.slice(0, filename.length - extension.length - 1);
-  const category = path.split("/", 1)[0];
   return {
     id: index,
-    path,
-    category,
-    name,
+    path: entry.path,
+    category: entry.category,
+    name: entry.display_name,
     ext: extension,
-    url: `${ASSET_BASE_URL}/${path}`,
-    haystack: path.toLowerCase(),
+    url: entry.url,
+    haystack: `${entry.path} ${entry.display_name}`.toLowerCase(),
   };
 }
 
@@ -85,16 +86,14 @@ async function fetchAssets() {
     return cached;
   }
 
-  const response = await fetch(GITHUB_TREE_URL, {
-    headers: { Accept: "application/vnd.github+json" },
-  });
+  const response = await fetch(MANIFEST_URL);
   if (!response.ok) {
-    throw new Error(`GitHub tree request failed: ${response.status}`);
+    throw new Error(`Asset manifest request failed: ${response.status}`);
   }
 
   const data = await response.json();
-  const assets = (data.tree || [])
-    .map(assetFromTreeEntry)
+  const assets = (data.assets || [])
+    .map(assetFromManifestEntry)
     .filter(Boolean)
     .sort((a, b) => a.path.localeCompare(b.path));
   writeCachedAssets(assets);
@@ -303,8 +302,8 @@ async function initialize() {
     setAssets(await fetchAssets());
   } catch (error) {
     console.error(error);
-    summary.textContent = "Could not load GitHub asset list";
-    empty.textContent = "Could not load assets from GitHub.";
+    summary.textContent = "Could not load asset manifest";
+    empty.textContent = "Could not load assets.";
     empty.style.display = "grid";
   }
 }

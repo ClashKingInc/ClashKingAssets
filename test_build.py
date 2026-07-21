@@ -1,10 +1,14 @@
+import asyncio
 import threading
 import time
-from unittest.mock import patch
+from pathlib import Path
+from unittest.mock import AsyncMock, patch
 
 import pytest
 
 import build
+import update_static
+from update_static import StaticUpdater
 
 
 class FakeR2Client:
@@ -51,3 +55,148 @@ def test_apply_sync_plan_rejects_invalid_worker_count():
     config = build.R2Config("https://example.invalid", "key", "secret", "assets")
     with pytest.raises(build.BuildError, match="workers must be at least 1"):
         build.apply_sync_plan({"uploads": [], "deletes": []}, config, workers=0)
+
+
+def test_scenery_metadata_keeps_music_free_and_default_fields():
+    updater = StaticUpdater()
+    updater.open_file = lambda _: {
+        "Classic": {
+            "HomeType": "HOME",
+            "TID": "TID_SCENERY_CLASSIC",
+            "Icon": "sc/classic_icon.sctx",
+            "Thumbnail": "sc/classic_thumbnail.sctx",
+            "Music": "music/classic.ogg",
+            "FreeBackground": True,
+            "DefaultBackground": True,
+        }
+    }
+    updater._translate = lambda tid: "Classic Scenery" if tid == "TID_SCENERY_CLASSIC" else None
+
+    [scenery] = updater._parse_scenery_data()
+
+    assert scenery["music"] == "sceneries/classic_scenery/music.ogg"
+    assert scenery["free"] is True
+    assert scenery["default"] is True
+
+
+def test_asset_extraction_builds_go_extractor_once_and_reuses_it(tmp_path, monkeypatch):
+    updater = StaticUpdater()
+    updater.BASE_PATH = str(tmp_path / "assets")
+    updater.APK_URL = "https://example.invalid/game.apk"
+    updater.register_sc_asset("sc/one.sctx", "", "textures/one")
+    updater.register_sc_asset("sc/two.sctx", "", "textures/two")
+
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(
+        update_static,
+        "fetch_fingerprint_manifest",
+        AsyncMock(
+            return_value=(
+                "fingerprint",
+                {"files": [{"file": "sc/one.sctx"}, {"file": "sc/two.sctx"}]},
+            )
+        ),
+    )
+    monkeypatch.setattr(update_static, "download_file", AsyncMock(return_value=b"texture"))
+    commands = []
+
+    def fake_run(command, *, check):
+        commands.append(command)
+        if "--out" in command:
+            output_base = Path(command[command.index("--out") + 1])
+            output_base.with_suffix(".webp").write_bytes(b"RIFFxxxxWEBP")
+
+    monkeypatch.setattr(update_static.subprocess, "run", fake_run)
+
+    asyncio.run(updater.extract_assets())
+
+    build_commands = [command for command in commands if command[:2] == ["go", "build"]]
+    extractor_commands = [command for command in commands if command[:2] != ["go", "build"]]
+    assert len(build_commands) == 1
+    assert len(extractor_commands) == 2
+    assert extractor_commands[0][0] == extractor_commands[1][0] == build_commands[0][3]
+
+
+def test_existing_asset_is_not_regenerated_for_special_frame_modes(tmp_path, monkeypatch):
+    updater = StaticUpdater()
+    updater.BASE_PATH = str(tmp_path / "assets")
+    destination = Path(updater.BASE_PATH) / "decorations/home-village/torch.webp"
+    destination.parent.mkdir(parents=True)
+    destination.write_bytes(b"existing")
+    updater.register_sc_asset(
+        "sc/decorations.sc",
+        "deco_torch1",
+        "decorations/home-village/torch",
+        first_frame=True,
+        preferred_frame_label="store_idle,idle_end,idle_start",
+    )
+    fetch_manifest = AsyncMock()
+    monkeypatch.setattr(update_static, "fetch_fingerprint_manifest", fetch_manifest)
+
+    asyncio.run(updater.extract_assets())
+
+    fetch_manifest.assert_not_awaited()
+    assert destination.read_bytes() == b"existing"
+
+
+def test_ignored_ids_are_loaded_from_local_file(tmp_path):
+    ignored_file = tmp_path / ".ignored.txt"
+    ignored_file.write_text(
+        "# Decorations\n18000000 # Anniversary Fountain\n\n90000042\n",
+        encoding="utf-8",
+    )
+
+    assert update_static.load_ignored_ids(ignored_file) == {18000000, 90000042}
+
+
+def test_ignored_decoration_is_not_emitted_or_registered():
+    updater = StaticUpdater()
+    updater.ignored_ids = {18000000}
+    updater.open_file = lambda _: {
+        "IgnoredDecoration": {
+            "TID": "TID_IGNORED_DECORATION",
+            "SWF": "sc/decorations.sc",
+            "ExportName": "ignored_decoration",
+        }
+    }
+
+    assert updater._parse_decoration_data() == []
+    assert updater.sc_asset_requests == {}
+
+
+def test_previous_release_lookup_rejects_an_invalid_current_ref():
+    with patch("build.run_git", side_effect=build.BuildError("unknown revision")) as run_git:
+        with pytest.raises(build.BuildError, match="invalid current release ref"):
+            build.infer_previous_ref("missing-release", None)
+
+    run_git.assert_called_once_with(["rev-parse", "--verify", "missing-release^{commit}"])
+
+
+def test_previous_release_lookup_returns_none_when_valid_ref_has_no_older_tag():
+    with patch(
+        "build.run_git",
+        side_effect=["commit-sha", build.BuildError("no tags before release")],
+    ) as run_git:
+        assert build.infer_previous_ref("v1.0.0", None) is None
+
+    assert run_git.call_args_list[0].args[0] == ["rev-parse", "--verify", "v1.0.0^{commit}"]
+
+
+def test_release_sync_plan_includes_manifest(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    manifest = Path("assets/manifest.json")
+    manifest.parent.mkdir()
+    manifest.write_text('{"version": 1, "assets": []}\n', encoding="utf-8")
+
+    plan = build.build_sync_plan(
+        [build.DiffEntry(status="A", path=manifest.as_posix())],
+        assets_root="assets",
+    )
+
+    assert plan["uploads"] == [
+        {
+            "local_path": "assets/manifest.json",
+            "key": "manifest.json",
+            "reason": "added",
+        }
+    ]

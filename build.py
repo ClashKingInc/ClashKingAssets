@@ -12,6 +12,8 @@ from typing import Any
 
 from dotenv import load_dotenv
 
+from generate_manifest import ManifestError, check_manifest
+
 load_dotenv()
 
 
@@ -150,14 +152,18 @@ def infer_current_ref(explicit_ref: str | None) -> str:
     return run_git(["describe", "--tags", "--exact-match", "HEAD"])
 
 
-def infer_previous_ref(current_ref: str, explicit_ref: str | None) -> str:
+def infer_previous_ref(current_ref: str, explicit_ref: str | None) -> str | None:
+    try:
+        run_git(["rev-parse", "--verify", f"{current_ref}^{{commit}}"])
+    except BuildError as exc:
+        raise BuildError(f"invalid current release ref {current_ref!r}") from exc
+
     if explicit_ref:
         return explicit_ref
-
     try:
         return run_git(["describe", "--tags", "--abbrev=0", f"{current_ref}^"])
-    except BuildError as exc:
-        raise BuildError(f"could not determine previous tag for {current_ref!r}") from exc
+    except BuildError:
+        return None
 
 
 def git_diff_entries(previous_ref: str, current_ref: str) -> list[DiffEntry]:
@@ -347,18 +353,19 @@ def build_summary(
 def main() -> int:
     args = parse_args()
     assets_root = normalize_assets_root(args.assets_root)
+    try:
+        check_manifest(Path(assets_root), Path(assets_root) / "manifest.json")
+    except ManifestError as exc:
+        raise BuildError(str(exc)) from exc
     current_ref = infer_current_ref(args.current_ref)
     first_release = False
 
-    try:
-        previous_ref = infer_previous_ref(current_ref, args.previous_ref)
-        entries = git_diff_entries(previous_ref, current_ref)
-    except BuildError:
-        if args.previous_ref:
-            raise
-        previous_ref = None
+    previous_ref = infer_previous_ref(current_ref, args.previous_ref)
+    if previous_ref is None:
         first_release = True
         entries = collect_all_asset_entries(assets_root)
+    else:
+        entries = git_diff_entries(previous_ref, current_ref)
 
     plan = build_sync_plan(entries, assets_root)
 

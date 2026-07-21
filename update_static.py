@@ -19,6 +19,7 @@ from pathlib import Path
 
 import zstandard
 
+from generate_manifest import write_manifest
 from utils import apk_url, download_file, fetch_fingerprint_manifest
 
 
@@ -71,34 +72,31 @@ def is_exported_via_go(source_sc: str) -> bool:
     return source_sc.endswith((".sc", ".sctx"))
 
 
-def is_animated_webp(path: Path) -> bool:
-    try:
-        with path.open("rb") as f:
-            header = f.read(12)
-            if len(header) != 12 or header[:4] != b"RIFF" or header[8:] != b"WEBP":
-                return False
-
-            while chunk_header := f.read(8):
-                if len(chunk_header) != 8:
-                    return False
-                chunk_type = chunk_header[:4]
-                chunk_size = int.from_bytes(chunk_header[4:], "little")
-                if chunk_type == b"ANIM":
-                    return True
-                f.seek(chunk_size + (chunk_size % 2), os.SEEK_CUR)
-    except OSError:
-        return False
-
-    return False
-
-
 def hash_15_digits(s: str) -> int:
     digest = hashlib.blake2b(s.encode("utf-8"), digest_size=8).digest()
     return int.from_bytes(digest, "big") % 10**15
 
+
+def load_ignored_ids(path: Path = Path(".ignored.txt")) -> set[int]:
+    if not path.exists():
+        return set()
+
+    ignored_ids = set()
+    for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        value = line.partition("#")[0].strip()
+        if not value:
+            continue
+        try:
+            ignored_ids.add(int(value))
+        except ValueError as exc:
+            raise ValueError(f"invalid ID in {path} on line {line_number}: {value!r}") from exc
+    return ignored_ids
+
+
 class StaticUpdater:
     def __init__(self):
         self.USED_TIDS = set()
+        self.ignored_ids = load_ignored_ids()
 
         # keep the raw CSV files
         self.KEEP_CSV = False
@@ -128,7 +126,8 @@ class StaticUpdater:
 
         self.animations_data = {}
         self.sc_asset_requests: dict[
-            tuple[str, str | None, bool, bool, int | None, bool, str | None, str | None, str | None], list[SCAssetRequest]
+            tuple[str, str | None, bool, bool, int | None, bool, str | None, str | None, str | None],
+            list[SCAssetRequest],
         ] = {}
 
         self.build_mappping = {}
@@ -204,23 +203,10 @@ class StaticUpdater:
 
     def should_skip_registered_asset(self, request: SCAssetRequest) -> bool:
         destination = self.resolve_asset_output_path(request.save_path)
-        if not destination.exists():
-            return False
-        if request.base_asset_name:
-            return False
-        if request.last_frame:
-            return False
-        if request.frame_index is not None:
-            return False
-        if request.static_only and destination.suffix.lower() == ".webp" and is_animated_webp(destination):
-            return False
-        if request.preferred_frame_label:
-            return False
-        if request.first_frame and request.asset_name and "/" in request.asset_name:
-            return False
-        if (request.first_frame or request.last_frame) and destination.suffix.lower() == ".webp" and is_animated_webp(destination):
-            return False
-        return True
+        return destination.exists()
+
+    def is_ignored_id(self, item_id: int | None) -> bool:
+        return item_id in self.ignored_ids
 
     def resolve_asset_output_path(self, save_path: str) -> Path:
         normalized = Path(save_path.strip().lstrip("/"))
@@ -261,7 +247,9 @@ class StaticUpdater:
     def register_seasonal_defense_assets(self) -> None:
         full_seasonal_defenses = self.open_file("logic/seasonal_defense_archetypes.json")
         archetypes_to_export = self.season_defense_archetypes_to_export()
-        for archetype_name, archetype_data in full_seasonal_defenses.items():
+        for item_id, (archetype_name, archetype_data) in enumerate(full_seasonal_defenses.items(), 103000000):
+            if self.is_ignored_id(item_id):
+                continue
             if archetype_name not in archetypes_to_export:
                 continue
 
@@ -314,10 +302,6 @@ class StaticUpdater:
         if not self.sc_asset_requests:
             return
 
-        self.FINGERPRINT, fingerprint_file = await fetch_fingerprint_manifest(self.APK_URL, self.FINGERPRINT)
-        base_url = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
-        available_files = {item.get("file") for item in fingerprint_file.get("files", []) if item.get("file")}
-
         grouped: dict[tuple[str, bool, bool, int | None, bool, str | None], dict[str | None, list[SCAssetRequest]]] = {}
         for requests in self.sc_asset_requests.values():
             pending_requests = [
@@ -337,6 +321,20 @@ class StaticUpdater:
                 ),
                 {},
             )[primary.asset_name] = pending_requests
+
+        if not grouped:
+            return
+
+        self.FINGERPRINT, fingerprint_file = await fetch_fingerprint_manifest(self.APK_URL, self.FINGERPRINT)
+        base_url = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
+        available_files = {item.get("file") for item in fingerprint_file.get("files", []) if item.get("file")}
+
+        extractor_build_dir = None
+        extractor_path = None
+        if any(is_exported_via_go(group_key[0]) for group_key in grouped):
+            extractor_build_dir = tempfile.TemporaryDirectory(prefix="update-static-extractor-")
+            extractor_path = Path(extractor_build_dir.name) / "sc-export"
+            subprocess.run(["go", "build", "-o", str(extractor_path), "."], check=True)
 
         for (
             source_sc,
@@ -379,7 +377,9 @@ class StaticUpdater:
                             self.save_registered_asset(request, downloaded_files[0])
                     continue
                 with tempfile.TemporaryDirectory(prefix="update-static-sc-") as temp_dir:
-                    command = ["go", "run", "main.go", "--workers", str(max(1, os.cpu_count() or 1)), "--prefer-webp"]
+                    if extractor_path is None:
+                        raise RuntimeError(f"Go extractor was not built for {source_sc}")
+                    command = [str(extractor_path), "--workers", str(max(1, os.cpu_count() or 1)), "--prefer-webp"]
                     if first_frame:
                         command.append("--first-frame")
                     if last_frame:
@@ -442,6 +442,9 @@ class StaticUpdater:
                 shutil.rmtree(legacy_assets_dir, ignore_errors=True)
                 if downloaded_files:
                     remove_empty_parents(Path(downloaded_files[0]).parent, Path.cwd())
+
+        if extractor_build_dir is not None:
+            extractor_build_dir.cleanup()
 
     def decompress(self, data):
         """
@@ -562,7 +565,7 @@ class StaticUpdater:
                 continue
             base = lvl_keys[0]
             for col in list(levels[base].keys()):
-                if not any(col in levels[l] for l in lvl_keys[1:]):
+                if not any(col in levels[level] for level in lvl_keys[1:]):
                     final_data[troop][col] = levels[base][col]
                     del levels[base][col]
 
@@ -875,6 +878,8 @@ class StaticUpdater:
                 or "Unused" in building_name
             ):
                 continue
+            if self.is_ignored_id(building_data.get("GlobalID")):
+                continue
 
             village_type = building_data.get("VillageType", 0)
             is_defense = building_data.get("BuildingClass") == "Defense"
@@ -899,7 +904,7 @@ class StaticUpdater:
                         upgrade_time_seconds = self._parse_upgrade_time(level_data)
 
                         DPS = level_data.get("DPS", 0)
-                        # if the level doesnt have a DPS & there is no hitpoints for this row, that means it is a DPS upgrade
+                        # A row without DPS or hitpoints represents a DPS upgrade.
                         # unless it is a resource pump, but we dont handle those anyways
                         if not DPS and not level_data.get("Hitpoints"):
                             DPS = supercharge_data.get("DPS", 0)
@@ -915,7 +920,7 @@ class StaticUpdater:
                     supercharge_level_data = hold_data
                     break
 
-            # for merged buildings, move the requirement to level 1 since that is when the requirement is actually needed
+            # Merged buildings need the requirement at level 1.
             if building_data.get("MergeRequirement") is not None:
                 building_data["1"]["MergeRequirement"] = building_data.get("MergeRequirement")
 
@@ -1088,6 +1093,8 @@ class StaticUpdater:
                     for building in buildings:
                         name, level, geared_up = building.split(":")
                         merge_building_data = self.full_building_data.get(name)
+                        if self.is_ignored_id(merge_building_data.get("GlobalID")):
+                            continue
                         merge_list.append(
                             {
                                 "name": self._translate(tid=merge_building_data.get("TID")),
@@ -1206,6 +1213,8 @@ class StaticUpdater:
         current_max_townhall = int(list(self.full_townhall_data.keys())[-1])
         new_seasonal_defense_data = []
         for _id, (seasonal_def_name, seasonal_def_data) in enumerate(full_seasonal_defenses.items(), 103000000):
+            if self.is_ignored_id(_id):
+                continue
             if seasonal_def_name not in current_seasonal_defenses:
                 continue
 
@@ -1224,6 +1233,8 @@ class StaticUpdater:
             }
             for count, module in enumerate(seasonal_def_data.get("Modules").split(";"), 1):
                 module_data = full_seasonal_modules.get(module)
+                if self.is_ignored_id(module_data.get("_id")):
+                    continue
 
                 module_hold_data = {
                     "_id": module_data.get("_id"),
@@ -1262,15 +1273,18 @@ class StaticUpdater:
         full_super_troop_data = self.open_file("logic/super_licences.json")
         full_super_troop_data = {v.get("Replacement"): v for k, v in full_super_troop_data.items()}
 
-        name_to_id = {}
+        name_to_id = {
+            (troop_name, troop_data.get("VillageType", 0)): troop_data.get("GlobalID")
+            for troop_name, troop_data in self.full_troop_data.items()
+        }
         new_troop_data = []
         for troop_name, troop_data in self.full_troop_data.items():
             if troop_data.get("DisableProduction", False):
                 continue
+            if self.is_ignored_id(troop_data.get("GlobalID")):
+                continue
             village_type = troop_data.get("VillageType", 0)
             production_building = self.full_building_data.get(troop_data.get("ProductionBuilding")).get("TID")
-
-            name_to_id[(troop_name, village_type)] = troop_data.get("GlobalID")
 
             self.register_sc_asset(
                 source_sc=troop_data.get("IconSWF"),
@@ -1358,6 +1372,8 @@ class StaticUpdater:
         for _id, (guardian_name, guardian_data) in enumerate(full_guardian_data.items(), 107000000):
             if guardian_data.get("Deprecated", False):
                 continue
+            if self.is_ignored_id(_id):
+                continue
             character_data = self.full_troop_data.get(guardian_data.get("CharacterDatas"))
 
             self.register_sc_asset(
@@ -1410,6 +1426,8 @@ class StaticUpdater:
         new_spell_data = []
         for spell_name, spell_data in full_spell_data.items():
             if spell_data.get("DisableProduction", False):
+                continue
+            if self.is_ignored_id(spell_data.get("GlobalID")):
                 continue
 
             self.register_sc_asset(
@@ -1467,6 +1485,8 @@ class StaticUpdater:
 
         new_hero_data = []
         for _id, (hero_name, hero_data) in enumerate(self.full_hero_data.items(), 28000000):
+            if self.is_ignored_id(_id):
+                continue
 
             village_type = hero_data.get("VillageType", 0)
             if not village_type: #we can only do hv hero icons for now
@@ -1523,6 +1543,8 @@ class StaticUpdater:
         for _id, (pet_name, pet_data) in enumerate(full_pet_data.items(), 73000000):
             if pet_data.get("Deprecated", False) or pet_name in ["Phoenix Egg"]:
                 continue
+            if self.is_ignored_id(_id):
+                continue
 
             self.register_sc_asset(
                 source_sc=pet_data.get("IconSWF") ,
@@ -1575,6 +1597,8 @@ class StaticUpdater:
         new_equipment_data = []
         for _id, (equipment_name, equipment_data) in enumerate(full_equipment_data.items(), 90000000):
             if equipment_data.get("Deprecated", False) or equipment_name.startswith("UNUSED"):
+                continue
+            if self.is_ignored_id(_id):
                 continue
 
             self.register_sc_asset(
@@ -1674,6 +1698,8 @@ class StaticUpdater:
         for trap_name, trap_data in full_trap_data.items():
             if trap_data.get("Disabled", False) or trap_data.get("EnabledByCalendar", False):
                 continue
+            if self.is_ignored_id(trap_data.get("GlobalID")):
+                continue
             village_type = trap_data.get("VillageType", 0)
 
             hold_data = {
@@ -1737,6 +1763,8 @@ class StaticUpdater:
                 continue
             if "placeholder" in deco_name.lower() or deco_name == "Unused":
                 continue
+            if self.is_ignored_id(_id):
+                continue
 
             source_sc = deco_data.get("SWF")
             asset_name = deco_data.get("ExportName")
@@ -1746,10 +1774,11 @@ class StaticUpdater:
                 if asset_name == "clasharama_superdeco_paint_3x3":
                     preferred_frame_label = "tap_end_01"
                 static_only = asset_name == "wastelands_the_cogulator_superdeco_3x3"
+                translated_name = self.clean_name(self._translate(tid=deco_data.get("TID")))
                 self.register_sc_asset(
                     source_sc=source_sc,
                     asset_name=asset_name,
-                    save_path=f"{self.village_asset_folder('decorations', village_type)}/{self.clean_name(self._translate(tid=deco_data.get("TID")))}",
+                    save_path=f"{self.village_asset_folder('decorations', village_type)}/{translated_name}",
                     first_frame=not static_only,
                     static_only=static_only,
                     preferred_frame_label=None if static_only else preferred_frame_label,
@@ -1776,6 +1805,8 @@ class StaticUpdater:
         new_capital_part_data = []
         for _id, (part_name, part_data) in enumerate(full_capital_part_data.items(), 82000000):
             if part_data.get("Deprecated", False):
+                continue
+            if self.is_ignored_id(_id):
                 continue
 
             source_sc, asset_name = part_data.get("Sprite").split("#", 1)
@@ -1814,14 +1845,17 @@ class StaticUpdater:
 
         new_obstacle_data = []
         for _id, (obstacle_name, obstacle_data) in enumerate(full_obstacle_data.items(), 8000000):
+            if self.is_ignored_id(_id):
+                continue
             village_type = obstacle_data.get("VillageType", 0)
             source_sc = obstacle_data.get("SWF")
             asset_name = obstacle_data.get("ExportName")
             if source_sc and asset_name:
+                translated_name = self.clean_name(self._translate(tid=obstacle_data.get("TID")))
                 self.register_sc_asset(
                     source_sc=source_sc,
                     asset_name=asset_name,
-                    save_path=f"{self.village_asset_folder('obstacles', village_type)}/{self.clean_name(self._translate(tid=obstacle_data.get("TID")))}",
+                    save_path=f"{self.village_asset_folder('obstacles', village_type)}/{translated_name}",
                     first_frame=True,
                 )
 
@@ -1845,6 +1879,8 @@ class StaticUpdater:
 
         new_scenery_data = []
         for _id, (scenery_name, scenery_data) in enumerate(full_scenery_data.items(), 60000000):
+            if self.is_ignored_id(_id):
+                continue
             type_map = {"WAR": "war", "BB": "builderBase", "HOME": "home"}
             if scenery_data.get("HomeType") not in type_map:
                 continue
@@ -1873,7 +1909,7 @@ class StaticUpdater:
 
             music_path = None
             if "Music" in scenery_data:
-                self.register_sc_asset(
+                music_path = self.register_sc_asset(
                     source_sc=scenery_data["Music"],
                     asset_name="",
                     save_path=f"sceneries/{path_name}/music"
@@ -1888,9 +1924,9 @@ class StaticUpdater:
                 "thumbnail": thumbnail_path,
             }
             if scenery_data.get("FreeBackground", False):
-                scenery_data["free"] = True
+                hold_data["free"] = True
             if scenery_data.get("DefaultBackground", False):
-                scenery_data["default"] = True
+                hold_data["default"] = True
 
             new_scenery_data.append(hold_data)
 
@@ -1901,6 +1937,8 @@ class StaticUpdater:
 
         new_skins_data = []
         for _id, (skin_name, skin_data) in enumerate(full_skin_data.items(), 52000000):
+            if self.is_ignored_id(_id):
+                continue
             character = skin_data.get("character") or skin_data.get("Character")
             if not skin_data.get("TID") or character not in self.full_hero_data.keys() or not skin_data.get("Tier"):
                 continue
@@ -1928,6 +1966,8 @@ class StaticUpdater:
 
         new_helper_data = []
         for _id, (helper_name, helper_data) in enumerate(full_helper_data.items(), 93000000):
+            if self.is_ignored_id(_id):
+                continue
 
             self.register_sc_asset(
                 source_sc=helper_data.get("IconSWF"),
@@ -2022,6 +2062,8 @@ class StaticUpdater:
         for _id, (war_league_name, war_league_data) in enumerate(full_war_league_data.items(), 48000000):
             if not war_league_data.get("Name"):  # skip Unranked, no data
                 continue
+            if self.is_ignored_id(_id):
+                continue
 
             hold_data = {
                 "_id": _id,
@@ -2049,6 +2091,8 @@ class StaticUpdater:
 
         new_league_tier_data = []
         for _id, (league_name, league_data) in enumerate(full_league_tier_data.items(), 105000000):
+            if self.is_ignored_id(_id):
+                continue
             league_tier = _id - 105000000
             hold_data = {
                 "_id": _id,
@@ -2108,6 +2152,8 @@ class StaticUpdater:
 
         new_league_data = []
         for _id, (league_name, league_data) in enumerate(full_builder_league_data.items(), 44000000):
+            if self.is_ignored_id(_id):
+                continue
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=league_data.get("TID")),
@@ -2123,6 +2169,8 @@ class StaticUpdater:
 
         new_league_data = []
         for _id, (league_name, league_data) in enumerate(full_capital_league_data.items(), 85000000):
+            if self.is_ignored_id(_id):
+                continue
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=league_data.get("TID")),
@@ -2140,6 +2188,8 @@ class StaticUpdater:
         new_magic_items_data = []
         for name, magic_item_data in full_magic_items_data.items():
             _id = hash_15_digits(s=name)
+            if self.is_ignored_id(_id):
+                continue
 
             self.register_sc_asset(
                 source_sc=magic_item_data.get("IconSWF"),
@@ -2166,6 +2216,8 @@ class StaticUpdater:
         new_magic_snacks_data = []
         for name, magic_snack_data in full_magic_snacks_data.items():
             _id = hash_15_digits(s=name)
+            if self.is_ignored_id(_id):
+                continue
 
             self.register_sc_asset(
                 source_sc=magic_snack_data.get("IconSWF"),
@@ -2189,6 +2241,8 @@ class StaticUpdater:
 
         new_district_data = []
         for _id, (district_name, district_data) in enumerate(full_district_data.items(), 70000000):
+            if self.is_ignored_id(_id):
+                continue
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=district_data.get("TID")),
@@ -2214,6 +2268,8 @@ class StaticUpdater:
         new_label_data = []
         for name, label_data in full_label_data.items():
             _id = hash_15_digits(s=name)
+            if self.is_ignored_id(_id):
+                continue
             self.register_sc_asset(
                 source_sc=label_data.get("IconSWF"),
                 asset_name=label_data.get("IconExportName"),
@@ -2236,6 +2292,8 @@ class StaticUpdater:
         new_label_data = []
         for name, label_data in full_label_data.items():
             _id = hash_15_digits(s=name)
+            if self.is_ignored_id(_id):
+                continue
             self.register_sc_asset(
                 source_sc=label_data.get("IconSWF"),
                 asset_name=label_data.get("IconExportName"),
@@ -2258,6 +2316,8 @@ class StaticUpdater:
         new_chests_data = []
         for name, chest_data in full_chest_data.items():
             _id = hash_15_digits(s=name)
+            if self.is_ignored_id(_id):
+                continue
             self.register_sc_asset(
                 source_sc=chest_data.get("IconSWF"),
                 asset_name=chest_data.get("IconExportName"),
@@ -2280,6 +2340,8 @@ class StaticUpdater:
         new_resources_data = []
         for name, resource_data in full_resource_data.items():
             _id = hash_15_digits(s=name)
+            if self.is_ignored_id(_id):
+                continue
             if not resource_data.get("TID") or not resource_data.get("IconExportName"):
                 continue
 
@@ -2314,6 +2376,8 @@ class StaticUpdater:
 
                 village_type = building_data.get("VillageType", 0)
                 id = building_data.get("GlobalID")
+                if self.is_ignored_id(id):
+                    continue
                 quantity = data
 
                 current_quantity = id_quantity_map.get(id, 0)
@@ -2378,7 +2442,7 @@ class StaticUpdater:
             "achievements": self._parse_achievement_data(),
         }
         with open(f"{self.BASE_PATH}/static_data.json", "w", encoding="utf-8") as jf:
-            jf.write(json.dumps(master_data, indent=2))
+            jf.write(json.dumps(master_data, indent=2, ensure_ascii=False))
 
         if self.PRUNE_TRANSLATIONS:
             for key in list(self.translation_data.keys()):
@@ -2386,7 +2450,7 @@ class StaticUpdater:
                     del self.translation_data[key]
 
         with open(f"{self.BASE_PATH}/translations.json", "w", encoding="utf-8") as jf:
-            jf.write(json.dumps(self.translation_data, indent=2))
+            jf.write(json.dumps(self.translation_data, indent=2, ensure_ascii=False))
 
         if not self.KEEP_JSON:
             for folder in ("csv", "logic", "localization"):
@@ -2414,14 +2478,14 @@ class StaticUpdater:
             'ELIXIR_TROOP_ORDER': [
                 t["name"]
                 for t in troops
-                if t["production_building"] == "Barracks" and not t.get("is_seasonal", False) and not "super_troop" in t
+                if t["production_building"] == "Barracks" and not t.get("is_seasonal", False) and "super_troop" not in t
             ],
             'DARK_ELIXIR_TROOP_ORDER': [
                 t["name"]
                 for t in troops
                 if t["production_building"] == "Dark Barracks"
                 and not t.get("is_seasonal", False)
-                and not "super_troop" in t
+                and "super_troop" not in t
             ],
             'HV_TROOP_ORDER': 'ELIXIR_TROOP_ORDER + DARK_ELIXIR_TROOP_ORDER',
             'SIEGE_MACHINE_ORDER': [t["name"] for t in troops if t["production_building"] == "Workshop"],
@@ -2510,6 +2574,8 @@ class StaticUpdater:
 
     def run(self):
         asyncio.run(self.download_files())
+        assets_root = Path(self.BASE_PATH)
+        write_manifest(assets_root, assets_root / "manifest.json")
 
 
 if __name__ == "__main__":
