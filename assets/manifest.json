@@ -11342,11 +11342,11 @@
       "url": "https://assets.clashk.ing/leagues/builder-base/copper_league_5.png"
     },
     {
-      "path": "leagues/builder-base/diamond_league_1.png",
+      "path": "leagues/builder-base/diamond_league.png",
       "category": "leagues",
-      "display_name": "diamond league 1",
+      "display_name": "diamond league",
       "extension": "png",
-      "url": "https://assets.clashk.ing/leagues/builder-base/diamond_league_1.png"
+      "url": "https://assets.clashk.ing/leagues/builder-base/diamond_league.png"
     },
     {
       "path": "leagues/builder-base/emerald_league_1.png",
@@ -11979,25 +11979,25 @@
       "url": "https://assets.clashk.ing/leagues/league-tier/legend_league.png"
     },
     {
-      "path": "leagues/league-tier/legend_league_1.webp",
+      "path": "leagues/league-tier/legend_league_1.png",
       "category": "leagues",
       "display_name": "legend league 1",
-      "extension": "webp",
-      "url": "https://assets.clashk.ing/leagues/league-tier/legend_league_1.webp"
+      "extension": "png",
+      "url": "https://assets.clashk.ing/leagues/league-tier/legend_league_1.png"
     },
     {
-      "path": "leagues/league-tier/legend_league_2.webp",
+      "path": "leagues/league-tier/legend_league_2.png",
       "category": "leagues",
       "display_name": "legend league 2",
-      "extension": "webp",
-      "url": "https://assets.clashk.ing/leagues/league-tier/legend_league_2.webp"
+      "extension": "png",
+      "url": "https://assets.clashk.ing/leagues/league-tier/legend_league_2.png"
     },
     {
-      "path": "leagues/league-tier/legend_league_3.webp",
+      "path": "leagues/league-tier/legend_league_3.png",
       "category": "leagues",
       "display_name": "legend league 3",
-      "extension": "webp",
-      "url": "https://assets.clashk.ing/leagues/league-tier/legend_league_3.webp"
+      "extension": "png",
+      "url": "https://assets.clashk.ing/leagues/league-tier/legend_league_3.png"
     },
     {
       "path": "leagues/league-tier/pekka_league_22.png",
