@@ -5,13 +5,13 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
-	"runtime/debug"
 	"sort"
 	"strings"
 	"sync"
 )
 
 var exportSingleFunc = exportSingle
+var exportTextureFileFunc = exportTextureFile
 
 type scRootResult struct {
 	source string
@@ -19,6 +19,7 @@ type scRootResult struct {
 }
 
 func ProcessImageRoot(root string, workers int, opts ExportOptions, deleteSource bool) error {
+	opts = normalizeExportOptions(opts)
 	files := make([]string, 0)
 	if err := filepath.WalkDir(root, func(path string, d os.DirEntry, err error) error {
 		if err != nil {
@@ -51,29 +52,62 @@ func ProcessImageRoot(root string, workers int, opts ExportOptions, deleteSource
 
 	jobs := make(chan string)
 	results := make(chan error, len(files))
+	done := make(chan struct{})
+	var cancelOnce sync.Once
+	cancel := func() {
+		cancelOnce.Do(func() { close(done) })
+	}
 	var wg sync.WaitGroup
 
 	for i := 0; i < workers; i++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			for path := range jobs {
-				outputPath := filepath.Join(filepath.Dir(path), strings.TrimSuffix(filepath.Base(path), filepath.Ext(path))+".png")
-				if _, err := os.Stat(outputPath); err == nil {
+			for {
+				var path string
+				var ok bool
+				select {
+				case <-done:
+					return
+				case path, ok = <-jobs:
+					if !ok {
+						return
+					}
+				}
+
+				outputBase, outputPath := imageRootOutputPaths(path, opts)
+				committed, err := committedOutputExists(outputPath)
+				if err != nil {
+					results <- fmt.Errorf("%s: %w", outputPath, err)
+					cancel()
+					return
+				}
+				if committed {
 					if deleteSource {
-						_ = os.Remove(path)
+						if err := os.Remove(path); err != nil && !os.IsNotExist(err) {
+							results <- fmt.Errorf("%s: %w", path, err)
+							cancel()
+							return
+						}
 					}
 					results <- nil
 					continue
 				}
-				if err := exportTextureFile(path, filepath.Dir(path), opts); err != nil {
+				if err := exportTextureToStaging(path, outputBase, outputPath, opts); err != nil {
 					results <- fmt.Errorf("%s: %w", path, err)
-					continue
+					cancel()
+					return
+				}
+				if err := validateCommittedOutput(outputPath); err != nil {
+					results <- fmt.Errorf("%s did not produce %s: %w", path, outputPath, err)
+					cancel()
+					return
 				}
 				if deleteSource {
 					if err := os.Remove(path); err != nil && !os.IsNotExist(err) {
 						results <- fmt.Errorf("%s: %w", path, err)
-						continue
+						cancel()
+						return
 					}
 				}
 				results <- nil
@@ -82,10 +116,16 @@ func ProcessImageRoot(root string, workers int, opts ExportOptions, deleteSource
 	}
 
 	go func() {
+		defer close(jobs)
 		for _, path := range files {
-			jobs <- path
+			select {
+			case <-done:
+				return
+			case jobs <- path:
+			}
 		}
-		close(jobs)
+	}()
+	go func() {
 		wg.Wait()
 		close(results)
 	}()
@@ -102,6 +142,66 @@ func ProcessImageRoot(root string, workers int, opts ExportOptions, deleteSource
 		}
 	}
 	return firstErr
+}
+
+func imageRootOutputPaths(inputPath string, opts ExportOptions) (outputBase, outputPath string) {
+	stem := strings.TrimSuffix(inputPath, filepath.Ext(inputPath))
+	if opts.PreferWebP {
+		return stem, stem + ".webp"
+	}
+	return filepath.Dir(inputPath), stem + ".png"
+}
+
+func validateCommittedOutput(path string) error {
+	info, err := os.Stat(path)
+	if err != nil {
+		return err
+	}
+	if !info.Mode().IsRegular() {
+		return fmt.Errorf("output is not a regular file")
+	}
+	if info.Size() == 0 {
+		return fmt.Errorf("output is empty")
+	}
+	return nil
+}
+
+func committedOutputExists(path string) (bool, error) {
+	info, err := os.Stat(path)
+	if os.IsNotExist(err) {
+		return false, nil
+	}
+	if err != nil {
+		return false, err
+	}
+	if !info.Mode().IsRegular() {
+		return false, fmt.Errorf("output is not a regular file")
+	}
+	return info.Size() > 0, nil
+}
+
+func exportTextureToStaging(inputPath, outputBase, outputPath string, opts ExportOptions) error {
+	stagingDir, err := os.MkdirTemp(filepath.Dir(outputPath), "."+filepath.Base(outputBase)+".staging-")
+	if err != nil {
+		return err
+	}
+	defer os.RemoveAll(stagingDir)
+
+	stagingOutput := filepath.Join(stagingDir, filepath.Base(outputPath))
+	stagingBase := stagingDir
+	if opts.PreferWebP {
+		stagingBase = strings.TrimSuffix(stagingOutput, filepath.Ext(stagingOutput))
+	}
+	if err := exportTextureFileFunc(inputPath, stagingBase, opts); err != nil {
+		return err
+	}
+	if err := validateCommittedOutput(stagingOutput); err != nil {
+		return fmt.Errorf("did not produce staged output %s: %w", stagingOutput, err)
+	}
+	if err := os.Rename(stagingOutput, outputPath); err != nil {
+		return fmt.Errorf("commit %s: %w", outputPath, err)
+	}
+	return nil
 }
 
 func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, deleteSctx bool) error {
@@ -130,6 +230,9 @@ func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, d
 	if workers <= 0 {
 		workers = runtime.NumCPU()
 	}
+	if workers < 1 {
+		workers = 1
+	}
 	if len(files) == 0 {
 		if deleteSctx {
 			return deleteSCRootSctx(root, opts.IncludePrefixes)
@@ -138,61 +241,100 @@ func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, d
 	}
 
 	fileConcurrency := opts.FileConcurrency
+	if fileConcurrency > workers {
+		fileConcurrency = workers
+	}
 	if fileConcurrency > len(files) {
 		fileConcurrency = len(files)
 	}
 	if fileConcurrency < 1 {
 		fileConcurrency = 1
 	}
-	perFileWorkers := workers / fileConcurrency
-	if perFileWorkers < 1 {
-		perFileWorkers = 1
+	workerBudgets := make([]int, fileConcurrency)
+	for i := range workerBudgets {
+		workerBudgets[i] = workers / fileConcurrency
+		if i < workers%fileConcurrency {
+			workerBudgets[i]++
+		}
 	}
 	fmt.Printf("Processing SC root %s\n", root)
 	fmt.Printf("  Files:       %d\n", len(files))
-	fmt.Printf("  Concurrency: %d files x %d workers\n", fileConcurrency, perFileWorkers)
+	fmt.Printf("  Concurrency: %d files, %d total workers\n", fileConcurrency, workers)
 
 	jobs := make(chan string)
 	results := make(chan scRootResult, len(files))
+	done := make(chan struct{})
+	var cancelOnce sync.Once
+	cancel := func() {
+		cancelOnce.Do(func() { close(done) })
+	}
 	var wg sync.WaitGroup
 
 	for i := 0; i < fileConcurrency; i++ {
+		fileWorkers := workerBudgets[i]
 		wg.Add(1)
-		go func() {
+		go func(perFileWorkers int) {
 			defer wg.Done()
-			for source := range jobs {
-				outputDir := strings.TrimSuffix(source, filepath.Ext(source))
-				if _, err := os.Stat(outputDir); err == nil {
-					if err := os.RemoveAll(outputDir); err != nil {
-						results <- scRootResult{source: source, err: fmt.Errorf("%s: %w", outputDir, err)}
-						continue
+			for {
+				var source string
+				var ok bool
+				select {
+				case <-done:
+					return
+				case source, ok = <-jobs:
+					if !ok {
+						return
 					}
 				}
-				stats, err := exportSingleFunc(source, outputDir, perFileWorkers, opts)
+
+				outputDir := strings.TrimSuffix(source, filepath.Ext(source))
+				stagingDir, err := os.MkdirTemp(filepath.Dir(outputDir), "."+filepath.Base(outputDir)+".staging-")
 				if err != nil {
-					results <- scRootResult{source: source, err: fmt.Errorf("%s: %w", source, err)}
-					continue
+					results <- scRootResult{source: source, err: fmt.Errorf("%s: %w", outputDir, err)}
+					cancel()
+					return
 				}
+				stats, err := exportSingleFunc(source, stagingDir, perFileWorkers, opts)
+				if err != nil {
+					_ = os.RemoveAll(stagingDir)
+					results <- scRootResult{source: source, err: fmt.Errorf("%s: %w", source, err)}
+					cancel()
+					return
+				}
+				if err := replaceDirectory(stagingDir, outputDir); err != nil {
+					_ = os.RemoveAll(stagingDir)
+					results <- scRootResult{source: source, err: fmt.Errorf("%s: %w", outputDir, err)}
+					cancel()
+					return
+				}
+				stats.AssetDir = outputDir
+				stats.ExportsDir = outputDir
+				stats.ManifestPath = filepath.Join(outputDir, "manifest.json")
 				fmt.Printf("\n[SC] Done: %s\n", source)
 				printAssetStats(stats)
-				runtime.GC()
-				debug.FreeOSMemory()
 				if deleteSource {
 					if err := os.Remove(source); err != nil && !os.IsNotExist(err) {
 						results <- scRootResult{source: source, err: fmt.Errorf("%s: %w", source, err)}
-						continue
+						cancel()
+						return
 					}
 				}
 				results <- scRootResult{source: source}
 			}
-		}()
+		}(fileWorkers)
 	}
 
 	go func() {
+		defer close(jobs)
 		for _, source := range files {
-			jobs <- source
+			select {
+			case <-done:
+				return
+			case jobs <- source:
+			}
 		}
-		close(jobs)
+	}()
+	go func() {
 		wg.Wait()
 		close(results)
 	}()
@@ -221,6 +363,40 @@ func ProcessSCRoot(root string, workers int, opts ExportOptions, deleteSource, d
 	}
 	if deleteSctx {
 		return deleteSCRootSctx(root, opts.IncludePrefixes)
+	}
+	return nil
+}
+
+func replaceDirectory(stagingDir, outputDir string) error {
+	backupDir := ""
+	if _, err := os.Lstat(outputDir); err == nil {
+		placeholder, err := os.MkdirTemp(filepath.Dir(outputDir), "."+filepath.Base(outputDir)+".backup-")
+		if err != nil {
+			return err
+		}
+		if err := os.Remove(placeholder); err != nil {
+			return err
+		}
+		backupDir = placeholder
+		if err := os.Rename(outputDir, backupDir); err != nil {
+			return err
+		}
+	} else if !os.IsNotExist(err) {
+		return err
+	}
+
+	if err := os.Rename(stagingDir, outputDir); err != nil {
+		if backupDir != "" {
+			if restoreErr := os.Rename(backupDir, outputDir); restoreErr != nil {
+				return fmt.Errorf("commit failed: %v; restoring previous output failed: %w", err, restoreErr)
+			}
+		}
+		return err
+	}
+	if backupDir != "" {
+		if err := os.RemoveAll(backupDir); err != nil {
+			return fmt.Errorf("replacement committed but old output cleanup failed: %w", err)
+		}
 	}
 	return nil
 }

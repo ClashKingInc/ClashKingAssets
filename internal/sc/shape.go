@@ -38,7 +38,10 @@ func loadShape(reader *Reader, tag uint8, textures []*Texture) (*Shape, error) {
 		if err != nil {
 			return nil, err
 		}
-		bitmapEnd := reader.Pos() + int(bitmapTagLength)
+		bitmapEnd, err := reader.SectionEnd(int(bitmapTagLength))
+		if err != nil {
+			return nil, fmt.Errorf("shape %d bitmap tag %d length %d: %w", id, bitmapTag, bitmapTagLength, err)
+		}
 
 		if bitmapTag == 0 {
 			return shape, nil
@@ -55,6 +58,9 @@ func loadShape(reader *Reader, tag uint8, textures []*Texture) (*Shape, error) {
 			return nil, err
 		}
 		shape.Bitmaps = append(shape.Bitmaps, bitmap)
+		if reader.Pos() > bitmapEnd {
+			return nil, fmt.Errorf("shape %d bitmap tag %d consumed past its declared end: pos=%d end=%d", id, bitmapTag, reader.Pos(), bitmapEnd)
+		}
 		if reader.Pos() < bitmapEnd {
 			if err := reader.Seek(bitmapEnd); err != nil {
 				return nil, err
@@ -173,6 +179,9 @@ func (b ShapeBitmap) SpriteImage(textures []*Texture) (*image.NRGBA, error) {
 		return nil, fmt.Errorf("texture %d image is not loaded", b.TextureIndex)
 	}
 	src := texture.Image
+	if len(b.SolidTriangles) != 0 {
+		return b.solidSpriteImage(src), nil
+	}
 	if len(b.UVCoords) == 0 {
 		return image.NewNRGBA(image.Rect(0, 0, 1, 1)), nil
 	}
@@ -206,7 +215,94 @@ func (b ShapeBitmap) SpriteImage(textures []*Texture) (*image.NRGBA, error) {
 	return sprite, nil
 }
 
+func (b ShapeBitmap) solidSpriteImage(texture *image.NRGBA) *image.NRGBA {
+	minX, minY, maxX, maxY, ok := pointBounds(b.SolidTriangles)
+	if !ok {
+		return image.NewNRGBA(image.Rect(0, 0, 1, 1))
+	}
+	left, top := int(math.Floor(minX)), int(math.Floor(minY))
+	right, bottom := int(math.Ceil(maxX)), int(math.Ceil(maxY))
+	if right <= left {
+		right = left + 1
+	}
+	if bottom <= top {
+		bottom = top + 1
+	}
+	sprite := image.NewNRGBA(image.Rect(0, 0, right-left, bottom-top))
+	sample := color.NRGBA{R: 255, G: 255, B: 255, A: 255}
+	if len(b.UVCoords) != 0 {
+		x, y := int(b.UVCoords[0].X), int(b.UVCoords[0].Y)
+		if image.Pt(x, y).In(texture.Bounds()) {
+			sample = texture.NRGBAAt(x, y)
+		}
+	}
+	samples := [...]Point{{X: 0.25, Y: 0.25}, {X: 0.75, Y: 0.25}, {X: 0.25, Y: 0.75}, {X: 0.75, Y: 0.75}}
+	for index := 0; index+2 < len(b.SolidTriangles); index += 3 {
+		triangle := b.SolidTriangles[index : index+3]
+		triMinX, triMinY, triMaxX, triMaxY, _ := pointBounds(triangle)
+		startX := maxIntShape(0, int(math.Floor(triMinX))-left)
+		startY := maxIntShape(0, int(math.Floor(triMinY))-top)
+		endX := minIntShape(sprite.Bounds().Dx(), int(math.Ceil(triMaxX))-left)
+		endY := minIntShape(sprite.Bounds().Dy(), int(math.Ceil(triMaxY))-top)
+		for y := startY; y < endY; y++ {
+			for x := startX; x < endX; x++ {
+				coverage := 0
+				for _, offset := range samples {
+					if pointInTriangle(float64(left+x)+offset.X, float64(top+y)+offset.Y, triangle) {
+						coverage++
+					}
+				}
+				if coverage == 0 {
+					continue
+				}
+				alpha := uint8((int(sample.A)*coverage + len(samples)/2) / len(samples))
+				if alpha <= sprite.NRGBAAt(x, y).A {
+					continue
+				}
+				sprite.SetNRGBA(x, y, color.NRGBA{R: sample.R, G: sample.G, B: sample.B, A: alpha})
+			}
+		}
+	}
+	return sprite
+}
+
+func pointInTriangle(x, y float64, triangle []Point) bool {
+	if len(triangle) != 3 {
+		return false
+	}
+	sign := func(a, b Point) float64 {
+		return (x-b.X)*(a.Y-b.Y) - (a.X-b.X)*(y-b.Y)
+	}
+	d1 := sign(triangle[0], triangle[1])
+	d2 := sign(triangle[1], triangle[2])
+	d3 := sign(triangle[2], triangle[0])
+	hasNegative := d1 < -1e-8 || d2 < -1e-8 || d3 < -1e-8
+	hasPositive := d1 > 1e-8 || d2 > 1e-8 || d3 > 1e-8
+	return !(hasNegative && hasPositive)
+}
+
+func maxIntShape(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func minIntShape(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
 func (b ShapeBitmap) LocalTransform() (Matrix, error) {
+	if len(b.SolidTriangles) != 0 {
+		minX, minY, _, _, ok := pointBounds(b.SolidTriangles)
+		if !ok {
+			return IdentityMatrix(), nil
+		}
+		return Matrix{A: 1, D: 1, Tx: math.Floor(minX), Ty: math.Floor(minY)}, nil
+	}
 	left, top, right, bottom := b.UVBounds()
 	local := make([]Point, len(b.UVCoords))
 	for i, p := range b.UVCoords {

@@ -10,8 +10,6 @@ import (
 )
 
 func TestExportTextureFilePreferWebP(t *testing.T) {
-	requireWebPTools(t)
-
 	original := decodeTextureFile
 	decodeTextureFile = func(path string) (*image.NRGBA, error) {
 		img := image.NewNRGBA(image.Rect(0, 0, 2, 2))

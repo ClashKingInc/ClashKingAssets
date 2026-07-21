@@ -84,7 +84,10 @@ func loadMovieClip(reader *Reader, tag uint8) (*MovieClip, error) {
 		if err != nil {
 			return nil, fmt.Errorf("movieclip %d frame elements count: %w", id, err)
 		}
-		frameElements = make([]FrameElement, 0, frameElementsCount)
+		if frameElementsCount < 0 || int64(frameElementsCount)*6 > int64(reader.Remaining()) {
+			return nil, fmt.Errorf("movieclip %d invalid frame elements count %d with %d bytes remaining", id, frameElementsCount, reader.Remaining())
+		}
+		frameElements = make([]FrameElement, 0, int(frameElementsCount))
 		for range int(frameElementsCount) {
 			bindIndex, err := reader.ReadU16()
 			if err != nil {
@@ -149,7 +152,10 @@ func loadMovieClip(reader *Reader, tag uint8) (*MovieClip, error) {
 		if err != nil {
 			return nil, fmt.Errorf("movieclip %d frame tag %d length: %w", id, frameTag, err)
 		}
-		frameTagEnd := reader.Pos() + int(frameTagLength)
+		frameTagEnd, err := reader.SectionEnd(int(frameTagLength))
+		if err != nil {
+			return nil, fmt.Errorf("movieclip %d frame tag %d length %d: %w", id, frameTag, frameTagLength, err)
+		}
 
 		switch {
 		case frameTag == movieclipEndFrameTag:
@@ -220,6 +226,9 @@ func loadMovieClip(reader *Reader, tag uint8) (*MovieClip, error) {
 			}
 		}
 
+		if reader.Pos() > frameTagEnd {
+			return nil, fmt.Errorf("movieclip %d frame tag %d consumed past its declared end: pos=%d end=%d", id, frameTag, reader.Pos(), frameTagEnd)
+		}
 		if reader.Pos() < frameTagEnd {
 			if err := reader.Seek(frameTagEnd); err != nil {
 				return nil, err

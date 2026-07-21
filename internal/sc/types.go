@@ -161,7 +161,11 @@ type ShapeBitmap struct {
 	TextureIndex int
 	UVCoords     []Point
 	XYCoords     []Point
-	MaxRects     bool
+	// SolidTriangles stores flattened triangle geometry for SC2 color fills.
+	// These commands intentionally sample one texture pixel for every vertex,
+	// so they cannot be represented by a regular UV-to-XY affine transform.
+	SolidTriangles []Point
+	MaxRects       bool
 }
 
 type MovieClipModifier struct {

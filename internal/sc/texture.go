@@ -7,14 +7,10 @@ import (
 	"image"
 	"image/color"
 	"image/png"
-	"io"
 	"os"
 	"os/exec"
 	"path/filepath"
-	"runtime"
 	"strings"
-
-	"github.com/klauspost/compress/zstd"
 
 	SCTX "sc2fla/internal/sc/sctxfb/sc/texture/SCTX"
 )
@@ -78,12 +74,12 @@ func loadTexture(reader *Reader, tag uint8, tagEnd int, hasExternalTexture bool,
 	}
 
 	var (
-		ktxSize             uint32
+		ktxSize             int
 		externalTexturePath string
 		err                 error
 	)
 	if tag == 45 {
-		ktxSize, err = reader.ReadU32()
+		ktxSize, err = reader.ReadU32Length()
 		if err != nil {
 			return nil, err
 		}
@@ -127,7 +123,7 @@ func loadTexture(reader *Reader, tag uint8, tagEnd int, hasExternalTexture bool,
 
 	switch {
 	case ktxSize > 0:
-		payload, err := reader.Read(int(ktxSize))
+		payload, err := reader.Read(ktxSize)
 		if err != nil {
 			return nil, err
 		}
@@ -193,7 +189,22 @@ func expectedRawTextureBytes(tex *Texture) (int, bool) {
 	if !ok || tex.Width < 0 || tex.Height < 0 {
 		return 0, false
 	}
-	return tex.Width * tex.Height * bytesPerPixel, true
+	pixels, ok := checkedProduct(tex.Width, tex.Height)
+	if !ok {
+		return 0, false
+	}
+	return checkedProduct(pixels, bytesPerPixel)
+}
+
+func checkedProduct(a, b int) (int, bool) {
+	if a < 0 || b < 0 {
+		return 0, false
+	}
+	const maxInt = int(^uint(0) >> 1)
+	if a != 0 && b > maxInt/a {
+		return 0, false
+	}
+	return a * b, true
 }
 
 func rawBytesPerPixel(format string) (int, bool) {
@@ -212,16 +223,21 @@ func rawBytesPerPixel(format string) (int, bool) {
 }
 
 func decodeRawTexture(reader *Reader, tex *Texture) (*image.NRGBA, error) {
+	expected, ok := expectedRawTextureBytes(tex)
+	if !ok {
+		return nil, fmt.Errorf("invalid raw texture dimensions %dx%d or pixel format %s", tex.Width, tex.Height, tex.PixelInternalFormat)
+	}
+	if expected > reader.Remaining() {
+		return nil, fmt.Errorf("short raw texture payload: got %d want %d", reader.Remaining(), expected)
+	}
 	img := image.NewNRGBA(image.Rect(0, 0, tex.Width, tex.Height))
 	if tex.Linear {
-		for y := 0; y < tex.Height; y++ {
-			for x := 0; x < tex.Width; x++ {
-				px, err := readRawPixel(reader, tex.PixelInternalFormat)
-				if err != nil {
-					return nil, err
-				}
-				img.SetNRGBA(x, y, px)
-			}
+		data, err := reader.Read(expected)
+		if err != nil {
+			return nil, err
+		}
+		if err := decodeLinearRawTexture(img.Pix, data, tex.PixelInternalFormat); err != nil {
+			return nil, err
 		}
 		return img, nil
 	}
@@ -251,6 +267,72 @@ func decodeRawTexture(reader *Reader, tex *Texture) (*image.NRGBA, error) {
 	return img, nil
 }
 
+func decodeLinearRawTexture(dst, src []byte, format string) error {
+	switch format {
+	case "GL_RGBA8":
+		copy(dst, src)
+	case "GL_BGRA8":
+		for srcPos, dstPos := 0, 0; srcPos < len(src); srcPos, dstPos = srcPos+4, dstPos+4 {
+			dst[dstPos] = src[srcPos+2]
+			dst[dstPos+1] = src[srcPos+1]
+			dst[dstPos+2] = src[srcPos]
+			dst[dstPos+3] = src[srcPos+3]
+		}
+	case "GL_RGB8":
+		for srcPos, dstPos := 0, 0; srcPos < len(src); srcPos, dstPos = srcPos+3, dstPos+4 {
+			copy(dst[dstPos:dstPos+3], src[srcPos:srcPos+3])
+			dst[dstPos+3] = 255
+		}
+	case "GL_RGBA4":
+		for srcPos, dstPos := 0, 0; srcPos < len(src); srcPos, dstPos = srcPos+2, dstPos+4 {
+			p := binary.LittleEndian.Uint16(src[srcPos : srcPos+2])
+			dst[dstPos] = expand4To8(uint8((p >> 12) & 15))
+			dst[dstPos+1] = expand4To8(uint8((p >> 8) & 15))
+			dst[dstPos+2] = expand4To8(uint8((p >> 4) & 15))
+			dst[dstPos+3] = expand4To8(uint8(p & 15))
+		}
+	case "GL_RGB5_A1":
+		for srcPos, dstPos := 0, 0; srcPos < len(src); srcPos, dstPos = srcPos+2, dstPos+4 {
+			p := binary.LittleEndian.Uint16(src[srcPos : srcPos+2])
+			dst[dstPos] = expand5To8(uint8((p >> 11) & 31))
+			dst[dstPos+1] = expand5To8(uint8((p >> 6) & 31))
+			dst[dstPos+2] = expand5To8(uint8((p >> 1) & 31))
+			dst[dstPos+3] = uint8(p&1) * 255
+		}
+	case "GL_RGB565":
+		for srcPos, dstPos := 0, 0; srcPos < len(src); srcPos, dstPos = srcPos+2, dstPos+4 {
+			p := binary.LittleEndian.Uint16(src[srcPos : srcPos+2])
+			dst[dstPos] = expand5To8(uint8((p >> 11) & 31))
+			dst[dstPos+1] = expand6To8(uint8((p >> 5) & 63))
+			dst[dstPos+2] = expand5To8(uint8(p & 31))
+			dst[dstPos+3] = 255
+		}
+	case "GL_ALPHA8":
+		for srcPos, dstPos := 0, 0; srcPos < len(src); srcPos, dstPos = srcPos+1, dstPos+4 {
+			dst[dstPos+3] = src[srcPos]
+		}
+	case "GL_LUMINANCE8_ALPHA8":
+		for srcPos, dstPos := 0, 0; srcPos < len(src); srcPos, dstPos = srcPos+2, dstPos+4 {
+			l := src[srcPos]
+			dst[dstPos] = l
+			dst[dstPos+1] = l
+			dst[dstPos+2] = l
+			dst[dstPos+3] = src[srcPos+1]
+		}
+	case "GL_LUMINANCE8":
+		for srcPos, dstPos := 0, 0; srcPos < len(src); srcPos, dstPos = srcPos+1, dstPos+4 {
+			l := src[srcPos]
+			dst[dstPos] = l
+			dst[dstPos+1] = l
+			dst[dstPos+2] = l
+			dst[dstPos+3] = 255
+		}
+	default:
+		return fmt.Errorf("unsupported raw pixel format %s", format)
+	}
+	return nil
+}
+
 func readRawPixel(reader *Reader, format string) (c color.NRGBA, err error) {
 	switch format {
 	case "GL_RGBA8":
@@ -274,10 +356,10 @@ func readRawPixel(reader *Reader, format string) (c color.NRGBA, err error) {
 			return
 		}
 		c = color.NRGBA{
-			R: uint8(((p >> 12) & 15) << 4),
-			G: uint8(((p >> 8) & 15) << 4),
-			B: uint8(((p >> 4) & 15) << 4),
-			A: uint8((p & 15) << 4),
+			R: expand4To8(uint8((p >> 12) & 15)),
+			G: expand4To8(uint8((p >> 8) & 15)),
+			B: expand4To8(uint8((p >> 4) & 15)),
+			A: expand4To8(uint8(p & 15)),
 		}
 	case "GL_RGB5_A1":
 		var p uint16
@@ -285,9 +367,9 @@ func readRawPixel(reader *Reader, format string) (c color.NRGBA, err error) {
 			return
 		}
 		c = color.NRGBA{
-			R: uint8(((p >> 11) & 31) << 3),
-			G: uint8(((p >> 6) & 31) << 3),
-			B: uint8(((p >> 1) & 31) << 3),
+			R: expand5To8(uint8((p >> 11) & 31)),
+			G: expand5To8(uint8((p >> 6) & 31)),
+			B: expand5To8(uint8((p >> 1) & 31)),
 			A: uint8((p & 1) * 255),
 		}
 	case "GL_RGB565":
@@ -296,9 +378,9 @@ func readRawPixel(reader *Reader, format string) (c color.NRGBA, err error) {
 			return
 		}
 		c = color.NRGBA{
-			R: uint8(((p >> 11) & 31) << 3),
-			G: uint8(((p >> 5) & 63) << 2),
-			B: uint8((p & 31) << 3),
+			R: expand5To8(uint8((p >> 11) & 31)),
+			G: expand6To8(uint8((p >> 5) & 63)),
+			B: expand5To8(uint8(p & 31)),
 			A: 255,
 		}
 	case "GL_RGB8":
@@ -355,6 +437,12 @@ func readRawPixel(reader *Reader, format string) (c color.NRGBA, err error) {
 	return
 }
 
+func expand4To8(v uint8) uint8 { return v<<4 | v }
+
+func expand5To8(v uint8) uint8 { return v<<3 | v>>2 }
+
+func expand6To8(v uint8) uint8 { return v<<2 | v>>4 }
+
 func decodeExternalTexture(swfPath, externalTexturePath string) (*image.NRGBA, error) {
 	fullPath := filepath.Join(filepath.Dir(swfPath), externalTexturePath)
 	return DecodeTextureFile(fullPath)
@@ -392,14 +480,20 @@ func decodeSCTXFile(path string) (*image.NRGBA, error) {
 	return decodeSCTXTexture(tex)
 }
 
-func parseSCTXTexture(raw []byte) (*sctxTexture, error) {
+func parseSCTXTexture(raw []byte) (texture *sctxTexture, err error) {
+	defer func() {
+		if recovered := recover(); recovered != nil {
+			texture = nil
+			err = fmt.Errorf("invalid SCTX flatbuffer: %v", recovered)
+		}
+	}()
 	reader := NewReader(raw)
 
-	textureDataLength, err := reader.ReadU32()
+	textureDataLength, err := reader.ReadU32Length()
 	if err != nil {
 		return nil, err
 	}
-	textureData, err := reader.Read(int(textureDataLength))
+	textureData, err := reader.Read(textureDataLength)
 	if err != nil {
 		return nil, err
 	}
@@ -408,29 +502,37 @@ func parseSCTXTexture(raw []byte) (*sctxTexture, error) {
 	}
 	root := SCTX.GetRootAsTextureData(textureData, 0)
 
-	mipMapsDataLength, err := reader.ReadU32()
+	mipMapsDataLength, err := reader.ReadU32Length()
 	if err != nil {
 		return nil, err
 	}
-	mipMapsStart := reader.Pos()
-	payloadStart := mipMapsStart + int(mipMapsDataLength)
+	mipMapsData, err := reader.Read(mipMapsDataLength)
+	if err != nil {
+		return nil, err
+	}
+	mipMapsReader := NewReader(mipMapsData)
+	payloadStart := reader.Pos()
 
 	levelsCount := int(root.LevelsCount())
 	levels := make([]sctxLevel, 0, levelsCount)
 	for i := 0; i < levelsCount; i++ {
-		mipMapLength, err := reader.ReadU32()
+		mipMapLength, err := mipMapsReader.ReadU32Length()
 		if err != nil {
 			return nil, err
 		}
-		mipMapData, err := reader.Read(int(mipMapLength))
+		mipMapData, err := mipMapsReader.Read(mipMapLength)
 		if err != nil {
 			return nil, err
 		}
 		mipMap := SCTX.GetRootAsMipMap(mipMapData, 0)
+		offset, ok := uint32ToInt(mipMap.Offset())
+		if !ok {
+			return nil, fmt.Errorf("SCTX mip level %d offset overflows int", i)
+		}
 		levels = append(levels, sctxLevel{
 			width:  int(mipMap.Width()),
 			height: int(mipMap.Height()),
-			offset: int(mipMap.Offset()),
+			offset: offset,
 		})
 	}
 	if levelsCount == 0 {
@@ -444,7 +546,11 @@ func parseSCTXTexture(raw []byte) (*sctxTexture, error) {
 		return nil, fmt.Errorf("invalid SCTX payload offset")
 	}
 
-	payload, err := decodeSCTXPayload(raw[payloadStart:], int(root.TextureLength()))
+	textureLength := root.TextureLength()
+	if textureLength < 0 {
+		return nil, fmt.Errorf("invalid SCTX texture length %d", textureLength)
+	}
+	payload, err := decodeSCTXPayload(raw[payloadStart:], int(textureLength))
 	if err != nil {
 		return nil, err
 	}
@@ -461,12 +567,8 @@ func parseSCTXTexture(raw []byte) (*sctxTexture, error) {
 func decodeSCTXPayload(raw []byte, textureLength int) ([]byte, error) {
 	payload := raw
 	if detectSignature(raw) == sigZSTD {
-		dec, err := zstd.NewReader(bytes.NewReader(raw))
-		if err != nil {
-			return nil, err
-		}
-		defer dec.Close()
-		payload, err = io.ReadAll(dec)
+		var err error
+		payload, err = decodeZstdAll(raw, nil)
 		if err != nil {
 			return nil, err
 		}
@@ -553,22 +655,37 @@ func sctxLevelSize(pixelType uint32, width, height int) (int, bool) {
 		return 0, false
 	}
 	if blockX, blockY, _, ok := sctxASTCBlock(pixelType); ok {
-		blocksWide := (width + int(blockX) - 1) / int(blockX)
-		blocksHigh := (height + int(blockY) - 1) / int(blockY)
-		return blocksWide * blocksHigh * 16, true
+		return astcLevelSize(width, height, blockX, blockY)
+	}
+	pixels, ok := checkedProduct(width, height)
+	if !ok {
+		return 0, false
 	}
 	switch pixelType {
 	case sctxPixelA8Unorm, sctxPixelR8Unorm, sctxPixelR8UnormSRGB, sctxPixelLuminance:
-		return width * height, true
+		return pixels, true
 	case sctxPixelLuminanceAlpha, sctxPixelR5G6B5Unorm:
-		return width * height * 2, true
+		return checkedProduct(pixels, 2)
 	case sctxPixelRGB8Unorm, sctxPixelRGB8UnormSRGB:
-		return width * height * 3, true
+		return checkedProduct(pixels, 3)
 	case sctxPixelRGBA8Unorm, sctxPixelRGBA8UnormSRGB, sctxPixelBGRA8Unorm, sctxPixelBGRA8UnormSRGB:
-		return width * height * 4, true
+		return checkedProduct(pixels, 4)
 	default:
 		return 0, false
 	}
+}
+
+func astcLevelSize(width, height int, blockX, blockY byte) (int, bool) {
+	if width <= 0 || height <= 0 || blockX == 0 || blockY == 0 {
+		return 0, false
+	}
+	blocksWide := 1 + (width-1)/int(blockX)
+	blocksHigh := 1 + (height-1)/int(blockY)
+	blocks, ok := checkedProduct(blocksWide, blocksHigh)
+	if !ok {
+		return 0, false
+	}
+	return checkedProduct(blocks, 16)
 }
 
 func sctxASTCBlock(pixelType uint32) (byte, byte, bool, bool) {
@@ -608,6 +725,20 @@ func sctxASTCBlock(pixelType uint32) (byte, byte, bool, bool) {
 }
 
 func decodeASTCLevel(data []byte, width, height int, blockX, blockY byte, srgb bool) (*image.NRGBA, error) {
+	if img, available, gpuErr := decodeASTCGPU(data, width, height, blockX, blockY, srgb); available {
+		if gpuErr == nil {
+			return img, nil
+		}
+		img, fallbackErr := decodeASTCLevelExternal(data, width, height, blockX, blockY, srgb)
+		if fallbackErr == nil {
+			return img, nil
+		}
+		return nil, fmt.Errorf("Metal ASTC decode failed: %v; astcenc fallback failed: %w", gpuErr, fallbackErr)
+	}
+	return decodeASTCLevelExternal(data, width, height, blockX, blockY, srgb)
+}
+
+func decodeASTCLevelExternal(data []byte, width, height int, blockX, blockY byte, srgb bool) (*image.NRGBA, error) {
 	tmpDir, err := os.MkdirTemp("", "sc-astc-*")
 	if err != nil {
 		return nil, err
@@ -650,31 +781,30 @@ func put24(dst []byte, v int) {
 }
 
 func DecodeTextureFile(path string) (*image.NRGBA, error) {
-	ext := strings.ToLower(filepath.Ext(path))
+	raw, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+	return DecodeTextureBytes(path, raw)
+}
+
+func DecodeTextureBytes(name string, raw []byte) (*image.NRGBA, error) {
+	ext := strings.ToLower(filepath.Ext(name))
 	switch ext {
 	case ".zktx":
-		raw, err := os.ReadFile(path)
-		if err != nil {
-			return nil, err
-		}
-		dec, err := zstd.NewReader(nil)
-		if err != nil {
-			return nil, err
-		}
-		defer dec.Close()
-		payload, err := dec.DecodeAll(raw, nil)
+		payload, err := decodeZstdAll(raw, nil)
 		if err != nil {
 			return nil, err
 		}
 		return decodeKTXBytes(payload)
 	case ".ktx":
-		raw, err := os.ReadFile(path)
+		return decodeKTXBytes(raw)
+	case ".sctx":
+		texture, err := parseSCTXTexture(raw)
 		if err != nil {
 			return nil, err
 		}
-		return decodeKTXBytes(raw)
-	case ".sctx":
-		return decodeSCTXFile(path)
+		return decodeSCTXTexture(texture)
 	default:
 		return nil, fmt.Errorf("unsupported texture extension %s", ext)
 	}
@@ -733,33 +863,10 @@ func findASTCEnc() (string, error) {
 	return "", fmt.Errorf("astcenc not found in PATH or lib/")
 }
 
-func runBundledTool(relativeExe string, args ...string) error {
-	return runBundledToolInDir("", relativeExe, args...)
-}
-
-func runBundledToolInDir(workDir, relativeExe string, args ...string) error {
-	exePath, err := resolveWorkspacePath(relativeExe)
-	if err != nil {
-		return err
-	}
-
-	cmdArgs := args
-	cmdName := exePath
-	if runtime.GOOS != "windows" {
-		cmdArgs = append([]string{exePath}, args...)
-		cmdName = "wine"
-	}
-
-	return runCommand(workDir, cmdName, cmdArgs...)
-}
-
 func runCommand(workDir, cmdName string, args ...string) error {
 	cmd := exec.Command(cmdName, args...)
 	if workDir != "" {
 		cmd.Dir = workDir
-	}
-	if runtime.GOOS != "windows" && cmdName == "wine" {
-		cmd.Env = append(os.Environ(), "WINEDEBUG=-all")
 	}
 	output, err := cmd.CombinedOutput()
 	if err != nil {

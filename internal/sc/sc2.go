@@ -16,17 +16,20 @@ import (
 )
 
 type sc2State struct {
-	descriptor  *SC2.FileDescriptor
-	storage     *SC2.DataStorage
-	payload     []byte
-	mainPath    string
-	version     int
-	isTexture   bool
-	downgraded  bool
-	textureOnly bool
+	descriptor *SC2.FileDescriptor
+	storage    *SC2.DataStorage
+	payload    []byte
+	mainPath   string
+	version    int
+	isTexture  bool
 }
 
-func (s *SWF) loadSC2Asset(raw []byte, path string, isTexture bool) error {
+func (s *SWF) loadSC2Asset(raw []byte, path string, isTexture bool) (err error) {
+	defer func() {
+		if recovered := recover(); recovered != nil {
+			err = fmt.Errorf("invalid SC2 flatbuffer in %s: %v", path, recovered)
+		}
+	}()
 	state, err := loadSC2State(raw, path, isTexture)
 	if err != nil {
 		return err
@@ -34,10 +37,23 @@ func (s *SWF) loadSC2Asset(raw []byte, path string, isTexture bool) error {
 
 	if !isTexture {
 		s.Filename = path
-		s.ShapesCount = int(state.descriptor.ShapeCount())
-		s.MovieClipsCount = int(state.descriptor.MovieClipsCount())
-		s.TexturesCount = int(state.descriptor.TextureCount())
-		s.TextFieldsCount = int(state.descriptor.TextFieldsCount())
+		counts := []struct {
+			name  string
+			value uint32
+			dst   *int
+		}{
+			{name: "shape", value: state.descriptor.ShapeCount(), dst: &s.ShapesCount},
+			{name: "movie clip", value: state.descriptor.MovieClipsCount(), dst: &s.MovieClipsCount},
+			{name: "texture", value: state.descriptor.TextureCount(), dst: &s.TexturesCount},
+			{name: "text field", value: state.descriptor.TextFieldsCount(), dst: &s.TextFieldsCount},
+		}
+		for _, count := range counts {
+			value, ok := uint32ToInt(count.value)
+			if !ok || value > len(state.payload) {
+				return fmt.Errorf("invalid SC2 %s count %d in %s", count.name, count.value, path)
+			}
+			*count.dst = value
+		}
 		s.Textures = make([]*Texture, s.TexturesCount)
 		s.MatrixBanks = nil
 	}
@@ -66,7 +82,10 @@ func loadSC2State(raw []byte, path string, isTexture bool) (*sc2State, error) {
 		return nil, fmt.Errorf("missing descriptor length in %s", path)
 	}
 
-	descriptorSize := int(binary.LittleEndian.Uint32(raw[pos : pos+4]))
+	descriptorSize, ok := uint32ToInt(binary.LittleEndian.Uint32(raw[pos : pos+4]))
+	if !ok {
+		return nil, fmt.Errorf("SC2 descriptor size overflows int in %s", path)
+	}
 	if descriptorSize <= 0 || len(raw) < pos+4+descriptorSize {
 		return nil, fmt.Errorf("invalid SC2 descriptor size in %s", path)
 	}
@@ -74,7 +93,11 @@ func loadSC2State(raw []byte, path string, isTexture bool) (*sc2State, error) {
 	descriptor := SC2.GetRootAsFileDescriptor(descriptorBuf, 0)
 	pos += 4 + descriptorSize
 
-	decompressed, err := decodeSC2Payload(raw[pos:], path, int(descriptor.CompressedSize()))
+	compressedSize, ok := uint32ToInt(descriptor.CompressedSize())
+	if !ok {
+		return nil, fmt.Errorf("SC2 compressed payload size overflows int in %s", path)
+	}
+	decompressed, err := decodeSC2Payload(raw[pos:], path, compressedSize)
 	if err != nil {
 		return nil, err
 	}
@@ -82,7 +105,10 @@ func loadSC2State(raw []byte, path string, isTexture bool) (*sc2State, error) {
 	if len(decompressed) < 4 {
 		return nil, fmt.Errorf("SC2 payload is too small in %s", path)
 	}
-	storageSize := int(binary.LittleEndian.Uint32(decompressed[:4]))
+	storageSize, ok := uint32ToInt(binary.LittleEndian.Uint32(decompressed[:4]))
+	if !ok {
+		return nil, fmt.Errorf("SC2 storage size overflows int in %s", path)
+	}
 	if storageSize <= 0 || len(decompressed) < 4+storageSize {
 		return nil, fmt.Errorf("invalid SC2 storage size in %s", path)
 	}
@@ -109,7 +135,10 @@ func (s *SWF) loadSC2Data(state *sc2State) error {
 		}
 	}
 
-	resourcePos := int(state.descriptor.ResourcesOffset())
+	resourcePos, ok := uint32ToInt(state.descriptor.ResourcesOffset())
+	if !ok {
+		return fmt.Errorf("SC2 resources offset overflows int")
+	}
 	if resourcePos < 0 || resourcePos > len(state.payload) {
 		return fmt.Errorf("SC2 resources offset %d out of range", resourcePos)
 	}
@@ -159,13 +188,21 @@ type sc2Chunks struct {
 
 func decodeSC2Payload(raw []byte, path string, compressedSize int) ([]byte, error) {
 	tryDecode := func(src []byte) ([]byte, error) {
+		decompressed, err := decodeZstdAll(src, nil)
+		if err == nil {
+			return decompressed, nil
+		}
+
+		// A few production SC2 files contain a valid first Zstd frame followed
+		// by malformed trailing bytes. Preserve the existing partial-stream
+		// recovery for those files, but keep it off the normal fast path.
 		dec, err := zstd.NewReader(bytes.NewReader(src))
 		if err != nil {
 			return nil, err
 		}
 		defer dec.Close()
 
-		decompressed, err := io.ReadAll(dec)
+		decompressed, err = io.ReadAll(dec)
 		if err != nil {
 			if isRecoverableSC2DecodeError(err) && looksLikeSC2Payload(decompressed) {
 				return decompressed, nil
@@ -409,11 +446,52 @@ func (s *SWF) loadSC2Shapes(chunk []byte, state *sc2State) error {
 				vv := binary.LittleEndian.Uint16(vertices[base+10 : base+12])
 				points = append(points, shapeVertex{X: float64(x), Y: float64(y), U: u, V: vv})
 			}
+			if solid, ok := solidShapeBitmapFromStrip(points, textureIndex, s.Textures); ok {
+				shape.Bitmaps = append(shape.Bitmaps, solid)
+				continue
+			}
 			shape.Bitmaps = append(shape.Bitmaps, triangulateShapeStrip(points, textureIndex, s.Textures)...)
 		}
 		s.Resources[shape.ID] = shape
 	}
 	return nil
+}
+
+func solidShapeBitmapFromStrip(points []shapeVertex, textureIndex int, textures []*Texture) (ShapeBitmap, bool) {
+	if len(points) < 3 {
+		return ShapeBitmap{}, false
+	}
+	u, v := points[0].U, points[0].V
+	for _, point := range points[1:] {
+		if point.U != u || point.V != v {
+			return ShapeBitmap{}, false
+		}
+	}
+	texWidth, texHeight := 0.0, 0.0
+	if textureIndex >= 0 && textureIndex < len(textures) && textures[textureIndex] != nil {
+		texWidth = float64(textures[textureIndex].Width)
+		texHeight = float64(textures[textureIndex].Height)
+	}
+	bitmap := ShapeBitmap{
+		TextureIndex: textureIndex,
+		UVCoords: []Point{{
+			X: math.Ceil(float64(u) / 65535.0 * texWidth),
+			Y: math.Ceil(float64(v) / 65535.0 * texHeight),
+		}},
+	}
+	for i := 0; i+2 < len(points); i++ {
+		triangle := []shapeVertex{points[i], points[i+1], points[i+2]}
+		if i%2 == 1 {
+			triangle[1], triangle[2] = triangle[2], triangle[1]
+		}
+		if degenerateShapeTriangle(triangle) {
+			continue
+		}
+		for _, point := range triangle {
+			bitmap.SolidTriangles = append(bitmap.SolidTriangles, Point{X: point.X, Y: point.Y})
+		}
+	}
+	return bitmap, len(bitmap.SolidTriangles) != 0
 }
 
 func (s *SWF) loadSC2MovieClips(chunk []byte, state *sc2State) error {
@@ -431,20 +509,22 @@ func (s *SWF) loadSC2MovieClips(chunk []byte, state *sc2State) error {
 		}
 		clip := buildSC2MovieClip(clipData.Id(), clipData.Framerate(), clipData.UnknownBool() != 0, clipData.MatrixBankIndex())
 		populateSC2MovieClipCommon(&clipData, state, clip)
-		frameElementsOffset := int(clipData.FrameElementsOffset())
-		frameElementsCount := 0
-		for _, frame := range clip.Frames {
-			frameElementsCount += len(frame.Elements)
+		frameElementsOffset, ok := uint32ToInt(clipData.FrameElementsOffset())
+		if !ok {
+			return fmt.Errorf("SC2 movie clip %d frame elements offset overflows int", clip.ID)
 		}
 		for frameIndex := range clip.Frames {
 			elementCount := len(clip.Frames[frameIndex].Elements)
 			for elementIndex := 0; elementIndex < elementCount; elementIndex++ {
 				base := frameElementsOffset + (elementIndex * 3)
-				clip.Frames[frameIndex].Elements[elementIndex] = readSC2FrameElement(state.storage, base)
+				element, err := readSC2FrameElement(state.storage, base)
+				if err != nil {
+					return fmt.Errorf("SC2 movie clip %d frame %d element %d: %w", clip.ID, frameIndex, elementIndex, err)
+				}
+				clip.Frames[frameIndex].Elements[elementIndex] = element
 			}
 			frameElementsOffset += elementCount * 3
 		}
-		_ = frameElementsCount
 		s.Resources[clip.ID] = clip
 	}
 	return nil
@@ -463,12 +543,19 @@ func (s *SWF) loadSC2CompressedMovieClips(chunk []byte, state *sc2State) error {
 		clip := buildSC2MovieClip(clipData.Id(), clipData.Framerate(), clipData.UnknownBool() != 0, clipData.MatrixBankIndex())
 		populateSC2CompressedMovieClipCommon(&clipData, state, clip)
 		if off := clipData.FrameElementsOffset(); off != nil {
-			frameElementsOffset := int(*off)
+			frameElementsOffset, ok := uint32ToInt(*off)
+			if !ok {
+				return fmt.Errorf("SC2 compressed movie clip %d frame elements offset overflows int", clip.ID)
+			}
 			for frameIndex := range clip.Frames {
 				elementCount := len(clip.Frames[frameIndex].Elements)
 				for elementIndex := 0; elementIndex < elementCount; elementIndex++ {
 					base := frameElementsOffset + (elementIndex * 3)
-					clip.Frames[frameIndex].Elements[elementIndex] = readSC2FrameElement(state.storage, base)
+					element, err := readSC2FrameElement(state.storage, base)
+					if err != nil {
+						return fmt.Errorf("SC2 compressed movie clip %d frame %d element %d: %w", clip.ID, frameIndex, elementIndex, err)
+					}
+					clip.Frames[frameIndex].Elements[elementIndex] = element
 				}
 				frameElementsOffset += elementCount * 3
 			}
@@ -481,7 +568,10 @@ func (s *SWF) loadSC2CompressedMovieClips(chunk []byte, state *sc2State) error {
 			if len(bank.MovieClipElements) == 0 {
 				return fmt.Errorf("SC2 compressed movie clip %d requires external matrix bank clip data", clip.ID)
 			}
-			offset := int(clipData.CompressedDataOffset())
+			offset, ok := uint32ToInt(clipData.CompressedDataOffset())
+			if !ok {
+				return fmt.Errorf("SC2 compressed movie clip %d data offset overflows int", clip.ID)
+			}
 			if err := decodeSC2CompressedClipFrames(clip, bank.MovieClipElements, offset, len(clip.Binds), len(bank.Matrices), len(bank.ColorTransforms)); err != nil {
 				return fmt.Errorf("SC2 compressed movie clip %d: %w", clip.ID, err)
 			}
@@ -545,14 +635,14 @@ func (s *SWF) loadSC2Textures(chunk []byte, state *sc2State) error {
 }
 
 func readSC2Chunk(reader *Reader) ([]byte, error) {
-	size, err := reader.ReadU32()
+	size, err := reader.ReadU32Length()
 	if err != nil {
 		return nil, err
 	}
 	if size == 0 {
 		return nil, nil
 	}
-	return reader.Read(int(size))
+	return reader.Read(size)
 }
 
 func sc2String(storage *SC2.DataStorage, ref uint32) string {
@@ -600,9 +690,9 @@ func degenerateShapeTriangle(points []shapeVertex) bool {
 	}
 	xyArea := (points[1].X-points[0].X)*(points[2].Y-points[0].Y) -
 		(points[1].Y-points[0].Y)*(points[2].X-points[0].X)
-	uvArea := float64(int(points[1].U)-int(points[0].U))*float64(int(points[2].V)-int(points[0].V)) -
-		float64(int(points[1].V)-int(points[0].V))*float64(int(points[2].U)-int(points[0].U))
-	return math.Abs(xyArea) < 1e-8 || math.Abs(uvArea) < 1e-8
+	// A zero-area UV triangle is a valid solid-color fill: every vertex samples
+	// the same texel while the XY coordinates still describe visible geometry.
+	return math.Abs(xyArea) < 1e-8
 }
 
 func shapeBitmapFromTriangle(points []shapeVertex, textureIndex int, textures []*Texture) ShapeBitmap {
@@ -709,12 +799,15 @@ func populateSC2CompressedMovieClipCommon(data *SC2.CompressedMovieClip, state *
 	}
 }
 
-func readSC2FrameElement(storage *SC2.DataStorage, offset int) FrameElement {
+func readSC2FrameElement(storage *SC2.DataStorage, offset int) (FrameElement, error) {
+	if storage == nil || offset < 0 || offset > storage.MovieclipsFrameElementsLength()-3 {
+		return FrameElement{}, fmt.Errorf("frame element offset %d out of range", offset)
+	}
 	return FrameElement{
 		Bind:   storage.MovieclipsFrameElements(offset),
 		Matrix: storage.MovieclipsFrameElements(offset + 1),
 		Color:  storage.MovieclipsFrameElements(offset + 2),
-	}
+	}, nil
 }
 
 func sc2BlendMode(idx byte) string {
@@ -802,6 +895,9 @@ func loadSC2TextureData(data *SC2.TextureData, mainPath string) (*Texture, error
 }
 
 func decodeSC2CompressedClipFrames(clip *MovieClip, data []byte, offset int, childrenCount, matrixCount, colorCount int) error {
+	if len(clip.Frames) == 0 {
+		return nil
+	}
 	if offset < 0 || offset >= len(data) {
 		return fmt.Errorf("compressed clip data offset %d out of range", offset)
 	}

@@ -1,6 +1,7 @@
 package sc
 
 import (
+	"bytes"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -29,6 +30,7 @@ var (
 	matrixTags   = map[uint8]bool{8: true, 36: true}
 	movieTags    = map[uint8]bool{3: true, 10: true, 12: true, 14: true, 35: true, 49: true}
 	modifierTags = map[uint8]bool{38: true, 39: true, 40: true}
+	startMarker  = []byte("START")
 )
 
 type LoadStats struct {
@@ -56,16 +58,8 @@ func LoadWithStats(path string) (*SWF, LoadStats, error) {
 	}
 	stats := LoadStats{}
 
-	mainPrepareStart := time.Now()
-	resolvedPath, cleanup, err := prepareMainAssetPath(path)
-	if err != nil {
-		return nil, stats, err
-	}
-	stats.MainPrepareDuration = time.Since(mainPrepareStart)
-	defer cleanup()
-
 	mainLoadStart := time.Now()
-	if err := swf.loadResolvedAsset(resolvedPath, false); err != nil {
+	if err := swf.loadResolvedAsset(path, false); err != nil {
 		return nil, stats, err
 	}
 	stats.MainLoadDuration = time.Since(mainLoadStart)
@@ -107,16 +101,8 @@ func LoadWithStats(path string) (*SWF, LoadStats, error) {
 }
 
 func (s *SWF) loadTextureAsset(path string, stats *LoadStats) error {
-	prepareStart := time.Now()
-	resolvedPath, cleanup, err := prepareTextureAssetPath(path)
-	if err != nil {
-		return err
-	}
-	stats.TexturePrepareDuration += time.Since(prepareStart)
-	defer cleanup()
-
 	loadStart := time.Now()
-	err = s.loadResolvedAsset(resolvedPath, true)
+	err := s.loadResolvedAsset(path, true)
 	stats.TextureLoadDuration += time.Since(loadStart)
 	return err
 }
@@ -126,16 +112,27 @@ func (s *SWF) loadResolvedAsset(path string, isTexture bool) error {
 	if err != nil {
 		return err
 	}
-	if idx := strings.Index(string(data), "START"); idx >= 0 {
-		data = data[:idx]
-	}
 	version := DetectSCVersion(data)
 	if version >= 5 {
-		return s.loadSC2Asset(data, path, isTexture)
+		err := s.loadSC2Asset(data, path, isTexture)
+		if err == nil {
+			return nil
+		}
+		if prefix, ok := assetBeforeTrailer(data); ok {
+			return s.loadSC2Asset(prefix, path, isTexture)
+		}
+		return err
 	}
 	decompressed, err := DecompressAsset(data)
 	if err != nil {
-		return err
+		prefix, ok := assetBeforeTrailer(data)
+		if !ok {
+			return err
+		}
+		decompressed, err = DecompressAsset(prefix)
+		if err != nil {
+			return err
+		}
 	}
 	reader := NewReader(decompressed)
 
@@ -195,154 +192,12 @@ func (s *SWF) loadResolvedAsset(path string, isTexture bool) error {
 	return s.loadTags(reader)
 }
 
-func prepareMainAssetPath(path string) (string, func(), error) {
-	version, err := fileSCVersion(path)
-	if err != nil {
-		return "", nil, err
+func assetBeforeTrailer(data []byte) ([]byte, bool) {
+	idx := bytes.LastIndex(data, startMarker)
+	if idx <= 0 {
+		return nil, false
 	}
-	if version <= 4 || version == 0 {
-		return path, func() {}, nil
-	}
-	return path, func() {}, nil
-}
-
-func prepareTextureAssetPath(path string) (string, func(), error) {
-	version, err := fileSCVersion(path)
-	if err != nil {
-		return "", nil, err
-	}
-	if version <= 4 || version == 0 {
-		return path, func() {}, nil
-	}
-	return path, func() {}, nil
-}
-
-func fileSCVersion(path string) (int, error) {
-	raw, err := os.ReadFile(path)
-	if err != nil {
-		return 0, err
-	}
-	if idx := strings.Index(string(raw), "START"); idx >= 0 {
-		raw = raw[:idx]
-	}
-	return DetectSCVersion(raw), nil
-}
-
-func downgradeAssetBundle(path string) (string, func(), error) {
-	tempDir, err := os.MkdirTemp("", "sc-v6-*")
-	if err != nil {
-		return "", nil, err
-	}
-	cleanup := func() { _ = os.RemoveAll(tempDir) }
-
-	matches, err := bundleAssets(path)
-	if err != nil {
-		cleanup()
-		return "", nil, err
-	}
-	if len(matches) == 0 {
-		matches = []string{path}
-	}
-
-	var mainTarget string
-	copied := make([]string, 0, len(matches))
-	for _, src := range matches {
-		dst := filepath.Join(tempDir, filepath.Base(src))
-		if err := copyFile(src, dst); err != nil {
-			cleanup()
-			return "", nil, err
-		}
-		copied = append(copied, dst)
-		if filepath.Base(src) == filepath.Base(path) {
-			mainTarget = dst
-		}
-	}
-	for _, dst := range copied {
-		if !strings.EqualFold(filepath.Ext(dst), ".sc") {
-			continue
-		}
-		version, err := fileSCVersion(dst)
-		if err != nil {
-			cleanup()
-			return "", nil, err
-		}
-		if version >= 5 {
-			name := filepath.Base(dst)
-			if err := runBundledToolInDir(tempDir, "lib/ScDowngrade.exe", name, name); err != nil {
-				cleanup()
-				return "", nil, fmt.Errorf("failed to downgrade %s: %w", filepath.Base(dst), err)
-			}
-		}
-	}
-	if mainTarget == "" {
-		cleanup()
-		return "", nil, fmt.Errorf("failed to prepare downgraded bundle for %s", path)
-	}
-	return mainTarget, cleanup, nil
-}
-
-func bundleAssets(path string) ([]string, error) {
-	base := strings.TrimSuffix(filepath.Base(path), filepath.Ext(path))
-	pattern := filepath.Join(filepath.Dir(path), base+"*")
-	matches, err := filepath.Glob(pattern)
-	if err != nil {
-		return nil, err
-	}
-
-	assets := make([]string, 0, len(matches))
-	for _, match := range matches {
-		info, err := os.Stat(match)
-		if err != nil {
-			return nil, err
-		}
-		if info.IsDir() {
-			continue
-		}
-		if !isBundleAssetMatch(base, filepath.Base(match)) {
-			continue
-		}
-		assets = append(assets, match)
-	}
-	sort.Strings(assets)
-	return assets, nil
-}
-
-func isBundleAssetMatch(base, name string) bool {
-	if name == base+".sc" || name == base+textureExtension {
-		return true
-	}
-	if strings.HasPrefix(name, base+"_") {
-		remainder := strings.TrimPrefix(name, base+"_")
-		return strings.HasSuffix(remainder, ".sctx")
-	}
-	return false
-}
-
-func downgradeSingleAsset(path string) (string, func(), error) {
-	tempDir, err := os.MkdirTemp("", "sc-v6-tex-*")
-	if err != nil {
-		return "", nil, err
-	}
-	cleanup := func() { _ = os.RemoveAll(tempDir) }
-	dst := filepath.Join(tempDir, filepath.Base(path))
-	if err := copyFile(path, dst); err != nil {
-		cleanup()
-		return "", nil, err
-	}
-	name := filepath.Base(dst)
-	if err := runBundledToolInDir(tempDir, "lib/ScDowngrade.exe", name, name); err != nil {
-		cleanup()
-		return "", nil, fmt.Errorf("failed to downgrade %s: %w", filepath.Base(path), err)
-	}
-	return dst, cleanup, nil
-}
-
-func copyFile(src, dst string) error {
-	raw, err := os.ReadFile(src)
-	if err != nil {
-		return err
-	}
-	return os.WriteFile(dst, raw, 0o644)
+	return data[:idx], true
 }
 
 func (s *SWF) loadTags(reader *Reader) error {
@@ -360,7 +215,10 @@ func (s *SWF) loadTags(reader *Reader) error {
 		if err != nil {
 			return err
 		}
-		tagEnd := reader.Pos() + int(tagLength)
+		tagEnd, err := reader.SectionEnd(int(tagLength))
+		if err != nil {
+			return fmt.Errorf("tag %d length %d in %s: %w", tag, tagLength, s.Filename, err)
+		}
 
 		switch {
 		case tag == endTag:
@@ -460,6 +318,9 @@ func (s *SWF) loadTags(reader *Reader) error {
 			}
 		}
 
+		if reader.Pos() > tagEnd {
+			return fmt.Errorf("tag %d in %s consumed past its declared end: pos=%d end=%d", tag, s.Filename, reader.Pos(), tagEnd)
+		}
 		if reader.Pos() < tagEnd {
 			if err := reader.Seek(tagEnd); err != nil {
 				return err

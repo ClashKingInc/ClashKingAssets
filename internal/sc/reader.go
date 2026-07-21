@@ -3,7 +3,6 @@ package sc
 import (
 	"encoding/binary"
 	"fmt"
-	"math"
 )
 
 type Reader struct {
@@ -36,16 +35,27 @@ func (r *Reader) Seek(pos int) error {
 }
 
 func (r *Reader) Skip(n int) error {
-	return r.Seek(r.pos + n)
+	if n < -r.pos || n > len(r.buf)-r.pos {
+		return fmt.Errorf("skip out of range: pos=%d len=%d skip=%d", r.pos, len(r.buf), n)
+	}
+	r.pos += n
+	return nil
 }
 
 func (r *Reader) Read(n int) ([]byte, error) {
-	if n < 0 || r.pos+n > len(r.buf) {
+	if n < 0 || n > len(r.buf)-r.pos {
 		return nil, fmt.Errorf("read out of range: pos=%d len=%d need=%d", r.pos, len(r.buf), n)
 	}
 	out := r.buf[r.pos : r.pos+n]
 	r.pos += n
 	return out, nil
+}
+
+func (r *Reader) SectionEnd(length int) (int, error) {
+	if length < 0 || length > len(r.buf)-r.pos {
+		return 0, fmt.Errorf("section out of range: pos=%d len=%d section=%d", r.pos, len(r.buf), length)
+	}
+	return r.pos + length, nil
 }
 
 func (r *Reader) ReadU8() (uint8, error) {
@@ -93,6 +103,26 @@ func (r *Reader) ReadU32() (uint32, error) {
 	return binary.LittleEndian.Uint32(b), nil
 }
 
+func (r *Reader) ReadU32Length() (int, error) {
+	value, err := r.ReadU32()
+	if err != nil {
+		return 0, err
+	}
+	length, ok := uint32ToInt(value)
+	if !ok {
+		return 0, fmt.Errorf("length %d overflows int", value)
+	}
+	return length, nil
+}
+
+func uint32ToInt(value uint32) (int, bool) {
+	const maxInt = int(^uint(0) >> 1)
+	if uint64(value) > uint64(maxInt) {
+		return 0, false
+	}
+	return int(value), true
+}
+
 func (r *Reader) ReadASCII() (string, error) {
 	size, err := r.ReadU8()
 	if err != nil {
@@ -114,11 +144,4 @@ func (r *Reader) ReadTwip() (float64, error) {
 		return 0, err
 	}
 	return float64(v) / 20.0, nil
-}
-
-func ceilScaled(v, max float64) float64 {
-	if max == 0 {
-		return 0
-	}
-	return math.Ceil(v)
 }

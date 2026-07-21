@@ -3,21 +3,23 @@ package render
 import (
 	"crypto/sha1"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"image"
 	"image/color"
+	stddraw "image/draw"
 	"image/png"
 	"io"
 	"math"
 	"os"
 	"path/filepath"
 	"runtime"
-	"runtime/debug"
 	"sort"
 	"strings"
 	"sync"
 	"time"
 
+	hevcencode "sc2fla/internal/encode/hevc"
 	"sc2fla/internal/sc"
 )
 
@@ -86,26 +88,38 @@ type bitmapCacheKey struct {
 }
 
 type bitmapRenderable struct {
-	sprite    *image.NRGBA
-	transform sc.Matrix
+	sprite         *image.NRGBA
+	transform      sc.Matrix
+	luminanceOnce  sync.Once
+	luminanceFloor int
 }
 
 type sceneryBaseImage struct {
-	name   string
 	swf    *sc.SWF
 	target Target
-	bounds image.Rectangle
-	frames map[string]*image.NRGBA
+}
+
+type sceneryRenderContext struct {
+	exporter    *Exporter
+	target      Target
+	spriteCache map[bitmapCacheKey]*bitmapRenderable
+	baseMatrix  sc.Matrix
+	allowedMask *image.NRGBA
 }
 
 type Exporter struct {
 	swf               *sc.SWF
 	opts              ExportOptions
+	sceneryBaseMu     sync.Mutex
 	sceneryBaseCache  map[string]*sceneryBaseImage
 	assetBaseOnce     sync.Once
 	assetBaseExporter *Exporter
 	assetBaseError    error
+	cancel            <-chan struct{}
+	bitmapCache       sync.Map
 }
+
+var errExportCancelled = errors.New("export cancelled")
 
 type ParseProfile struct {
 	MainPrepare    time.Duration
@@ -124,6 +138,9 @@ type TargetProfile struct {
 	SampledSteps    int
 	CanvasWidth     int
 	CanvasHeight    int
+	GPUFrames       int
+	Encoder         string
+	HardwareEncode  bool
 	PrepareDuration time.Duration
 	BoundsDuration  time.Duration
 	RenderDuration  time.Duration
@@ -146,6 +163,7 @@ type AssetStats struct {
 	Outputs        int
 	PNGs           int
 	WEBPs          int
+	MOVs           int
 	Skipped        int
 	SplitOutputs   int
 	Frames         int
@@ -155,7 +173,7 @@ type AssetStats struct {
 
 type renderStep struct {
 	Time    float64
-	DelayCS int
+	DelayMS int
 }
 
 type renderProfile struct {
@@ -164,9 +182,11 @@ type renderProfile struct {
 	SampledSteps    int
 	CanvasWidth     int
 	CanvasHeight    int
+	GPUFrames       int
 	PrepareDuration time.Duration
 	BoundsDuration  time.Duration
 	RenderDuration  time.Duration
+	EncodeDuration  time.Duration
 }
 
 type stateHasher struct {
@@ -175,6 +195,13 @@ type stateHasher struct {
 
 func (s *stateHasher) addFloat(v float64) {
 	s.add(math.Float64bits(v))
+}
+
+func (s *stateHasher) addString(v string) {
+	for i := 0; i < len(v); i++ {
+		s.add(uint64(v[i]))
+	}
+	s.add(uint64(len(v)))
 }
 
 func NewExporter(swf *sc.SWF) *Exporter {
@@ -188,102 +215,6 @@ func NewExporterWithOptions(swf *sc.SWF, opts ExportOptions) *Exporter {
 		opts:             opts,
 		sceneryBaseCache: map[string]*sceneryBaseImage{},
 	}
-}
-
-func (e *Exporter) PrepareTargetsForDebug() ([]Target, []SkippedEntry) {
-	return e.prepareTargets()
-}
-
-func (e *Exporter) CollectChangePointsForDebug(target Target, duration float64) []float64 {
-	return e.collectChangePoints(target, duration)
-}
-
-func (e *Exporter) CollectBoundsForDebug(target Target, duration float64, sampleTimes []float64) (image.Rectangle, error) {
-	return e.collectBounds(target, duration, sampleTimes, map[bitmapCacheKey]*bitmapRenderable{})
-}
-
-func (e *Exporter) RenderTargetForDebug(target Target) ([]renderedFrame, int, string, renderProfile, error) {
-	return e.renderTarget(target)
-}
-
-func (e *Exporter) FirstVisualLoopForDebug(target Target) (float64, int, error) {
-	if target.Duration <= 0 {
-		return 0, 0, nil
-	}
-	changePoints := e.collectChangePoints(target, target.Duration)
-	if len(changePoints) == 0 {
-		return 0, 0, nil
-	}
-	initial, err := e.visualStateSignature(target, changePoints[0])
-	if err != nil {
-		return 0, 0, err
-	}
-	for i := 1; i < len(changePoints); i++ {
-		sig, err := e.visualStateSignature(target, changePoints[i])
-		if err != nil {
-			return 0, 0, err
-		}
-		if sig == initial {
-			return changePoints[i], i, nil
-		}
-	}
-	return 0, 0, nil
-}
-
-func (e *Exporter) RenderFrameAtForDebug(target Target, t float64) (*image.NRGBA, image.Rectangle, error) {
-	spriteCache := map[bitmapCacheKey]*bitmapRenderable{}
-	bounds, err := e.collectBounds(target, target.Duration, []float64{t}, spriteCache)
-	if err != nil {
-		return nil, image.Rectangle{}, err
-	}
-	frame, err := e.renderAt(target, t, bounds, spriteCache)
-	if err != nil {
-		return nil, image.Rectangle{}, err
-	}
-	frame, err = e.compositeSceneryBaseIfNeeded(target, frame)
-	if err != nil {
-		return nil, image.Rectangle{}, err
-	}
-	return frame, bounds, nil
-}
-
-func (e *Exporter) CollectAnimatedBoundsForDebug(target Target, sampleTimes []float64) (image.Rectangle, error) {
-	animatedResources := e.collectAnimatedResourceSet(target.ResourceID)
-	if len(sampleTimes) == 0 {
-		sampleTimes = []float64{0}
-	}
-	var bounds renderBounds
-	spriteCache := map[bitmapCacheKey]*bitmapRenderable{}
-	for _, t := range sampleTimes {
-		err := e.visitResourceFiltered(target, target.ResourceID, t, sc.IdentityMatrix(), sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", "", animatedResources, true, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, _ sc.ColorTransform, _ string) error {
-			sprite, err := e.bitmapRenderable(shape, idx, spriteCache)
-			if err != nil {
-				return err
-			}
-			fullMatrix := matrix.Multiply(sprite.transform)
-			w := float64(sprite.sprite.Bounds().Dx())
-			h := float64(sprite.sprite.Bounds().Dy())
-			corners := [][2]float64{{0, 0}, {w, 0}, {w, h}, {0, h}}
-			for _, corner := range corners {
-				x, y := fullMatrix.Apply(corner[0], corner[1])
-				bounds.add(x, y)
-			}
-			return nil
-		})
-		if err != nil {
-			return image.Rectangle{}, err
-		}
-	}
-	if !bounds.set {
-		return image.Rect(0, 0, 1, 1), nil
-	}
-	padding := 2
-	return image.Rect(
-		int(math.Floor(bounds.minX))-padding,
-		int(math.Floor(bounds.minY))-padding,
-		int(math.Ceil(bounds.maxX))+padding,
-		int(math.Ceil(bounds.maxY))+padding,
-	), nil
 }
 
 func ExportPath(inputPath, outPath string, workers int, opts ExportOptions) error {
@@ -397,6 +328,9 @@ func exportSingle(source, assetDir string, workers int, opts ExportOptions) (Ass
 		if strings.HasSuffix(entry.OutputFile, ".webp") {
 			stats.WEBPs++
 		}
+		if strings.HasSuffix(entry.OutputFile, ".mov") {
+			stats.MOVs++
+		}
 		if strings.Contains(entry.ExportName, "__") || strings.Contains(entry.ExportName, "/") {
 			stats.SplitOutputs++
 		}
@@ -420,7 +354,7 @@ func printAssetStats(stats AssetStats) {
 	fmt.Printf("  Export:  %s\n", stats.ExportDuration.Round(time.Millisecond))
 	fmt.Printf("  Total:   %s\n", stats.TotalDuration.Round(time.Millisecond))
 	fmt.Printf("  Targets: %d\n", stats.Targets)
-	fmt.Printf("  Outputs: %d (%d png, %d webp)\n", stats.Outputs, stats.PNGs, stats.WEBPs)
+	fmt.Printf("  Outputs: %d (%d png, %d webp, %d mov)\n", stats.Outputs, stats.PNGs, stats.WEBPs, stats.MOVs)
 	fmt.Printf("  Split:   %d\n", stats.SplitOutputs)
 	fmt.Printf("  Skipped: %d\n", stats.Skipped)
 	fmt.Printf("  Frames:  %d\n", stats.Frames)
@@ -439,13 +373,14 @@ func printRunSummary(allStats []AssetStats, total time.Duration) {
 	if len(allStats) <= 1 {
 		return
 	}
-	var targets, outputs, pngs, webps, skipped, split, frames, durationMS int
+	var targets, outputs, pngs, webps, movs, skipped, split, frames, durationMS int
 	var bytes int64
 	for _, stats := range allStats {
 		targets += stats.Targets
 		outputs += stats.Outputs
 		pngs += stats.PNGs
 		webps += stats.WEBPs
+		movs += stats.MOVs
 		skipped += stats.Skipped
 		split += stats.SplitOutputs
 		frames += stats.Frames
@@ -455,7 +390,7 @@ func printRunSummary(allStats []AssetStats, total time.Duration) {
 	fmt.Printf("\nRun Summary\n")
 	fmt.Printf("  Assets:  %d\n", len(allStats))
 	fmt.Printf("  Targets: %d\n", targets)
-	fmt.Printf("  Outputs: %d (%d png, %d webp)\n", outputs, pngs, webps)
+	fmt.Printf("  Outputs: %d (%d png, %d webp, %d mov)\n", outputs, pngs, webps, movs)
 	fmt.Printf("  Split:   %d\n", split)
 	fmt.Printf("  Skipped: %d\n", skipped)
 	fmt.Printf("  Frames:  %d\n", frames)
@@ -503,8 +438,12 @@ func printProfileSummary(stats AssetStats) {
 		if profile.CanvasWidth > 0 && profile.CanvasHeight > 0 {
 			size = fmt.Sprintf("%dx%d", profile.CanvasWidth, profile.CanvasHeight)
 		}
+		encoder := profile.Encoder
+		if encoder == "" {
+			encoder = profile.Status
+		}
 		fmt.Printf(
-			"      %s [%s] total=%s prepare=%s bounds=%s render=%s encode=%s frames=%d steps=%d/%d size=%s\n",
+			"      %s [%s] total=%s prepare=%s bounds=%s render=%s encode=%s encoder=%s hw=%t frames=%d gpu=%d steps=%d/%d size=%s\n",
 			profile.ExportName,
 			profile.Status,
 			profile.TotalDuration.Round(time.Millisecond),
@@ -512,7 +451,10 @@ func printProfileSummary(stats AssetStats) {
 			profile.BoundsDuration.Round(time.Millisecond),
 			profile.RenderDuration.Round(time.Millisecond),
 			profile.EncodeDuration.Round(time.Millisecond),
+			encoder,
+			profile.HardwareEncode,
 			profile.Frames,
+			profile.GPUFrames,
 			profile.SampledSteps,
 			profile.ChangePoints,
 			size,
@@ -561,18 +503,25 @@ func removeIfExists(path string) error {
 	return nil
 }
 
+func removeOutputAlternates(outputBase, keepExtension string) error {
+	for _, extension := range []string{".png", ".webp", ".mov"} {
+		if extension == keepExtension {
+			continue
+		}
+		if err := removeIfExists(outputBase + extension); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
-	targets, skipped := e.prepareTargets()
+	targets, skipped := e.prepareRequestedTargets(e.opts.AssetNames)
 	targets, skipped, err := filterRequestedTargets(targets, skipped, e.opts.AssetNames, e.swf.Filename)
 	if err != nil {
 		return nil, err
 	}
 	targets = preferFrameLabel(targets, e.opts.PreferredFrameLabel)
-	if targetsRequireWebPTools(targets, e.opts) {
-		if err := ensureWebPToolsAvailable(); err != nil {
-			return nil, err
-		}
-	}
 	if err := os.MkdirAll(assetDir, 0o755); err != nil {
 		return nil, err
 	}
@@ -598,6 +547,11 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 
 	jobs := make(chan Target)
 	results := make(chan result, len(targets))
+	done := make(chan struct{})
+	e.cancel = done
+	defer func() { e.cancel = nil }()
+	var cancelOnce sync.Once
+	cancel := func() { cancelOnce.Do(func() { close(done) }) }
 	var wg sync.WaitGroup
 	if workers <= 0 {
 		workers = 1
@@ -607,6 +561,10 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 		go func() {
 			defer wg.Done()
 			for target := range jobs {
+				if err := e.checkCancelled(); err != nil {
+					results <- result{target: target, err: err}
+					return
+				}
 				entry, skip, profile, err := e.exportTarget(target, assetDir, nameAllocator)
 				results <- result{target: target, entry: entry, skipped: skip, profile: profile, err: err}
 			}
@@ -614,8 +572,13 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	}
 
 	go func() {
+	dispatch:
 		for _, target := range targets {
-			jobs <- target
+			select {
+			case jobs <- target:
+			case <-done:
+				break dispatch
+			}
 		}
 		close(jobs)
 		wg.Wait()
@@ -623,9 +586,14 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	}()
 
 	processed := 0
+	var firstErr error
 	for res := range results {
 		if res.err != nil {
-			return nil, res.err
+			if firstErr == nil {
+				firstErr = res.err
+				cancel()
+			}
+			continue
 		}
 		if e.opts.Profile {
 			manifest.Profile = append(manifest.Profile, res.profile)
@@ -636,13 +604,12 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 			manifest.Exports = append(manifest.Exports, *res.entry)
 		}
 		processed++
-		if processed%50 == 0 {
-			runtime.GC()
-			debug.FreeOSMemory()
-		}
 		if processed == len(targets) || processed%25 == 0 {
 			fmt.Printf("  Progress: %d/%d\n", processed, len(targets))
 		}
+	}
+	if firstErr != nil {
+		return nil, firstErr
 	}
 
 	sort.Slice(manifest.Exports, func(i, j int) bool {
@@ -658,16 +625,25 @@ func (e *Exporter) ExportAll(assetDir string, workers int) (*Manifest, error) {
 	return manifest, nil
 }
 
-func targetsRequireWebPTools(targets []Target, opts ExportOptions) bool {
-	if opts.PreferWebP {
-		return true
+func (e *Exporter) checkCancelled() error {
+	if e == nil {
+		return nil
 	}
-	for _, target := range targets {
-		if _, ok := target.Resource.(*sc.MovieClip); ok && target.Duration > 0 {
-			return true
+	if e.cancel != nil {
+		select {
+		case <-e.cancel:
+			return errExportCancelled
+		default:
 		}
 	}
-	return false
+	if e.opts.Context != nil {
+		select {
+		case <-e.opts.Context.Done():
+			return fmt.Errorf("%w: %v", errExportCancelled, e.opts.Context.Err())
+		default:
+		}
+	}
+	return nil
 }
 
 func filterRequestedTargets(targets []Target, skipped []SkippedEntry, requested []string, sourceSC string) ([]Target, []SkippedEntry, error) {
@@ -789,11 +765,18 @@ func (t Target) selectFrameLabel(requestedName, frameLabel string) (Target, bool
 }
 
 func (e *Exporter) prepareTargets() ([]Target, []SkippedEntry) {
+	return e.prepareRequestedTargets(nil)
+}
+
+func (e *Exporter) prepareRequestedTargets(requested []string) ([]Target, []SkippedEntry) {
 	targets := make([]Target, 0)
 	skipped := make([]SkippedEntry, 0)
 	for _, resourceID := range sc.SortedExportIDs(e.swf.Exports) {
 		resource := e.swf.Resources[resourceID]
 		for _, exportName := range e.swf.Exports[resourceID] {
+			if !exportMayMatchRequest(exportName, requested) {
+				continue
+			}
 			if resource == nil {
 				skipped = append(skipped, SkippedEntry{
 					SourceSC:   e.swf.Filename,
@@ -833,6 +816,18 @@ func (e *Exporter) prepareTargets() ([]Target, []SkippedEntry) {
 		return targets[i].Name < targets[j].Name
 	})
 	return targets, skipped
+}
+
+func exportMayMatchRequest(exportName string, requested []string) bool {
+	if len(requested) == 0 {
+		return true
+	}
+	for _, name := range requested {
+		if name == exportName || strings.HasPrefix(name, exportName+"@") || strings.HasPrefix(name, exportName+"/") {
+			return true
+		}
+	}
+	return false
 }
 
 func shouldSkipUIScreenTarget(sourceSC, exportName string) bool {
@@ -1085,25 +1080,71 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		FrameSegments:       target.FrameSegments,
 		AncestorResourceIDs: target.AncestorIDs,
 	}
+	effectiveDuration := target.Duration
+	composedScenery := false
+	if scenery, sceneErr := e.newSceneryRenderContext(target); sceneErr != nil {
+		return nil, nil, profile, sceneErr
+	} else if scenery != nil {
+		composedScenery = true
+		effectiveDuration, sceneErr = sceneDuration(target, scenery)
+		if sceneErr != nil {
+			return nil, nil, profile, sceneErr
+		}
+	}
 
-	if _, ok := target.Resource.(*sc.MovieClip); ok && target.Duration > 0 && !e.opts.FirstFrameOnly && !e.opts.LastFrameOnly && e.opts.FrameIndex <= 0 && !e.opts.StaticOnly {
-		tempDir, err := os.MkdirTemp("", "sc-export-webp-*")
+	if _, ok := target.Resource.(*sc.MovieClip); ok && effectiveDuration > 0 && !e.opts.FirstFrameOnly && !e.opts.LastFrameOnly && e.opts.FrameIndex <= 0 && !e.opts.StaticOnly {
+		if composedScenery && e.opts.SceneryFormat != "webp" {
+			hevcEntry, hevcSkipped, hevcProfile, hevcErr := e.exportAnimatedTargetToHEVC(target, outputBase, entryOutputBase, entry, profile, start)
+			if hevcErr == nil {
+				return hevcEntry, hevcSkipped, hevcProfile, nil
+			}
+			if errors.Is(hevcErr, errExportCancelled) {
+				return nil, nil, hevcProfile, hevcErr
+			}
+			if e.opts.SceneryFormat == "hevc" {
+				hevcProfile.TotalDuration = time.Since(start)
+				return nil, nil, hevcProfile, hevcErr
+			}
+			if !shouldFallbackFromHEVC(e.opts.SceneryFormat, hevcErr) {
+				hevcProfile.TotalDuration = time.Since(start)
+				return nil, &SkippedEntry{
+					SourceSC:   e.swf.Filename,
+					ExportName: target.Name,
+					ResourceID: target.ResourceID,
+					Reason:     hevcErr.Error(),
+				}, hevcProfile, nil
+			}
+		}
+		tempFile, err := os.CreateTemp(filepath.Dir(outputBase), "."+filepath.Base(outputBase)+"-*.webp.tmp")
 		if err != nil {
 			return nil, nil, profile, err
 		}
-		defer os.RemoveAll(tempDir)
+		tempPath := tempFile.Name()
+		committed := false
+		defer func() {
+			if !committed {
+				_ = tempFile.Close()
+				_ = os.Remove(tempPath)
+			}
+		}()
 
-		frameFiles, durationMS, skipReason, renderStats, err := e.renderAnimatedTargetToFiles(target, tempDir)
+		singleFrame, frameCount, durationMS, skipReason, renderStats, err := e.renderAnimatedTargetToWebP(target, tempFile)
 		profile.PrepareDuration = renderStats.PrepareDuration
 		profile.BoundsDuration = renderStats.BoundsDuration
 		profile.RenderDuration = renderStats.RenderDuration
+		profile.EncodeDuration = renderStats.EncodeDuration
 		profile.ChangePoints = renderStats.ChangePoints
 		profile.SampledSteps = renderStats.SampledSteps
 		profile.Frames = renderStats.Frames
 		profile.CanvasWidth = renderStats.CanvasWidth
 		profile.CanvasHeight = renderStats.CanvasHeight
+		profile.GPUFrames = renderStats.GPUFrames
 		if err != nil {
+			_ = tempFile.Close()
 			profile.TotalDuration = time.Since(start)
+			if errors.Is(err, errExportCancelled) {
+				return nil, nil, profile, err
+			}
 			return nil, &SkippedEntry{
 				SourceSC:   e.swf.Filename,
 				ExportName: target.Name,
@@ -1112,10 +1153,8 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 			}, profile, nil
 		}
 		if skipReason != "" {
-			if err := removeIfExists(outputPath + ".png"); err != nil {
-				return nil, nil, profile, err
-			}
-			if err := removeIfExists(outputPath + ".webp"); err != nil {
+			_ = tempFile.Close()
+			if err := removeOutputAlternates(outputBase, ""); err != nil {
 				return nil, nil, profile, err
 			}
 			profile.Status = "skipped"
@@ -1127,7 +1166,11 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 				Reason:     skipReason,
 			}, profile, nil
 		}
-		if len(frameFiles) == 0 {
+		if frameCount == 0 {
+			_ = tempFile.Close()
+			if err := removeOutputAlternates(outputBase, ""); err != nil {
+				return nil, nil, profile, err
+			}
 			profile.Status = "skipped"
 			profile.TotalDuration = time.Since(start)
 			return nil, &SkippedEntry{
@@ -1137,51 +1180,58 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 				Reason:     "no frames rendered",
 			}, profile, nil
 		}
+		if err := e.checkCancelled(); err != nil {
+			return nil, nil, profile, err
+		}
 
-		if len(frameFiles) == 1 {
-			outputPath += ".png"
-			encodeStart := time.Now()
-			if err := copyFileContents(filepath.Join(tempDir, frameFiles[0].Path), outputPath); err != nil {
+		if frameCount == 1 {
+			if err := tempFile.Close(); err != nil {
 				return nil, nil, profile, err
 			}
-			profile.EncodeDuration = time.Since(encodeStart)
+			if err := os.Remove(tempPath); err != nil && !os.IsNotExist(err) {
+				return nil, nil, profile, err
+			}
+			outputPath += ".png"
+			encodeStart := time.Now()
+			if err := writeOutputAtomically(outputPath, func(w io.Writer) error {
+				return (&png.Encoder{CompressionLevel: png.BestSpeed}).Encode(w, singleFrame)
+			}); err != nil {
+				return nil, nil, profile, err
+			}
+			if err := removeOutputAlternates(outputBase, ".png"); err != nil {
+				return nil, nil, profile, err
+			}
+			profile.EncodeDuration += time.Since(encodeStart)
 			profile.Status = "png"
 			entry.OutputFile = entryOutputBase + ".png"
 			entry.FrameCount = 1
 			entry.DurationMS = 0
 			profile.OutputFile = entry.OutputFile
 			profile.TotalDuration = time.Since(start)
+			committed = true
 			return entry, nil, profile, nil
 		}
 
 		outputPath += ".webp"
-		encodeStart := time.Now()
-		file, err := os.Create(outputPath)
-		if err != nil {
+		if err := tempFile.Chmod(0o644); err != nil {
 			return nil, nil, profile, err
 		}
-		webpFrames := make([]renderedFrame, 0, len(frameFiles))
-		for _, frameFile := range frameFiles {
-			webpFrames = append(webpFrames, renderedFrame{DelayCS: frameFile.DelayCS})
-		}
-		frameNames := make([]string, 0, len(frameFiles))
-		for _, frameFile := range frameFiles {
-			frameNames = append(frameNames, frameFile.Path)
-		}
-		if err := writeAnimatedWebPFromFiles(file, tempDir, frameNames, webpFrames); err != nil {
-			file.Close()
+		if err := tempFile.Close(); err != nil {
 			return nil, nil, profile, err
 		}
-		if err := file.Close(); err != nil {
+		if err := os.Rename(tempPath, outputPath); err != nil {
 			return nil, nil, profile, err
 		}
-		profile.EncodeDuration = time.Since(encodeStart)
+		if err := removeOutputAlternates(outputBase, ".webp"); err != nil {
+			return nil, nil, profile, err
+		}
 		profile.Status = "webp"
 		entry.OutputFile = entryOutputBase + ".webp"
-		entry.FrameCount = len(frameFiles)
+		entry.FrameCount = frameCount
 		entry.DurationMS = durationMS
 		profile.OutputFile = entry.OutputFile
 		profile.TotalDuration = time.Since(start)
+		committed = true
 		return entry, nil, profile, nil
 	}
 
@@ -1194,8 +1244,12 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 	profile.Frames = renderStats.Frames
 	profile.CanvasWidth = renderStats.CanvasWidth
 	profile.CanvasHeight = renderStats.CanvasHeight
+	profile.GPUFrames = renderStats.GPUFrames
 	if err != nil {
 		profile.TotalDuration = time.Since(start)
+		if errors.Is(err, errExportCancelled) {
+			return nil, nil, profile, err
+		}
 		return nil, &SkippedEntry{
 			SourceSC:   e.swf.Filename,
 			ExportName: target.Name,
@@ -1204,10 +1258,7 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		}, profile, nil
 	}
 	if skipReason != "" {
-		if err := removeIfExists(outputPath + ".png"); err != nil {
-			return nil, nil, profile, err
-		}
-		if err := removeIfExists(outputPath + ".webp"); err != nil {
+		if err := removeOutputAlternates(outputBase, ""); err != nil {
 			return nil, nil, profile, err
 		}
 		profile.Status = "skipped"
@@ -1220,6 +1271,9 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		}, profile, nil
 	}
 	if len(frames) == 0 {
+		if err := removeOutputAlternates(outputBase, ""); err != nil {
+			return nil, nil, profile, err
+		}
 		profile.Status = "skipped"
 		profile.TotalDuration = time.Since(start)
 		return nil, &SkippedEntry{
@@ -1229,21 +1283,18 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 			Reason:     "no frames rendered",
 		}, profile, nil
 	}
+	if err := e.checkCancelled(); err != nil {
+		return nil, nil, profile, err
+	}
 
 	switch len(frames) {
 	case 1:
 		encodeStart := time.Now()
 		if e.opts.PreferWebP {
 			outputPath += ".webp"
-			file, err := os.Create(outputPath)
-			if err != nil {
-				return nil, nil, profile, err
-			}
-			if err := writeStillWebP(file, frames[0].Image); err != nil {
-				file.Close()
-				return nil, nil, profile, err
-			}
-			if err := file.Close(); err != nil {
+			if err := writeOutputAtomically(outputPath, func(w io.Writer) error {
+				return writeStillWebP(w, frames[0].Image, e.opts)
+			}); err != nil {
 				return nil, nil, profile, err
 			}
 			profile.EncodeDuration = time.Since(encodeStart)
@@ -1255,15 +1306,9 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		}
 
 		outputPath += ".png"
-		file, err := os.Create(outputPath)
-		if err != nil {
-			return nil, nil, profile, err
-		}
-		if err := png.Encode(file, frames[0].Image); err != nil {
-			file.Close()
-			return nil, nil, profile, err
-		}
-		if err := file.Close(); err != nil {
+		if err := writeOutputAtomically(outputPath, func(w io.Writer) error {
+			return png.Encode(w, frames[0].Image)
+		}); err != nil {
 			return nil, nil, profile, err
 		}
 		profile.EncodeDuration = time.Since(encodeStart)
@@ -1275,18 +1320,12 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 		outputPath += ".webp"
 		totalDuration := 0
 		for _, frame := range frames {
-			totalDuration += frame.DelayCS * 10
+			totalDuration += frame.DelayMS
 		}
 		encodeStart := time.Now()
-		file, err := os.Create(outputPath)
-		if err != nil {
-			return nil, nil, profile, err
-		}
-		if err := writeAnimatedWebP(file, frames); err != nil {
-			file.Close()
-			return nil, nil, profile, err
-		}
-		if err := file.Close(); err != nil {
+		if err := writeOutputAtomically(outputPath, func(w io.Writer) error {
+			return writeAnimatedWebP(w, frames, e.opts)
+		}); err != nil {
 			return nil, nil, profile, err
 		}
 		profile.EncodeDuration = time.Since(encodeStart)
@@ -1299,36 +1338,145 @@ func (e *Exporter) exportTarget(target Target, exportsDir string, allocator *nam
 			entry.DurationMS = totalDuration
 		}
 	}
+	if err := removeOutputAlternates(outputBase, filepath.Ext(entry.OutputFile)); err != nil {
+		return nil, nil, profile, err
+	}
 
 	profile.OutputFile = entry.OutputFile
 	profile.TotalDuration = time.Since(start)
 	return entry, nil, profile, nil
 }
 
-type renderedFrame struct {
-	Image   *image.NRGBA
-	DelayCS int
+func shouldFallbackFromHEVC(sceneryFormat string, err error) bool {
+	return sceneryFormat == "auto" && errors.Is(err, hevcencode.ErrUnavailable)
 }
 
-type encodedFrameFile struct {
-	Path    string
-	DelayCS int
+func (e *Exporter) exportAnimatedTargetToHEVC(target Target, outputBase, entryOutputBase string, entry *ManifestEntry, profile TargetProfile, started time.Time) (*ManifestEntry, *SkippedEntry, TargetProfile, error) {
+	placeholder, err := os.CreateTemp(filepath.Dir(outputBase), "."+filepath.Base(outputBase)+"-*.mov")
+	if err != nil {
+		return nil, nil, profile, err
+	}
+	stagingPath := placeholder.Name()
+	if err := placeholder.Close(); err != nil {
+		_ = os.Remove(stagingPath)
+		return nil, nil, profile, err
+	}
+	if err := os.Remove(stagingPath); err != nil {
+		return nil, nil, profile, err
+	}
+	committed := false
+	defer func() {
+		if !committed {
+			_ = os.Remove(stagingPath)
+		}
+	}()
+
+	singleFrame, frameCount, durationMS, skipReason, renderStats, result, err := e.renderAnimatedTargetToHEVC(target, stagingPath)
+	profile.PrepareDuration = renderStats.PrepareDuration
+	profile.BoundsDuration = renderStats.BoundsDuration
+	profile.RenderDuration = renderStats.RenderDuration
+	profile.EncodeDuration = renderStats.EncodeDuration
+	profile.ChangePoints = renderStats.ChangePoints
+	profile.SampledSteps = renderStats.SampledSteps
+	profile.Frames = renderStats.Frames
+	profile.CanvasWidth = renderStats.CanvasWidth
+	profile.CanvasHeight = renderStats.CanvasHeight
+	profile.GPUFrames = renderStats.GPUFrames
+	profile.Encoder = "hevc-videotoolbox"
+	profile.HardwareEncode = result.HardwareAccelerated
+	if err != nil {
+		profile.TotalDuration = time.Since(started)
+		return nil, nil, profile, err
+	}
+	if skipReason != "" {
+		if err := removeOutputAlternates(outputBase, ""); err != nil {
+			return nil, nil, profile, err
+		}
+		profile.Status = "skipped"
+		profile.TotalDuration = time.Since(started)
+		return nil, &SkippedEntry{SourceSC: e.swf.Filename, ExportName: target.Name, ResourceID: target.ResourceID, Reason: skipReason}, profile, nil
+	}
+	if frameCount == 0 {
+		if err := removeOutputAlternates(outputBase, ""); err != nil {
+			return nil, nil, profile, err
+		}
+		profile.Status = "skipped"
+		profile.TotalDuration = time.Since(started)
+		return nil, &SkippedEntry{SourceSC: e.swf.Filename, ExportName: target.Name, ResourceID: target.ResourceID, Reason: "no frames rendered"}, profile, nil
+	}
+	if err := e.checkCancelled(); err != nil {
+		return nil, nil, profile, err
+	}
+	if frameCount == 1 {
+		outputPath := outputBase + ".png"
+		encodeStart := time.Now()
+		if err := writeOutputAtomically(outputPath, func(w io.Writer) error {
+			return (&png.Encoder{CompressionLevel: png.BestSpeed}).Encode(w, singleFrame)
+		}); err != nil {
+			return nil, nil, profile, err
+		}
+		if err := removeOutputAlternates(outputBase, ".png"); err != nil {
+			return nil, nil, profile, err
+		}
+		profile.EncodeDuration += time.Since(encodeStart)
+		profile.Status = "png"
+		entry.OutputFile = entryOutputBase + ".png"
+		entry.FrameCount = 1
+		entry.DurationMS = 0
+		profile.OutputFile = entry.OutputFile
+		profile.TotalDuration = time.Since(started)
+		committed = true
+		return entry, nil, profile, nil
+	}
+	if int64(durationMS) != result.DurationMS || frameCount != result.Frames {
+		return nil, nil, profile, fmt.Errorf("HEVC result mismatch: rendered %d frames/%dms, encoded %d frames/%dms", frameCount, durationMS, result.Frames, result.DurationMS)
+	}
+	if err := os.Chmod(stagingPath, 0o644); err != nil {
+		return nil, nil, profile, err
+	}
+	outputPath := outputBase + ".mov"
+	if err := os.Rename(stagingPath, outputPath); err != nil {
+		return nil, nil, profile, err
+	}
+	committed = true
+	if err := removeOutputAlternates(outputBase, ".mov"); err != nil {
+		return nil, nil, profile, err
+	}
+	profile.Status = "mov"
+	entry.OutputFile = entryOutputBase + ".mov"
+	entry.FrameCount = frameCount
+	entry.DurationMS = durationMS
+	profile.OutputFile = entry.OutputFile
+	profile.TotalDuration = time.Since(started)
+	return entry, nil, profile, nil
+}
+
+type renderedFrame struct {
+	Image   *image.NRGBA
+	DelayMS int
 }
 
 func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, renderProfile, error) {
 	spriteCache := map[bitmapCacheKey]*bitmapRenderable{}
+	scenery, err := e.newSceneryRenderContext(target)
+	if err != nil {
+		return nil, 0, "", renderProfile{}, err
+	}
 	switch target.Resource.(type) {
 	case *sc.Shape:
 		boundsStart := time.Now()
-		bounds, err := e.collectBounds(target, 0, nil, spriteCache)
+		bounds, err := e.collectSceneBounds(target, 0, nil, spriteCache, scenery)
 		if err != nil {
 			return nil, 0, "", renderProfile{}, err
 		}
 		profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
 		renderStart := time.Now()
-		frame, err := e.renderAt(target, 0, bounds, spriteCache)
+		frame, usedGPU, err := e.renderScenePreferredAtInto(target, 0, bounds, spriteCache, scenery, nil)
 		if err != nil {
 			return nil, 0, "", profile, err
+		}
+		if usedGPU {
+			profile.GPUFrames = 1
 		}
 		profile.RenderDuration = time.Since(renderStart)
 		profile.Frames = 1
@@ -1337,9 +1485,12 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 		if reason := tinyOutputReason(frame.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
 			return nil, 0, reason, profile, nil
 		}
-		return []renderedFrame{{Image: frame, DelayCS: 0}}, 0, "", profile, nil
+		return []renderedFrame{{Image: frame, DelayMS: 0}}, 0, "", profile, nil
 	case *sc.MovieClip:
-		duration := target.Duration
+		duration, err := sceneDuration(target, scenery)
+		if err != nil {
+			return nil, 0, "", renderProfile{}, err
+		}
 		clip := target.Resource.(*sc.MovieClip)
 		if e.opts.StaticOnly {
 			staticContainers := e.staticOnlyContainers(target)
@@ -1361,20 +1512,23 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 			if reason := tinyOutputReason(frame.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
 				return nil, 0, reason, profile, nil
 			}
-			return []renderedFrame{{Image: frame, DelayCS: 0}}, 0, "", profile, nil
+			return []renderedFrame{{Image: frame, DelayMS: 0}}, 0, "", profile, nil
 		}
 		if duration <= 0 || e.opts.FirstFrameOnly || e.opts.LastFrameOnly || e.opts.FrameIndex > 0 {
 			renderTime := stillRenderTime(clip, duration, e.opts)
 			boundsStart := time.Now()
-			bounds, err := e.collectBounds(target, duration, []float64{renderTime}, spriteCache)
+			bounds, err := e.collectSceneBounds(target, duration, []float64{renderTime}, spriteCache, scenery)
 			if err != nil {
 				return nil, 0, "", renderProfile{}, err
 			}
 			profile := renderProfile{BoundsDuration: time.Since(boundsStart), ChangePoints: 1, SampledSteps: 1}
 			renderStart := time.Now()
-			frame, err := e.renderAt(target, renderTime, bounds, spriteCache)
+			frame, usedGPU, err := e.renderScenePreferredAtInto(target, renderTime, bounds, spriteCache, scenery, nil)
 			if err != nil {
 				return nil, 0, "", profile, err
+			}
+			if usedGPU {
+				profile.GPUFrames = 1
 			}
 			profile.RenderDuration = time.Since(renderStart)
 			profile.Frames = 1
@@ -1383,16 +1537,16 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 			if reason := tinyOutputReason(frame.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
 				return nil, 0, reason, profile, nil
 			}
-			return []renderedFrame{{Image: frame, DelayCS: 0}}, 0, "", profile, nil
+			return []renderedFrame{{Image: frame, DelayMS: 0}}, 0, "", profile, nil
 		}
 
 		profile := renderProfile{}
 		prepareStart := time.Now()
-		changePoints := e.collectChangePoints(target, duration)
+		changePoints := e.sceneChangePoints(target, duration, scenery)
 		if len(changePoints) == 0 {
 			changePoints = []float64{0}
 		}
-		steps, err := e.collapseVisualStates(target, changePoints, duration)
+		steps, err := e.collapseSceneVisualStates(target, changePoints, duration, scenery)
 		if err != nil {
 			return nil, 0, "", profile, err
 		}
@@ -1404,45 +1558,55 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 			sampleTimes = append(sampleTimes, step.Time)
 		}
 		boundsStart := time.Now()
-		bounds, err := e.collectBounds(target, duration, sampleTimes, spriteCache)
+		bounds, err := e.collectSceneBounds(target, duration, sampleTimes, spriteCache, scenery)
 		if err != nil {
 			return nil, 0, "", profile, err
 		}
 		profile.BoundsDuration = time.Since(boundsStart)
+		renderScale := e.outputScale(target, bounds)
+		canvasWidth := maxInt(1, int(math.Ceil(float64(bounds.Dx())*renderScale)))
+		canvasHeight := maxInt(1, int(math.Ceil(float64(bounds.Dy())*renderScale)))
+		var metal *metalCompositor
+		if !e.opts.DisableGPU {
+			metal, _ = newMetalCompositor(canvasWidth, canvasHeight)
+		}
+		if metal != nil {
+			defer metal.close()
+		}
 
 		rawFrames := make([]renderedFrame, 0, len(steps))
 		totalDuration := 0
 		var lastHash [20]byte
 		renderStart := time.Now()
-		animatedResources := e.collectAnimatedResourceSet(target.ResourceID)
-		staticBackdrop, err := e.renderStaticBackdrop(target, bounds, spriteCache, animatedResources)
-		if err != nil {
-			return nil, 0, "", profile, err
-		}
-		if staticBackdrop != nil {
-			staticBackdrop, err = e.compositeSceneryBaseIfNeeded(target, staticBackdrop)
-			if err != nil {
-				return nil, 0, "", profile, err
-			}
-		}
 		for _, step := range steps {
-			img, err := cloneOrClearBackdrop(staticBackdrop, bounds)
-			if err != nil {
+			if err := e.checkCancelled(); err != nil {
 				return nil, 0, "", profile, err
 			}
-			img, err = e.renderDynamicAtInto(target, step.Time, bounds, spriteCache, animatedResources, img)
+			var img *image.NRGBA
+			if metal != nil {
+				img, err = e.renderSceneMetalAtInto(target, step.Time, bounds, spriteCache, scenery, metal, nil)
+				if err == nil {
+					profile.GPUFrames++
+				} else {
+					_ = metal.close()
+					metal = nil
+					img, err = e.renderSceneAtInto(target, step.Time, bounds, spriteCache, scenery, nil)
+				}
+			} else {
+				img, err = e.renderSceneAtInto(target, step.Time, bounds, spriteCache, scenery, nil)
+			}
 			if err != nil {
 				return nil, 0, "", profile, err
 			}
 			hash := sha1.Sum(img.Pix)
 			if len(rawFrames) > 0 && hash == lastHash {
-				rawFrames[len(rawFrames)-1].DelayCS += step.DelayCS
-				totalDuration += step.DelayCS * 10
+				rawFrames[len(rawFrames)-1].DelayMS += step.DelayMS
+				totalDuration += step.DelayMS
 				continue
 			}
-			rawFrames = append(rawFrames, renderedFrame{Image: img, DelayCS: step.DelayCS})
+			rawFrames = append(rawFrames, renderedFrame{Image: img, DelayMS: step.DelayMS})
 			lastHash = hash
-			totalDuration += step.DelayCS * 10
+			totalDuration += step.DelayMS
 		}
 		profile.RenderDuration = time.Since(renderStart)
 		if len(rawFrames) > 0 {
@@ -1455,7 +1619,7 @@ func (e *Exporter) renderTarget(target Target) ([]renderedFrame, int, string, re
 		}
 		profile.Frames = len(rawFrames)
 		if len(rawFrames) == 1 {
-			return []renderedFrame{{Image: rawFrames[0].Image, DelayCS: 0}}, 0, "", profile, nil
+			return []renderedFrame{{Image: rawFrames[0].Image, DelayMS: 0}}, 0, "", profile, nil
 		}
 		return rawFrames, totalDuration, "", profile, nil
 	default:
@@ -1485,132 +1649,303 @@ func stillRenderTime(clip *sc.MovieClip, duration float64, opts ExportOptions) f
 	return lastFrameTime
 }
 
-func (e *Exporter) renderAnimatedTargetToFiles(target Target, tempDir string) ([]encodedFrameFile, int, string, renderProfile, error) {
+type streamedAnimationEncoder interface {
+	AddFrame(image.Image, int) error
+	Close() error
+	Abort()
+}
+
+type streamedAnimationFactory func(width, height int) (streamedAnimationEncoder, error)
+
+type webPAnimationStream struct {
+	encoder interface {
+		AddFrame(image.Image, int) error
+		Close() error
+		Abort()
+	}
+}
+
+type hevcAnimationStream struct {
+	encoder      *hevcencode.Encoder
+	width        int
+	height       int
+	paddedWidth  int
+	paddedHeight int
+	padded       *image.NRGBA
+	result       hevcencode.Result
+}
+
+func (s *hevcAnimationStream) AddFrame(frame image.Image, durationMS int) error {
+	nrgba, ok := frame.(*image.NRGBA)
+	if !ok {
+		return fmt.Errorf("HEVC frame has type %T, want *image.NRGBA", frame)
+	}
+	encodedFrame := nrgba
+	if s.width != s.paddedWidth || s.height != s.paddedHeight {
+		if s.padded == nil {
+			s.padded = image.NewNRGBA(image.Rect(0, 0, s.paddedWidth, s.paddedHeight))
+		} else {
+			clear(s.padded.Pix)
+		}
+		stddraw.Draw(s.padded, image.Rect(0, 0, s.width, s.height), nrgba, nrgba.Bounds().Min, stddraw.Src)
+		encodedFrame = s.padded
+	}
+	if err := s.encoder.AddFrame(encodedFrame, durationMS); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (s *hevcAnimationStream) Close() error {
+	result, err := s.encoder.Close()
+	s.result = result
+	return err
+}
+
+func (s *hevcAnimationStream) Abort() {
+	s.encoder.Abort()
+}
+
+func (s *webPAnimationStream) AddFrame(frame image.Image, durationMS int) error {
+	return s.encoder.AddFrame(frame, durationMS)
+}
+
+func (s *webPAnimationStream) Close() error {
+	return s.encoder.Close()
+}
+
+func (s *webPAnimationStream) Abort() {
+	s.encoder.Abort()
+}
+
+func (e *Exporter) renderAnimatedTargetToWebP(target Target, w io.Writer) (*image.NRGBA, int, int, string, renderProfile, error) {
+	return e.renderAnimatedTargetToEncoder(target, func(width, height int) (streamedAnimationEncoder, error) {
+		encoder, err := currentWebPEncoder.NewAnimation(w, width, height, webpOptions(e.opts))
+		if err != nil {
+			return nil, err
+		}
+		return &webPAnimationStream{encoder: encoder}, nil
+	})
+}
+
+func (e *Exporter) renderAnimatedTargetToHEVC(target Target, path string) (*image.NRGBA, int, int, string, renderProfile, hevcencode.Result, error) {
+	var stream *hevcAnimationStream
+	singleFrame, frameCount, durationMS, skipReason, profile, err := e.renderAnimatedTargetToEncoder(target, func(width, height int) (streamedAnimationEncoder, error) {
+		paddedWidth := width + width%2
+		paddedHeight := height + height%2
+		encoder, newErr := hevcencode.New(path, paddedWidth, paddedHeight, hevcencode.Options{
+			Quality:         e.opts.HEVCQuality,
+			RequireHardware: true,
+		})
+		if newErr != nil {
+			return nil, newErr
+		}
+		stream = &hevcAnimationStream{
+			encoder:      encoder,
+			width:        width,
+			height:       height,
+			paddedWidth:  paddedWidth,
+			paddedHeight: paddedHeight,
+		}
+		return stream, nil
+	})
+	if err != nil || stream == nil {
+		return singleFrame, frameCount, durationMS, skipReason, profile, hevcencode.Result{}, err
+	}
+	return singleFrame, frameCount, durationMS, skipReason, profile, stream.result, nil
+}
+
+func (e *Exporter) renderAnimatedTargetToEncoder(target Target, newEncoder streamedAnimationFactory) (*image.NRGBA, int, int, string, renderProfile, error) {
 	spriteCache := map[bitmapCacheKey]*bitmapRenderable{}
 	profile := renderProfile{}
-	duration := target.Duration
+	scenery, err := e.newSceneryRenderContext(target)
+	if err != nil {
+		return nil, 0, 0, "", profile, err
+	}
+	duration, err := sceneDuration(target, scenery)
+	if err != nil {
+		return nil, 0, 0, "", profile, err
+	}
 	if duration <= 0 {
-		return nil, 0, "", profile, fmt.Errorf("renderAnimatedTargetToFiles requires animated target")
+		return nil, 0, 0, "", profile, fmt.Errorf("renderAnimatedTargetToWebP requires animated target")
 	}
 
 	prepareStart := time.Now()
-	changePoints := e.collectChangePoints(target, duration)
+	changePoints := e.sceneChangePoints(target, duration, scenery)
 	if len(changePoints) == 0 {
 		changePoints = []float64{0}
 	}
-	steps, err := e.collapseVisualStates(target, changePoints, duration)
+	steps, err := e.collapseSceneVisualStates(target, changePoints, duration, scenery)
 	if err != nil {
-		return nil, 0, "", profile, err
+		return nil, 0, 0, "", profile, err
 	}
 	profile.PrepareDuration = time.Since(prepareStart)
 	profile.ChangePoints = len(changePoints)
+	profile.SampledSteps = len(steps)
 
 	sampleTimes := make([]float64, 0, len(steps))
 	for _, step := range steps {
 		sampleTimes = append(sampleTimes, step.Time)
 	}
-
 	boundsStart := time.Now()
-	bounds, err := e.collectBounds(target, duration, sampleTimes, spriteCache)
+	bounds, err := e.collectSceneBounds(target, duration, sampleTimes, spriteCache, scenery)
 	if err != nil {
-		return nil, 0, "", profile, err
+		return nil, 0, 0, "", profile, err
 	}
 	profile.BoundsDuration = time.Since(boundsStart)
-	profile.CanvasWidth = bounds.Dx()
-	profile.CanvasHeight = bounds.Dy()
-	animatedResources := e.collectAnimatedResourceSet(target.ResourceID)
-	staticBackdrop, err := e.renderStaticBackdrop(target, bounds, spriteCache, animatedResources)
-	if err != nil {
-		return nil, 0, "", profile, err
-	}
-	if staticBackdrop != nil {
-		staticBackdrop, err = e.compositeSceneryBaseIfNeeded(target, staticBackdrop)
+
+	renderScale := e.outputScale(target, bounds)
+	canvasWidth := maxInt(1, int(math.Ceil(float64(bounds.Dx())*renderScale)))
+	canvasHeight := maxInt(1, int(math.Ceil(float64(bounds.Dy())*renderScale)))
+	var metal *metalCompositor
+	if !e.opts.DisableGPU {
+		metal, err = newMetalCompositor(canvasWidth, canvasHeight)
 		if err != nil {
-			return nil, 0, "", profile, err
+			if !errors.Is(err, errMetalCompositorUnavailable) {
+				return nil, 0, 0, "", profile, fmt.Errorf("initialize Metal compositor: %w", err)
+			}
+			metal = nil
 		}
 	}
+	if metal != nil {
+		defer metal.close()
+	}
 
-	encodedFrames := make([]encodedFrameFile, 0, len(steps))
-	totalDuration := 0
-	var lastHash [20]byte
-	var haveLast bool
-	var renderElapsed time.Duration
+	var animation streamedAnimationEncoder
+	animationClosed := false
+	defer func() {
+		if animation != nil && !animationClosed {
+			animation.Abort()
+		}
+	}()
 
-	for index, step := range steps {
+	var pending *image.NRGBA
+	var canvas *image.NRGBA
+	var pendingHash [20]byte
+	pendingDelayMS := 0
+	totalDurationMS := 0
+	uniqueFrames := 0
+
+	for _, step := range steps {
+		if err := e.checkCancelled(); err != nil {
+			return nil, 0, 0, "", profile, err
+		}
 		renderStart := time.Now()
-		canvas, err := cloneOrClearBackdrop(staticBackdrop, bounds)
-		if err == nil {
-			canvas, err = e.renderDynamicAtInto(target, step.Time, bounds, spriteCache, animatedResources, canvas)
+		if metal != nil {
+			canvas, err = e.renderSceneMetalAtInto(target, step.Time, bounds, spriteCache, scenery, metal, canvas)
+			if err == nil {
+				profile.GPUFrames++
+			}
+		} else {
+			canvas, err = e.renderSceneAtInto(target, step.Time, bounds, spriteCache, scenery, canvas)
 		}
-		renderElapsed += time.Since(renderStart)
+		profile.RenderDuration += time.Since(renderStart)
 		if err != nil {
-			return nil, 0, "", profile, err
+			return nil, 0, 0, "", profile, err
 		}
-		img := canvas
-		if profile.CanvasWidth == 0 && profile.CanvasHeight == 0 {
-			profile.CanvasWidth = img.Bounds().Dx()
-			profile.CanvasHeight = img.Bounds().Dy()
-			if reason := tinyOutputReason(img.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
-				return nil, 0, reason, profile, nil
+		if profile.CanvasWidth == 0 {
+			profile.CanvasWidth = canvas.Bounds().Dx()
+			profile.CanvasHeight = canvas.Bounds().Dy()
+			if reason := tinyOutputReason(canvas.Bounds(), e.opts.SkipTinyOutputThreshold); reason != "" {
+				return nil, 0, 0, reason, profile, nil
 			}
 		}
 
-		hash := sha1.Sum(img.Pix)
-		if haveLast && hash == lastHash {
-			encodedFrames[len(encodedFrames)-1].DelayCS += step.DelayCS
-			totalDuration += step.DelayCS * 10
-			img = nil
+		hash := sha1.Sum(canvas.Pix)
+		totalDurationMS += step.DelayMS
+		if pending != nil && hash == pendingHash {
+			pendingDelayMS += step.DelayMS
 			continue
 		}
 
-		frameName := fmt.Sprintf("%x.png", index)
-		framePath := filepath.Join(tempDir, frameName)
-		file, err := os.Create(framePath)
+		if pending == nil {
+			pending = canvas
+			canvas = nil
+			pendingHash = hash
+			pendingDelayMS = step.DelayMS
+			uniqueFrames = 1
+			continue
+		}
+
+		encodeStart := time.Now()
+		if animation == nil {
+			animation, err = newEncoder(pending.Bounds().Dx(), pending.Bounds().Dy())
+		}
+		if err == nil {
+			err = animation.AddFrame(pending, pendingDelayMS)
+		}
+		profile.EncodeDuration += time.Since(encodeStart)
 		if err != nil {
-			return nil, 0, "", profile, err
-		}
-		if err := png.Encode(file, img); err != nil {
-			file.Close()
-			return nil, 0, "", profile, err
-		}
-		if err := file.Close(); err != nil {
-			return nil, 0, "", profile, err
+			return nil, 0, 0, "", profile, err
 		}
 
-		encodedFrames = append(encodedFrames, encodedFrameFile{Path: frameName, DelayCS: step.DelayCS})
-		lastHash = hash
-		haveLast = true
-		totalDuration += step.DelayCS * 10
-		img = nil
+		reusable := pending
+		pending = canvas
+		canvas = reusable
+		pendingHash = hash
+		pendingDelayMS = step.DelayMS
+		uniqueFrames++
 	}
 
-	profile.RenderDuration = renderElapsed
-	profile.Frames = len(encodedFrames)
-	if len(encodedFrames) == 0 {
-		return nil, 0, "no frames rendered", profile, nil
+	profile.Frames = uniqueFrames
+	if pending == nil {
+		return nil, 0, 0, "no frames rendered", profile, nil
 	}
-	return encodedFrames, totalDuration, "", profile, nil
+	if uniqueFrames == 1 {
+		return pending, 1, totalDurationMS, "", profile, nil
+	}
+
+	encodeStart := time.Now()
+	err = animation.AddFrame(pending, pendingDelayMS)
+	if err == nil {
+		err = animation.Close()
+		animationClosed = true
+	}
+	profile.EncodeDuration += time.Since(encodeStart)
+	if err != nil {
+		return nil, 0, 0, "", profile, err
+	}
+	return nil, uniqueFrames, totalDurationMS, "", profile, nil
 }
 
-func copyFileContents(srcPath, dstPath string) error {
-	srcFile, err := os.Open(srcPath)
+func writeOutputAtomically(path string, write func(io.Writer) error) error {
+	dir := filepath.Dir(path)
+	if err := os.MkdirAll(dir, 0o755); err != nil {
+		return err
+	}
+	temp, err := os.CreateTemp(dir, "."+filepath.Base(path)+"-*.tmp")
 	if err != nil {
 		return err
 	}
-	defer srcFile.Close()
-
-	dstFile, err := os.Create(dstPath)
-	if err != nil {
+	tempPath := temp.Name()
+	committed := false
+	defer func() {
+		if !committed {
+			_ = temp.Close()
+			_ = os.Remove(tempPath)
+		}
+	}()
+	if err := write(temp); err != nil {
 		return err
 	}
-	if _, err := io.Copy(dstFile, srcFile); err != nil {
-		dstFile.Close()
+	if err := temp.Chmod(0o644); err != nil {
 		return err
 	}
-	return dstFile.Close()
+	if err := temp.Close(); err != nil {
+		return err
+	}
+	if err := os.Rename(tempPath, path); err != nil {
+		return err
+	}
+	committed = true
+	return nil
 }
 
 func (e *Exporter) collapseVisualStates(target Target, changePoints []float64, duration float64) ([]renderStep, error) {
+	return e.collapseSceneVisualStates(target, changePoints, duration, nil)
+}
+
+func (e *Exporter) collapseSceneVisualStates(target Target, changePoints []float64, duration float64, scenery *sceneryRenderContext) ([]renderStep, error) {
 	steps := make([]renderStep, 0, len(changePoints))
 	var lastSignature uint64
 	haveSignature := false
@@ -1620,20 +1955,32 @@ func (e *Exporter) collapseVisualStates(target Target, changePoints []float64, d
 		if i+1 < len(changePoints) {
 			next = changePoints[i+1]
 		}
-		delayCS := int(math.Round((next - t) * 100))
-		if delayCS <= 0 {
-			delayCS = 1
+		startMS := int(math.Round(t * 1000))
+		endMS := int(math.Round(next * 1000))
+		delayMS := endMS - startMS
+		if delayMS <= 0 {
+			delayMS = 1
 		}
 
 		signature, err := e.visualStateSignature(target, t)
 		if err != nil {
 			return nil, err
 		}
+		if scenery != nil {
+			baseSignature, err := scenery.exporter.visualStateSignature(scenery.target, t)
+			if err != nil {
+				return nil, err
+			}
+			combined := &stateHasher{value: 1469598103934665603}
+			combined.add(signature)
+			combined.add(baseSignature)
+			signature = combined.value
+		}
 		if haveSignature && signature == lastSignature {
-			steps[len(steps)-1].DelayCS += delayCS
+			steps[len(steps)-1].DelayMS += delayMS
 			continue
 		}
-		steps = append(steps, renderStep{Time: t, DelayCS: delayCS})
+		steps = append(steps, renderStep{Time: t, DelayMS: delayMS})
 		lastSignature = signature
 		haveSignature = true
 	}
@@ -1642,7 +1989,7 @@ func (e *Exporter) collapseVisualStates(target Target, changePoints []float64, d
 }
 
 func (e *Exporter) collectChangePoints(target Target, duration float64) []float64 {
-	set := map[int64]bool{0: true}
+	set := map[uint64]float64{math.Float64bits(0): 0}
 	var visit func(id uint16, seen map[uint16]bool)
 	visit = func(id uint16, seen map[uint16]bool) {
 		if seen[id] {
@@ -1665,7 +2012,7 @@ func (e *Exporter) collectChangePoints(target Target, duration float64) []float6
 				if t >= duration-1e-9 {
 					break
 				}
-				set[quantizeTime(t)] = true
+				set[math.Float64bits(t)] = t
 			}
 		}
 		for _, bind := range clip.Binds {
@@ -1676,19 +2023,11 @@ func (e *Exporter) collectChangePoints(target Target, duration float64) []float6
 	}
 	visit(target.ResourceID, map[uint16]bool{})
 	out := make([]float64, 0, len(set))
-	for q := range set {
-		out = append(out, dequantizeTime(q))
+	for _, t := range set {
+		out = append(out, t)
 	}
 	sort.Float64s(out)
 	return out
-}
-
-func quantizeTime(t float64) int64 {
-	return int64(math.Round(t * 1_000_000))
-}
-
-func dequantizeTime(v int64) float64 {
-	return float64(v) / 1_000_000
 }
 
 func (e *Exporter) visualStateSignature(target Target, t float64) (uint64, error) {
@@ -1730,9 +2069,11 @@ func (e *Exporter) hashVisualState(target Target, resourceID uint16, t float64, 
 		defer func() { seen[resourceID]-- }()
 
 		frameIndex := targetClipFrameIndex(target, resourceID, res, t)
+		if frameIndex < 0 || frameIndex >= len(res.Frames) {
+			return nil
+		}
 		hasher.add(2)
 		hasher.add(uint64(resourceID))
-		hasher.add(uint64(frameIndex))
 		if selected {
 			hasher.add(1)
 		} else {
@@ -1746,7 +2087,11 @@ func (e *Exporter) hashVisualState(target Target, resourceID uint16, t float64, 
 			}
 			bind := res.Binds[element.Bind]
 			child := e.swf.Resources[bind.ID]
-			if _, ok := child.(*sc.MovieClipModifier); ok {
+			hasher.add(uint64(element.Bind))
+			hasher.addString(bind.Blend)
+			if modifier, ok := child.(*sc.MovieClipModifier); ok {
+				hasher.add(3)
+				hasher.add(uint64(modifier.Modifier))
 				continue
 			}
 			childMatrix := matrix
@@ -1959,30 +2304,426 @@ func (e *Exporter) assetBaseRenderer() (*Exporter, error) {
 }
 
 func (e *Exporter) renderAtInto(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, canvas *image.NRGBA) (*image.NRGBA, error) {
+	return e.renderResourceAtInto(target, t, worldBounds, spriteCache, canvas, true, e.outputScale(target, worldBounds), sc.IdentityMatrix())
+}
+
+func (e *Exporter) renderOnto(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, canvas *image.NRGBA) (*image.NRGBA, error) {
+	return e.renderResourceAtInto(target, t, worldBounds, spriteCache, canvas, false, e.outputScale(target, worldBounds), sc.IdentityMatrix())
+}
+
+func (e *Exporter) outputScale(target Target, worldBounds image.Rectangle) float64 {
 	renderScale := float64(maxInt(e.opts.RenderScale, 1))
+	if target.Name == "Player_Background" && e.opts.SceneryMaxDimension > 0 {
+		longestEdge := maxInt(worldBounds.Dx(), worldBounds.Dy())
+		if longestEdge > 0 {
+			maximumScale := float64(e.opts.SceneryMaxDimension) / float64(longestEdge)
+			if maximumScale < renderScale {
+				renderScale = maximumScale
+			}
+		}
+	}
+	return renderScale
+}
+
+func (e *Exporter) renderResourceAtInto(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, canvas *image.NRGBA, clearCanvas bool, renderScale float64, rootMatrix sc.Matrix) (*image.NRGBA, error) {
+	return e.renderResourceAtIntoMasked(target, t, worldBounds, spriteCache, canvas, clearCanvas, renderScale, rootMatrix, nil)
+}
+
+func (e *Exporter) renderResourceAtIntoMasked(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, canvas *image.NRGBA, clearCanvas bool, renderScale float64, rootMatrix sc.Matrix, alphaMask *image.NRGBA) (*image.NRGBA, error) {
 	canvasWidth := maxInt(1, int(math.Ceil(float64(worldBounds.Dx())*renderScale)))
 	canvasHeight := maxInt(1, int(math.Ceil(float64(worldBounds.Dy())*renderScale)))
 	if canvas == nil || canvas.Bounds().Dx() != canvasWidth || canvas.Bounds().Dy() != canvasHeight {
 		canvas = image.NewNRGBA(image.Rect(0, 0, canvasWidth, canvasHeight))
-	} else {
+	} else if clearCanvas {
 		clear(canvas.Pix)
 	}
 	offset := sc.Matrix{A: 1, D: 1, Tx: float64(-worldBounds.Min.X), Ty: float64(-worldBounds.Min.Y)}
-	if renderScale > 1 {
+	if renderScale != 1 {
 		offset = sc.Matrix{A: renderScale, D: renderScale}.Multiply(offset)
 	}
-	err := e.visitResource(target, target.ResourceID, t, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", "", func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string) error {
-		renderable, err := e.bitmapRenderable(shape, idx, spriteCache)
-		if err != nil {
-			return err
-		}
-		full := matrix.Multiply(renderable.transform)
-		return drawBitmapWithCoverage(canvas, renderable.sprite, full, colorTransform, blend, target.Name == "bonus_gembox")
-	})
+	offset = offset.Multiply(rootMatrix)
+	err := e.renderResourceWithMasks(target, target.ResourceID, t, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", "", canvas, spriteCache, alphaMask)
 	if err != nil {
 		return nil, err
 	}
 	return canvas, nil
+}
+
+func (e *Exporter) renderResourceWithMasks(
+	target Target,
+	resourceID uint16,
+	t float64,
+	matrix sc.Matrix,
+	colorTransform sc.ColorTransform,
+	seen map[uint16]int,
+	selected bool,
+	blend string,
+	canvas *image.NRGBA,
+	spriteCache map[bitmapCacheKey]*bitmapRenderable,
+	alphaMask *image.NRGBA,
+) error {
+	resource := e.swf.Resources[resourceID]
+	switch res := resource.(type) {
+	case *sc.Shape:
+		if !selected {
+			return nil
+		}
+		for idx := range res.Bitmaps {
+			renderable, err := e.bitmapRenderable(res, idx, spriteCache)
+			if err != nil {
+				return err
+			}
+			full := matrix.Multiply(renderable.transform)
+			if err := drawBitmapMaskedWithFloor(canvas, renderable.sprite, full, colorTransform, blend, alphaMask, target.Name == "bonus_gembox", renderable.blendLuminanceFloor(blend)); err != nil {
+				return err
+			}
+		}
+		return nil
+	case *sc.MovieClip:
+		if seen[resourceID] > 4 {
+			return nil
+		}
+		seen[resourceID]++
+		defer func() { seen[resourceID]-- }()
+
+		frame := clipFrameAt(target, resourceID, res, t)
+		maskMode := uint8(0)
+		var maskCanvas *image.NRGBA
+		var contentMask *image.NRGBA
+		for _, element := range frame.Elements {
+			if int(element.Bind) >= len(res.Binds) {
+				continue
+			}
+			bind := res.Binds[element.Bind]
+			child := e.swf.Resources[bind.ID]
+			if modifier, ok := child.(*sc.MovieClipModifier); ok {
+				switch modifier.Modifier {
+				case 38:
+					maskMode = 1
+					maskCanvas = image.NewNRGBA(canvas.Bounds())
+					contentMask = nil
+				case 39:
+					maskMode = 2
+					contentMask = combineAlphaMasks(maskCanvas, alphaMask)
+				case 40:
+					maskMode = 0
+					maskCanvas = nil
+					contentMask = nil
+				}
+				continue
+			}
+
+			childMatrix := matrix
+			if element.Matrix != 0xFFFF && res.MatrixBank >= 0 && res.MatrixBank < len(e.swf.MatrixBanks) && int(element.Matrix) < len(e.swf.MatrixBanks[res.MatrixBank].Matrices) {
+				childMatrix = matrix.Multiply(e.swf.MatrixBanks[res.MatrixBank].Matrices[element.Matrix])
+			}
+			childColor := colorTransform
+			if element.Color != 0xFFFF && res.MatrixBank >= 0 && res.MatrixBank < len(e.swf.MatrixBanks) && int(element.Color) < len(e.swf.MatrixBanks[res.MatrixBank].ColorTransforms) {
+				childColor = colorTransform.Combine(e.swf.MatrixBanks[res.MatrixBank].ColorTransforms[element.Color])
+			}
+			childSelected := selected || bind.Name == target.SelectedBind
+			childBlend := inheritedBlend(blend, bind.Blend)
+			drawCanvas := canvas
+			childMask := alphaMask
+			if maskMode == 1 {
+				drawCanvas = maskCanvas
+				childBlend = ""
+				childMask = nil
+			} else if maskMode == 2 {
+				childMask = contentMask
+			}
+			if err := e.renderResourceWithMasks(target, bind.ID, t, childMatrix, childColor, seen, childSelected, childBlend, drawCanvas, spriteCache, childMask); err != nil {
+				return err
+			}
+		}
+		return nil
+	case *sc.TextField, *sc.MovieClipModifier:
+		return nil
+	default:
+		return nil
+	}
+}
+
+func (e *Exporter) renderResourceMetalAt(
+	target Target,
+	t float64,
+	worldBounds image.Rectangle,
+	spriteCache map[bitmapCacheKey]*bitmapRenderable,
+	compositor *metalCompositor,
+	renderScale float64,
+	rootMatrix sc.Matrix,
+) error {
+	return e.renderResourceMetalAtMasked(target, t, worldBounds, spriteCache, compositor, renderScale, rootMatrix, nil)
+}
+
+func (e *Exporter) renderResourceMetalAtMasked(
+	target Target,
+	t float64,
+	worldBounds image.Rectangle,
+	spriteCache map[bitmapCacheKey]*bitmapRenderable,
+	compositor *metalCompositor,
+	renderScale float64,
+	rootMatrix sc.Matrix,
+	alphaMask *metalSurface,
+) error {
+	offset := sc.Matrix{A: 1, D: 1, Tx: float64(-worldBounds.Min.X), Ty: float64(-worldBounds.Min.Y)}
+	if renderScale != 1 {
+		offset = sc.Matrix{A: renderScale, D: renderScale}.Multiply(offset)
+	}
+	offset = offset.Multiply(rootMatrix)
+	return e.renderResourceMetalWithMasks(
+		target,
+		target.ResourceID,
+		t,
+		offset,
+		sc.IdentityColor(),
+		map[uint16]int{},
+		target.SelectedBind == "",
+		"",
+		compositor,
+		spriteCache,
+		nil,
+		alphaMask,
+	)
+}
+
+func (e *Exporter) renderResourceMetalWithMasks(
+	target Target,
+	resourceID uint16,
+	t float64,
+	matrix sc.Matrix,
+	colorTransform sc.ColorTransform,
+	seen map[uint16]int,
+	selected bool,
+	blend string,
+	compositor *metalCompositor,
+	spriteCache map[bitmapCacheKey]*bitmapRenderable,
+	destination *metalSurface,
+	alphaMask *metalSurface,
+) error {
+	resource := e.swf.Resources[resourceID]
+	switch res := resource.(type) {
+	case *sc.Shape:
+		if !selected {
+			return nil
+		}
+		for idx := range res.Bitmaps {
+			renderable, err := e.bitmapRenderable(res, idx, spriteCache)
+			if err != nil {
+				return err
+			}
+			full := matrix.Multiply(renderable.transform)
+			if err := compositor.drawTo(
+				destination,
+				renderable.sprite,
+				full,
+				colorTransform,
+				blend,
+				target.Name == "bonus_gembox",
+				alphaMask,
+			); err != nil {
+				return err
+			}
+		}
+		return nil
+	case *sc.MovieClip:
+		if seen[resourceID] > 4 {
+			return nil
+		}
+		seen[resourceID]++
+		defer func() { seen[resourceID]-- }()
+
+		frame := clipFrameAt(target, resourceID, res, t)
+		maskMode := uint8(0)
+		var maskSurface *metalSurface
+		var contentMask *metalSurface
+		contentMaskOwned := false
+		maskAlreadyCached := false
+		releaseMasks := func() {
+			if contentMaskOwned {
+				compositor.releaseSurface(contentMask)
+			}
+			if maskSurface != nil {
+				compositor.releaseSurface(maskSurface)
+			}
+			maskSurface = nil
+			contentMask = nil
+			contentMaskOwned = false
+			maskAlreadyCached = false
+		}
+		defer releaseMasks()
+
+		for elementIndex, element := range frame.Elements {
+			if int(element.Bind) >= len(res.Binds) {
+				continue
+			}
+			bind := res.Binds[element.Bind]
+			child := e.swf.Resources[bind.ID]
+			if modifier, ok := child.(*sc.MovieClipModifier); ok {
+				switch modifier.Modifier {
+				case 38:
+					releaseMasks()
+					var err error
+					if key, ok := e.staticMetalMaskKey(target, resourceID, res, frame, elementIndex, t, matrix, colorTransform, selected); ok {
+						maskSurface, maskAlreadyCached, err = compositor.acquirePersistentMask(key)
+					} else {
+						maskSurface, err = compositor.acquireSurface()
+					}
+					if err != nil {
+						return err
+					}
+					maskMode = 1
+				case 39:
+					maskAlreadyCached = false
+					if contentMaskOwned {
+						compositor.releaseSurface(contentMask)
+						contentMask = nil
+						contentMaskOwned = false
+					}
+					if maskSurface == nil {
+						contentMask = alphaMask
+					} else if alphaMask == nil {
+						contentMask = maskSurface
+					} else {
+						var err error
+						contentMask, err = compositor.combineMasks(maskSurface, alphaMask)
+						if err != nil {
+							return err
+						}
+						contentMaskOwned = true
+					}
+					maskMode = 2
+				case 40:
+					releaseMasks()
+					maskMode = 0
+				}
+				continue
+			}
+
+			childMatrix := matrix
+			if element.Matrix != 0xFFFF && res.MatrixBank >= 0 && res.MatrixBank < len(e.swf.MatrixBanks) && int(element.Matrix) < len(e.swf.MatrixBanks[res.MatrixBank].Matrices) {
+				childMatrix = matrix.Multiply(e.swf.MatrixBanks[res.MatrixBank].Matrices[element.Matrix])
+			}
+			childColor := colorTransform
+			if element.Color != 0xFFFF && res.MatrixBank >= 0 && res.MatrixBank < len(e.swf.MatrixBanks) && int(element.Color) < len(e.swf.MatrixBanks[res.MatrixBank].ColorTransforms) {
+				childColor = colorTransform.Combine(e.swf.MatrixBanks[res.MatrixBank].ColorTransforms[element.Color])
+			}
+			childSelected := selected || bind.Name == target.SelectedBind
+			childBlend := inheritedBlend(blend, bind.Blend)
+			childDestination := destination
+			childMask := alphaMask
+			if maskMode == 1 {
+				if maskAlreadyCached {
+					continue
+				}
+				childDestination = maskSurface
+				childBlend = ""
+				childMask = nil
+			} else if maskMode == 2 {
+				childMask = contentMask
+			}
+			if err := e.renderResourceMetalWithMasks(
+				target,
+				bind.ID,
+				t,
+				childMatrix,
+				childColor,
+				seen,
+				childSelected,
+				childBlend,
+				compositor,
+				spriteCache,
+				childDestination,
+				childMask,
+			); err != nil {
+				return err
+			}
+		}
+		return nil
+	case *sc.TextField, *sc.MovieClipModifier:
+		return nil
+	default:
+		return nil
+	}
+}
+
+// staticMetalMaskKey identifies mask groups made only from direct shapes. These
+// groups cannot animate within a clip frame, so Metal can rasterize them once
+// and reuse the texture for subsequent output frames.
+func (e *Exporter) staticMetalMaskKey(
+	target Target,
+	resourceID uint16,
+	clip *sc.MovieClip,
+	frame sc.MovieClipFrame,
+	modifierIndex int,
+	t float64,
+	matrix sc.Matrix,
+	colorTransform sc.ColorTransform,
+	selected bool,
+) (uint64, bool) {
+	shapeCount := 0
+	closed := false
+	for i := modifierIndex + 1; i < len(frame.Elements); i++ {
+		element := frame.Elements[i]
+		if int(element.Bind) >= len(clip.Binds) {
+			return 0, false
+		}
+		bind := clip.Binds[element.Bind]
+		child := e.swf.Resources[bind.ID]
+		if modifier, ok := child.(*sc.MovieClipModifier); ok {
+			closed = modifier.Modifier == 39 && shapeCount > 0
+			break
+		}
+		shape, ok := child.(*sc.Shape)
+		if !ok || len(shape.Bitmaps) == 0 {
+			return 0, false
+		}
+		shapeCount++
+	}
+	if !closed {
+		return 0, false
+	}
+	hasher := &stateHasher{value: 1469598103934665603}
+	hasher.add(0x4d41534b)
+	hasher.add(uint64(resourceID))
+	hasher.add(uint64(targetClipFrameIndex(target, resourceID, clip, t)))
+	hasher.add(uint64(modifierIndex))
+	hasher.addFloat(matrix.A)
+	hasher.addFloat(matrix.B)
+	hasher.addFloat(matrix.C)
+	hasher.addFloat(matrix.D)
+	hasher.addFloat(matrix.Tx)
+	hasher.addFloat(matrix.Ty)
+	hasher.addFloat(colorTransform.RAdd)
+	hasher.addFloat(colorTransform.GAdd)
+	hasher.addFloat(colorTransform.BAdd)
+	hasher.addFloat(colorTransform.AMul)
+	hasher.addFloat(colorTransform.RMul)
+	hasher.addFloat(colorTransform.GMul)
+	hasher.addFloat(colorTransform.BMul)
+	if selected {
+		hasher.add(1)
+	}
+	hasher.addString(target.SelectedBind)
+	return hasher.value, true
+}
+
+func combineAlphaMasks(mask, parent *image.NRGBA) *image.NRGBA {
+	if mask == nil {
+		return parent
+	}
+	if parent == nil {
+		return mask
+	}
+	bounds := mask.Bounds().Intersect(parent.Bounds())
+	combined := image.NewNRGBA(mask.Bounds())
+	for y := bounds.Min.Y; y < bounds.Max.Y; y++ {
+		for x := bounds.Min.X; x < bounds.Max.X; x++ {
+			a := uint8(int(mask.NRGBAAt(x, y).A) * int(parent.NRGBAAt(x, y).A) / 255)
+			combined.SetNRGBA(x, y, color.NRGBA{R: 255, G: 255, B: 255, A: a})
+		}
+	}
+	return combined
 }
 
 func (e *Exporter) renderDynamicAtInto(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, animatedResources map[uint16]bool, canvas *image.NRGBA) (*image.NRGBA, error) {
@@ -2013,16 +2754,18 @@ func (e *Exporter) renderDynamicAtInto(target Target, t float64, worldBounds ima
 }
 
 func (e *Exporter) renderStaticBackdrop(target Target, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, animatedResources map[uint16]bool) (*image.NRGBA, error) {
-	canvas, err := cloneOrClearBackdrop(nil, worldBounds)
-	if err != nil {
-		return nil, err
-	}
-	renderScale := float64(maxInt(e.opts.RenderScale, 1))
+	renderScale := e.outputScale(target, worldBounds)
+	canvas := image.NewNRGBA(image.Rect(
+		0,
+		0,
+		maxInt(1, int(math.Ceil(float64(worldBounds.Dx())*renderScale))),
+		maxInt(1, int(math.Ceil(float64(worldBounds.Dy())*renderScale))),
+	))
 	offset := sc.Matrix{A: 1, D: 1, Tx: float64(-worldBounds.Min.X), Ty: float64(-worldBounds.Min.Y)}
-	if renderScale > 1 {
+	if renderScale != 1 {
 		offset = sc.Matrix{A: renderScale, D: renderScale}.Multiply(offset)
 	}
-	err = e.visitResourceFiltered(target, target.ResourceID, 0, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", "", animatedResources, false, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string) error {
+	err := e.visitResourceFiltered(target, target.ResourceID, 0, offset, sc.IdentityColor(), map[uint16]int{}, target.SelectedBind == "", "", animatedResources, false, func(_ uint16, shape *sc.Shape, idx int, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string) error {
 		renderable, err := e.bitmapRenderable(shape, idx, spriteCache)
 		if err != nil {
 			return err
@@ -2345,6 +3088,11 @@ func (e *Exporter) bitmapRenderable(shape *sc.Shape, idx int, spriteCache map[bi
 	if cached, ok := spriteCache[key]; ok {
 		return cached, nil
 	}
+	if cached, ok := e.bitmapCache.Load(key); ok {
+		renderable := cached.(*bitmapRenderable)
+		spriteCache[key] = renderable
+		return renderable, nil
+	}
 
 	if idx < 0 || idx >= len(shape.Bitmaps) {
 		return nil, fmt.Errorf("bitmap index %d out of range for shape %d", idx, shape.ID)
@@ -2358,8 +3106,21 @@ func (e *Exporter) bitmapRenderable(shape *sc.Shape, idx int, spriteCache map[bi
 		return nil, err
 	}
 	renderable := &bitmapRenderable{sprite: sprite, transform: transform}
+	if cached, loaded := e.bitmapCache.LoadOrStore(key, renderable); loaded {
+		renderable = cached.(*bitmapRenderable)
+	}
 	spriteCache[key] = renderable
 	return renderable, nil
+}
+
+func (r *bitmapRenderable) blendLuminanceFloor(blend string) int {
+	if r == nil || (blend != "add" && blend != "screen") {
+		return -1
+	}
+	r.luminanceOnce.Do(func() {
+		r.luminanceFloor = borderLuminanceFloor(r.sprite)
+	})
+	return r.luminanceFloor
 }
 
 func drawBitmap(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string) error {
@@ -2371,6 +3132,21 @@ func drawBitmapWithCoverage(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Mat
 }
 
 func drawBitmapMasked(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string, alphaMask *image.NRGBA, allowAdditiveCoverage bool) error {
+	return drawBitmapMaskedWithFloor(dst, sprite, matrix, colorTransform, blend, alphaMask, allowAdditiveCoverage, -1)
+}
+
+func drawBitmapMaskedWithFloor(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, colorTransform sc.ColorTransform, blend string, alphaMask *image.NRGBA, allowAdditiveCoverage bool, cachedLuminanceFloor int) error {
+	if alphaMask == nil && blend == "" && isIdentityColorTransform(colorTransform) {
+		if offset, ok := integerTranslation(matrix); ok {
+			destination := sprite.Bounds().Add(offset.Sub(sprite.Bounds().Min))
+			clipped := destination.Intersect(dst.Bounds())
+			if !clipped.Empty() {
+				source := sprite.Bounds().Min.Add(clipped.Min.Sub(destination.Min))
+				stddraw.Draw(dst, clipped, sprite, source, stddraw.Over)
+			}
+			return nil
+		}
+	}
 	inv, err := matrix.Inverse()
 	if err != nil {
 		return nil
@@ -2409,7 +3185,10 @@ func drawBitmapMasked(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, c
 	adjustBlendCoverage := blend == "add" || blend == "screen"
 	blendLuminanceFloor := 0
 	if adjustBlendCoverage {
-		blendLuminanceFloor = borderLuminanceFloor(sprite)
+		blendLuminanceFloor = cachedLuminanceFloor
+		if blendLuminanceFloor < 0 {
+			blendLuminanceFloor = borderLuminanceFloor(sprite)
+		}
 	}
 	for y := top; y < bottom; y++ {
 		sx := inv.A*(float64(left)+0.5) + inv.C*(float64(y)+0.5) + inv.Tx
@@ -2456,6 +3235,18 @@ func drawBitmapMasked(dst *image.NRGBA, sprite *image.NRGBA, matrix sc.Matrix, c
 		}
 	}
 	return nil
+}
+
+func integerTranslation(matrix sc.Matrix) (image.Point, bool) {
+	if matrix.A != 1 || matrix.B != 0 || matrix.C != 0 || matrix.D != 1 {
+		return image.Point{}, false
+	}
+	x := math.Round(matrix.Tx)
+	y := math.Round(matrix.Ty)
+	if math.Abs(matrix.Tx-x) > 1e-9 || math.Abs(matrix.Ty-y) > 1e-9 {
+		return image.Point{}, false
+	}
+	return image.Pt(int(x), int(y)), true
 }
 
 func sampleNRGBABilinear(sprite *image.NRGBA, x, y float64) color.NRGBA {
@@ -2505,10 +3296,12 @@ func borderLuminanceFloor(sprite *image.NRGBA) int {
 	if width == 0 || height == 0 {
 		return 0
 	}
-	border := make([]int, 0, 2*width+2*maxInt(0, height-2))
+	var histogram [256]int
+	count := 0
 	add := func(x, y int) {
 		pixel := sprite.NRGBAAt(sprite.Bounds().Min.X+x, sprite.Bounds().Min.Y+y)
-		border = append(border, maxInt(int(pixel.R), maxInt(int(pixel.G), int(pixel.B))))
+		histogram[maxInt(int(pixel.R), maxInt(int(pixel.G), int(pixel.B)))]++
+		count++
 	}
 	for x := 0; x < width; x++ {
 		add(x, 0)
@@ -2518,8 +3311,15 @@ func borderLuminanceFloor(sprite *image.NRGBA) int {
 		add(0, y)
 		add(width-1, y)
 	}
-	sort.Ints(border)
-	return border[len(border)/2]
+	middle := count / 2
+	seen := 0
+	for value, occurrences := range histogram {
+		seen += occurrences
+		if seen > middle {
+			return value
+		}
+	}
+	return 0
 }
 
 func composeAdd(dst *image.NRGBA, x, y int, src color.NRGBA) {
@@ -2646,37 +3446,495 @@ func composeOver(dst *image.NRGBA, x, y int, src color.NRGBA) {
 	})
 }
 
-func (e *Exporter) compositeSceneryBaseIfNeeded(target Target, frame *image.NRGBA) (*image.NRGBA, error) {
-	if frame == nil || frame.Bounds().Dx() <= 0 || frame.Bounds().Dy() <= 0 {
-		return frame, nil
-	}
+func (e *Exporter) newSceneryRenderContext(target Target) (*sceneryRenderContext, error) {
 	base, err := e.loadMappedSceneryBase(target.Name)
 	if err != nil || base == nil || base.swf == nil {
-		return frame, err
+		return nil, err
 	}
-	cacheKey := fmt.Sprintf("%d:%d:%d:%d", frame.Bounds().Min.X, frame.Bounds().Min.Y, frame.Bounds().Dx(), frame.Bounds().Dy())
-	baseFrame, ok := base.frames[cacheKey]
-	if !ok {
-		baseExporter := NewExporterWithOptions(base.swf, e.opts)
-		baseCache := map[bitmapCacheKey]*bitmapRenderable{}
-		baseFrame, err = baseExporter.renderAt(base.target, 0, frame.Bounds(), baseCache)
-		if err != nil {
+	baseOpts := e.opts
+	baseOpts.AssetBaseNames = nil
+	baseOpts.BaseSCPath = ""
+	return &sceneryRenderContext{
+		exporter:    NewExporterWithOptions(base.swf, baseOpts),
+		target:      base.target,
+		spriteCache: map[bitmapCacheKey]*bitmapRenderable{},
+	}, nil
+}
+
+func sceneDuration(target Target, scenery *sceneryRenderContext) (float64, error) {
+	if scenery == nil || scenery.target.Duration <= 0 {
+		return target.Duration, nil
+	}
+	if target.Duration <= 0 {
+		return scenery.target.Duration, nil
+	}
+	const maximumSceneLoopMS = 120_000
+	foregroundMS := int64(math.Round(target.Duration * 1000))
+	baseMS := int64(math.Round(scenery.target.Duration * 1000))
+	commonMS := foregroundMS / gcdInt64(foregroundMS, baseMS) * baseMS
+	if commonMS > maximumSceneLoopMS {
+		return 0, fmt.Errorf("combined scenery loop is %0.3fs, exceeding the 120s safety limit", float64(commonMS)/1000)
+	}
+	return float64(commonMS) / 1000, nil
+}
+
+func gcdInt64(a, b int64) int64 {
+	for b != 0 {
+		a, b = b, a%b
+	}
+	if a < 0 {
+		return -a
+	}
+	return a
+}
+
+func (e *Exporter) sceneChangePoints(target Target, duration float64, scenery *sceneryRenderContext) []float64 {
+	points := e.collectChangePoints(target, duration)
+	if scenery == nil {
+		return points
+	}
+	set := make(map[uint64]float64, len(points))
+	for _, point := range points {
+		set[math.Float64bits(point)] = point
+	}
+	for _, point := range scenery.exporter.collectChangePoints(scenery.target, duration) {
+		set[math.Float64bits(point)] = point
+	}
+	points = points[:0]
+	for _, point := range set {
+		points = append(points, point)
+	}
+	sort.Float64s(points)
+	return points
+}
+
+func timelineSteps(changePoints []float64, duration float64) []renderStep {
+	steps := make([]renderStep, 0, len(changePoints))
+	for index, point := range changePoints {
+		next := duration
+		if index+1 < len(changePoints) {
+			next = changePoints[index+1]
+		}
+		delayMS := int(math.Round(next*1000)) - int(math.Round(point*1000))
+		if delayMS <= 0 {
+			delayMS = 1
+		}
+		steps = append(steps, renderStep{Time: point, DelayMS: delayMS})
+	}
+	return steps
+}
+
+func (e *Exporter) collectSceneBounds(target Target, duration float64, sampleTimes []float64, spriteCache map[bitmapCacheKey]*bitmapRenderable, scenery *sceneryRenderContext) (image.Rectangle, error) {
+	bounds, err := e.collectBounds(target, duration, sampleTimes, spriteCache)
+	if err != nil || scenery == nil {
+		return bounds, err
+	}
+	baseBounds, err := scenery.exporter.collectBounds(scenery.target, duration, sampleTimes, scenery.spriteCache)
+	if err != nil {
+		return image.Rectangle{}, err
+	}
+	scenery.baseMatrix, err = e.sceneryAlignmentMatrix(target, bounds, spriteCache, scenery, baseBounds)
+	if err != nil {
+		return image.Rectangle{}, err
+	}
+	translatedBase := image.Rect(
+		int(math.Floor(float64(baseBounds.Min.X)+scenery.baseMatrix.Tx)),
+		int(math.Floor(float64(baseBounds.Min.Y)+scenery.baseMatrix.Ty)),
+		int(math.Ceil(float64(baseBounds.Max.X)+scenery.baseMatrix.Tx)),
+		int(math.Ceil(float64(baseBounds.Max.Y)+scenery.baseMatrix.Ty)),
+	)
+	combined := sceneryViewportBounds(bounds, translatedBase)
+	if authored, ok := e.namedTextFieldBounds(target, "camera_bounds"); ok {
+		combined = authored
+	}
+	foreground, _, err := e.renderScenePreferredAtInto(target, 0, combined, spriteCache, nil, nil)
+	if err != nil {
+		return image.Rectangle{}, err
+	}
+	scenery.allowedMask = sceneryAllowedMask(foreground)
+	return combined, nil
+}
+
+// namedTextFieldBounds resolves an authored, invisible rectangle through the
+// same movie-clip matrices used by the renderer. Scenery files deliberately
+// contain artwork outside camera_bounds, so visible-pixel bounds are not a
+// reliable viewport.
+func (e *Exporter) namedTextFieldBounds(target Target, name string) (image.Rectangle, bool) {
+	var found renderBounds
+	var visit func(uint16, sc.Matrix, map[uint16]int)
+	visit = func(resourceID uint16, matrix sc.Matrix, seen map[uint16]int) {
+		if seen[resourceID] > 4 {
+			return
+		}
+		clip, ok := e.swf.Resources[resourceID].(*sc.MovieClip)
+		if !ok {
+			return
+		}
+		seen[resourceID]++
+		defer func() { seen[resourceID]-- }()
+		frame := clipFrameAt(target, resourceID, clip, 0)
+		bank := matrixBankForClip(e.swf, clip)
+		for _, element := range frame.Elements {
+			if int(element.Bind) >= len(clip.Binds) {
+				continue
+			}
+			bind := clip.Binds[element.Bind]
+			childMatrix := matrix
+			if bank != nil && element.Matrix != 0xFFFF && int(element.Matrix) < len(bank.Matrices) {
+				childMatrix = matrix.Multiply(bank.Matrices[element.Matrix])
+			}
+			if bind.Name == name {
+				field, ok := e.swf.Resources[bind.ID].(*sc.TextField)
+				if !ok {
+					continue
+				}
+				for _, corner := range [][2]float64{
+					{float64(field.Left), float64(field.Top)},
+					{float64(field.Right), float64(field.Top)},
+					{float64(field.Right), float64(field.Bottom)},
+					{float64(field.Left), float64(field.Bottom)},
+				} {
+					x, y := childMatrix.Apply(corner[0], corner[1])
+					found.add(x, y)
+				}
+				continue
+			}
+			if _, ok := e.swf.Resources[bind.ID].(*sc.MovieClip); ok {
+				visit(bind.ID, childMatrix, seen)
+			}
+		}
+	}
+	visit(target.ResourceID, sc.IdentityMatrix(), map[uint16]int{})
+	if !found.set || found.maxX <= found.minX || found.maxY <= found.minY {
+		return image.Rectangle{}, false
+	}
+	return image.Rect(
+		int(math.Floor(found.minX)),
+		int(math.Floor(found.minY)),
+		int(math.Ceil(found.maxX)),
+		int(math.Ceil(found.maxY)),
+	), true
+}
+
+func sceneryViewportBounds(foreground, alignedBase image.Rectangle) image.Rectangle {
+	if foreground.Empty() || alignedBase.Empty() {
+		return foreground.Union(alignedBase)
+	}
+	// Player_Background contains staging geometry outside the in-game camera.
+	// The aligned game-area base is the stable camera anchor; a 15% horizontal
+	// margin retains the surrounding foreground while a 4:3 viewport excludes
+	// detached off-camera sprites.
+	width := maxInt(alignedBase.Dx(), int(math.Ceil(float64(alignedBase.Dx())*1.15)))
+	height := int(math.Ceil(float64(width) * 3 / 4))
+	if height < alignedBase.Dy() {
+		height = alignedBase.Dy()
+		width = int(math.Ceil(float64(height) * 4 / 3))
+	}
+	width = minInt(width, foreground.Dx())
+	height = minInt(height, foreground.Dy())
+	centerX := float64(alignedBase.Min.X+alignedBase.Max.X) / 2
+	centerY := float64(alignedBase.Min.Y+alignedBase.Max.Y) / 2
+	minX := int(math.Round(centerX - float64(width)/2))
+	minY := int(math.Round(centerY - float64(height)/2))
+	if minX < foreground.Min.X {
+		minX = foreground.Min.X
+	} else if minX+width > foreground.Max.X {
+		minX = foreground.Max.X - width
+	}
+	if minY < foreground.Min.Y {
+		minY = foreground.Min.Y
+	} else if minY+height > foreground.Max.Y {
+		minY = foreground.Max.Y - height
+	}
+	return image.Rect(minX, minY, minX+width, minY+height)
+}
+
+func (e *Exporter) sceneryAlignmentMatrix(target Target, foregroundBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, scenery *sceneryRenderContext, baseBounds image.Rectangle) (sc.Matrix, error) {
+	longestEdge := maxInt(maxInt(foregroundBounds.Dx(), foregroundBounds.Dy()), maxInt(baseBounds.Dx(), baseBounds.Dy()))
+	if longestEdge <= 0 {
+		return sc.IdentityMatrix(), nil
+	}
+	sampleScale := math.Min(1, 256/float64(longestEdge))
+	foreground, err := e.renderResourceAtInto(target, 0, foregroundBounds, spriteCache, nil, true, sampleScale, sc.IdentityMatrix())
+	if err != nil {
+		return sc.Matrix{}, err
+	}
+	base, err := scenery.exporter.renderResourceAtInto(scenery.target, 0, baseBounds, scenery.spriteCache, nil, true, sampleScale, sc.IdentityMatrix())
+	if err != nil {
+		return sc.Matrix{}, err
+	}
+	holeX, holeY, foundHole := largestEnclosedTransparentCentroid(foreground)
+	baseX, baseY := alphaCentroid(base, 0)
+	if foundHole {
+		foregroundWorldX := float64(foregroundBounds.Min.X) + holeX/sampleScale
+		foregroundWorldY := float64(foregroundBounds.Min.Y) + holeY/sampleScale
+		baseWorldX := float64(baseBounds.Min.X) + baseX/sampleScale
+		baseWorldY := float64(baseBounds.Min.Y) + baseY/sampleScale
+		return sc.Matrix{A: 1, D: 1, Tx: foregroundWorldX - baseWorldX, Ty: foregroundWorldY - baseWorldY}, nil
+	}
+	foregroundCenterX := float64(foregroundBounds.Min.X+foregroundBounds.Max.X) / 2
+	foregroundCenterY := float64(foregroundBounds.Min.Y+foregroundBounds.Max.Y) / 2
+	baseCenterX := float64(baseBounds.Min.X+baseBounds.Max.X) / 2
+	baseCenterY := float64(baseBounds.Min.Y+baseBounds.Max.Y) / 2
+	return sc.Matrix{A: 1, D: 1, Tx: foregroundCenterX - baseCenterX, Ty: foregroundCenterY - baseCenterY}, nil
+}
+
+func largestEnclosedTransparentCentroid(frame *image.NRGBA) (float64, float64, bool) {
+	if frame == nil || frame.Bounds().Empty() {
+		return 0, 0, false
+	}
+	width, height := frame.Bounds().Dx(), frame.Bounds().Dy()
+	transparent := func(index int) bool {
+		x := index % width
+		y := index / width
+		return frame.NRGBAAt(frame.Bounds().Min.X+x, frame.Bounds().Min.Y+y).A <= 8
+	}
+	outside := make([]bool, width*height)
+	queue := make([]int, 0, width*2+height*2)
+	pushOutside := func(index int) {
+		if index < 0 || index >= len(outside) || outside[index] || !transparent(index) {
+			return
+		}
+		outside[index] = true
+		queue = append(queue, index)
+	}
+	for x := 0; x < width; x++ {
+		pushOutside(x)
+		pushOutside((height-1)*width + x)
+	}
+	for y := 0; y < height; y++ {
+		pushOutside(y * width)
+		pushOutside(y*width + width - 1)
+	}
+	for head := 0; head < len(queue); head++ {
+		index := queue[head]
+		x, y := index%width, index/width
+		if x > 0 {
+			pushOutside(index - 1)
+		}
+		if x+1 < width {
+			pushOutside(index + 1)
+		}
+		if y > 0 {
+			pushOutside(index - width)
+		}
+		if y+1 < height {
+			pushOutside(index + width)
+		}
+	}
+	visited := append([]bool(nil), outside...)
+	bestCount := 0
+	bestX, bestY := 0.0, 0.0
+	component := make([]int, 0, width*height/4)
+	for start := range visited {
+		if visited[start] || !transparent(start) {
+			continue
+		}
+		component = component[:0]
+		component = append(component, start)
+		visited[start] = true
+		var sumX, sumY int64
+		for head := 0; head < len(component); head++ {
+			index := component[head]
+			x, y := index%width, index/width
+			sumX += int64(x)
+			sumY += int64(y)
+			for _, next := range []int{index - 1, index + 1, index - width, index + width} {
+				if next < 0 || next >= len(visited) || visited[next] || !transparent(next) {
+					continue
+				}
+				nextX, nextY := next%width, next/width
+				if absInt(nextX-x)+absInt(nextY-y) != 1 {
+					continue
+				}
+				visited[next] = true
+				component = append(component, next)
+			}
+		}
+		if len(component) > bestCount {
+			bestCount = len(component)
+			bestX = float64(sumX) / float64(bestCount)
+			bestY = float64(sumY) / float64(bestCount)
+		}
+	}
+	return bestX, bestY, bestCount > 0
+}
+
+// sceneryAllowedMask removes the border-connected transparent area around a
+// scenery foreground while retaining its enclosed village opening. Opaque and
+// antialiased foreground pixels remain allowed so the base still sits behind
+// the foreground's edge pixels without leaking beyond its outside silhouette.
+func sceneryAllowedMask(foreground *image.NRGBA) *image.NRGBA {
+	if foreground == nil || foreground.Bounds().Empty() {
+		return nil
+	}
+	bounds := foreground.Bounds()
+	width, height := bounds.Dx(), bounds.Dy()
+	mask := image.NewNRGBA(bounds)
+
+	// Alpha 1 is an unvisited transparent pixel, alpha 255 is a barrier that
+	// remains allowed, and alpha 0 is border-connected exterior transparency.
+	for y := bounds.Min.Y; y < bounds.Max.Y; y++ {
+		for x := bounds.Min.X; x < bounds.Max.X; x++ {
+			destination := mask.PixOffset(x, y)
+			if foreground.Pix[foreground.PixOffset(x, y)+3] <= 8 {
+				mask.Pix[destination+3] = 1
+				continue
+			}
+			mask.Pix[destination] = 255
+			mask.Pix[destination+1] = 255
+			mask.Pix[destination+2] = 255
+			mask.Pix[destination+3] = 255
+		}
+	}
+
+	queue := make([]uint32, 0, width*2+height*2)
+	pushExterior := func(x, y int) {
+		if x < 0 || x >= width || y < 0 || y >= height {
+			return
+		}
+		pixel := mask.PixOffset(bounds.Min.X+x, bounds.Min.Y+y)
+		if mask.Pix[pixel+3] != 1 {
+			return
+		}
+		mask.Pix[pixel+3] = 0
+		queue = append(queue, uint32(y*width+x))
+	}
+	for x := 0; x < width; x++ {
+		pushExterior(x, 0)
+		pushExterior(x, height-1)
+	}
+	for y := 0; y < height; y++ {
+		pushExterior(0, y)
+		pushExterior(width-1, y)
+	}
+	for head := 0; head < len(queue); head++ {
+		index := int(queue[head])
+		x, y := index%width, index/width
+		pushExterior(x-1, y)
+		pushExterior(x+1, y)
+		pushExterior(x, y-1)
+		pushExterior(x, y+1)
+	}
+
+	for y := bounds.Min.Y; y < bounds.Max.Y; y++ {
+		for x := bounds.Min.X; x < bounds.Max.X; x++ {
+			pixel := mask.PixOffset(x, y)
+			if mask.Pix[pixel+3] == 0 {
+				continue
+			}
+			mask.Pix[pixel] = 255
+			mask.Pix[pixel+1] = 255
+			mask.Pix[pixel+2] = 255
+			mask.Pix[pixel+3] = 255
+		}
+	}
+	return mask
+}
+
+func absInt(value int) int {
+	if value < 0 {
+		return -value
+	}
+	return value
+}
+
+func (e *Exporter) renderSceneAtInto(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, scenery *sceneryRenderContext, canvas *image.NRGBA) (*image.NRGBA, error) {
+	var err error
+	if scenery == nil {
+		return e.renderAtInto(target, t, worldBounds, spriteCache, canvas)
+	}
+	renderScale := e.outputScale(target, worldBounds)
+	canvas, err = scenery.exporter.renderResourceAtIntoMasked(scenery.target, t, worldBounds, scenery.spriteCache, canvas, true, renderScale, scenery.baseMatrix, scenery.allowedMask)
+	if err != nil {
+		return nil, err
+	}
+	return e.renderResourceAtInto(target, t, worldBounds, spriteCache, canvas, false, renderScale, sc.IdentityMatrix())
+}
+
+func (e *Exporter) renderScenePreferredAtInto(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, scenery *sceneryRenderContext, canvas *image.NRGBA) (*image.NRGBA, bool, error) {
+	if !e.opts.DisableGPU {
+		renderScale := e.outputScale(target, worldBounds)
+		width := maxInt(1, int(math.Ceil(float64(worldBounds.Dx())*renderScale)))
+		height := maxInt(1, int(math.Ceil(float64(worldBounds.Dy())*renderScale)))
+		compositor, err := newMetalCompositor(width, height)
+		if err == nil {
+			frame, renderErr := e.renderSceneMetalAtInto(target, t, worldBounds, spriteCache, scenery, compositor, canvas)
+			closeErr := compositor.close()
+			if renderErr != nil {
+				return nil, false, renderErr
+			}
+			if closeErr != nil {
+				return nil, false, closeErr
+			}
+			return frame, true, nil
+		}
+		if !errors.Is(err, errMetalCompositorUnavailable) {
+			return nil, false, fmt.Errorf("initialize Metal compositor: %w", err)
+		}
+	}
+	frame, err := e.renderSceneAtInto(target, t, worldBounds, spriteCache, scenery, canvas)
+	return frame, false, err
+}
+
+func (e *Exporter) renderSceneMetalAtInto(
+	target Target,
+	t float64,
+	worldBounds image.Rectangle,
+	spriteCache map[bitmapCacheKey]*bitmapRenderable,
+	scenery *sceneryRenderContext,
+	compositor *metalCompositor,
+	canvas *image.NRGBA,
+) (*image.NRGBA, error) {
+	if err := compositor.beginFrame(); err != nil {
+		return nil, err
+	}
+	if err := compositor.clear(color.NRGBA{}); err != nil {
+		return nil, err
+	}
+	renderScale := e.outputScale(target, worldBounds)
+	if scenery != nil {
+		var allowedSurface *metalSurface
+		if scenery.allowedMask != nil {
+			var err error
+			allowedSurface, err = compositor.borrowedSurface(scenery.allowedMask)
+			if err != nil {
+				return nil, err
+			}
+		}
+		if err := scenery.exporter.renderResourceMetalAtMasked(
+			scenery.target,
+			t,
+			worldBounds,
+			scenery.spriteCache,
+			compositor,
+			renderScale,
+			scenery.baseMatrix,
+			allowedSurface,
+		); err != nil {
 			return nil, err
 		}
-		base.frames[cacheKey] = cloneNRGBA(baseFrame)
 	}
-	if baseFrame == nil {
-		return frame, nil
+	if err := e.renderResourceMetalAt(
+		target,
+		t,
+		worldBounds,
+		spriteCache,
+		compositor,
+		renderScale,
+		sc.IdentityMatrix(),
+	); err != nil {
+		return nil, err
 	}
-	canvas := cloneNRGBA(baseFrame)
-	drawOpaqueOver(canvas, frame)
-	return canvas, nil
+	return compositor.readback(canvas)
 }
 
 func (e *Exporter) loadMappedSceneryBase(exportName string) (*sceneryBaseImage, error) {
 	if exportName == "" || exportName != "Player_Background" {
 		return nil, nil
 	}
+	e.sceneryBaseMu.Lock()
+	defer e.sceneryBaseMu.Unlock()
 	if cached, ok := e.sceneryBaseCache[e.swf.Filename]; ok {
 		return cached, nil
 	}
@@ -2700,11 +3958,7 @@ func (e *Exporter) loadMappedSceneryBase(exportName string) (*sceneryBaseImage, 
 	if err != nil {
 		return nil, err
 	}
-	bounds, err := baseExporter.collectBounds(target, target.Duration, nil, map[bitmapCacheKey]*bitmapRenderable{})
-	if err != nil {
-		return nil, err
-	}
-	out := &sceneryBaseImage{name: filepath.Base(basePath), swf: baseSWF, target: target, bounds: bounds, frames: map[string]*image.NRGBA{}}
+	out := &sceneryBaseImage{swf: baseSWF, target: target}
 	e.sceneryBaseCache[e.swf.Filename] = out
 	return out, nil
 }
@@ -2716,23 +3970,35 @@ func lookupSceneryBaseSWF(sourceSC, exportName string) (string, error) {
 	backgroundsPath := filepath.Join(filepath.Dir(filepath.Dir(sourceSC)), "logic", "village_backgrounds.json")
 	raw, err := os.ReadFile(backgroundsPath)
 	if err != nil {
+		if os.IsNotExist(err) {
+			return "", nil
+		}
 		return "", err
 	}
 	var backgrounds map[string]map[string]any
 	if err := json.Unmarshal(raw, &backgrounds); err != nil {
 		return "", err
 	}
+	root := filepath.Dir(filepath.Dir(sourceSC))
+	sourcePath, err := filepath.Abs(sourceSC)
+	if err != nil {
+		return "", err
+	}
 	for _, entry := range backgrounds {
 		swf, _ := entry["SWF"].(string)
 		foreground, _ := entry["Foreground"].(string)
-		if swf != sourceSC || foreground != exportName {
+		candidatePath := swf
+		if !filepath.IsAbs(candidatePath) {
+			candidatePath = filepath.Join(root, candidatePath)
+		}
+		candidatePath, err = filepath.Abs(candidatePath)
+		if err != nil || filepath.Clean(candidatePath) != filepath.Clean(sourcePath) || foreground != exportName {
 			continue
 		}
 		baseSWF, _ := entry["BaseSWF"].(string)
 		if baseSWF == "" {
 			return "", nil
 		}
-		root := filepath.Dir(filepath.Dir(sourceSC))
 		if !filepath.IsAbs(baseSWF) {
 			baseSWF = filepath.Join(root, baseSWF)
 		}
@@ -2759,10 +4025,7 @@ func drawOpaqueOver(dst, src *image.NRGBA) {
 	for y := 0; y < minInt(dst.Bounds().Dy(), src.Bounds().Dy()); y++ {
 		for x := 0; x < minInt(dst.Bounds().Dx(), src.Bounds().Dx()); x++ {
 			px := src.NRGBAAt(src.Bounds().Min.X+x, src.Bounds().Min.Y+y)
-			if px.A == 0 {
-				continue
-			}
-			dst.SetNRGBA(dst.Bounds().Min.X+x, dst.Bounds().Min.Y+y, px)
+			composeOver(dst, dst.Bounds().Min.X+x, dst.Bounds().Min.Y+y, px)
 		}
 	}
 }
@@ -2807,14 +4070,15 @@ func (n *nameAllocator) Next(raw string, resourceID uint16) (string, string, err
 
 	if mappedPath, ok := n.mapped[raw]; ok {
 		cleanPath := filepath.Clean(mappedPath)
-		if existing, claimed := n.claimed[cleanPath]; claimed && existing != raw {
-			return "", "", fmt.Errorf("output path %q already claimed by %q", cleanPath, existing)
+		basePath := strings.TrimSuffix(cleanPath, filepath.Ext(cleanPath))
+		claimKey := strings.ToLower(basePath)
+		if existing, claimed := n.claimed[claimKey]; claimed {
+			return "", "", fmt.Errorf("output path %q already claimed by %q", basePath, existing)
 		}
-		n.claimed[cleanPath] = raw
+		n.claimed[claimKey] = raw
 		if err := os.MkdirAll(filepath.Dir(cleanPath), 0o755); err != nil {
 			return "", "", err
 		}
-		basePath := strings.TrimSuffix(cleanPath, filepath.Ext(cleanPath))
 		return basePath, basePath, nil
 	}
 

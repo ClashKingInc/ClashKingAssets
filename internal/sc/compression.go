@@ -11,8 +11,16 @@ import (
 )
 
 var (
-	errUnsupportedCompression = errors.New("unsupported compression signature")
+	errUnsupportedCompression               = errors.New("unsupported compression signature")
+	sharedZstdDecoder, sharedZstdDecoderErr = zstd.NewReader(nil)
 )
+
+func decodeZstdAll(src, dst []byte) ([]byte, error) {
+	if sharedZstdDecoderErr != nil {
+		return nil, sharedZstdDecoderErr
+	}
+	return sharedZstdDecoder.DecodeAll(src, dst)
+}
 
 func DecompressAsset(buffer []byte) ([]byte, error) {
 	if len(buffer) == 0 {
@@ -25,12 +33,7 @@ func DecompressAsset(buffer []byte) ([]byte, error) {
 	case sigSC:
 		return decompressSC(buffer)
 	case sigZSTD:
-		dec, err := zstd.NewReader(nil)
-		if err != nil {
-			return nil, err
-		}
-		defer dec.Close()
-		return dec.DecodeAll(buffer, nil)
+		return decodeZstdAll(buffer, nil)
 	default:
 		return nil, fmt.Errorf("%w: %s", errUnsupportedCompression, detectSignature(buffer))
 	}
@@ -57,7 +60,6 @@ const (
 	sigNone signature = "none"
 	sigSC   signature = "sc"
 	sigZSTD signature = "zstd"
-	sigLZMA signature = "lzma"
 	sigSCLZ signature = "sclz"
 	sigSIG  signature = "sig"
 )
@@ -74,10 +76,6 @@ func detectSignature(buffer []byte) signature {
 		case bytes.Equal(buffer[:4], []byte{0x28, 0xb5, 0x2f, 0xfd}):
 			return sigZSTD
 		}
-	}
-
-	if len(buffer) >= 5 && buffer[1] == 0x00 && buffer[2] == 0x00 && buffer[4] == 0x00 {
-		return sigLZMA
 	}
 
 	return sigNone
