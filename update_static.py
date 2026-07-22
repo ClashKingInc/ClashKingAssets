@@ -1268,6 +1268,16 @@ class StaticUpdater:
 
         return new_seasonal_defense_data
 
+    @staticmethod
+    def _parse_unit_weights(unit_data: dict) -> dict[str, int | float]:
+        weights = {}
+        if "FriendlyGroupWeight" in unit_data:
+            warden_weight = round(unit_data["FriendlyGroupWeight"] / 100, 1)
+            weights["warden_weight"] = int(warden_weight) if warden_weight.is_integer() else warden_weight
+        if "HealerWeight" in unit_data:
+            weights["healer_weight"] = unit_data["HealerWeight"]
+        return weights
+
     def _parse_troop_data(self):
         self.full_troop_data = self.open_file("logic/characters.json")
         full_super_troop_data = self.open_file("logic/super_licences.json")
@@ -1309,6 +1319,7 @@ class StaticUpdater:
                 "attack_range": troop_data.get("AttackRange", 0),
                 "housing_space": troop_data.get("HousingSpace"),
                 "village": "home" if not village_type else "builderBase",
+                **self._parse_unit_weights(troop_data),
             }
 
             is_super_troop = troop_data.get("EnabledBySuperLicence", False)
@@ -1511,6 +1522,7 @@ class StaticUpdater:
                 "attack_speed": hero_data.get("AttackSpeed"),
                 "attack_range": hero_data.get("AttackRange"),
                 "village": "home" if not village_type else "builderBase",
+                **self._parse_unit_weights(hero_data),
                 "levels": [],
             }
 
@@ -1566,6 +1578,7 @@ class StaticUpdater:
                 "movement_speed": pet_data.get("Speed"),
                 "attack_speed": pet_data.get("AttackSpeed"),
                 "attack_range": pet_data.get("AttackRange"),
+                **self._parse_unit_weights(pet_data),
                 "levels": [],
             }
 

@@ -164,6 +164,63 @@ def test_ignored_decoration_is_not_emitted_or_registered():
     assert updater.sc_asset_requests == {}
 
 
+def test_hero_troop_and_pet_weights_are_emitted_from_top_level_data():
+    updater = StaticUpdater()
+    updater.full_building_data = {"Barrack": {"TID": "TID_BARRACK"}}
+    updater.lab_to_townhall = {1: 1}
+    updater.pethouse_to_townhall = {1: 14}
+    updater._translate = lambda tid: tid
+    updater.register_sc_asset = lambda **_: None
+    files = {
+        "logic/characters.json": {
+            "WeightedTroop": {
+                "GlobalID": 4000000,
+                "TID": "TID_WEIGHTED_TROOP",
+                "InfoTID": "TID_WEIGHTED_TROOP_INFO",
+                "ProductionBuilding": "Barrack",
+                "FriendlyGroupWeight": 3000,
+                "HealerWeight": 0,
+                "1": {"LaboratoryLevel": 1},
+            }
+        },
+        "logic/super_licences.json": {},
+        "logic/heroes.json": {
+            "WeightedHero": {
+                "TID": "TID_WEIGHTED_HERO",
+                "InfoTID": "TID_WEIGHTED_HERO_INFO",
+                "FriendlyGroupWeight": 230,
+                "HealerWeight": 21,
+                "1": {},
+            }
+        },
+        "logic/pets.json": {
+            "WeightedPet": {
+                "TID": "TID_WEIGHTED_PET",
+                "InfoTID": "TID_WEIGHTED_PET_INFO",
+                "FriendlyGroupWeight": 390,
+                "HealerWeight": 4,
+                "1": {"LaboratoryLevel": 1},
+            }
+        },
+    }
+    updater.open_file = files.__getitem__
+
+    [troop] = updater._parse_troop_data()
+    [hero] = updater._parse_hero_data()
+    [pet] = updater._parse_pet_data()
+
+    assert troop["warden_weight"] == 30
+    assert troop["healer_weight"] == 0
+    assert hero["warden_weight"] == 2.3
+    assert hero["healer_weight"] == 21
+    assert pet["warden_weight"] == 3.9
+    assert pet["healer_weight"] == 4
+    for item in (troop, hero, pet):
+        assert list(item).index("warden_weight") < list(item).index("levels")
+        assert list(item).index("healer_weight") < list(item).index("levels")
+    assert updater._parse_unit_weights({}) == {}
+
+
 def test_previous_release_lookup_rejects_an_invalid_current_ref():
     with patch("build.run_git", side_effect=build.BuildError("unknown revision")) as run_git:
         with pytest.raises(build.BuildError, match="invalid current release ref"):

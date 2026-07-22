@@ -12573,6 +12573,7 @@
       "attack_range": 40,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 0.5,
       "levels": [
         {
           "level": 1,
@@ -12725,6 +12726,7 @@
       "attack_range": 350,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 0.5,
       "levels": [
         {
           "level": 1,
@@ -12887,6 +12889,7 @@
       "attack_range": 40,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 0.5,
       "levels": [
         {
           "level": 1,
@@ -13009,6 +13012,7 @@
       "attack_range": 100,
       "housing_space": 5,
       "village": "home",
+      "warden_weight": 6,
       "levels": [
         {
           "level": 1,
@@ -13171,6 +13175,8 @@
       "attack_range": 50,
       "housing_space": 2,
       "village": "home",
+      "warden_weight": 0.5,
+      "healer_weight": 0,
       "levels": [
         {
           "level": 1,
@@ -13333,6 +13339,7 @@
       "attack_range": 0,
       "housing_space": 5,
       "village": "home",
+      "warden_weight": 6,
       "levels": [
         {
           "level": 1,
@@ -13485,6 +13492,7 @@
       "attack_range": 300,
       "housing_space": 4,
       "village": "home",
+      "warden_weight": 6,
       "levels": [
         {
           "level": 1,
@@ -13647,6 +13655,7 @@
       "attack_range": 450,
       "housing_space": 14,
       "village": "home",
+      "warden_weight": 2,
       "levels": [
         {
           "level": 1,
@@ -13779,6 +13788,7 @@
       "attack_range": 250,
       "housing_space": 20,
       "village": "home",
+      "warden_weight": 20,
       "levels": [
         {
           "level": 1,
@@ -13931,6 +13941,7 @@
       "attack_range": 80,
       "housing_space": 25,
       "village": "home",
+      "warden_weight": 25,
       "levels": [
         {
           "level": 1,
@@ -14083,6 +14094,7 @@
       "attack_range": 225,
       "housing_space": 2,
       "village": "home",
+      "warden_weight": 1.5,
       "levels": [
         {
           "level": 1,
@@ -14245,6 +14257,7 @@
       "attack_range": 60,
       "housing_space": 5,
       "village": "home",
+      "warden_weight": 6,
       "levels": [
         {
           "level": 1,
@@ -14417,6 +14430,7 @@
       "attack_range": 50,
       "housing_space": 8,
       "village": "home",
+      "warden_weight": 6,
       "levels": [
         {
           "level": 1,
@@ -14559,6 +14573,8 @@
       "attack_range": 100,
       "housing_space": 30,
       "village": "home",
+      "warden_weight": 10,
+      "healer_weight": 5,
       "levels": [
         {
           "level": 1,
@@ -14731,6 +14747,7 @@
       "attack_range": 400,
       "housing_space": 12,
       "village": "home",
+      "warden_weight": 12,
       "levels": [
         {
           "level": 1,
@@ -14833,6 +14850,7 @@
       "attack_range": 25,
       "housing_space": 30,
       "village": "home",
+      "warden_weight": 9.5,
       "levels": [
         {
           "level": 1,
@@ -14935,6 +14953,7 @@
       "attack_range": 300,
       "housing_space": 6,
       "village": "home",
+      "warden_weight": 6,
       "levels": [
         {
           "level": 1,
@@ -15057,6 +15076,7 @@
       "attack_range": 225,
       "housing_space": 10,
       "village": "home",
+      "warden_weight": 10,
       "levels": [
         {
           "level": 1,
@@ -15199,6 +15219,7 @@
       "attack_range": 60,
       "housing_space": 6,
       "village": "home",
+      "warden_weight": 6,
       "levels": [
         {
           "level": 1,
@@ -15341,6 +15362,7 @@
       "attack_range": 60,
       "housing_space": 5,
       "village": "home",
+      "warden_weight": 5,
       "super_troop": {
         "original_id": 4000000,
         "original_min_level": 7
@@ -15457,6 +15479,7 @@
       "attack_range": 600,
       "housing_space": 12,
       "village": "home",
+      "warden_weight": 12,
       "super_troop": {
         "original_id": 4000001,
         "original_min_level": 7
@@ -15583,6 +15606,8 @@
       "attack_range": 60,
       "housing_space": 8,
       "village": "home",
+      "warden_weight": 0.5,
+      "healer_weight": 0,
       "super_troop": {
         "original_id": 4000004,
         "original_min_level": 6
@@ -15709,6 +15734,7 @@
       "attack_range": 100,
       "housing_space": 10,
       "village": "home",
+      "warden_weight": 9,
       "super_troop": {
         "original_id": 4000003,
         "original_min_level": 8
@@ -15835,6 +15861,7 @@
       "attack_range": 300,
       "housing_space": 4,
       "village": "home",
+      "warden_weight": 6,
       "is_seasonal": true,
       "levels": [
         {
@@ -15988,6 +16015,7 @@
       "attack_range": 40,
       "housing_space": 4,
       "village": "builderBase",
+      "warden_weight": 1,
       "levels": [
         {
           "level": 1,
@@ -16210,6 +16238,7 @@
       "attack_range": 350,
       "housing_space": 3,
       "village": "builderBase",
+      "warden_weight": 1,
       "levels": [
         {
           "level": 1,
@@ -16432,6 +16461,7 @@
       "attack_range": 350,
       "housing_space": 3,
       "village": "builderBase",
+      "warden_weight": 2,
       "levels": [
         {
           "level": 3,
@@ -16634,6 +16664,7 @@
       "attack_range": 100,
       "housing_space": 18,
       "village": "builderBase",
+      "warden_weight": 6,
       "levels": [
         {
           "level": 3,
@@ -16836,6 +16867,7 @@
       "attack_range": 350,
       "housing_space": 12,
       "village": "builderBase",
+      "warden_weight": 0.5,
       "levels": [
         {
           "level": 5,
@@ -17018,6 +17050,7 @@
       "attack_range": 80,
       "housing_space": 22,
       "village": "builderBase",
+      "warden_weight": 30,
       "levels": [
         {
           "level": 13,
@@ -17120,6 +17153,7 @@
       "attack_range": 450,
       "housing_space": 16,
       "village": "builderBase",
+      "warden_weight": 1,
       "levels": [
         {
           "level": 7,
@@ -17282,6 +17316,7 @@
       "attack_range": 50,
       "housing_space": 15,
       "village": "builderBase",
+      "warden_weight": 6,
       "levels": [
         {
           "level": 11,
@@ -17404,6 +17439,7 @@
       "attack_range": 200,
       "housing_space": 12,
       "village": "builderBase",
+      "warden_weight": 10,
       "levels": [
         {
           "level": 5,
@@ -17586,6 +17622,7 @@
       "attack_range": 400,
       "housing_space": 14,
       "village": "builderBase",
+      "warden_weight": 12,
       "levels": [
         {
           "level": 9,
@@ -17728,6 +17765,8 @@
       "attack_range": 60,
       "housing_space": 4,
       "village": "home",
+      "warden_weight": 6,
+      "healer_weight": 0,
       "is_seasonal": true,
       "levels": [
         {
@@ -17881,6 +17920,7 @@
       "attack_range": 50,
       "housing_space": 8,
       "village": "home",
+      "warden_weight": 1,
       "is_seasonal": true,
       "levels": [
         {
@@ -18034,6 +18074,7 @@
       "attack_range": 40,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 1,
       "is_seasonal": true,
       "levels": [
         {
@@ -18187,6 +18228,7 @@
       "attack_range": 100,
       "housing_space": 20,
       "village": "home",
+      "warden_weight": 20,
       "is_seasonal": true,
       "levels": [
         {
@@ -18340,6 +18382,7 @@
       "attack_range": 150,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 1,
       "levels": [
         {
           "level": 1,
@@ -18422,6 +18465,7 @@
       "attack_range": 150,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 0,
       "levels": [
         {
           "level": 1,
@@ -18504,6 +18548,7 @@
       "attack_range": 80,
       "housing_space": 18,
       "village": "home",
+      "warden_weight": 18,
       "levels": [
         {
           "level": 1,
@@ -18606,6 +18651,7 @@
       "attack_range": 40,
       "housing_space": 3,
       "village": "home",
+      "warden_weight": 3,
       "super_troop": {
         "original_id": 4000002,
         "original_min_level": 6
@@ -18692,6 +18738,7 @@
       "attack_range": 60,
       "housing_space": 24,
       "village": "home",
+      "warden_weight": 24,
       "super_troop": {
         "original_id": 4000024,
         "original_min_level": 6
@@ -18838,6 +18885,7 @@
       "attack_range": 0,
       "housing_space": 8,
       "village": "home",
+      "warden_weight": 6,
       "super_troop": {
         "original_id": 4000005,
         "original_min_level": 7
@@ -18954,6 +19002,8 @@
       "attack_range": 100,
       "housing_space": 15,
       "village": "home",
+      "warden_weight": 6,
+      "healer_weight": 1,
       "levels": [
         {
           "level": 1,
@@ -19066,6 +19116,7 @@
       "attack_range": 250,
       "housing_space": 30,
       "village": "home",
+      "warden_weight": 30,
       "levels": [
         {
           "level": 1,
@@ -19178,6 +19229,8 @@
       "attack_range": 0,
       "housing_space": 5,
       "village": "home",
+      "warden_weight": 6,
+      "healer_weight": 0,
       "is_seasonal": true,
       "levels": [
         {
@@ -19331,6 +19384,7 @@
       "attack_range": 0,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 1,
       "levels": [
         {
           "level": 1,
@@ -19413,6 +19467,7 @@
       "attack_range": 350,
       "housing_space": 15,
       "village": "home",
+      "warden_weight": 15,
       "super_troop": {
         "original_id": 4000023,
         "original_min_level": 5
@@ -19559,6 +19614,7 @@
       "attack_range": 50,
       "housing_space": 20,
       "village": "home",
+      "warden_weight": 18,
       "super_troop": {
         "original_id": 4000012,
         "original_min_level": 6
@@ -19705,6 +19761,7 @@
       "attack_range": 350,
       "housing_space": 25,
       "village": "home",
+      "warden_weight": 25,
       "levels": [
         {
           "level": 1,
@@ -19787,6 +19844,7 @@
       "attack_range": 400,
       "housing_space": 40,
       "village": "home",
+      "warden_weight": 35,
       "super_troop": {
         "original_id": 4000015,
         "original_min_level": 4
@@ -19893,6 +19951,7 @@
       "attack_range": 60,
       "housing_space": 10,
       "village": "home",
+      "warden_weight": 10,
       "is_seasonal": true,
       "levels": [
         {
@@ -20046,6 +20105,8 @@
       "attack_range": 50,
       "housing_space": 12,
       "village": "builderBase",
+      "warden_weight": 6,
+      "healer_weight": 0,
       "levels": [
         {
           "level": 15,
@@ -20128,6 +20189,7 @@
       "attack_range": 300,
       "housing_space": 4,
       "village": "home",
+      "warden_weight": 6,
       "is_seasonal": true,
       "levels": [
         {
@@ -20281,6 +20343,7 @@
       "attack_range": 0,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 0,
       "levels": [
         {
           "level": 1,
@@ -20363,6 +20426,7 @@
       "attack_range": 25,
       "housing_space": 40,
       "village": "home",
+      "warden_weight": 9.5,
       "super_troop": {
         "original_id": 4000017,
         "original_min_level": 4
@@ -20469,6 +20533,7 @@
       "attack_range": 300,
       "housing_space": 30,
       "village": "home",
+      "warden_weight": 25,
       "super_troop": {
         "original_id": 4000022,
         "original_min_level": 3
@@ -20595,6 +20660,7 @@
       "attack_range": 300,
       "housing_space": 40,
       "village": "home",
+      "warden_weight": 40,
       "super_troop": {
         "original_id": 4000008,
         "original_min_level": 6
@@ -20731,6 +20797,8 @@
       "attack_range": 300,
       "housing_space": 6,
       "village": "home",
+      "warden_weight": 1,
+      "healer_weight": 2,
       "levels": [
         {
           "level": 1,
@@ -20793,6 +20861,7 @@
       "attack_range": 350,
       "housing_space": 10,
       "village": "home",
+      "warden_weight": 10,
       "super_troop": {
         "original_id": 4000006,
         "original_min_level": 8
@@ -20919,6 +20988,7 @@
       "attack_range": 350,
       "housing_space": 12,
       "village": "home",
+      "warden_weight": 12,
       "super_troop": {
         "original_id": 4000010,
         "original_min_level": 7
@@ -21055,6 +21125,7 @@
       "attack_range": 100,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 0,
       "levels": [
         {
           "level": 1,
@@ -21137,6 +21208,7 @@
       "attack_range": 1005,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 1,
       "levels": [
         {
           "level": 1,
@@ -21209,6 +21281,7 @@
       "attack_range": 100,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 1,
       "levels": [
         {
           "level": 1,
@@ -21291,6 +21364,7 @@
       "attack_range": 350,
       "housing_space": 12,
       "village": "home",
+      "warden_weight": 12,
       "is_seasonal": true,
       "levels": [
         {
@@ -21444,6 +21518,7 @@
       "attack_range": 125,
       "housing_space": 32,
       "village": "home",
+      "warden_weight": 30,
       "levels": [
         {
           "level": 1,
@@ -21516,6 +21591,8 @@
       "attack_range": 500,
       "housing_space": 20,
       "village": "home",
+      "warden_weight": 0,
+      "healer_weight": 10,
       "levels": [
         {
           "level": 1,
@@ -21578,6 +21655,7 @@
       "attack_range": 60,
       "housing_space": 12,
       "village": "home",
+      "warden_weight": 12,
       "super_troop": {
         "original_id": 4000011,
         "original_min_level": 9
@@ -21724,6 +21802,7 @@
       "attack_range": 350,
       "housing_space": 3,
       "village": "home",
+      "warden_weight": 2,
       "is_seasonal": true,
       "levels": [
         {
@@ -21877,6 +21956,8 @@
       "attack_range": 100,
       "housing_space": 41,
       "village": "home",
+      "warden_weight": 20,
+      "healer_weight": 10,
       "is_seasonal": true,
       "levels": [
         {
@@ -22030,6 +22111,7 @@
       "attack_range": 250,
       "housing_space": 7,
       "village": "home",
+      "warden_weight": 7,
       "is_seasonal": true,
       "levels": [
         {
@@ -22183,6 +22265,7 @@
       "attack_range": 0,
       "housing_space": 21,
       "village": "home",
+      "warden_weight": 15,
       "is_seasonal": true,
       "levels": [
         {
@@ -22336,6 +22419,7 @@
       "attack_range": 350,
       "housing_space": 14,
       "village": "builderBase",
+      "warden_weight": 12,
       "levels": [
         {
           "level": 17,
@@ -22398,6 +22482,8 @@
       "attack_range": 80,
       "housing_space": 26,
       "village": "home",
+      "warden_weight": 1,
+      "healer_weight": 0,
       "levels": [
         {
           "level": 1,
@@ -22460,6 +22546,7 @@
       "attack_range": 100,
       "housing_space": 20,
       "village": "home",
+      "warden_weight": 20,
       "levels": [
         {
           "level": 1,
@@ -22522,6 +22609,7 @@
       "attack_range": 60,
       "housing_space": 10,
       "village": "home",
+      "warden_weight": 10,
       "is_seasonal": true,
       "levels": [
         {
@@ -22675,6 +22763,7 @@
       "attack_range": 600,
       "housing_space": 10,
       "village": "home",
+      "warden_weight": 8,
       "is_seasonal": true,
       "levels": [
         {
@@ -22828,6 +22917,7 @@
       "attack_range": 250,
       "housing_space": 40,
       "village": "home",
+      "warden_weight": 50,
       "is_seasonal": true,
       "levels": [
         {
@@ -22981,6 +23071,7 @@
       "attack_range": 60,
       "housing_space": 12,
       "village": "home",
+      "warden_weight": 4,
       "is_seasonal": true,
       "levels": [
         {
@@ -23134,6 +23225,7 @@
       "attack_range": 70,
       "housing_space": 15,
       "village": "home",
+      "warden_weight": 6,
       "is_seasonal": true,
       "levels": [
         {
@@ -23287,6 +23379,7 @@
       "attack_range": 500,
       "housing_space": 16,
       "village": "home",
+      "warden_weight": 2,
       "levels": [
         {
           "level": 1,
@@ -23369,6 +23462,7 @@
       "attack_range": 350,
       "housing_space": 20,
       "village": "home",
+      "warden_weight": 9.5,
       "is_seasonal": true,
       "levels": [
         {
@@ -23522,6 +23616,7 @@
       "attack_range": 150,
       "housing_space": 4,
       "village": "home",
+      "warden_weight": 1.5,
       "is_seasonal": true,
       "levels": [
         {
@@ -23675,6 +23770,7 @@
       "attack_range": 600,
       "housing_space": 16,
       "village": "home",
+      "warden_weight": 14,
       "levels": [
         {
           "level": 1,
@@ -23737,6 +23833,7 @@
       "attack_range": 8000,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 1,
       "levels": [
         {
           "level": 1,
@@ -23799,6 +23896,7 @@
       "attack_range": 40,
       "housing_space": 4,
       "village": "home",
+      "warden_weight": 0.5,
       "is_seasonal": true,
       "levels": [
         {
@@ -23952,6 +24050,8 @@
       "attack_range": 0,
       "housing_space": 8,
       "village": "home",
+      "warden_weight": 6,
+      "healer_weight": 0,
       "is_seasonal": true,
       "levels": [
         {
@@ -24105,6 +24205,7 @@
       "attack_range": 80,
       "housing_space": 35,
       "village": "home",
+      "warden_weight": 30,
       "super_troop": {
         "original_id": 4000053,
         "original_min_level": 2
@@ -24211,6 +24312,8 @@
       "attack_range": 1,
       "housing_space": 18,
       "village": "home",
+      "warden_weight": 0,
+      "healer_weight": 0,
       "levels": [
         {
           "level": 1,
@@ -24273,6 +24376,8 @@
       "attack_range": 100,
       "housing_space": 50,
       "village": "home",
+      "warden_weight": 38.2,
+      "healer_weight": 20,
       "is_seasonal": true,
       "levels": [
         {
@@ -24456,6 +24561,8 @@
       "attack_range": 150,
       "housing_space": 75,
       "village": "home",
+      "warden_weight": 60,
+      "healer_weight": 20,
       "is_seasonal": true,
       "levels": [
         {
@@ -24639,6 +24746,8 @@
       "attack_range": 50,
       "housing_space": 60,
       "village": "home",
+      "warden_weight": 50,
+      "healer_weight": 20,
       "is_seasonal": true,
       "levels": [
         {
@@ -24792,6 +24901,8 @@
       "attack_range": 650,
       "housing_space": 45,
       "village": "home",
+      "warden_weight": 40,
+      "healer_weight": 20,
       "is_seasonal": true,
       "levels": [
         {
@@ -24957,342 +25068,6 @@
       ]
     },
     {
-      "_id": 4000164,
-      "name": "YEETer",
-      "info": "With huge range, YEETer hurls 4 loyal tribe members at the start of battle that attack everything, before going back to his trusty spears. Say it loud now, YEET!",
-      "TID": {
-        "name": "TID_CHARACTER_APRIL25RRBL",
-        "info": "TID_CHARACTER_INFO_APRIL25RRBL"
-      },
-      "production_building": "Barracks",
-      "production_building_level": 0,
-      "upgrade_resource": "Elixir",
-      "is_flying": false,
-      "is_air_targeting": true,
-      "is_ground_targeting": true,
-      "movement_speed": 400,
-      "attack_speed": 2000,
-      "attack_range": 650,
-      "housing_space": 45,
-      "village": "home",
-      "is_seasonal": true,
-      "levels": [
-        {
-          "level": 1,
-          "hitpoints": 800,
-          "dps": 30,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 3,
-          "strength_weight": 0
-        },
-        {
-          "level": 2,
-          "hitpoints": 1000,
-          "dps": 40,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 4,
-          "strength_weight": 0
-        },
-        {
-          "level": 3,
-          "hitpoints": 1200,
-          "dps": 50,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 5,
-          "strength_weight": 0
-        },
-        {
-          "level": 4,
-          "hitpoints": 1400,
-          "dps": 60,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 6,
-          "strength_weight": 0
-        },
-        {
-          "level": 5,
-          "hitpoints": 1600,
-          "dps": 70,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 7,
-          "strength_weight": 0
-        },
-        {
-          "level": 6,
-          "hitpoints": 2000,
-          "dps": 85,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 8,
-          "strength_weight": 0
-        },
-        {
-          "level": 7,
-          "hitpoints": 2400,
-          "dps": 100,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 9,
-          "strength_weight": 0
-        },
-        {
-          "level": 8,
-          "hitpoints": 2700,
-          "dps": 115,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 10,
-          "strength_weight": 0
-        },
-        {
-          "level": 9,
-          "hitpoints": 3000,
-          "dps": 130,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 11,
-          "strength_weight": 0
-        },
-        {
-          "level": 10,
-          "hitpoints": 3300,
-          "dps": 145,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 12,
-          "strength_weight": 0
-        },
-        {
-          "level": 11,
-          "hitpoints": 3700,
-          "dps": 160,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 13,
-          "strength_weight": 0
-        },
-        {
-          "level": 12,
-          "hitpoints": 4100,
-          "dps": 175,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 14,
-          "strength_weight": 0
-        },
-        {
-          "level": 13,
-          "hitpoints": 4500,
-          "dps": 190,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 15,
-          "strength_weight": 0
-        },
-        {
-          "level": 14,
-          "hitpoints": 5000,
-          "dps": 210,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 16,
-          "strength_weight": 0
-        },
-        {
-          "level": 15,
-          "hitpoints": 5500,
-          "dps": 230,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 17,
-          "strength_weight": 0
-        },
-        {
-          "level": 16,
-          "hitpoints": 6000,
-          "dps": 250,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 18,
-          "strength_weight": 0
-        }
-      ]
-    },
-    {
-      "_id": 4000165,
-      "name": "The Disarmer",
-      "info": "She is THE MAN! The Disarmer targets Defenses with spiteful blows of her bat and makes easy work of Walls by jumping right over them! She must be put down 3 times before she’s out. Talk about tough!",
-      "TID": {
-        "name": "TID_CHARACTER_APRIL25BLTM",
-        "info": "TID_CHARACTER_INFO_APRIL25BLTM"
-      },
-      "production_building": "Barracks",
-      "production_building_level": 0,
-      "upgrade_resource": "Elixir",
-      "is_flying": false,
-      "is_air_targeting": false,
-      "is_ground_targeting": true,
-      "movement_speed": 300,
-      "attack_speed": 2200,
-      "attack_range": 50,
-      "housing_space": 60,
-      "village": "home",
-      "is_seasonal": true,
-      "levels": [
-        {
-          "level": 1,
-          "hitpoints": 1300,
-          "dps": 100,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 6,
-          "strength_weight": 0
-        },
-        {
-          "level": 2,
-          "hitpoints": 1700,
-          "dps": 125,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 7,
-          "strength_weight": 0
-        },
-        {
-          "level": 3,
-          "hitpoints": 2200,
-          "dps": 150,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 8,
-          "strength_weight": 0
-        },
-        {
-          "level": 4,
-          "hitpoints": 2900,
-          "dps": 175,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 9,
-          "strength_weight": 0
-        },
-        {
-          "level": 5,
-          "hitpoints": 3500,
-          "dps": 200,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 10,
-          "strength_weight": 0
-        },
-        {
-          "level": 6,
-          "hitpoints": 4000,
-          "dps": 220,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 11,
-          "strength_weight": 0
-        },
-        {
-          "level": 7,
-          "hitpoints": 4500,
-          "dps": 240,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 12,
-          "strength_weight": 0
-        },
-        {
-          "level": 8,
-          "hitpoints": 5000,
-          "dps": 260,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 13,
-          "strength_weight": 0
-        },
-        {
-          "level": 9,
-          "hitpoints": 5500,
-          "dps": 280,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 14,
-          "strength_weight": 0
-        },
-        {
-          "level": 10,
-          "hitpoints": 6000,
-          "dps": 300,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 15,
-          "strength_weight": 0
-        },
-        {
-          "level": 11,
-          "hitpoints": 6500,
-          "dps": 320,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 16,
-          "strength_weight": 0
-        },
-        {
-          "level": 12,
-          "hitpoints": 7000,
-          "dps": 340,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 17,
-          "strength_weight": 0
-        },
-        {
-          "level": 13,
-          "hitpoints": 7500,
-          "dps": 360,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
-          "required_lab_level": null,
-          "required_townhall": 18,
-          "strength_weight": 0
-        }
-      ]
-    },
-    {
       "_id": 4000167,
       "name": "Meteor Golem",
       "info": "From the cosmos, to your army! This lob-loving duo will throw themselves at anything for up-close damage. When separated, Meteormites will attack nearby targets or find a friend to form a Meteor Golem!",
@@ -25311,6 +25086,7 @@
       "attack_range": 500,
       "housing_space": 40,
       "village": "home",
+      "warden_weight": 30,
       "is_seasonal": true,
       "levels": [
         {
@@ -25464,6 +25240,7 @@
       "attack_range": 500,
       "housing_space": 40,
       "village": "home",
+      "warden_weight": 30,
       "levels": [
         {
           "level": 1,
@@ -25516,6 +25293,7 @@
       "attack_range": 550,
       "housing_space": 1,
       "village": "home",
+      "warden_weight": 1,
       "levels": [
         {
           "level": 1,
@@ -27797,6 +27575,8 @@
       "attack_speed": 1200,
       "attack_range": 100,
       "village": "home",
+      "warden_weight": 21,
+      "healer_weight": 21,
       "levels": [
         {
           "level": 1,
@@ -28918,6 +28698,8 @@
       "attack_speed": 750,
       "attack_range": 500,
       "village": "home",
+      "warden_weight": 21,
+      "healer_weight": 25,
       "levels": [
         {
           "level": 1,
@@ -30039,6 +29821,8 @@
       "attack_speed": 1800,
       "attack_range": 700,
       "village": "home",
+      "warden_weight": 0,
+      "healer_weight": 15,
       "levels": [
         {
           "level": 1,
@@ -30910,6 +30694,7 @@
       "attack_speed": 1200,
       "attack_range": 125,
       "village": "builderBase",
+      "warden_weight": 21,
       "levels": [
         {
           "level": 1,
@@ -31281,6 +31066,8 @@
       "attack_speed": 1200,
       "attack_range": 300,
       "village": "home",
+      "warden_weight": 21,
+      "healer_weight": 23,
       "levels": [
         {
           "level": 1,
@@ -31852,6 +31639,7 @@
       "attack_speed": 650,
       "attack_range": 600,
       "village": "builderBase",
+      "warden_weight": 21,
       "levels": [
         {
           "level": 15,
@@ -32083,6 +31871,8 @@
       "attack_speed": 850,
       "attack_range": 450,
       "village": "home",
+      "warden_weight": 21,
+      "healer_weight": 21,
       "levels": [
         {
           "level": 1,
@@ -33054,6 +32844,8 @@
       "attack_speed": 1200,
       "attack_range": 125,
       "village": "home",
+      "warden_weight": 21,
+      "healer_weight": 21,
       "levels": [
         {
           "level": 1,
@@ -33326,6 +33118,7 @@
       "movement_speed": 400,
       "attack_speed": 900,
       "attack_range": 60,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
@@ -33496,6 +33289,7 @@
       "movement_speed": 300,
       "attack_speed": 2100,
       "attack_range": 120,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
@@ -33666,6 +33460,7 @@
       "movement_speed": 250,
       "attack_speed": 1400,
       "attack_range": 550,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
@@ -33836,6 +33631,7 @@
       "movement_speed": 200,
       "attack_speed": 1000,
       "attack_range": 250,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
@@ -34006,6 +33802,7 @@
       "movement_speed": 200,
       "attack_speed": 1000,
       "attack_range": 250,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
@@ -34126,6 +33923,7 @@
       "movement_speed": 450,
       "attack_speed": 350,
       "attack_range": 450,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
@@ -34296,6 +34094,7 @@
       "movement_speed": 400,
       "attack_speed": 1100,
       "attack_range": 80,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
@@ -34416,6 +34215,7 @@
       "movement_speed": 300,
       "attack_speed": 1200,
       "attack_range": 350,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
@@ -34586,6 +34386,7 @@
       "movement_speed": 300,
       "attack_speed": 1600,
       "attack_range": 250,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
@@ -34706,6 +34507,7 @@
       "movement_speed": 200,
       "attack_speed": 750,
       "attack_range": 500,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
@@ -34826,6 +34628,7 @@
       "movement_speed": 300,
       "attack_speed": 800,
       "attack_range": 250,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
@@ -34946,6 +34749,7 @@
       "movement_speed": 350,
       "attack_speed": 420,
       "attack_range": 800,
+      "warden_weight": 3,
       "levels": [
         {
           "level": 1,
