@@ -181,6 +181,16 @@ def test_hero_troop_and_pet_weights_are_emitted_from_top_level_data():
                 "FriendlyGroupWeight": 3000,
                 "HealerWeight": 0,
                 "1": {"LaboratoryLevel": 1},
+            },
+            "WeightedBuilderTroop": {
+                "GlobalID": 4000001,
+                "TID": "TID_WEIGHTED_BUILDER_TROOP",
+                "InfoTID": "TID_WEIGHTED_BUILDER_TROOP_INFO",
+                "ProductionBuilding": "Barrack",
+                "VillageType": 1,
+                "FriendlyGroupWeight": 3000,
+                "HealerWeight": 21,
+                "1": {"LaboratoryLevel": 1},
             }
         },
         "logic/super_licences.json": {},
@@ -188,6 +198,14 @@ def test_hero_troop_and_pet_weights_are_emitted_from_top_level_data():
             "WeightedHero": {
                 "TID": "TID_WEIGHTED_HERO",
                 "InfoTID": "TID_WEIGHTED_HERO_INFO",
+                "FriendlyGroupWeight": 230,
+                "HealerWeight": 21,
+                "1": {},
+            },
+            "WeightedBuilderHero": {
+                "TID": "TID_WEIGHTED_BUILDER_HERO",
+                "InfoTID": "TID_WEIGHTED_BUILDER_HERO_INFO",
+                "VillageType": 1,
                 "FriendlyGroupWeight": 230,
                 "HealerWeight": 21,
                 "1": {},
@@ -205,8 +223,8 @@ def test_hero_troop_and_pet_weights_are_emitted_from_top_level_data():
     }
     updater.open_file = files.__getitem__
 
-    [troop] = updater._parse_troop_data()
-    [hero] = updater._parse_hero_data()
+    troop, builder_troop = updater._parse_troop_data()
+    hero, builder_hero = updater._parse_hero_data()
     [pet] = updater._parse_pet_data()
 
     assert troop["warden_weight"] == 30
@@ -215,6 +233,9 @@ def test_hero_troop_and_pet_weights_are_emitted_from_top_level_data():
     assert hero["healer_weight"] == 21
     assert pet["warden_weight"] == 3.9
     assert pet["healer_weight"] == 4
+    for item in (builder_troop, builder_hero):
+        assert "warden_weight" not in item
+        assert "healer_weight" not in item
     for item in (troop, hero, pet):
         assert list(item).index("warden_weight") < list(item).index("levels")
         assert list(item).index("healer_weight") < list(item).index("levels")

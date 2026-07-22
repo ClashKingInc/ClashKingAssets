@@ -16015,7 +16015,6 @@
       "attack_range": 40,
       "housing_space": 4,
       "village": "builderBase",
-      "warden_weight": 1,
       "levels": [
         {
           "level": 1,
@@ -16238,7 +16237,6 @@
       "attack_range": 350,
       "housing_space": 3,
       "village": "builderBase",
-      "warden_weight": 1,
       "levels": [
         {
           "level": 1,
@@ -16461,7 +16459,6 @@
       "attack_range": 350,
       "housing_space": 3,
       "village": "builderBase",
-      "warden_weight": 2,
       "levels": [
         {
           "level": 3,
@@ -16664,7 +16661,6 @@
       "attack_range": 100,
       "housing_space": 18,
       "village": "builderBase",
-      "warden_weight": 6,
       "levels": [
         {
           "level": 3,
@@ -16867,7 +16863,6 @@
       "attack_range": 350,
       "housing_space": 12,
       "village": "builderBase",
-      "warden_weight": 0.5,
       "levels": [
         {
           "level": 5,
@@ -17050,7 +17045,6 @@
       "attack_range": 80,
       "housing_space": 22,
       "village": "builderBase",
-      "warden_weight": 30,
       "levels": [
         {
           "level": 13,
@@ -17153,7 +17147,6 @@
       "attack_range": 450,
       "housing_space": 16,
       "village": "builderBase",
-      "warden_weight": 1,
       "levels": [
         {
           "level": 7,
@@ -17316,7 +17309,6 @@
       "attack_range": 50,
       "housing_space": 15,
       "village": "builderBase",
-      "warden_weight": 6,
       "levels": [
         {
           "level": 11,
@@ -17439,7 +17431,6 @@
       "attack_range": 200,
       "housing_space": 12,
       "village": "builderBase",
-      "warden_weight": 10,
       "levels": [
         {
           "level": 5,
@@ -17622,7 +17613,6 @@
       "attack_range": 400,
       "housing_space": 14,
       "village": "builderBase",
-      "warden_weight": 12,
       "levels": [
         {
           "level": 9,
@@ -20105,8 +20095,6 @@
       "attack_range": 50,
       "housing_space": 12,
       "village": "builderBase",
-      "warden_weight": 6,
-      "healer_weight": 0,
       "levels": [
         {
           "level": 15,
@@ -22419,7 +22407,6 @@
       "attack_range": 350,
       "housing_space": 14,
       "village": "builderBase",
-      "warden_weight": 12,
       "levels": [
         {
           "level": 17,
@@ -30694,7 +30681,6 @@
       "attack_speed": 1200,
       "attack_range": 125,
       "village": "builderBase",
-      "warden_weight": 21,
       "levels": [
         {
           "level": 1,
@@ -31639,7 +31625,6 @@
       "attack_speed": 650,
       "attack_range": 600,
       "village": "builderBase",
-      "warden_weight": 21,
       "levels": [
         {
           "level": 15,

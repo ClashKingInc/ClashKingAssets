@@ -1319,7 +1319,7 @@ class StaticUpdater:
                 "attack_range": troop_data.get("AttackRange", 0),
                 "housing_space": troop_data.get("HousingSpace"),
                 "village": "home" if not village_type else "builderBase",
-                **self._parse_unit_weights(troop_data),
+                **(self._parse_unit_weights(troop_data) if not village_type else {}),
             }
 
             is_super_troop = troop_data.get("EnabledBySuperLicence", False)
@@ -1522,7 +1522,7 @@ class StaticUpdater:
                 "attack_speed": hero_data.get("AttackSpeed"),
                 "attack_range": hero_data.get("AttackRange"),
                 "village": "home" if not village_type else "builderBase",
-                **self._parse_unit_weights(hero_data),
+                **(self._parse_unit_weights(hero_data) if not village_type else {}),
                 "levels": [],
             }
 
