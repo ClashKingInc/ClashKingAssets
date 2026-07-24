@@ -35,18 +35,6 @@ Examples:
 - `https://assets.clashk.ing/buildings/home-village/{cleaned_name}/level_{level}.webp`
 - `https://assets.clashk.ing/decorations/home-village/{cleaned_name}.webp`
 
-## Repository Layout
-
-- [`assets/`](assets): published static assets
-- [`assets/static_data.json`](assets/static_data.json): upgrade costs and times, ids, stats, and more for buildings, troops, etc.
-- [`assets/translations.json`](assets/translations.json): translation strings for static data
-- [`update_static.py`](update_static.py): downloads current game data and refreshes generated metadata/assets
-- [`extractor.md`](extractor.md): explains the Go `.sc`/`.sctx` extractor, its subcommands, and platform prerequisites
-- [`internal/sc3d/`](internal/sc3d): browser-based hero and skin model viewer served by the Go CLI
-- [`assets/manifest.json`](assets/manifest.json): deterministic metadata for hosted image assets
-
-The extractor can compose a scenery's mapped base and foreground into an animation. On macOS, texture decoding and the complete compositor use Metal, and scenery animation uses hardware HEVC by default. The CPU renderer and built-in animated WebP remain available as fallbacks.
-
 ## Contributing
 
 Contributions are welcome, especially:

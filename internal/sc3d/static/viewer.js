@@ -3341,6 +3341,7 @@ function renderAssetList() {
     const button = document.createElement("button");
     button.type = "button";
     button.className = `asset-row${path === state.selectedPath ? " active" : ""}`;
+    button.setAttribute("aria-current", path === state.selectedPath ? "true" : "false");
     const name = path.split("/").pop();
     button.innerHTML = `${name}<small>${path}</small>`;
     button.addEventListener("click", () => loadAsset(path));
@@ -3350,7 +3351,9 @@ function renderAssetList() {
 
 function markSelected() {
   for (const row of els.assetList.querySelectorAll(".asset-row")) {
-    row.classList.toggle("active", row.textContent.includes(state.selectedPath));
+    const selected = row.textContent.includes(state.selectedPath);
+    row.classList.toggle("active", selected);
+    row.setAttribute("aria-current", selected ? "true" : "false");
   }
 }
 
@@ -3383,7 +3386,11 @@ els.colorMode.addEventListener("change", () => {
 for (const button of els.filters) {
   button.addEventListener("click", () => {
     state.filter = button.dataset.filter;
-    els.filters.forEach((item) => item.classList.toggle("active", item === button));
+    els.filters.forEach((item) => {
+      const active = item === button;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
     renderAssetList();
   });
 }

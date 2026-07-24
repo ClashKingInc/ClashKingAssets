@@ -3,94 +3,166 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#030304" />
     <title>ClashKing SC3D Viewer</title>
+    <link rel="preconnect" href="https://assets.clashk.ing" crossorigin />
+    <link rel="preload" href="https://assets.clashk.ing/fonts/clashking.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#viewport">Skip to model viewport</a>
     <main class="shell">
-      <aside class="panel browser-panel">
-        <div class="brand">
-          <span class="brand-mark"></span>
-          <div>
-            <h1>SC3D Viewer</h1>
-            <p id="fingerprint">Loading fingerprint</p>
+      <aside class="panel browser-panel" aria-label="Model browser">
+        <header class="brand">
+          <img src="https://assets.clashk.ing/logos/clashking-wordmark-dark.svg" alt="ClashKing" />
+          <div class="product-label">
+            <strong>SC3D Viewer</strong>
+            <span id="fingerprint">Loading fingerprint</span>
+          </div>
+        </header>
+
+        <div class="browser-controls">
+          <label class="field search-field">
+            <span>Search models</span>
+            <div class="input-shell">
+              <i class="search-icon" aria-hidden="true"></i>
+              <input id="search" type="search" placeholder="Archer Queen, geometry…" autocomplete="off" />
+            </div>
+          </label>
+
+          <div class="segmented-control" role="group" aria-label="Model filter">
+            <button class="filter active" type="button" data-filter="geo" aria-pressed="true">Geometry</button>
+            <button class="filter" type="button" data-filter="all" aria-pressed="false">All GLB</button>
+          </div>
+
+          <div class="control-grid">
+            <label class="field">
+              <span>Pose</span>
+              <select id="pose-select" disabled>
+                <option value="">Rest pose</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Material</span>
+              <select id="color-mode">
+                <option value="texture">Texture</option>
+                <option value="parts">Parts</option>
+                <option value="materials">Materials</option>
+              </select>
+            </label>
           </div>
         </div>
-        <label class="field">
-          <span>Search models</span>
-          <input id="search" type="search" placeholder="archerqueen anime geo" autocomplete="off" />
-        </label>
-        <div class="filters">
-          <button class="filter active" data-filter="geo">Geometry</button>
-          <button class="filter" data-filter="all">All GLB</button>
+
+        <div class="asset-list-header">
+          <span>Models</span>
+          <span id="asset-count" class="count">No assets loaded</span>
         </div>
-        <label class="field">
-          <span>Pose</span>
-          <select id="pose-select" disabled>
-            <option value="">Rest pose</option>
-          </select>
-        </label>
-        <label class="field">
-          <span>Material view</span>
-          <select id="color-mode">
-            <option value="texture">Texture</option>
-            <option value="parts">Parts</option>
-            <option value="materials">Materials</option>
-          </select>
-        </label>
-        <div id="asset-count" class="count">No assets loaded</div>
         <nav id="asset-list" class="asset-list" aria-label="SC3D assets"></nav>
       </aside>
 
-      <section class="viewport-wrap">
-        <div id="viewport" class="viewport"></div>
-        <div class="viewport-toolbar">
-          <button id="reset-view" type="button">Reset View</button>
-          <button id="nudge-up" type="button">Up</button>
-          <button id="nudge-down" type="button">Down</button>
-          <button id="play-animation" type="button" aria-pressed="true" disabled>No Anim</button>
-          <button id="export-webp" type="button" disabled>Export WebP</button>
-          <label class="toolbar-toggle"><input id="webp-loop" type="checkbox" checked /><span>Loop WebP</span></label>
-          <button id="toggle-grid" type="button" aria-pressed="true">Grid</button>
-          <button id="smooth-shading" type="button" aria-pressed="true">Smooth</button>
-          <button id="wireframe" type="button" aria-pressed="false">Wireframe</button>
+      <section class="viewport-wrap" aria-label="Model workspace">
+        <div id="viewport" class="viewport" tabindex="-1"></div>
+        <div class="viewport-toolbar" aria-label="Viewport controls">
+          <div class="toolbar-group">
+            <button id="reset-view" type="button">Reset</button>
+            <button id="nudge-up" type="button" title="Move camera target up">Up</button>
+            <button id="nudge-down" type="button" title="Move camera target down">Down</button>
+          </div>
+          <div class="toolbar-group">
+            <button id="play-animation" type="button" aria-pressed="true" disabled>No animation</button>
+            <button id="toggle-grid" type="button" aria-pressed="true">Grid</button>
+            <button id="smooth-shading" type="button" aria-pressed="true">Smooth</button>
+            <button id="wireframe" type="button" aria-pressed="false">Wireframe</button>
+          </div>
+          <div class="toolbar-group export-group">
+            <label class="toolbar-toggle">
+              <input id="webp-loop" type="checkbox" checked />
+              <span>Loop</span>
+            </label>
+            <button id="export-webp" class="primary-action" type="button" disabled>Export WebP</button>
+          </div>
         </div>
-        <div id="status" class="status">Choose a model to decode</div>
+        <div id="status" class="status" role="status" aria-live="polite">Choose a model to decode</div>
       </section>
 
-      <aside class="panel inspector-panel">
-        <h2>Landing Export</h2>
-        <div class="landing-settings">
-          <label class="field field-wide"><span>Skin slug</span><input id="landing-slug" type="text" value="skin" autocomplete="off" /></label>
-          <label class="field"><span>Scale</span><input id="landing-scale" type="number" value="1" min="0.01" max="100" step="0.05" /></label>
-          <label class="field"><span>Vertical offset</span><input id="landing-offset-y" type="number" value="0" step="0.05" /></label>
-          <label class="field"><span>Initial yaw</span><input id="landing-yaw" type="number" value="0" min="-180" max="180" step="1" /></label>
-          <label class="field"><span>Animation speed</span><input id="landing-animation-speed" type="number" value="1" min="0.05" max="4" step="0.05" /></label>
-          <label class="field"><span>Camera FOV</span><input id="landing-fov" type="number" value="36" min="10" max="90" step="1" /></label>
-          <label class="field"><span>Camera distance</span><input id="landing-distance" type="number" value="2.1" min="0.5" max="10" step="0.05" /></label>
-          <label class="field"><span>Camera target Y</span><input id="landing-target-y" type="number" value="0" step="0.05" /></label>
-          <label class="field"><span>Drag sensitivity</span><input id="landing-drag-sensitivity" type="number" value="0.8" min="0.05" max="3" step="0.05" /></label>
-          <label class="field"><span>Minimum yaw</span><input id="landing-min-yaw" type="number" value="-45" min="-180" max="180" step="1" /></label>
-          <label class="field"><span>Maximum yaw</span><input id="landing-max-yaw" type="number" value="45" min="-180" max="180" step="1" /></label>
-          <label class="toggle"><input id="landing-allow-yaw" type="checkbox" checked /><span>Allow horizontal rotation</span></label>
-          <label class="toggle"><input id="landing-allow-pitch" type="checkbox" /><span>Allow vertical tilt</span></label>
-          <label class="toggle"><input id="landing-allow-zoom" type="checkbox" /><span>Allow zoom</span></label>
-          <label class="toggle"><input id="landing-allow-pan" type="checkbox" /><span>Allow pan</span></label>
-          <label class="toggle"><input id="landing-auto-rotate" type="checkbox" /><span>Auto rotate</span></label>
-          <label class="field field-wide"><span>Auto-rotate speed</span><input id="landing-auto-rotate-speed" type="number" value="0.5" min="-5" max="5" step="0.1" /></label>
-          <div class="landing-export-actions field-wide">
-            <button id="export-glb" type="button" disabled>Export model.glb</button>
-            <button id="export-skin-json" type="button" disabled>Export skin.json</button>
+      <aside class="panel inspector-panel" aria-label="Export and model inspector">
+        <header class="inspector-header">
+          <div>
+            <span class="section-kicker">Workspace</span>
+            <h2>Model details</h2>
           </div>
-          <pre id="landing-json-preview" class="landing-json-preview field-wide"></pre>
-        </div>
-        <h2>Inspector</h2>
-        <dl id="inspector" class="inspector">
-          <dt>Decoder</dt>
-          <dd>FLA2 geometry path</dd>
-          <dt>Animations</dt>
-          <dd>Pose files matched by skeleton node names</dd>
-        </dl>
+          <span class="advanced-badge">Advanced</span>
+        </header>
+
+        <details class="inspector-section" open>
+          <summary>
+            <span>
+              <strong>Inspector</strong>
+              <small>Decoded geometry and animation data</small>
+            </span>
+            <i aria-hidden="true"></i>
+          </summary>
+          <dl id="inspector" class="inspector">
+            <dt>Decoder</dt>
+            <dd>FLA2 geometry path</dd>
+            <dt>Animations</dt>
+            <dd>Pose files matched by skeleton node names</dd>
+          </dl>
+        </details>
+
+        <details class="inspector-section export-section">
+          <summary>
+            <span>
+              <strong>Landing export</strong>
+              <small>Model, camera and interaction settings</small>
+            </span>
+            <i aria-hidden="true"></i>
+          </summary>
+          <div class="landing-settings">
+            <label class="field field-wide"><span>Skin slug</span><input id="landing-slug" type="text" value="skin" autocomplete="off" /></label>
+
+            <div class="settings-group field-wide">
+              <h3>Model</h3>
+              <div class="settings-grid">
+                <label class="field"><span>Scale</span><input id="landing-scale" type="number" value="1" min="0.01" max="100" step="0.05" /></label>
+                <label class="field"><span>Vertical offset</span><input id="landing-offset-y" type="number" value="0" step="0.05" /></label>
+                <label class="field"><span>Initial yaw</span><input id="landing-yaw" type="number" value="0" min="-180" max="180" step="1" /></label>
+                <label class="field"><span>Animation speed</span><input id="landing-animation-speed" type="number" value="1" min="0.05" max="4" step="0.05" /></label>
+              </div>
+            </div>
+
+            <div class="settings-group field-wide">
+              <h3>Camera</h3>
+              <div class="settings-grid">
+                <label class="field"><span>FOV</span><input id="landing-fov" type="number" value="36" min="10" max="90" step="1" /></label>
+                <label class="field"><span>Distance</span><input id="landing-distance" type="number" value="2.1" min="0.5" max="10" step="0.05" /></label>
+                <label class="field"><span>Target Y</span><input id="landing-target-y" type="number" value="0" step="0.05" /></label>
+                <label class="field"><span>Drag sensitivity</span><input id="landing-drag-sensitivity" type="number" value="0.8" min="0.05" max="3" step="0.05" /></label>
+                <label class="field"><span>Minimum yaw</span><input id="landing-min-yaw" type="number" value="-45" min="-180" max="180" step="1" /></label>
+                <label class="field"><span>Maximum yaw</span><input id="landing-max-yaw" type="number" value="45" min="-180" max="180" step="1" /></label>
+              </div>
+            </div>
+
+            <fieldset class="interaction-settings field-wide">
+              <legend>Interaction</legend>
+              <label class="toggle"><input id="landing-allow-yaw" type="checkbox" checked /><span>Horizontal rotation</span></label>
+              <label class="toggle"><input id="landing-allow-pitch" type="checkbox" /><span>Vertical tilt</span></label>
+              <label class="toggle"><input id="landing-allow-zoom" type="checkbox" /><span>Zoom</span></label>
+              <label class="toggle"><input id="landing-allow-pan" type="checkbox" /><span>Pan</span></label>
+              <label class="toggle"><input id="landing-auto-rotate" type="checkbox" /><span>Auto rotate</span></label>
+              <label class="field auto-rotate-speed"><span>Auto-rotate speed</span><input id="landing-auto-rotate-speed" type="number" value="0.5" min="-5" max="5" step="0.1" /></label>
+            </fieldset>
+
+            <div class="landing-export-actions field-wide">
+              <button id="export-glb" class="primary-action" type="button" disabled>Export model.glb</button>
+              <button id="export-skin-json" type="button" disabled>Export skin.json</button>
+            </div>
+            <details class="json-disclosure field-wide">
+              <summary>Preview skin.json</summary>
+              <pre id="landing-json-preview" class="landing-json-preview"></pre>
+            </details>
+          </div>
+        </details>
       </aside>
     </main>
     <script type="module" src="./viewer.js?v=animation-codec-2"></script>

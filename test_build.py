@@ -19,13 +19,13 @@ class FakeR2Client:
         self.uploaded = []
         self.delete_batches = []
 
-    def upload_file(self, local_path, bucket, key):
+    def upload_file(self, local_path, bucket, key, ExtraArgs=None):
         with self.lock:
             self.active_uploads += 1
             self.max_active_uploads = max(self.max_active_uploads, self.active_uploads)
         time.sleep(0.01)
         with self.lock:
-            self.uploaded.append((local_path, bucket, key))
+            self.uploaded.append((local_path, bucket, key, ExtraArgs))
             self.active_uploads -= 1
 
     def delete_objects(self, *, Bucket, Delete):
@@ -55,6 +55,33 @@ def test_apply_sync_plan_rejects_invalid_worker_count():
     config = build.R2Config("https://example.invalid", "key", "secret", "assets")
     with pytest.raises(build.BuildError, match="workers must be at least 1"):
         build.apply_sync_plan({"uploads": [], "deletes": []}, config, workers=0)
+
+
+def test_apply_sync_plan_sets_cache_and_content_type_for_fonts():
+    client = FakeR2Client()
+    plan = {
+        "uploads": [
+            {"local_path": "assets/fonts/clashking.woff2", "key": "fonts/clashking.woff2"},
+            {"local_path": "assets/fonts/clashking.ttf", "key": "fonts/clashking.ttf"},
+            {"local_path": "assets/troops/barbarian/icon.webp", "key": "troops/barbarian/icon.webp"},
+        ],
+        "deletes": [],
+    }
+    config = build.R2Config("https://example.invalid", "key", "secret", "assets")
+
+    with patch("build.create_r2_client", return_value=client):
+        build.apply_sync_plan(plan, config, workers=2)
+
+    uploaded = {key: extra_args for _, _, key, extra_args in client.uploaded}
+    assert uploaded["fonts/clashking.woff2"] == {
+        "ContentType": "font/woff2",
+        "CacheControl": build.FONT_CACHE_CONTROL,
+    }
+    assert uploaded["fonts/clashking.ttf"] == {
+        "ContentType": "font/ttf",
+        "CacheControl": build.FONT_CACHE_CONTROL,
+    }
+    assert uploaded["troops/barbarian/icon.webp"] is None
 
 
 def test_scenery_metadata_keeps_music_free_and_default_fields():

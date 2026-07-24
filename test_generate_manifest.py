@@ -56,6 +56,21 @@ def test_manifest_excludes_bot_and_unsupported_files(tmp_path):
     manifest = build_manifest(assets_root)
 
     assert [asset["path"] for asset in manifest["assets"]] == ["troops/barbarian/icon.webp"]
+    assert manifest["assets"][0]["display_name"] == "barbarian"
+
+
+def test_manifest_names_leveled_buildings_and_traps_with_their_parent(tmp_path):
+    assets_root = tmp_path / "assets"
+    touch(assets_root, "buildings/home-village/hidden_tesla/level_12.webp")
+    touch(assets_root, "traps/builder-base/push_trap/level_4.webp")
+    touch(assets_root, "equipment/eternal_tome/level_3.webp")
+
+    manifest = build_manifest(assets_root)
+    names = {asset["path"]: asset["display_name"] for asset in manifest["assets"]}
+
+    assert names["buildings/home-village/hidden_tesla/level_12.webp"] == "hidden tesla level 12"
+    assert names["traps/builder-base/push_trap/level_4.webp"] == "push trap level 4"
+    assert names["equipment/eternal_tome/level_3.webp"] == "level 3"
 
 
 def test_manifest_output_is_reproducible_and_stale_changes_fail_check(tmp_path):

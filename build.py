@@ -16,6 +16,12 @@ from generate_manifest import ManifestError, check_manifest
 
 load_dotenv()
 
+FONT_CACHE_CONTROL = "public, max-age=86400, stale-while-revalidate=604800"
+FONT_CONTENT_TYPES = {
+    ".ttf": "font/ttf",
+    ".woff2": "font/woff2",
+}
+
 
 class BuildError(RuntimeError):
     pass
@@ -48,6 +54,16 @@ class UploadOperation:
 class DeleteOperation:
     key: str
     reason: str
+
+
+def font_upload_args(key: str) -> dict[str, str] | None:
+    content_type = FONT_CONTENT_TYPES.get(Path(key).suffix.casefold())
+    if content_type is None:
+        return None
+    return {
+        "ContentType": content_type,
+        "CacheControl": FONT_CACHE_CONTROL,
+    }
 
 
 def parse_args() -> argparse.Namespace:
@@ -309,7 +325,16 @@ def apply_sync_plan(plan: dict[str, Any], config: R2Config, workers: int) -> Non
     client = create_r2_client(config)
 
     def upload_file(upload: dict[str, str]) -> None:
-        client.upload_file(upload["local_path"], config.bucket, upload["key"])
+        extra_args = font_upload_args(upload["key"])
+        if extra_args is None:
+            client.upload_file(upload["local_path"], config.bucket, upload["key"])
+            return
+        client.upload_file(
+            upload["local_path"],
+            config.bucket,
+            upload["key"],
+            ExtraArgs=extra_args,
+        )
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
         futures = [executor.submit(upload_file, upload) for upload in plan["uploads"]]

@@ -3,368 +3,130 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ClashKing Asset Viewer</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --bg: #f6f7f9;
-      --panel: #ffffff;
-      --panel-strong: #f0f3f7;
-      --text: #1b1f24;
-      --muted: #667085;
-      --line: #d9dee7;
-      --accent: #0b6bcb;
-      --accent-soft: #e7f1ff;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    button,
-    input {
-      font: inherit;
-    }
-
-    .app {
-      display: grid;
-      grid-template-columns: 248px minmax(0, 1fr);
-      min-height: 100vh;
-    }
-
-    .sidebar {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      overflow-y: auto;
-      border-right: 1px solid var(--line);
-      background: var(--panel);
-      padding: 18px 14px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding: 0 4px 16px;
-    }
-
-    .brand h1 {
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.2;
-      font-weight: 750;
-      letter-spacing: 0;
-    }
-
-    .brand p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.4;
-    }
-
-    .category-list {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .category-button {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      width: 100%;
-      min-height: 38px;
-      border: 0;
-      border-radius: 7px;
-      background: transparent;
-      color: var(--text);
-      padding: 8px 10px;
-      text-align: left;
-      cursor: pointer;
-    }
-
-    .category-button:hover {
-      background: var(--panel-strong);
-    }
-
-    .category-button[aria-current="true"] {
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .category-name {
-      min-width: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .category-count {
-      flex: 0 0 auto;
-      color: var(--muted);
-      font-size: 12px;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .content {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .toolbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 12px;
-      align-items: center;
-      border-bottom: 1px solid var(--line);
-      background: rgba(246, 247, 249, 0.94);
-      backdrop-filter: blur(10px);
-      padding: 14px 18px;
-    }
-
-    .search {
-      min-width: 0;
-      width: 100%;
-      height: 42px;
-      border: 1px solid var(--line);
-      border-radius: 7px;
-      background: var(--panel);
-      color: var(--text);
-      padding: 0 12px;
-      outline: none;
-    }
-
-    .search:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(11, 107, 203, 0.14);
-    }
-
-    .summary {
-      color: var(--muted);
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    .mobile-categories {
-      display: none;
-      gap: 6px;
-      overflow-x: auto;
-      border-bottom: 1px solid var(--line);
-      background: var(--panel);
-      padding: 8px 12px;
-      scrollbar-width: none;
-    }
-
-    .mobile-categories::-webkit-scrollbar {
-      display: none;
-    }
-
-    .chip {
-      flex: 0 0 auto;
-      min-height: 34px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--panel);
-      color: var(--text);
-      padding: 6px 10px;
-      cursor: pointer;
-    }
-
-    .chip[aria-current="true"] {
-      border-color: var(--accent);
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .grid-shell {
-      position: relative;
-      flex: 1 1 auto;
-      min-height: 0;
-      overflow-x: hidden;
-      overflow-y: auto;
-      padding: 16px;
-      contain: strict;
-    }
-
-    .spacer {
-      position: relative;
-      min-height: 100%;
-    }
-
-    .tile {
-      position: absolute;
-      display: grid;
-      grid-template-rows: auto auto;
-      gap: 7px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      padding: 8px;
-      box-shadow: var(--shadow);
-      cursor: pointer;
-      overflow: hidden;
-    }
-
-    .tile:hover {
-      border-color: var(--accent);
-    }
-
-    .thumb {
-      display: grid;
-      place-items: center;
-      width: 100%;
-      aspect-ratio: 1;
-      min-height: 0;
-      border-radius: 6px;
-      background:
-        linear-gradient(45deg, #edf0f4 25%, transparent 25%),
-        linear-gradient(-45deg, #edf0f4 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #edf0f4 75%),
-        linear-gradient(-45deg, transparent 75%, #edf0f4 75%);
-      background-color: #f9fafb;
-      background-position: 0 0, 0 8px, 8px -8px, -8px 0;
-      background-size: 16px 16px;
-      overflow: hidden;
-    }
-
-    .thumb img {
-      display: block;
-      width: auto;
-      height: auto;
-      max-width: calc(100% - 18px);
-      max-height: calc(100% - 18px);
-      min-width: 0;
-      min-height: 0;
-      place-self: center;
-      object-position: center;
-      object-fit: contain;
-      image-rendering: auto;
-    }
-
-    .path {
-      display: -webkit-box;
-      min-height: 34px;
-      overflow: hidden;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.35;
-      overflow-wrap: anywhere;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
-
-    .empty {
-      display: none;
-      place-items: center;
-      min-height: calc(100vh - 72px);
-      color: var(--muted);
-      text-align: center;
-      padding: 24px;
-    }
-
-    .toast {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 20;
-      transform: translateY(16px);
-      opacity: 0;
-      border: 1px solid var(--line);
-      border-radius: 7px;
-      background: var(--panel);
-      color: var(--text);
-      padding: 10px 12px;
-      box-shadow: var(--shadow);
-      pointer-events: none;
-      transition: opacity 160ms ease, transform 160ms ease;
-    }
-
-    .toast.visible {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    @media (max-width: 760px) {
-      .app {
-        display: flex;
-        min-height: 100vh;
-      }
-
-      .sidebar {
-        display: none;
-      }
-
-      .content {
-        width: 100%;
-      }
-
-      .toolbar {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 8px;
-        padding: 10px 12px;
-      }
-
-      .summary {
-        white-space: normal;
-      }
-
-      .mobile-categories {
-        display: flex;
-      }
-
-      .grid-shell {
-        padding: 10px;
-      }
-
-      .tile {
-        border-radius: 7px;
-        padding: 7px;
-      }
-    }
-  </style>
+  <meta name="theme-color" content="#030304">
+  <title>ClashKing Assets</title>
+  <link rel="preload" href="./fonts/clashking.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./viewer.css">
 </head>
 <body>
-  <div class="app">
-    <aside class="sidebar" aria-label="Asset folders">
-      <div class="brand">
-        <h1>ClashKing Assets</h1>
-        <p>Browse every image published under the assets folder.</p>
+  <a class="skip-link" href="#gridShell">Skip to assets</a>
+  <div class="app" id="app">
+    <aside class="sidebar" aria-label="Asset library navigation">
+      <a class="brand" href="./viewer.html" aria-label="ClashKing Assets home">
+        <img src="./logos/clashking-wordmark-dark.svg" alt="ClashKing">
+        <span>Asset library</span>
+      </a>
+
+      <div class="sidebar-heading">
+        <span>Categories</span>
       </div>
-      <nav class="category-list" id="categoryList"></nav>
+      <nav class="category-list" id="categoryList" aria-label="Asset categories"></nav>
     </aside>
 
     <main class="content">
-      <div class="toolbar">
-        <input class="search" id="searchInput" type="search" autocomplete="off" placeholder="Search image paths">
-        <div class="summary" id="summary"></div>
-      </div>
-      <nav class="mobile-categories" id="mobileCategories" aria-label="Asset folders"></nav>
-      <section class="grid-shell" id="gridShell" aria-label="Asset results">
+      <header class="topbar">
+        <div class="mobile-brand">
+          <img src="./logos/clashking-wordmark-dark.svg" alt="ClashKing">
+          <span>Assets</span>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-field" for="searchInput">
+            <span class="search-icon" aria-hidden="true"></span>
+            <span class="sr-only">Search assets</span>
+            <input id="searchInput" type="search" autocomplete="off" placeholder="Search names and paths">
+            <kbd>⌘ K</kbd>
+          </label>
+
+          <label class="select-field">
+            <span class="sr-only">Sort assets</span>
+            <select id="sortSelect" aria-label="Sort assets">
+              <option value="path-asc">Path A–Z</option>
+              <option value="path-desc">Path Z–A</option>
+              <option value="name-asc">Name A–Z</option>
+              <option value="category-asc">Category A–Z</option>
+            </select>
+          </label>
+
+          <div class="view-switcher" role="group" aria-label="View options">
+            <button id="gridView" type="button" aria-pressed="true" title="Grid view">
+              <span class="grid-icon" aria-hidden="true"></span>
+              <span class="sr-only">Grid view</span>
+            </button>
+            <button id="listView" type="button" aria-pressed="false" title="List view">
+              <span class="list-icon" aria-hidden="true"></span>
+              <span class="sr-only">List view</span>
+            </button>
+          </div>
+        </div>
+        <p class="sr-only" id="summary" aria-live="polite">Loading assets…</p>
+      </header>
+
+      <nav class="mobile-categories" id="mobileCategories" aria-label="Asset categories"></nav>
+
+      <section class="grid-shell" id="gridShell" aria-label="Asset results" tabindex="-1">
         <div class="spacer" id="spacer"></div>
-        <div class="empty" id="empty">No matching images.</div>
+        <div class="empty" id="empty" hidden>
+          <span class="empty-icon" aria-hidden="true"></span>
+          <strong id="emptyTitle">No matching assets</strong>
+          <span id="emptyBody">Try a different search or category.</span>
+          <button id="emptyAction" type="button">Reset filters</button>
+        </div>
       </section>
     </main>
-  </div>
-  <div class="toast" id="toast">Copied URL</div>
 
-  <script src="viewer.js" defer></script>
+    <aside class="details-panel" id="detailsPanel" aria-label="Asset details" aria-hidden="true">
+      <div class="details-header">
+        <div>
+          <span class="eyebrow">Selected asset</span>
+          <h2 id="detailName">Asset details</h2>
+        </div>
+        <button class="icon-button" id="closeDetails" type="button" aria-label="Close asset details" title="Close details">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <div class="detail-preview">
+        <img id="detailImage" alt="">
+        <span class="format-badge" id="detailFormat"></span>
+      </div>
+
+      <dl class="metadata">
+        <div>
+          <dt>Category</dt>
+          <dd id="detailCategory"></dd>
+        </div>
+        <div>
+          <dt>Dimensions</dt>
+          <dd id="detailDimensions">Loading…</dd>
+        </div>
+        <div class="metadata-wide">
+          <dt>Path</dt>
+          <dd id="detailPath"></dd>
+        </div>
+      </dl>
+
+      <div class="primary-actions">
+        <a class="button primary" id="downloadAsset" href="" download>Download</a>
+        <a class="button" id="openAsset" href="" target="_blank" rel="noopener">Open original</a>
+      </div>
+
+      <div class="copy-actions" aria-label="Copy asset values">
+        <button id="copyUrl" type="button">
+          <span>Copy URL</span>
+          <small>CDN address</small>
+        </button>
+        <button id="copyPath" type="button">
+          <span>Copy path</span>
+          <small>Relative path</small>
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="details-scrim" id="detailsScrim" hidden></div>
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied URL</div>
+
+  <script src="./viewer.js" defer></script>
 </body>
 </html>

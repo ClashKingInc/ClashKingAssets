@@ -14,8 +14,20 @@ class ManifestError(RuntimeError):
     pass
 
 
+def humanize(value: str) -> str:
+    return re.sub(r"[_-]+", " ", value).strip()
+
+
 def display_name(path: Path) -> str:
-    return re.sub(r"[_-]+", " ", path.stem).strip()
+    stem = humanize(path.stem)
+    if path.stem.casefold() == "icon" and path.parent != Path("."):
+        return humanize(path.parent.name)
+
+    is_leveled_structure = path.parts[0] in {"buildings", "traps"}
+    if is_leveled_structure and re.fullmatch(r"level_\d+", path.stem, flags=re.IGNORECASE):
+        return f"{humanize(path.parent.name)} {stem}"
+
+    return stem
 
 
 def build_manifest(assets_root: Path, base_url: str = ASSET_BASE_URL) -> dict[str, object]:
