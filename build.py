@@ -16,8 +16,9 @@ from generate_manifest import ManifestError, check_manifest
 
 load_dotenv()
 
-FONT_CACHE_CONTROL = "public, max-age=86400, stale-while-revalidate=604800"
-FONT_CONTENT_TYPES = {
+CDN_CACHE_CONTROL = "public, max-age=86400, stale-while-revalidate=604800"
+CDN_CONTENT_TYPES = {
+    ".svg": "image/svg+xml",
     ".ttf": "font/ttf",
     ".woff2": "font/woff2",
 }
@@ -56,13 +57,13 @@ class DeleteOperation:
     reason: str
 
 
-def font_upload_args(key: str) -> dict[str, str] | None:
-    content_type = FONT_CONTENT_TYPES.get(Path(key).suffix.casefold())
+def upload_extra_args(key: str) -> dict[str, str] | None:
+    content_type = CDN_CONTENT_TYPES.get(Path(key).suffix.casefold())
     if content_type is None:
         return None
     return {
         "ContentType": content_type,
-        "CacheControl": FONT_CACHE_CONTROL,
+        "CacheControl": CDN_CACHE_CONTROL,
     }
 
 
@@ -325,7 +326,7 @@ def apply_sync_plan(plan: dict[str, Any], config: R2Config, workers: int) -> Non
     client = create_r2_client(config)
 
     def upload_file(upload: dict[str, str]) -> None:
-        extra_args = font_upload_args(upload["key"])
+        extra_args = upload_extra_args(upload["key"])
         if extra_args is None:
             client.upload_file(upload["local_path"], config.bucket, upload["key"])
             return

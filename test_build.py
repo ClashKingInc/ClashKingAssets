@@ -57,12 +57,16 @@ def test_apply_sync_plan_rejects_invalid_worker_count():
         build.apply_sync_plan({"uploads": [], "deletes": []}, config, workers=0)
 
 
-def test_apply_sync_plan_sets_cache_and_content_type_for_fonts():
+def test_apply_sync_plan_sets_cache_and_content_type_for_shared_cdn_assets():
     client = FakeR2Client()
     plan = {
         "uploads": [
             {"local_path": "assets/fonts/clashking.woff2", "key": "fonts/clashking.woff2"},
             {"local_path": "assets/fonts/clashking.ttf", "key": "fonts/clashking.ttf"},
+            {
+                "local_path": "assets/logos/clashking-wordmark-dark.svg",
+                "key": "logos/clashking-wordmark-dark.svg",
+            },
             {"local_path": "assets/troops/barbarian/icon.webp", "key": "troops/barbarian/icon.webp"},
         ],
         "deletes": [],
@@ -75,11 +79,15 @@ def test_apply_sync_plan_sets_cache_and_content_type_for_fonts():
     uploaded = {key: extra_args for _, _, key, extra_args in client.uploaded}
     assert uploaded["fonts/clashking.woff2"] == {
         "ContentType": "font/woff2",
-        "CacheControl": build.FONT_CACHE_CONTROL,
+        "CacheControl": build.CDN_CACHE_CONTROL,
     }
     assert uploaded["fonts/clashking.ttf"] == {
         "ContentType": "font/ttf",
-        "CacheControl": build.FONT_CACHE_CONTROL,
+        "CacheControl": build.CDN_CACHE_CONTROL,
+    }
+    assert uploaded["logos/clashking-wordmark-dark.svg"] == {
+        "ContentType": "image/svg+xml",
+        "CacheControl": build.CDN_CACHE_CONTROL,
     }
     assert uploaded["troops/barbarian/icon.webp"] is None
 
