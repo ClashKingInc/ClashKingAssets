@@ -3853,6 +3853,10 @@ func (e *Exporter) renderSceneAtInto(target Target, t float64, worldBounds image
 }
 
 func (e *Exporter) renderScenePreferredAtInto(target Target, t float64, worldBounds image.Rectangle, spriteCache map[bitmapCacheKey]*bitmapRenderable, scenery *sceneryRenderContext, canvas *image.NRGBA) (*image.NRGBA, bool, error) {
+	if scenery == nil && e.opts.AssetBaseNames[target.Name] != "" {
+		frame, err := e.renderAt(target, t, worldBounds, spriteCache)
+		return frame, false, err
+	}
 	if !e.opts.DisableGPU {
 		renderScale := e.outputScale(target, worldBounds)
 		width := maxInt(1, int(math.Ceil(float64(worldBounds.Dx())*renderScale)))

@@ -174,6 +174,34 @@ def test_existing_asset_is_not_regenerated_for_special_frame_modes(tmp_path, mon
     assert destination.read_bytes() == b"existing"
 
 
+def test_super_wizard_tower_levels_share_the_level_one_building_base():
+    updater = StaticUpdater()
+    building_data = {"TID": "TID_BUILDING_MERGED_WIZARD_TOWER"}
+
+    assert updater.building_base_asset_name(building_data, {"BuildingLevel": 1}) == (
+        "merged_wizard_tower_lvl1_base"
+    )
+    assert updater.building_base_asset_name(building_data, {"BuildingLevel": 2}) == (
+        "merged_wizard_tower_lvl1_base"
+    )
+
+
+def test_configured_building_base_names_still_take_precedence():
+    updater = StaticUpdater()
+
+    assert updater.building_base_asset_name(
+        {
+            "TID": "TID_BUILDING_HOUSING",
+            "ExportNameBase": "housing_base",
+        },
+        {},
+    ) == "housing_base"
+    assert updater.building_base_asset_name(
+        {"TID": "TID_BUILDING_CANNON"},
+        {"ExportNameBase": "unexpected_base"},
+    ) is None
+
+
 def test_ignored_ids_are_loaded_from_local_file(tmp_path):
     ignored_file = tmp_path / ".ignored.txt"
     ignored_file.write_text(

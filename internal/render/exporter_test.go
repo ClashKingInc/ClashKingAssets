@@ -315,6 +315,56 @@ func TestAnimatedRenderMatchesFullDisplayList(t *testing.T) {
 	}
 }
 
+func TestStillRenderCompositesConfiguredAssetBase(t *testing.T) {
+	quad := func(textureIndex, width, height int) sc.ShapeBitmap {
+		return sc.ShapeBitmap{
+			TextureIndex: textureIndex,
+			UVCoords: []sc.Point{
+				{X: 0, Y: 0},
+				{X: float64(width), Y: 0},
+				{X: float64(width), Y: float64(height)},
+				{X: 0, Y: float64(height)},
+			},
+			XYCoords: []sc.Point{
+				{X: 0, Y: 0},
+				{X: float64(width), Y: 0},
+				{X: float64(width), Y: float64(height)},
+				{X: 0, Y: float64(height)},
+			},
+		}
+	}
+	filled := func(width, height int, pixel color.NRGBA) *image.NRGBA {
+		frame := image.NewNRGBA(image.Rect(0, 0, width, height))
+		stddraw.Draw(frame, frame.Bounds(), &image.Uniform{C: pixel}, image.Point{}, stddraw.Src)
+		return frame
+	}
+	mainShape := &sc.Shape{ID: 1, Bitmaps: []sc.ShapeBitmap{quad(0, 2, 4)}}
+	baseShape := &sc.Shape{ID: 2, Bitmaps: []sc.ShapeBitmap{quad(1, 6, 2)}}
+	swf := &sc.SWF{
+		Textures: []*sc.Texture{
+			{Image: filled(2, 4, color.NRGBA{B: 255, A: 255})},
+			{Image: filled(6, 2, color.NRGBA{R: 255, A: 255})},
+		},
+		Resources: map[uint16]sc.Resource{1: mainShape, 2: baseShape},
+		Exports:   map[uint16][]string{1: {"main"}, 2: {"base"}},
+	}
+	target := Target{Name: "main", ResourceID: 1, Resource: mainShape}
+	mainOnly, _, _, _, err := NewExporterWithOptions(swf, ExportOptions{DisableGPU: true}).renderTarget(target)
+	if err != nil {
+		t.Fatalf("render main asset failed: %v", err)
+	}
+	composited, _, _, _, err := NewExporterWithOptions(swf, ExportOptions{
+		DisableGPU:     true,
+		AssetBaseNames: map[string]string{"main": "base"},
+	}).renderTarget(target)
+	if err != nil {
+		t.Fatalf("render composited asset failed: %v", err)
+	}
+	if got, wantMinimum := composited[0].Image.Bounds().Dx(), mainOnly[0].Image.Bounds().Dx()+1; got < wantMinimum {
+		t.Fatalf("composited width = %d, want at least %d", got, wantMinimum)
+	}
+}
+
 func TestSceneryUsesSharedWorldBoundsAtRenderScale(t *testing.T) {
 	makeShapeSWF := func(id uint16, x float64, px color.NRGBA) (*sc.SWF, Target) {
 		texture := image.NewNRGBA(image.Rect(0, 0, 1, 1))

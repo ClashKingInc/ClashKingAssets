@@ -223,6 +223,18 @@ class StaticUpdater:
             return f"{asset_name}/turret_load"
         return asset_name
 
+    def building_base_asset_name(self, building_data: dict, level_data: dict) -> str | None:
+        configured_base = level_data.get("ExportNameBase") or building_data.get("ExportNameBase")
+        if building_data.get("TID") == "TID_BUILDING_MERGED_WIZARD_TOWER":
+            return configured_base or "merged_wizard_tower_lvl1_base"
+        if building_data.get("TID") in {
+            "TID_BUILDING_HOUSING",
+            "TID_SIEGE_WORKSHOP",
+            "TID_PET_SHOP",
+        }:
+            return configured_base
+        return None
+
     def building_icon_uses_last_frame(self, building_data: dict) -> bool:
         return building_data.get("TID") in {
             "TID_BUILDING_GOLD_STORAGE",
@@ -994,13 +1006,7 @@ class StaticUpdater:
                     building_level = level_data.get("BuildingLevel") or level
                     building_folder = self.village_asset_folder("buildings", village_type)
                     icon_asset_name = self.building_icon_asset_name(building_data, level_data, asset_name)
-                    base_asset_name = None
-                    if building_data.get("TID") in {
-                        "TID_BUILDING_HOUSING",
-                        "TID_SIEGE_WORKSHOP",
-                        "TID_PET_SHOP",
-                    }:
-                        base_asset_name = level_data.get("ExportNameBase") or building_data.get("ExportNameBase")
+                    base_asset_name = self.building_base_asset_name(building_data, level_data)
                     last_frame = self.building_icon_uses_last_frame(building_data)
                     self.register_sc_asset(
                         source_sc=source_sc,
