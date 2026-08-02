@@ -227,7 +227,7 @@ def test_seasonal_defense_townhall_requirement_is_on_each_module_level():
     [defense] = updater._parse_seasonal_defense_data()
 
     assert "required_townhall" not in defense
-    assert [level["required_townhall"] for level in defense["modules"][0]["levels"]] == [12, 13]
+    assert [level["required_townhall"] for level in defense["modules"][0]["levels"]] == [11, 13]
     assert defense["modules"][0]["levels"][0]["ability_data"] == {"Damage": 10}
 
 

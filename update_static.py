@@ -1282,7 +1282,7 @@ class StaticUpdater:
                     module_hold_data["levels"].append(
                         {
                             "level": int(level),
-                            "required_townhall": level_data.get("TownHallLevel"),
+                            "required_townhall": 11 if int(level) == 1 else level_data.get("TownHallLevel"),
                             "build_cost": level_data.get("BuildCost"),
                             "build_time": upgrade_time_seconds,
                             "ability_data": ability_data,
