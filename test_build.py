@@ -114,6 +114,123 @@ def test_scenery_metadata_keeps_music_free_and_default_fields():
     assert scenery["default"] is True
 
 
+def test_translation_patch_adds_and_overrides_translations(tmp_path, monkeypatch):
+    localization = tmp_path / "localization"
+    localization.mkdir()
+    (localization / "texts.json").write_text(
+        '{"TID_EXISTING": {"EN": "Original"}}',
+        encoding="utf-8",
+    )
+    (localization / "fr.json").write_text(
+        '{"TID_EXISTING": {"FR": "Texte original"}}',
+        encoding="utf-8",
+    )
+    (localization / "texts_patch.json").write_text(
+        """{
+          "TID_EXISTING": {"TID": "TID_EXISTING", "EN": "Patched"},
+          "TID_ADDED": {"TID": "TID_ADDED", "EN": "Added", "FR": "Ajouté"}
+        }""",
+        encoding="utf-8",
+    )
+    monkeypatch.chdir(tmp_path)
+
+    updater = StaticUpdater()
+    translations = updater._parse_translation_data()
+
+    assert translations["TID_EXISTING"] == {
+        "EN": "Patched",
+        "FR": "Texte original",
+    }
+    assert translations["TID_ADDED"] == {"EN": "Added", "FR": "Ajouté"}
+    assert updater.translation_patch_tids == {"TID_EXISTING", "TID_ADDED"}
+
+
+def test_seasonal_defense_season_uses_configured_negative_index():
+    updater = StaticUpdater()
+    seasons = {
+        "first": {"TID": "TID_SEASON_ONE", "1": {"Archetypes": "First"}},
+        "second": {"TID": "TID_SEASON_TWO", "1": {"Archetypes": "Second"}},
+        "third": {"TID": "TID_SEASON_THREE", "1": {"Archetypes": "Third"}},
+        "fourth": {"TID": "TID_SEASON_THREE", "1": {"Archetypes": "Fourth"}},
+    }
+
+    updater.SEASONAL_DEFENSE_SEASON = -1
+    assert updater._select_seasonal_defense(seasons)["1"]["Archetypes"] == "Fourth"
+
+    updater.SEASONAL_DEFENSE_SEASON = -2
+    assert updater._select_seasonal_defense(seasons)["1"]["Archetypes"] == "Third"
+
+
+def test_seasonal_defense_asset_export_does_not_collapse_reused_tids():
+    updater = StaticUpdater()
+    updater.open_file = lambda _: {
+        "Season3": {"TID": "TID_SEASON_THREE", "1": {"Archetypes": "Third"}},
+        "Season4": {"TID": "TID_SEASON_THREE", "1": {"Archetypes": "Fourth"}},
+    }
+
+    assert updater.season_defense_archetypes_to_export() == {"Third", "Fourth"}
+
+
+def test_seasonal_defense_season_rejects_out_of_range_index():
+    updater = StaticUpdater()
+    updater.SEASONAL_DEFENSE_SEASON = -2
+
+    with pytest.raises(ValueError, match="out of range for 1 seasons"):
+        updater._select_seasonal_defense({"only": {"TID": "TID_ONLY"}})
+
+
+def test_seasonal_defense_townhall_requirement_is_on_each_module_level():
+    updater = StaticUpdater()
+    updater._translate = lambda tid: tid
+    updater._parse_resource = lambda resource: resource
+    updater.full_abilities_data = {
+        "DefenseAbility": {
+            "OverrideTID": "TID_DEFENSE",
+            "OverrideInfoTID": "TID_DEFENSE_INFO",
+        },
+        "ModuleAbility": {
+            "1": {
+                "Level": 1,
+                "Damage": 10,
+                "OverrideSWF": "sc/buildings.sc",
+                "ExtraAbilities": "ExtraOne;ExtraTwo",
+                "ExtraAbilityLevels": "1;1",
+            },
+            "2": {"Level": 2, "Damage": 20},
+        },
+    }
+    files = {
+        "logic/seasonal_defense_archetypes.json": {
+            "SeasonalDefense": {
+                "SpecialAbility": "DefenseAbility",
+                "Modules": "SeasonalModule",
+            }
+        },
+        "logic/seasonal_defense_modules.json": {
+            "SeasonalModule": {
+                "TID": "TID_MODULE",
+                "BuildResource": "Gold",
+                "SpecialAbility": "ModuleAbility",
+                "1": {"TownHallLevel": 12, "BuildCost": 100},
+                "2": {"TownHallLevel": 13, "BuildCost": 200},
+            }
+        },
+        "logic/seasonal_defense.json": {
+            "Season4": {
+                "TID": "TID_SEASON_FOUR",
+                "1": {"Archetypes": "SeasonalDefense"},
+            }
+        },
+    }
+    updater.open_file = files.__getitem__
+
+    [defense] = updater._parse_seasonal_defense_data()
+
+    assert "required_townhall" not in defense
+    assert [level["required_townhall"] for level in defense["modules"][0]["levels"]] == [12, 13]
+    assert defense["modules"][0]["levels"][0]["ability_data"] == {"Damage": 10}
+
+
 def test_asset_extraction_builds_go_extractor_once_and_reuses_it(tmp_path, monkeypatch):
     updater = StaticUpdater()
     updater.BASE_PATH = str(tmp_path / "assets")

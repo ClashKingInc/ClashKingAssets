@@ -104,6 +104,8 @@ class StaticUpdater:
         self.KEEP_JSON = False
         # removes any TIDs not used in the static files
         self.PRUNE_TRANSLATIONS = True
+        # selects a unique seasonal-defense season by source order; -1 is the latest
+        self.SEASONAL_DEFENSE_SEASON = -1
         # base path for the static files to be stored in
         self.BASE_PATH = "assets"
 
@@ -111,6 +113,7 @@ class StaticUpdater:
         self.APK_URL = apk_url()
 
         self.translation_data = {}
+        self.translation_patch_tids = set()
         self.full_building_data = {}
         self.full_supercharges_data = {}
         self.full_abilities_data = {}
@@ -245,12 +248,9 @@ class StaticUpdater:
     def season_defense_archetypes_to_export(self) -> set[str]:
         full_season_data = self.open_file("logic/seasonal_defense.json")
         archetypes: set[str] = set()
-        seen_tids = set()
         for season_data in full_season_data.values():
-            season_tid = season_data.get("TID")
-            if not season_tid or season_tid in seen_tids:
+            if not season_data.get("TID"):
                 continue
-            seen_tids.add(season_tid)
             for key, value in season_data.items():
                 if key.isdigit() and value.get("Archetypes"):
                     archetypes.add(value.get("Archetypes"))
@@ -808,6 +808,7 @@ class StaticUpdater:
 
     def _parse_translation_data(self):
         full_translation_data = self.open_file("localization/texts.json")
+        translation_patch = self.open_file("localization/texts_patch.json")
         other_translations = []
         for path in sorted(Path("localization").glob("*.json")):
             if "text" in path.stem.lower():
@@ -824,6 +825,17 @@ class StaticUpdater:
                 new_translation_data[translation_key][lang.upper()] = language_data.get(translation_key).get(
                     lang.upper()
                 )
+
+        for translation_key, patched_values in translation_patch.items():
+            translation = new_translation_data.setdefault(translation_key, {})
+            translation.update(
+                {
+                    language.upper(): value
+                    for language, value in patched_values.items()
+                    if language.upper() != "TID"
+                }
+            )
+        self.translation_patch_tids = set(translation_patch)
 
         self.translation_data = new_translation_data
         return new_translation_data
@@ -1194,29 +1206,30 @@ class StaticUpdater:
 
         return new_building_data
 
+    def _select_seasonal_defense(self, full_season_data: dict) -> dict:
+        seasons = [season_data for season_data in full_season_data.values() if season_data.get("TID")]
+
+        if not seasons:
+            return {}
+        try:
+            return seasons[self.SEASONAL_DEFENSE_SEASON]
+        except IndexError as exc:
+            raise ValueError(
+                f"SEASONAL_DEFENSE_SEASON index {self.SEASONAL_DEFENSE_SEASON} "
+                f"is out of range for {len(seasons)} seasons"
+            ) from exc
+
     def _parse_seasonal_defense_data(self):
         full_seasonal_defenses = self.open_file("logic/seasonal_defense_archetypes.json")
         full_seasonal_modules = self.open_file("logic/seasonal_defense_modules.json")
         full_season_data = self.open_file("logic/seasonal_defense.json")
 
-        seasons = []
-        for season_data in full_season_data.values():
-            seasons.append(season_data)
-
-        seen_tids = set()
-        current_season = {}
-        for season_data in seasons:
-            season_tid = season_data.get("TID")
-            if not season_tid or season_tid in seen_tids:
-                continue
-            seen_tids.add(season_tid)
-            current_season = season_data
+        current_season = self._select_seasonal_defense(full_season_data)
         current_seasonal_defenses: list[str] = [v.get("Archetypes") for k, v in current_season.items() if k.isdigit()]
 
         for _id, (n, d) in enumerate(full_seasonal_modules.items(), 102000000):
             d["_id"] = _id
 
-        current_max_townhall = int(list(self.full_townhall_data.keys())[-1])
         new_seasonal_defense_data = []
         for _id, (seasonal_def_name, seasonal_def_data) in enumerate(full_seasonal_defenses.items(), 103000000):
             if self.is_ignored_id(_id):
@@ -1234,7 +1247,6 @@ class StaticUpdater:
                 "name": self._translate(tid=name_TID),
                 "info": self._translate(tid=info_TID),
                 "TID": {"name": name_TID, "info": info_TID},
-                "required_townhall": current_max_townhall,
                 "modules": [],
             }
             for count, module in enumerate(seasonal_def_data.get("Modules").split(";"), 1):
@@ -1254,14 +1266,23 @@ class StaticUpdater:
                         continue
                     upgrade_time_seconds = self._parse_upgrade_time(level_data)
 
-                    ability_data = self.full_abilities_data.get(module_data.get("SpecialAbility")).get(level)
-                    ability_data.pop("ActivateFromGameSystem", None)
-                    ability_data.pop("DeactivateFromGameSystem", None)
-                    ability_data.pop("Level", None)
+                    ability_data = dict(
+                        self.full_abilities_data.get(module_data.get("SpecialAbility"), {}).get(level, {})
+                    )
+                    for internal_key in (
+                        "ActivateFromGameSystem",
+                        "DeactivateFromGameSystem",
+                        "ExtraAbilities",
+                        "ExtraAbilityLevels",
+                        "Level",
+                        "OverrideSWF",
+                    ):
+                        ability_data.pop(internal_key, None)
 
                     module_hold_data["levels"].append(
                         {
                             "level": int(level),
+                            "required_townhall": level_data.get("TownHallLevel"),
                             "build_cost": level_data.get("BuildCost"),
                             "build_time": upgrade_time_seconds,
                             "ability_data": ability_data,
@@ -2465,7 +2486,7 @@ class StaticUpdater:
 
         if self.PRUNE_TRANSLATIONS:
             for key in list(self.translation_data.keys()):
-                if key not in self.USED_TIDS:
+                if key not in self.USED_TIDS and key not in self.translation_patch_tids:
                     del self.translation_data[key]
 
         with open(f"{self.BASE_PATH}/translations.json", "w", encoding="utf-8") as jf:

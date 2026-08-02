@@ -5210,6 +5210,34 @@
       "url": "https://assets.clashk.ing/buildings/seasonal-defense/bomb_hive/level_4.webp"
     },
     {
+      "path": "buildings/seasonal-defense/cake-a-pult/level_1.webp",
+      "category": "buildings",
+      "display_name": "cake a pult level 1",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/cake-a-pult/level_1.webp"
+    },
+    {
+      "path": "buildings/seasonal-defense/cake-a-pult/level_2.webp",
+      "category": "buildings",
+      "display_name": "cake a pult level 2",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/cake-a-pult/level_2.webp"
+    },
+    {
+      "path": "buildings/seasonal-defense/cake-a-pult/level_3.webp",
+      "category": "buildings",
+      "display_name": "cake a pult level 3",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/cake-a-pult/level_3.webp"
+    },
+    {
+      "path": "buildings/seasonal-defense/cake-a-pult/level_4.webp",
+      "category": "buildings",
+      "display_name": "cake a pult level 4",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/cake-a-pult/level_4.webp"
+    },
+    {
       "path": "buildings/seasonal-defense/crusher_mortar/level_1.webp",
       "category": "buildings",
       "display_name": "crusher mortar level 1",
@@ -5294,6 +5322,34 @@
       "url": "https://assets.clashk.ing/buildings/seasonal-defense/hero_bell/level_4.webp"
     },
     {
+      "path": "buildings/seasonal-defense/hero_hunter/level_1.webp",
+      "category": "buildings",
+      "display_name": "hero hunter level 1",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/hero_hunter/level_1.webp"
+    },
+    {
+      "path": "buildings/seasonal-defense/hero_hunter/level_2.webp",
+      "category": "buildings",
+      "display_name": "hero hunter level 2",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/hero_hunter/level_2.webp"
+    },
+    {
+      "path": "buildings/seasonal-defense/hero_hunter/level_3.webp",
+      "category": "buildings",
+      "display_name": "hero hunter level 3",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/hero_hunter/level_3.webp"
+    },
+    {
+      "path": "buildings/seasonal-defense/hero_hunter/level_4.webp",
+      "category": "buildings",
+      "display_name": "hero hunter level 4",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/hero_hunter/level_4.webp"
+    },
+    {
       "path": "buildings/seasonal-defense/hook_tower/level_1.webp",
       "category": "buildings",
       "display_name": "hook tower level 1",
@@ -5320,6 +5376,34 @@
       "display_name": "hook tower level 4",
       "extension": "webp",
       "url": "https://assets.clashk.ing/buildings/seasonal-defense/hook_tower/level_4.webp"
+    },
+    {
+      "path": "buildings/seasonal-defense/hot_candle/level_1.webp",
+      "category": "buildings",
+      "display_name": "hot candle level 1",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/hot_candle/level_1.webp"
+    },
+    {
+      "path": "buildings/seasonal-defense/hot_candle/level_2.webp",
+      "category": "buildings",
+      "display_name": "hot candle level 2",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/hot_candle/level_2.webp"
+    },
+    {
+      "path": "buildings/seasonal-defense/hot_candle/level_3.webp",
+      "category": "buildings",
+      "display_name": "hot candle level 3",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/hot_candle/level_3.webp"
+    },
+    {
+      "path": "buildings/seasonal-defense/hot_candle/level_4.webp",
+      "category": "buildings",
+      "display_name": "hot candle level 4",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/buildings/seasonal-defense/hot_candle/level_4.webp"
     },
     {
       "path": "buildings/seasonal-defense/lava_launcher/level_1.webp",
@@ -6902,6 +6986,13 @@
       "display_name": "82000161",
       "extension": "webp",
       "url": "https://assets.clashk.ing/capital_house_parts/82000161.webp"
+    },
+    {
+      "path": "chests/card_pack.webp",
+      "category": "chests",
+      "display_name": "card pack",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/chests/card_pack.webp"
     },
     {
       "path": "chests/chest.webp",
@@ -9382,6 +9473,20 @@
       "url": "https://assets.clashk.ing/decorations/home-village/cactus_guy.webp"
     },
     {
+      "path": "decorations/home-village/card_collector.webp",
+      "category": "decorations",
+      "display_name": "card collector",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/decorations/home-village/card_collector.webp"
+    },
+    {
+      "path": "decorations/home-village/card_flipper.webp",
+      "category": "decorations",
+      "display_name": "card flipper",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/decorations/home-village/card_flipper.webp"
+    },
+    {
       "path": "decorations/home-village/celebration_cup.webp",
       "category": "decorations",
       "display_name": "celebration cup",
@@ -10724,6 +10829,13 @@
       "display_name": "rage vial",
       "extension": "webp",
       "url": "https://assets.clashk.ing/equipment/rage_vial.webp"
+    },
+    {
+      "path": "equipment/revenge_deck.webp",
+      "category": "equipment",
+      "display_name": "revenge deck",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/equipment/revenge_deck.webp"
     },
     {
       "path": "equipment/rocket_backpack.webp",
