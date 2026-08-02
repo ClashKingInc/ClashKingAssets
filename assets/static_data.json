@@ -25299,6 +25299,210 @@
       ]
     },
     {
+      "_id": 4000185,
+      "name": "Elephant Rider",
+      "info": "He crushed the Supercell Make competition, now he’s crushing villages!\\n\\n Walls that stand between Elephant Rider and the nearest defense get thrashed! The shock of defeat separates Elephant from his Rider — the little guy targets everything with a swirling mace, while the big guy continues to smash walls as he rushes more defenses!",
+      "TID": {
+        "name": "TID_CHARACTER_ELEPHANT_RIDER",
+        "info": "TID_CHARACTER_ELEPHANT_RIDER_INFO"
+      },
+      "production_building": "Barracks",
+      "production_building_level": 0,
+      "upgrade_resource": "Elixir",
+      "is_flying": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
+      "movement_speed": 250,
+      "attack_speed": 1400,
+      "attack_range": 80,
+      "housing_space": 24,
+      "village": "home",
+      "warden_weight": 12,
+      "is_seasonal": true,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 750,
+          "dps": 40,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 1,
+          "strength_weight": 0
+        },
+        {
+          "level": 2,
+          "hitpoints": 900,
+          "dps": 50,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 2,
+          "strength_weight": 0
+        },
+        {
+          "level": 3,
+          "hitpoints": 1050,
+          "dps": 60,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 3,
+          "strength_weight": 0
+        },
+        {
+          "level": 4,
+          "hitpoints": 1300,
+          "dps": 75,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 4,
+          "strength_weight": 0
+        },
+        {
+          "level": 5,
+          "hitpoints": 1550,
+          "dps": 85,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 5,
+          "strength_weight": 0
+        },
+        {
+          "level": 6,
+          "hitpoints": 1950,
+          "dps": 105,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 6,
+          "strength_weight": 0
+        },
+        {
+          "level": 7,
+          "hitpoints": 2300,
+          "dps": 125,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 7,
+          "strength_weight": 0
+        },
+        {
+          "level": 8,
+          "hitpoints": 2800,
+          "dps": 150,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 8,
+          "strength_weight": 0
+        },
+        {
+          "level": 9,
+          "hitpoints": 3300,
+          "dps": 175,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 9,
+          "strength_weight": 0
+        },
+        {
+          "level": 10,
+          "hitpoints": 3950,
+          "dps": 210,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 10,
+          "strength_weight": 0
+        },
+        {
+          "level": 11,
+          "hitpoints": 4450,
+          "dps": 235,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 11,
+          "strength_weight": 0
+        },
+        {
+          "level": 12,
+          "hitpoints": 5100,
+          "dps": 270,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 12,
+          "strength_weight": 0
+        },
+        {
+          "level": 13,
+          "hitpoints": 5700,
+          "dps": 305,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 13,
+          "strength_weight": 0
+        },
+        {
+          "level": 14,
+          "hitpoints": 6500,
+          "dps": 345,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 14,
+          "strength_weight": 0
+        },
+        {
+          "level": 15,
+          "hitpoints": 7300,
+          "dps": 385,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 15,
+          "strength_weight": 0
+        },
+        {
+          "level": 16,
+          "hitpoints": 8250,
+          "dps": 440,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 16,
+          "strength_weight": 0
+        },
+        {
+          "level": 17,
+          "hitpoints": 9300,
+          "dps": 495,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 17,
+          "strength_weight": 0
+        },
+        {
+          "level": 18,
+          "hitpoints": 10500,
+          "dps": 560,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 18,
+          "strength_weight": 0
+        }
+      ]
+    },
+    {
       "_id": 4000188,
       "name": "Sky Wagon",
       "info": "Tell walls to take a hike and drop troops from above. Sky Wagon delivery services are fast, reliable, and destructive!\\n\\nThough its wooden body can’t withstand a lot of damage, its mastery of the skies and immunity to spells more than make up for it.",

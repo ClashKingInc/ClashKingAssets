@@ -17607,6 +17607,13 @@
       "url": "https://assets.clashk.ing/troops/electrofire_wizard/icon.webp"
     },
     {
+      "path": "troops/elephant_rider/icon.webp",
+      "category": "troops",
+      "display_name": "elephant rider",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/troops/elephant_rider/icon.webp"
+    },
+    {
       "path": "troops/firecracker/icon.webp",
       "category": "troops",
       "display_name": "firecracker",
