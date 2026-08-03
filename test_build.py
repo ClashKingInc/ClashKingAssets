@@ -68,6 +68,7 @@ def test_apply_sync_plan_sets_cache_and_content_type_for_shared_cdn_assets():
                 "local_path": "assets/logos/clashking-wordmark-dark.svg",
                 "key": "logos/clashking-wordmark-dark.svg",
             },
+            {"local_path": "assets/static_data/war_leagues.json", "key": "static_data/war_leagues.json"},
             {"local_path": "assets/troops/barbarian/icon.webp", "key": "troops/barbarian/icon.webp"},
         ],
         "deletes": [],
@@ -88,6 +89,10 @@ def test_apply_sync_plan_sets_cache_and_content_type_for_shared_cdn_assets():
     }
     assert uploaded["logos/clashking-wordmark-dark.svg"] == {
         "ContentType": "image/svg+xml",
+        "CacheControl": build.CDN_CACHE_CONTROL,
+    }
+    assert uploaded["static_data/war_leagues.json"] == {
+        "ContentType": "application/json",
         "CacheControl": build.CDN_CACHE_CONTROL,
     }
     assert uploaded["troops/barbarian/icon.webp"] is None

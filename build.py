@@ -18,6 +18,7 @@ load_dotenv()
 
 CDN_CACHE_CONTROL = "public, max-age=86400, stale-while-revalidate=604800"
 CDN_CONTENT_TYPES = {
+    ".json": "application/json",
     ".svg": "image/svg+xml",
     ".ttf": "font/ttf",
     ".woff2": "font/woff2",
