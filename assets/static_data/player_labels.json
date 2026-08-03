@@ -1,0 +1,137 @@
+{
+  "items": [
+    {
+      "_id": 463491621057853,
+      "name": "Clan Wars",
+      "TID": {
+        "name": "TID_CLAN_TAG_CLAN_WARS"
+      }
+    },
+    {
+      "_id": 437996266654459,
+      "name": "Clan War League",
+      "TID": {
+        "name": "TID_CLAN_TAG_CLAN_WAR_LEAGUE"
+      }
+    },
+    {
+      "_id": 292087025155907,
+      "name": "Trophy Pushing",
+      "TID": {
+        "name": "TID_CLAN_TAG_TROPHY_PUSHING"
+      }
+    },
+    {
+      "_id": 143403152011923,
+      "name": "Friendly Wars",
+      "TID": {
+        "name": "TID_CLAN_TAG_FRIENDLY_WARS"
+      }
+    },
+    {
+      "_id": 149354055445515,
+      "name": "Clan Games",
+      "TID": {
+        "name": "TID_CLAN_TAG_CLAN_GAMES"
+      }
+    },
+    {
+      "_id": 836535708449210,
+      "name": "Builder Base",
+      "TID": {
+        "name": "TID_CLAN_TAG_BUILDER_BASE"
+      }
+    },
+    {
+      "_id": 255297772751276,
+      "name": "Base Designing",
+      "TID": {
+        "name": "TID_CLAN_TAG_BASE_DESIGNING"
+      }
+    },
+    {
+      "_id": 231872996024440,
+      "name": "Farming",
+      "TID": {
+        "name": "TID_CLAN_TAG_FARMING"
+      }
+    },
+    {
+      "_id": 52626525733554,
+      "name": "Active Donator",
+      "TID": {
+        "name": "TID_CLAN_TAG_ACTIVE_DONATOR"
+      }
+    },
+    {
+      "_id": 904585117357277,
+      "name": "Active Daily",
+      "TID": {
+        "name": "TID_CLAN_TAG_ACTIVE_DAILY"
+      }
+    },
+    {
+      "_id": 769823519335075,
+      "name": "Hungry Learner",
+      "TID": {
+        "name": "TID_CLAN_TAG_HUNGRY_LEARNER"
+      }
+    },
+    {
+      "_id": 986971713244589,
+      "name": "Friendly",
+      "TID": {
+        "name": "TID_CLAN_TAG_FRIENDLY"
+      }
+    },
+    {
+      "_id": 731284243373084,
+      "name": "Talkative",
+      "TID": {
+        "name": "TID_CLAN_TAG_TALKATIVE"
+      }
+    },
+    {
+      "_id": 491135392530929,
+      "name": "Teacher",
+      "TID": {
+        "name": "TID_CLAN_TAG_TEACHER"
+      }
+    },
+    {
+      "_id": 444842495826933,
+      "name": "Competitive",
+      "TID": {
+        "name": "TID_CLAN_TAG_COMPETITIVE"
+      }
+    },
+    {
+      "_id": 492640556209722,
+      "name": "Veteran",
+      "TID": {
+        "name": "TID_CLAN_TAG_VETERAN"
+      }
+    },
+    {
+      "_id": 168840896105715,
+      "name": "Newbie",
+      "TID": {
+        "name": "TID_CLAN_TAG_NEWBIE"
+      }
+    },
+    {
+      "_id": 694259962676433,
+      "name": "Amateur Attacker",
+      "TID": {
+        "name": "TID_CLAN_TAG_AMATEUR_ATTACKER"
+      }
+    },
+    {
+      "_id": 861767779462058,
+      "name": "Clan Capital",
+      "TID": {
+        "name": "TID_CLAN_TAG_CLAN_CAPITAL"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1811 @@
+{
+  "items": [
+    {
+      "_id": 8000000,
+      "name": "Tree",
+      "TID": {
+        "name": "TID_OBSTACLE_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 2000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000001,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 3,
+      "clear_resource": "Gold",
+      "clear_cost": 20000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000002,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000003,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000004,
+      "name": "Bush",
+      "TID": {
+        "name": "TID_OBSTACLE_BUSH"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 250,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000005,
+      "name": "Tree",
+      "TID": {
+        "name": "TID_OBSTACLE_TREE"
+      },
+      "width": 3,
+      "clear_resource": "Elixir",
+      "clear_cost": 7500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000006,
+      "name": "Trunk",
+      "TID": {
+        "name": "TID_OBSTACLE_TRUNK"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 1000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000007,
+      "name": "Trunk",
+      "TID": {
+        "name": "TID_OBSTACLE_TRUNK"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 1000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000008,
+      "name": "Mushroom",
+      "TID": {
+        "name": "TID_OBSTACLE_MUSHROOM"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 100,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000009,
+      "name": "Tombstone",
+      "TID": {
+        "name": "TID_OBSTACLE_TOMBSTONE"
+      },
+      "width": 1,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": "Elixir",
+      "loot_count": 20,
+      "village": "home"
+    },
+    {
+      "_id": 8000010,
+      "name": "Trunk",
+      "TID": {
+        "name": "TID_OBSTACLE_TRUNK"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 1000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000011,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000012,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000013,
+      "name": "Tree",
+      "TID": {
+        "name": "TID_OBSTACLE_TREE"
+      },
+      "width": 3,
+      "clear_resource": "Elixir",
+      "clear_cost": 10000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000014,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 10000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000015,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 3,
+      "clear_resource": "Gold",
+      "clear_cost": 20000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000016,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 10000,
+      "loot_resource": null,
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000017,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 10000,
+      "loot_resource": null,
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000018,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 10000,
+      "loot_resource": null,
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000019,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 3,
+      "clear_resource": "Gold",
+      "clear_cost": 10000,
+      "loot_resource": null,
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000020,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 3,
+      "clear_resource": "Gold",
+      "clear_cost": 10000,
+      "loot_resource": null,
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000021,
+      "name": "2012 Clashmas Tree",
+      "TID": {
+        "name": "TID_2012_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 50000,
+      "village": "home"
+    },
+    {
+      "_id": 8000022,
+      "name": "Tombstone",
+      "TID": {
+        "name": "TID_OBSTACLE_TOMBSTONE"
+      },
+      "width": 1,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": "Dark Elixir",
+      "loot_count": 5,
+      "village": "home"
+    },
+    {
+      "_id": 8000023,
+      "name": "Tombstone",
+      "TID": {
+        "name": "TID_OBSTACLE_TOMBSTONE"
+      },
+      "width": 1,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": "Dark Elixir",
+      "loot_count": 1,
+      "village": "home"
+    },
+    {
+      "_id": 8000024,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": null,
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000025,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": null,
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000026,
+      "name": "Goblin Camp Fire",
+      "TID": {
+        "name": "TID_CAMP_FIRE_DECO"
+      },
+      "width": 3,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": null,
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000027,
+      "name": "Goblin Camp Fire",
+      "TID": {
+        "name": "TID_CAMP_FIRE_DECO"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": null,
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000028,
+      "name": "2013 Clashmas Tree",
+      "TID": {
+        "name": "TID_2013_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000029,
+      "name": "Present",
+      "TID": {
+        "name": "TID_OBSTACLE_XMASPRESENT"
+      },
+      "width": 1,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": "Elixir",
+      "loot_count": 1000,
+      "village": "home"
+    },
+    {
+      "_id": 8000030,
+      "name": "Gem Box",
+      "TID": {
+        "name": "TID_BONUS_GEMBOX"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 1000,
+      "loot_resource": "Gems",
+      "loot_count": 25,
+      "village": "home"
+    },
+    {
+      "_id": 8000031,
+      "name": "Halloween Headstone",
+      "TID": {
+        "name": "TID_OBSTACLE_HALLOWEEN2014"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000032,
+      "name": "2014 Clashmas Tree",
+      "TID": {
+        "name": "TID_2014_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000033,
+      "name": "Present",
+      "TID": {
+        "name": "TID_OBSTACLE_XMASPRESENT"
+      },
+      "width": 1,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": "Elixir",
+      "loot_count": 5000,
+      "village": "home"
+    },
+    {
+      "_id": 8000034,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 3,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": null,
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000035,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 3,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": null,
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000036,
+      "name": "Halloween Cauldron",
+      "TID": {
+        "name": "TID_OBSTACLE_HALLOWEEN2015"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000037,
+      "name": "2015 Clashmas Tree",
+      "TID": {
+        "name": "TID_2015_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000038,
+      "name": "Loot Cart",
+      "TID": {
+        "name": "TID_LOOT_CART"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": "Elixir",
+      "loot_count": 0,
+      "village": "home"
+    },
+    {
+      "_id": 8000039,
+      "name": "Scary Pumpkin",
+      "TID": {
+        "name": "TID_OBSTACLE_HALLOWEEN2016"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000040,
+      "name": "2016 Clashmas Tree",
+      "TID": {
+        "name": "TID_2016_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000041,
+      "name": "Tree",
+      "TID": {
+        "name": "TID_OBSTACLE_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 2000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000042,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 3,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 20000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000043,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000044,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000045,
+      "name": "Bush",
+      "TID": {
+        "name": "TID_OBSTACLE_BUSH"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 250,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000046,
+      "name": "Tree",
+      "TID": {
+        "name": "TID_OBSTACLE_TREE"
+      },
+      "width": 3,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 7500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000047,
+      "name": "Mushroom",
+      "TID": {
+        "name": "TID_OBSTACLE_MUSHROOM"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 100,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000048,
+      "name": "Tombstone",
+      "TID": {
+        "name": "TID_OBSTACLE_TOMBSTONE"
+      },
+      "width": 1,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 0,
+      "loot_resource": "Builder Elixir",
+      "loot_count": 20,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000049,
+      "name": "Trunk",
+      "TID": {
+        "name": "TID_OBSTACLE_TRUNK"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 1000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000050,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000051,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000052,
+      "name": "Tree",
+      "TID": {
+        "name": "TID_OBSTACLE_TREE"
+      },
+      "width": 3,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 10000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000053,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 10000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000054,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 3,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 20000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000055,
+      "name": "Old Barbarian Statue",
+      "TID": {
+        "name": "TID_OBSTACLE_OLD_BARBARIAN_STATUE"
+      },
+      "width": 3,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 200000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000056,
+      "name": "Tree Stump",
+      "TID": {
+        "name": "TID_OBSTACLE_TREE_STUMP"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000057,
+      "name": "Grove",
+      "TID": {
+        "name": "TID_OBSTACLE_LARGE_PINE_TREE"
+      },
+      "width": 3,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 20000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000058,
+      "name": "Small Tree",
+      "TID": {
+        "name": "TID_OBSTACLE_SMALL_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 2000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000059,
+      "name": "Big Tree",
+      "TID": {
+        "name": "TID_OBSTACLE_BIG_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 10000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000060,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000061,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000062,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000063,
+      "name": "Tall Grass",
+      "TID": {
+        "name": "TID_GRASS"
+      },
+      "width": 1,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 50,
+      "loot_resource": "Builder Elixir",
+      "loot_count": 0,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000064,
+      "name": "Tall Grass",
+      "TID": {
+        "name": "TID_GRASS"
+      },
+      "width": 1,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 50,
+      "loot_resource": "Builder Elixir",
+      "loot_count": 0,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000065,
+      "name": "5th Anniversary Cake",
+      "TID": {
+        "name": "TID_OBSTACLE_BIRTHDAY2017"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000066,
+      "name": "Present",
+      "TID": {
+        "name": "TID_OBSTACLE_XMASPRESENT"
+      },
+      "width": 1,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": "Elixir",
+      "loot_count": 5000,
+      "village": "home"
+    },
+    {
+      "_id": 8000067,
+      "name": "Halloween Obstacle",
+      "TID": {
+        "name": "TID_OBSTACLE_HALLOWEEN2017"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000068,
+      "name": "Fireworks Stash",
+      "TID": {
+        "name": "TID_OBSTACLE_CNY2017"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 500,
+      "loot_resource": "Gold",
+      "loot_count": 25000,
+      "village": "home"
+    },
+    {
+      "_id": 8000069,
+      "name": "2017 Clashmas Tree",
+      "TID": {
+        "name": "TID_2017_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000070,
+      "name": "Fortune Tree",
+      "TID": {
+        "name": "TID_OBSTACLE_FORTUNE_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 1000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000071,
+      "name": "6th Anniversary Cake",
+      "TID": {
+        "name": "TID_OBSTACLE_BIRTHDAY2018"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000072,
+      "name": "2018 Clashmas Tree",
+      "TID": {
+        "name": "TID_2018_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000073,
+      "name": "Witch's Hat",
+      "TID": {
+        "name": "TID_OBSTACLE_HALLOWEEN2018"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000074,
+      "name": "Spike-y Cactus",
+      "TID": {
+        "name": "TID_OBSTACLE_SPIKE"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 1000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000075,
+      "name": "Glowy Lantern",
+      "TID": {
+        "name": "TID_OBSTACLE_LANTERN_CNY2019"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 1000,
+      "loot_resource": "Builder Elixir",
+      "loot_count": 75000,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000076,
+      "name": "7th Birthday Surprise",
+      "TID": {
+        "name": "TID_OBSTACLE_BIRTHDAY2019"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 7777,
+      "loot_resource": "Elixir",
+      "loot_count": 77777,
+      "village": "home"
+    },
+    {
+      "_id": 8000077,
+      "name": "Spooky Tree",
+      "TID": {
+        "name": "TID_OBSTACLE_HALLOWEEN2019"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000078,
+      "name": "2019 Clashmas Tree",
+      "TID": {
+        "name": "TID_2019_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000079,
+      "name": "Glowy Lantern",
+      "TID": {
+        "name": "TID_OBSTACLE_LANTERN_CNY2019"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 7777,
+      "loot_resource": "Elixir",
+      "loot_count": 77777,
+      "village": "home"
+    },
+    {
+      "_id": 8000080,
+      "name": "8th Anniversary Cake",
+      "TID": {
+        "name": "TID_OBSTACLE_BIRTHDAY2020"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 8888,
+      "loot_resource": "Gold",
+      "loot_count": 88888,
+      "village": "home"
+    },
+    {
+      "_id": 8000081,
+      "name": "Vacant Tomb",
+      "TID": {
+        "name": "TID_OBSTACLE_HALLOWEEN2020"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000082,
+      "name": "2020 Clashmas Tree",
+      "TID": {
+        "name": "TID_2020_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000083,
+      "name": "Lucky Shrub",
+      "TID": {
+        "name": "TID_OBSTACLE_CNY2021"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 7777,
+      "loot_resource": "Elixir",
+      "loot_count": 77777,
+      "village": "home"
+    },
+    {
+      "_id": 8000084,
+      "name": "9th Anniversary Cake",
+      "TID": {
+        "name": "TID_OBSTACLE_BIRTHDAY2021"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 9999,
+      "loot_resource": "Gold",
+      "loot_count": 99999,
+      "village": "home"
+    },
+    {
+      "_id": 8000085,
+      "name": "\\qFriendly\\q Flower",
+      "TID": {
+        "name": "TID_OBSTACLE_HALLOWEEN2021"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000086,
+      "name": "2021 Clashmas Tree",
+      "TID": {
+        "name": "TID_2021_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000087,
+      "name": "10th Anniversary Cake",
+      "TID": {
+        "name": "TID_OBSTACLE_BIRTHDAY2022"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 10000,
+      "loot_resource": "Gold",
+      "loot_count": 101010,
+      "village": "home"
+    },
+    {
+      "_id": 8000088,
+      "name": "Trick or Treat?",
+      "TID": {
+        "name": "TID_OBSTACLE_HALLOWEEN2022"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000089,
+      "name": "2022 Clashmas Tree",
+      "TID": {
+        "name": "TID_2022_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000090,
+      "name": "Rabbit Lantern",
+      "TID": {
+        "name": "TID_OBSTACLE_LNY_LANTERN_2023"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 7777,
+      "loot_resource": "Elixir",
+      "loot_count": 77777,
+      "village": "home"
+    },
+    {
+      "_id": 8000091,
+      "name": "Root",
+      "TID": {
+        "name": "TID_OBSTACLE_ROOT"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 30000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000092,
+      "name": "Large Root",
+      "TID": {
+        "name": "TID_OBSTACLE_ROOT_LARGE"
+      },
+      "width": 3,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 80000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000093,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000094,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 15000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000095,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 15000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000096,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 40000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000097,
+      "name": "Small Root",
+      "TID": {
+        "name": "TID_OBSTACLE_ROOT_SMALL"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 15000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000098,
+      "name": "Small Root",
+      "TID": {
+        "name": "TID_OBSTACLE_ROOT_SMALL"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 15000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000099,
+      "name": "Small Root",
+      "TID": {
+        "name": "TID_OBSTACLE_ROOT_SMALL"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 15000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000100,
+      "name": "Root",
+      "TID": {
+        "name": "TID_OBSTACLE_ROOT"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 30000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000101,
+      "name": "Small Root",
+      "TID": {
+        "name": "TID_OBSTACLE_ROOT_SMALL"
+      },
+      "width": 2,
+      "clear_resource": "Builder Elixir",
+      "clear_cost": 20000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000102,
+      "name": "Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 10000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000103,
+      "name": "Pond",
+      "TID": {
+        "name": "TID_OBSTACLE_POND"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 60000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000104,
+      "name": "Pond",
+      "TID": {
+        "name": "TID_OBSTACLE_POND"
+      },
+      "width": 2,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 60000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000105,
+      "name": "Overgrown Pond",
+      "TID": {
+        "name": "TID_OBSTACLE_POND_OVERGROWN"
+      },
+      "width": 3,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 90000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000106,
+      "name": "Large Pond",
+      "TID": {
+        "name": "TID_OBSTACLE_POND_LARGE"
+      },
+      "width": 3,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 60000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000107,
+      "name": "Large Pond",
+      "TID": {
+        "name": "TID_OBSTACLE_POND_LARGE"
+      },
+      "width": 3,
+      "clear_resource": "Builder Gold",
+      "clear_cost": 60000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "builderBase"
+    },
+    {
+      "_id": 8000108,
+      "name": "11th Anniversary Cake",
+      "TID": {
+        "name": "TID_OBSTACLE_BIRTHDAY2023"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 1100,
+      "loot_resource": "Gold",
+      "loot_count": 11000,
+      "village": "home"
+    },
+    {
+      "_id": 8000109,
+      "name": "Tombstone",
+      "TID": {
+        "name": "TID_OBSTACLE_TOMBSTONE"
+      },
+      "width": 1,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": "Medal Event Soft Currency",
+      "loot_count": 1,
+      "village": "home"
+    },
+    {
+      "_id": 8000110,
+      "name": "Sinister Sapling",
+      "TID": {
+        "name": "TID_OBSTACLE_HALLOWEEN2023"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000111,
+      "name": "2023 Clashmas Tree",
+      "TID": {
+        "name": "TID_2023_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000112,
+      "name": "Tombstone",
+      "TID": {
+        "name": "TID_OBSTACLE_TOMBSTONE"
+      },
+      "width": 1,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": "Medal Event Soft Currency",
+      "loot_count": 1,
+      "village": "home"
+    },
+    {
+      "_id": 8000113,
+      "name": "Lucky Letterbox",
+      "TID": {
+        "name": "TID_OBSTACLE_LNY2024"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 8888,
+      "loot_resource": "Elixir",
+      "loot_count": 88888,
+      "village": "home"
+    },
+    {
+      "_id": 8000114,
+      "name": "Tombstone",
+      "TID": {
+        "name": "TID_OBSTACLE_TOMBSTONE"
+      },
+      "width": 1,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": "Elixir",
+      "loot_count": 1,
+      "village": "home"
+    },
+    {
+      "_id": 8000115,
+      "name": "Mysterious Object",
+      "TID": {
+        "name": "TID_OBSTACLE_BALL"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 3600,
+      "loot_resource": "Gems",
+      "loot_count": 9,
+      "village": "home"
+    },
+    {
+      "_id": 8000116,
+      "name": "12th Anniversary Cake",
+      "TID": {
+        "name": "TID_OBSTACLE_BIRTHDAY2024"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 1200,
+      "loot_resource": "Gold",
+      "loot_count": 12000,
+      "village": "home"
+    },
+    {
+      "_id": 8000117,
+      "name": "Ghost Post",
+      "TID": {
+        "name": "TID_OBSTACLE_CLASHWEEN_2024"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000118,
+      "name": "Deployable area marker",
+      "TID": {
+        "name": "TID_OBSTACLE_DEPLOY_AREA_MARKER"
+      },
+      "width": 1,
+      "clear_resource": "Gold",
+      "clear_cost": 1,
+      "loot_resource": "Gold",
+      "loot_count": 1,
+      "village": "home"
+    },
+    {
+      "_id": 8000119,
+      "name": "Foothill",
+      "TID": {
+        "name": "TID_DECO_HILL_3"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 2000000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000120,
+      "name": "Foothill",
+      "TID": {
+        "name": "TID_DECO_HILL_3"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 2000000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000121,
+      "name": "Foothill",
+      "TID": {
+        "name": "TID_DECO_HILL_3"
+      },
+      "width": 3,
+      "clear_resource": "Elixir",
+      "clear_cost": 2000000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000122,
+      "name": "Foothill",
+      "TID": {
+        "name": "TID_DECO_HILL_3"
+      },
+      "width": 3,
+      "clear_resource": "Elixir",
+      "clear_cost": 2000000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000123,
+      "name": "Foothill",
+      "TID": {
+        "name": "TID_DECO_HILL_3"
+      },
+      "width": 4,
+      "clear_resource": "Elixir",
+      "clear_cost": 2000000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000124,
+      "name": "Foothill",
+      "TID": {
+        "name": "TID_DECO_HILL_3"
+      },
+      "width": 4,
+      "clear_resource": "Elixir",
+      "clear_cost": 2000000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000125,
+      "name": "Water",
+      "TID": {
+        "name": "TID_WATER"
+      },
+      "width": 1,
+      "clear_resource": "Elixir",
+      "clear_cost": 2000000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000126,
+      "name": "Foothill",
+      "TID": {
+        "name": "TID_DECO_HILL_3"
+      },
+      "width": 4,
+      "clear_resource": "Elixir",
+      "clear_cost": 2000000,
+      "loot_resource": "Gems",
+      "loot_count": null,
+      "village": "home"
+    },
+    {
+      "_id": 8000127,
+      "name": "2024 Clashmas Tree",
+      "TID": {
+        "name": "TID_2024_CLASHMAS_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000128,
+      "name": "Snake Sculpture",
+      "TID": {
+        "name": "TID_OBSTACLE_LNY2025_EGG"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 888,
+      "loot_resource": "Elixir",
+      "loot_count": 8888,
+      "village": "home"
+    },
+    {
+      "_id": 8000129,
+      "name": "Money in the Bank",
+      "TID": {
+        "name": "TID_OBSTACLE_APRIL25"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 41,
+      "loot_resource": "Gold",
+      "loot_count": 41000,
+      "village": "home"
+    },
+    {
+      "_id": 8000130,
+      "name": "Tombstone",
+      "TID": {
+        "name": "TID_OBSTACLE_TOMBSTONE"
+      },
+      "width": 1,
+      "clear_resource": "Gold",
+      "clear_cost": 0,
+      "loot_resource": "Gold",
+      "loot_count": 1,
+      "village": "home"
+    },
+    {
+      "_id": 8000131,
+      "name": "13th Anniversary Cake",
+      "TID": {
+        "name": "TID_OBSTACLE_BIRTHDAY2025"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 13,
+      "loot_resource": "Gold",
+      "loot_count": 13000,
+      "village": "home"
+    },
+    {
+      "_id": 8000132,
+      "name": "Shiny Ore Meteorite",
+      "TID": {
+        "name": "TID_OBSTACLE_COMMON_ORE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 18181,
+      "loot_resource": "Shiny Ore",
+      "loot_count": 181,
+      "village": "home"
+    },
+    {
+      "_id": 8000133,
+      "name": "Glowy Ore Meteorite",
+      "TID": {
+        "name": "TID_OBSTACLE_RARE_ORE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 18181,
+      "loot_resource": "Glowy Ore",
+      "loot_count": 18,
+      "village": "home"
+    },
+    {
+      "_id": 8000134,
+      "name": "Starry Ore Meteorite",
+      "TID": {
+        "name": "TID_OBSTACLE_EPIC_ORE_STONE"
+      },
+      "width": 2,
+      "clear_resource": "Dark Elixir",
+      "clear_cost": 181,
+      "loot_resource": "Starry Ore",
+      "loot_count": 2,
+      "village": "home"
+    },
+    {
+      "_id": 8000135,
+      "name": "Cursed Seedling",
+      "TID": {
+        "name": "TID_OBSTACLE_COSMICTREE"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 25000,
+      "loot_resource": "Elixir",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000136,
+      "name": "Kumquat Tree",
+      "TID": {
+        "name": "TID_DECO_KUMQUAT_TREE"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 888,
+      "loot_resource": "Elixir",
+      "loot_count": 8888,
+      "village": "home"
+    },
+    {
+      "_id": 8000137,
+      "name": "2025 Clashmas Tree",
+      "TID": {
+        "name": "TID_OBSTACLE_XMAS_TREE_2025"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 25000,
+      "loot_resource": "Gold",
+      "loot_count": 75000,
+      "village": "home"
+    },
+    {
+      "_id": 8000138,
+      "name": "14th Anniversary Cake",
+      "TID": {
+        "name": "TID_OBSTACLE_BIRTHDAY2026"
+      },
+      "width": 2,
+      "clear_resource": "Gold",
+      "clear_cost": 14,
+      "loot_resource": "Gold",
+      "loot_count": 14000,
+      "village": "home"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "items": [
+    {
+      "_id": 595449661958924,
+      "name": "Gems",
+      "TID": {
+        "name": "TID_DIAMONDS"
+      }
+    },
+    {
+      "_id": 994651688032341,
+      "name": "Gold",
+      "TID": {
+        "name": "TID_GOLD"
+      }
+    },
+    {
+      "_id": 59856289643527,
+      "name": "Elixir",
+      "TID": {
+        "name": "TID_ELIXIR"
+      }
+    },
+    {
+      "_id": 2093923633628,
+      "name": "Dark Elixir",
+      "TID": {
+        "name": "TID_DARK_ELIXIR"
+      }
+    },
+    {
+      "_id": 174264253550509,
+      "name": "Builder Gold",
+      "TID": {
+        "name": "TID_GOLD2"
+      }
+    },
+    {
+      "_id": 279162266021531,
+      "name": "Builder Elixir",
+      "TID": {
+        "name": "TID_ELIXIR2"
+      }
+    },
+    {
+      "_id": 556827278025202,
+      "name": "League Medals",
+      "TID": {
+        "name": "TID_MEDALS"
+      }
+    },
+    {
+      "_id": 555756290124419,
+      "name": "Gold",
+      "TID": {
+        "name": "TID_GOLD"
+      }
+    },
+    {
+      "_id": 915468046959142,
+      "name": "Elixir",
+      "TID": {
+        "name": "TID_ELIXIR"
+      }
+    },
+    {
+      "_id": 270121026397833,
+      "name": "Dark Elixir",
+      "TID": {
+        "name": "TID_DARK_ELIXIR"
+      }
+    },
+    {
+      "_id": 982336347234275,
+      "name": "Capital Gold",
+      "TID": {
+        "name": "TID_CAPITAL_RESOURCE"
+      }
+    },
+    {
+      "_id": 390097728729077,
+      "name": "Raid Medals",
+      "TID": {
+        "name": "TID_CAPITAL_REWARD"
+      }
+    },
+    {
+      "_id": 494722747950492,
+      "name": "Builder Gold",
+      "TID": {
+        "name": "TID_GOLD2"
+      }
+    },
+    {
+      "_id": 198964858096107,
+      "name": "Builder Elixir",
+      "TID": {
+        "name": "TID_ELIXIR2"
+      }
+    },
+    {
+      "_id": 602353603032148,
+      "name": "Medal Event Soft Currency",
+      "TID": {
+        "name": "TID_MEDAL_EVENT_SOFT_CURRENCY"
+      }
+    },
+    {
+      "_id": 412472890383292,
+      "name": "Medal Event Hard Currency",
+      "TID": {
+        "name": "TID_MEDAL_EVENT_HARD_CURRENCY"
+      }
+    },
+    {
+      "_id": 800422311818622,
+      "name": "Shiny Ore",
+      "TID": {
+        "name": "TID_GEAR_RESOURCE_COMMON"
+      }
+    },
+    {
+      "_id": 331255533910287,
+      "name": "Glowy Ore",
+      "TID": {
+        "name": "TID_GEAR_RESOURCE_RARE"
+      }
+    },
+    {
+      "_id": 999804887635761,
+      "name": "Starry Ore",
+      "TID": {
+        "name": "TID_GEAR_RESOURCE_EPIC"
+      }
+    },
+    {
+      "_id": 317628980231429,
+      "name": "Clan Event Currency",
+      "TID": {
+        "name": "TID_CLAN_PROGRESS_EVENT_RESOURCE"
+      }
+    },
+    {
+      "_id": 171625074916432,
+      "name": "Sparky Stones",
+      "TID": {
+        "name": "TID_PRESTIGE_RESOURCE"
+      }
+    }
+  ]
+}

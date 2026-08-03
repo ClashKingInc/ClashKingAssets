@@ -2481,8 +2481,7 @@ class StaticUpdater:
             "resources": self._parse_resource_data(),
             "achievements": self._parse_achievement_data(),
         }
-        with open(f"{self.BASE_PATH}/static_data.json", "w", encoding="utf-8") as jf:
-            jf.write(json.dumps(master_data, indent=2, ensure_ascii=False))
+        self._write_static_json_files(master_data)
 
         if self.PRUNE_TRANSLATIONS:
             for key in list(self.translation_data.keys()):
@@ -2502,6 +2501,21 @@ class StaticUpdater:
                         file_path.unlink()
                     except OSError as e:
                         logging.warning(f"Could not delete {file_path}: {e}")
+
+    def _write_static_json_files(self, master_data):
+        base_path = Path(self.BASE_PATH)
+        with (base_path / "static_data.json").open("w", encoding="utf-8") as jf:
+            jf.write(json.dumps(master_data, indent=2, ensure_ascii=False))
+
+        collection_path = base_path / "static_data"
+        collection_path.mkdir(parents=True, exist_ok=True)
+        expected_files = {f"{category}.json" for category in master_data}
+        for stale_file in collection_path.glob("*.json"):
+            if stale_file.name not in expected_files:
+                stale_file.unlink()
+        for category, items in master_data.items():
+            with (collection_path / f"{category}.json").open("w", encoding="utf-8") as jf:
+                jf.write(json.dumps({"items": items}, indent=2, ensure_ascii=False))
 
     def generate_constants(self):
         static_data = self.open_file("static_data.json")

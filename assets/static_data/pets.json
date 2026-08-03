@@ -1,0 +1,1756 @@
+{
+  "items": [
+    {
+      "_id": 73000000,
+      "name": "L.A.S.S.I",
+      "info": "The trustiest hound to ever roam the village proper, L.A.S.S.I chases enemies with unrelenting fury. Unless they fly, in which case she just observes them intently.",
+      "TID": {
+        "name": "TID_PET_MELEEJUMPER",
+        "info": "TID_PET_MELEEJUMPER_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 1,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
+      "movement_speed": 400,
+      "attack_speed": 900,
+      "attack_range": 60,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 2800,
+          "dps": 160,
+          "upgrade_time": 86400,
+          "upgrade_cost": 20000,
+          "required_pet_house_level": 1,
+          "required_townhall": 14,
+          "strength_weight": 10000
+        },
+        {
+          "level": 2,
+          "hitpoints": 2900,
+          "dps": 170,
+          "upgrade_time": 129600,
+          "upgrade_cost": 30000,
+          "required_pet_house_level": 1,
+          "required_townhall": 14,
+          "strength_weight": 11000
+        },
+        {
+          "level": 3,
+          "hitpoints": 3000,
+          "dps": 180,
+          "upgrade_time": 172800,
+          "upgrade_cost": 40000,
+          "required_pet_house_level": 1,
+          "required_townhall": 14,
+          "strength_weight": 12000
+        },
+        {
+          "level": 4,
+          "hitpoints": 3100,
+          "dps": 190,
+          "upgrade_time": 216000,
+          "upgrade_cost": 50000,
+          "required_pet_house_level": 1,
+          "required_townhall": 14,
+          "strength_weight": 13000
+        },
+        {
+          "level": 5,
+          "hitpoints": 3200,
+          "dps": 200,
+          "upgrade_time": 259200,
+          "upgrade_cost": 60000,
+          "required_pet_house_level": 1,
+          "required_townhall": 14,
+          "strength_weight": 14000
+        },
+        {
+          "level": 6,
+          "hitpoints": 3300,
+          "dps": 210,
+          "upgrade_time": 302400,
+          "upgrade_cost": 70000,
+          "required_pet_house_level": 1,
+          "required_townhall": 14,
+          "strength_weight": 15000
+        },
+        {
+          "level": 7,
+          "hitpoints": 3400,
+          "dps": 220,
+          "upgrade_time": 345600,
+          "upgrade_cost": 80000,
+          "required_pet_house_level": 1,
+          "required_townhall": 14,
+          "strength_weight": 16000
+        },
+        {
+          "level": 8,
+          "hitpoints": 3500,
+          "dps": 230,
+          "upgrade_time": 388800,
+          "upgrade_cost": 90000,
+          "required_pet_house_level": 1,
+          "required_townhall": 14,
+          "strength_weight": 17000
+        },
+        {
+          "level": 9,
+          "hitpoints": 3600,
+          "dps": 240,
+          "upgrade_time": 432000,
+          "upgrade_cost": 100000,
+          "required_pet_house_level": 1,
+          "required_townhall": 14,
+          "strength_weight": 18000
+        },
+        {
+          "level": 10,
+          "hitpoints": 3700,
+          "dps": 260,
+          "upgrade_time": 475200,
+          "upgrade_cost": 110000,
+          "required_pet_house_level": 1,
+          "required_townhall": 14,
+          "strength_weight": 19000
+        },
+        {
+          "level": 11,
+          "hitpoints": 3850,
+          "dps": 290,
+          "upgrade_time": 518400,
+          "upgrade_cost": 120000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 19500
+        },
+        {
+          "level": 12,
+          "hitpoints": 3950,
+          "dps": 310,
+          "upgrade_time": 561600,
+          "upgrade_cost": 130000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 20000
+        },
+        {
+          "level": 13,
+          "hitpoints": 4100,
+          "dps": 330,
+          "upgrade_time": 604800,
+          "upgrade_cost": 140000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 20500
+        },
+        {
+          "level": 14,
+          "hitpoints": 4300,
+          "dps": 360,
+          "upgrade_time": 648000,
+          "upgrade_cost": 150000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 21000
+        },
+        {
+          "level": 15,
+          "hitpoints": 4500,
+          "dps": 400,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 21500
+        }
+      ]
+    },
+    {
+      "_id": 73000001,
+      "name": "Mighty Yak",
+      "info": "Built like a Siege Machine, the Mighty Yak has a knack for knocking down any walls it comes in contact with. It also flies into a rage if you knock out its companion.",
+      "TID": {
+        "name": "TID_PET_WALLBUSTER",
+        "info": "TID_PET_WALLBUSTER_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 3,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
+      "movement_speed": 300,
+      "attack_speed": 2100,
+      "attack_range": 120,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 3750,
+          "dps": 60,
+          "upgrade_time": 86400,
+          "upgrade_cost": 40000,
+          "required_pet_house_level": 3,
+          "required_townhall": 14,
+          "strength_weight": 10000
+        },
+        {
+          "level": 2,
+          "hitpoints": 4000,
+          "dps": 64,
+          "upgrade_time": 129600,
+          "upgrade_cost": 50000,
+          "required_pet_house_level": 3,
+          "required_townhall": 14,
+          "strength_weight": 11000
+        },
+        {
+          "level": 3,
+          "hitpoints": 4250,
+          "dps": 68,
+          "upgrade_time": 172800,
+          "upgrade_cost": 60000,
+          "required_pet_house_level": 3,
+          "required_townhall": 14,
+          "strength_weight": 12000
+        },
+        {
+          "level": 4,
+          "hitpoints": 4500,
+          "dps": 72,
+          "upgrade_time": 216000,
+          "upgrade_cost": 70000,
+          "required_pet_house_level": 3,
+          "required_townhall": 14,
+          "strength_weight": 13000
+        },
+        {
+          "level": 5,
+          "hitpoints": 4750,
+          "dps": 76,
+          "upgrade_time": 259200,
+          "upgrade_cost": 80000,
+          "required_pet_house_level": 3,
+          "required_townhall": 14,
+          "strength_weight": 14000
+        },
+        {
+          "level": 6,
+          "hitpoints": 4950,
+          "dps": 80,
+          "upgrade_time": 302400,
+          "upgrade_cost": 90000,
+          "required_pet_house_level": 3,
+          "required_townhall": 14,
+          "strength_weight": 15000
+        },
+        {
+          "level": 7,
+          "hitpoints": 5100,
+          "dps": 84,
+          "upgrade_time": 345600,
+          "upgrade_cost": 100000,
+          "required_pet_house_level": 3,
+          "required_townhall": 14,
+          "strength_weight": 16000
+        },
+        {
+          "level": 8,
+          "hitpoints": 5250,
+          "dps": 88,
+          "upgrade_time": 388800,
+          "upgrade_cost": 110000,
+          "required_pet_house_level": 3,
+          "required_townhall": 14,
+          "strength_weight": 17000
+        },
+        {
+          "level": 9,
+          "hitpoints": 5400,
+          "dps": 92,
+          "upgrade_time": 432000,
+          "upgrade_cost": 120000,
+          "required_pet_house_level": 3,
+          "required_townhall": 14,
+          "strength_weight": 18000
+        },
+        {
+          "level": 10,
+          "hitpoints": 5550,
+          "dps": 96,
+          "upgrade_time": 475200,
+          "upgrade_cost": 130000,
+          "required_pet_house_level": 3,
+          "required_townhall": 14,
+          "strength_weight": 19000
+        },
+        {
+          "level": 11,
+          "hitpoints": 5700,
+          "dps": 100,
+          "upgrade_time": 518400,
+          "upgrade_cost": 140000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 20000
+        },
+        {
+          "level": 12,
+          "hitpoints": 5850,
+          "dps": 104,
+          "upgrade_time": 561600,
+          "upgrade_cost": 150000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 21000
+        },
+        {
+          "level": 13,
+          "hitpoints": 6000,
+          "dps": 108,
+          "upgrade_time": 604800,
+          "upgrade_cost": 160000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 22000
+        },
+        {
+          "level": 14,
+          "hitpoints": 6150,
+          "dps": 112,
+          "upgrade_time": 648000,
+          "upgrade_cost": 170000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 23000
+        },
+        {
+          "level": 15,
+          "hitpoints": 6300,
+          "dps": 116,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 24000
+        }
+      ]
+    },
+    {
+      "_id": 73000002,
+      "name": "Electro Owl",
+      "info": "Electro Owl zaps enemy defenses into dust from great distance. He's mostly made of feathers though, so better keep him well protected!",
+      "TID": {
+        "name": "TID_PET_RANGEDATTACKER",
+        "info": "TID_PET_RANGEDATTACKER_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 2,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "movement_speed": 250,
+      "attack_speed": 1400,
+      "attack_range": 550,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 1600,
+          "dps": 100,
+          "upgrade_time": 129600,
+          "upgrade_cost": 30000,
+          "required_pet_house_level": 2,
+          "required_townhall": 14,
+          "strength_weight": 10000
+        },
+        {
+          "level": 2,
+          "hitpoints": 1700,
+          "dps": 105,
+          "upgrade_time": 172800,
+          "upgrade_cost": 45000,
+          "required_pet_house_level": 2,
+          "required_townhall": 14,
+          "strength_weight": 11000
+        },
+        {
+          "level": 3,
+          "hitpoints": 1800,
+          "dps": 110,
+          "upgrade_time": 259200,
+          "upgrade_cost": 60000,
+          "required_pet_house_level": 2,
+          "required_townhall": 14,
+          "strength_weight": 12000
+        },
+        {
+          "level": 4,
+          "hitpoints": 1900,
+          "dps": 115,
+          "upgrade_time": 345600,
+          "upgrade_cost": 75000,
+          "required_pet_house_level": 2,
+          "required_townhall": 14,
+          "strength_weight": 13000
+        },
+        {
+          "level": 5,
+          "hitpoints": 2000,
+          "dps": 120,
+          "upgrade_time": 388800,
+          "upgrade_cost": 90000,
+          "required_pet_house_level": 2,
+          "required_townhall": 14,
+          "strength_weight": 14000
+        },
+        {
+          "level": 6,
+          "hitpoints": 2100,
+          "dps": 125,
+          "upgrade_time": 432000,
+          "upgrade_cost": 105000,
+          "required_pet_house_level": 2,
+          "required_townhall": 14,
+          "strength_weight": 15000
+        },
+        {
+          "level": 7,
+          "hitpoints": 2200,
+          "dps": 130,
+          "upgrade_time": 475200,
+          "upgrade_cost": 120000,
+          "required_pet_house_level": 2,
+          "required_townhall": 14,
+          "strength_weight": 16000
+        },
+        {
+          "level": 8,
+          "hitpoints": 2300,
+          "dps": 135,
+          "upgrade_time": 518400,
+          "upgrade_cost": 135000,
+          "required_pet_house_level": 2,
+          "required_townhall": 14,
+          "strength_weight": 17000
+        },
+        {
+          "level": 9,
+          "hitpoints": 2400,
+          "dps": 140,
+          "upgrade_time": 561600,
+          "upgrade_cost": 150000,
+          "required_pet_house_level": 2,
+          "required_townhall": 14,
+          "strength_weight": 18000
+        },
+        {
+          "level": 10,
+          "hitpoints": 2500,
+          "dps": 145,
+          "upgrade_time": 604800,
+          "upgrade_cost": 165000,
+          "required_pet_house_level": 2,
+          "required_townhall": 14,
+          "strength_weight": 19000
+        },
+        {
+          "level": 11,
+          "hitpoints": 2600,
+          "dps": 150,
+          "upgrade_time": 691200,
+          "upgrade_cost": 180000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 20000
+        },
+        {
+          "level": 12,
+          "hitpoints": 2700,
+          "dps": 155,
+          "upgrade_time": 691200,
+          "upgrade_cost": 195000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 21000
+        },
+        {
+          "level": 13,
+          "hitpoints": 2800,
+          "dps": 160,
+          "upgrade_time": 691200,
+          "upgrade_cost": 210000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 22000
+        },
+        {
+          "level": 14,
+          "hitpoints": 2900,
+          "dps": 165,
+          "upgrade_time": 691200,
+          "upgrade_cost": 225000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 23000
+        },
+        {
+          "level": 15,
+          "hitpoints": 3000,
+          "dps": 170,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 24000
+        }
+      ]
+    },
+    {
+      "_id": 73000003,
+      "name": "Unicorn",
+      "info": "Unicorns have severe trust issues, but overcoming them with love and patience is totally worth it. They'll heal up any minor or major scrapes as well as any Healer!",
+      "TID": {
+        "name": "TID_PET_HEALER",
+        "info": "TID_PET_HEALER_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 4,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "movement_speed": 200,
+      "attack_speed": 1000,
+      "attack_range": 250,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 1400,
+          "dps": -50,
+          "upgrade_time": 129600,
+          "upgrade_cost": 50000,
+          "required_pet_house_level": 4,
+          "required_townhall": 14,
+          "strength_weight": 10000
+        },
+        {
+          "level": 2,
+          "hitpoints": 1450,
+          "dps": -53,
+          "upgrade_time": 172800,
+          "upgrade_cost": 65000,
+          "required_pet_house_level": 4,
+          "required_townhall": 14,
+          "strength_weight": 11000
+        },
+        {
+          "level": 3,
+          "hitpoints": 1500,
+          "dps": -56,
+          "upgrade_time": 259200,
+          "upgrade_cost": 80000,
+          "required_pet_house_level": 4,
+          "required_townhall": 14,
+          "strength_weight": 12000
+        },
+        {
+          "level": 4,
+          "hitpoints": 1550,
+          "dps": -58,
+          "upgrade_time": 345600,
+          "upgrade_cost": 95000,
+          "required_pet_house_level": 4,
+          "required_townhall": 14,
+          "strength_weight": 13000
+        },
+        {
+          "level": 5,
+          "hitpoints": 1600,
+          "dps": -60,
+          "upgrade_time": 388800,
+          "upgrade_cost": 110000,
+          "required_pet_house_level": 4,
+          "required_townhall": 14,
+          "strength_weight": 14000
+        },
+        {
+          "level": 6,
+          "hitpoints": 1675,
+          "dps": -62,
+          "upgrade_time": 432000,
+          "upgrade_cost": 125000,
+          "required_pet_house_level": 4,
+          "required_townhall": 14,
+          "strength_weight": 15000
+        },
+        {
+          "level": 7,
+          "hitpoints": 1725,
+          "dps": -64,
+          "upgrade_time": 475200,
+          "upgrade_cost": 140000,
+          "required_pet_house_level": 4,
+          "required_townhall": 14,
+          "strength_weight": 16000
+        },
+        {
+          "level": 8,
+          "hitpoints": 1800,
+          "dps": -66,
+          "upgrade_time": 518400,
+          "upgrade_cost": 155000,
+          "required_pet_house_level": 4,
+          "required_townhall": 14,
+          "strength_weight": 17000
+        },
+        {
+          "level": 9,
+          "hitpoints": 1875,
+          "dps": -68,
+          "upgrade_time": 561600,
+          "upgrade_cost": 170000,
+          "required_pet_house_level": 4,
+          "required_townhall": 14,
+          "strength_weight": 18000
+        },
+        {
+          "level": 10,
+          "hitpoints": 1950,
+          "dps": -70,
+          "upgrade_time": 604800,
+          "upgrade_cost": 200000,
+          "required_pet_house_level": 4,
+          "required_townhall": 14,
+          "strength_weight": 19000
+        },
+        {
+          "level": 11,
+          "hitpoints": 2025,
+          "dps": -71,
+          "upgrade_time": 691200,
+          "upgrade_cost": 230000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 20000
+        },
+        {
+          "level": 12,
+          "hitpoints": 2100,
+          "dps": -72,
+          "upgrade_time": 691200,
+          "upgrade_cost": 260000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 21000
+        },
+        {
+          "level": 13,
+          "hitpoints": 2175,
+          "dps": -73,
+          "upgrade_time": 691200,
+          "upgrade_cost": 290000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 22000
+        },
+        {
+          "level": 14,
+          "hitpoints": 2250,
+          "dps": -74,
+          "upgrade_time": 691200,
+          "upgrade_cost": 320000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 23000
+        },
+        {
+          "level": 15,
+          "hitpoints": 2325,
+          "dps": -75,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 24000
+        }
+      ]
+    },
+    {
+      "_id": 73000004,
+      "name": "Phoenix",
+      "info": "A true friend will egg you on when things get rough. Phoenix starts the battle as a helpless egg, but at the moment her Hero might go down, she hatches. The furious fiery fowl then gives temporary invulnerability to its Hero and engages nearby enemies.",
+      "TID": {
+        "name": "TID_PET_PHOENIX",
+        "info": "TID_PET_PHOENIX_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 8,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "movement_speed": 200,
+      "attack_speed": 1000,
+      "attack_range": 250,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 3120,
+          "dps": 178,
+          "upgrade_time": 129600,
+          "upgrade_cost": 80000,
+          "required_pet_house_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 15000
+        },
+        {
+          "level": 2,
+          "hitpoints": 3240,
+          "dps": 186,
+          "upgrade_time": 172800,
+          "upgrade_cost": 95000,
+          "required_pet_house_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 16000
+        },
+        {
+          "level": 3,
+          "hitpoints": 3360,
+          "dps": 194,
+          "upgrade_time": 259200,
+          "upgrade_cost": 110000,
+          "required_pet_house_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 17000
+        },
+        {
+          "level": 4,
+          "hitpoints": 3480,
+          "dps": 202,
+          "upgrade_time": 345600,
+          "upgrade_cost": 125000,
+          "required_pet_house_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 18000
+        },
+        {
+          "level": 5,
+          "hitpoints": 3600,
+          "dps": 210,
+          "upgrade_time": 388800,
+          "upgrade_cost": 140000,
+          "required_pet_house_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 19000
+        },
+        {
+          "level": 6,
+          "hitpoints": 3720,
+          "dps": 218,
+          "upgrade_time": 432000,
+          "upgrade_cost": 155000,
+          "required_pet_house_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 20000
+        },
+        {
+          "level": 7,
+          "hitpoints": 3840,
+          "dps": 226,
+          "upgrade_time": 475200,
+          "upgrade_cost": 170000,
+          "required_pet_house_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 21000
+        },
+        {
+          "level": 8,
+          "hitpoints": 3960,
+          "dps": 234,
+          "upgrade_time": 518400,
+          "upgrade_cost": 180000,
+          "required_pet_house_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 22000
+        },
+        {
+          "level": 9,
+          "hitpoints": 4080,
+          "dps": 242,
+          "upgrade_time": 561600,
+          "upgrade_cost": 190000,
+          "required_pet_house_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 23000
+        },
+        {
+          "level": 10,
+          "hitpoints": 4200,
+          "dps": 250,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 8,
+          "required_townhall": 15,
+          "strength_weight": 24000
+        }
+      ]
+    },
+    {
+      "_id": 73000007,
+      "name": "Poison Lizard",
+      "info": "Always the fastest never the lastest, Poison Lizard spits slowing toxins at its foes. Is it actually a venom lizard? Possibly, but who's brave enough to correct it?",
+      "TID": {
+        "name": "TID_PET_POISON_LIZARD",
+        "info": "TID_PET_POISON_LIZARD_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 7,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "movement_speed": 450,
+      "attack_speed": 350,
+      "attack_range": 450,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 1400,
+          "dps": 181,
+          "upgrade_time": 86400,
+          "upgrade_cost": 60000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 15000
+        },
+        {
+          "level": 2,
+          "hitpoints": 1450,
+          "dps": 192,
+          "upgrade_time": 129600,
+          "upgrade_cost": 75000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 16000
+        },
+        {
+          "level": 3,
+          "hitpoints": 1500,
+          "dps": 203,
+          "upgrade_time": 172800,
+          "upgrade_cost": 90000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 17000
+        },
+        {
+          "level": 4,
+          "hitpoints": 1550,
+          "dps": 214,
+          "upgrade_time": 216000,
+          "upgrade_cost": 100000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 18000
+        },
+        {
+          "level": 5,
+          "hitpoints": 1600,
+          "dps": 225,
+          "upgrade_time": 259200,
+          "upgrade_cost": 110000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 19000
+        },
+        {
+          "level": 6,
+          "hitpoints": 1650,
+          "dps": 236,
+          "upgrade_time": 302400,
+          "upgrade_cost": 120000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 19500
+        },
+        {
+          "level": 7,
+          "hitpoints": 1700,
+          "dps": 247,
+          "upgrade_time": 345600,
+          "upgrade_cost": 130000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 20000
+        },
+        {
+          "level": 8,
+          "hitpoints": 1800,
+          "dps": 258,
+          "upgrade_time": 388800,
+          "upgrade_cost": 140000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 20500
+        },
+        {
+          "level": 9,
+          "hitpoints": 1900,
+          "dps": 269,
+          "upgrade_time": 432000,
+          "upgrade_cost": 150000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 21000
+        },
+        {
+          "level": 10,
+          "hitpoints": 2050,
+          "dps": 280,
+          "upgrade_time": 518400,
+          "upgrade_cost": 180000,
+          "required_pet_house_level": 7,
+          "required_townhall": 15,
+          "strength_weight": 21500
+        },
+        {
+          "level": 11,
+          "hitpoints": 2100,
+          "dps": 291,
+          "upgrade_time": 604800,
+          "upgrade_cost": 200000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 22000
+        },
+        {
+          "level": 12,
+          "hitpoints": 2150,
+          "dps": 302,
+          "upgrade_time": 691200,
+          "upgrade_cost": 220000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 22500
+        },
+        {
+          "level": 13,
+          "hitpoints": 2200,
+          "dps": 313,
+          "upgrade_time": 691200,
+          "upgrade_cost": 240000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 23000
+        },
+        {
+          "level": 14,
+          "hitpoints": 2250,
+          "dps": 324,
+          "upgrade_time": 691200,
+          "upgrade_cost": 260000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 23500
+        },
+        {
+          "level": 15,
+          "hitpoints": 2300,
+          "dps": 335,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 24000
+        }
+      ]
+    },
+    {
+      "_id": 73000008,
+      "name": "Diggy",
+      "info": "Diggy is an introvert and spends a lot of time hiding underground. Still, when it comes to battle, he'll do his part, coming up to attack buildings and aid his Hero. If his Hero's taken out, he'll seek out a new one for support and scritches.",
+      "TID": {
+        "name": "TID_PET_DIGGY",
+        "info": "TID_PET_DIGGY_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 6,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
+      "movement_speed": 400,
+      "attack_speed": 1100,
+      "attack_range": 80,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 3650,
+          "dps": 105,
+          "upgrade_time": 129600,
+          "upgrade_cost": 90000,
+          "required_pet_house_level": 6,
+          "required_townhall": 15,
+          "strength_weight": 15000
+        },
+        {
+          "level": 2,
+          "hitpoints": 3800,
+          "dps": 110,
+          "upgrade_time": 172800,
+          "upgrade_cost": 105000,
+          "required_pet_house_level": 6,
+          "required_townhall": 15,
+          "strength_weight": 16000
+        },
+        {
+          "level": 3,
+          "hitpoints": 3950,
+          "dps": 115,
+          "upgrade_time": 259200,
+          "upgrade_cost": 120000,
+          "required_pet_house_level": 6,
+          "required_townhall": 15,
+          "strength_weight": 17000
+        },
+        {
+          "level": 4,
+          "hitpoints": 4100,
+          "dps": 120,
+          "upgrade_time": 345600,
+          "upgrade_cost": 130000,
+          "required_pet_house_level": 6,
+          "required_townhall": 15,
+          "strength_weight": 18000
+        },
+        {
+          "level": 5,
+          "hitpoints": 4250,
+          "dps": 125,
+          "upgrade_time": 388800,
+          "upgrade_cost": 140000,
+          "required_pet_house_level": 6,
+          "required_townhall": 15,
+          "strength_weight": 19000
+        },
+        {
+          "level": 6,
+          "hitpoints": 4400,
+          "dps": 130,
+          "upgrade_time": 432000,
+          "upgrade_cost": 150000,
+          "required_pet_house_level": 6,
+          "required_townhall": 15,
+          "strength_weight": 20000
+        },
+        {
+          "level": 7,
+          "hitpoints": 4550,
+          "dps": 135,
+          "upgrade_time": 475200,
+          "upgrade_cost": 160000,
+          "required_pet_house_level": 6,
+          "required_townhall": 15,
+          "strength_weight": 21000
+        },
+        {
+          "level": 8,
+          "hitpoints": 4700,
+          "dps": 140,
+          "upgrade_time": 518400,
+          "upgrade_cost": 170000,
+          "required_pet_house_level": 6,
+          "required_townhall": 15,
+          "strength_weight": 22000
+        },
+        {
+          "level": 9,
+          "hitpoints": 4850,
+          "dps": 145,
+          "upgrade_time": 561600,
+          "upgrade_cost": 180000,
+          "required_pet_house_level": 6,
+          "required_townhall": 15,
+          "strength_weight": 23000
+        },
+        {
+          "level": 10,
+          "hitpoints": 5000,
+          "dps": 150,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 6,
+          "required_townhall": 15,
+          "strength_weight": 24000
+        }
+      ]
+    },
+    {
+      "_id": 73000009,
+      "name": "Frosty",
+      "info": "Frosty is the coolest Pet... literally. Not only does his icy breath cause enemies to chill out, but he also releases swarms of Frostmites to further slow down defenses and help his Hero.",
+      "TID": {
+        "name": "TID_PET_FROSTY",
+        "info": "TID_PET_FROSTY_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 5,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "movement_speed": 300,
+      "attack_speed": 1200,
+      "attack_range": 350,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 2350,
+          "dps": 94,
+          "upgrade_time": 129600,
+          "upgrade_cost": 70000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 15000
+        },
+        {
+          "level": 2,
+          "hitpoints": 2450,
+          "dps": 98,
+          "upgrade_time": 172800,
+          "upgrade_cost": 85000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 16000
+        },
+        {
+          "level": 3,
+          "hitpoints": 2550,
+          "dps": 102,
+          "upgrade_time": 259200,
+          "upgrade_cost": 100000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 17000
+        },
+        {
+          "level": 4,
+          "hitpoints": 2650,
+          "dps": 106,
+          "upgrade_time": 345600,
+          "upgrade_cost": 115000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 18000
+        },
+        {
+          "level": 5,
+          "hitpoints": 2800,
+          "dps": 110,
+          "upgrade_time": 388800,
+          "upgrade_cost": 130000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 19000
+        },
+        {
+          "level": 6,
+          "hitpoints": 2900,
+          "dps": 114,
+          "upgrade_time": 432000,
+          "upgrade_cost": 145000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 19500
+        },
+        {
+          "level": 7,
+          "hitpoints": 3000,
+          "dps": 118,
+          "upgrade_time": 475200,
+          "upgrade_cost": 160000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 20000
+        },
+        {
+          "level": 8,
+          "hitpoints": 3100,
+          "dps": 122,
+          "upgrade_time": 518400,
+          "upgrade_cost": 170000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 20500
+        },
+        {
+          "level": 9,
+          "hitpoints": 3200,
+          "dps": 126,
+          "upgrade_time": 561600,
+          "upgrade_cost": 180000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 21000
+        },
+        {
+          "level": 10,
+          "hitpoints": 3300,
+          "dps": 130,
+          "upgrade_time": 604800,
+          "upgrade_cost": 200000,
+          "required_pet_house_level": 5,
+          "required_townhall": 15,
+          "strength_weight": 21500
+        },
+        {
+          "level": 11,
+          "hitpoints": 3400,
+          "dps": 134,
+          "upgrade_time": 691200,
+          "upgrade_cost": 230000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 22000
+        },
+        {
+          "level": 12,
+          "hitpoints": 3500,
+          "dps": 138,
+          "upgrade_time": 691200,
+          "upgrade_cost": 260000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 22500
+        },
+        {
+          "level": 13,
+          "hitpoints": 3600,
+          "dps": 142,
+          "upgrade_time": 691200,
+          "upgrade_cost": 290000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 23000
+        },
+        {
+          "level": 14,
+          "hitpoints": 3700,
+          "dps": 146,
+          "upgrade_time": 691200,
+          "upgrade_cost": 320000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 23500
+        },
+        {
+          "level": 15,
+          "hitpoints": 3800,
+          "dps": 150,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 24000
+        }
+      ]
+    },
+    {
+      "_id": 73000010,
+      "name": "Spirit Fox",
+      "info": "An extremely shy creature who's happiest alone in the woods outside the village. When called to battle, Spirit Fox fights fiercely alongside their Hero and helps them with a little invisibility.",
+      "TID": {
+        "name": "TID_PET_SPIRIT_FOX",
+        "info": "TID_PET_SPIRIT_FOX_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 9,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
+      "movement_speed": 300,
+      "attack_speed": 1600,
+      "attack_range": 250,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 1900,
+          "dps": 108,
+          "upgrade_time": 259200,
+          "upgrade_cost": 150000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 15000
+        },
+        {
+          "level": 2,
+          "hitpoints": 2000,
+          "dps": 116,
+          "upgrade_time": 345600,
+          "upgrade_cost": 160000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 16000
+        },
+        {
+          "level": 3,
+          "hitpoints": 2100,
+          "dps": 124,
+          "upgrade_time": 432000,
+          "upgrade_cost": 170000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 17000
+        },
+        {
+          "level": 4,
+          "hitpoints": 2200,
+          "dps": 132,
+          "upgrade_time": 475200,
+          "upgrade_cost": 180000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 18000
+        },
+        {
+          "level": 5,
+          "hitpoints": 2300,
+          "dps": 140,
+          "upgrade_time": 518400,
+          "upgrade_cost": 190000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 19000
+        },
+        {
+          "level": 6,
+          "hitpoints": 2400,
+          "dps": 148,
+          "upgrade_time": 561600,
+          "upgrade_cost": 200000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 20000
+        },
+        {
+          "level": 7,
+          "hitpoints": 2500,
+          "dps": 156,
+          "upgrade_time": 604800,
+          "upgrade_cost": 210000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 21000
+        },
+        {
+          "level": 8,
+          "hitpoints": 2600,
+          "dps": 164,
+          "upgrade_time": 648000,
+          "upgrade_cost": 220000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 22000
+        },
+        {
+          "level": 9,
+          "hitpoints": 2700,
+          "dps": 172,
+          "upgrade_time": 691200,
+          "upgrade_cost": 230000,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 23000
+        },
+        {
+          "level": 10,
+          "hitpoints": 2800,
+          "dps": 180,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 9,
+          "required_townhall": 16,
+          "strength_weight": 24000
+        }
+      ]
+    },
+    {
+      "_id": 73000011,
+      "name": "Angry Jelly",
+      "info": "This blob of pure anger gets impatient waiting around the village, it's hungry for a good fight. During battle, it convinces its Hero to attack defenses before splitting to fight separately.",
+      "TID": {
+        "name": "TID_PET_ANGRY_JELLY",
+        "info": "TID_PET_ANGRY_JELLY_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 10,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "movement_speed": 200,
+      "attack_speed": 750,
+      "attack_range": 500,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 1450,
+          "dps": 112,
+          "upgrade_time": 259200,
+          "upgrade_cost": 150000,
+          "required_pet_house_level": 10,
+          "required_townhall": 16,
+          "strength_weight": 15000
+        },
+        {
+          "level": 2,
+          "hitpoints": 1525,
+          "dps": 121,
+          "upgrade_time": 345600,
+          "upgrade_cost": 160000,
+          "required_pet_house_level": 10,
+          "required_townhall": 16,
+          "strength_weight": 16000
+        },
+        {
+          "level": 3,
+          "hitpoints": 1600,
+          "dps": 130,
+          "upgrade_time": 432000,
+          "upgrade_cost": 170000,
+          "required_pet_house_level": 10,
+          "required_townhall": 16,
+          "strength_weight": 17000
+        },
+        {
+          "level": 4,
+          "hitpoints": 1675,
+          "dps": 139,
+          "upgrade_time": 518400,
+          "upgrade_cost": 180000,
+          "required_pet_house_level": 10,
+          "required_townhall": 16,
+          "strength_weight": 18000
+        },
+        {
+          "level": 5,
+          "hitpoints": 1750,
+          "dps": 148,
+          "upgrade_time": 604800,
+          "upgrade_cost": 190000,
+          "required_pet_house_level": 10,
+          "required_townhall": 16,
+          "strength_weight": 19000
+        },
+        {
+          "level": 6,
+          "hitpoints": 1825,
+          "dps": 157,
+          "upgrade_time": 691200,
+          "upgrade_cost": 200000,
+          "required_pet_house_level": 10,
+          "required_townhall": 16,
+          "strength_weight": 20000
+        },
+        {
+          "level": 7,
+          "hitpoints": 1900,
+          "dps": 166,
+          "upgrade_time": 691200,
+          "upgrade_cost": 210000,
+          "required_pet_house_level": 10,
+          "required_townhall": 16,
+          "strength_weight": 21000
+        },
+        {
+          "level": 8,
+          "hitpoints": 1975,
+          "dps": 175,
+          "upgrade_time": 691200,
+          "upgrade_cost": 220000,
+          "required_pet_house_level": 10,
+          "required_townhall": 16,
+          "strength_weight": 22000
+        },
+        {
+          "level": 9,
+          "hitpoints": 2050,
+          "dps": 184,
+          "upgrade_time": 691200,
+          "upgrade_cost": 230000,
+          "required_pet_house_level": 10,
+          "required_townhall": 16,
+          "strength_weight": 23000
+        },
+        {
+          "level": 10,
+          "hitpoints": 2125,
+          "dps": 193,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 10,
+          "required_townhall": 16,
+          "strength_weight": 24000
+        }
+      ]
+    },
+    {
+      "_id": 73000016,
+      "name": "Sneezy",
+      "info": "Her nose is blocked and loaded! Sneezy hangs behind her Hero due to allergies and sneezes tanky air Boogers that target buildings. She goes on the attack when her Hero falls!",
+      "TID": {
+        "name": "TID_PET_SNEEZY",
+        "info": "TID_PET_SNEEZY_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 11,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "movement_speed": 300,
+      "attack_speed": 800,
+      "attack_range": 250,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 3300,
+          "dps": 270,
+          "upgrade_time": 691200,
+          "upgrade_cost": 200000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 15000
+        },
+        {
+          "level": 2,
+          "hitpoints": 3450,
+          "dps": 290,
+          "upgrade_time": 691200,
+          "upgrade_cost": 220000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 16000
+        },
+        {
+          "level": 3,
+          "hitpoints": 3600,
+          "dps": 310,
+          "upgrade_time": 691200,
+          "upgrade_cost": 240000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 17000
+        },
+        {
+          "level": 4,
+          "hitpoints": 3750,
+          "dps": 330,
+          "upgrade_time": 691200,
+          "upgrade_cost": 260000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 18000
+        },
+        {
+          "level": 5,
+          "hitpoints": 3900,
+          "dps": 350,
+          "upgrade_time": 691200,
+          "upgrade_cost": 280000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 19000
+        },
+        {
+          "level": 6,
+          "hitpoints": 4050,
+          "dps": 370,
+          "upgrade_time": 691200,
+          "upgrade_cost": 300000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 20000
+        },
+        {
+          "level": 7,
+          "hitpoints": 4200,
+          "dps": 390,
+          "upgrade_time": 691200,
+          "upgrade_cost": 320000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 21000
+        },
+        {
+          "level": 8,
+          "hitpoints": 4350,
+          "dps": 410,
+          "upgrade_time": 691200,
+          "upgrade_cost": 340000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 22000
+        },
+        {
+          "level": 9,
+          "hitpoints": 4500,
+          "dps": 430,
+          "upgrade_time": 691200,
+          "upgrade_cost": 360000,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 23000
+        },
+        {
+          "level": 10,
+          "hitpoints": 4650,
+          "dps": 450,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 11,
+          "required_townhall": 17,
+          "strength_weight": 24000
+        }
+      ]
+    },
+    {
+      "_id": 73000017,
+      "name": "Greedy Raven",
+      "info": "No scarecrow is frightening enough to keep Greedy Raven away from shiny loot! This masked bandit’s swift feathers target and deal extra damage to resource buildings and egos.",
+      "TID": {
+        "name": "TID_PET_RAVEN",
+        "info": "TID_PET_RAVEN_INFO"
+      },
+      "production_building": "Pet House",
+      "production_building_level": 12,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": true,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "movement_speed": 350,
+      "attack_speed": 420,
+      "attack_range": 800,
+      "warden_weight": 3,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 2150,
+          "dps": 110,
+          "upgrade_time": 691200,
+          "upgrade_cost": 260000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 15000
+        },
+        {
+          "level": 2,
+          "hitpoints": 2300,
+          "dps": 115,
+          "upgrade_time": 691200,
+          "upgrade_cost": 280000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 16000
+        },
+        {
+          "level": 3,
+          "hitpoints": 2450,
+          "dps": 120,
+          "upgrade_time": 691200,
+          "upgrade_cost": 300000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 17000
+        },
+        {
+          "level": 4,
+          "hitpoints": 2600,
+          "dps": 125,
+          "upgrade_time": 691200,
+          "upgrade_cost": 320000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 18000
+        },
+        {
+          "level": 5,
+          "hitpoints": 2750,
+          "dps": 130,
+          "upgrade_time": 691200,
+          "upgrade_cost": 340000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 19000
+        },
+        {
+          "level": 6,
+          "hitpoints": 2900,
+          "dps": 135,
+          "upgrade_time": 691200,
+          "upgrade_cost": 360000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 20000
+        },
+        {
+          "level": 7,
+          "hitpoints": 3050,
+          "dps": 140,
+          "upgrade_time": 691200,
+          "upgrade_cost": 380000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 21000
+        },
+        {
+          "level": 8,
+          "hitpoints": 3200,
+          "dps": 145,
+          "upgrade_time": 691200,
+          "upgrade_cost": 400000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 22000
+        },
+        {
+          "level": 9,
+          "hitpoints": 3350,
+          "dps": 150,
+          "upgrade_time": 691200,
+          "upgrade_cost": 420000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 23000
+        },
+        {
+          "level": 10,
+          "hitpoints": 3500,
+          "dps": 155,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 24000
+        }
+      ]
+    }
+  ]
+}

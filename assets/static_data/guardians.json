@@ -1,0 +1,178 @@
+{
+  "items": [
+    {
+      "_id": 107000000,
+      "name": "Longshot",
+      "info": "Use your head! Longshot fires explosive bolts from her cranium at long range, peppering attackers with delightful dollops of splash damage.",
+      "TID": {
+        "name": "TID_INFERNO_GUARDIAN",
+        "info": "TID_INFERNO_GUARDIAN_INFO"
+      },
+      "upgrade_resource": "Elixir",
+      "is_flying": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "movement_speed": 150,
+      "attack_speed": 1800,
+      "attack_range": 1100,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 7000,
+          "dps": 330,
+          "upgrade_time": 604800,
+          "upgrade_cost": 18000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 2,
+          "hitpoints": 8000,
+          "dps": 360,
+          "upgrade_time": 777600,
+          "upgrade_cost": 22000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 3,
+          "hitpoints": 9000,
+          "dps": 390,
+          "upgrade_time": 950400,
+          "upgrade_cost": 26000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 4,
+          "hitpoints": 10000,
+          "dps": 420,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 28000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 5,
+          "hitpoints": 11000,
+          "dps": 450,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_townhall": 18
+        }
+      ]
+    },
+    {
+      "_id": 107000001,
+      "name": "Smasher",
+      "info": "This tanky Guardian deals splash damage to ground and air troops. Smasher is a seriously sore loser, raging when the Town Hall is destroyed and leaving rage in his wake when defeated.",
+      "TID": {
+        "name": "TID_MELEE_AREA_GUARDIAN",
+        "info": "TID_MELEE_AREA_GUARDIAN_INFO"
+      },
+      "upgrade_resource": "Elixir",
+      "is_flying": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "movement_speed": 250,
+      "attack_speed": 1800,
+      "attack_range": 125,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 12000,
+          "dps": 500,
+          "upgrade_time": 604800,
+          "upgrade_cost": 18000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 2,
+          "hitpoints": 13000,
+          "dps": 550,
+          "upgrade_time": 777600,
+          "upgrade_cost": 22000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 3,
+          "hitpoints": 14000,
+          "dps": 600,
+          "upgrade_time": 950400,
+          "upgrade_cost": 26000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 4,
+          "hitpoints": 15000,
+          "dps": 650,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 28000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 5,
+          "hitpoints": 16000,
+          "dps": 700,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_townhall": 18
+        }
+      ]
+    },
+    {
+      "_id": 107000008,
+      "name": "Logger",
+      "info": "A hardened meteorite hunk with a fascination for forestry. When Logger isn’t petting his mustache woodpeckers, he’s lobbing bouncing logs that push and crush all troop types.\\n\\nThe timber may be slow, but it strikes with the full force of nature!",
+      "TID": {
+        "name": "TID_LOGGER_GUARDIAN",
+        "info": "TID_LOGGER_GUARDIAN_INFO"
+      },
+      "upgrade_resource": "Elixir",
+      "is_flying": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "movement_speed": 100,
+      "attack_speed": 2500,
+      "attack_range": 700,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 8000,
+          "dps": 230,
+          "upgrade_time": 604800,
+          "upgrade_cost": 18000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 2,
+          "hitpoints": 9000,
+          "dps": 260,
+          "upgrade_time": 777600,
+          "upgrade_cost": 22000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 3,
+          "hitpoints": 10000,
+          "dps": 290,
+          "upgrade_time": 950400,
+          "upgrade_cost": 26000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 4,
+          "hitpoints": 11000,
+          "dps": 320,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 28000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 5,
+          "hitpoints": 12000,
+          "dps": 350,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_townhall": 18
+        }
+      ]
+    }
+  ]
+}

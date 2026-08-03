@@ -1,0 +1,92 @@
+{
+  "items": [
+    {
+      "locale": "EN",
+      "name": "English"
+    },
+    {
+      "locale": "FR",
+      "name": "Français"
+    },
+    {
+      "locale": "DE",
+      "name": "Deutsch"
+    },
+    {
+      "locale": "ES",
+      "name": "Español"
+    },
+    {
+      "locale": "IT",
+      "name": "Italiano"
+    },
+    {
+      "locale": "NL",
+      "name": "Nederlands"
+    },
+    {
+      "locale": "NO",
+      "name": "Norsk"
+    },
+    {
+      "locale": "PT",
+      "name": "Português"
+    },
+    {
+      "locale": "TR",
+      "name": "Türkçe"
+    },
+    {
+      "locale": "CN",
+      "name": "简体中文"
+    },
+    {
+      "locale": "JP",
+      "name": "日本語"
+    },
+    {
+      "locale": "KR",
+      "name": "한국어"
+    },
+    {
+      "locale": "RU",
+      "name": "Pусский"
+    },
+    {
+      "locale": "CNT",
+      "name": "繁體中文"
+    },
+    {
+      "locale": "AR",
+      "name": "العربية"
+    },
+    {
+      "locale": "FA",
+      "name": "فارسی"
+    },
+    {
+      "locale": "ID",
+      "name": "Bahasa Indonesia"
+    },
+    {
+      "locale": "MS",
+      "name": "Bahasa Melayu"
+    },
+    {
+      "locale": "VI",
+      "name": "Tiếng Việt"
+    },
+    {
+      "locale": "TH",
+      "name": "ภาษาไทย"
+    },
+    {
+      "locale": "FI",
+      "name": "Suomi"
+    },
+    {
+      "locale": "OTHER",
+      "name": "Other"
+    }
+  ]
+}

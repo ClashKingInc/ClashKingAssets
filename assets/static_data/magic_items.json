@@ -1,0 +1,290 @@
+{
+  "items": [
+    {
+      "_id": 537386189096351,
+      "name": "Book of Fighting",
+      "info": "Instantly finish any troop upgrade. Works in both villages!",
+      "TID": {
+        "name": "TID_BOOSTER_FINISH_TROOP_UPGRADE",
+        "info": "TID_BOOSTER_FINISH_TROOP_UPGRADE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 50
+    },
+    {
+      "_id": 890343935493710,
+      "name": "Book of Building",
+      "info": "Instantly finish any building upgrade. Works in both villages!",
+      "TID": {
+        "name": "TID_BOOSTER_FINISH_BUILDING_UPGRADE",
+        "info": "TID_BOOSTER_FINISH_BUILDING_UPGRADE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 50
+    },
+    {
+      "_id": 753206450208602,
+      "name": "Book of Spells",
+      "info": "Instantly finish any spell upgrade in Home Village.",
+      "TID": {
+        "name": "TID_BOOSTER_FINISH_SPELL_UPGRADE",
+        "info": "TID_BOOSTER_FINISH_SPELL_UPGRADE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 50
+    },
+    {
+      "_id": 524139281942929,
+      "name": "Book of Heroes",
+      "info": "Instantly finish a Hero or Pet upgrade. Works in both villages!",
+      "TID": {
+        "name": "TID_BOOSTER_FINISH_HERO_UPGRADE",
+        "info": "TID_BOOSTER_FINISH_HERO_UPGRADE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 50
+    },
+    {
+      "_id": 440405123938110,
+      "name": "Book of Everything",
+      "info": "Instantly finish any upgrade. Works in both villages!",
+      "TID": {
+        "name": "TID_BOOSTER_FINISH_ANY_UPGRADE",
+        "info": "TID_BOOSTER_FINISH_ANY_UPGRADE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 50
+    },
+    {
+      "_id": 561696033072481,
+      "name": "Power Potion",
+      "info": "Boost Troops, Spells, and Siege Machines to their maximum level allowed by your Town Hall for 1h. Works in both Villages!",
+      "TID": {
+        "name": "TID_BOOSTER_MAX_LEVEL_ARMY",
+        "info": "TID_BOOSTER_MAX_LEVEL_ARMY_INFO"
+      },
+      "max_inventory": 5,
+      "gem_value": 10
+    },
+    {
+      "_id": 243284571992699,
+      "name": "Resource Potion",
+      "info": "Boost resource collector efficiency for <time> in Home Village.",
+      "TID": {
+        "name": "TID_BOOSTER_BOOST_RESOURCES",
+        "info": "TID_BOOSTER_BOOST_RESOURCES_INFO"
+      },
+      "max_inventory": 5,
+      "gem_value": 10
+    },
+    {
+      "_id": 570452040909320,
+      "name": "Training Potion",
+      "info": "This energetic Elixir boosts your Army production, increasing efficiency of Barracks, Spell Factories, Workshop and Hero regeneration for <time>. Works in Home Village.",
+      "TID": {
+        "name": "TID_BOOSTER_BOOST_PRODUCTION",
+        "info": "TID_BOOSTER_BOOST_PRODUCTION_INFO"
+      },
+      "max_inventory": 5,
+      "gem_value": 10
+    },
+    {
+      "_id": 676037793357332,
+      "name": "Rune of Gold",
+      "info": "Completely fill your Gold Storages in Home Village.",
+      "TID": {
+        "name": "TID_BOOSTER_FILL_GOLD_STORAGE",
+        "info": "TID_BOOSTER_FILL_GOLD_STORAGE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 50
+    },
+    {
+      "_id": 771806884803063,
+      "name": "Rune of Elixir",
+      "info": "Completely fill your Elixir Storages in Home Village.",
+      "TID": {
+        "name": "TID_BOOSTER_FILL_ELIXIR_STORAGE",
+        "info": "TID_BOOSTER_FILL_ELIXIR_STORAGE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 50
+    },
+    {
+      "_id": 305847136545998,
+      "name": "Rune of Dark Elixir",
+      "info": "Completely fill your Dark Elixir storages in Home Village.",
+      "TID": {
+        "name": "TID_BOOSTER_FILL_DARK_ELIXIR_STORAGE",
+        "info": "TID_BOOSTER_FILL_DARK_ELIXIR_STORAGE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 50
+    },
+    {
+      "_id": 827109296898367,
+      "name": "Rune of Builder Gold",
+      "info": "Completely fill your Builder Gold Storages in Builder Base.",
+      "TID": {
+        "name": "TID_BOOSTER_FILL_GOLD2_STORAGE",
+        "info": "TID_BOOSTER_FILL_GOLD2_STORAGE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 50
+    },
+    {
+      "_id": 469261700147929,
+      "name": "Rune of Builder Elixir",
+      "info": "Completely fill your Builder Elixir Storages in Builder Base.",
+      "TID": {
+        "name": "TID_BOOSTER_FILL_ELIXIR2_STORAGE",
+        "info": "TID_BOOSTER_FILL_ELIXIR2_STORAGE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 50
+    },
+    {
+      "_id": 900728545460161,
+      "name": "Wall Ring",
+      "info": "Instantly upgrade a wall piece. Some higher level walls may require multiple rings to upgrade. Requires a free Builder. Works in both villages!",
+      "TID": {
+        "name": "TID_BOOSTER_WALL_UPGRADE",
+        "info": "TID_BOOSTER_WALL_UPGRADE_INFO"
+      },
+      "max_inventory": 25,
+      "gem_value": 5
+    },
+    {
+      "_id": 210956642277151,
+      "name": "Builder Potion",
+      "info": "Boost Builder work to 10x its regular speed for <time> in Home Village. The Builder's Apprentice will not be affected.",
+      "TID": {
+        "name": "TID_BOOSTER_BUILDERS",
+        "info": "TID_BOOSTER_BUILDERS_INFO"
+      },
+      "max_inventory": 5,
+      "gem_value": 10
+    },
+    {
+      "_id": 280901775918853,
+      "name": "Hammer of Fighting",
+      "info": "Instantly upgrade any Troop to the next level. Works in both Villages!",
+      "TID": {
+        "name": "TID_BOOSTER_FREE_TROOP_UPGRADE",
+        "info": "TID_BOOSTER_FREE_TROOP_UPGRADE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 100
+    },
+    {
+      "_id": 151625849595091,
+      "name": "Hammer of Building",
+      "info": "Instantly upgrade any Building to the next level. Requires a free Builder. Works in both Villages!",
+      "TID": {
+        "name": "TID_BOOSTER_FREE_BUILDING_UPGRADE",
+        "info": "TID_BOOSTER_FREE_BUILDING_UPGRADE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 100
+    },
+    {
+      "_id": 742529374013477,
+      "name": "Hammer of Spells",
+      "info": "Instantly upgrade any Spell to the next level in Home Village.",
+      "TID": {
+        "name": "TID_BOOSTER_FREE_SPELL_UPGRADE",
+        "info": "TID_BOOSTER_FREE_SPELL_UPGRADE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 100
+    },
+    {
+      "_id": 256984620428090,
+      "name": "Hammer of Heroes",
+      "info": "Instantly upgrade any Hero or Pet to the next level. Works in both Villages!",
+      "TID": {
+        "name": "TID_BOOSTER_FREE_HERO_UPGRADE",
+        "info": "TID_BOOSTER_FREE_HERO_UPGRADE_INFO"
+      },
+      "max_inventory": 1,
+      "gem_value": 100
+    },
+    {
+      "_id": 782756751511908,
+      "name": "Clock Tower Potion",
+      "info": "Activate Clock Tower boost for <time>. Works in Builder Base!",
+      "TID": {
+        "name": "TID_BOOSTER_CLOCKTOWER",
+        "info": "TID_BOOSTER_CLOCKTOWER_INFO"
+      },
+      "max_inventory": 5,
+      "gem_value": 10
+    },
+    {
+      "_id": 635767448980463,
+      "name": "Shovel of Obstacles",
+      "info": "Strong but fragile, this magical shovel can be used to make a single obstacle permanently movable. Works in both villages!",
+      "TID": {
+        "name": "TID_BOOSTER_MOVE_OBSTACLE",
+        "info": "TID_BOOSTER_SHOVEL_OBSTACLE_INFO"
+      },
+      "max_inventory": 5,
+      "gem_value": 50
+    },
+    {
+      "_id": 240454282761805,
+      "name": "Hero Potion",
+      "info": "Boost all Heroes and Pets to their maximum level allowed by your Town Hall for <time>. Works in both Villages!",
+      "TID": {
+        "name": "TID_BOOSTER_HERO_POTION",
+        "info": "TID_BOOSTER_HERO_POTION_INFO"
+      },
+      "max_inventory": 5,
+      "gem_value": 10
+    },
+    {
+      "_id": 691966405407290,
+      "name": "Research Potion",
+      "info": "Boost Laboratory research to <multiplier>x its regular speed in Home Village for <time>. The Lab Assistant will not be affected.",
+      "TID": {
+        "name": "TID_BOOSTER_LAB_POTION",
+        "info": "TID_BOOSTER_LAB_POTION_INFO"
+      },
+      "max_inventory": 5,
+      "gem_value": 10
+    },
+    {
+      "_id": 131106032702441,
+      "name": "Super Potion",
+      "info": "Can Boost a Troop into its Super Troop form for 3 days!",
+      "TID": {
+        "name": "TID_BOOSTER_SUPER_POTION",
+        "info": "TID_BOOSTER_SUPER_POTION_INFO"
+      },
+      "max_inventory": 5,
+      "gem_value": 10
+    },
+    {
+      "_id": 495502005765862,
+      "name": "Pet Potion",
+      "info": "Boost Pet upgrades to <multiplier>x their regular speed for <time>.",
+      "TID": {
+        "name": "TID_BOOSTER_PET_POTION",
+        "info": "TID_BOOSTER_PET_POTION_INFO"
+      },
+      "max_inventory": 5,
+      "gem_value": 10
+    },
+    {
+      "_id": 252268797315533,
+      "name": "Builder Star Jar",
+      "info": "Instantly make your Star Bonus available in Builder Base.",
+      "TID": {
+        "name": "TID_BOOSTER_STAR_POTION",
+        "info": "TID_BOOSTER_STAR_POTION_INFO"
+      },
+      "max_inventory": 5,
+      "gem_value": 10
+    }
+  ]
+}

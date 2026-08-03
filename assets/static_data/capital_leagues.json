@@ -1,0 +1,211 @@
+{
+  "items": [
+    {
+      "_id": 85000000,
+      "name": "Unranked",
+      "TID": {
+        "name": "TID_LEAGUE_UNRANKED"
+      },
+      "trophy_start": 0,
+      "clan_xp": 0
+    },
+    {
+      "_id": 85000001,
+      "name": "Bronze League III",
+      "TID": {
+        "name": "TID_LEAGUE_BRONZE3"
+      },
+      "trophy_start": 200,
+      "clan_xp": 25
+    },
+    {
+      "_id": 85000002,
+      "name": "Bronze League II",
+      "TID": {
+        "name": "TID_LEAGUE_BRONZE2"
+      },
+      "trophy_start": 400,
+      "clan_xp": 50
+    },
+    {
+      "_id": 85000003,
+      "name": "Bronze League I",
+      "TID": {
+        "name": "TID_LEAGUE_BRONZE1"
+      },
+      "trophy_start": 600,
+      "clan_xp": 75
+    },
+    {
+      "_id": 85000004,
+      "name": "Silver League III",
+      "TID": {
+        "name": "TID_LEAGUE_SILVER3"
+      },
+      "trophy_start": 800,
+      "clan_xp": 100
+    },
+    {
+      "_id": 85000005,
+      "name": "Silver League II",
+      "TID": {
+        "name": "TID_LEAGUE_SILVER2"
+      },
+      "trophy_start": 1000,
+      "clan_xp": 125
+    },
+    {
+      "_id": 85000006,
+      "name": "Silver League I",
+      "TID": {
+        "name": "TID_LEAGUE_SILVER1"
+      },
+      "trophy_start": 1200,
+      "clan_xp": 150
+    },
+    {
+      "_id": 85000007,
+      "name": "Gold League III",
+      "TID": {
+        "name": "TID_LEAGUE_GOLD3"
+      },
+      "trophy_start": 1400,
+      "clan_xp": 175
+    },
+    {
+      "_id": 85000008,
+      "name": "Gold League II",
+      "TID": {
+        "name": "TID_LEAGUE_GOLD2"
+      },
+      "trophy_start": 1600,
+      "clan_xp": 200
+    },
+    {
+      "_id": 85000009,
+      "name": "Gold League I",
+      "TID": {
+        "name": "TID_LEAGUE_GOLD1"
+      },
+      "trophy_start": 1800,
+      "clan_xp": 225
+    },
+    {
+      "_id": 85000010,
+      "name": "Crystal League III",
+      "TID": {
+        "name": "TID_LEAGUE_CRYSTAL3"
+      },
+      "trophy_start": 2000,
+      "clan_xp": 250
+    },
+    {
+      "_id": 85000011,
+      "name": "Crystal League II",
+      "TID": {
+        "name": "TID_LEAGUE_CRYSTAL2"
+      },
+      "trophy_start": 2200,
+      "clan_xp": 275
+    },
+    {
+      "_id": 85000012,
+      "name": "Crystal League I",
+      "TID": {
+        "name": "TID_LEAGUE_CRYSTAL1"
+      },
+      "trophy_start": 2400,
+      "clan_xp": 300
+    },
+    {
+      "_id": 85000013,
+      "name": "Master League III",
+      "TID": {
+        "name": "TID_LEAGUE_MASTER3"
+      },
+      "trophy_start": 2600,
+      "clan_xp": 350
+    },
+    {
+      "_id": 85000014,
+      "name": "Master League II",
+      "TID": {
+        "name": "TID_LEAGUE_MASTER2"
+      },
+      "trophy_start": 2800,
+      "clan_xp": 400
+    },
+    {
+      "_id": 85000015,
+      "name": "Master League I",
+      "TID": {
+        "name": "TID_LEAGUE_MASTER1"
+      },
+      "trophy_start": 3000,
+      "clan_xp": 450
+    },
+    {
+      "_id": 85000016,
+      "name": "Champion League III",
+      "TID": {
+        "name": "TID_LEAGUE_CHAMPION3"
+      },
+      "trophy_start": 3200,
+      "clan_xp": 500
+    },
+    {
+      "_id": 85000017,
+      "name": "Champion League II",
+      "TID": {
+        "name": "TID_LEAGUE_CHAMPION2"
+      },
+      "trophy_start": 3500,
+      "clan_xp": 550
+    },
+    {
+      "_id": 85000018,
+      "name": "Champion League I",
+      "TID": {
+        "name": "TID_LEAGUE_CHAMPION1"
+      },
+      "trophy_start": 3800,
+      "clan_xp": 600
+    },
+    {
+      "_id": 85000019,
+      "name": "Titan League III",
+      "TID": {
+        "name": "TID_LEAGUE_HERO3"
+      },
+      "trophy_start": 4100,
+      "clan_xp": 650
+    },
+    {
+      "_id": 85000020,
+      "name": "Titan League II",
+      "TID": {
+        "name": "TID_LEAGUE_HERO2"
+      },
+      "trophy_start": 4400,
+      "clan_xp": 700
+    },
+    {
+      "_id": 85000021,
+      "name": "Titan League I",
+      "TID": {
+        "name": "TID_LEAGUE_HERO1"
+      },
+      "trophy_start": 4700,
+      "clan_xp": 750
+    },
+    {
+      "_id": 85000022,
+      "name": "Legend League",
+      "TID": {
+        "name": "TID_LEAGUE_LEGENDARY"
+      },
+      "trophy_start": 5000,
+      "clan_xp": 800
+    }
+  ]
+}

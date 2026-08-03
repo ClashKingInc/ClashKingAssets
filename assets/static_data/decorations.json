@@ -1,0 +1,2832 @@
+{
+  "items": [
+    {
+      "_id": 18000000,
+      "name": "Mighty Statue",
+      "TID": {
+        "name": "TID_DECORATION_BARBARIAN_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000001,
+      "name": "Torch",
+      "TID": {
+        "name": "TID_DECORATION_TORCH"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 4,
+      "build_resource": "Elixir",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000003,
+      "name": "White Flag",
+      "TID": {
+        "name": "TID_DECORATION_WHITE_FLAG"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Elixir",
+      "build_cost": 5000,
+      "village": "home"
+    },
+    {
+      "_id": 18000004,
+      "name": "Pirate Flag",
+      "TID": {
+        "name": "TID_DECORATION_SKULL_FLAG"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000005,
+      "name": "Cornflower Bed",
+      "TID": {
+        "name": "TID_DECORATION_FLOWERBOX1"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 4,
+      "build_resource": "Elixir",
+      "build_cost": 2500,
+      "village": "home"
+    },
+    {
+      "_id": 18000006,
+      "name": "Sunflower Bed",
+      "TID": {
+        "name": "TID_DECORATION_FLOWERBOX2"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 4,
+      "build_resource": "Elixir",
+      "build_cost": 2500,
+      "village": "home"
+    },
+    {
+      "_id": 18000007,
+      "name": "Weather Vane",
+      "TID": {
+        "name": "TID_DECORATION_WINDMETER"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Elixir",
+      "build_cost": 10000,
+      "village": "home"
+    },
+    {
+      "_id": 18000008,
+      "name": "Rally Flag",
+      "TID": {
+        "name": "TID_DECORATION_DOWNARROW_FLAG"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Elixir",
+      "build_cost": 15000,
+      "village": "home"
+    },
+    {
+      "_id": 18000009,
+      "name": "Point Flag",
+      "TID": {
+        "name": "TID_DECORATION_UPARROW_FLAG"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Elixir",
+      "build_cost": 15000,
+      "village": "home"
+    },
+    {
+      "_id": 18000010,
+      "name": "Ancient Skull",
+      "TID": {
+        "name": "TID_DECORATION_SKULL_ALTAR"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gold",
+      "build_cost": 500000,
+      "village": "home"
+    },
+    {
+      "_id": 18000033,
+      "name": "Statue of P.E.K.K.A",
+      "TID": {
+        "name": "TID_DECORATION_PEKKA_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gold",
+      "build_cost": 1000000,
+      "village": "home"
+    },
+    {
+      "_id": 18000037,
+      "name": "Mighty Hero Statue",
+      "TID": {
+        "name": "TID_DECORATION_BK_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000038,
+      "name": "Torch",
+      "TID": {
+        "name": "TID_DECORATION_TORCH"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 4,
+      "build_resource": "Builder Gold",
+      "build_cost": 5000,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000039,
+      "name": "Small Spruce Tree",
+      "TID": {
+        "name": "TID_DECORATION_SMALL_PINETREE"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 4,
+      "build_resource": "Builder Gold",
+      "build_cost": 10000,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000040,
+      "name": "Spruce Tree",
+      "TID": {
+        "name": "TID_DECORATION_PINETREE"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 4,
+      "build_resource": "Builder Gold",
+      "build_cost": 10000,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000041,
+      "name": "Ancient Barbarian Statue",
+      "TID": {
+        "name": "TID_DECORATION_ANCIENT_BARBARIAN_STATUE"
+      },
+      "width": 3,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 250,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000042,
+      "name": "Stone Path",
+      "TID": {
+        "name": "TID_STONE_PATH"
+      },
+      "width": 1,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 25,
+      "build_resource": "Builder Gold",
+      "build_cost": 5000,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000043,
+      "name": "Archer Queen Statue",
+      "TID": {
+        "name": "TID_DECORATION_ARCHER_QUEEN_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000044,
+      "name": "Target",
+      "TID": {
+        "name": "TID_TARGET"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 3,
+      "build_resource": "Builder Gold",
+      "build_cost": 20000,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000045,
+      "name": "Bonfire",
+      "TID": {
+        "name": "TID_FIREPLACE"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 2,
+      "build_resource": "Builder Gold",
+      "build_cost": 20000,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000046,
+      "name": "Builder Statue",
+      "TID": {
+        "name": "TID_DECORATION_BUILDER_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000047,
+      "name": "The Champion Statue",
+      "TID": {
+        "name": "TID_DECORATION_SWORD_IN_STONE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "League Medals",
+      "build_cost": 2000,
+      "village": "home"
+    },
+    {
+      "_id": 18000048,
+      "name": "The Master Statue",
+      "TID": {
+        "name": "TID_DECORATION_LEAGUE_I_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "League Medals",
+      "build_cost": 1000,
+      "village": "home"
+    },
+    {
+      "_id": 18000049,
+      "name": "The Contender Statue",
+      "TID": {
+        "name": "TID_DECORATION_LEAGUE_II_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "League Medals",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000050,
+      "name": "The Challenger Statue",
+      "TID": {
+        "name": "TID_DECORATION_LEAGUE_III_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "League Medals",
+      "build_cost": 250,
+      "village": "home"
+    },
+    {
+      "_id": 18000051,
+      "name": "The Warrior Statue",
+      "TID": {
+        "name": "TID_DECORATION_WAR_SHIELD"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "League Medals",
+      "build_cost": 100,
+      "village": "home"
+    },
+    {
+      "_id": 18000052,
+      "name": "Golden Hog",
+      "TID": {
+        "name": "TID_DECORATION_GOLDEN_HOG"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000053,
+      "name": "Festive Firecrackers",
+      "TID": {
+        "name": "TID_DECORATION_FIRECRACKER"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 3,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000054,
+      "name": "Snowman",
+      "TID": {
+        "name": "TID_DECORATION_SNOWMAN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000055,
+      "name": "Snowman",
+      "TID": {
+        "name": "TID_DECORATION_SNOWMAN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000056,
+      "name": "Battle Machine Statue",
+      "TID": {
+        "name": "TID_DECORATION_BATTLEMACHINE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000057,
+      "name": "Dragon Statue",
+      "TID": {
+        "name": "TID_DECORATION_DRAGON_STATUE"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000058,
+      "name": "Golden Poet",
+      "TID": {
+        "name": "TID_DECORATION_GOLDEN_GOBLIN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000059,
+      "name": "Super Statue",
+      "TID": {
+        "name": "TID_DECORATION_SUPER_TROOP_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000060,
+      "name": "Storied Statue",
+      "TID": {
+        "name": "TID_DECORATION_SHORT_FILM_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000061,
+      "name": "Anniversary Fountain",
+      "TID": {
+        "name": "TID_DECORATION_10_YEAR_FOUNTAIN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000062,
+      "name": "Clockwork Statue",
+      "TID": {
+        "name": "TID_DECORATION_CLOCKWORK_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000063,
+      "name": "\\qA Piece of Birthday Cake\\q",
+      "TID": {
+        "name": "TID_DECORATION_8YEAR_BIRTHDAY_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000064,
+      "name": "Retired Anchor",
+      "TID": {
+        "name": "TID_DECORATION_PIRATE_ANCHOR"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000065,
+      "name": "Logmas Tree",
+      "TID": {
+        "name": "TID_DECO_LOGMAS_TREE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 10,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000066,
+      "name": "Firework Fanboy",
+      "TID": {
+        "name": "TID_DECO_FIREWORK_FANBOY"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000067,
+      "name": "Flowing Fountain",
+      "TID": {
+        "name": "TID_DECO_TH14_FOUNTAIN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000068,
+      "name": "Fiery Figure",
+      "TID": {
+        "name": "TID_DECORATION_9YEAR_BIRTHDAY_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000069,
+      "name": "Wizard Statue",
+      "TID": {
+        "name": "TID_WIZARD_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000070,
+      "name": "Goblin King Tribute",
+      "TID": {
+        "name": "TID_DECORATION_10YEAR_BIRTHDAY_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000071,
+      "name": "Eternal Flame",
+      "TID": {
+        "name": "TID_DECORATION_CLASH_FEST_22_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000072,
+      "name": "Clashmas Sleigh",
+      "TID": {
+        "name": "TID_DECORATION_CLASHMAS_22"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000073,
+      "name": "Magic Show Statue",
+      "TID": {
+        "name": "TID_STATUE_LNY_2023"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000074,
+      "name": "Decorated Dragon Statue",
+      "TID": {
+        "name": "TID_DECO_PAINTED_BABY_DRAGON"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000075,
+      "name": "Dragon Trophy",
+      "TID": {
+        "name": "TID_DECO_DARK_AGES_DRAGON"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000076,
+      "name": "Bonfire",
+      "TID": {
+        "name": "TID_FIREPLACE"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 4,
+      "build_resource": "Builder Gold",
+      "build_cost": 200000,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000077,
+      "name": "Torch",
+      "TID": {
+        "name": "TID_DECORATION_TORCH"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 4,
+      "build_resource": "Builder Gold",
+      "build_cost": 250000,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000078,
+      "name": "Target",
+      "TID": {
+        "name": "TID_TARGET"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 3,
+      "build_resource": "Builder Gold",
+      "build_cost": 500000,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000079,
+      "name": "Books of Clash",
+      "TID": {
+        "name": "TID_BOOKS_OF_CLASH"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gold",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000080,
+      "name": "Master Builder's Return",
+      "TID": {
+        "name": "TID_MASTER_BUILDER'S_RETURN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "builderBase"
+    },
+    {
+      "_id": 18000081,
+      "name": "Goblin Chest",
+      "TID": {
+        "name": "TID_DECO_GOBLIN_CHEST"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gold",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000082,
+      "name": "Goblin Cart",
+      "TID": {
+        "name": "TID_DECO_GOBLIN_CART"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gold",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000089,
+      "name": "Goblin Cellar",
+      "TID": {
+        "name": "TID_DECO_GOBLIN_CELLAR"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gold",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000090,
+      "name": "Goblin Dragon Statue",
+      "TID": {
+        "name": "TID_DECO_GOBLIN_DRAGON_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gold",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000091,
+      "name": "Goblin Barrel",
+      "TID": {
+        "name": "TID_DECO_GOBLIN_BARREL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gold",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000092,
+      "name": "League Hammer",
+      "TID": {
+        "name": "TID_DECO_CWL_HAMMER"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "League Medals",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000093,
+      "name": "League Shield",
+      "TID": {
+        "name": "TID_DECO_CWL_SHIELD"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "League Medals",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000094,
+      "name": "Razer Deco",
+      "TID": {
+        "name": "TID_DECO_RAZER_PROMO"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000095,
+      "name": "Flexing Barbarian",
+      "TID": {
+        "name": "TID_DECO_FLEXING_BARB"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000096,
+      "name": "Cosy Coffin",
+      "TID": {
+        "name": "TID_DECO_COFFIN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000097,
+      "name": "\\qFriendly\\q Clown",
+      "TID": {
+        "name": "TID_DECO_CLOWN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000098,
+      "name": "Spooky Spa",
+      "TID": {
+        "name": "TID_DECO_DEAD_JAKUZZI"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000099,
+      "name": "Pumpkin Scarecrow",
+      "TID": {
+        "name": "TID_DECO_SCARECROW"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000100,
+      "name": "Sour Elixir Cauldron",
+      "TID": {
+        "name": "TID_BUILDING_CLASHOWEEN_BUILDING"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000101,
+      "name": "World Finals 23 Statue",
+      "TID": {
+        "name": "TID_WORLD_FINALS_23_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000103,
+      "name": "Duck Bath",
+      "TID": {
+        "name": "TID_DECO_DUCK_POND"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000104,
+      "name": "Crop Crates",
+      "TID": {
+        "name": "TID_DECO_HD_VEG_CRATES"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 5,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000105,
+      "name": "Blooming Beetroots",
+      "TID": {
+        "name": "TID_DECO_HD_BEETROOTS"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 5,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000106,
+      "name": "Sweet Carrots",
+      "TID": {
+        "name": "TID_DECO_HD_CARROTS"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 5,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000107,
+      "name": "Tasty Corn",
+      "TID": {
+        "name": "TID_DECO_HD_CORN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 5,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000108,
+      "name": "Harvest Helper",
+      "TID": {
+        "name": "TID_DECO_HD_SOIL_SACKS"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 5,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000109,
+      "name": "Hog Pen",
+      "TID": {
+        "name": "TID_DECO_HOG_PEN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000110,
+      "name": "Scratchy Stack",
+      "TID": {
+        "name": "TID_DECO_HD_HAYSTACK"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 5,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000111,
+      "name": "Juicy Tomatoes",
+      "TID": {
+        "name": "TID_DECO_HD_TOMATOES"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 5,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000112,
+      "name": "Clumsy Wheelbarrow",
+      "TID": {
+        "name": "TID_DECO_HD_WHEELBARROW"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 5,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000113,
+      "name": "Woodcutter’s Pile",
+      "TID": {
+        "name": "TID_DECO_HD_WOOD_PILE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 5,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000114,
+      "name": "Cozy Clam",
+      "TID": {
+        "name": "TID_DECO_COZY_CLAM"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000115,
+      "name": "Gingerbread Bakery",
+      "TID": {
+        "name": "TID_DECO_GINGERBREAD_BUILDING"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000116,
+      "name": "Jingle Bell",
+      "TID": {
+        "name": "TID_DECO_JINGLEBELL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000117,
+      "name": "Barbarian Santa",
+      "TID": {
+        "name": "TID_DECO_HOGMASTER"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000118,
+      "name": "Skeleton Sock",
+      "TID": {
+        "name": "TID_DECO_SOCK"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000119,
+      "name": "Lucky Anchor",
+      "TID": {
+        "name": "TID_DECO_LNY24_ANCHOR"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000120,
+      "name": "Crab at home",
+      "TID": {
+        "name": "TID_DECO_LNY24_CRAB"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000121,
+      "name": "Baby Dragon Statue",
+      "TID": {
+        "name": "TID_DECO_LNY24_BABY_DRAGON"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000122,
+      "name": "Dragon Pinata",
+      "TID": {
+        "name": "TID_DECO_LNY24_DRAGON_PINATA"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000123,
+      "name": "Clashy Crater",
+      "TID": {
+        "name": "TID_DECO_SPACE_2024_CRATER"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000124,
+      "name": "Stone Globe",
+      "TID": {
+        "name": "TID_DECO_SPACE_2024_GLOBE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000125,
+      "name": "Goblin Explorer",
+      "TID": {
+        "name": "TID_DECO_SPACE_2024_GOBLIN_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000126,
+      "name": "Baby Ptah",
+      "TID": {
+        "name": "TID_DECO_EGYPT_2024_BABYDRAGON"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000127,
+      "name": "Goblin Pharaoh",
+      "TID": {
+        "name": "TID_DECO_EGYPT_2024_GOBLIN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000128,
+      "name": "Hog Sphinx",
+      "TID": {
+        "name": "TID_DECO_EGYPT_2024_HOG"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000129,
+      "name": "Crown Sword",
+      "TID": {
+        "name": "TID_DECO_GIFT_2024_CROWNSWORD"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000130,
+      "name": "Surprising Squad",
+      "TID": {
+        "name": "TID_DECO_GAME_CAMPAIGN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000131,
+      "name": "Golden Boot",
+      "TID": {
+        "name": "TID_DECO_CLASHBALL_GOLDENBOOT"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000132,
+      "name": "Bestest Ball",
+      "TID": {
+        "name": "TID_DECO_CLASHBALL_TROPHYBALL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000133,
+      "name": "Haaland Statue",
+      "TID": {
+        "name": "TID_DECO_CLASHBALL_STATUECHARACTER"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000134,
+      "name": "Triumphant Trophy",
+      "TID": {
+        "name": "TID_DECO_CLASHBALL_TROPHYCROWN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000135,
+      "name": "Celebration Cup",
+      "TID": {
+        "name": "TID_DECO_CLASHBALL_TROPHYCUP"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000136,
+      "name": "Victory Milk",
+      "TID": {
+        "name": "TID_DECO_CLASHBALL_TROPHYBEVERAGE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000137,
+      "name": "Cactus Guy",
+      "TID": {
+        "name": "TID_DECO_WILDWEST_CACTUS"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000138,
+      "name": "Cowboy Skeleton",
+      "TID": {
+        "name": "TID_DECO_WILDWEST_SKELLY"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000139,
+      "name": "Dragon Totem",
+      "TID": {
+        "name": "TID_DECO_WILDWEST_TOTEM"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000140,
+      "name": "Football Camp",
+      "TID": {
+        "name": "TID_DECO_CLASHBALL_GOAL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000141,
+      "name": "Wizard Vendor",
+      "TID": {
+        "name": "TID_DECO_ANIME_FORTUNETELLER"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000143,
+      "name": "Cherry Bonsai",
+      "TID": {
+        "name": "TID_DECO_ANIME_BONSAI_TREE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 10,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000144,
+      "name": "Chibi Archer",
+      "TID": {
+        "name": "TID_DECO_ANIME_CHIBI_ARCHER"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000145,
+      "name": "Kawaii Giant",
+      "TID": {
+        "name": "TID_DECO_ANIME_GIANT_SCHOOL_GIRL"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000146,
+      "name": "Beach Break",
+      "TID": {
+        "name": "TID_DECO_SC_BEACH_PARASOL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000147,
+      "name": "Brawl's Star",
+      "TID": {
+        "name": "TID_DECO_SC_BRAWLSTARS"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000148,
+      "name": "Gargantuan Gauntlet",
+      "TID": {
+        "name": "TID_DECO_SC_GAUNTLET"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000149,
+      "name": "Heroic Chicken",
+      "TID": {
+        "name": "TID_DECO_SC_HAYDAY_CHICKEN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000150,
+      "name": "Sleepy King",
+      "TID": {
+        "name": "TID_DECO_SC_ROYALE_BED"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000151,
+      "name": "Champion's Flame",
+      "TID": {
+        "name": "TID_DECO_CLASHGAMES_FIREBOWL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000152,
+      "name": "Goblin High Dive",
+      "TID": {
+        "name": "TID_DECO_CLASHGAMES_GOBLINDIVE"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000153,
+      "name": "Foot Tribute",
+      "TID": {
+        "name": "TID_DECO_CLASHGAMES_ARCHERFOOT"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 10,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000154,
+      "name": "Pretty Portal",
+      "TID": {
+        "name": "TID_DECO_TTRPG_TREEPORTAL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000155,
+      "name": "Decision Dice",
+      "TID": {
+        "name": "TID_DECO_TTRPG_SUPERDECO_D20"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000156,
+      "name": "Cuddly Chest",
+      "TID": {
+        "name": "TID_DECO_TTRPG_MIMIC_CHEST"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000157,
+      "name": "Hydra Headstone",
+      "TID": {
+        "name": "TID_DECO_CLASHOWEEN_2024"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000158,
+      "name": "Jailbroken Box",
+      "TID": {
+        "name": "TID_DECO_CLASHOWEEN_2024_PRISONBOX"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000159,
+      "name": "Bubble Boil Cauldron",
+      "TID": {
+        "name": "TID_DECO_CLASHOWEEN_2024_SUPERDECO_CAULDRON"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000160,
+      "name": "Abra-Cada-Brewer",
+      "TID": {
+        "name": "TID_DECO_SUPERDECO_MOCHAPOT"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000161,
+      "name": "Festival Lantern",
+      "TID": {
+        "name": "TID_DECO_DIWALI_2024"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000162,
+      "name": "Rocking Reindeer",
+      "TID": {
+        "name": "TID_DECO_CLASHMAS_2024"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000163,
+      "name": "Clockwork Choir",
+      "TID": {
+        "name": "TID_DECO_CLASHMAS_2024_CHOIR"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000164,
+      "name": "Snow Globe",
+      "TID": {
+        "name": "TID_DECO_CLASHMAS_2024_SUPERDECO_GLOBE"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000165,
+      "name": "Gift Bag",
+      "TID": {
+        "name": "TID_DECO_CLASHMAS_2024_SACK"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000166,
+      "name": "Snake Shrine",
+      "TID": {
+        "name": "TID_DECO_LNY_2025"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000167,
+      "name": "Monk Statue",
+      "TID": {
+        "name": "TID_DECO_LNY_2025_MONK"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000168,
+      "name": "Cozy Sauna",
+      "TID": {
+        "name": "TID_DECO_FIRE_ICE_SAUNA"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000169,
+      "name": "Lucky Cookies",
+      "TID": {
+        "name": "TID_DECO_LNY_2025_COOKIE"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000170,
+      "name": "Shooting Range",
+      "TID": {
+        "name": "TID_DECO_MILITARY_2025_SUPERDECO_RANGE"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000171,
+      "name": "WWE Title",
+      "TID": {
+        "name": "TID_DECO_APRIL_2025"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000172,
+      "name": "Rumbling Goblins",
+      "TID": {
+        "name": "TID_DECO_APRIL_GOBLINS_2025"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000173,
+      "name": "Golden Giant",
+      "TID": {
+        "name": "TID_DECO_COC_GIANT_2025"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000174,
+      "name": "Creator Fountain",
+      "TID": {
+        "name": "TID_CREATOR_FOUNTAIN_DECO"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000175,
+      "name": "Surprise Wheel",
+      "TID": {
+        "name": "TID_DECO_APRIL_2025_SUPERDECO"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000176,
+      "name": "Sacred Gate",
+      "TID": {
+        "name": "TID_DECO_JAPAN_2025"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000177,
+      "name": "Jingle Maker",
+      "TID": {
+        "name": "TID_DECO_DARKDAYS_2025_SUPERDECO"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000178,
+      "name": "Looter Wagon",
+      "TID": {
+        "name": "TID_DECO_DARKDAYS_2025"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000179,
+      "name": "Frozen Wizard",
+      "TID": {
+        "name": "TID_DECO_CLASHARAMA_FROZEN_WIZARD_2025"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000180,
+      "name": "Clashy Carving",
+      "TID": {
+        "name": "TID_DECO_CLASHARAMA_EP01_SUPERDECO"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000181,
+      "name": "Sketch Summoner",
+      "TID": {
+        "name": "TID_DECO_CLASHARAMA_EP02_SUPERDECO_PAINT"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000182,
+      "name": "Cyber Hologram",
+      "TID": {
+        "name": "TID_DECO_CYBERCLASH_HOLOPROJECTOR"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000183,
+      "name": "Soda Stand",
+      "TID": {
+        "name": "TID_DECO_CLASHARAMA_SODASTAND_2025"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000184,
+      "name": "Party Bench",
+      "TID": {
+        "name": "TID_DECO_CLASHARAMA_TABLE_2025"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000185,
+      "name": "Justice Crown",
+      "TID": {
+        "name": "TID_DECO_COMMUNITY_CROWN_AND_SWORD"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000186,
+      "name": "Cosmic Lantern",
+      "TID": {
+        "name": "TID_COSMICCURSE_DECO_LANTERN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 10,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000187,
+      "name": "Electro Skull",
+      "TID": {
+        "name": "TID_COMM_DECO_EDRAGSKULL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000188,
+      "name": "Meteor Observer",
+      "TID": {
+        "name": "TID_DECO_COSMIC_TELESCOPE"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000189,
+      "name": "Fortune Printer",
+      "TID": {
+        "name": "TID_WASTELANDS_DECO_COGULATOR"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000190,
+      "name": "Boom Box",
+      "TID": {
+        "name": "TID_DECO_COSMIC_BOOMBOX"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000191,
+      "name": "Cursed Tome",
+      "TID": {
+        "name": "TID_DECO_COSMIC_BOOK_OF_SPELLS"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000192,
+      "name": "Eagle Monument",
+      "TID": {
+        "name": "TID_DECO_COMMUNITY_EAGLEHEAD"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 0,
+      "village": "home"
+    },
+    {
+      "_id": 18000193,
+      "name": "Card Collector",
+      "TID": {
+        "name": "TID_DECO_QUEST_COLLECTOR"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000194,
+      "name": "The Master Statue",
+      "TID": {
+        "name": "TID_DECORATION_LEAGUE_I_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 0,
+      "build_resource": "Sparky Stones",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000195,
+      "name": "The Contender Statue",
+      "TID": {
+        "name": "TID_DECORATION_LEAGUE_II_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 0,
+      "build_resource": "Sparky Stones",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000196,
+      "name": "Smoky Stove",
+      "TID": {
+        "name": "TID_DECO_SMOKY_STOVE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000197,
+      "name": "Wish Lamp",
+      "TID": {
+        "name": "TID_SUPERDECO_MYSTICAL_LAMP"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000198,
+      "name": "Lucky Shoe",
+      "TID": {
+        "name": "TID_DECO_LNY_HORSESHOE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 10,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000199,
+      "name": "Brawny Battleaxe",
+      "TID": {
+        "name": "TID_EVENT_DECO_FLEX_AXE"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000200,
+      "name": "Crafted Statue",
+      "TID": {
+        "name": "TID_PRESTIGE_DECO_CRAFTED_DEFENCES"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Sparky Stones",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000201,
+      "name": "Handsome Scroll",
+      "TID": {
+        "name": "TID_EVENT_DECO_LNY26_SCROLL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000202,
+      "name": "Flame Horse",
+      "TID": {
+        "name": "TID_SUPERDECO_FIRE_HORSE"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000203,
+      "name": "Hungry Hound",
+      "TID": {
+        "name": "TID_SUPERDECO_WOLF_STATUE"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000204,
+      "name": "Frozen Stone",
+      "TID": {
+        "name": "TID_OBSTACLE_FROZEN_STONE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 10,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000205,
+      "name": "Darkness Throne",
+      "TID": {
+        "name": "TID_DECO_DARKNESS_THRONE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000206,
+      "name": "Hog Skull",
+      "TID": {
+        "name": "TID_DECO_HOGSKULL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000207,
+      "name": "Builder Bust",
+      "TID": {
+        "name": "TID_DECO_BUILDER_HEAD"
+      },
+      "width": 2,
+      "not_in_shop": false,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Sparky Stones",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000208,
+      "name": "Electro Dragon Statue",
+      "TID": {
+        "name": "TID_DECO_EDRAG_STATUE"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000209,
+      "name": "Barbble Head",
+      "TID": {
+        "name": "TID_SUPERDECO_BARBBLE_HEAD"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000210,
+      "name": "Mech Bull",
+      "TID": {
+        "name": "TID_DECO_MECHA_BULL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000211,
+      "name": "Bone Idol",
+      "TID": {
+        "name": "TID_DECO_BONE_IDOL"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000212,
+      "name": "Face Melter",
+      "TID": {
+        "name": "TID_OBSTACLE_FACEMELTER"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000213,
+      "name": "Meteor Crown",
+      "TID": {
+        "name": "TID_DECO_COMMUNITY_CROWN_AND_SWORD_TH18"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000214,
+      "name": "Team Jade vs. Skeletons",
+      "TID": {
+        "name": "TID_DECO_COMMUNITY_SKELETON_ATTACK_GREEN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000215,
+      "name": "Team Amethyst vs. Skeletons",
+      "TID": {
+        "name": "TID_DECO_COMMUNITY_SKELETON_ATTACK_PURPLE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000216,
+      "name": "Barbarian Fury",
+      "TID": {
+        "name": "TID_DECO_BARBARIAN_SPIRIT"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000217,
+      "name": "Lucky Cat",
+      "TID": {
+        "name": "TID_DECO_LUCKY_CAT"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000218,
+      "name": "Fury Figurine",
+      "TID": {
+        "name": "TID_SUPERDECO_ANIME_STATUES"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000219,
+      "name": "Sports Ball 2026",
+      "TID": {
+        "name": "TID_DECO_TROPHYBALL26_STATUE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000220,
+      "name": "Dragon Fountain",
+      "TID": {
+        "name": "TID_DECO_DRAGON_POOL"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000221,
+      "name": "Medusa’s Masterpiece",
+      "TID": {
+        "name": "TID_DECO_ODD_CHALLENGE_VALKYRIE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000222,
+      "name": "Manga Collection",
+      "TID": {
+        "name": "TID_EVENT_DECO_MANGA_READER"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000223,
+      "name": "Clan Chief 2026",
+      "TID": {
+        "name": "TID_ARCH_DECO_CLAN_CHIEF"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000224,
+      "name": "Lone Chief 2026",
+      "TID": {
+        "name": "TID_ARCH_DECO_LONE_CHIEF"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000225,
+      "name": "Fresh Chief 2026",
+      "TID": {
+        "name": "TID_ARCH_DECO_NEW_CHIEF"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000226,
+      "name": "Teamwork Chief 2026",
+      "TID": {
+        "name": "TID_ARCH_DECO_SOCIAL_CHIEF"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000227,
+      "name": "Comeback Chief 2026",
+      "TID": {
+        "name": "TID_ARCH_DECO_WELCOME_BACK_CHIEF"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000228,
+      "name": "War Chief 2026",
+      "TID": {
+        "name": "TID_ARCH_DECO_WAR_CHIEF"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000229,
+      "name": "Legend Trophy",
+      "TID": {
+        "name": "TID_LEAGUE_DECO_TROPHY_GRAB"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "League Medals",
+      "build_cost": 2000,
+      "village": "home"
+    },
+    {
+      "_id": 18000230,
+      "name": "Kingly Helmet",
+      "TID": {
+        "name": "TID_DECO_ODD_HELM"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000231,
+      "name": "Loyal Chief 2026",
+      "TID": {
+        "name": "TID_ARCH_DECO_VILLAGE_CHIEF"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000232,
+      "name": "Torch",
+      "TID": {
+        "name": "TID_DECORATION_TORCH"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": false,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000233,
+      "name": "Card Flipper",
+      "TID": {
+        "name": "TID_SUPERDECO_CARD_CONJUROR"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000234,
+      "name": "Awesome Orb",
+      "TID": {
+        "name": "TID_DECO_AWESOME_ORB"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000235,
+      "name": "Immortal Monument",
+      "TID": {
+        "name": "TID_SUPERDECO_HERO_BUSTS"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    }
+  ]
+}

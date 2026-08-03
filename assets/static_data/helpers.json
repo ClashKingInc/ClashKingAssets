@@ -1,0 +1,290 @@
+{
+  "items": [
+    {
+      "_id": 93000000,
+      "name": "Builder's Apprentice",
+      "info": "Builder's Apprentice helps Builders complete upgrades faster. Assign him once a day and level him up to work even faster!",
+      "TID": {
+        "name": "TID_BUILDER_APPRENTICE",
+        "info": "TID_BUILDER_APPRENTICE_INFO"
+      },
+      "upgrade_resource": "Gems",
+      "levels": [
+        {
+          "level": 1,
+          "required_townhall": 10,
+          "upgrade_cost": 500,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 1
+        },
+        {
+          "level": 2,
+          "required_townhall": 10,
+          "upgrade_cost": 500,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 2
+        },
+        {
+          "level": 3,
+          "required_townhall": 11,
+          "upgrade_cost": 750,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 3
+        },
+        {
+          "level": 4,
+          "required_townhall": 11,
+          "upgrade_cost": 750,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 4
+        },
+        {
+          "level": 5,
+          "required_townhall": 12,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 5
+        },
+        {
+          "level": 6,
+          "required_townhall": 12,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 6
+        },
+        {
+          "level": 7,
+          "required_townhall": 13,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 7
+        },
+        {
+          "level": 8,
+          "required_townhall": 14,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 8
+        }
+      ]
+    },
+    {
+      "_id": 93000001,
+      "name": "Lab Assistant",
+      "info": "Lab Assistant helps speed up research. Assign him once a day and level him up to work even faster!",
+      "TID": {
+        "name": "TID_RESEARCHER_APPRENTICE",
+        "info": "TID_RESEARCHER_APPRENTICE_INFO"
+      },
+      "upgrade_resource": "Gems",
+      "levels": [
+        {
+          "level": 1,
+          "required_townhall": 9,
+          "upgrade_cost": 0,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 1
+        },
+        {
+          "level": 2,
+          "required_townhall": 10,
+          "upgrade_cost": 500,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 2
+        },
+        {
+          "level": 3,
+          "required_townhall": 10,
+          "upgrade_cost": 500,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 3
+        },
+        {
+          "level": 4,
+          "required_townhall": 11,
+          "upgrade_cost": 500,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 4
+        },
+        {
+          "level": 5,
+          "required_townhall": 12,
+          "upgrade_cost": 750,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 5
+        },
+        {
+          "level": 6,
+          "required_townhall": 12,
+          "upgrade_cost": 750,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 6
+        },
+        {
+          "level": 7,
+          "required_townhall": 13,
+          "upgrade_cost": 750,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 7
+        },
+        {
+          "level": 8,
+          "required_townhall": 13,
+          "upgrade_cost": 750,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 8
+        },
+        {
+          "level": 9,
+          "required_townhall": 14,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 9
+        },
+        {
+          "level": 10,
+          "required_townhall": 14,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 10
+        },
+        {
+          "level": 11,
+          "required_townhall": 15,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 11
+        },
+        {
+          "level": 12,
+          "required_townhall": 16,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 3600,
+          "boost_multiplier": 12
+        }
+      ]
+    },
+    {
+      "_id": 93000002,
+      "name": "Alchemist",
+      "info": "Alchemist converts resources into different types once a day. Level her up to increase her effectiveness!",
+      "TID": {
+        "name": "TID_ALCHEMIST_APPRENTICE",
+        "info": "TID_ALCHEMIST_APPRENTICE_INFO"
+      },
+      "upgrade_resource": "Gems",
+      "levels": [
+        {
+          "level": 1,
+          "required_townhall": 11,
+          "upgrade_cost": 100,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 2,
+          "required_townhall": 12,
+          "upgrade_cost": 250,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 3,
+          "required_townhall": 13,
+          "upgrade_cost": 500,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 4,
+          "required_townhall": 14,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 5,
+          "required_townhall": 15,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 6,
+          "required_townhall": 16,
+          "upgrade_cost": 1500,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 7,
+          "required_townhall": 17,
+          "upgrade_cost": 1500,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        }
+      ]
+    },
+    {
+      "_id": 93000003,
+      "name": "Prospector",
+      "info": "Prospector",
+      "TID": {
+        "name": "TID_PROSPECTOR_APPRENTICE",
+        "info": "TID_PROSPECTOR_APPRENTICE_INFO"
+      },
+      "upgrade_resource": "Gems",
+      "levels": [
+        {
+          "level": 1,
+          "required_townhall": 10,
+          "upgrade_cost": 100,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 2,
+          "required_townhall": 10,
+          "upgrade_cost": 250,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 3,
+          "required_townhall": 10,
+          "upgrade_cost": 500,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 4,
+          "required_townhall": 10,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 5,
+          "required_townhall": 10,
+          "upgrade_cost": 1000,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 6,
+          "required_townhall": 10,
+          "upgrade_cost": 1500,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        },
+        {
+          "level": 7,
+          "required_townhall": 10,
+          "upgrade_cost": 1500,
+          "boost_time_seconds": 4,
+          "boost_multiplier": 0
+        }
+      ]
+    }
+  ]
+}

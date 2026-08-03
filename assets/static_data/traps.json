@@ -1,0 +1,1076 @@
+{
+  "items": [
+    {
+      "_id": 12000000,
+      "name": "Bomb",
+      "info": "Nothing says 'STAY OUT' quite like a good old-fashioned hidden bomb.",
+      "TID": {
+        "name": "TID_TRAP_MINE",
+        "info": "TID_TRAP_MINE_INFO"
+      },
+      "width": 1,
+      "air_trigger": false,
+      "ground_trigger": true,
+      "damage_radius": 300,
+      "trigger_radius": 150,
+      "village": "home",
+      "upgrade_resource": "Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 400,
+          "build_time": 0,
+          "required_townhall": 1,
+          "damage": 20,
+          "strength_weight": 20
+        },
+        {
+          "level": 2,
+          "build_cost": 1000,
+          "build_time": 60,
+          "required_townhall": 3,
+          "damage": 24,
+          "strength_weight": 24
+        },
+        {
+          "level": 3,
+          "build_cost": 10000,
+          "build_time": 300,
+          "required_townhall": 5,
+          "damage": 29,
+          "strength_weight": 29
+        },
+        {
+          "level": 4,
+          "build_cost": 40000,
+          "build_time": 1800,
+          "required_townhall": 7,
+          "damage": 35,
+          "strength_weight": 35
+        },
+        {
+          "level": 5,
+          "build_cost": 100000,
+          "build_time": 3600,
+          "required_townhall": 8,
+          "damage": 42,
+          "strength_weight": 42
+        },
+        {
+          "level": 6,
+          "build_cost": 230000,
+          "build_time": 7200,
+          "required_townhall": 9,
+          "damage": 54,
+          "strength_weight": 54
+        },
+        {
+          "level": 7,
+          "build_cost": 330000,
+          "build_time": 10800,
+          "required_townhall": 10,
+          "damage": 72,
+          "strength_weight": 72
+        },
+        {
+          "level": 8,
+          "build_cost": 500000,
+          "build_time": 14400,
+          "required_townhall": 11,
+          "damage": 92,
+          "strength_weight": 92
+        },
+        {
+          "level": 9,
+          "build_cost": 750000,
+          "build_time": 21600,
+          "required_townhall": 13,
+          "damage": 125,
+          "strength_weight": 125
+        },
+        {
+          "level": 10,
+          "build_cost": 1300000,
+          "build_time": 43200,
+          "required_townhall": 14,
+          "damage": 140,
+          "strength_weight": 140
+        },
+        {
+          "level": 11,
+          "build_cost": 2500000,
+          "build_time": 64800,
+          "required_townhall": 15,
+          "damage": 155,
+          "strength_weight": 155
+        },
+        {
+          "level": 12,
+          "build_cost": 4000000,
+          "build_time": 86400,
+          "required_townhall": 16,
+          "damage": 170,
+          "strength_weight": 170
+        },
+        {
+          "level": 13,
+          "build_cost": 8500000,
+          "build_time": 172800,
+          "required_townhall": 17,
+          "damage": 185,
+          "strength_weight": 185
+        },
+        {
+          "level": 14,
+          "build_cost": 14000000,
+          "build_time": 691200,
+          "required_townhall": 18,
+          "damage": 200,
+          "strength_weight": 200
+        }
+      ]
+    },
+    {
+      "_id": 12000001,
+      "name": "Spring Trap",
+      "info": "This bouncy little number tosses an unwanted visitor right off your property!",
+      "TID": {
+        "name": "TID_TRAP_EJECTOR",
+        "info": "TID_TRAP_EJECTOR_INFO"
+      },
+      "width": 1,
+      "air_trigger": false,
+      "ground_trigger": true,
+      "damage_radius": 0,
+      "trigger_radius": 100,
+      "village": "home",
+      "upgrade_resource": "Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 2000,
+          "build_time": 0,
+          "required_townhall": 1,
+          "damage": 0,
+          "strength_weight": 400
+        },
+        {
+          "level": 2,
+          "build_cost": 130000,
+          "build_time": 3600,
+          "required_townhall": 7,
+          "damage": 250,
+          "strength_weight": 550
+        },
+        {
+          "level": 3,
+          "build_cost": 240000,
+          "build_time": 7200,
+          "required_townhall": 8,
+          "damage": 300,
+          "strength_weight": 624
+        },
+        {
+          "level": 4,
+          "build_cost": 350000,
+          "build_time": 10800,
+          "required_townhall": 9,
+          "damage": 350,
+          "strength_weight": 702
+        },
+        {
+          "level": 5,
+          "build_cost": 800000,
+          "build_time": 14400,
+          "required_townhall": 10,
+          "damage": 400,
+          "strength_weight": 784
+        },
+        {
+          "level": 6,
+          "build_cost": 1000000,
+          "build_time": 21600,
+          "required_townhall": 11,
+          "damage": 500,
+          "strength_weight": 859
+        },
+        {
+          "level": 7,
+          "build_cost": 1700000,
+          "build_time": 28800,
+          "required_townhall": 12,
+          "damage": 600,
+          "strength_weight": 934
+        },
+        {
+          "level": 8,
+          "build_cost": 2000000,
+          "build_time": 43200,
+          "required_townhall": 13,
+          "damage": 750,
+          "strength_weight": 1009
+        },
+        {
+          "level": 9,
+          "build_cost": 3000000,
+          "build_time": 64800,
+          "required_townhall": 14,
+          "damage": 900,
+          "strength_weight": 1084
+        },
+        {
+          "level": 10,
+          "build_cost": 4000000,
+          "build_time": 86400,
+          "required_townhall": 15,
+          "damage": 1050,
+          "strength_weight": 1159
+        },
+        {
+          "level": 11,
+          "build_cost": 6000000,
+          "build_time": 172800,
+          "required_townhall": 16,
+          "damage": 1200,
+          "strength_weight": 1234
+        },
+        {
+          "level": 12,
+          "build_cost": 13000000,
+          "build_time": 259200,
+          "required_townhall": 17,
+          "damage": 1300,
+          "strength_weight": 1309
+        },
+        {
+          "level": 13,
+          "build_cost": 16000000,
+          "build_time": 950400,
+          "required_townhall": 18,
+          "damage": 1400,
+          "strength_weight": 1370
+        }
+      ]
+    },
+    {
+      "_id": 12000005,
+      "name": "Air Bomb",
+      "info": "Latest invention in the field of flying pest control. This trap can blast multiple air units in a small area.",
+      "TID": {
+        "name": "TID_TRAP_AIR",
+        "info": "TID_TRAP_AIR_INFO"
+      },
+      "width": 1,
+      "air_trigger": true,
+      "ground_trigger": false,
+      "damage_radius": 300,
+      "trigger_radius": 400,
+      "village": "home",
+      "upgrade_resource": "Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 4000,
+          "build_time": 0,
+          "required_townhall": 1,
+          "damage": 100,
+          "strength_weight": 100
+        },
+        {
+          "level": 2,
+          "build_cost": 20000,
+          "build_time": 1800,
+          "required_townhall": 5,
+          "damage": 120,
+          "strength_weight": 120
+        },
+        {
+          "level": 3,
+          "build_cost": 75000,
+          "build_time": 3600,
+          "required_townhall": 7,
+          "damage": 144,
+          "strength_weight": 144
+        },
+        {
+          "level": 4,
+          "build_cost": 300000,
+          "build_time": 14400,
+          "required_townhall": 9,
+          "damage": 173,
+          "strength_weight": 173
+        },
+        {
+          "level": 5,
+          "build_cost": 550000,
+          "build_time": 28800,
+          "required_townhall": 11,
+          "damage": 208,
+          "strength_weight": 208
+        },
+        {
+          "level": 6,
+          "build_cost": 800000,
+          "build_time": 43200,
+          "required_townhall": 12,
+          "damage": 232,
+          "strength_weight": 232
+        },
+        {
+          "level": 7,
+          "build_cost": 1000000,
+          "build_time": 50400,
+          "required_townhall": 13,
+          "damage": 252,
+          "strength_weight": 252
+        },
+        {
+          "level": 8,
+          "build_cost": 1200000,
+          "build_time": 57600,
+          "required_townhall": 13,
+          "damage": 280,
+          "strength_weight": 280
+        },
+        {
+          "level": 9,
+          "build_cost": 2000000,
+          "build_time": 86400,
+          "required_townhall": 14,
+          "damage": 325,
+          "strength_weight": 325
+        },
+        {
+          "level": 10,
+          "build_cost": 3000000,
+          "build_time": 129600,
+          "required_townhall": 15,
+          "damage": 350,
+          "strength_weight": 350
+        },
+        {
+          "level": 11,
+          "build_cost": 5000000,
+          "build_time": 172800,
+          "required_townhall": 16,
+          "damage": 375,
+          "strength_weight": 375
+        },
+        {
+          "level": 12,
+          "build_cost": 9500000,
+          "build_time": 259200,
+          "required_townhall": 17,
+          "damage": 400,
+          "strength_weight": 400
+        },
+        {
+          "level": 13,
+          "build_cost": 15000000,
+          "build_time": 777600,
+          "required_townhall": 18,
+          "damage": 425,
+          "strength_weight": 425
+        }
+      ]
+    },
+    {
+      "_id": 12000002,
+      "name": "Giant Bomb",
+      "info": "When you're looking for a Big Boom, you need the Giant Bomb.",
+      "TID": {
+        "name": "TID_TRAP_SUPERBOMB",
+        "info": "TID_TRAP_SUPERBOMB_INFO"
+      },
+      "width": 2,
+      "air_trigger": false,
+      "ground_trigger": true,
+      "damage_radius": null,
+      "trigger_radius": 200,
+      "village": "home",
+      "upgrade_resource": "Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 12500,
+          "build_time": 0,
+          "required_townhall": 1,
+          "damage": 175,
+          "strength_weight": 263
+        },
+        {
+          "level": 2,
+          "build_cost": 75000,
+          "build_time": 3600,
+          "required_townhall": 6,
+          "damage": 200,
+          "strength_weight": 300
+        },
+        {
+          "level": 3,
+          "build_cost": 220000,
+          "build_time": 10800,
+          "required_townhall": 8,
+          "damage": 225,
+          "strength_weight": 338
+        },
+        {
+          "level": 4,
+          "build_cost": 750000,
+          "build_time": 14400,
+          "required_townhall": 10,
+          "damage": 250,
+          "strength_weight": 375
+        },
+        {
+          "level": 5,
+          "build_cost": 900000,
+          "build_time": 36000,
+          "required_townhall": 11,
+          "damage": 275,
+          "strength_weight": 413
+        },
+        {
+          "level": 6,
+          "build_cost": 1300000,
+          "build_time": 39600,
+          "required_townhall": 13,
+          "damage": 325,
+          "strength_weight": 488
+        },
+        {
+          "level": 7,
+          "build_cost": 1500000,
+          "build_time": 43200,
+          "required_townhall": 13,
+          "damage": 375,
+          "strength_weight": 563
+        },
+        {
+          "level": 8,
+          "build_cost": 2000000,
+          "build_time": 86400,
+          "required_townhall": 14,
+          "damage": 400,
+          "strength_weight": 600
+        },
+        {
+          "level": 9,
+          "build_cost": 3200000,
+          "build_time": 172800,
+          "required_townhall": 15,
+          "damage": 425,
+          "strength_weight": 638
+        },
+        {
+          "level": 10,
+          "build_cost": 5500000,
+          "build_time": 216000,
+          "required_townhall": 16,
+          "damage": 450,
+          "strength_weight": 675
+        },
+        {
+          "level": 11,
+          "build_cost": 10000000,
+          "build_time": 345600,
+          "required_townhall": 17,
+          "damage": 475,
+          "strength_weight": 750
+        },
+        {
+          "level": 12,
+          "build_cost": 17000000,
+          "build_time": 907200,
+          "required_townhall": 18,
+          "damage": 490,
+          "strength_weight": 825
+        }
+      ]
+    },
+    {
+      "_id": 12000006,
+      "name": "Seeking Air Mine",
+      "info": "Is it a bird? Is it a plane? Well it makes no difference as the Seeking Air Mine will blow it sky high. This trap does devastating damage to a single air unit.",
+      "TID": {
+        "name": "TID_TRAP_AIR_MEGA",
+        "info": "TID_TRAP_AIR_MEGA_INFO"
+      },
+      "width": 1,
+      "air_trigger": true,
+      "ground_trigger": false,
+      "damage_radius": 0,
+      "trigger_radius": 400,
+      "village": "home",
+      "upgrade_resource": "Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 12000,
+          "build_time": 0,
+          "required_townhall": 1,
+          "damage": 1500,
+          "strength_weight": 225
+        },
+        {
+          "level": 2,
+          "build_cost": 600000,
+          "build_time": 21600,
+          "required_townhall": 9,
+          "damage": 1800,
+          "strength_weight": 270
+        },
+        {
+          "level": 3,
+          "build_cost": 1200000,
+          "build_time": 43200,
+          "required_townhall": 10,
+          "damage": 2100,
+          "strength_weight": 315
+        },
+        {
+          "level": 4,
+          "build_cost": 2500000,
+          "build_time": 129600,
+          "required_townhall": 13,
+          "damage": 2500,
+          "strength_weight": 375
+        },
+        {
+          "level": 5,
+          "build_cost": 5000000,
+          "build_time": 172800,
+          "required_townhall": 15,
+          "damage": 2800,
+          "strength_weight": 420
+        },
+        {
+          "level": 6,
+          "build_cost": 6500000,
+          "build_time": 259200,
+          "required_townhall": 16,
+          "damage": 3000,
+          "strength_weight": 450
+        },
+        {
+          "level": 7,
+          "build_cost": 12000000,
+          "build_time": 432000,
+          "required_townhall": 17,
+          "damage": 3200,
+          "strength_weight": 500
+        },
+        {
+          "level": 8,
+          "build_cost": 19000000,
+          "build_time": 993600,
+          "required_townhall": 18,
+          "damage": 3350,
+          "strength_weight": 550
+        }
+      ]
+    },
+    {
+      "_id": 12000008,
+      "name": "Skeleton Trap",
+      "info": "Ambush and distract unsuspecting foes with a surprise skirmish of short-lived, but sneaky skeleton troops! Skeleton Traps can be configured to pursue either ground or air troops.",
+      "TID": {
+        "name": "TID_TRAP_HALLOWEEN_SKEL",
+        "info": "TID_TRAP_HALLOWEEN_SKEL_INFO"
+      },
+      "width": 1,
+      "air_trigger": false,
+      "ground_trigger": true,
+      "damage_radius": 0,
+      "trigger_radius": 500,
+      "village": "home",
+      "upgrade_resource": "Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 6000,
+          "build_time": 0,
+          "required_townhall": 1,
+          "damage": 0,
+          "strength_weight": 160
+        },
+        {
+          "level": 2,
+          "build_cost": 250000,
+          "build_time": 18000,
+          "required_townhall": 8,
+          "damage": 0,
+          "strength_weight": 240
+        },
+        {
+          "level": 3,
+          "build_cost": 400000,
+          "build_time": 28800,
+          "required_townhall": 9,
+          "damage": 0,
+          "strength_weight": 320
+        },
+        {
+          "level": 4,
+          "build_cost": 1000000,
+          "build_time": 43200,
+          "required_townhall": 10,
+          "damage": 0,
+          "strength_weight": 400
+        },
+        {
+          "level": 5,
+          "build_cost": 18000000,
+          "build_time": 604800,
+          "required_townhall": 18,
+          "damage": 0,
+          "strength_weight": 480
+        }
+      ]
+    },
+    {
+      "_id": 12000016,
+      "name": "Tornado Trap",
+      "info": "Wind and stones may break some bones, but this trap will definitely confound you. Just place one of these traps down, and the released vortex will draw the enemy troops in, hindering their charge.",
+      "TID": {
+        "name": "TID_TRAP_TORNADO",
+        "info": "TID_TRAP_TORNADO_INFO"
+      },
+      "width": 1,
+      "air_trigger": true,
+      "ground_trigger": true,
+      "damage_radius": 300,
+      "trigger_radius": 300,
+      "village": "home",
+      "upgrade_resource": "Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 1000000,
+          "build_time": 0,
+          "required_townhall": 11,
+          "damage": 0,
+          "strength_weight": 800
+        },
+        {
+          "level": 2,
+          "build_cost": 2000000,
+          "build_time": 86400,
+          "required_townhall": 11,
+          "damage": 0,
+          "strength_weight": 900
+        },
+        {
+          "level": 3,
+          "build_cost": 2500000,
+          "build_time": 172800,
+          "required_townhall": 12,
+          "damage": 0,
+          "strength_weight": 1000
+        }
+      ]
+    },
+    {
+      "_id": 12000020,
+      "name": "Giga Bomb",
+      "info": "Villagers didn't want to keep this dangerous weapon inside the Town Hall, so they moved it out! The Giga Bomb pushes enemies back with massive damage. This trap is so deadly, it doesn't need to hide!",
+      "TID": {
+        "name": "TID_TRAP_GIGA_BOMB",
+        "info": "TID_TRAP_GIGA_BOMB_INFO"
+      },
+      "width": 2,
+      "air_trigger": true,
+      "ground_trigger": true,
+      "damage_radius": 450,
+      "trigger_radius": 350,
+      "village": "home",
+      "upgrade_resource": "Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 4500000,
+          "build_time": 0,
+          "required_townhall": 17,
+          "damage": 1100,
+          "strength_weight": 5000
+        },
+        {
+          "level": 2,
+          "build_cost": 8500000,
+          "build_time": 345600,
+          "required_townhall": 17,
+          "damage": 1200,
+          "strength_weight": 5500
+        },
+        {
+          "level": 3,
+          "build_cost": 12500000,
+          "build_time": 432000,
+          "required_townhall": 17,
+          "damage": 1300,
+          "strength_weight": 6000
+        },
+        {
+          "level": 4,
+          "build_cost": 20000000,
+          "build_time": 1123200,
+          "required_townhall": 18,
+          "damage": 1400,
+          "strength_weight": 6500
+        }
+      ]
+    },
+    {
+      "_id": 12000011,
+      "name": "Push Trap",
+      "info": "Toss ground troops in a direction you choose. Heave ho!",
+      "TID": {
+        "name": "TID_PUSHER",
+        "info": "TID_PUSHER_INFO"
+      },
+      "width": 2,
+      "air_trigger": false,
+      "ground_trigger": true,
+      "damage_radius": 350,
+      "trigger_radius": 100,
+      "village": "builderBase",
+      "upgrade_resource": "Builder Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 1000,
+          "build_time": 120,
+          "required_townhall": 2,
+          "damage": 0,
+          "strength_weight": 100
+        },
+        {
+          "level": 2,
+          "build_cost": 3000,
+          "build_time": 300,
+          "required_townhall": 3,
+          "damage": 0,
+          "strength_weight": 110
+        },
+        {
+          "level": 3,
+          "build_cost": 10000,
+          "build_time": 1200,
+          "required_townhall": 3,
+          "damage": 0,
+          "strength_weight": 120
+        },
+        {
+          "level": 4,
+          "build_cost": 20000,
+          "build_time": 7200,
+          "required_townhall": 4,
+          "damage": 0,
+          "strength_weight": 130
+        },
+        {
+          "level": 5,
+          "build_cost": 40000,
+          "build_time": 14400,
+          "required_townhall": 5,
+          "damage": 0,
+          "strength_weight": 140
+        },
+        {
+          "level": 6,
+          "build_cost": 60000,
+          "build_time": 43200,
+          "required_townhall": 6,
+          "damage": 0,
+          "strength_weight": 150
+        },
+        {
+          "level": 7,
+          "build_cost": 100000,
+          "build_time": 57600,
+          "required_townhall": 7,
+          "damage": 0,
+          "strength_weight": 160
+        },
+        {
+          "level": 8,
+          "build_cost": 200000,
+          "build_time": 86400,
+          "required_townhall": 8,
+          "damage": 0,
+          "strength_weight": 170
+        },
+        {
+          "level": 9,
+          "build_cost": 300000,
+          "build_time": 129600,
+          "required_townhall": 9,
+          "damage": 0,
+          "strength_weight": 180
+        },
+        {
+          "level": 10,
+          "build_cost": 500000,
+          "build_time": 172800,
+          "required_townhall": 10,
+          "damage": 0,
+          "strength_weight": 190
+        }
+      ]
+    },
+    {
+      "_id": 12000013,
+      "name": "Mine",
+      "info": "Plan an explosive surprise for troops that get too close. Choose air or ground!",
+      "TID": {
+        "name": "TID_ADVANCED_TRAP",
+        "info": "TID_ADVANCED_TRAP_INFO"
+      },
+      "width": 1,
+      "air_trigger": false,
+      "ground_trigger": false,
+      "damage_radius": 500,
+      "trigger_radius": 400,
+      "village": "builderBase",
+      "upgrade_resource": "Builder Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 5000,
+          "build_time": 600,
+          "required_townhall": 3,
+          "damage": 80,
+          "strength_weight": 300
+        },
+        {
+          "level": 2,
+          "build_cost": 10000,
+          "build_time": 1800,
+          "required_townhall": 3,
+          "damage": 90,
+          "strength_weight": 330
+        },
+        {
+          "level": 3,
+          "build_cost": 15000,
+          "build_time": 3600,
+          "required_townhall": 3,
+          "damage": 100,
+          "strength_weight": 360
+        },
+        {
+          "level": 4,
+          "build_cost": 25000,
+          "build_time": 7200,
+          "required_townhall": 4,
+          "damage": 110,
+          "strength_weight": 390
+        },
+        {
+          "level": 5,
+          "build_cost": 50000,
+          "build_time": 21600,
+          "required_townhall": 5,
+          "damage": 120,
+          "strength_weight": 420
+        },
+        {
+          "level": 6,
+          "build_cost": 80000,
+          "build_time": 43200,
+          "required_townhall": 6,
+          "damage": 130,
+          "strength_weight": 450
+        },
+        {
+          "level": 7,
+          "build_cost": 120000,
+          "build_time": 86400,
+          "required_townhall": 7,
+          "damage": 140,
+          "strength_weight": 480
+        },
+        {
+          "level": 8,
+          "build_cost": 250000,
+          "build_time": 129600,
+          "required_townhall": 8,
+          "damage": 150,
+          "strength_weight": 510
+        },
+        {
+          "level": 9,
+          "build_cost": 500000,
+          "build_time": 172800,
+          "required_townhall": 9,
+          "damage": 165,
+          "strength_weight": 540
+        },
+        {
+          "level": 10,
+          "build_cost": 1500000,
+          "build_time": 216000,
+          "required_townhall": 10,
+          "damage": 180,
+          "strength_weight": 570
+        }
+      ]
+    },
+    {
+      "_id": 12000010,
+      "name": "Spring Trap",
+      "info": "This bouncy little number launches a small troop out of battle! Big troops with higher Housing Space are pushed back and damaged.",
+      "TID": {
+        "name": "TID_TRAP_EJECTOR",
+        "info": "TID_TRAP_EJECTOR_BB_INFO"
+      },
+      "width": 1,
+      "air_trigger": false,
+      "ground_trigger": true,
+      "damage_radius": 0,
+      "trigger_radius": 100,
+      "village": "builderBase",
+      "upgrade_resource": "Builder Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 10000,
+          "build_time": 1800,
+          "required_townhall": 3,
+          "damage": 100,
+          "strength_weight": 500
+        },
+        {
+          "level": 2,
+          "build_cost": 30000,
+          "build_time": 3600,
+          "required_townhall": 4,
+          "damage": 175,
+          "strength_weight": 550
+        },
+        {
+          "level": 3,
+          "build_cost": 100000,
+          "build_time": 86400,
+          "required_townhall": 6,
+          "damage": 250,
+          "strength_weight": 600
+        },
+        {
+          "level": 4,
+          "build_cost": 300000,
+          "build_time": 172800,
+          "required_townhall": 8,
+          "damage": 325,
+          "strength_weight": 650
+        },
+        {
+          "level": 5,
+          "build_cost": 500000,
+          "build_time": 259200,
+          "required_townhall": 10,
+          "damage": 400,
+          "strength_weight": 700
+        }
+      ]
+    },
+    {
+      "_id": 12000014,
+      "name": "Mega Mine",
+      "info": "A hidden dose of heavy destruction. Choose air or ground!",
+      "TID": {
+        "name": "TID_ADVANCED_MEGA_TRAP",
+        "info": "TID_ADVANCED_MEGA_TRAP_INFO"
+      },
+      "width": 2,
+      "air_trigger": false,
+      "ground_trigger": false,
+      "damage_radius": 400,
+      "trigger_radius": 300,
+      "village": "builderBase",
+      "upgrade_resource": "Builder Gold",
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 30000,
+          "build_time": 1800,
+          "required_townhall": 4,
+          "damage": 250,
+          "strength_weight": 600
+        },
+        {
+          "level": 2,
+          "build_cost": 40000,
+          "build_time": 3600,
+          "required_townhall": 4,
+          "damage": 275,
+          "strength_weight": 660
+        },
+        {
+          "level": 3,
+          "build_cost": 50000,
+          "build_time": 10800,
+          "required_townhall": 4,
+          "damage": 300,
+          "strength_weight": 720
+        },
+        {
+          "level": 4,
+          "build_cost": 80000,
+          "build_time": 21600,
+          "required_townhall": 4,
+          "damage": 330,
+          "strength_weight": 780
+        },
+        {
+          "level": 5,
+          "build_cost": 120000,
+          "build_time": 43200,
+          "required_townhall": 5,
+          "damage": 360,
+          "strength_weight": 840
+        },
+        {
+          "level": 6,
+          "build_cost": 300000,
+          "build_time": 86400,
+          "required_townhall": 6,
+          "damage": 395,
+          "strength_weight": 900
+        },
+        {
+          "level": 7,
+          "build_cost": 600000,
+          "build_time": 129600,
+          "required_townhall": 7,
+          "damage": 430,
+          "strength_weight": 960
+        },
+        {
+          "level": 8,
+          "build_cost": 1000000,
+          "build_time": 172800,
+          "required_townhall": 8,
+          "damage": 470,
+          "strength_weight": 1020
+        },
+        {
+          "level": 9,
+          "build_cost": 1400000,
+          "build_time": 259200,
+          "required_townhall": 9,
+          "damage": 510,
+          "strength_weight": 1080
+        },
+        {
+          "level": 10,
+          "build_cost": 2500000,
+          "build_time": 345600,
+          "required_townhall": 10,
+          "damage": 550,
+          "strength_weight": 1140
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,753 @@
+{
+  "items": [
+    {
+      "_id": 60000000,
+      "name": "Classic Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASSIC"
+      },
+      "type": "home",
+      "music": null,
+      "thumbnail": "sceneries/classic_scenery/thumbnail.webp",
+      "free": true,
+      "default": true
+    },
+    {
+      "_id": 60000001,
+      "name": "Classic Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASSIC"
+      },
+      "type": "builderBase",
+      "music": null,
+      "thumbnail": "sceneries/classic_scenery/thumbnail.webp",
+      "free": true,
+      "default": true
+    },
+    {
+      "_id": 60000002,
+      "name": "Classic Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASSIC"
+      },
+      "type": "war",
+      "music": null,
+      "thumbnail": "sceneries/classic_scenery/thumbnail.webp",
+      "free": true,
+      "default": true
+    },
+    {
+      "_id": 60000004,
+      "name": "Clashy Constructs Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASHY_CONSTRUCTS"
+      },
+      "type": "home",
+      "music": null,
+      "thumbnail": "sceneries/clashy_constructs_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000005,
+      "name": "Pirate Scenery",
+      "TID": {
+        "name": "TID_SCENERY_PIRATE"
+      },
+      "type": "home",
+      "music": null,
+      "thumbnail": "sceneries/pirate_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000006,
+      "name": "Epic Winter Scenery",
+      "TID": {
+        "name": "TID_SCENERY_EPIC_WINTER"
+      },
+      "type": "home",
+      "music": "sceneries/epic_winter_scenery/music.ogg",
+      "thumbnail": "sceneries/epic_winter_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000007,
+      "name": "Hog Mountain Scenery",
+      "TID": {
+        "name": "TID_SCENERY_HOG_MOUNTAIN"
+      },
+      "type": "home",
+      "music": "sceneries/hog_mountain_scenery/music.ogg",
+      "thumbnail": "sceneries/hog_mountain_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000008,
+      "name": "Jungle Scenery",
+      "TID": {
+        "name": "TID_SCENERY_JUNGLE"
+      },
+      "type": "home",
+      "music": "sceneries/jungle_scenery/music.ogg",
+      "thumbnail": "sceneries/jungle_scenery/thumbnail.webp",
+      "free": true
+    },
+    {
+      "_id": 60000009,
+      "name": "Epic Jungle Scenery",
+      "TID": {
+        "name": "TID_SCENERY_EPIC_JUNGLE"
+      },
+      "type": "home",
+      "music": "sceneries/epic_jungle_scenery/music.ogg",
+      "thumbnail": "sceneries/epic_jungle_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000010,
+      "name": "Inferno War Base Scenery",
+      "TID": {
+        "name": "TID_INFERNO_TOWN_SCENERY"
+      },
+      "type": "war",
+      "music": "sceneries/inferno_war_base_scenery/music.ogg",
+      "thumbnail": "sceneries/inferno_war_base_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000011,
+      "name": "9th Clashiversary Scenery",
+      "TID": {
+        "name": "TID_9TH_CLASHIVERSARY_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/9th_clashiversary_scenery/music.ogg",
+      "thumbnail": "sceneries/9th_clashiversary_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000012,
+      "name": "Pumpkin Graveyard",
+      "TID": {
+        "name": "TID_PUMPKIN_GRAVEYARD_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/pumpkin_graveyard/music.ogg",
+      "thumbnail": "sceneries/pumpkin_graveyard/thumbnail.webp"
+    },
+    {
+      "_id": 60000013,
+      "name": "Snow Day",
+      "TID": {
+        "name": "TID_SNOWED_IN_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/snow_day/music.ogg",
+      "thumbnail": "sceneries/snow_day/thumbnail.webp"
+    },
+    {
+      "_id": 60000014,
+      "name": "Tiger Mountain",
+      "TID": {
+        "name": "TID_TIGER_MOUNTAIN_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/tiger_mountain/music.ogg",
+      "thumbnail": "sceneries/tiger_mountain/thumbnail.webp"
+    },
+    {
+      "_id": 60000015,
+      "name": "Pixel Scenery",
+      "TID": {
+        "name": "TID_PIXEL_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/pixel_scenery/music.ogg",
+      "thumbnail": "sceneries/pixel_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000016,
+      "name": "Primal Scenery",
+      "TID": {
+        "name": "TID_PRIMAL_SCENERY"
+      },
+      "type": "home",
+      "music": null,
+      "thumbnail": "sceneries/primal_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000017,
+      "name": "Shadow Scenery",
+      "TID": {
+        "name": "TID_SHADOW_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/shadow_scenery/music.ogg",
+      "thumbnail": "sceneries/shadow_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000018,
+      "name": "Royale Scenery",
+      "TID": {
+        "name": "TID_ROYALE_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/royale_scenery/music.ogg",
+      "thumbnail": "sceneries/royale_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000019,
+      "name": "Summer Scenery",
+      "TID": {
+        "name": "TID_SUMMER_SCENERY"
+      },
+      "type": "home",
+      "music": null,
+      "thumbnail": "sceneries/summer_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000020,
+      "name": "10th Clashiversary Scenery",
+      "TID": {
+        "name": "TID_10TH_CLASHIVERSARY_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/10th_clashiversary_scenery/music.ogg",
+      "thumbnail": "sceneries/10th_clashiversary_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000021,
+      "name": "Clash Fest Scenery",
+      "TID": {
+        "name": "TID_CLASHFEST_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/clash_fest_scenery/music.ogg",
+      "thumbnail": "sceneries/clash_fest_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000022,
+      "name": "Magic Scenery",
+      "TID": {
+        "name": "TID_MAGIC_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/magic_scenery/music.ogg",
+      "thumbnail": "sceneries/magic_scenery/thumbnail.webp",
+      "free": true
+    },
+    {
+      "_id": 60000023,
+      "name": "Epic Magic Scenery",
+      "TID": {
+        "name": "TID_EPIC_MAGIC_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/epic_magic_scenery/music.ogg",
+      "thumbnail": "sceneries/epic_magic_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000034,
+      "name": "Spooky Scenery",
+      "TID": {
+        "name": "TID_SPOOKY2022_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/spooky_scenery/music.ogg",
+      "thumbnail": "sceneries/spooky_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000035,
+      "name": "Jolly Scenery",
+      "TID": {
+        "name": "TID_JOLLY_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/jolly_scenery/music.ogg",
+      "thumbnail": "sceneries/jolly_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000036,
+      "name": "Magic Theatre Scenery",
+      "TID": {
+        "name": "TID_MAGIC_THEATRE_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/magic_theatre_scenery/music.ogg",
+      "thumbnail": "sceneries/magic_theatre_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000037,
+      "name": "Painter Scenery",
+      "TID": {
+        "name": "TID_PAINTER_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/painter_scenery/music.ogg",
+      "thumbnail": "sceneries/painter_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000038,
+      "name": "Classic Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASSIC"
+      },
+      "type": "builderBase",
+      "music": null,
+      "thumbnail": "sceneries/classic_scenery/thumbnail.webp",
+      "free": true
+    },
+    {
+      "_id": 60000040,
+      "name": "Dark Ages Scenery",
+      "TID": {
+        "name": "TID_DARK_AGES_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/dark_ages_scenery/music.ogg",
+      "thumbnail": "sceneries/dark_ages_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000041,
+      "name": "Books of Clash Scenery",
+      "TID": {
+        "name": "TID_SCENERY_BOOKS_OF_CLASH"
+      },
+      "type": "home",
+      "music": "sceneries/books_of_clash_scenery/music.ogg",
+      "thumbnail": "sceneries/books_of_clash_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000042,
+      "name": "War Arena Scenery",
+      "TID": {
+        "name": "TID_CWL23_SCENERY"
+      },
+      "type": "war",
+      "music": "sceneries/war_arena_scenery/music.ogg",
+      "thumbnail": "sceneries/war_arena_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000043,
+      "name": "Goblin Caves Scenery",
+      "TID": {
+        "name": "TID_SCENERY_GOBLIN_CAVES"
+      },
+      "type": "home",
+      "music": "sceneries/goblin_caves_scenery/music.ogg",
+      "thumbnail": "sceneries/goblin_caves_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000046,
+      "name": "Chess Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CHESS"
+      },
+      "type": "home",
+      "music": "sceneries/chess_scenery/music.ogg",
+      "thumbnail": "sceneries/chess_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000047,
+      "name": "Crystal Caverns Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CRYSTAL_CAVERNS"
+      },
+      "type": "builderBase",
+      "music": null,
+      "thumbnail": "sceneries/crystal_caverns_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000048,
+      "name": "Future Scenery",
+      "TID": {
+        "name": "TID_SCENERY_FUTURE"
+      },
+      "type": "home",
+      "music": "sceneries/future_scenery/music.ogg",
+      "thumbnail": "sceneries/future_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000049,
+      "name": "Ghost Scenery",
+      "TID": {
+        "name": "TID_SCENERY_GHOST"
+      },
+      "type": "home",
+      "music": "sceneries/ghost_scenery/music.ogg",
+      "thumbnail": "sceneries/ghost_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000052,
+      "name": "Champion Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CHAMPION"
+      },
+      "type": "war",
+      "music": "sceneries/champion_scenery/music.ogg",
+      "thumbnail": "sceneries/champion_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000053,
+      "name": "Gingerbread Scenery",
+      "TID": {
+        "name": "TID_SCENERY_GINGERBREAD"
+      },
+      "type": "home",
+      "music": "sceneries/gingerbread_scenery/music.ogg",
+      "thumbnail": "sceneries/gingerbread_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000054,
+      "name": "Of the North Scenery",
+      "TID": {
+        "name": "TID_SCENERY_OFTHENORTH"
+      },
+      "type": "builderBase",
+      "music": null,
+      "thumbnail": "sceneries/of_the_north_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000055,
+      "name": "Dragon Palace Scenery",
+      "TID": {
+        "name": "TID_DRAGON_PALACE_SCENERY"
+      },
+      "type": "home",
+      "music": "sceneries/dragon_palace_scenery/music.ogg",
+      "thumbnail": "sceneries/dragon_palace_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000056,
+      "name": "Space Scenery",
+      "TID": {
+        "name": "TID_SCENERY_SPACE"
+      },
+      "type": "home",
+      "music": "sceneries/space_scenery/music.ogg",
+      "thumbnail": "sceneries/space_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000057,
+      "name": "Egypt Scenery",
+      "TID": {
+        "name": "TID_SCENERY_EGYPT"
+      },
+      "type": "home",
+      "music": "sceneries/egypt_scenery/music.ogg",
+      "thumbnail": "sceneries/egypt_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000058,
+      "name": "Football Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASHBALL"
+      },
+      "type": "home",
+      "music": "sceneries/football_scenery/music.ogg",
+      "thumbnail": "sceneries/football_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000059,
+      "name": "Wild West Scenery",
+      "TID": {
+        "name": "TID_SCENERY_WILDWEST"
+      },
+      "type": "home",
+      "music": "sceneries/wild_west_scenery/music.ogg",
+      "thumbnail": "sceneries/wild_west_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000060,
+      "name": "Clash Games Stadium",
+      "TID": {
+        "name": "TID_SCENERY_CLASHGAMES"
+      },
+      "type": "home",
+      "music": "sceneries/clash_games_stadium/music.ogg",
+      "thumbnail": "sceneries/clash_games_stadium/thumbnail.webp"
+    },
+    {
+      "_id": 60000061,
+      "name": "Anime Scenery",
+      "TID": {
+        "name": "TID_SCENERY_ANIME"
+      },
+      "type": "home",
+      "music": "sceneries/anime_scenery/music.ogg",
+      "thumbnail": "sceneries/anime_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000062,
+      "name": "Crossover Scenery",
+      "TID": {
+        "name": "TID_SCENERY_MASHUP"
+      },
+      "type": "home",
+      "music": "sceneries/crossover_scenery/music.ogg",
+      "thumbnail": "sceneries/crossover_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000063,
+      "name": "Clash of Dragons",
+      "TID": {
+        "name": "TID_SCENERY_TTRPG"
+      },
+      "type": "home",
+      "music": "sceneries/clash_of_dragons/music.ogg",
+      "thumbnail": "sceneries/clash_of_dragons/thumbnail.webp"
+    },
+    {
+      "_id": 60000064,
+      "name": "Doomed Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASHOWEEN2024"
+      },
+      "type": "home",
+      "music": "sceneries/doomed_scenery/music.ogg",
+      "thumbnail": "sceneries/doomed_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000065,
+      "name": "Justice Scenery",
+      "TID": {
+        "name": "TID_SCENERY_TH17"
+      },
+      "type": "home",
+      "music": "sceneries/justice_scenery/music.ogg",
+      "thumbnail": "sceneries/justice_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000066,
+      "name": "War Machine Scenery",
+      "TID": {
+        "name": "TID_SCENERY_WAR_MACHINE"
+      },
+      "type": "war",
+      "music": "sceneries/war_machine_scenery/music.ogg",
+      "thumbnail": "sceneries/war_machine_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000067,
+      "name": "Toy Workshop Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASHMAS2024"
+      },
+      "type": "home",
+      "music": "sceneries/toy_workshop_scenery/music.ogg",
+      "thumbnail": "sceneries/toy_workshop_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000068,
+      "name": "Fire and Ice Scenery",
+      "TID": {
+        "name": "TID_SCENERY_FIRE_ICE"
+      },
+      "type": "home",
+      "music": "sceneries/fire_and_ice_scenery/music.ogg",
+      "thumbnail": "sceneries/fire_and_ice_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000069,
+      "name": "Clash-A-Rama Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASHARAMA2025"
+      },
+      "type": "home",
+      "music": null,
+      "thumbnail": "sceneries/clash-a-rama_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000070,
+      "name": "Year of the Snake",
+      "TID": {
+        "name": "TID_SCENERY_LNY2025"
+      },
+      "type": "home",
+      "music": "sceneries/year_of_the_snake/music.ogg",
+      "thumbnail": "sceneries/year_of_the_snake/thumbnail.webp"
+    },
+    {
+      "_id": 60000071,
+      "name": "Military Scenery",
+      "TID": {
+        "name": "TID_SCENERY_ACTION_HEROES"
+      },
+      "type": "home",
+      "music": "sceneries/military_scenery/music.ogg",
+      "thumbnail": "sceneries/military_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000072,
+      "name": "ClashaMania Scenery",
+      "TID": {
+        "name": "TID_SCENERY_APRIL25"
+      },
+      "type": "home",
+      "music": "sceneries/clashamania_scenery/music.ogg",
+      "thumbnail": "sceneries/clashamania_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000073,
+      "name": "High Seas Scenery",
+      "TID": {
+        "name": "TID_SCENERY_JAPAN25"
+      },
+      "type": "home",
+      "music": "sceneries/high_seas_scenery/music.ogg",
+      "thumbnail": "sceneries/high_seas_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000074,
+      "name": "Dark Days Scenery",
+      "TID": {
+        "name": "TID_SCENERY_DARK_DAYS"
+      },
+      "type": "home",
+      "music": "sceneries/dark_days_scenery/music.ogg",
+      "thumbnail": "sceneries/dark_days_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000075,
+      "name": "Cyber Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CYBERCLASH"
+      },
+      "type": "home",
+      "music": "sceneries/cyber_scenery/music.ogg",
+      "thumbnail": "sceneries/cyber_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000076,
+      "name": "13th Clash-A-Versary Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASHAVERSARY2025"
+      },
+      "type": "home",
+      "music": "sceneries/13th_clash-a-versary_scenery/music.ogg",
+      "thumbnail": "sceneries/13th_clash-a-versary_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000077,
+      "name": "Mash-A-Rama Scenery",
+      "TID": {
+        "name": "TID_SCENERY_MASHARAMA"
+      },
+      "type": "home",
+      "music": "sceneries/mash-a-rama_scenery/music.ogg",
+      "thumbnail": "sceneries/mash-a-rama_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000078,
+      "name": "Cosmic Scenery",
+      "TID": {
+        "name": "TID_SCENERY_COSMICCURSE"
+      },
+      "type": "home",
+      "music": "sceneries/cosmic_scenery/music.ogg",
+      "thumbnail": "sceneries/cosmic_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000079,
+      "name": "Ruined Kingdom War Scenery",
+      "TID": {
+        "name": "TID_SCENERY_WAR_RUINED"
+      },
+      "type": "war",
+      "music": "sceneries/ruined_kingdom_war_scenery/music.ogg",
+      "thumbnail": "sceneries/ruined_kingdom_war_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000080,
+      "name": "Wasteland Scenery",
+      "TID": {
+        "name": "TID_SCENERY_WASTELANDS"
+      },
+      "type": "home",
+      "music": "sceneries/wasteland_scenery/music.ogg",
+      "thumbnail": "sceneries/wasteland_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000081,
+      "name": "Frost Age Scenery",
+      "TID": {
+        "name": "TID_SCENERY_FROSTAGE"
+      },
+      "type": "home",
+      "music": "sceneries/frost_age_scenery/music.ogg",
+      "thumbnail": "sceneries/frost_age_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000082,
+      "name": "Classic Meteor Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASSIC_METEOR"
+      },
+      "type": "home",
+      "music": null,
+      "thumbnail": "sceneries/classic_meteor_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000083,
+      "name": "Desert Nights Scenery",
+      "TID": {
+        "name": "TID_SCENERY_DESERT_NIGHTS"
+      },
+      "type": "home",
+      "music": "sceneries/desert_nights_scenery/music.ogg",
+      "thumbnail": "sceneries/desert_nights_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000084,
+      "name": "Year of the Fire Horse",
+      "TID": {
+        "name": "TID_SCENERY_LNY26"
+      },
+      "type": "home",
+      "music": "sceneries/year_of_the_fire_horse/music.ogg",
+      "thumbnail": "sceneries/year_of_the_fire_horse/thumbnail.webp"
+    },
+    {
+      "_id": 60000085,
+      "name": "Dragon Escape Scenery",
+      "TID": {
+        "name": "TID_SCENERY_DRAGON_ESCAPE"
+      },
+      "type": "home",
+      "music": "sceneries/dragon_escape_scenery/music.ogg",
+      "thumbnail": "sceneries/dragon_escape_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000086,
+      "name": "Sound of Clash Scenery",
+      "TID": {
+        "name": "TID_SCENERY_SOUND_OF_CLASH"
+      },
+      "type": "home",
+      "music": "sceneries/sound_of_clash_scenery/music.ogg",
+      "thumbnail": "sceneries/sound_of_clash_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000087,
+      "name": "Skeleton Kingdom Scenery",
+      "TID": {
+        "name": "TID_SCENERY_SKELETON_KINGDOM"
+      },
+      "type": "home",
+      "music": "sceneries/skeleton_kingdom_scenery/music.ogg",
+      "thumbnail": "sceneries/skeleton_kingdom_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000088,
+      "name": "Classic Skeleton Scenery",
+      "TID": {
+        "name": "TID_SCENERY_CLASSIC_SKELETON"
+      },
+      "type": "home",
+      "music": null,
+      "thumbnail": "sceneries/classic_skeleton_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000090,
+      "name": "Anime Fury Scenery",
+      "TID": {
+        "name": "TID_SCENERY_ANIME_FURY"
+      },
+      "type": "home",
+      "music": "sceneries/anime_fury_scenery/music.ogg",
+      "thumbnail": "sceneries/anime_fury_scenery/thumbnail.webp"
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "items": [
+    {
+      "_id": 44000000,
+      "name": "Wood League V",
+      "TID": {
+        "name": "TID_LEAGUE_WOOD5"
+      },
+      "trophy_start": 0
+    },
+    {
+      "_id": 44000001,
+      "name": "Wood League IV",
+      "TID": {
+        "name": "TID_LEAGUE_WOOD4"
+      },
+      "trophy_start": 100
+    },
+    {
+      "_id": 44000002,
+      "name": "Wood League III",
+      "TID": {
+        "name": "TID_LEAGUE_WOOD3"
+      },
+      "trophy_start": 200
+    },
+    {
+      "_id": 44000003,
+      "name": "Wood League II",
+      "TID": {
+        "name": "TID_LEAGUE_WOOD2"
+      },
+      "trophy_start": 300
+    },
+    {
+      "_id": 44000004,
+      "name": "Wood League I",
+      "TID": {
+        "name": "TID_LEAGUE_WOOD1"
+      },
+      "trophy_start": 400
+    },
+    {
+      "_id": 44000005,
+      "name": "Clay League V",
+      "TID": {
+        "name": "TID_LEAGUE_CLAY5"
+      },
+      "trophy_start": 500
+    },
+    {
+      "_id": 44000006,
+      "name": "Clay League IV",
+      "TID": {
+        "name": "TID_LEAGUE_CLAY4"
+      },
+      "trophy_start": 600
+    },
+    {
+      "_id": 44000007,
+      "name": "Clay League III",
+      "TID": {
+        "name": "TID_LEAGUE_CLAY3"
+      },
+      "trophy_start": 700
+    },
+    {
+      "_id": 44000008,
+      "name": "Clay League II",
+      "TID": {
+        "name": "TID_LEAGUE_CLAY2"
+      },
+      "trophy_start": 800
+    },
+    {
+      "_id": 44000009,
+      "name": "Clay League I",
+      "TID": {
+        "name": "TID_LEAGUE_CLAY1"
+      },
+      "trophy_start": 900
+    },
+    {
+      "_id": 44000010,
+      "name": "Stone League V",
+      "TID": {
+        "name": "TID_LEAGUE_STONE5"
+      },
+      "trophy_start": 1000
+    },
+    {
+      "_id": 44000011,
+      "name": "Stone League IV",
+      "TID": {
+        "name": "TID_LEAGUE_STONE4"
+      },
+      "trophy_start": 1100
+    },
+    {
+      "_id": 44000012,
+      "name": "Stone League III",
+      "TID": {
+        "name": "TID_LEAGUE_STONE3"
+      },
+      "trophy_start": 1200
+    },
+    {
+      "_id": 44000013,
+      "name": "Stone League II",
+      "TID": {
+        "name": "TID_LEAGUE_STONE2"
+      },
+      "trophy_start": 1300
+    },
+    {
+      "_id": 44000014,
+      "name": "Stone League I",
+      "TID": {
+        "name": "TID_LEAGUE_STONE1"
+      },
+      "trophy_start": 1400
+    },
+    {
+      "_id": 44000015,
+      "name": "Copper League V",
+      "TID": {
+        "name": "TID_LEAGUE_COPPER5"
+      },
+      "trophy_start": 1500
+    },
+    {
+      "_id": 44000016,
+      "name": "Copper League IV",
+      "TID": {
+        "name": "TID_LEAGUE_COPPER4"
+      },
+      "trophy_start": 1600
+    },
+    {
+      "_id": 44000017,
+      "name": "Copper League III",
+      "TID": {
+        "name": "TID_LEAGUE_COPPER3"
+      },
+      "trophy_start": 1700
+    },
+    {
+      "_id": 44000018,
+      "name": "Copper League II",
+      "TID": {
+        "name": "TID_LEAGUE_COPPER2"
+      },
+      "trophy_start": 1800
+    },
+    {
+      "_id": 44000019,
+      "name": "Copper League I",
+      "TID": {
+        "name": "TID_LEAGUE_COPPER1"
+      },
+      "trophy_start": 1900
+    },
+    {
+      "_id": 44000020,
+      "name": "Brass League III",
+      "TID": {
+        "name": "TID_LEAGUE_BRASS3"
+      },
+      "trophy_start": 2000
+    },
+    {
+      "_id": 44000021,
+      "name": "Brass League II",
+      "TID": {
+        "name": "TID_LEAGUE_BRASS2"
+      },
+      "trophy_start": 2200
+    },
+    {
+      "_id": 44000022,
+      "name": "Brass League I",
+      "TID": {
+        "name": "TID_LEAGUE_BRASS1"
+      },
+      "trophy_start": 2400
+    },
+    {
+      "_id": 44000023,
+      "name": "Iron League III",
+      "TID": {
+        "name": "TID_LEAGUE_IRON3"
+      },
+      "trophy_start": 2600
+    },
+    {
+      "_id": 44000024,
+      "name": "Iron League II",
+      "TID": {
+        "name": "TID_LEAGUE_IRON2"
+      },
+      "trophy_start": 2800
+    },
+    {
+      "_id": 44000025,
+      "name": "Iron League I",
+      "TID": {
+        "name": "TID_LEAGUE_IRON1"
+      },
+      "trophy_start": 3000
+    },
+    {
+      "_id": 44000026,
+      "name": "Steel League III",
+      "TID": {
+        "name": "TID_LEAGUE_STEEL3"
+      },
+      "trophy_start": 3200
+    },
+    {
+      "_id": 44000027,
+      "name": "Steel League II",
+      "TID": {
+        "name": "TID_LEAGUE_STEEL2"
+      },
+      "trophy_start": 3400
+    },
+    {
+      "_id": 44000028,
+      "name": "Steel League I",
+      "TID": {
+        "name": "TID_LEAGUE_STEEL1"
+      },
+      "trophy_start": 3600
+    },
+    {
+      "_id": 44000029,
+      "name": "Titanium League III",
+      "TID": {
+        "name": "TID_LEAGUE_TITANIUM3"
+      },
+      "trophy_start": 3800
+    },
+    {
+      "_id": 44000030,
+      "name": "Titanium League II",
+      "TID": {
+        "name": "TID_LEAGUE_TITANIUM2"
+      },
+      "trophy_start": 4000
+    },
+    {
+      "_id": 44000031,
+      "name": "Titanium League I",
+      "TID": {
+        "name": "TID_LEAGUE_TITANIUM1"
+      },
+      "trophy_start": 4200
+    },
+    {
+      "_id": 44000032,
+      "name": "Platinum League III",
+      "TID": {
+        "name": "TID_LEAGUE_PLATINUM3"
+      },
+      "trophy_start": 4400
+    },
+    {
+      "_id": 44000033,
+      "name": "Platinum League II",
+      "TID": {
+        "name": "TID_LEAGUE_PLATINUM2"
+      },
+      "trophy_start": 4600
+    },
+    {
+      "_id": 44000034,
+      "name": "Platinum League I",
+      "TID": {
+        "name": "TID_LEAGUE_PLATINUM1"
+      },
+      "trophy_start": 4800
+    },
+    {
+      "_id": 44000035,
+      "name": "Emerald League III",
+      "TID": {
+        "name": "TID_LEAGUE_EMERALD3"
+      },
+      "trophy_start": 5000
+    },
+    {
+      "_id": 44000036,
+      "name": "Emerald League II",
+      "TID": {
+        "name": "TID_LEAGUE_EMERALD2"
+      },
+      "trophy_start": 5200
+    },
+    {
+      "_id": 44000037,
+      "name": "Emerald League I",
+      "TID": {
+        "name": "TID_LEAGUE_EMERALD1"
+      },
+      "trophy_start": 5400
+    },
+    {
+      "_id": 44000038,
+      "name": "Ruby League III",
+      "TID": {
+        "name": "TID_LEAGUE_RUBY3"
+      },
+      "trophy_start": 5600
+    },
+    {
+      "_id": 44000039,
+      "name": "Ruby League II",
+      "TID": {
+        "name": "TID_LEAGUE_RUBY2"
+      },
+      "trophy_start": 5800
+    },
+    {
+      "_id": 44000040,
+      "name": "Ruby League I",
+      "TID": {
+        "name": "TID_LEAGUE_RUBY1"
+      },
+      "trophy_start": 6000
+    },
+    {
+      "_id": 44000041,
+      "name": "Diamond League",
+      "TID": {
+        "name": "TID_LEAGUE_DIAMOND"
+      },
+      "trophy_start": 6200
+    }
+  ]
+}

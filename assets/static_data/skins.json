@@ -1,0 +1,2335 @@
+{
+  "items": [
+    {
+      "_id": 52000000,
+      "name": "Barbarian King",
+      "TID": {
+        "name": "TID_BARBARIAN_KING"
+      },
+      "tier": "Default",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000001,
+      "name": "Gladiator King",
+      "TID": {
+        "name": "TID_BARBARIAN_KING_GLADIATOR"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000002,
+      "name": "Archer Queen",
+      "TID": {
+        "name": "TID_ARCHER_QUEEN"
+      },
+      "tier": "Default",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000003,
+      "name": "Grand Warden",
+      "TID": {
+        "name": "TID_GRAND_WARDEN"
+      },
+      "tier": "Default",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000004,
+      "name": "P.E.K.K.A King",
+      "TID": {
+        "name": "TID_BARBARIAN_KING_PEKKA"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000005,
+      "name": "Skeleton King",
+      "TID": {
+        "name": "TID_SKELETON_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000006,
+      "name": "Jolly King",
+      "TID": {
+        "name": "TID_JOLLY_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000007,
+      "name": "Primal King",
+      "TID": {
+        "name": "TID_PRIMAL_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000008,
+      "name": "Clockwork King",
+      "TID": {
+        "name": "TID_CLOCKWORK_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000009,
+      "name": "Party King",
+      "TID": {
+        "name": "TID_PARTY_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000010,
+      "name": "Champion King",
+      "TID": {
+        "name": "TID_CHAMPION_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000011,
+      "name": "Pirate King",
+      "TID": {
+        "name": "TID_PIRATE_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000012,
+      "name": "Gladiator Queen",
+      "TID": {
+        "name": "TID_ARCHER_QUEEN_GLADIATOR"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000013,
+      "name": "Valkyrie Queen",
+      "TID": {
+        "name": "TID_VALKYRIE_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000014,
+      "name": "Autumn Queen",
+      "TID": {
+        "name": "TID_AUTUMN_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000015,
+      "name": "Ice Queen",
+      "TID": {
+        "name": "TID_ICE_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000016,
+      "name": "Warrior Queen",
+      "TID": {
+        "name": "TID_WARRIOR_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000017,
+      "name": "Primal Queen",
+      "TID": {
+        "name": "TID_PRIMAL_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000018,
+      "name": "Clockwork Queen",
+      "TID": {
+        "name": "TID_CLOCKWORK_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000019,
+      "name": "Pirate Queen",
+      "TID": {
+        "name": "TID_PIRATE_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000020,
+      "name": "Party Warden",
+      "TID": {
+        "name": "TID_PARTY_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000021,
+      "name": "Primal Warden",
+      "TID": {
+        "name": "TID_PRIMAL_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000022,
+      "name": "Clockwork Warden",
+      "TID": {
+        "name": "TID_CLOCKWORK_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000023,
+      "name": "Gladiator Warden",
+      "TID": {
+        "name": "TID_GRAND_WARDEN_GLADIATOR"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000024,
+      "name": "Pirate Warden",
+      "TID": {
+        "name": "TID_PIRATE_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000025,
+      "name": "Warden of the North",
+      "TID": {
+        "name": "TID_WARDEN_OF_THE_NORTH"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000026,
+      "name": "Jungle Warden",
+      "TID": {
+        "name": "TID_JUNGLE_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000027,
+      "name": "Warden Master",
+      "TID": {
+        "name": "TID_MASTER_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000028,
+      "name": "Royal Champion",
+      "TID": {
+        "name": "TID_HERO_ROYAL_CHAMPION"
+      },
+      "tier": "Default",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000029,
+      "name": "Winter Champion",
+      "TID": {
+        "name": "TID_WINTER_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000030,
+      "name": "Rogue Champion",
+      "TID": {
+        "name": "TID_ROGUE_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000031,
+      "name": "Jungle Champion",
+      "TID": {
+        "name": "TID_JUNGLE_CHAMPION"
+      },
+      "tier": "Basic",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000032,
+      "name": "Gladiator Champion",
+      "TID": {
+        "name": "TID_GLADIATOR_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000033,
+      "name": "Shadow Champion",
+      "TID": {
+        "name": "TID_SHADOW_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000034,
+      "name": "Primal Champion",
+      "TID": {
+        "name": "TID_PRIMAL_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000035,
+      "name": "Summer Champion",
+      "TID": {
+        "name": "TID_SUMMER_CHAMPION"
+      },
+      "tier": "Basic",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000036,
+      "name": "Pixel Champion",
+      "TID": {
+        "name": "TID_PIXEL_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000037,
+      "name": "Party Champion",
+      "TID": {
+        "name": "TID_PARTY_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000038,
+      "name": "Magic Champion",
+      "TID": {
+        "name": "TID_TH15_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000039,
+      "name": "Pirate Champion",
+      "TID": {
+        "name": "TID_PIRATE_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000040,
+      "name": "Jolly Champion",
+      "TID": {
+        "name": "TID_JOLLY_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000041,
+      "name": "Warrior Champion",
+      "TID": {
+        "name": "TID_WARRIOR_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000042,
+      "name": "Painter Champion",
+      "TID": {
+        "name": "TID_PAINTER_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000043,
+      "name": "Dark Ages Champion",
+      "TID": {
+        "name": "TID_DARKAGES_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000044,
+      "name": "Ghost Champion",
+      "TID": {
+        "name": "TID_GHOST_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000045,
+      "name": "Warrior King",
+      "TID": {
+        "name": "TID_WARRIOR_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000046,
+      "name": "Rogue King",
+      "TID": {
+        "name": "TID_ROGUE_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000047,
+      "name": "Fierce King",
+      "TID": {
+        "name": "TID_SAVAGE_KING"
+      },
+      "tier": "Basic",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000048,
+      "name": "Jungle King",
+      "TID": {
+        "name": "TID_JUNGLE_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000049,
+      "name": "Beat King",
+      "TID": {
+        "name": "TID_ANNIVERSARY_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000050,
+      "name": "Golem King",
+      "TID": {
+        "name": "TID_GOLEM_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000051,
+      "name": "Ice King",
+      "TID": {
+        "name": "TID_ICE_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000052,
+      "name": "Lunar King",
+      "TID": {
+        "name": "TID_TIGER_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000053,
+      "name": "Shadow King",
+      "TID": {
+        "name": "TID_SHADOW_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000054,
+      "name": "Summer King",
+      "TID": {
+        "name": "TID_SUMMER_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000055,
+      "name": "Pixel King",
+      "TID": {
+        "name": "TID_PIXEL_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000056,
+      "name": "Clash Fest King",
+      "TID": {
+        "name": "TID_CLASHFEST_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000057,
+      "name": "Rogue Queen",
+      "TID": {
+        "name": "TID_ROGUE_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000058,
+      "name": "Jungle Queen",
+      "TID": {
+        "name": "TID_JUNGLE_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000059,
+      "name": "Party Queen",
+      "TID": {
+        "name": "TID_PARTY_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000060,
+      "name": "Champion Queen",
+      "TID": {
+        "name": "TID_CHAMPION_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000061,
+      "name": "Shadow Queen",
+      "TID": {
+        "name": "TID_SHADOW_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000062,
+      "name": "Miner Queen",
+      "TID": {
+        "name": "TID_MINER_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000063,
+      "name": "Summer Queen",
+      "TID": {
+        "name": "TID_SUMMER_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000064,
+      "name": "Pixel Queen",
+      "TID": {
+        "name": "TID_PIXEL_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000065,
+      "name": "Spooky Queen",
+      "TID": {
+        "name": "TID_SPOOKY_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000066,
+      "name": "Magic Queen",
+      "TID": {
+        "name": "TID_TH15_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000067,
+      "name": "Jolly Queen",
+      "TID": {
+        "name": "TID_JOLLY_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000068,
+      "name": "Dark Ages Queen",
+      "TID": {
+        "name": "TID_DARKAGES_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000069,
+      "name": "Jolly Warden",
+      "TID": {
+        "name": "TID_JOLLY_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000070,
+      "name": "Warrior Warden",
+      "TID": {
+        "name": "TID_WARRIOR_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000071,
+      "name": "Shadow Warden",
+      "TID": {
+        "name": "TID_SHADOW_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000072,
+      "name": "Summer Warden",
+      "TID": {
+        "name": "TID_SUMMER_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000073,
+      "name": "Pixel Warden",
+      "TID": {
+        "name": "TID_PIXEL_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000074,
+      "name": "Champion Warden",
+      "TID": {
+        "name": "TID_CHAMP_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000075,
+      "name": "Magic Warden",
+      "TID": {
+        "name": "TID_TH15_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000076,
+      "name": "Painter Warden",
+      "TID": {
+        "name": "TID_PAINTER_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000077,
+      "name": "Dark Ages Warden",
+      "TID": {
+        "name": "TID_DARKAGES_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000078,
+      "name": "Ghost Warden",
+      "TID": {
+        "name": "TID_GHOST_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000079,
+      "name": "Goblin Warden",
+      "TID": {
+        "name": "TID_GOBLIN_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000080,
+      "name": "League Warden",
+      "TID": {
+        "name": "TID_LEAGUE_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000087,
+      "name": "Magic King",
+      "TID": {
+        "name": "TID_TH15_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000088,
+      "name": "Dark Ages King",
+      "TID": {
+        "name": "TID_DARKAGES_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000089,
+      "name": "Painter King",
+      "TID": {
+        "name": "TID_PAINTER_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000090,
+      "name": "Beast King",
+      "TID": {
+        "name": "TID_BEAST_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000091,
+      "name": "League King",
+      "TID": {
+        "name": "TID_LEAGUE_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000092,
+      "name": "Goblin King",
+      "TID": {
+        "name": "TID_GOBLIN_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000093,
+      "name": "Future King",
+      "TID": {
+        "name": "TID_CLASHIVERSARY_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000094,
+      "name": "Gingerbread King",
+      "TID": {
+        "name": "TID_GINGERBREAD_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000095,
+      "name": "Ghost King",
+      "TID": {
+        "name": "TID_GHOST_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000096,
+      "name": "Chess King",
+      "TID": {
+        "name": "TID_CHESS_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000097,
+      "name": "Lunar Queen",
+      "TID": {
+        "name": "TID_LUNAR_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000098,
+      "name": "Painter Queen",
+      "TID": {
+        "name": "TID_PAINTER_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000099,
+      "name": "Heart Hunter Queen",
+      "TID": {
+        "name": "TID_VALENTINES_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000100,
+      "name": "Goblin Queen",
+      "TID": {
+        "name": "TID_GOBLIN_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000101,
+      "name": "Ghost Queen",
+      "TID": {
+        "name": "TID_GHOST_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000102,
+      "name": "League Queen",
+      "TID": {
+        "name": "TID_LEAGUE_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000103,
+      "name": "Future Queen",
+      "TID": {
+        "name": "TID_CLASHIVERSARY_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000104,
+      "name": "Gingerbread Queen",
+      "TID": {
+        "name": "TID_GINGERBREAD_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000105,
+      "name": "Chess Queen",
+      "TID": {
+        "name": "TID_CHESS_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000106,
+      "name": "Queen of the North",
+      "TID": {
+        "name": "TID_WINTER_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000112,
+      "name": "League Champion",
+      "TID": {
+        "name": "TID_SKIN_LEAGUE_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000113,
+      "name": "Goblin Champion",
+      "TID": {
+        "name": "TID_GOBLIN_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000114,
+      "name": "Future Champion",
+      "TID": {
+        "name": "TID_CLASHIVERSARY_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000115,
+      "name": "Gingerbread Champion",
+      "TID": {
+        "name": "TID_GINGERBREAD_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000116,
+      "name": "Champions' Champion",
+      "TID": {
+        "name": "TID_CHAMPION_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000117,
+      "name": "Dragon Champion",
+      "TID": {
+        "name": "TID_LNY24_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000118,
+      "name": "Space Champion",
+      "TID": {
+        "name": "TID_SPACE_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000119,
+      "name": "Egypt Champion",
+      "TID": {
+        "name": "TID_EGYPTIAN_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000120,
+      "name": "Football Champion",
+      "TID": {
+        "name": "TID_FOOTBALL_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000121,
+      "name": "Wild West Champion",
+      "TID": {
+        "name": "TID_WILDWEST_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000122,
+      "name": "Future Warden",
+      "TID": {
+        "name": "TID_CLASHIVERSARY_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000123,
+      "name": "Gingerbread Warden",
+      "TID": {
+        "name": "TID_GINGERBREAD_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000124,
+      "name": "Dragon Warden",
+      "TID": {
+        "name": "TID_LNY24_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000125,
+      "name": "Space Warden",
+      "TID": {
+        "name": "TID_SPACE_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000126,
+      "name": "Egypt Warden",
+      "TID": {
+        "name": "TID_EGYPTIAN_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000127,
+      "name": "Football Warden",
+      "TID": {
+        "name": "TID_FOOTBALL_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000128,
+      "name": "Wild West Warden",
+      "TID": {
+        "name": "TID_WILDWEST_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000129,
+      "name": "Clash Games Warden",
+      "TID": {
+        "name": "TID_CLASH_GAMES_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000130,
+      "name": "Anime Warden",
+      "TID": {
+        "name": "TID_ANIME_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000131,
+      "name": "Grand Dwarf",
+      "TID": {
+        "name": "TID_TTRPG_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000132,
+      "name": "Dragon King",
+      "TID": {
+        "name": "TID_LUNAR_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000133,
+      "name": "King of the North",
+      "TID": {
+        "name": "TID_WINTER_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000134,
+      "name": "Egypt King",
+      "TID": {
+        "name": "TID_EGYPT_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000135,
+      "name": "Space King",
+      "TID": {
+        "name": "TID_SPACE_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000136,
+      "name": "Super Squad King",
+      "TID": {
+        "name": "TID_SQUAD_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000137,
+      "name": "King Haaland",
+      "TID": {
+        "name": "TID_HAALAND_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000138,
+      "name": "Football King",
+      "TID": {
+        "name": "TID_HAALANDCLASH_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000139,
+      "name": "Wild West King",
+      "TID": {
+        "name": "TID_WILDWEST_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000141,
+      "name": "Clash Games King",
+      "TID": {
+        "name": "TID_CLASH_GAMES_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000142,
+      "name": "Dragon Queen",
+      "TID": {
+        "name": "TID_LNY24_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000143,
+      "name": "Space Queen",
+      "TID": {
+        "name": "TID_SPACE_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000144,
+      "name": "Egypt Queen",
+      "TID": {
+        "name": "TID_EGYPTIAN_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000145,
+      "name": "Football Queen",
+      "TID": {
+        "name": "TID_FOOTBALL_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000146,
+      "name": "Wild West Queen",
+      "TID": {
+        "name": "TID_WILDWEST_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000147,
+      "name": "Clash Games Queen",
+      "TID": {
+        "name": "TID_CLASH_GAMES_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000148,
+      "name": "Anime Queen",
+      "TID": {
+        "name": "TID_ANIME_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000149,
+      "name": "Archer Satyr",
+      "TID": {
+        "name": "TID_TTRPG_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000150,
+      "name": "Dark Minion Queen",
+      "TID": {
+        "name": "TID_CLASHOWEEN_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000151,
+      "name": "Justice Queen",
+      "TID": {
+        "name": "TID_TH17_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000152,
+      "name": "Battle Machine",
+      "TID": {
+        "name": "TID_WARMACHINE"
+      },
+      "tier": "Default",
+      "character": "BB Battle Machine"
+    },
+    {
+      "_id": 52000153,
+      "name": "Armored Machine",
+      "TID": {
+        "name": "TID_ARMOREDMACHINE"
+      },
+      "tier": "Basic",
+      "character": "BB Battle Machine"
+    },
+    {
+      "_id": 52000155,
+      "name": "Steampunk Machine",
+      "TID": {
+        "name": "TID_STEAMPUNK_BATTLE_MACHINE"
+      },
+      "tier": "Basic",
+      "character": "BB Battle Machine"
+    },
+    {
+      "_id": 52000156,
+      "name": "Battle Machine of the North",
+      "TID": {
+        "name": "TID_OFTHENORTH_BATTLE_MACHINE"
+      },
+      "tier": "Basic",
+      "character": "BB Battle Machine"
+    },
+    {
+      "_id": 52000163,
+      "name": "Battle Copter",
+      "TID": {
+        "name": "TID_HERO_BATTLE_COPTER"
+      },
+      "tier": "Default",
+      "character": "BB Battle Copter"
+    },
+    {
+      "_id": 52000164,
+      "name": "SteamPunk Copter",
+      "TID": {
+        "name": "TID_STEAMPUNK_BATTLE_COPTER"
+      },
+      "tier": "Basic",
+      "character": "BB Battle Copter"
+    },
+    {
+      "_id": 52000166,
+      "name": "Boat Copter",
+      "TID": {
+        "name": "TID_PIRATE_BATTLE_COPTER"
+      },
+      "tier": "Basic",
+      "character": "BB Battle Copter"
+    },
+    {
+      "_id": 52000174,
+      "name": "Anime Champion",
+      "TID": {
+        "name": "TID_ANIME_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000175,
+      "name": "Paladin Champion",
+      "TID": {
+        "name": "TID_TTRPG_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000176,
+      "name": "Ice Champion",
+      "TID": {
+        "name": "TID_ICE_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000177,
+      "name": "Snake Champion",
+      "TID": {
+        "name": "TID_LNY25_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000178,
+      "name": "Sniper Champion",
+      "TID": {
+        "name": "TID_MILITARY_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000179,
+      "name": "The RoyalEST",
+      "TID": {
+        "name": "TID_APRIL25_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000180,
+      "name": "Royal Ninja",
+      "TID": {
+        "name": "TID_JAPAN_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000181,
+      "name": "Showtime Champion",
+      "TID": {
+        "name": "TID_DARKDAYS_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000182,
+      "name": "Royal Officer",
+      "TID": {
+        "name": "TID_CYBERPUNK_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000183,
+      "name": "Clash-A-Rama Champion",
+      "TID": {
+        "name": "TID_CLASHARAMA_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000184,
+      "name": "Yeti Champion",
+      "TID": {
+        "name": "TID_CLASHARAMA_2_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000185,
+      "name": "Cursed Champion",
+      "TID": {
+        "name": "TID_COSMICCURSE_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000186,
+      "name": "Nomad Champion",
+      "TID": {
+        "name": "TID_WASTELANDS_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000187,
+      "name": "Explorer Champion",
+      "TID": {
+        "name": "TID_FROSTAGE_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000191,
+      "name": "Anime King",
+      "TID": {
+        "name": "TID_ANIME_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000192,
+      "name": "Barbarian Orc",
+      "TID": {
+        "name": "TID_TTRPG_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000193,
+      "name": "Dark Minion King",
+      "TID": {
+        "name": "TID_CLASHOWEEN_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000194,
+      "name": "Judgment King",
+      "TID": {
+        "name": "TID_TH17_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000195,
+      "name": "Robo King",
+      "TID": {
+        "name": "TID_CLASHMAS_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000196,
+      "name": "Fire King",
+      "TID": {
+        "name": "TID_FIRE_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000197,
+      "name": "Snake King",
+      "TID": {
+        "name": "TID_LNY25_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000198,
+      "name": "Combat King",
+      "TID": {
+        "name": "TID_MILITARY_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000199,
+      "name": "King Cody",
+      "TID": {
+        "name": "TID_APRIL25_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000200,
+      "name": "Samurai King",
+      "TID": {
+        "name": "TID_JAPAN_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000201,
+      "name": "Barbarian Butcher",
+      "TID": {
+        "name": "TID_DARKDAYS_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000202,
+      "name": "Renegade King",
+      "TID": {
+        "name": "TID_CYBERPUNK_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000203,
+      "name": "Clash-A-Rama King",
+      "TID": {
+        "name": "TID_CLASHARAMA_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000204,
+      "name": "Jelly King",
+      "TID": {
+        "name": "TID_CLASHARAMA_2_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000205,
+      "name": "Berserker King",
+      "TID": {
+        "name": "TID_COSMICCURSE_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000206,
+      "name": "Bruiser King",
+      "TID": {
+        "name": "TID_WASTELANDS_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000207,
+      "name": "Awakened King",
+      "TID": {
+        "name": "TID_FROSTAGE_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000208,
+      "name": "Desert King",
+      "TID": {
+        "name": "TID_DESERTNIGHTS_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000209,
+      "name": "Monkey King",
+      "TID": {
+        "name": "TID_LNY26_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000210,
+      "name": "Puppet Queen",
+      "TID": {
+        "name": "TID_CLASHMAS_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000211,
+      "name": "Fire Queen",
+      "TID": {
+        "name": "TID_FIRE_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000212,
+      "name": "Snake Queen",
+      "TID": {
+        "name": "TID_LNY25_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000213,
+      "name": "Quickfire Queen",
+      "TID": {
+        "name": "TID_MILITARY_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000214,
+      "name": "Brutality Queen",
+      "TID": {
+        "name": "TID_APRIL25_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000215,
+      "name": "Kyudo Queen",
+      "TID": {
+        "name": "TID_JAPAN_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000216,
+      "name": "Queen Fatale",
+      "TID": {
+        "name": "TID_DARKDAYS_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000217,
+      "name": "Renegade Queen",
+      "TID": {
+        "name": "TID_CYBERPUNK_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000218,
+      "name": "Clash-A-Rama Queen",
+      "TID": {
+        "name": "TID_CLASHARAMA_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000219,
+      "name": "P.E.Q.Q.A",
+      "TID": {
+        "name": "TID_CLASHARAMA_2_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000220,
+      "name": "Archer Hunter",
+      "TID": {
+        "name": "TID_COSMICCURSE_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000221,
+      "name": "Fury Queen",
+      "TID": {
+        "name": "TID_WASTELANDS_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000222,
+      "name": "Blizzard Queen",
+      "TID": {
+        "name": "TID_FROSTAGE_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000223,
+      "name": "Queen of the Dunes",
+      "TID": {
+        "name": "TID_DESERTNIGHTS_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000224,
+      "name": "Phantom Queen",
+      "TID": {
+        "name": "TID_LNY26_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000225,
+      "name": "Dragonscale Queen",
+      "TID": {
+        "name": "TID_DRAGONESCAPE_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000226,
+      "name": "Bassbow Queen",
+      "TID": {
+        "name": "TID_SOUNDOFCLASH_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000227,
+      "name": "Skeleton Queen",
+      "TID": {
+        "name": "TID_SKELETON_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000228,
+      "name": "Anime Fury Queen",
+      "TID": {
+        "name": "TID_ANIME26_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000230,
+      "name": "Dark Minion Warden",
+      "TID": {
+        "name": "TID_CLASHOWEEN_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000231,
+      "name": "Grand Judge",
+      "TID": {
+        "name": "TID_TH17_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000232,
+      "name": "Ice Warden",
+      "TID": {
+        "name": "TID_ICE_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000233,
+      "name": "Snake Warden",
+      "TID": {
+        "name": "TID_LNY25_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000234,
+      "name": "Jetpack Warden",
+      "TID": {
+        "name": "TID_MILITARY_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000235,
+      "name": "Darkness Warden",
+      "TID": {
+        "name": "TID_APRIL25_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000236,
+      "name": "Grand Monk",
+      "TID": {
+        "name": "TID_JAPAN_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000237,
+      "name": "Grand Godfather",
+      "TID": {
+        "name": "TID_DARKDAYS_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000238,
+      "name": "Grand Doctor",
+      "TID": {
+        "name": "TID_CYBERPUNK_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000239,
+      "name": "Clash-A-Rama Warden",
+      "TID": {
+        "name": "TID_CLASHARAMA_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000240,
+      "name": "Ivan Warden",
+      "TID": {
+        "name": "TID_CLASHARAMA_2_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000241,
+      "name": "Eternal Warden",
+      "TID": {
+        "name": "TID_COSMICCURSE_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000242,
+      "name": "Shaman Warden",
+      "TID": {
+        "name": "TID_WASTELANDS_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000243,
+      "name": "Grand Warlock",
+      "TID": {
+        "name": "TID_FROSTAGE_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000244,
+      "name": "Grand Sorcerer",
+      "TID": {
+        "name": "TID_DESERTNIGHTS_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000245,
+      "name": "River Warden",
+      "TID": {
+        "name": "TID_LNY26_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000246,
+      "name": "Dragonscale Warden",
+      "TID": {
+        "name": "TID_DRAGONESCAPE_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000247,
+      "name": "Keystriker Warden",
+      "TID": {
+        "name": "TID_SOUNDOFCLASH_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000248,
+      "name": "Skeleton Warden",
+      "TID": {
+        "name": "TID_SKELETON_WARDEN"
+      },
+      "tier": "Gold",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000249,
+      "name": "Anime Fury Warden",
+      "TID": {
+        "name": "TID_ANIME26_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000250,
+      "name": "Minion Prince",
+      "TID": {
+        "name": "TID_MINION_HERO"
+      },
+      "tier": "Default",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000251,
+      "name": "Snake Prince",
+      "TID": {
+        "name": "TID_LNY25_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000252,
+      "name": "Minion General",
+      "TID": {
+        "name": "TID_MILITARY_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000253,
+      "name": "Prince Mysterio",
+      "TID": {
+        "name": "TID_APRIL25_PRINCE"
+      },
+      "tier": "Gold",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000254,
+      "name": "Cyclone Prince",
+      "TID": {
+        "name": "TID_JAPAN_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000255,
+      "name": "Minion Cop",
+      "TID": {
+        "name": "TID_DARKDAYS_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000256,
+      "name": "Minion Inventor",
+      "TID": {
+        "name": "TID_CYBERPUNK_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000257,
+      "name": "Clash-A-Rama Prince",
+      "TID": {
+        "name": "TID_CLASHARAMA_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000258,
+      "name": "Lava Prince",
+      "TID": {
+        "name": "TID_CLASHARAMA_2_MINION_PRINCE"
+      },
+      "tier": "Gold",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000259,
+      "name": "Nightmare Prince",
+      "TID": {
+        "name": "TID_COSMICCURSE_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000260,
+      "name": "Armored Prince",
+      "TID": {
+        "name": "TID_WASTELANDS_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000261,
+      "name": "Frost Prince",
+      "TID": {
+        "name": "TID_FROSTAGE_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000262,
+      "name": "Genie Prince",
+      "TID": {
+        "name": "TID_DESERTNIGHTS_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000263,
+      "name": "Ox Prince",
+      "TID": {
+        "name": "TID_LNY26_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000264,
+      "name": "Dragonscale Prince",
+      "TID": {
+        "name": "TID_DRAGONESCAPE_MINION_PRINCE"
+      },
+      "tier": "Gold",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000265,
+      "name": "Beatsmasher Prince",
+      "TID": {
+        "name": "TID_SOUNDOFCLASH_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000266,
+      "name": "Skeleton Prince",
+      "TID": {
+        "name": "TID_SKELETON_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000267,
+      "name": "Anime Fury Prince",
+      "TID": {
+        "name": "TID_ANIME26_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000270,
+      "name": "Majestic Minion Prince",
+      "TID": {
+        "name": "TID_UPGRADED_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000285,
+      "name": "Dragonscale King",
+      "TID": {
+        "name": "TID_DRAGONESCAPE_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000286,
+      "name": "Stringshredder King",
+      "TID": {
+        "name": "TID_SOUNDOFCLASH_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000287,
+      "name": "Skeleton King Resurrected",
+      "TID": {
+        "name": "TID_SKELETON26_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000288,
+      "name": "Anime Fury King",
+      "TID": {
+        "name": "TID_ANIME26_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000289,
+      "name": "Shadow Samurai",
+      "TID": {
+        "name": "TID_JAPAN26_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000292,
+      "name": "Majestic Barbarian King",
+      "TID": {
+        "name": "TID_UPGRADED_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000295,
+      "name": "Mirage Champion",
+      "TID": {
+        "name": "TID_DESERTNIGHTS_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000296,
+      "name": "Red Champion",
+      "TID": {
+        "name": "TID_LNY26_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000297,
+      "name": "Dragonscale Champion",
+      "TID": {
+        "name": "TID_DRAGONESCAPE_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000298,
+      "name": "Royal Screamstress",
+      "TID": {
+        "name": "TID_SOUNDOFCLASH_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000299,
+      "name": "Skeleton Champion",
+      "TID": {
+        "name": "TID_SKELETON_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000300,
+      "name": "Anime Fury Champion",
+      "TID": {
+        "name": "TID_ANIME26_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000304,
+      "name": "Majestic Royal Champion",
+      "TID": {
+        "name": "TID_UPGRADED_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000320,
+      "name": "Majestic Archer Queen",
+      "TID": {
+        "name": "TID_UPGRADED_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000331,
+      "name": "Majestic Grand Warden",
+      "TID": {
+        "name": "TID_UPGRADED_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000342,
+      "name": "Dragon Duke",
+      "TID": {
+        "name": "TID_DRAGON_DUKE"
+      },
+      "tier": "Default",
+      "character": "Dragon Duke"
+    },
+    {
+      "_id": 52000343,
+      "name": "Imprisoned Duke",
+      "TID": {
+        "name": "TID_DRAGONESCAPE_DUKE"
+      },
+      "tier": "Legendary",
+      "character": "Dragon Duke"
+    },
+    {
+      "_id": 52000344,
+      "name": "Showmaster Duke",
+      "TID": {
+        "name": "TID_SOUNDOFCLASH_DUKE"
+      },
+      "tier": "Legendary",
+      "character": "Dragon Duke"
+    },
+    {
+      "_id": 52000345,
+      "name": "Skeleton Duke",
+      "TID": {
+        "name": "TID_SKELETON_DUKE"
+      },
+      "tier": "Legendary",
+      "character": "Dragon Duke"
+    },
+    {
+      "_id": 52000346,
+      "name": "Anime Fury Duke",
+      "TID": {
+        "name": "TID_ANIME26_DUKE"
+      },
+      "tier": "Gold",
+      "character": "Dragon Duke"
+    },
+    {
+      "_id": 52000349,
+      "name": "Majestic Dragon Duke",
+      "TID": {
+        "name": "TID_UPGRADED_DUKE"
+      },
+      "tier": "Legendary",
+      "character": "Dragon Duke"
+    }
+  ]
+}

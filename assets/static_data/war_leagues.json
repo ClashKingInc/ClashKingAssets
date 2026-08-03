@@ -1,0 +1,360 @@
+{
+  "items": [
+    {
+      "_id": 48000001,
+      "name": "Bronze League III",
+      "TID": {
+        "name": "TID_LEAGUE_BRONZE3"
+      },
+      "cwl_medals": {
+        "first_place": 46,
+        "position_medal_diff": 2,
+        "bonus_reward": 42,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 3,
+      "demotions": 0,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000002,
+      "name": "Bronze League II",
+      "TID": {
+        "name": "TID_LEAGUE_BRONZE2"
+      },
+      "cwl_medals": {
+        "first_place": 58,
+        "position_medal_diff": 2,
+        "bonus_reward": 45,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 3,
+      "demotions": 1,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000003,
+      "name": "Bronze League I",
+      "TID": {
+        "name": "TID_LEAGUE_BRONZE1"
+      },
+      "cwl_medals": {
+        "first_place": 70,
+        "position_medal_diff": 2,
+        "bonus_reward": 48,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 3,
+      "demotions": 1,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000004,
+      "name": "Silver League III",
+      "TID": {
+        "name": "TID_LEAGUE_SILVER3"
+      },
+      "cwl_medals": {
+        "first_place": 88,
+        "position_medal_diff": 3,
+        "bonus_reward": 51,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 2,
+      "demotions": 1,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000005,
+      "name": "Silver League II",
+      "TID": {
+        "name": "TID_LEAGUE_SILVER2"
+      },
+      "cwl_medals": {
+        "first_place": 106,
+        "position_medal_diff": 3,
+        "bonus_reward": 54,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000006,
+      "name": "Silver League I",
+      "TID": {
+        "name": "TID_LEAGUE_SILVER1"
+      },
+      "cwl_medals": {
+        "first_place": 124,
+        "position_medal_diff": 3,
+        "bonus_reward": 57,
+        "minimum_bonus_amount": 1
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000007,
+      "name": "Gold League III",
+      "TID": {
+        "name": "TID_LEAGUE_GOLD3"
+      },
+      "cwl_medals": {
+        "first_place": 148,
+        "position_medal_diff": 4,
+        "bonus_reward": 60,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000008,
+      "name": "Gold League II",
+      "TID": {
+        "name": "TID_LEAGUE_GOLD2"
+      },
+      "cwl_medals": {
+        "first_place": 172,
+        "position_medal_diff": 4,
+        "bonus_reward": 63,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000009,
+      "name": "Gold League I",
+      "TID": {
+        "name": "TID_LEAGUE_GOLD1"
+      },
+      "cwl_medals": {
+        "first_place": 196,
+        "position_medal_diff": 4,
+        "bonus_reward": 66,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000010,
+      "name": "Crystal League III",
+      "TID": {
+        "name": "TID_LEAGUE_CRYSTAL3"
+      },
+      "cwl_medals": {
+        "first_place": 220,
+        "position_medal_diff": 4,
+        "bonus_reward": 69,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000011,
+      "name": "Crystal League II",
+      "TID": {
+        "name": "TID_LEAGUE_CRYSTAL2"
+      },
+      "cwl_medals": {
+        "first_place": 244,
+        "position_medal_diff": 4,
+        "bonus_reward": 72,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000012,
+      "name": "Crystal League I",
+      "TID": {
+        "name": "TID_LEAGUE_CRYSTAL1"
+      },
+      "cwl_medals": {
+        "first_place": 274,
+        "position_medal_diff": 5,
+        "bonus_reward": 75,
+        "minimum_bonus_amount": 2
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000013,
+      "name": "Master League III",
+      "TID": {
+        "name": "TID_LEAGUE_MASTER3"
+      },
+      "cwl_medals": {
+        "first_place": 304,
+        "position_medal_diff": 5,
+        "bonus_reward": 78,
+        "minimum_bonus_amount": 3
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000014,
+      "name": "Master League II",
+      "TID": {
+        "name": "TID_LEAGUE_MASTER2"
+      },
+      "cwl_medals": {
+        "first_place": 334,
+        "position_medal_diff": 5,
+        "bonus_reward": 81,
+        "minimum_bonus_amount": 3
+      },
+      "promotions": 2,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000015,
+      "name": "Master League I",
+      "TID": {
+        "name": "TID_LEAGUE_MASTER1"
+      },
+      "cwl_medals": {
+        "first_place": 364,
+        "position_medal_diff": 5,
+        "bonus_reward": 84,
+        "minimum_bonus_amount": 3
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": false
+    },
+    {
+      "_id": 48000016,
+      "name": "Champion League III",
+      "TID": {
+        "name": "TID_LEAGUE_CHAMPION3"
+      },
+      "cwl_medals": {
+        "first_place": 388,
+        "position_medal_diff": 4,
+        "bonus_reward": 87,
+        "minimum_bonus_amount": 4
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": true
+    },
+    {
+      "_id": 48000017,
+      "name": "Champion League II",
+      "TID": {
+        "name": "TID_LEAGUE_CHAMPION2"
+      },
+      "cwl_medals": {
+        "first_place": 412,
+        "position_medal_diff": 4,
+        "bonus_reward": 90,
+        "minimum_bonus_amount": 4
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": true
+    },
+    {
+      "_id": 48000018,
+      "name": "Champion League I",
+      "TID": {
+        "name": "TID_LEAGUE_CHAMPION1"
+      },
+      "cwl_medals": {
+        "first_place": 436,
+        "position_medal_diff": 4,
+        "bonus_reward": 93,
+        "minimum_bonus_amount": 4
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": true
+    },
+    {
+      "_id": 48000019,
+      "name": "Titan League III",
+      "TID": {
+        "name": "TID_LEAGUE_HERO3"
+      },
+      "cwl_medals": {
+        "first_place": 454,
+        "position_medal_diff": 3,
+        "bonus_reward": 96,
+        "minimum_bonus_amount": 5
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": true,
+      "battle_modifier": "Minus Two"
+    },
+    {
+      "_id": 48000020,
+      "name": "Titan League II",
+      "TID": {
+        "name": "TID_LEAGUE_HERO2"
+      },
+      "cwl_medals": {
+        "first_place": 472,
+        "position_medal_diff": 3,
+        "bonus_reward": 99,
+        "minimum_bonus_amount": 5
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": true,
+      "battle_modifier": "Minus Two"
+    },
+    {
+      "_id": 48000021,
+      "name": "Titan League I",
+      "TID": {
+        "name": "TID_LEAGUE_HERO1"
+      },
+      "cwl_medals": {
+        "first_place": 490,
+        "position_medal_diff": 3,
+        "bonus_reward": 102,
+        "minimum_bonus_amount": 5
+      },
+      "promotions": 1,
+      "demotions": 2,
+      "15v15_only": true,
+      "battle_modifier": "Minus One"
+    },
+    {
+      "_id": 48000022,
+      "name": "Legend League",
+      "TID": {
+        "name": "TID_LEAGUE_LEGENDARY"
+      },
+      "cwl_medals": {
+        "first_place": 508,
+        "position_medal_diff": 3,
+        "bonus_reward": 105,
+        "minimum_bonus_amount": 6
+      },
+      "promotions": 0,
+      "demotions": 2,
+      "15v15_only": true,
+      "battle_modifier": "Minus One"
+    }
+  ]
+}

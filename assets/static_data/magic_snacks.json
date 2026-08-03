@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "_id": 509612545377542,
+      "name": "Builder Bite",
+      "info": "A hearty bite that makes your Builders work <num>x as fast for <time>. Works in the Home Village! Sadly, the Builder’s Apprentice is a vegetarian and won't be boosted!",
+      "TID": {
+        "name": "TID_CONSUMABLE_BOOST_BUILDER",
+        "info": "TID_CONSUMABLE_BOOST_BUILDER_INFO"
+      },
+      "duration": 3600
+    },
+    {
+      "_id": 210152651251664,
+      "name": "Study Soup",
+      "info": "This bubbling broth makes your Laboratory research and Pet House upgrades <num>x as fast for <time>. Works in the Home Village!",
+      "TID": {
+        "name": "TID_CONSUMABLE_BOOST_LAB",
+        "info": "TID_CONSUMABLE_BOOST_LAB_INFO"
+      },
+      "duration": 3600
+    },
+    {
+      "_id": 84541856028440,
+      "name": "Mighty Morsel",
+      "info": "A mighty meal that boosts Heroes, Pets and Equipment to the maximum level for your Town Hall for the next <battles> battles. Works in the Home Village!",
+      "TID": {
+        "name": "TID_CONSUMABLE_BOOST_HERO",
+        "info": "TID_CONSUMABLE_BOOST_HERO_INFO"
+      },
+      "duration": 0
+    },
+    {
+      "_id": 909252305102259,
+      "name": "Power Pancakes",
+      "info": "A hearty meal that boosts Troops, Spells and Siege Machines to the maximum level for your Town Hall for the next <battles> battles. Works in the Home Village!",
+      "TID": {
+        "name": "TID_CONSUMABLE_BOOST_ARMY",
+        "info": "TID_CONSUMABLE_BOOST_ARMY_INFO"
+      },
+      "duration": 0
+    },
+    {
+      "_id": 860289445845268,
+      "name": "Training Treat",
+      "info": "A quick bite that will instantly train all Troops, Spells and Siege Machines for <time> or at most <battles> battles.",
+      "TID": {
+        "name": "TID_CONSUMABLE_INSTANT_TRAINING",
+        "info": "TID_CONSUMABLE_INSTANT_TRAINING_INFO"
+      },
+      "duration": 1200
+    },
+    {
+      "_id": 272344549778277,
+      "name": "Clan Castle Cake",
+      "info": "A sweet deal! Add free Reinforcements to your Clan Castle for <time>. To enjoy this treat, join a Clan and add Reinforcements at your Clan Castle!",
+      "TID": {
+        "name": "TID_CONSUMABLE_CC_REFILL",
+        "info": "TID_CONSUMABLE_CC_REFILL_INFO"
+      },
+      "duration": 43200
+    }
+  ]
+}

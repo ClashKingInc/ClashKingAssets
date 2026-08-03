@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "_id": 55351255644523,
+      "name": "Chest",
+      "info": "A Chest that contains a random reward!",
+      "TID": {
+        "name": "TID_CHEST_COMMON_NAME",
+        "info": "TID_CHEST_COMMON_INFO"
+      }
+    },
+    {
+      "_id": 570943162650848,
+      "name": "Rare Chest",
+      "info": "A Chest that contains at least a rare reward!",
+      "TID": {
+        "name": "TID_CHEST_RARE_NAME",
+        "info": "TID_CHEST_RARE_INFO"
+      }
+    },
+    {
+      "_id": 596928362089229,
+      "name": "Epic Chest",
+      "info": "A Chest that contains at least an epic reward!",
+      "TID": {
+        "name": "TID_CHEST_EPIC_NAME",
+        "info": "TID_CHEST_EPIC_INFO"
+      }
+    },
+    {
+      "_id": 53669156428277,
+      "name": "Card Pack",
+      "info": "Trade 2 duplicates of the same card type to get a random Card.",
+      "TID": {
+        "name": "TID_CHEST_COLLECTION_NAME",
+        "info": "TID_CHEST_COLLECTION_INFO"
+      }
+    }
+  ]
+}

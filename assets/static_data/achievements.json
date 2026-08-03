@@ -1,0 +1,2034 @@
+{
+  "items": [
+    {
+      "name": "Bigger Coffers",
+      "info": "Upgrade a Gold Storage to level <number>",
+      "completed_message": "Highest Gold Storage level: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_GOLDSTORAGE_TITLE",
+        "info": "TID_ACHIEVEMENT_GOLDSTORAGE_UPGRADE",
+        "completed_message": "TID_ACHIEVEMENT_GOLDSTORAGE_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 96,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 2,
+          "action_data": "Gold Storage",
+          "xp": 10,
+          "gems": 2
+        },
+        {
+          "level": 2,
+          "action_count": 5,
+          "action_data": "Gold Storage",
+          "xp": 100,
+          "gems": 5
+        },
+        {
+          "level": 3,
+          "action_count": 10,
+          "action_data": "Gold Storage",
+          "xp": 1000,
+          "gems": 10
+        }
+      ]
+    },
+    {
+      "name": "Get those Goblins!",
+      "info": "Win <number> Stars on the Campaign Map",
+      "completed_message": "Stars in Campaign Map: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_NPC_STARS_TITLE",
+        "info": "TID_ACHIEVEMENT_NPC_STARS",
+        "completed_message": "TID_ACHIEVEMENT_NPC_STARS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 3,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 10,
+          "action_data": null,
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 50,
+          "action_data": null,
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 150,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "Bigger & Better",
+      "info": "Upgrade Town Hall to level <number>",
+      "completed_message": "Current Town Hall level: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_TOWN_HALL_TITLE",
+        "info": "TID_ACHIEVEMENT_TOWN_HALL",
+        "completed_message": "TID_ACHIEVEMENT_TOWN_HALL_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 99,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 3,
+          "action_data": "Town Hall",
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 5,
+          "action_data": "Town Hall",
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 8,
+          "action_data": "Town Hall",
+          "xp": 1000,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "Nice and Tidy",
+      "info": "Remove <number> obstacles (trees, rocks, bushes)",
+      "completed_message": "Total obstacles removed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_CLEAR_OBSTACLES_TITLE",
+        "info": "TID_ACHIEVEMENT_CLEAR_OBSTACLES",
+        "completed_message": "TID_ACHIEVEMENT_CLEAR_OBSTACLES_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 90,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 5,
+          "action_data": null,
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 50,
+          "action_data": null,
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 500,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "Discover New Troops",
+      "info": "Unlock <name> in the Barracks",
+      "completed_message": null,
+      "TID": {
+        "name": "TID_ACHIEVEMENT_UNIT_UNLOCK_TITLE",
+        "info": "TID_ACHIEVEMENT_UNIT_UNLOCK",
+        "completed_message": null
+      },
+      "village": "home",
+      "ui_priority": 98,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 1,
+          "action_data": "Archer",
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 1,
+          "action_data": "Wall Breaker",
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 1,
+          "action_data": "Dragon",
+          "xp": 1000,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "Gold Grab",
+      "info": "Steal <number> Gold",
+      "completed_message": "Total Gold looted: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_LOOT_GOLD_TITLE",
+        "info": "TID_ACHIEVEMENT_LOOT_GOLD",
+        "completed_message": "TID_ACHIEVEMENT_LOOT_GOLD_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 95,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 20000,
+          "action_data": "Gold",
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 1000000,
+          "action_data": "Gold",
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 100000000,
+          "action_data": "Gold",
+          "xp": 1000,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "Elixir Escapade",
+      "info": "Steal <number> elixir",
+      "completed_message": "Total Elixir looted: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_LOOT_ELIXIR_TITLE",
+        "info": "TID_ACHIEVEMENT_LOOT_ELIXIR",
+        "completed_message": "TID_ACHIEVEMENT_LOOT_ELIXIR_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 94,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 20000,
+          "action_data": "Elixir",
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 1000000,
+          "action_data": "Elixir",
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 100000000,
+          "action_data": "Elixir",
+          "xp": 1000,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "Sweet Victory!",
+      "info": "Achieve a total of <number> trophies in Multiplayer battles",
+      "completed_message": "Trophy record: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_VICTORY_POINTS_TITLE",
+        "info": "TID_ACHIEVEMENT_VICTORY_POINTS",
+        "completed_message": "TID_ACHIEVEMENT_VICTORY_POINTS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 76,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 75,
+          "action_data": null,
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 750,
+          "action_data": null,
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 1250,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 450
+        }
+      ]
+    },
+    {
+      "name": "Empire Builder",
+      "info": "Rebuild the Clan Castle",
+      "completed_message": "Current Clan Castle level: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_CASTLE_TITLE",
+        "info": "TID_ACHIEVEMENT_CASTLE_REPAIR",
+        "completed_message": "TID_ACHIEVEMENT_CASTLE_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 89,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 1,
+          "action_data": "Clan Castle",
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 2,
+          "action_data": "Clan Castle",
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 4,
+          "action_data": "Clan Castle",
+          "xp": 1000,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "Wall Buster",
+      "info": "Destroy <number> Walls in Multiplayer battles",
+      "completed_message": "Total Walls destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_WALLS_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_WALLS",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_WALLS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 65,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 10,
+          "action_data": "Wall",
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 100,
+          "action_data": "Wall",
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 2000,
+          "action_data": "Wall",
+          "xp": 1000,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "Humiliator",
+      "info": "Destroy <number> Town Halls in Multiplayer battles",
+      "completed_message": "Total Town Halls destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_TOWNHALL_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_TOWNHALL",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_TOWNHALL_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 67,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 10,
+          "action_data": "Town Hall",
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 100,
+          "action_data": "Town Hall",
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 2000,
+          "action_data": "Town Hall",
+          "xp": 1000,
+          "gems": 50
+        }
+      ]
+    },
+    {
+      "name": "Union Buster",
+      "info": "Destroy <number> Builder's Huts in Multiplayer battles",
+      "completed_message": "Total Builder's Huts destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_BUILDER_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_BUILDER",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_BUILDER_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 66,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 25,
+          "action_data": "Builders Hut",
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 250,
+          "action_data": "Builders Hut",
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 2500,
+          "action_data": "Builders Hut",
+          "xp": 1000,
+          "gems": 30
+        }
+      ]
+    },
+    {
+      "name": "Conqueror",
+      "info": "Win <number> Multiplayer battles",
+      "completed_message": "Total multiplayer battles won: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_PVP_ATTACKS_TITLE",
+        "info": "TID_ACHIEVEMENT_PVP_ATTACKS",
+        "completed_message": "TID_ACHIEVEMENT_PVP_ATTACKS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 75,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 25,
+          "action_data": null,
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 250,
+          "action_data": null,
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 5000,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "Unbreakable",
+      "info": "Successfully defend against <number> attacks",
+      "completed_message": "Total defenses won: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_PVP_DEFENSES_TITLE",
+        "info": "TID_ACHIEVEMENT_PVP_DEFENSES",
+        "completed_message": "TID_ACHIEVEMENT_PVP_DEFENSES_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 77,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 10,
+          "action_data": null,
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 250,
+          "action_data": null,
+          "xp": 100,
+          "gems": 50
+        },
+        {
+          "level": 3,
+          "action_count": 500,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 100
+        }
+      ]
+    },
+    {
+      "name": "Friend in Need",
+      "info": "Donate <number> capacity worth of reinforcements to Clanmates",
+      "completed_message": "Total capacity donated: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DONATE_UNITS_TITLE",
+        "info": "TID_ACHIEVEMENT_DONATE_UNITS",
+        "completed_message": "TID_ACHIEVEMENT_DONATE_UNITS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 88,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 100,
+          "action_data": null,
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 5000,
+          "action_data": null,
+          "xp": 100,
+          "gems": 25
+        },
+        {
+          "level": 3,
+          "action_count": 25000,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 250
+        }
+      ]
+    },
+    {
+      "name": "Mortar Mauler",
+      "info": "Destroy <number> Mortars in Multiplayer battles",
+      "completed_message": "Total Mortars destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_MORTARS_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_MORTARS",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_MORTARS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 64,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 25,
+          "action_data": "Mortar",
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 500,
+          "action_data": "Mortar",
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 5000,
+          "action_data": "Mortar",
+          "xp": 1000,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "Heroic Heist",
+      "info": "Steal <number> Dark Elixir",
+      "completed_message": "Total Dark Elixir looted: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_LOOT_DARK_ELIXIR_TITLE",
+        "info": "TID_ACHIEVEMENT_LOOT_DARK_ELIXIR",
+        "completed_message": "TID_ACHIEVEMENT_LOOT_DARK_ELIXIR_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 93,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 20000,
+          "action_data": "DarkElixir",
+          "xp": 10,
+          "gems": 5
+        },
+        {
+          "level": 2,
+          "action_count": 250000,
+          "action_data": "DarkElixir",
+          "xp": 100,
+          "gems": 10
+        },
+        {
+          "level": 3,
+          "action_count": 1000000,
+          "action_data": "DarkElixir",
+          "xp": 1000,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "League All-Star",
+      "info": "Join the Crystal League",
+      "completed_message": null,
+      "TID": {
+        "name": "TID_ACHIEVEMENT_LEAGUE_TITLE",
+        "info": "TID_ACHIEVEMENT_LEAGUE_PROGRESS_1",
+        "completed_message": null
+      },
+      "village": "home",
+      "ui_priority": 72,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 10,
+          "action_data": null,
+          "xp": 100,
+          "gems": 250
+        },
+        {
+          "level": 2,
+          "action_count": 13,
+          "action_data": null,
+          "xp": 500,
+          "gems": 1000
+        },
+        {
+          "level": 3,
+          "action_count": 16,
+          "action_data": null,
+          "xp": 2000,
+          "gems": 2000
+        }
+      ]
+    },
+    {
+      "name": "X-Bow Exterminator",
+      "info": "Destroy one X-Bow in a Multiplayer battle",
+      "completed_message": "Total X-Bows destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_XBOW_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_XBOW_ONE",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_XBOW_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 63,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 1,
+          "action_data": "X-Bow",
+          "xp": 50,
+          "gems": 50
+        },
+        {
+          "level": 2,
+          "action_count": 250,
+          "action_data": "X-Bow",
+          "xp": 100,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 2500,
+          "action_data": "X-Bow",
+          "xp": 1000,
+          "gems": 200
+        }
+      ]
+    },
+    {
+      "name": "Firefighter",
+      "info": "Destroy <number> Inferno Towers in Multiplayer battles",
+      "completed_message": "Total Inferno Towers destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_INFERNO_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_INFERNO",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_INFERNO_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 62,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 10,
+          "action_data": "Inferno Tower",
+          "xp": 50,
+          "gems": 100
+        },
+        {
+          "level": 2,
+          "action_count": 250,
+          "action_data": "Inferno Tower",
+          "xp": 500,
+          "gems": 200
+        },
+        {
+          "level": 3,
+          "action_count": 5000,
+          "action_data": "Inferno Tower",
+          "xp": 5000,
+          "gems": 1000
+        }
+      ]
+    },
+    {
+      "name": "War Hero",
+      "info": "Score <number> Stars for your clan in Clan War battles",
+      "completed_message": "Total Stars scored for clan in Clan War battles: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_WAR_STARS_TITLE",
+        "info": "TID_ACHIEVEMENT_WAR_STARS",
+        "completed_message": "TID_ACHIEVEMENT_WAR_STARS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 85,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 10,
+          "action_data": null,
+          "xp": 50,
+          "gems": 50
+        },
+        {
+          "level": 2,
+          "action_count": 150,
+          "action_data": null,
+          "xp": 500,
+          "gems": 200
+        },
+        {
+          "level": 3,
+          "action_count": 1000,
+          "action_data": null,
+          "xp": 5000,
+          "gems": 1000
+        }
+      ]
+    },
+    {
+      "name": "Clan War Wealth",
+      "info": "Collect <number> Gold from the Clan Castle",
+      "completed_message": "Total Gold collected in Clan War bonuses: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_WAR_LOOT_TITLE",
+        "info": "TID_ACHIEVEMENT_WAR_LOOT",
+        "completed_message": "TID_ACHIEVEMENT_WAR_LOOT_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 89,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 800000,
+          "action_data": null,
+          "xp": 100,
+          "gems": 25
+        },
+        {
+          "level": 2,
+          "action_count": 15000000,
+          "action_data": null,
+          "xp": 500,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 100000000,
+          "action_data": null,
+          "xp": 5000,
+          "gems": 500
+        }
+      ]
+    },
+    {
+      "name": "Anti-Artillery",
+      "info": "Destroy <number> Eagle or Inferno Artilleries in Multiplayer battles",
+      "completed_message": "Total Eagle or Inferno Artilleries destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_ARTILLERY_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_ARTILLERY",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_ARTILLERY_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 61,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 20,
+          "action_data": "Eagle Artillery",
+          "xp": 100,
+          "gems": 150
+        },
+        {
+          "level": 2,
+          "action_count": 200,
+          "action_data": "Eagle Artillery",
+          "xp": 800,
+          "gems": 300
+        },
+        {
+          "level": 3,
+          "action_count": 2000,
+          "action_data": "Eagle Artillery",
+          "xp": 5000,
+          "gems": 1000
+        }
+      ]
+    },
+    {
+      "name": "Sharing is caring",
+      "info": "Donate <number> Spell storage capacity worth of Spells",
+      "completed_message": "Total Spell capacity donated: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_SPELL_DONATION_TITLE",
+        "info": "TID_ACHIEVEMENT_SPELL_DONATION",
+        "completed_message": "TID_ACHIEVEMENT_SPELL_DONATION_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 87,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 100,
+          "action_data": null,
+          "xp": 20,
+          "gems": 20
+        },
+        {
+          "level": 2,
+          "action_count": 2000,
+          "action_data": null,
+          "xp": 200,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 10000,
+          "action_data": null,
+          "xp": 2000,
+          "gems": 500
+        }
+      ]
+    },
+    {
+      "name": "Keep Your Account Safe!",
+      "info": "Protect your Village by connecting to a social network",
+      "completed_message": "Completed!",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_ACCOUNT_BOUND_TITLE",
+        "info": "TID_ACHIEVEMENT_ACCOUNT_BOUND",
+        "completed_message": "TID_ACHIEVEMENT_ACCOUNT_BOUND_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 100,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 1,
+          "action_data": null,
+          "xp": 100,
+          "gems": 50
+        },
+        {
+          "level": 1,
+          "action_count": 1,
+          "action_data": null,
+          "xp": 100,
+          "gems": 50
+        }
+      ]
+    },
+    {
+      "name": "Master Engineering",
+      "info": "Upgrade Builder Hall to level <number>",
+      "completed_message": "Current Builder Hall level: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_TOWN_HALL2_TITLE",
+        "info": "TID_ACHIEVEMENT_TOWN_HALL2",
+        "completed_message": "TID_ACHIEVEMENT_TOWN_HALL2_COMPLETED"
+      },
+      "village": "builderBase",
+      "ui_priority": 3,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 3,
+          "action_data": "BB Builder Hall",
+          "xp": 20,
+          "gems": 10
+        },
+        {
+          "level": 2,
+          "action_count": 5,
+          "action_data": "BB Builder Hall",
+          "xp": 200,
+          "gems": 30
+        },
+        {
+          "level": 3,
+          "action_count": 8,
+          "action_data": "BB Builder Hall",
+          "xp": 2000,
+          "gems": 50
+        }
+      ]
+    },
+    {
+      "name": "Next Generation Model",
+      "info": "Unlock <name> in the Builder Barracks",
+      "completed_message": null,
+      "TID": {
+        "name": "TID_ACHIEVEMENT_UNIT_UNLOCK2_TITLE",
+        "info": "TID_ACHIEVEMENT_UNIT_UNLOCK2",
+        "completed_message": null
+      },
+      "village": "builderBase",
+      "ui_priority": 0,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 1,
+          "action_data": "BB Sneaky Archer",
+          "xp": 20,
+          "gems": 10
+        },
+        {
+          "level": 2,
+          "action_count": 1,
+          "action_data": "BB Cannon Cart",
+          "xp": 200,
+          "gems": 30
+        },
+        {
+          "level": 3,
+          "action_count": 1,
+          "action_data": "BB Power PEKKA",
+          "xp": 2000,
+          "gems": 50
+        }
+      ]
+    },
+    {
+      "name": "Un-Build It",
+      "info": "Destroy <number> Builder Halls in Builder Battles",
+      "completed_message": "Total Builder Halls destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_TOWNHALL2_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_TOWNHALL2",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_TOWNHALL2_COMPLETED"
+      },
+      "village": "builderBase",
+      "ui_priority": 0,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 5,
+          "action_data": "BB Builder Hall",
+          "xp": 20,
+          "gems": 10
+        },
+        {
+          "level": 2,
+          "action_count": 100,
+          "action_data": "BB Builder Hall",
+          "xp": 200,
+          "gems": 30
+        },
+        {
+          "level": 3,
+          "action_count": 2000,
+          "action_data": "BB Builder Hall",
+          "xp": 2000,
+          "gems": 50
+        }
+      ]
+    },
+    {
+      "name": "Champion Builder",
+      "info": "Achieve a total of <number> trophies in Builder Battles",
+      "completed_message": "Builder Trophy record: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_VS_BATTLE_TROPHIES_TITLE",
+        "info": "TID_ACHIEVEMENT_VS_BATTLE_TROPHIES",
+        "completed_message": "TID_ACHIEVEMENT_VS_BATTLE_TROPHIES_COMPLETED"
+      },
+      "village": "builderBase",
+      "ui_priority": 0,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 200,
+          "action_data": null,
+          "xp": 50,
+          "gems": 10
+        },
+        {
+          "level": 2,
+          "action_count": 1000,
+          "action_data": null,
+          "xp": 500,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 3000,
+          "action_data": null,
+          "xp": 5000,
+          "gems": 1000
+        }
+      ]
+    },
+    {
+      "name": "High Gear",
+      "info": "Gear Up one building using the Master Builder",
+      "completed_message": "Total buildings geared up: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_GEAR_UP_TITLE",
+        "info": "TID_ACHIEVEMENT_GEAR_UP_ONE",
+        "completed_message": "TID_ACHIEVEMENT_GEAR_UP_COMPLETED"
+      },
+      "village": "builderBase",
+      "ui_priority": 1,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 1,
+          "action_data": null,
+          "xp": 20,
+          "gems": 10
+        },
+        {
+          "level": 2,
+          "action_count": 2,
+          "action_data": null,
+          "xp": 200,
+          "gems": 30
+        },
+        {
+          "level": 3,
+          "action_count": 3,
+          "action_data": null,
+          "xp": 2000,
+          "gems": 50
+        }
+      ]
+    },
+    {
+      "name": "Hidden Treasures",
+      "info": "Rebuild <name>",
+      "completed_message": null,
+      "TID": {
+        "name": "TID_ACHIEVEMENT_REPAIR_BUILDING_TITLE",
+        "info": "TID_ACHIEVEMENT_REPAIR_BUILDING",
+        "completed_message": null
+      },
+      "village": "builderBase",
+      "ui_priority": 2,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 1,
+          "action_data": "BB Gem Mine",
+          "xp": 20,
+          "gems": 10
+        },
+        {
+          "level": 2,
+          "action_count": 1,
+          "action_data": "BB Clock Tower",
+          "xp": 200,
+          "gems": 30
+        },
+        {
+          "level": 3,
+          "action_count": 1,
+          "action_data": "BB Battle Machine Altar",
+          "xp": 2000,
+          "gems": 50
+        }
+      ]
+    },
+    {
+      "name": "Games Champion",
+      "info": "Earn <number> points in Clan Games",
+      "completed_message": "Total Clan Games points: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_CLAN_GAMES_POINTS_TITLE",
+        "info": "TID_ACHIEVEMENT_CLAN_GAMES_POINTS",
+        "completed_message": "TID_ACHIEVEMENT_CLAN_GAMES_POINTS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 81,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 10000,
+          "action_data": null,
+          "xp": 20,
+          "gems": 50
+        },
+        {
+          "level": 2,
+          "action_count": 50000,
+          "action_data": null,
+          "xp": 200,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 100000,
+          "action_data": null,
+          "xp": 2000,
+          "gems": 250
+        }
+      ]
+    },
+    {
+      "name": "Get those other Goblins!",
+      "info": "Win <number> Stars on the Campaign Map",
+      "completed_message": "Stars in Campaign Map: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_NPC_STARS_MORE_TITLE",
+        "info": "TID_ACHIEVEMENT_NPC_STARS",
+        "completed_message": "TID_ACHIEVEMENT_NPC_STARS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 2,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 175,
+          "action_data": null,
+          "xp": 200,
+          "gems": 20
+        },
+        {
+          "level": 2,
+          "action_count": 200,
+          "action_data": null,
+          "xp": 500,
+          "gems": 50
+        },
+        {
+          "level": 3,
+          "action_count": 225,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 100
+        }
+      ]
+    },
+    {
+      "name": "Dragon Slayer",
+      "info": "Slay the Giant Dragon on the Campaign Map",
+      "completed_message": null,
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DRAGON_SLAYER_TITLE",
+        "info": "TID_ACHIEVEMENT_DRAGON_SLAYER",
+        "completed_message": null
+      },
+      "village": "home",
+      "ui_priority": 1,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 1,
+          "action_data": "Golden Dragon",
+          "xp": 200,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "War League Legend",
+      "info": "Score <number> Stars for your clan in War League battles",
+      "completed_message": "Total Stars scored for clan in War League battles: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_WL_STARS_TITLE",
+        "info": "TID_ACHIEVEMENT_WL_STARS",
+        "completed_message": "TID_ACHIEVEMENT_WL_STARS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 84,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 20,
+          "action_data": null,
+          "xp": 200,
+          "gems": 20
+        },
+        {
+          "level": 2,
+          "action_count": 100,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 250,
+          "action_data": null,
+          "xp": 2500,
+          "gems": 250
+        }
+      ]
+    },
+    {
+      "name": "Well Seasoned",
+      "info": "Earn <number> points in Season Challenges",
+      "completed_message": "Total Season Challenges points: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_SEASON_CHALLENGE_POINTS_TITLE",
+        "info": "TID_ACHIEVEMENT_SEASON_CHALLENGE_POINTS",
+        "completed_message": "TID_ACHIEVEMENT_SEASON_CHALLENGE_POINTS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 91,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 5000,
+          "action_data": null,
+          "xp": 20,
+          "gems": 50
+        },
+        {
+          "level": 2,
+          "action_count": 15000,
+          "action_data": null,
+          "xp": 200,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 50000,
+          "action_data": null,
+          "xp": 2000,
+          "gems": 250
+        }
+      ]
+    },
+    {
+      "name": "Shattered and Scattered",
+      "info": "Destroy <number> Scattershots in Multiplayer battles",
+      "completed_message": "Total Scattershots destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_SCATTERSHOT_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_SCATTERSHOT",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_SCATTERSHOT_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 60,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 40,
+          "action_data": "Scattershot",
+          "xp": 100,
+          "gems": 150
+        },
+        {
+          "level": 2,
+          "action_count": 400,
+          "action_data": "Scattershot",
+          "xp": 800,
+          "gems": 300
+        },
+        {
+          "level": 3,
+          "action_count": 4000,
+          "action_data": "Scattershot",
+          "xp": 5000,
+          "gems": 1000
+        }
+      ]
+    },
+    {
+      "name": "Not So Easy This Time",
+      "info": "Destroy <number> weaponized Town Halls in Multiplayer battles",
+      "completed_message": "Weaponized Town Halls destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_WEAPONISED_TH_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_WEAPONISED_TH",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_WEAPONISED_TH_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 67,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 10,
+          "action_data": "Town Hall",
+          "xp": 100,
+          "gems": 20
+        },
+        {
+          "level": 2,
+          "action_count": 100,
+          "action_data": "Town Hall",
+          "xp": 800,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 2000,
+          "action_data": "Town Hall",
+          "xp": 5000,
+          "gems": 250
+        }
+      ]
+    },
+    {
+      "name": "Bust This!",
+      "info": "Destroy <number> weaponized Builder's Huts in Multiplayer battles",
+      "completed_message": "Total weaponized Builder's Huts destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_WEAPONISED_BUILDERS_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_WEAPONISED_BUILDERS",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_WEAPONISED_BUILDERS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 66,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 25,
+          "action_data": "Builders Hut",
+          "xp": 10,
+          "gems": 10
+        },
+        {
+          "level": 2,
+          "action_count": 250,
+          "action_data": "Builders Hut",
+          "xp": 100,
+          "gems": 30
+        },
+        {
+          "level": 3,
+          "action_count": 2500,
+          "action_data": "Builders Hut",
+          "xp": 1000,
+          "gems": 100
+        }
+      ]
+    },
+    {
+      "name": "Superb Work",
+      "info": "Boost a Super Troop <number> times",
+      "completed_message": "Total times Super Troops boosted: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_ACTIVATE_SUPER_TROOP_TITLE",
+        "info": "TID_ACHIEVEMENT_ACTIVATE_SUPER_TROOP",
+        "completed_message": "TID_ACHIEVEMENT_ACTIVATE_SUPER_TROOP_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 0,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 20,
+          "action_data": null,
+          "xp": 10,
+          "gems": 10
+        },
+        {
+          "level": 2,
+          "action_count": 100,
+          "action_data": null,
+          "xp": 100,
+          "gems": 30
+        },
+        {
+          "level": 3,
+          "action_count": 250,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 100
+        }
+      ]
+    },
+    {
+      "name": "Siege Sharer",
+      "info": "Donate <number> Siege Machines",
+      "completed_message": "Total Siege Machines donated: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DONATE_SIEGES_TITLE",
+        "info": "TID_ACHIEVEMENT_DONATE_SIEGES",
+        "completed_message": "TID_ACHIEVEMENT_DONATE_SEIGES_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 87,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 50,
+          "action_data": null,
+          "xp": 20,
+          "gems": 20
+        },
+        {
+          "level": 2,
+          "action_count": 1000,
+          "action_data": null,
+          "xp": 200,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 5000,
+          "action_data": null,
+          "xp": 2000,
+          "gems": 500
+        }
+      ]
+    },
+    {
+      "name": "Aggressive Capitalism",
+      "info": "Loot <number> Capital Gold during Raid attacks",
+      "completed_message": "Total Capital Gold looted: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_LOOT_CAPITAL_TITLE",
+        "info": "TID_ACHIEVEMENT_LOOT_CAPITAL",
+        "completed_message": "TID_ACHIEVEMENT_LOOT_CAPITAL_COMPLETED"
+      },
+      "village": "clanCapital",
+      "ui_priority": 1,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 20000,
+          "action_data": "CapitalResource",
+          "xp": 10,
+          "gems": 50
+        },
+        {
+          "level": 2,
+          "action_count": 250000,
+          "action_data": "CapitalResource",
+          "xp": 100,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 1000000,
+          "action_data": "CapitalResource",
+          "xp": 1000,
+          "gems": 250
+        }
+      ]
+    },
+    {
+      "name": "Most Valuable Clanmate",
+      "info": "Contribute <number> Capital Gold to upgrades in the Clan Capital",
+      "completed_message": "Total Capital Gold contributed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DONATE_CAPITAL_TITLE",
+        "info": "TID_ACHIEVEMENT_DONATE_CAPITAL",
+        "completed_message": "TID_ACHIEVEMENT_DONATE_CAPITAL_COMPLETED"
+      },
+      "village": "clanCapital",
+      "ui_priority": 0,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 40000,
+          "action_data": null,
+          "xp": 20,
+          "gems": 75
+        },
+        {
+          "level": 2,
+          "action_count": 500000,
+          "action_data": null,
+          "xp": 200,
+          "gems": 150
+        },
+        {
+          "level": 3,
+          "action_count": 2000000,
+          "action_data": null,
+          "xp": 2000,
+          "gems": 500
+        }
+      ]
+    },
+    {
+      "name": "Get even more Goblins!",
+      "info": "Win <number> Stars on the Campaign Map",
+      "completed_message": "Stars in Campaign Map: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_NPC_STARS3_TITLE",
+        "info": "TID_ACHIEVEMENT_NPC_STARS",
+        "completed_message": "TID_ACHIEVEMENT_NPC_STARS_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 2,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 240,
+          "action_data": null,
+          "xp": 500,
+          "gems": 50
+        },
+        {
+          "level": 2,
+          "action_count": 255,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 270,
+          "action_data": null,
+          "xp": 2000,
+          "gems": 150
+        }
+      ]
+    },
+    {
+      "name": "Counterspell",
+      "info": "Destroy <number> Spell Towers in Multiplayer Battles",
+      "completed_message": "Total Spell Towers Destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_SPELL_TOWER_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_SPELL_TOWER",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_SPELL_TOWER_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 60,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 40,
+          "action_data": "Spell Tower",
+          "xp": 100,
+          "gems": 100
+        },
+        {
+          "level": 2,
+          "action_count": 400,
+          "action_data": "Spell Tower",
+          "xp": 800,
+          "gems": 250
+        },
+        {
+          "level": 3,
+          "action_count": 4000,
+          "action_data": "Spell Tower",
+          "xp": 5000,
+          "gems": 500
+        }
+      ]
+    },
+    {
+      "name": "Monolith Masher",
+      "info": "Destroy <number> Monoliths in Multiplayer Battles",
+      "completed_message": "Total Monoliths Destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_MONOLITH_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_MONOLITH",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_MONOLITH_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 60,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 20,
+          "action_data": "Monolith",
+          "xp": 100,
+          "gems": 100
+        },
+        {
+          "level": 2,
+          "action_count": 200,
+          "action_data": "Monolith",
+          "xp": 800,
+          "gems": 250
+        },
+        {
+          "level": 3,
+          "action_count": 2000,
+          "action_data": "Monolith",
+          "xp": 5000,
+          "gems": 500
+        }
+      ]
+    },
+    {
+      "name": "Ungrateful Child",
+      "info": "Defeat M.O.M.M.A on the Campaign Map",
+      "completed_message": null,
+      "TID": {
+        "name": "TID_ACHIEVEMENT_PEKKA_SLAYER_TITLE",
+        "info": "TID_ACHIEVEMENT_PEKKA_SLAYER",
+        "completed_message": null
+      },
+      "village": "home",
+      "ui_priority": 1,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 1,
+          "action_data": "MOMMA",
+          "xp": 200,
+          "gems": 20
+        }
+      ]
+    },
+    {
+      "name": "Supercharger",
+      "info": "Supercharge buildings <number> times",
+      "completed_message": "Total Supercharges: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_MINI_LEVEL_TITLE",
+        "info": "TID_ACHIEVEMENT_MINI_LEVEL",
+        "completed_message": "TID_ACHIEVEMENT_MINI_LEVEL_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 3,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 5,
+          "action_data": null,
+          "xp": 10,
+          "gems": 10
+        },
+        {
+          "level": 2,
+          "action_count": 25,
+          "action_data": null,
+          "xp": 100,
+          "gems": 30
+        },
+        {
+          "level": 3,
+          "action_count": 75,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 50
+        }
+      ]
+    },
+    {
+      "name": "Multi-Archer Tower Terminator",
+      "info": "Destroy <number> Multi-Archer Towers in Multiplayer Battles",
+      "completed_message": "Total Multi-Archer Towers Destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_MULTI_ARCHER_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_MULTI_ARCHER",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_MULTI_ARCHER_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 60,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 50,
+          "action_data": "Multi Archer Tower",
+          "xp": 100,
+          "gems": 25
+        },
+        {
+          "level": 2,
+          "action_count": 500,
+          "action_data": "Multi Archer Tower",
+          "xp": 800,
+          "gems": 75
+        },
+        {
+          "level": 3,
+          "action_count": 5000,
+          "action_data": "Multi Archer Tower",
+          "xp": 5000,
+          "gems": 200
+        }
+      ]
+    },
+    {
+      "name": "Ricochet Cannon Crusher",
+      "info": "Destroy <number> Ricochet Cannons in Multiplayer Battles",
+      "completed_message": "Total Ricochet Cannons Destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_RICOCHET_CANNON_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_RICOCHET_CANNON",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_RICOCHET_CANNON_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 60,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 50,
+          "action_data": "Ricochet Cannon",
+          "xp": 100,
+          "gems": 25
+        },
+        {
+          "level": 2,
+          "action_count": 500,
+          "action_data": "Ricochet Cannon",
+          "xp": 800,
+          "gems": 75
+        },
+        {
+          "level": 3,
+          "action_count": 5000,
+          "action_data": "Ricochet Cannon",
+          "xp": 5000,
+          "gems": 200
+        }
+      ]
+    },
+    {
+      "name": "Firespitter Finisher",
+      "info": "Destroy <number> Firespitters in Multiplayer Battles",
+      "completed_message": "Total Firespitters Destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_FIRESPITTER_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_FIRESPITTER",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_FIRESPITTER_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 60,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 40,
+          "action_data": "Firespitter",
+          "xp": 100,
+          "gems": 25
+        },
+        {
+          "level": 2,
+          "action_count": 400,
+          "action_data": "Firespitter",
+          "xp": 800,
+          "gems": 75
+        },
+        {
+          "level": 3,
+          "action_count": 4000,
+          "action_data": "Firespitter",
+          "xp": 5000,
+          "gems": 200
+        }
+      ]
+    },
+    {
+      "name": "Multi-Gear Tower Trampler",
+      "info": "Destroy <number> Multi-Gear Towers in Multiplayer Battles",
+      "completed_message": "Total Multi-Gear Towers Destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_MULTI_GEAR_TOWER_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_MULTI_GEAR_TOWER",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_MULTI_GEAR_TOWER_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 60,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 20,
+          "action_data": "Multi Gear Tower",
+          "xp": 100,
+          "gems": 25
+        },
+        {
+          "level": 2,
+          "action_count": 200,
+          "action_data": "Multi Gear Tower",
+          "xp": 800,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 2000,
+          "action_data": "Multi Gear Tower",
+          "xp": 5000,
+          "gems": 200
+        }
+      ]
+    },
+    {
+      "name": "Crafting Connoisseur",
+      "info": "Upgrade Crafted Defenses <number> times",
+      "completed_message": "Total Crafted Defense upgrades: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_SEASONAL_DEFENSE_TITLE",
+        "info": "TID_ACHIEVEMENT_SEASONAL_DEFENSE",
+        "completed_message": "TID_ACHIEVEMENT_SEASONAL_DEFENSE_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 3,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 5,
+          "action_data": null,
+          "xp": 10,
+          "gems": 10
+        },
+        {
+          "level": 2,
+          "action_count": 25,
+          "action_data": null,
+          "xp": 100,
+          "gems": 30
+        },
+        {
+          "level": 3,
+          "action_count": 75,
+          "action_data": null,
+          "xp": 1000,
+          "gems": 50
+        }
+      ]
+    },
+    {
+      "name": "Crafter’s Nightmare",
+      "info": "Destroy <number> Crafted Defenses in Multiplayer Battles",
+      "completed_message": "Total Crafted Defenses Destroyed: <value>",
+      "TID": {
+        "name": "TID_ACHIEVEMENT_DESTROY_SEASONAL_DEFENSE_TITLE",
+        "info": "TID_ACHIEVEMENT_DESTROY_SEASONAL_DEFENSE",
+        "completed_message": "TID_ACHIEVEMENT_DESTROY_SEASONAL_DEFENSE_COMPLETED"
+      },
+      "village": "home",
+      "ui_priority": 60,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 20,
+          "action_data": "Crafting Station",
+          "xp": 100,
+          "gems": 25
+        },
+        {
+          "level": 2,
+          "action_count": 200,
+          "action_data": "Crafting Station",
+          "xp": 800,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 2000,
+          "action_data": "Crafting Station",
+          "xp": 5000,
+          "gems": 200
+        }
+      ]
+    },
+    {
+      "name": "League Follower",
+      "info": "Reach League Barbarian 6",
+      "completed_message": null,
+      "TID": {
+        "name": "TID_ACHIEVEMENT_RANKED_TITLE_1",
+        "info": "TID_ACHIEVEMENT_RANKED_1_PROGRESS_1",
+        "completed_message": null
+      },
+      "village": "home",
+      "ui_priority": 72,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 6,
+          "action_data": null,
+          "xp": 50,
+          "gems": 50
+        },
+        {
+          "level": 2,
+          "action_count": 9,
+          "action_data": null,
+          "xp": 100,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 12,
+          "action_data": null,
+          "xp": 250,
+          "gems": 250
+        }
+      ]
+    },
+    {
+      "name": "League Enthusiast",
+      "info": "Reach League Valkyrie 15",
+      "completed_message": null,
+      "TID": {
+        "name": "TID_ACHIEVEMENT_RANKED_TITLE_2",
+        "info": "TID_ACHIEVEMENT_RANKED_2_PROGRESS_1",
+        "completed_message": null
+      },
+      "village": "home",
+      "ui_priority": 72,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 15,
+          "action_data": null,
+          "xp": 50,
+          "gems": 50
+        },
+        {
+          "level": 2,
+          "action_count": 18,
+          "action_data": null,
+          "xp": 100,
+          "gems": 100
+        },
+        {
+          "level": 3,
+          "action_count": 21,
+          "action_data": null,
+          "xp": 250,
+          "gems": 250
+        }
+      ]
+    },
+    {
+      "name": "League Superfan",
+      "info": "Reach League P.E.K.K.A 24",
+      "completed_message": null,
+      "TID": {
+        "name": "TID_ACHIEVEMENT_RANKED_TITLE_3",
+        "info": "TID_ACHIEVEMENT_RANKED_3_PROGRESS_1",
+        "completed_message": null
+      },
+      "village": "home",
+      "ui_priority": 72,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 24,
+          "action_data": null,
+          "xp": 100,
+          "gems": 100
+        },
+        {
+          "level": 2,
+          "action_count": 27,
+          "action_data": null,
+          "xp": 250,
+          "gems": 250
+        },
+        {
+          "level": 3,
+          "action_count": 28,
+          "action_data": null,
+          "xp": 500,
+          "gems": 500
+        }
+      ]
+    },
+    {
+      "name": "League Fanatic",
+      "info": "Reach League Dragon 29",
+      "completed_message": null,
+      "TID": {
+        "name": "TID_ACHIEVEMENT_RANKED_TITLE_4",
+        "info": "TID_ACHIEVEMENT_RANKED_4_PROGRESS_1",
+        "completed_message": null
+      },
+      "village": "home",
+      "ui_priority": 72,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 29,
+          "action_data": null,
+          "xp": 100,
+          "gems": 100
+        },
+        {
+          "level": 2,
+          "action_count": 30,
+          "action_data": null,
+          "xp": 250,
+          "gems": 250
+        },
+        {
+          "level": 3,
+          "action_count": 31,
+          "action_data": null,
+          "xp": 500,
+          "gems": 500
+        }
+      ]
+    },
+    {
+      "name": "League Master",
+      "info": "Reach League Electro 32",
+      "completed_message": null,
+      "TID": {
+        "name": "TID_ACHIEVEMENT_RANKED_TITLE_5",
+        "info": "TID_ACHIEVEMENT_RANKED_5_PROGRESS_1",
+        "completed_message": null
+      },
+      "village": "home",
+      "ui_priority": 72,
+      "levels": [
+        {
+          "level": 1,
+          "action_count": 32,
+          "action_data": null,
+          "xp": 250,
+          "gems": 250
+        },
+        {
+          "level": 2,
+          "action_count": 33,
+          "action_data": null,
+          "xp": 350,
+          "gems": 350
+        },
+        {
+          "level": 3,
+          "action_count": 34,
+          "action_data": null,
+          "xp": 500,
+          "gems": 500
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import asyncio
+import json
 import threading
 import time
 from pathlib import Path
@@ -143,6 +144,24 @@ def test_translation_patch_adds_and_overrides_translations(tmp_path, monkeypatch
     }
     assert translations["TID_ADDED"] == {"EN": "Added", "FR": "Ajouté"}
     assert updater.translation_patch_tids == {"TID_EXISTING", "TID_ADDED"}
+
+
+def test_static_collections_are_wrapped_and_stale_files_are_removed(tmp_path):
+    updater = StaticUpdater.__new__(StaticUpdater)
+    updater.BASE_PATH = str(tmp_path)
+    collection_path = tmp_path / "static_data"
+    collection_path.mkdir()
+    (collection_path / "removed.json").write_text("{}", encoding="utf-8")
+
+    updater._write_static_json_files({"war_leagues": [{"id": 1, "name": "Gold League I"}]})
+
+    assert json.loads((tmp_path / "static_data.json").read_text(encoding="utf-8")) == {
+        "war_leagues": [{"id": 1, "name": "Gold League I"}]
+    }
+    assert json.loads((collection_path / "war_leagues.json").read_text(encoding="utf-8")) == {
+        "items": [{"id": 1, "name": "Gold League I"}]
+    }
+    assert not (collection_path / "removed.json").exists()
 
 
 def test_seasonal_defense_season_uses_configured_negative_index():
