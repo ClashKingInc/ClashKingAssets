@@ -62,6 +62,10 @@ def test_apply_sync_plan_sets_cache_and_content_type_for_shared_cdn_assets():
     client = FakeR2Client()
     plan = {
         "uploads": [
+            {
+                "local_path": "assets/achievements/war-champion-achievement-badge.glb",
+                "key": "achievements/war-champion-achievement-badge.glb",
+            },
             {"local_path": "assets/fonts/clashking.woff2", "key": "fonts/clashking.woff2"},
             {"local_path": "assets/fonts/clashking.ttf", "key": "fonts/clashking.ttf"},
             {
@@ -79,6 +83,10 @@ def test_apply_sync_plan_sets_cache_and_content_type_for_shared_cdn_assets():
         build.apply_sync_plan(plan, config, workers=2)
 
     uploaded = {key: extra_args for _, _, key, extra_args in client.uploaded}
+    assert uploaded["achievements/war-champion-achievement-badge.glb"] == {
+        "ContentType": "model/gltf-binary",
+        "CacheControl": build.CDN_CACHE_CONTROL,
+    }
     assert uploaded["fonts/clashking.woff2"] == {
         "ContentType": "font/woff2",
         "CacheControl": build.CDN_CACHE_CONTROL,
