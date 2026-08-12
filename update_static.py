@@ -39,6 +39,11 @@ class SCAssetRequest:
 
 DIRECT_ASSET_EXTENSIONS = {".sctx", ".ttf", ".otf", ".woff", ".woff2", ".mp4", ".ogg"}
 DIRECT_WEBP_EXTENSIONS = {".sctx"}
+LEGEND_LEAGUE_NAME_OVERRIDES = {
+    105000034: "Legend League III",
+    105000035: "Legend League II",
+    105000036: "Legend League I",
+}
 
 
 def is_sc_bundle_file(source_sc: str, candidate: str) -> bool:
@@ -2136,7 +2141,10 @@ class StaticUpdater:
             league_tier = _id - 105000000
             hold_data = {
                 "_id": _id,
-                "name": self._translate(tid=league_data.get("TID")),
+                "name": LEGEND_LEAGUE_NAME_OVERRIDES.get(
+                    _id,
+                    self._translate(tid=league_data.get("TID")),
+                ),
                 "league_tier": league_tier,
                 "TID": {"name": league_data.get("TID")},
                 "group_size": league_data.get("GroupSizeMax"),

@@ -128,6 +128,22 @@ def test_scenery_metadata_keeps_music_free_and_default_fields():
     assert scenery["default"] is True
 
 
+def test_legend_league_tiers_use_api_names_in_id_order():
+    updater = StaticUpdater()
+    updater.open_file = lambda _: {
+        f"league_{index}": {"TID": "TID_LEAGUE_LEGENDARY"} for index in range(37)
+    }
+    updater._translate = lambda tid: "Legend League"
+
+    leagues = updater._parse_league_tier_data()
+
+    assert [(league["_id"], league["name"]) for league in leagues[-3:]] == [
+        (105000034, "Legend League III"),
+        (105000035, "Legend League II"),
+        (105000036, "Legend League I"),
+    ]
+
+
 def test_translation_patch_adds_and_overrides_translations(tmp_path, monkeypatch):
     localization = tmp_path / "localization"
     localization.mkdir()

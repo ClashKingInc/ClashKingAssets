@@ -72981,7 +72981,7 @@
     },
     {
       "_id": 105000034,
-      "name": "Legend League",
+      "name": "Legend League III",
       "league_tier": 34,
       "TID": {
         "name": "TID_LEAGUE_LEGENDARY"
@@ -73191,7 +73191,7 @@
     },
     {
       "_id": 105000035,
-      "name": "Legend League",
+      "name": "Legend League II",
       "league_tier": 35,
       "TID": {
         "name": "TID_LEAGUE_LEGENDARY"
@@ -73401,7 +73401,7 @@
     },
     {
       "_id": 105000036,
-      "name": "Legend League",
+      "name": "Legend League I",
       "league_tier": 36,
       "TID": {
         "name": "TID_LEAGUE_LEGENDARY"
