@@ -1,0 +1,9 @@
+preserve_hierarchy: true
+
+files:
+  - source: /locales/en.json
+    dest: /assets/en.json
+    translation: /locales/%locale%.json
+    update_option: update_as_unapproved
+
+commit_message: "chore(l10n): new Crowdin translations"

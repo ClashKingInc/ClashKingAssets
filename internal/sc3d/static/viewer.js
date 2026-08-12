@@ -13,6 +13,41 @@ import {
 import { decodeNormalizedWeightVector } from "./weight-codec.mjs";
 import { isPoseAnimationAsset } from "./pose-candidates.mjs";
 import { webPAnimationOptions } from "./webp-options.mjs";
+import { loadLocalization, translateEnglishDocument } from "./localization.mjs";
+
+const { locale, t, english } = await loadLocalization();
+
+function localizeStaticUI() {
+  const text = {
+    ".skip-link": "sc3d.skip", ".product-label strong": "sc3d.viewer", "#fingerprint": "sc3d.loadingFingerprint",
+    ".search-field > span": "sc3d.searchModels", '.filter[data-filter="geo"]': "sc3d.geometry",
+    '.filter[data-filter="all"]': "sc3d.allGlb", 'label[for="pose-select"] > span': "sc3d.pose",
+    '#pose-select option': "sc3d.restPose", 'label[for="color-mode"] > span': "sc3d.material",
+    '#color-mode option[value="texture"]': "sc3d.texture", '#color-mode option[value="parts"]': "sc3d.parts",
+    '#color-mode option[value="materials"]': "sc3d.materials", ".asset-list-header > span:first-child": "sc3d.models",
+    "#asset-count": "sc3d.noAssets", "#reset-view": "sc3d.reset", "#nudge-up": "sc3d.up",
+    "#nudge-down": "sc3d.down", "#play-animation": "sc3d.noAnimation", "#toggle-grid": "sc3d.grid",
+    "#smooth-shading": "sc3d.smooth", "#wireframe": "sc3d.wireframe", ".toolbar-toggle span": "sc3d.loop",
+    "#export-webp": "sc3d.exportWebp", "#status": "sc3d.chooseModel", ".section-kicker": "sc3d.workspaceKicker",
+    ".inspector-header h2": "sc3d.modelDetails", ".advanced-badge": "sc3d.advanced",
+    ".inspector-section summary strong": "sc3d.inspector", ".inspector-section summary small": "sc3d.inspectorHelp",
+    ".export-section summary strong": "sc3d.landingExport", ".export-section summary small": "sc3d.landingHelp",
+    "#export-glb": "sc3d.exportModel", "#export-skin-json": "sc3d.exportSkin", ".json-disclosure summary": "sc3d.previewSkin"
+  };
+  for (const [selector, key] of Object.entries(text)) {
+    const element = document.querySelector(selector);
+    if (element) element.textContent = t(key);
+  }
+  document.title = t("sc3d.title");
+  document.documentElement.lang = locale;
+  document.querySelector(".search-field input").placeholder = t("sc3d.searchPlaceholder");
+  document.querySelector("#nudge-up").title = t("sc3d.moveUp");
+  document.querySelector("#nudge-down").title = t("sc3d.moveDown");
+  const aria = { ".browser-panel": "sc3d.modelBrowser", ".segmented-control": "sc3d.modelFilter", "#asset-list": "sc3d.assetsNavigation", ".viewport-wrap": "sc3d.workspace", ".viewport-toolbar": "sc3d.viewportControls", ".inspector-panel": "sc3d.inspectorPanel" };
+  for (const [selector, key] of Object.entries(aria)) document.querySelector(selector)?.setAttribute("aria-label", t(key));
+}
+localizeStaticUI();
+translateEnglishDocument(t, english);
 
 const FBT = {
   NULL: 0,
@@ -243,7 +278,7 @@ function canRenderScene() {
 
 function webGLUnavailableMessage(error) {
   const detail = error && error.message ? ` (${error.message})` : "";
-  return `WebGL is unavailable in this browser${detail}. Enable graphics acceleration/WebGL or use another browser to render models.`;
+  return t("sc3d.webglUnavailable", { detail });
 }
 
 function showViewportError(message) {
@@ -1941,17 +1976,17 @@ function renderDecoded(decoded, path, pose) {
 
   if (!canRenderScene()) {
     updateAnimationControl();
-    setStatus(`${renderUnavailableMessage || webGLUnavailableMessage()} Decoded ${path}, but cannot render it.`, true);
+    setStatus(`${renderUnavailableMessage || webGLUnavailableMessage()} ${t("sc3d.decodedCannotRender", { path })}`, true);
     setInspector([
-      ["File", path],
-      ["Pose", pose ? poseLabel(pose.path) : "Rest"],
-      ["Vertices", decoded.vertexCount.toLocaleString()],
-      ["Skinned vertices", decoded.weightedCount.toLocaleString()],
-      ["Joints", decoded.jointNodes.length],
-      ["Meshes", decoded.meshCount],
-      ["Primitives", decoded.renderMeshes.length],
-      ["Texture", decoded.texturePath || "None"],
-      ["Renderer", "WebGL unavailable"]
+      [t("sc3d.file"), path],
+      [t("sc3d.pose"), pose ? poseLabel(pose.path) : t("sc3d.restPose")],
+      [t("sc3d.vertices"), decoded.vertexCount.toLocaleString(locale)],
+      [t("sc3d.skinnedVertices"), decoded.weightedCount.toLocaleString(locale)],
+      [t("sc3d.joints"), decoded.jointNodes.length],
+      [t("sc3d.meshes"), decoded.meshCount],
+      [t("sc3d.primitives"), decoded.renderMeshes.length],
+      [t("sc3d.texture"), decoded.texturePath || t("sc3d.none")],
+      [t("sc3d.renderer"), t("sc3d.webglUnavailableShort")]
     ]);
     return;
   }
@@ -1980,26 +2015,26 @@ function renderDecoded(decoded, path, pose) {
   scene.add(state.group);
   updateAnimationControl();
   frameGroup(state.group, pose && pose.animation ? sampledPoseBounds(decoded, pose) : null);
-  setStatus(pose ? `Decoded ${path} with ${poseLabel(pose.path)} ${pose.animation ? "animation" : "pose"}` : `Decoded ${path}`);
+  setStatus(pose ? t("sc3d.decodedWith", { path, pose: poseLabel(pose.path), kind: t(pose.animation ? "sc3d.animation" : "sc3d.poseKind") }) : t("sc3d.decoded", { path }));
   setInspector([
-    ["File", path],
-    ["Pose", pose ? poseLabel(pose.path) : "Rest"],
-    ["Vertices", decoded.vertexCount.toLocaleString()],
-    ["Skinned vertices", decoded.weightedCount.toLocaleString()],
-    ["Joints", decoded.jointNodes.length],
-    ["Bind matrices", decoded.inverseBindMatrices.length],
-    ["Meshes", decoded.meshCount],
-    ["Primitives", decoded.renderMeshes.length],
-    ["Nodes", decoded.nodeCount],
-    ["Accessors", decoded.accessorCount],
-    ["Materials", decoded.materialCount],
-    ["Material view", materialModeLabel()],
-    ["Shading", state.smoothShading ? "Smooth normals" : "Authored normals"],
-    ["Texture", decoded.texturePath || "None"],
-    ["Texture status", decoded.texture ? "Applied" : decoded.textureError || "No matching .sctx"],
-    ["Pose joints matched", pose && pose.compatibility ? `${pose.compatibility.matched}/${pose.compatibility.total}` : "Rest"],
+    [t("sc3d.file"), path],
+    [t("sc3d.pose"), pose ? poseLabel(pose.path) : t("sc3d.restPose")],
+    [t("sc3d.vertices"), decoded.vertexCount.toLocaleString(locale)],
+    [t("sc3d.skinnedVertices"), decoded.weightedCount.toLocaleString(locale)],
+    [t("sc3d.joints"), decoded.jointNodes.length],
+    [t("sc3d.bindMatrices"), decoded.inverseBindMatrices.length],
+    [t("sc3d.meshes"), decoded.meshCount],
+    [t("sc3d.primitives"), decoded.renderMeshes.length],
+    [t("sc3d.nodes"), decoded.nodeCount],
+    [t("sc3d.accessors"), decoded.accessorCount],
+    [t("sc3d.materials"), decoded.materialCount],
+    [t("sc3d.materialView"), materialModeLabel()],
+    [t("sc3d.shading"), t(state.smoothShading ? "sc3d.smoothNormals" : "sc3d.authoredNormals")],
+    [t("sc3d.texture"), decoded.texturePath || t("sc3d.none")],
+    [t("sc3d.textureStatus"), decoded.texture ? t("sc3d.applied") : decoded.textureError || t("sc3d.noMatchingTexture")],
+    [t("sc3d.poseJointsMatched"), pose && pose.compatibility ? `${pose.compatibility.matched}/${pose.compatibility.total}` : t("sc3d.restPose")],
     ["Animation", pose && pose.animation ? `${pose.animation.frameCount} frames @ ${pose.animation.frameRate.toFixed(1)} fps` : "None"],
-    ["Animated nodes", pose && pose.animation ? `${pose.animation.decodedNodeCount}/${pose.animation.packedNodeCount}` : "0"],
+    [t("sc3d.animatedNodes"), pose && pose.animation ? `${pose.animation.decodedNodeCount}/${pose.animation.packedNodeCount}` : "0"],
     ["Decoder", "FLA2 + SC_odin_format"],
     ["Animations", "Pose GLB skinning"]
   ]);
@@ -2045,9 +2080,9 @@ function updateAnimationControl() {
   els.exportWebp.disabled = !hasAnimation || state.exportInProgress;
   els.exportGLB.disabled = !canExportLanding || state.exportInProgress;
   els.exportSkinJSON.disabled = !canExportLanding || state.exportInProgress;
-  els.playAnimation.textContent = hasAnimation ? (state.animationPlaying ? "Pause Anim" : "Play Anim") : "No Anim";
-  els.exportWebp.textContent = state.exportInProgress ? "Exporting" : "Export WebP";
-  els.exportGLB.textContent = state.exportInProgress ? "Exporting" : "Export model.glb";
+  els.playAnimation.textContent = hasAnimation ? t(state.animationPlaying ? "sc3d.pauseAnimation" : "sc3d.playAnimation") : t("sc3d.noAnim");
+  els.exportWebp.textContent = state.exportInProgress ? t("sc3d.exporting") : t("sc3d.exportWebp");
+  els.exportGLB.textContent = state.exportInProgress ? t("sc3d.exporting") : t("sc3d.exportModel");
   els.playAnimation.setAttribute("aria-pressed", String(hasAnimation && state.animationPlaying));
 }
 
@@ -2172,7 +2207,7 @@ async function loadAsset(path) {
   state.selectedPath = path;
   state.selectedPosePath = "";
   markSelected();
-  setStatus(`Fetching ${path}`);
+  setStatus(t("sc3d.fetching", { path }));
   try {
     const response = await fetchRemote(path);
     const decoded = parseGLB(await response.arrayBuffer());
@@ -2201,7 +2236,7 @@ async function loadAsset(path) {
     renderDecoded(decoded, path);
   } catch (error) {
     console.error(error);
-    setStatus(`Failed to load ${path}: ${error.message}`, true);
+    setStatus(t("sc3d.failedLoad", { path, error: error.message }), true);
   }
 }
 
@@ -2213,7 +2248,7 @@ async function loadPose(path) {
     return;
   }
 
-  setStatus(`Fetching pose ${path}`);
+  setStatus(t("sc3d.fetchingPose", { path }));
   try {
     let pose = state.poseCache.get(path);
     if (!pose) {
@@ -2230,7 +2265,7 @@ async function loadPose(path) {
     renderDecoded(state.decoded, state.selectedPath, pose);
   } catch (error) {
     console.error(error);
-    setStatus(`Failed to load pose ${path}: ${error.message}`, true);
+    setStatus(t("sc3d.failedLoadPose", { path, error: error.message }), true);
   }
 }
 
@@ -2239,7 +2274,7 @@ function setupPoseSelect(path) {
   els.poseSelect.innerHTML = "";
   const rest = document.createElement("option");
   rest.value = "";
-  rest.textContent = "Rest pose";
+  rest.textContent = t("sc3d.restPose");
   els.poseSelect.appendChild(rest);
 
   for (const pose of poses) {
@@ -2692,14 +2727,14 @@ async function exportLandingGLB() {
   if (state.exportInProgress) return;
   state.exportInProgress = true;
   updateAnimationControl();
-  setStatus("Building standard animated GLB");
+  setStatus(t("sc3d.buildingGlb"));
   try {
     const { data, validation } = await buildLandingGLB();
     downloadBlob(new Blob([data], { type: "model/gltf-binary" }), "model.glb");
-    setStatus(`Exported model.glb (${validation.meshes} meshes, ${validation.animations} animation, ${formatBytes(data.byteLength)})`);
+    setStatus(t("sc3d.exportedGlb", { meshes: validation.meshes, animations: validation.animations, size: formatBytes(data.byteLength) }));
   } catch (error) {
     console.error(error);
-    setStatus(`Failed to export GLB: ${error.message}`, true);
+    setStatus(t("sc3d.failedExportGlb", { error: error.message }), true);
   } finally {
     state.exportInProgress = false;
     updateAnimationControl();
@@ -2709,7 +2744,7 @@ async function exportLandingGLB() {
 function exportLandingJSON() {
   const data = JSON.stringify(landingMetadata(), null, 2) + "\n";
   downloadBlob(new Blob([data], { type: "application/json" }), "skin.json");
-  setStatus("Exported skin.json");
+  setStatus(t("sc3d.exportedSkin"));
 }
 
 function formatBytes(bytes) {
@@ -2749,7 +2784,7 @@ async function exportAnimationWebP() {
   try {
     state.animationPlaying = false;
     grid.visible = false;
-    setStatus(`Capturing ${exportFrameCount} transparent frames`);
+    setStatus(t("sc3d.capturingFrames", { count: exportFrameCount }));
 
     const frameBlobs = [];
     for (let i = 0; i < exportFrameCount; i += 1) {
@@ -2759,20 +2794,20 @@ async function exportAnimationWebP() {
       renderer.render(scene, camera);
       frameBlobs.push(await canvasToWebPBlob());
       if (i % 12 === 0 || i === exportFrameCount - 1) {
-        setStatus(`Capturing transparent WebP frames ${i + 1}/${exportFrameCount}`);
+        setStatus(t("sc3d.capturingProgress", { current: i + 1, count: exportFrameCount }));
         await nextFrame();
       }
     }
 
-    setStatus("Packing animated WebP");
+    setStatus(t("sc3d.packingWebp"));
     const loop = els.webpLoop.checked;
     const webpBlob = await makeAnimatedWebPBlob(frameBlobs, renderer.domElement.width, renderer.domElement.height, delayMS, loop);
     const copied = await copyBlobToClipboard(webpBlob);
     downloadBlob(webpBlob, exportFileName("webp"));
-    setStatus(`Exported ${exportFrameCount} frame transparent WebP (${loop ? "looping" : "play once"})${copied ? " and copied it to clipboard" : ""}`);
+    setStatus(t("sc3d.exportedWebp", { count: exportFrameCount, playback: t(loop ? "sc3d.looping" : "sc3d.playOnce"), clipboard: copied ? t("sc3d.copiedClipboard") : "" }));
   } catch (error) {
     console.error(error);
-    setStatus(`Failed to export WebP: ${error.message}`, true);
+    setStatus(t("sc3d.failedExportWebp", { error: error.message }), true);
   } finally {
     grid.visible = wasGridVisible;
     if (Number.isFinite(previousFrame) && previousFrame >= 0) applyAnimationFrame(previousFrame);
@@ -3335,7 +3370,7 @@ function filteredAssets() {
 
 function renderAssetList() {
   const assets = filteredAssets().slice(0, 300);
-  els.assetCount.textContent = `${filteredAssets().length.toLocaleString()} matching assets`;
+  els.assetCount.textContent = t("sc3d.matchingAssets", { count: filteredAssets().length.toLocaleString(locale) });
   els.assetList.innerHTML = "";
   for (const path of assets) {
     const button = document.createElement("button");

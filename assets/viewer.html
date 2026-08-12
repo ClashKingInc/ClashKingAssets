@@ -4,84 +4,84 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#030304">
-  <title>ClashKing Assets</title>
+  <title data-i18n="assets.title">ClashKing Assets</title>
   <link rel="preload" href="./fonts/clashking.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./viewer.css">
 </head>
 <body>
-  <a class="skip-link" href="#gridShell">Skip to assets</a>
+  <a class="skip-link" href="#gridShell" data-i18n="assets.skip">Skip to assets</a>
   <div class="app" id="app">
-    <aside class="sidebar" aria-label="Asset library navigation">
-      <a class="brand" href="./viewer.html" aria-label="ClashKing Assets home">
+    <aside class="sidebar" aria-label="Asset library navigation" data-i18n-aria-label="assets.navigation">
+      <a class="brand" href="./viewer.html" aria-label="ClashKing Assets home" data-i18n-aria-label="assets.home">
         <img src="./logos/clashking-wordmark-dark.svg" alt="ClashKing">
-        <span>Asset library</span>
+        <span data-i18n="assets.library">Asset library</span>
       </a>
 
       <div class="sidebar-heading">
-        <span>Categories</span>
+        <span data-i18n="assets.categories">Categories</span>
       </div>
-      <nav class="category-list" id="categoryList" aria-label="Asset categories"></nav>
+      <nav class="category-list" id="categoryList" aria-label="Asset categories" data-i18n-aria-label="assets.categoryNavigation"></nav>
     </aside>
 
     <main class="content">
       <header class="topbar">
         <div class="mobile-brand">
           <img src="./logos/clashking-wordmark-dark.svg" alt="ClashKing">
-          <span>Assets</span>
+          <span data-i18n="assets.mobileBrand">Assets</span>
         </div>
 
         <div class="toolbar">
           <label class="search-field" for="searchInput">
             <span class="search-icon" aria-hidden="true"></span>
-            <span class="sr-only">Search assets</span>
-            <input id="searchInput" type="search" autocomplete="off" placeholder="Search names and paths">
+            <span class="sr-only" data-i18n="assets.search">Search assets</span>
+            <input id="searchInput" type="search" autocomplete="off" placeholder="Search names and paths" data-i18n-placeholder="assets.searchPlaceholder">
             <kbd>⌘ K</kbd>
           </label>
 
           <label class="select-field">
-            <span class="sr-only">Sort assets</span>
-            <select id="sortSelect" aria-label="Sort assets">
-              <option value="path-asc">Path A–Z</option>
-              <option value="path-desc">Path Z–A</option>
-              <option value="name-asc">Name A–Z</option>
-              <option value="category-asc">Category A–Z</option>
+            <span class="sr-only" data-i18n="assets.sort">Sort assets</span>
+            <select id="sortSelect" aria-label="Sort assets" data-i18n-aria-label="assets.sort">
+              <option value="path-asc" data-i18n="assets.sort.pathAsc">Path A–Z</option>
+              <option value="path-desc" data-i18n="assets.sort.pathDesc">Path Z–A</option>
+              <option value="name-asc" data-i18n="assets.sort.nameAsc">Name A–Z</option>
+              <option value="category-asc" data-i18n="assets.sort.categoryAsc">Category A–Z</option>
             </select>
           </label>
 
-          <div class="view-switcher" role="group" aria-label="View options">
-            <button id="gridView" type="button" aria-pressed="true" title="Grid view">
+          <div class="view-switcher" role="group" aria-label="View options" data-i18n-aria-label="assets.viewOptions">
+            <button id="gridView" type="button" aria-pressed="true" title="Grid view" data-i18n-title="assets.gridView">
               <span class="grid-icon" aria-hidden="true"></span>
-              <span class="sr-only">Grid view</span>
+              <span class="sr-only" data-i18n="assets.gridView">Grid view</span>
             </button>
-            <button id="listView" type="button" aria-pressed="false" title="List view">
+            <button id="listView" type="button" aria-pressed="false" title="List view" data-i18n-title="assets.listView">
               <span class="list-icon" aria-hidden="true"></span>
-              <span class="sr-only">List view</span>
+              <span class="sr-only" data-i18n="assets.listView">List view</span>
             </button>
           </div>
         </div>
-        <p class="sr-only" id="summary" aria-live="polite">Loading assets…</p>
+        <p class="sr-only" id="summary" aria-live="polite" data-i18n="assets.loading">Loading assets…</p>
       </header>
 
-      <nav class="mobile-categories" id="mobileCategories" aria-label="Asset categories"></nav>
+      <nav class="mobile-categories" id="mobileCategories" aria-label="Asset categories" data-i18n-aria-label="assets.categoryNavigation"></nav>
 
-      <section class="grid-shell" id="gridShell" aria-label="Asset results" tabindex="-1">
+      <section class="grid-shell" id="gridShell" aria-label="Asset results" data-i18n-aria-label="assets.results" tabindex="-1">
         <div class="spacer" id="spacer"></div>
         <div class="empty" id="empty" hidden>
           <span class="empty-icon" aria-hidden="true"></span>
-          <strong id="emptyTitle">No matching assets</strong>
-          <span id="emptyBody">Try a different search or category.</span>
-          <button id="emptyAction" type="button">Reset filters</button>
+          <strong id="emptyTitle" data-i18n="assets.noMatches">No matching assets</strong>
+          <span id="emptyBody" data-i18n="assets.noMatchesHelp">Try a different search or category.</span>
+          <button id="emptyAction" type="button" data-i18n="assets.resetFilters">Reset filters</button>
         </div>
       </section>
     </main>
 
-    <aside class="details-panel" id="detailsPanel" aria-label="Asset details" aria-hidden="true">
+    <aside class="details-panel" id="detailsPanel" aria-label="Asset details" data-i18n-aria-label="assets.details" aria-hidden="true">
       <div class="details-header">
         <div>
-          <span class="eyebrow">Selected asset</span>
-          <h2 id="detailName">Asset details</h2>
+          <span class="eyebrow" data-i18n="assets.selected">Selected asset</span>
+          <h2 id="detailName" data-i18n="assets.details">Asset details</h2>
         </div>
-        <button class="icon-button" id="closeDetails" type="button" aria-label="Close asset details" title="Close details">
+        <button class="icon-button" id="closeDetails" type="button" aria-label="Close asset details" title="Close details" data-i18n-aria-label="assets.closeDetails" data-i18n-title="assets.close">
           <span aria-hidden="true">×</span>
         </button>
       </div>
@@ -93,40 +93,40 @@
 
       <dl class="metadata">
         <div>
-          <dt>Category</dt>
+          <dt data-i18n="assets.category">Category</dt>
           <dd id="detailCategory"></dd>
         </div>
         <div>
-          <dt>Dimensions</dt>
-          <dd id="detailDimensions">Loading…</dd>
+          <dt data-i18n="assets.dimensions">Dimensions</dt>
+          <dd id="detailDimensions" data-i18n="assets.loadingShort">Loading…</dd>
         </div>
         <div class="metadata-wide">
-          <dt>Path</dt>
+          <dt data-i18n="assets.path">Path</dt>
           <dd id="detailPath"></dd>
         </div>
       </dl>
 
       <div class="primary-actions">
-        <a class="button primary" id="downloadAsset" href="" download>Download</a>
-        <a class="button" id="openAsset" href="" target="_blank" rel="noopener">Open original</a>
+        <a class="button primary" id="downloadAsset" href="" download data-i18n="assets.download">Download</a>
+        <a class="button" id="openAsset" href="" target="_blank" rel="noopener" data-i18n="assets.openOriginal">Open original</a>
       </div>
 
-      <div class="copy-actions" aria-label="Copy asset values">
+      <div class="copy-actions" aria-label="Copy asset values" data-i18n-aria-label="assets.copyValues">
         <button id="copyUrl" type="button">
-          <span>Copy URL</span>
-          <small>CDN address</small>
+          <span data-i18n="assets.copyUrl">Copy URL</span>
+          <small data-i18n="assets.cdnAddress">CDN address</small>
         </button>
         <button id="copyPath" type="button">
-          <span>Copy path</span>
-          <small>Relative path</small>
+          <span data-i18n="assets.copyPath">Copy path</span>
+          <small data-i18n="assets.relativePath">Relative path</small>
         </button>
       </div>
     </aside>
   </div>
 
   <div class="details-scrim" id="detailsScrim" hidden></div>
-  <div class="toast" id="toast" role="status" aria-live="polite">Copied URL</div>
+  <div class="toast" id="toast" role="status" aria-live="polite" data-i18n="assets.copiedUrl">Copied URL</div>
 
-  <script src="./viewer.js" defer></script>
+  <script type="module" src="./viewer.js"></script>
 </body>
 </html>

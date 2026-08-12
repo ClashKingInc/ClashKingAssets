@@ -1,3 +1,5 @@
+import { loadLocalization, translateDocument } from "./localization.mjs";
+
 const MANIFEST_URL = "https://assets.clashk.ing/manifest.json";
 const CACHE_KEY = "clashking-asset-viewer-manifest-v1";
 const PREFERENCES_KEY = "clashking-asset-viewer-preferences-v1";
@@ -39,6 +41,8 @@ let allAssets = [];
 let categories = [{ id: "all", label: "all", count: 0 }];
 let selectedAsset = null;
 let loadingError = null;
+const { locale, t } = await loadLocalization();
+translateDocument(t);
 
 const state = {
   category: "all",
@@ -170,7 +174,7 @@ function setAssets(assets) {
   }, new Map());
 
   categories = [
-    { id: "all", label: "all assets", count: allAssets.length },
+    { id: "all", label: t("assets.all"), count: allAssets.length },
     ...Array.from(categoryCounts, ([id, count]) => ({ id, label: id, count }))
       .sort((a, b) => a.label.localeCompare(b.label)),
   ];
@@ -266,8 +270,8 @@ function updateLayout() {
   els.empty.hidden = state.items.length > 0 && !loadingError;
 
   els.summary.textContent = state.query
-    ? `${state.items.length.toLocaleString()} matches for “${state.query.trim()}”`
-    : `${state.items.length.toLocaleString()} published images`;
+    ? t("assets.matches", { count: state.items.length.toLocaleString(locale), query: state.query.trim() })
+    : t("assets.published", { count: state.items.length.toLocaleString(locale) });
 }
 
 function renderVisible() {
@@ -305,8 +309,8 @@ function renderVisible() {
     const main = document.createElement("button");
     main.className = "tile-main";
     main.type = "button";
-    main.title = `Preview ${asset.path}`;
-    main.setAttribute("aria-label", `Preview ${asset.name}, ${asset.path}`);
+    main.title = t("assets.previewTitle", { path: asset.path });
+    main.setAttribute("aria-label", t("assets.previewLabel", { name: asset.name, path: asset.path }));
     main.addEventListener("click", () => openDetails(asset));
 
     const thumb = document.createElement("span");
@@ -332,9 +336,9 @@ function renderVisible() {
     const copy = document.createElement("button");
     copy.className = "tile-copy";
     copy.type = "button";
-    copy.textContent = "Copy URL";
-    copy.setAttribute("aria-label", `Copy URL for ${asset.name}`);
-    copy.addEventListener("click", () => copyValue(asset.url, "Copied asset URL"));
+    copy.textContent = t("assets.copyUrl");
+    copy.setAttribute("aria-label", t("assets.copyUrlFor", { name: asset.name }));
+    copy.addEventListener("click", () => copyValue(asset.url, t("assets.copiedAssetUrl")));
 
     tile.append(main, copy);
     fragment.appendChild(tile);
@@ -358,10 +362,10 @@ function openDetails(asset, options = {}) {
   selectedAsset = asset;
   els.detailName.textContent = asset.name;
   els.detailImage.src = asset.url;
-  els.detailImage.alt = `Preview of ${asset.name}`;
+  els.detailImage.alt = t("assets.previewOf", { name: asset.name });
   els.detailFormat.textContent = asset.ext;
   els.detailCategory.textContent = labelForCategory(asset.category);
-  els.detailDimensions.textContent = "Loading…";
+  els.detailDimensions.textContent = t("assets.loadingShort");
   els.detailPath.textContent = asset.path;
   els.downloadAsset.href = asset.url;
   els.downloadAsset.download = asset.path.split("/").pop();
@@ -374,7 +378,7 @@ function openDetails(asset, options = {}) {
     els.detailDimensions.textContent = `${els.detailImage.naturalWidth.toLocaleString()} × ${els.detailImage.naturalHeight.toLocaleString()} px`;
   };
   els.detailImage.onerror = () => {
-    els.detailDimensions.textContent = "Preview unavailable";
+    els.detailDimensions.textContent = t("assets.previewUnavailable");
   };
 
   if (options.updateHistory !== false) {
@@ -484,10 +488,10 @@ els.emptyAction.addEventListener("click", () => {
 els.closeDetails.addEventListener("click", () => closeDetails());
 els.detailsScrim.addEventListener("click", () => closeDetails());
 els.copyUrl.addEventListener("click", () => {
-  if (selectedAsset) copyValue(selectedAsset.url, "Copied asset URL");
+  if (selectedAsset) copyValue(selectedAsset.url, t("assets.copiedAssetUrl"));
 });
 els.copyPath.addEventListener("click", () => {
-  if (selectedAsset) copyValue(selectedAsset.path, "Copied asset path");
+  if (selectedAsset) copyValue(selectedAsset.path, t("assets.copiedAssetPath"));
 });
 window.addEventListener("hashchange", () => {
   const path = deepLinkedPath();
@@ -520,8 +524,8 @@ window.addEventListener("keydown", (event) => {
 async function initialize() {
   loadingError = null;
   els.empty.hidden = true;
-  els.summary.textContent = "Loading asset manifest…";
-  els.emptyAction.textContent = "Reset filters";
+  els.summary.textContent = t("assets.loadingManifest");
+  els.emptyAction.textContent = t("assets.resetFilters");
   try {
     setAssets(await fetchAssets());
   } catch (error) {
@@ -531,10 +535,10 @@ async function initialize() {
     state.items = [];
     els.spacer.replaceChildren();
     els.spacer.style.height = "0";
-    els.summary.textContent = "Could not load the asset manifest";
-    els.emptyTitle.textContent = "Assets are temporarily unavailable";
-    els.emptyBody.textContent = "Check your connection, then try again.";
-    els.emptyAction.textContent = "Try again";
+    els.summary.textContent = t("assets.manifestUnavailable");
+    els.emptyTitle.textContent = t("assets.temporarilyUnavailable");
+    els.emptyBody.textContent = t("assets.connectionHelp");
+    els.emptyAction.textContent = t("assets.tryAgain");
     els.empty.hidden = false;
   }
 }
