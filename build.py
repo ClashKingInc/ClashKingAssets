@@ -293,19 +293,19 @@ def build_sync_plan(entries: list[DiffEntry], assets_root: str) -> dict[str, Any
 
 def load_r2_config() -> R2Config:
     values = {
-        "R2_ENDPOINT_URL": os.getenv("R2_ENDPOINT_URL", "").strip(),
-        "R2_ACCESS_KEY_ID": os.getenv("R2_ACCESS_KEY_ID", "").strip(),
-        "R2_SECRET_ACCESS_KEY": os.getenv("R2_SECRET_ACCESS_KEY", "").strip(),
-        "R2_BUCKET": os.getenv("R2_BUCKET", "").strip(),
+        "R2_ACCOUNT_ID": os.getenv("R2_ACCOUNT_ID", "").strip(),
+        "R2_ASSETS_ACCESS_KEY_ID": os.getenv("R2_ASSETS_ACCESS_KEY_ID", "").strip(),
+        "R2_ASSETS_SECRET_ACCESS_KEY": os.getenv("R2_ASSETS_SECRET_ACCESS_KEY", "").strip(),
+        "R2_ASSETS_BUCKET_NAME": os.getenv("R2_ASSETS_BUCKET_NAME", "").strip(),
     }
     missing = [key for key, value in values.items() if not value]
     if missing:
         raise BuildError(f"missing required R2 configuration: {', '.join(missing)}")
     return R2Config(
-        endpoint_url=values["R2_ENDPOINT_URL"],
-        access_key_id=values["R2_ACCESS_KEY_ID"],
-        secret_access_key=values["R2_SECRET_ACCESS_KEY"],
-        bucket=values["R2_BUCKET"],
+        endpoint_url=f"https://{values['R2_ACCOUNT_ID']}.r2.cloudflarestorage.com",
+        access_key_id=values["R2_ASSETS_ACCESS_KEY_ID"],
+        secret_access_key=values["R2_ASSETS_SECRET_ACCESS_KEY"],
+        bucket=values["R2_ASSETS_BUCKET_NAME"],
     )
 
 
