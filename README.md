@@ -11,6 +11,20 @@ Example:
 - `assets/troops/barbarian/icon.webp`
 - `https://assets.clashk.ing/troops/barbarian/icon.webp`
 
+## ClashKing UI font
+
+`assets/fonts/clashking.woff2` is the hosted web font. It preserves the custom
+ClashKing Basic Latin glyphs and restores Inter's Latin Extended, Vietnamese,
+Greek, Cyrillic, punctuation, and symbol coverage. Rebuild it with:
+
+```bash
+python build_clashking_font.py
+```
+
+The build requires FontTools with Brotli support. The original ClashKing subset
+is kept in `internal/fonts/clashking-basic.ttf`; the matching Inter 4.1 source is
+downloaded from the official Inter CDN and verified by SHA-256 before use.
+
 The hosted assets are cached and served through Cloudflare. You are welcome to use them in your own project, to have the latest assets. However, as maintaining this
 does cost us time & money please credit us somewhere in your project. Thanks!
 
