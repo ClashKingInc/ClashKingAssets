@@ -20,6 +20,8 @@ from pathlib import Path
 import zstandard
 
 from generate_manifest import write_manifest
+from scattachment import SCAttachmentRef, discover_scattachments, unwrap_scattachment
+from scindex import decode_decorations
 from utils import apk_url, download_file, fetch_fingerprint_manifest
 
 
@@ -35,6 +37,7 @@ class SCAssetRequest:
     preferred_frame_label: str | None = None
     base_asset_name: str | None = None
     base_source_sc: str | None = None
+    allow_missing_source: bool = False
 
 
 DIRECT_ASSET_EXTENSIONS = {".sctx", ".ttf", ".otf", ".woff", ".woff2", ".mp4", ".ogg"}
@@ -43,6 +46,10 @@ LEGEND_LEAGUE_NAME_OVERRIDES = {
     105000034: "Legend League III",
     105000035: "Legend League II",
     105000036: "Legend League I",
+}
+STATIC_SCINDEX_FILES = {
+    "data/assetdata.scindex",
+    "logic/decos_logic.scindex",
 }
 
 
@@ -56,7 +63,10 @@ def is_sc_bundle_file(source_sc: str, candidate: str) -> bool:
     name = candidate_path.name
     if name == f"{base}.sc" or name == f"{base}_tex.sc":
         return True
-    return name.startswith(f"{base}_") and name.endswith(".sctx")
+    if not name.startswith(f"{base}_") or not name.endswith(".sctx"):
+        return False
+    texture_index = name[len(base) + 1 : -len(".sctx")]
+    return texture_index.isdigit()
 
 
 def remove_empty_parents(path: Path, stop_at: Path) -> None:
@@ -152,6 +162,7 @@ class StaticUpdater:
         preferred_frame_label: str | None = None,
         base_asset_name: str | None = None,
         base_source_sc: str | None = None,
+        allow_missing_source: bool = False,
     ) -> str:
         source_sc = source_sc.strip()
         normalized_asset_name = (asset_name or "").strip()
@@ -202,6 +213,7 @@ class StaticUpdater:
             preferred_frame_label=preferred_frame_label,
             base_asset_name=base_asset_name,
             base_source_sc=base_source_sc,
+            allow_missing_source=allow_missing_source,
         )
         requests = self.sc_asset_requests.setdefault(key, [])
         if any(existing.save_path == save_path for existing in requests):
@@ -299,19 +311,60 @@ class StaticUpdater:
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(local_path, destination)
 
-    async def _download_sc_bundle(self, base_url: str, source_sc: str, available_files: set[str]) -> list[Path]:
+    async def _download_source_file(
+        self,
+        base_url: str,
+        source_path: str,
+        available_files: set[str],
+        attachment_files: dict[str, SCAttachmentRef],
+    ) -> Path:
+        if source_path in available_files:
+            data = await download_file(url=f"{base_url}/{source_path}")
+        else:
+            attachment = attachment_files.get(source_path)
+            if attachment is None:
+                raise FileNotFoundError(f"missing source file in fingerprint: {source_path}")
+            wrapped_data = await download_file(url=f"{base_url}/{attachment.remote_path}")
+            data = unwrap_scattachment(
+                wrapped_data,
+                expected_path=source_path,
+                expected_sha=attachment.sha,
+                label=attachment.remote_path,
+            )
+
+        local_path = Path(source_path)
+        local_path.parent.mkdir(parents=True, exist_ok=True)
+        local_path.write_bytes(data)
+        return local_path
+
+    async def _download_sc_bundle(
+        self,
+        base_url: str,
+        source_sc: str,
+        available_files: set[str],
+        attachment_files: dict[str, SCAttachmentRef],
+    ) -> list[Path]:
         downloaded: list[Path] = []
 
-        bundle_files = sorted(file_path for file_path in available_files if is_sc_bundle_file(source_sc, file_path))
+        bundle_files = sorted(
+            {
+                file_path
+                for file_path in available_files | attachment_files.keys()
+                if is_sc_bundle_file(source_sc, file_path)
+            }
+        )
         if source_sc not in bundle_files:
             raise FileNotFoundError(f"missing source bundle file in fingerprint: {source_sc}")
 
-        for remote_path in bundle_files:
-            data = await download_file(url=f"{base_url}/{remote_path}")
-            local_path = Path(remote_path)
-            local_path.parent.mkdir(parents=True, exist_ok=True)
-            local_path.write_bytes(data)
-            downloaded.append(local_path)
+        for source_path in bundle_files:
+            downloaded.append(
+                await self._download_source_file(
+                    base_url,
+                    source_path,
+                    available_files,
+                    attachment_files,
+                )
+            )
 
         return downloaded
 
@@ -344,11 +397,35 @@ class StaticUpdater:
 
         self.FINGERPRINT, fingerprint_file = await fetch_fingerprint_manifest(self.APK_URL, self.FINGERPRINT)
         base_url = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
-        available_files = {item.get("file") for item in fingerprint_file.get("files", []) if item.get("file")}
+        manifest_files = fingerprint_file.get("files", [])
+        available_files = {item.get("file") for item in manifest_files if item.get("file")}
+
+        requested_sources = {group_key[0] for group_key in grouped}
+        requested_sources.update(
+            request.base_source_sc
+            for asset_requests in grouped.values()
+            for requests in asset_requests.values()
+            for request in requests
+            if request.base_source_sc
+        )
+        missing_sources = requested_sources - available_files
+        attachment_files: dict[str, SCAttachmentRef] = {}
+        if missing_sources and any(item.get("file", "").startswith("attachments/") for item in manifest_files):
+            logging.info("Indexing SC attachments for %s missing source(s)", len(missing_sources))
+            attachment_index = await discover_scattachments(base_url, manifest_files)
+            attachment_files = attachment_index.by_path
+            if attachment_index.failures:
+                logging.warning(
+                    "Could not inspect %s SC attachment header(s)",
+                    len(attachment_index.failures),
+                )
+
+        def source_is_available(source_path: str) -> bool:
+            return source_path in available_files or source_path in attachment_files
 
         extractor_build_dir = None
         extractor_path = None
-        if any(is_exported_via_go(group_key[0]) for group_key in grouped):
+        if any(is_exported_via_go(group_key[0]) and source_is_available(group_key[0]) for group_key in grouped):
             extractor_build_dir = tempfile.TemporaryDirectory(prefix="update-static-extractor-")
             extractor_path = Path(extractor_build_dir.name) / "sc-export"
             subprocess.run(["go", "build", "-o", str(extractor_path), "."], check=True)
@@ -364,17 +441,35 @@ class StaticUpdater:
             grouped.items(),
             key=lambda item: tuple("" if value is None else str(value) for value in item[0]),
         ):
+            requests_for_source = [request for requests in asset_requests.values() for request in requests]
+            source_is_optional = all(request.allow_missing_source for request in requests_for_source)
+            if not source_is_available(source_sc) and source_is_optional:
+                logging.warning(
+                    "Skipping %s pending asset export(s): optional source %s is not published in fingerprint %s",
+                    len(requests_for_source),
+                    source_sc,
+                    self.FINGERPRINT,
+                )
+                continue
             downloaded_files: list[Path] = []
             legacy_assets_dir = Path(source_sc).parent / f"{Path(source_sc).stem}_assets"
             try:
                 if source_sc.endswith(".sc"):
-                    downloaded_files = await self._download_sc_bundle(base_url, source_sc, available_files)
+                    downloaded_files = await self._download_sc_bundle(
+                        base_url,
+                        source_sc,
+                        available_files,
+                        attachment_files,
+                    )
                 else:
-                    data = await download_file(url=f"{base_url}/{source_sc}")
-                    local_path = Path(source_sc)
-                    local_path.parent.mkdir(parents=True, exist_ok=True)
-                    local_path.write_bytes(data)
-                    downloaded_files = [local_path]
+                    downloaded_files = [
+                        await self._download_source_file(
+                            base_url,
+                            source_sc,
+                            available_files,
+                            attachment_files,
+                        )
+                    ]
                 base_sources = {
                     request.base_source_sc
                     for requests in asset_requests.values()
@@ -386,7 +481,12 @@ class StaticUpdater:
                 if base_sources:
                     base_source_sc = next(iter(base_sources))
                     downloaded_files.extend(
-                        await self._download_sc_bundle(base_url, base_source_sc, available_files)
+                        await self._download_sc_bundle(
+                            base_url,
+                            base_source_sc,
+                            available_files,
+                            attachment_files,
+                        )
                     )
                 if not is_exported_via_go(source_sc):
                     for requests in asset_requests.values():
@@ -694,6 +794,13 @@ class StaticUpdater:
                 os.remove(file_path)
             except OSError as e:
                 logging.warning(f"Could not delete {file_path}: {e}")
+
+    def process_decoration_indexes(self, deco_data: bytes, asset_data: bytes) -> None:
+        decorations = decode_decorations(deco_data, asset_data)
+        output_path = Path("logic/decos.json")
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with output_path.open("w", encoding="utf-8") as jf:
+            json.dump(decorations, jf, indent=2)
 
     def is_compressed(self, data):
         if data[:4] == b"Sig:":
@@ -1803,7 +1910,8 @@ class StaticUpdater:
     def _parse_decoration_data(self):
         full_deco_data = self.open_file("logic/decos.json")
         new_deco_data = []
-        for _id, (deco_name, deco_data) in enumerate(full_deco_data.items(), 18000000):
+        for fallback_id, (deco_name, deco_data) in enumerate(full_deco_data.items(), 18000000):
+            _id = int(deco_data.get("GlobalID", fallback_id))
             if deco_data.get("TID") in ["TID_DECORATION_GENERIC", "TID_DECORATION_NATIONAL_FLAG"]:
                 continue
             if "placeholder" in deco_name.lower() or deco_name == "Unused":
@@ -1827,6 +1935,7 @@ class StaticUpdater:
                     first_frame=not static_only,
                     static_only=static_only,
                     preferred_frame_label=None if static_only else preferred_frame_label,
+                    allow_missing_source=True,
                 )
 
             hold_data = {
@@ -2606,12 +2715,7 @@ class StaticUpdater:
         file_paths = []
         for file_data in fingerprint_file.get("files", []):
             file_path: str = file_data["file"]
-            if (
-                not file_path.startswith("logic/")
-                and not file_path.startswith("localization/")
-                # and file_path != "csv/animations.csv"
-                and not file_path.endswith("csv")
-            ):
+            if Path(file_path).suffix != ".csv" and file_path not in STATIC_SCINDEX_FILES:
                 continue
             file_paths.append(file_path)
 
@@ -2619,6 +2723,9 @@ class StaticUpdater:
             download_url = f"{BASE_URL}/{file_path}"
             print(f"Downloading: {download_url}")
             data = await download_file(url=download_url)
+
+            if file_path in STATIC_SCINDEX_FILES:
+                return file_path, data
 
             def process():
                 print(f"Processing: {file_path}")
@@ -2628,8 +2735,18 @@ class StaticUpdater:
                     self.process_csv(data=data, file_path=file_path)
 
             await asyncio.to_thread(process)
+            return None
 
-        await asyncio.gather(*(download_and_process(file_path) for file_path in file_paths))
+        results = await asyncio.gather(*(download_and_process(file_path) for file_path in file_paths))
+        scindex_data = dict(result for result in results if result is not None)
+        missing_indexes = STATIC_SCINDEX_FILES - scindex_data.keys()
+        if missing_indexes:
+            raise FileNotFoundError(f"missing required SC indexes: {', '.join(sorted(missing_indexes))}")
+        await asyncio.to_thread(
+            self.process_decoration_indexes,
+            scindex_data["logic/decos_logic.scindex"],
+            scindex_data["data/assetdata.scindex"],
+        )
 
         self.create_master_json()
         await self.extract_assets()

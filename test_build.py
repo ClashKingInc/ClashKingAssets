@@ -1,15 +1,18 @@
 import asyncio
+import hashlib
 import json
+import struct
 import threading
 import time
 from pathlib import Path
-from unittest.mock import AsyncMock, patch
+from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
 import build
 import update_static
-from update_static import StaticUpdater
+from scattachment import SCAttachmentIndex, SCAttachmentRef
+from update_static import StaticUpdater, is_sc_bundle_file
 
 
 class FakeR2Client:
@@ -32,6 +35,12 @@ class FakeR2Client:
     def delete_objects(self, *, Bucket, Delete):
         self.delete_batches.append((Bucket, Delete["Objects"]))
         return {}
+
+
+def make_scattachment(path: str, payload: bytes, *, offset: int = 32) -> bytes:
+    encoded_path = path.encode()
+    padding = bytes(offset - 12 - len(encoded_path))
+    return struct.pack("<III", 1, offset, len(encoded_path)) + encoded_path + padding + payload
 
 
 def test_apply_sync_plan_uploads_concurrently_and_batches_deletes():
@@ -317,6 +326,91 @@ def test_asset_extraction_builds_go_extractor_once_and_reuses_it(tmp_path, monke
     assert extractor_commands[0][0] == extractor_commands[1][0] == build_commands[0][3]
 
 
+def test_sc_bundle_matching_excludes_other_prefixed_bundles():
+    assert is_sc_bundle_file("sc/decos.sc", "sc/decos.sc")
+    assert is_sc_bundle_file("sc/decos.sc", "sc/decos_0.sctx")
+    assert is_sc_bundle_file("sc/decos.sc", "sc/decos_11.sctx")
+    assert not is_sc_bundle_file("sc/decos.sc", "sc/decos2_0.sctx")
+    assert not is_sc_bundle_file("sc/decos.sc", "sc/decos_cc_0.sctx")
+
+
+def test_asset_extraction_recovers_missing_sc_bundle_from_attachments(tmp_path, monkeypatch):
+    updater = StaticUpdater()
+    updater.BASE_PATH = str(tmp_path / "assets")
+    updater.register_sc_asset(
+        "sc/decos.sc",
+        "new_decoration",
+        "decorations/home-village/new_decoration",
+        first_frame=True,
+        allow_missing_source=True,
+    )
+
+    attachment_payloads = {
+        "sc/decos.sc": b"SC\x06decoration-bundle",
+        "sc/decos_0.sctx": b"texture-sidecar",
+    }
+    refs = {}
+    wrapped_by_remote_path = {}
+    manifest_files = []
+    for index, (embedded_path, payload) in enumerate(attachment_payloads.items()):
+        remote_path = f"attachments/{index:032x}.scattachment"
+        wrapped = make_scattachment(embedded_path, payload)
+        refs[embedded_path] = SCAttachmentRef(
+            embedded_path=embedded_path,
+            remote_path=remote_path,
+            sha=hashlib.sha1(wrapped).hexdigest(),
+            defer=False,
+            payload_offset=32,
+        )
+        wrapped_by_remote_path[remote_path] = wrapped
+        manifest_files.append({"file": remote_path, "sha": refs[embedded_path].sha})
+
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(
+        update_static,
+        "fetch_fingerprint_manifest",
+        AsyncMock(return_value=("fingerprint", {"files": manifest_files})),
+    )
+    discover = AsyncMock(return_value=SCAttachmentIndex(by_path=refs, failures=()))
+    monkeypatch.setattr(update_static, "discover_scattachments", discover)
+
+    async def fake_download(url):
+        return wrapped_by_remote_path[url.rsplit("/", 2)[-2] + "/" + url.rsplit("/", 1)[-1]]
+
+    monkeypatch.setattr(update_static, "download_file", fake_download)
+
+    def fake_run(command, *, check):
+        assert check is True
+        if command[:2] == ["go", "build"]:
+            return
+        assert Path("sc/decos.sc").read_bytes() == attachment_payloads["sc/decos.sc"]
+        assert Path("sc/decos_0.sctx").read_bytes() == attachment_payloads["sc/decos_0.sctx"]
+        output_dir = Path(command[command.index("--out") + 1])
+        exported_file = output_dir / "new_decoration.webp"
+        exported_file.write_bytes(b"RIFFxxxxWEBP")
+        (output_dir / "manifest.json").write_text(
+            json.dumps(
+                {
+                    "exports": [
+                        {
+                            "export_name": "new_decoration",
+                            "output_file": str(exported_file),
+                        }
+                    ]
+                }
+            )
+        )
+
+    monkeypatch.setattr(update_static.subprocess, "run", fake_run)
+
+    asyncio.run(updater.extract_assets())
+
+    discover.assert_awaited_once()
+    assert (Path(updater.BASE_PATH) / "decorations/home-village/new_decoration.webp").read_bytes() == b"RIFFxxxxWEBP"
+    assert not Path("sc/decos.sc").exists()
+    assert not Path("sc/decos_0.sctx").exists()
+
+
 def test_existing_asset_is_not_regenerated_for_special_frame_modes(tmp_path, monkeypatch):
     updater = StaticUpdater()
     updater.BASE_PATH = str(tmp_path / "assets")
@@ -337,6 +431,49 @@ def test_existing_asset_is_not_regenerated_for_special_frame_modes(tmp_path, mon
 
     fetch_manifest.assert_not_awaited()
     assert destination.read_bytes() == b"existing"
+
+
+def test_optional_asset_with_unpublished_source_is_skipped(tmp_path, monkeypatch, caplog):
+    updater = StaticUpdater()
+    updater.BASE_PATH = str(tmp_path / "assets")
+    updater.register_sc_asset(
+        "sc/decos.sc",
+        "new_decoration",
+        "decorations/home-village/new_decoration",
+        first_frame=True,
+        allow_missing_source=True,
+    )
+    monkeypatch.setattr(
+        update_static,
+        "fetch_fingerprint_manifest",
+        AsyncMock(return_value=("fingerprint", {"files": []})),
+    )
+    run = Mock()
+    monkeypatch.setattr(update_static.subprocess, "run", run)
+
+    asyncio.run(updater.extract_assets())
+
+    run.assert_not_called()
+    assert "optional source sc/decos.sc is not published" in caplog.text
+
+
+def test_required_asset_with_unpublished_source_still_fails(tmp_path, monkeypatch):
+    updater = StaticUpdater()
+    updater.BASE_PATH = str(tmp_path / "assets")
+    updater.register_sc_asset(
+        "sc/buildings.sc",
+        "new_building",
+        "buildings/home-village/new_building/level_1",
+        first_frame=True,
+    )
+    monkeypatch.setattr(
+        update_static,
+        "fetch_fingerprint_manifest",
+        AsyncMock(return_value=("fingerprint", {"files": []})),
+    )
+
+    with pytest.raises(FileNotFoundError, match="missing source bundle file.*sc/buildings.sc"):
+        asyncio.run(updater.extract_assets())
 
 
 def test_super_wizard_tower_levels_share_the_level_one_building_base():
@@ -390,6 +527,80 @@ def test_ignored_decoration_is_not_emitted_or_registered():
 
     assert updater._parse_decoration_data() == []
     assert updater.sc_asset_requests == {}
+
+
+def test_decoration_uses_explicit_scindex_global_id():
+    updater = StaticUpdater()
+    updater.open_file = lambda _: {
+        "IndexedDecoration": {
+            "GlobalID": 18000999,
+            "TID": "TID_INDEXED_DECORATION",
+            "Width": 2,
+            "MaxCount": 1,
+            "BuildResource": "Diamonds",
+            "BuildCost": 500,
+            "NotInShop": True,
+            "BPReward": True,
+            "VillageType": 0,
+            "SWF": "sc/decos.sc",
+            "ExportName": "indexed_decoration",
+        }
+    }
+    updater._translate = lambda tid: "Indexed Decoration"
+    updater._parse_resource = lambda resource: resource
+
+    [decoration] = updater._parse_decoration_data()
+
+    assert decoration["_id"] == 18000999
+    assert decoration["not_in_shop"] is True
+    assert decoration["pass_reward"] is True
+    assert any(
+        request.asset_name == "indexed_decoration"
+        for requests in updater.sc_asset_requests.values()
+        for request in requests
+    )
+
+
+def test_download_files_fetches_csv_and_required_scindexes_only(monkeypatch):
+    updater = StaticUpdater()
+    manifest = {
+        "files": [
+            {"file": "logic/resources.csv"},
+            {"file": "logic/decos_logic.scindex"},
+            {"file": "data/assetdata.scindex"},
+            {"file": "logic/effects_logic.scindex"},
+            {"file": "sc/decos.sc"},
+        ]
+    }
+    requested = []
+
+    async def fake_download(url):
+        path = url.rsplit("/", 2)[-2:]
+        file_path = "/".join(path)
+        requested.append(file_path)
+        return file_path.encode()
+
+    monkeypatch.setattr(update_static, "fetch_fingerprint_manifest", AsyncMock(return_value=("fingerprint", manifest)))
+    monkeypatch.setattr(update_static, "download_file", fake_download)
+    monkeypatch.setattr(updater, "process_csv", lambda **_: None)
+    process_indexes = Mock()
+    monkeypatch.setattr(updater, "process_decoration_indexes", process_indexes)
+    monkeypatch.setattr(updater, "create_master_json", lambda: None)
+    extract_assets = AsyncMock()
+    monkeypatch.setattr(updater, "extract_assets", extract_assets)
+
+    asyncio.run(updater.download_files())
+
+    assert set(requested) == {
+        "logic/resources.csv",
+        "logic/decos_logic.scindex",
+        "data/assetdata.scindex",
+    }
+    process_indexes.assert_called_once_with(
+        b"logic/decos_logic.scindex",
+        b"data/assetdata.scindex",
+    )
+    extract_assets.assert_awaited_once()
 
 
 def test_hero_troop_and_pet_weights_are_emitted_from_top_level_data():
