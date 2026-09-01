@@ -1053,7 +1053,7 @@
           "upgrade_cost": 150000,
           "required_pet_house_level": 6,
           "required_townhall": 15,
-          "strength_weight": 20000
+          "strength_weight": 19500
         },
         {
           "level": 7,
@@ -1063,7 +1063,7 @@
           "upgrade_cost": 160000,
           "required_pet_house_level": 6,
           "required_townhall": 15,
-          "strength_weight": 21000
+          "strength_weight": 20000
         },
         {
           "level": 8,
@@ -1073,7 +1073,7 @@
           "upgrade_cost": 170000,
           "required_pet_house_level": 6,
           "required_townhall": 15,
-          "strength_weight": 22000
+          "strength_weight": 20500
         },
         {
           "level": 9,
@@ -1083,16 +1083,66 @@
           "upgrade_cost": 180000,
           "required_pet_house_level": 6,
           "required_townhall": 15,
-          "strength_weight": 23000
+          "strength_weight": 21000
         },
         {
           "level": 10,
           "hitpoints": 5000,
           "dps": 150,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 604800,
+          "upgrade_cost": 220000,
           "required_pet_house_level": 6,
           "required_townhall": 15,
+          "strength_weight": 21500
+        },
+        {
+          "level": 11,
+          "hitpoints": 5150,
+          "dps": 155,
+          "upgrade_time": 648000,
+          "upgrade_cost": 250000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 22000
+        },
+        {
+          "level": 12,
+          "hitpoints": 5300,
+          "dps": 160,
+          "upgrade_time": 691200,
+          "upgrade_cost": 280000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 22500
+        },
+        {
+          "level": 13,
+          "hitpoints": 5450,
+          "dps": 165,
+          "upgrade_time": 691200,
+          "upgrade_cost": 310000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 23000
+        },
+        {
+          "level": 14,
+          "hitpoints": 5600,
+          "dps": 170,
+          "upgrade_time": 691200,
+          "upgrade_cost": 350000,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
+          "strength_weight": 23500
+        },
+        {
+          "level": 15,
+          "hitpoints": 5750,
+          "dps": 175,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_pet_house_level": 12,
+          "required_townhall": 18,
           "strength_weight": 24000
         }
       ]

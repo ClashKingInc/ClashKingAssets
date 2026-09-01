@@ -2134,6 +2134,15 @@
       "character": "Minion Prince"
     },
     {
+      "_id": 52000269,
+      "name": "Midas Prince",
+      "TID": {
+        "name": "TID_ODYSSEY_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
       "_id": 52000270,
       "name": "Majestic Minion Prince",
       "TID": {
@@ -2188,10 +2197,37 @@
       "character": "Barbarian King"
     },
     {
+      "_id": 52000291,
+      "name": "Zeus King",
+      "TID": {
+        "name": "TID_ODYSSEY_KING"
+      },
+      "tier": "Gold",
+      "character": "Barbarian King"
+    },
+    {
       "_id": 52000292,
       "name": "Majestic Barbarian King",
       "TID": {
         "name": "TID_UPGRADED_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000293,
+      "name": "Sapphire Half-Time King",
+      "TID": {
+        "name": "TID_FOOTBALL26_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000294,
+      "name": "King Barbarian",
+      "TID": {
+        "name": "TID_TCG_KING"
       },
       "tier": "Legendary",
       "character": "Barbarian King"
@@ -2251,6 +2287,24 @@
       "character": "Royal Champion"
     },
     {
+      "_id": 52000301,
+      "name": "Royal Enchantress",
+      "TID": {
+        "name": "TID_NECRO_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000303,
+      "name": "Hades Champion",
+      "TID": {
+        "name": "TID_ODYSSEY_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
       "_id": 52000304,
       "name": "Majestic Royal Champion",
       "TID": {
@@ -2258,6 +2312,15 @@
       },
       "tier": "Legendary",
       "character": "Royal Champion"
+    },
+    {
+      "_id": 52000319,
+      "name": "Medusa Queen",
+      "TID": {
+        "name": "TID_ODYSSEY_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
     },
     {
       "_id": 52000320,
@@ -2269,10 +2332,55 @@
       "character": "Archer Queen"
     },
     {
+      "_id": 52000321,
+      "name": "Rosy Half-Time Queen",
+      "TID": {
+        "name": "TID_FOOTBALL26_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000322,
+      "name": "Elven Archer",
+      "TID": {
+        "name": "TID_TCG_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000330,
+      "name": "Poseidon Warden",
+      "TID": {
+        "name": "TID_ODYSSEY_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
       "_id": 52000331,
       "name": "Majestic Grand Warden",
       "TID": {
         "name": "TID_UPGRADED_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000333,
+      "name": "Violet Half-Time Warden",
+      "TID": {
+        "name": "TID_FOOTBALL26_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000334,
+      "name": "Grand Mage",
+      "TID": {
+        "name": "TID_TCG_WARDEN"
       },
       "tier": "Legendary",
       "character": "Grand Warden"
@@ -2323,6 +2431,15 @@
       "character": "Dragon Duke"
     },
     {
+      "_id": 52000348,
+      "name": "Hydra Duke",
+      "TID": {
+        "name": "TID_ODYSSEY_DUKE"
+      },
+      "tier": "Legendary",
+      "character": "Dragon Duke"
+    },
+    {
       "_id": 52000349,
       "name": "Majestic Dragon Duke",
       "TID": {
@@ -2330,6 +2447,51 @@
       },
       "tier": "Legendary",
       "character": "Dragon Duke"
+    },
+    {
+      "_id": 52000350,
+      "name": "Drakan Duke",
+      "TID": {
+        "name": "TID_TCG_DUKE"
+      },
+      "tier": "Legendary",
+      "character": "Dragon Duke"
+    },
+    {
+      "_id": 52000353,
+      "name": "Lich Prince",
+      "TID": {
+        "name": "TID_TCG_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000354,
+      "name": "League Prince",
+      "TID": {
+        "name": "TID_LEAGUE_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000378,
+      "name": "Amber Half-Time Champion",
+      "TID": {
+        "name": "TID_FOOTBALL26_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000379,
+      "name": "Tempest Champion",
+      "TID": {
+        "name": "TID_TCG_CHAMPION"
+      },
+      "tier": "Gold",
+      "character": "Royal Champion"
     }
   ]
 }

@@ -953,6 +953,30 @@
       "name": "Quest Roof",
       "slot_type": "roof",
       "pass_reward": true
+    },
+    {
+      "_id": 82000162,
+      "name": "Cosmic2 Deco",
+      "slot_type": "decoration",
+      "pass_reward": true
+    },
+    {
+      "_id": 82000163,
+      "name": "Wwe26 Foot",
+      "slot_type": "foot",
+      "pass_reward": true
+    },
+    {
+      "_id": 82000164,
+      "name": "Wwe26 Ground",
+      "slot_type": "ground",
+      "pass_reward": true
+    },
+    {
+      "_id": 82000165,
+      "name": "Cosmic2 Roof",
+      "slot_type": "roof",
+      "pass_reward": true
     }
   ]
 }

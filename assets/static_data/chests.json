@@ -35,6 +35,15 @@
         "name": "TID_CHEST_COLLECTION_NAME",
         "info": "TID_CHEST_COLLECTION_INFO"
       }
+    },
+    {
+      "_id": 740568109607325,
+      "name": "WWE Chest",
+      "info": "A special Chest that contains random event rewards and Challenger Contracts!",
+      "TID": {
+        "name": "TID_CHEST_EVENT_NAME",
+        "info": "TID_CHEST_EVENT_INFO"
+      }
     }
   ]
 }

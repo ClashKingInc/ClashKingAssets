@@ -303,7 +303,7 @@
       "promotions": 1,
       "demotions": 2,
       "15v15_only": true,
-      "battle_modifier": "Minus Two"
+      "battle_modifier": "Minus Three"
     },
     {
       "_id": 48000020,
@@ -320,7 +320,7 @@
       "promotions": 1,
       "demotions": 2,
       "15v15_only": true,
-      "battle_modifier": "Minus Two"
+      "battle_modifier": "Minus Three"
     },
     {
       "_id": 48000021,
@@ -337,7 +337,7 @@
       "promotions": 1,
       "demotions": 2,
       "15v15_only": true,
-      "battle_modifier": "Minus One"
+      "battle_modifier": "Minus Two"
     },
     {
       "_id": 48000022,

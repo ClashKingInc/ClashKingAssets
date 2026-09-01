@@ -4125,7 +4125,7 @@
               },
               {
                 "level": 2,
-                "build_cost": 5000000,
+                "build_cost": 8000000,
                 "build_time": 518400,
                 "hitpoints_buff": 50,
                 "dps_buff": 0
@@ -9704,14 +9704,14 @@
             "levels": [
               {
                 "level": 1,
-                "build_cost": 150000,
+                "build_cost": 220000,
                 "build_time": 432000,
                 "hitpoints_buff": 0,
                 "dps_buff": 10
               },
               {
                 "level": 2,
-                "build_cost": 130000,
+                "build_cost": 200000,
                 "build_time": 604800,
                 "hitpoints_buff": 202,
                 "dps_buff": 0
@@ -10709,90 +10709,70 @@
                   "required_townhall": 11,
                   "build_cost": 0,
                   "build_time": 0,
-                  "ability_data": {
-                    "ActiveAfterNumBuildingsDestroyed": 1
-                  }
+                  "ability_data": {}
                 },
                 {
                   "level": 2,
                   "required_townhall": 12,
                   "build_cost": 30000,
                   "build_time": 14400,
-                  "ability_data": {
-                    "ActiveAfterNumBuildingsDestroyed": 1
-                  }
+                  "ability_data": {}
                 },
                 {
                   "level": 3,
                   "required_townhall": 13,
                   "build_cost": 40000,
                   "build_time": 21600,
-                  "ability_data": {
-                    "ActiveAfterNumBuildingsDestroyed": 1
-                  }
+                  "ability_data": {}
                 },
                 {
                   "level": 4,
                   "required_townhall": 14,
                   "build_cost": 50000,
                   "build_time": 28800,
-                  "ability_data": {
-                    "ActiveAfterNumBuildingsDestroyed": 1
-                  }
+                  "ability_data": {}
                 },
                 {
                   "level": 5,
                   "required_townhall": 15,
                   "build_cost": 60000,
                   "build_time": 36000,
-                  "ability_data": {
-                    "ActiveAfterNumBuildingsDestroyed": 1
-                  }
+                  "ability_data": {}
                 },
                 {
                   "level": 6,
                   "required_townhall": 16,
                   "build_cost": 70000,
                   "build_time": 57600,
-                  "ability_data": {
-                    "ActiveAfterNumBuildingsDestroyed": 1
-                  }
+                  "ability_data": {}
                 },
                 {
                   "level": 7,
                   "required_townhall": 17,
                   "build_cost": 80000,
                   "build_time": 144000,
-                  "ability_data": {
-                    "ActiveAfterNumBuildingsDestroyed": 1
-                  }
+                  "ability_data": {}
                 },
                 {
                   "level": 8,
                   "required_townhall": 18,
                   "build_cost": 90000,
                   "build_time": 266400,
-                  "ability_data": {
-                    "ActiveAfterNumBuildingsDestroyed": 1
-                  }
+                  "ability_data": {}
                 },
                 {
                   "level": 9,
                   "required_townhall": 18,
                   "build_cost": 100000,
                   "build_time": 453600,
-                  "ability_data": {
-                    "ActiveAfterNumBuildingsDestroyed": 1
-                  }
+                  "ability_data": {}
                 },
                 {
                   "level": 10,
                   "required_townhall": 18,
                   "build_cost": 110000,
                   "build_time": 777600,
-                  "ability_data": {
-                    "ActiveAfterNumBuildingsDestroyed": 1
-                  }
+                  "ability_data": {}
                 }
               ]
             }

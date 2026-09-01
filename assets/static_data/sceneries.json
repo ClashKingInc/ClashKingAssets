@@ -606,7 +606,7 @@
         "name": "TID_SCENERY_CYBERCLASH"
       },
       "type": "home",
-      "music": "sceneries/cyber_scenery/music.ogg",
+      "music": null,
       "thumbnail": "sceneries/cyber_scenery/thumbnail.webp"
     },
     {
@@ -740,6 +740,16 @@
       "thumbnail": "sceneries/classic_skeleton_scenery/thumbnail.webp"
     },
     {
+      "_id": 60000089,
+      "name": "Glory Arena Scenery",
+      "TID": {
+        "name": "TID_SCENERY_WORLDCUP2024_K2"
+      },
+      "type": "home",
+      "music": "sceneries/glory_arena_scenery/music.ogg",
+      "thumbnail": "sceneries/glory_arena_scenery/thumbnail.webp"
+    },
+    {
       "_id": 60000090,
       "name": "Anime Fury Scenery",
       "TID": {
@@ -748,6 +758,26 @@
       "type": "home",
       "music": "sceneries/anime_fury_scenery/music.ogg",
       "thumbnail": "sceneries/anime_fury_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000091,
+      "name": "Barbarian's Odyssey Scenery",
+      "TID": {
+        "name": "TID_SCENERY_BARBARIAN_ODYSSEY"
+      },
+      "type": "home",
+      "music": "sceneries/barbarian's_odyssey_scenery/music.ogg",
+      "thumbnail": "sceneries/barbarian's_odyssey_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000093,
+      "name": "The Awesome Quest Scenery",
+      "TID": {
+        "name": "TID_SCENERY_QUEST"
+      },
+      "type": "home",
+      "music": "sceneries/the_awesome_quest_scenery/music.ogg",
+      "thumbnail": "sceneries/the_awesome_quest_scenery/thumbnail.webp"
     }
   ]
 }

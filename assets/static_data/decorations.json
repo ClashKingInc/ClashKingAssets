@@ -2827,6 +2827,20 @@
       "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
+    },
+    {
+      "_id": 18000237,
+      "name": "Money in the Bank Title",
+      "TID": {
+        "name": "TID_DECO_MITB_BELT"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
     }
   ]
 }
