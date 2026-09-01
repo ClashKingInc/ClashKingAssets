@@ -20,6 +20,7 @@ CDN_CACHE_CONTROL = "public, max-age=86400, stale-while-revalidate=604800"
 CDN_CONTENT_TYPES = {
     ".glb": "model/gltf-binary",
     ".json": "application/json",
+    ".ogg": "audio/ogg",
     ".svg": "image/svg+xml",
     ".ttf": "font/ttf",
     ".woff2": "font/woff2",
