@@ -10264,6 +10264,13 @@
       "url": "https://assets.clashk.ing/decorations/home-village/mighty_statue.webp"
     },
     {
+      "path": "decorations/home-village/money_in_the_bank_title.webp",
+      "category": "decorations",
+      "display_name": "money in the bank title",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/decorations/home-village/money_in_the_bank_title.webp"
+    },
+    {
       "path": "decorations/home-village/monk_statue.webp",
       "category": "decorations",
       "display_name": "monk statue",
