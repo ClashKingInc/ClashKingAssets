@@ -6988,6 +6988,34 @@
       "url": "https://assets.clashk.ing/capital_house_parts/82000161.webp"
     },
     {
+      "path": "capital_house_parts/82000162.webp",
+      "category": "capital_house_parts",
+      "display_name": "82000162",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/capital_house_parts/82000162.webp"
+    },
+    {
+      "path": "capital_house_parts/82000163.webp",
+      "category": "capital_house_parts",
+      "display_name": "82000163",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/capital_house_parts/82000163.webp"
+    },
+    {
+      "path": "capital_house_parts/82000164.webp",
+      "category": "capital_house_parts",
+      "display_name": "82000164",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/capital_house_parts/82000164.webp"
+    },
+    {
+      "path": "capital_house_parts/82000165.webp",
+      "category": "capital_house_parts",
+      "display_name": "82000165",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/capital_house_parts/82000165.webp"
+    },
+    {
       "path": "chests/card_pack.webp",
       "category": "chests",
       "display_name": "card pack",
@@ -7014,6 +7042,13 @@
       "display_name": "rare chest",
       "extension": "webp",
       "url": "https://assets.clashk.ing/chests/rare_chest.webp"
+    },
+    {
+      "path": "chests/wwe_chest.webp",
+      "category": "chests",
+      "display_name": "wwe chest",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/chests/wwe_chest.webp"
     },
     {
       "path": "clan_labels/base_designing.webp",
@@ -13645,6 +13680,20 @@
       "url": "https://assets.clashk.ing/sceneries/anime_scenery/thumbnail.webp"
     },
     {
+      "path": "sceneries/barbarian's_odyssey_scenery/icon.webp",
+      "category": "sceneries",
+      "display_name": "barbarian's odyssey scenery",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/sceneries/barbarian%27s_odyssey_scenery/icon.webp"
+    },
+    {
+      "path": "sceneries/barbarian's_odyssey_scenery/thumbnail.webp",
+      "category": "sceneries",
+      "display_name": "thumbnail",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/sceneries/barbarian%27s_odyssey_scenery/thumbnail.webp"
+    },
+    {
       "path": "sceneries/books_of_clash_scenery/icon.webp",
       "category": "sceneries",
       "display_name": "books of clash scenery",
@@ -14093,6 +14142,20 @@
       "url": "https://assets.clashk.ing/sceneries/gingerbread_scenery/thumbnail.webp"
     },
     {
+      "path": "sceneries/glory_arena_scenery/icon.webp",
+      "category": "sceneries",
+      "display_name": "glory arena scenery",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/sceneries/glory_arena_scenery/icon.webp"
+    },
+    {
+      "path": "sceneries/glory_arena_scenery/thumbnail.webp",
+      "category": "sceneries",
+      "display_name": "thumbnail",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/sceneries/glory_arena_scenery/thumbnail.webp"
+    },
+    {
       "path": "sceneries/goblin_caves_scenery/icon.webp",
       "category": "sceneries",
       "display_name": "goblin caves scenery",
@@ -14457,6 +14520,20 @@
       "url": "https://assets.clashk.ing/sceneries/summer_scenery/thumbnail.webp"
     },
     {
+      "path": "sceneries/the_awesome_quest_scenery/icon.webp",
+      "category": "sceneries",
+      "display_name": "the awesome quest scenery",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/sceneries/the_awesome_quest_scenery/icon.webp"
+    },
+    {
+      "path": "sceneries/the_awesome_quest_scenery/thumbnail.webp",
+      "category": "sceneries",
+      "display_name": "thumbnail",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/sceneries/the_awesome_quest_scenery/thumbnail.webp"
+    },
+    {
       "path": "sceneries/tiger_mountain/icon.webp",
       "category": "sceneries",
       "display_name": "tiger mountain",
@@ -14567,6 +14644,13 @@
       "display_name": "thumbnail",
       "extension": "webp",
       "url": "https://assets.clashk.ing/sceneries/year_of_the_snake/thumbnail.webp"
+    },
+    {
+      "path": "skins/amber_half-time_champion/icon.webp",
+      "category": "skins",
+      "display_name": "amber half time champion",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/amber_half-time_champion/icon.webp"
     },
     {
       "path": "skins/anime_champion/icon.webp",
@@ -15073,6 +15157,13 @@
       "url": "https://assets.clashk.ing/skins/dragonscale_warden/icon.webp"
     },
     {
+      "path": "skins/drakan_duke/icon.webp",
+      "category": "skins",
+      "display_name": "drakan duke",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/drakan_duke/icon.webp"
+    },
+    {
       "path": "skins/egypt_champion/icon.webp",
       "category": "skins",
       "display_name": "egypt champion",
@@ -15099,6 +15190,13 @@
       "display_name": "egypt warden",
       "extension": "webp",
       "url": "https://assets.clashk.ing/skins/egypt_warden/icon.webp"
+    },
+    {
+      "path": "skins/elven_archer/icon.webp",
+      "category": "skins",
+      "display_name": "elven archer",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/elven_archer/icon.webp"
     },
     {
       "path": "skins/eternal_warden/icon.webp",
@@ -15367,6 +15465,13 @@
       "url": "https://assets.clashk.ing/skins/grand_judge/icon.webp"
     },
     {
+      "path": "skins/grand_mage/icon.webp",
+      "category": "skins",
+      "display_name": "grand mage",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/grand_mage/icon.webp"
+    },
+    {
       "path": "skins/grand_monk/icon.webp",
       "category": "skins",
       "display_name": "grand monk",
@@ -15395,6 +15500,13 @@
       "url": "https://assets.clashk.ing/skins/grand_warlock/icon.webp"
     },
     {
+      "path": "skins/hades_champion/icon.webp",
+      "category": "skins",
+      "display_name": "hades champion",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/hades_champion/icon.webp"
+    },
+    {
       "path": "skins/heart_hunter_queen/icon.webp",
       "category": "skins",
       "display_name": "heart hunter queen",
@@ -15407,6 +15519,13 @@
       "display_name": "hotrod copter",
       "extension": "webp",
       "url": "https://assets.clashk.ing/skins/hotrod_copter/icon.webp"
+    },
+    {
+      "path": "skins/hydra_duke/icon.webp",
+      "category": "skins",
+      "display_name": "hydra duke",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/hydra_duke/icon.webp"
     },
     {
       "path": "skins/ice_champion/icon.webp",
@@ -15542,6 +15661,13 @@
       "url": "https://assets.clashk.ing/skins/keystriker_warden/icon.webp"
     },
     {
+      "path": "skins/king_barbarian/icon.webp",
+      "category": "skins",
+      "display_name": "king barbarian",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/king_barbarian/icon.webp"
+    },
+    {
       "path": "skins/king_cody/icon.webp",
       "category": "skins",
       "display_name": "king cody",
@@ -15591,6 +15717,13 @@
       "url": "https://assets.clashk.ing/skins/league_king/icon.webp"
     },
     {
+      "path": "skins/league_prince/icon.webp",
+      "category": "skins",
+      "display_name": "league prince",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/league_prince/icon.webp"
+    },
+    {
       "path": "skins/league_queen/icon.webp",
       "category": "skins",
       "display_name": "league queen",
@@ -15603,6 +15736,13 @@
       "display_name": "league warden",
       "extension": "webp",
       "url": "https://assets.clashk.ing/skins/league_warden/icon.webp"
+    },
+    {
+      "path": "skins/lich_prince/icon.webp",
+      "category": "skins",
+      "display_name": "lich prince",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/lich_prince/icon.webp"
     },
     {
       "path": "skins/lunar_king/icon.webp",
@@ -15687,6 +15827,20 @@
       "display_name": "majestic royal champion",
       "extension": "webp",
       "url": "https://assets.clashk.ing/skins/majestic_royal_champion/icon.webp"
+    },
+    {
+      "path": "skins/medusa_queen/icon.webp",
+      "category": "skins",
+      "display_name": "medusa queen",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/medusa_queen/icon.webp"
+    },
+    {
+      "path": "skins/midas_prince/icon.webp",
+      "category": "skins",
+      "display_name": "midas prince",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/midas_prince/icon.webp"
     },
     {
       "path": "skins/miner_queen/icon.webp",
@@ -15899,6 +16053,13 @@
       "url": "https://assets.clashk.ing/skins/pixel_warden/icon.webp"
     },
     {
+      "path": "skins/poseidon_warden/icon.webp",
+      "category": "skins",
+      "display_name": "poseidon warden",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/poseidon_warden/icon.webp"
+    },
+    {
       "path": "skins/primal_champion/icon.webp",
       "category": "skins",
       "display_name": "primal champion",
@@ -16025,11 +16186,25 @@
       "url": "https://assets.clashk.ing/skins/rogue_queen/icon.webp"
     },
     {
+      "path": "skins/rosy_half-time_queen/icon.webp",
+      "category": "skins",
+      "display_name": "rosy half time queen",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/rosy_half-time_queen/icon.webp"
+    },
+    {
       "path": "skins/royal_champion/icon.webp",
       "category": "skins",
       "display_name": "royal champion",
       "extension": "webp",
       "url": "https://assets.clashk.ing/skins/royal_champion/icon.webp"
+    },
+    {
+      "path": "skins/royal_enchantress/icon.webp",
+      "category": "skins",
+      "display_name": "royal enchantress",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/royal_enchantress/icon.webp"
     },
     {
       "path": "skins/royal_ninja/icon.webp",
@@ -16058,6 +16233,13 @@
       "display_name": "samurai king",
       "extension": "webp",
       "url": "https://assets.clashk.ing/skins/samurai_king/icon.webp"
+    },
+    {
+      "path": "skins/sapphire_half-time_king/icon.webp",
+      "category": "skins",
+      "display_name": "sapphire half time king",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/sapphire_half-time_king/icon.webp"
     },
     {
       "path": "skins/shadow_champion/icon.webp",
@@ -16298,6 +16480,13 @@
       "url": "https://assets.clashk.ing/skins/super_squad_king/icon.webp"
     },
     {
+      "path": "skins/tempest_champion/icon.webp",
+      "category": "skins",
+      "display_name": "tempest champion",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/tempest_champion/icon.webp"
+    },
+    {
       "path": "skins/the_royalest/icon.webp",
       "category": "skins",
       "display_name": "the royalest",
@@ -16310,6 +16499,13 @@
       "display_name": "valkyrie queen",
       "extension": "webp",
       "url": "https://assets.clashk.ing/skins/valkyrie_queen/icon.webp"
+    },
+    {
+      "path": "skins/violet_half-time_warden/icon.webp",
+      "category": "skins",
+      "display_name": "violet half time warden",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/violet_half-time_warden/icon.webp"
     },
     {
       "path": "skins/warden_master/icon.webp",
@@ -16394,6 +16590,13 @@
       "display_name": "yeti champion",
       "extension": "webp",
       "url": "https://assets.clashk.ing/skins/yeti_champion/icon.webp"
+    },
+    {
+      "path": "skins/zeus_king/icon.webp",
+      "category": "skins",
+      "display_name": "zeus king",
+      "extension": "webp",
+      "url": "https://assets.clashk.ing/skins/zeus_king/icon.webp"
     },
     {
       "path": "spells/angry_spell.webp",
