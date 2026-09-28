@@ -1073,6 +1073,7 @@ class StaticUpdater:
                 ),
                 "village": "home" if not village_type else "builderBase",
                 "width": building_data.get("Width", 1),  # walls are null for some reason, so let's make it 1
+                "hitbox_width": building_data.get("BuildingW"),
                 "superchargeable": superchargeable,
             }
 
