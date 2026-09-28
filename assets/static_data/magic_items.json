@@ -146,7 +146,7 @@
     {
       "_id": 900728545460161,
       "name": "Wall Ring",
-      "info": "Instantly upgrade a wall piece. Some higher level walls may require multiple rings to upgrade. Requires a free Builder. Works in both villages!",
+      "info": "Instantly upgrade a wall piece. Some higher level walls may require multiple rings to upgrade. Works in both villages!",
       "TID": {
         "name": "TID_BOOSTER_WALL_UPGRADE",
         "info": "TID_BOOSTER_WALL_UPGRADE_INFO"

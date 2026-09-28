@@ -8139,6 +8139,12 @@
         "animated": false
       },
       {
+        "path": "decorations/home-village/bro_force.webp",
+        "display_name": "bro force",
+        "sha": "1ff40fa4a817524191e50d466c72cff90df20ce51c5610e875977ba7fff519e9",
+        "animated": false
+      },
+      {
         "path": "decorations/home-village/bubble_boil_cauldron.webp",
         "display_name": "bubble boil cauldron",
         "sha": "792883ce3c17e2cf2a58d0552e7fd67415a5db7abe793d21a4a10cf8fcab612d",
@@ -8238,6 +8244,12 @@
         "path": "decorations/home-village/clumsy_wheelbarrow.webp",
         "display_name": "clumsy wheelbarrow",
         "sha": "a06eacdde75781c24927a81188aec27ffe371c752cc80ed4fc1e28b236e5a036",
+        "animated": false
+      },
+      {
+        "path": "decorations/home-village/codys_callout.webp",
+        "display_name": "codys callout",
+        "sha": "82e7830beb2c0efab3d0564506ff32a1f808c5f6de6daa8a90e94f2b046aa560",
         "animated": false
       },
       {
@@ -8994,6 +9006,12 @@
         "path": "decorations/home-village/super_statue.webp",
         "display_name": "super statue",
         "sha": "7e70d411c99914ad84273644277de94dfe95f8f025f3986cf51a6adb6b33a385",
+        "animated": false
+      },
+      {
+        "path": "decorations/home-village/superstar_trophy.webp",
+        "display_name": "superstar trophy",
+        "sha": "f46142ef42c45a21b5654037f90d5a03cfeedadb908cfa1f1e298dfe9175c06f",
         "animated": false
       },
       {
@@ -15743,6 +15761,12 @@
         "display_name": "yeti",
         "sha": "f372019b0c0ed01186a91740636c9802777c6c5253ea45e77a8870ad2993c616",
         "animated": false
+      },
+      {
+        "path": "troops/yeti_undertaker/icon.webp",
+        "display_name": "yeti undertaker",
+        "sha": "11ee54233de977b1ecea1292fe245e77c28079ff7af90a3da4c92379ddedbec6",
+        "animated": false
       }
     ]
   },
@@ -15762,7 +15786,7 @@
       },
       {
         "path": "static_data/buildings.json",
-        "sha": "b7e1fd092fe8ce4aa2672efdde8c30a4c7b372ac28c0b6f583982956a94667c7"
+        "sha": "449dbae4ad9d47b8e7270414015561d223d21b910a8a633f7691d7c9850af1be"
       },
       {
         "path": "static_data/capital_house_parts.json",
@@ -15782,7 +15806,7 @@
       },
       {
         "path": "static_data/decorations.json",
-        "sha": "af77a00413aa08d8ec8faae3f10c9a673460f1b4d76959740f48f6a34b12d8eb"
+        "sha": "5b99f07ed7e5a312fc2ab1fa222922bfdf21342dd4ebee3edbc4108d731a731c"
       },
       {
         "path": "static_data/equipment.json",
@@ -15810,7 +15834,7 @@
       },
       {
         "path": "static_data/magic_items.json",
-        "sha": "02950fe772e0d684ef123ec033766d2f9e527b2be26c44f61f35bc716b6876e7"
+        "sha": "05f0bae92cb8b3f9691aac6339ad9ccbb7751ecacbd3dc04e577a40972b1f237"
       },
       {
         "path": "static_data/magic_snacks.json",
@@ -15842,7 +15866,7 @@
       },
       {
         "path": "static_data/spells.json",
-        "sha": "9672b2e2f736e94d7b9d7fb1fde9da46570b5694a21626c09a16d197107a60cd"
+        "sha": "7cbff39341ad2cc6d0693945086906e19c2cebdd20f3df3b5a336777a5e35bb6"
       },
       {
         "path": "static_data/traps.json",
@@ -15850,7 +15874,7 @@
       },
       {
         "path": "static_data/troops.json",
-        "sha": "3a4af648de2a0e7408bcd6a7e61f0ab316194566a7017fa8f7b3edc4eea20c43"
+        "sha": "a8b31b53dadea8b00e469c3a97e4ea1b8b39be940f5fbfe4dffd73e5808625c8"
       },
       {
         "path": "static_data/war_leagues.json",
@@ -15860,91 +15884,91 @@
     "translations": [
       {
         "path": "translations/AR.json",
-        "sha": "7f5dbd32a77040605f9b92200301d60b1b7f4c8ccb8d8f09bf72c8c13757abcb"
+        "sha": "9c085068007f352f7a04a5b5ed09789c94b3c44bcb3ad86738a42c54f277681c"
       },
       {
         "path": "translations/CN.json",
-        "sha": "5e37d73ffbec670f0af5ba186e5cd5c7b849b0130557db09f0971b1d33bcd565"
+        "sha": "325b4ee1d10b4a85f1af0e61b56b33e3f57a024fd437a1420f0a7606358ef0c8"
       },
       {
         "path": "translations/CNT.json",
-        "sha": "4e937e0f1c3f0a1b06684fd03b968255b0e26099e47c5c650d2c63ea6f76d774"
+        "sha": "99ec51654a0bea480d577a241164766067ee043f2a875c7f9f29b2f0068db539"
       },
       {
         "path": "translations/DE.json",
-        "sha": "e1dd4191a4464cd72b421f6286b4b718cf54a630fb2a2f911b9ccf0a5477aee7"
+        "sha": "7b6882a75607d0b0a1a95c080ea5df6e1c29c9ea44da88e5a5272bfe5b3f2e4b"
       },
       {
         "path": "translations/EN.json",
-        "sha": "a337ae40268fbde8125144c0c76a10c318ed391674e9a41d703eb50e0a38df64"
+        "sha": "7c444d6491d20b2415d2a4435c62644aaddc9bd7bf75de17aca3ec975dc44927"
       },
       {
         "path": "translations/ES.json",
-        "sha": "b1958228c9a108a70157e7391a13a9f43c9e8a3ebb9d0858579f6f9f115dea32"
+        "sha": "a8b9bf26f31a575777faededde5de83c8c3f94363b48d62b7f01ad6b55eda056"
       },
       {
         "path": "translations/FA.json",
-        "sha": "6314b55f8d372206186bd2888ff0cab62d925ef86b22f68ef382dbe56846afc8"
+        "sha": "4775e7ee579e4f7b98fa605ad6df275d29da9110c2edd9d1b785ce21db4966e2"
       },
       {
         "path": "translations/FI.json",
-        "sha": "2af2c43710e0e0874341bc883045a00479641c7ef49d9560eb6ce8ad03bec306"
+        "sha": "c6f1da78752f440f5a9b0ade721a0775cbf33a57758dd25707b70bf29a179caf"
       },
       {
         "path": "translations/FR.json",
-        "sha": "c931dab8785e79f6d616898530a3c0f6c102c173b4a8ce46f9b59accb9fab0c8"
+        "sha": "0720964ef3492fe9587ab37a0f78677f7c9b0330112904a40ec2ef7114c5b639"
       },
       {
         "path": "translations/ID.json",
-        "sha": "bf5f22f868913f4e7fbf6288c9741c8bc763f3e4d8c3dbafdf6751e12b945d45"
+        "sha": "205ed5a7defeccb804c9564434a2c78c1fece5b2bd3d9d0ac4d078c3f13d25b9"
       },
       {
         "path": "translations/IT.json",
-        "sha": "2f1beb3aa877e4609633109375b580a886d9b62119e629f5e10a16c1226da00a"
+        "sha": "445533ee1b74bfa16f52dd22d07c05b6d6d1519402cdcbd0dae5389093bd45b7"
       },
       {
         "path": "translations/JP.json",
-        "sha": "5f1f36dce0528386dc8e306d37ba52d4a1c05035ef81b6d234e35c8b4094fade"
+        "sha": "6ed0287df7cd50bc8e009b498fc79e3d9a68b0a6ff17299214fef083a64448d4"
       },
       {
         "path": "translations/KR.json",
-        "sha": "58005b7c087467a2d5c951dd9e30a600c78461d0faa4c574d902cb094e0d50f4"
+        "sha": "893b4bd060d4c83beb2f2f5011ffa824d1a11c1facba9633fde988c0dedc3b14"
       },
       {
         "path": "translations/MS.json",
-        "sha": "da19670feee34865ee3591069d5ec6937416b02aeec409a7b082787ddab6297c"
+        "sha": "020a40ad4b6a612c1e033838536b16cdf17badc669e1c8688f6ac0103e2582c6"
       },
       {
         "path": "translations/NL.json",
-        "sha": "f2d69913cd090f79e5a064174bbab4d9f5b2cda9ec65dedea15702f5a53a7e8f"
+        "sha": "5a433883d9bdff8fffb52ae8eb118a63a9372c5512748ed20d18cf84a20824b7"
       },
       {
         "path": "translations/NO.json",
-        "sha": "dd9aea0d1bb3b0d5a20926293453fcf380d862b890a570d868893bf1dd70ecdc"
+        "sha": "f82bba9ecf5a038dc83f1af2809d4b8c4993423d0d8131854cdc413817a1c09e"
       },
       {
         "path": "translations/PL.json",
-        "sha": "429fafe02f19a7762e28b1f2c237639b4589aa97edd9e2b5f589ea4a0c4febc6"
+        "sha": "c1b915bfc82f28d28c4c39376c32e2917e59b4fcd754baf128759632615bb9ce"
       },
       {
         "path": "translations/PT.json",
-        "sha": "12f28734326f646b30e853962cb2782812959f35b25d07b6fa5e65759875d905"
+        "sha": "e0836c4a26751baceab3775f2dec86c8b3af6e92b4a507f414a17d6690cce026"
       },
       {
         "path": "translations/RU.json",
-        "sha": "1c71830ab7f9664af66a9ffc4a3fcffd9a36bb22fa94e91ba58473d6c0894c1a"
+        "sha": "b8bd8aab88bad864673a78fe61a4c8089afdd7aa4b0eb88d6c2234a871dd01a8"
       },
       {
         "path": "translations/TH.json",
-        "sha": "ac60bc0cfb029fde8cfb5dfa02c5e873b618c5eb1ed4d17e72870638d476acc1"
+        "sha": "277ba38043914415d621eda05236405025de81a024acba5f1a8157d83ba5a419"
       },
       {
         "path": "translations/TR.json",
-        "sha": "3f22c1cb78bf2ac186958559ba4f42dd071532e91378488d88f876b19bb35d7c"
+        "sha": "77aae7c6d2ba79133ac1921dfc6941eab2348531534cf4ffcdb7d2a7543c44f6"
       },
       {
         "path": "translations/VI.json",
-        "sha": "458133b500d0d975e2bcedc39214ff408e27dbe72577a058711a2bf571f943e2"
+        "sha": "d39c93c227d02d57829a256b93f0b4348669aae124aac2b6c3b55961bb9972ee"
       }
     ]
   }

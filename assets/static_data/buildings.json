@@ -12,6 +12,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 4,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -140,6 +141,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 4,
+      "hitbox_width": 3,
       "superchargeable": false,
       "levels": [
         {
@@ -1128,6 +1130,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "levels": [
         {
@@ -1306,6 +1309,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -1474,6 +1478,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "levels": [
         {
@@ -1652,6 +1657,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -1820,6 +1826,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -1988,6 +1995,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 3,
       "superchargeable": false,
       "levels": [
         {
@@ -2132,6 +2140,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -2496,6 +2505,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -2860,6 +2870,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 1,
+      "hitbox_width": null,
       "superchargeable": false,
       "levels": [
         {
@@ -3062,6 +3073,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -3286,6 +3298,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": false,
@@ -3499,6 +3512,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -3870,6 +3884,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -4026,6 +4041,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 2,
+      "hitbox_width": 1,
       "superchargeable": true,
       "levels": [
         {
@@ -4147,6 +4163,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 2,
+      "hitbox_width": 1,
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -4371,6 +4388,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -4459,6 +4477,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -4709,6 +4728,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "levels": [
         {
@@ -4839,6 +4859,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -4959,6 +4980,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -5079,6 +5101,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 2,
+      "hitbox_width": 1,
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -5313,6 +5336,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 2,
+      "hitbox_width": 1,
       "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": false,
@@ -5410,6 +5434,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -5490,6 +5515,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 4,
+      "hitbox_width": 3,
       "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -5592,6 +5618,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -5772,6 +5799,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 1,
+      "hitbox_width": null,
       "superchargeable": false,
       "levels": [
         {
@@ -5882,6 +5910,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 4,
+      "hitbox_width": 3,
       "superchargeable": false,
       "levels": [
         {
@@ -6408,6 +6437,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -6504,6 +6534,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -6600,6 +6631,7 @@
       "upgrade_resource": "Builder Elixir",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -6696,6 +6728,7 @@
       "upgrade_resource": "Builder Elixir",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -6792,6 +6825,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 4,
+      "hitbox_width": 3,
       "superchargeable": false,
       "levels": [
         {
@@ -6888,6 +6922,7 @@
       "upgrade_resource": "Builder Elixir",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 3,
       "superchargeable": false,
       "levels": [
         {
@@ -7000,6 +7035,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -7128,6 +7164,7 @@
       "upgrade_resource": "Builder Elixir",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": []
     },
@@ -7143,6 +7180,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 2,
+      "hitbox_width": 1,
       "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -7271,6 +7309,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -7399,6 +7438,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -7537,6 +7577,7 @@
       "upgrade_resource": "Builder Elixir",
       "village": "builderBase",
       "width": 4,
+      "hitbox_width": 3,
       "superchargeable": false,
       "levels": [
         {
@@ -7633,6 +7674,7 @@
       "upgrade_resource": "Gems",
       "village": "builderBase",
       "width": 2,
+      "hitbox_width": 1,
       "superchargeable": false,
       "levels": []
     },
@@ -7648,6 +7690,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -7831,6 +7874,7 @@
       "upgrade_resource": "Builder Elixir",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": []
     },
@@ -7846,6 +7890,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 2,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": false,
@@ -7974,6 +8019,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 2,
+      "hitbox_width": 1,
       "superchargeable": false,
       "levels": [
         {
@@ -8080,6 +8126,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -8208,6 +8255,7 @@
       "upgrade_resource": "Builder Elixir",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": []
     },
@@ -8223,6 +8271,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": false,
@@ -8351,6 +8400,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -8479,6 +8529,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -8607,6 +8658,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -8735,6 +8787,7 @@
       "upgrade_resource": "Builder Elixir",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -8831,6 +8884,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 4,
+      "hitbox_width": 4,
       "superchargeable": false,
       "levels": [
         {
@@ -8919,6 +8973,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -9057,6 +9112,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 2,
+      "hitbox_width": 1,
       "superchargeable": false,
       "levels": []
     },
@@ -9072,6 +9128,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 2,
+      "hitbox_width": 1,
       "superchargeable": false,
       "levels": [
         {
@@ -9128,6 +9185,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -9249,6 +9307,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -9361,6 +9420,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -9457,6 +9517,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 4,
+      "hitbox_width": 3,
       "superchargeable": false,
       "levels": [
         {
@@ -9569,6 +9630,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 2,
+      "hitbox_width": 1,
       "superchargeable": false,
       "levels": [
         {
@@ -9641,6 +9703,7 @@
       "upgrade_resource": "Dark Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -9733,6 +9796,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 4,
+      "hitbox_width": 3,
       "superchargeable": false,
       "levels": [
         {
@@ -9829,6 +9893,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -9933,6 +9998,7 @@
       "upgrade_resource": "Builder Elixir",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": []
     },
@@ -9948,6 +10014,7 @@
       "upgrade_resource": "Builder Gold",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -10051,6 +10118,7 @@
       "upgrade_resource": "Builder Elixir",
       "village": "builderBase",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": [
         {
@@ -10121,6 +10189,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": []
     },
@@ -10136,6 +10205,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -10231,6 +10301,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": false,
       "is_ground_targeting": true,
@@ -10326,6 +10397,7 @@
       "upgrade_resource": "Dark Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -10385,6 +10457,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": true,
@@ -10457,6 +10530,7 @@
       "upgrade_resource": "Elixir",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "levels": []
     },
@@ -10472,6 +10546,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": false,
@@ -11434,6 +11509,7 @@
       "upgrade_resource": "Gold",
       "village": "home",
       "width": 3,
+      "hitbox_width": 2,
       "superchargeable": true,
       "is_air_targeting": true,
       "is_ground_targeting": true,
