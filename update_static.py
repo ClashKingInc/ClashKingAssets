@@ -20,6 +20,8 @@ from pathlib import Path
 
 import zstandard
 
+from generate_abilities import FILES as ABILITY_TABLES
+from generate_abilities import ability_tids, generate_abilities, write_abilities
 from generate_manifest import write_manifest
 from scattachment import SCAttachmentRef, discover_scattachments, unwrap_scattachment
 from scindex import decode_decorations
@@ -1509,6 +1511,12 @@ class StaticUpdater:
                     "required_townhall": required_townhall,
                     "strength_weight": level_data.get("StrengthWeight", 0),
                 }
+                # Death damage is a separate hit, not DPS. Preserve its exact
+                # client value so consumers can combine it with one attack
+                # (DPS * AttackSpeed / 1000) without guessing from troop names.
+                death_damage = self._first_present("DieDamage", level_data, troop_data)
+                if death_damage is not None:
+                    new_level_data["death_damage"] = death_damage
                 hold_data["levels"].append(new_level_data)
 
             if not hold_data["levels"]:
@@ -1803,7 +1811,9 @@ class StaticUpdater:
 
                 new_level_data = {
                     "level": int(level),
-                    "hitpoints": level_data.get("Hitpoints", 0),
+                    # character_items spells this HitPoints (capital P), unlike
+                    # other tables. This is the flat bonus, not ability health %.
+                    "hitpoints": level_data.get("HitPoints", 0),
                     "dps": level_data.get("DPS", 0),
                     "heal_on_activation": level_data.get("HealOnActivation", 0),
                     "required_blacksmith_level": level_data.get("RequiredBlacksmithLevel"),
@@ -2602,7 +2612,13 @@ class StaticUpdater:
             "resources": self._parse_resource_data(),
             "achievements": self._parse_achievement_data(),
         }
-        self._write_static_json_files(master_data)
+        abilities = generate_abilities(
+            {name: self.open_file(f"logic/{name}.json") for name in ABILITY_TABLES},
+            self.translation_data,
+            master_data,
+        )
+        self.USED_TIDS.update(ability_tids(abilities))
+        self._write_static_json_files(master_data, abilities)
 
         if self.PRUNE_TRANSLATIONS:
             for key in list(self.translation_data.keys()):
@@ -2643,7 +2659,7 @@ class StaticUpdater:
             if path.stem not in catalogs:
                 path.unlink()
 
-    def _write_static_json_files(self, master_data):
+    def _write_static_json_files(self, master_data, abilities=None):
         base_path = Path(self.BASE_PATH)
         with (base_path / "static_data.json").open("w", encoding="utf-8") as jf:
             jf.write(json.dumps(master_data, indent=2, ensure_ascii=False))
@@ -2651,12 +2667,17 @@ class StaticUpdater:
         collection_path = base_path / "static_data"
         collection_path.mkdir(parents=True, exist_ok=True)
         expected_files = {f"{category}.json" for category in master_data}
+        if abilities is not None:
+            expected_files.add("abilities.json")
         for stale_file in collection_path.glob("*.json"):
             if stale_file.name not in expected_files:
                 stale_file.unlink()
         for category, items in master_data.items():
             with (collection_path / f"{category}.json").open("w", encoding="utf-8") as jf:
                 jf.write(json.dumps({"items": items}, indent=2, ensure_ascii=False))
+
+        if abilities is not None:
+            write_abilities(collection_path / "abilities.json", abilities)
 
     def generate_constants(self):
         static_data = self.open_file("static_data.json")
@@ -2778,6 +2799,9 @@ class StaticUpdater:
     def run(self):
         asyncio.run(self.download_files())
         assets_root = Path(self.BASE_PATH)
+        from generate_emoji_catalog import write_catalog
+
+        write_catalog(assets_root)
         write_manifest(assets_root, assets_root / "manifest.json")
 
 

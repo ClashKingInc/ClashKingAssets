@@ -1692,8 +1692,12 @@ function retargetedPoseGlobals(decoded, pose, frameIndex) {
 
 function mismatchedAnimationGlobal(modelNode, decoded, pose, frameIndex, animationGlobals) {
   const channel = animationChannelForModelNode(modelNode, pose);
-  if (!channel || !Number.isInteger(channel.sourceNodeIndex)) return null;
-  const sourceNode = pose.nodes[channel.sourceNodeIndex];
+  // A constant joint still inherits animated control parents. Omitting joints
+  // without their own packed channel leaves hands in the geometry rig while
+  // weapons follow the animation rig, separating the grip during idle poses.
+  const sourceNode = Number.isInteger(channel?.sourceNodeIndex)
+    ? pose.nodes[channel.sourceNodeIndex]
+    : pose.nodesByName?.get(resolveAnimationSourceName(modelNode.name));
   if (!sourceNode) return null;
   const modelParent = Number.isInteger(modelNode.parent) ? decoded.nodes[modelNode.parent] : null;
   const sourceParent = Number.isInteger(sourceNode.parent) ? pose.nodes[sourceNode.parent] : null;
@@ -1720,7 +1724,9 @@ function animationChannelForModelNode(modelNode, pose) {
 
 function animationLocalMatrix(modelNode, pose, frameIndex) {
   const channel = animationChannelForModelNode(modelNode, pose);
-  if (!channel) return localMatrix(modelNode);
+  // Packed clips omit constant tracks. Their authored pose is in the animation
+  // node, not the geometry bind pose; using the latter breaks hands and props.
+  if (!channel) return localMatrix(pose.nodesByName?.get(modelNode.name) || modelNode);
   const sample = sampleAnimationChannel(channel, pose.animation, frameIndex);
   const modelRest = {
     translation: modelNode.translation || [0, 0, 0],
