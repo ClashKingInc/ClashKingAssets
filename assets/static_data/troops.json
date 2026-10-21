@@ -632,7 +632,8 @@
           "upgrade_cost": 80000,
           "required_lab_level": 1,
           "required_townhall": 3,
-          "strength_weight": 900
+          "strength_weight": 900,
+          "death_damage": 6
         },
         {
           "level": 2,
@@ -642,7 +643,8 @@
           "upgrade_cost": 200000,
           "required_lab_level": 2,
           "required_townhall": 4,
-          "strength_weight": 1000
+          "strength_weight": 1000,
+          "death_damage": 9
         },
         {
           "level": 3,
@@ -652,7 +654,8 @@
           "upgrade_cost": 450000,
           "required_lab_level": 4,
           "required_townhall": 6,
-          "strength_weight": 1200
+          "strength_weight": 1200,
+          "death_damage": 13
         },
         {
           "level": 4,
@@ -662,7 +665,8 @@
           "upgrade_cost": 1000000,
           "required_lab_level": 5,
           "required_townhall": 7,
-          "strength_weight": 1400
+          "strength_weight": 1400,
+          "death_damage": 16
         },
         {
           "level": 5,
@@ -672,7 +676,8 @@
           "upgrade_cost": 2400000,
           "required_lab_level": 6,
           "required_townhall": 8,
-          "strength_weight": 1500
+          "strength_weight": 1500,
+          "death_damage": 23
         },
         {
           "level": 6,
@@ -682,7 +687,8 @@
           "upgrade_cost": 2800000,
           "required_lab_level": 8,
           "required_townhall": 10,
-          "strength_weight": 2500
+          "strength_weight": 2500,
+          "death_damage": 30
         },
         {
           "level": 7,
@@ -692,7 +698,8 @@
           "upgrade_cost": 3800000,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 4000
+          "strength_weight": 4000,
+          "death_damage": 36
         },
         {
           "level": 8,
@@ -702,7 +709,8 @@
           "upgrade_cost": 5200000,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 5000
+          "strength_weight": 5000,
+          "death_damage": 42
         },
         {
           "level": 9,
@@ -712,7 +720,8 @@
           "upgrade_cost": 6500000,
           "required_lab_level": 11,
           "required_townhall": 13,
-          "strength_weight": 6000
+          "strength_weight": 6000,
+          "death_damage": 48
         },
         {
           "level": 10,
@@ -722,7 +731,8 @@
           "upgrade_cost": 9500000,
           "required_lab_level": 12,
           "required_townhall": 14,
-          "strength_weight": 7000
+          "strength_weight": 7000,
+          "death_damage": 54
         },
         {
           "level": 11,
@@ -732,7 +742,8 @@
           "upgrade_cost": 11000000,
           "required_lab_level": 13,
           "required_townhall": 15,
-          "strength_weight": 8000
+          "strength_weight": 8000,
+          "death_damage": 60
         },
         {
           "level": 12,
@@ -742,7 +753,8 @@
           "upgrade_cost": 15500000,
           "required_lab_level": 14,
           "required_townhall": 16,
-          "strength_weight": 9000
+          "strength_weight": 9000,
+          "death_damage": 66
         },
         {
           "level": 13,
@@ -752,7 +764,8 @@
           "upgrade_cost": 26000000,
           "required_lab_level": 15,
           "required_townhall": 17,
-          "strength_weight": 10000
+          "strength_weight": 10000,
+          "death_damage": 72
         },
         {
           "level": 14,
@@ -762,7 +775,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
-          "strength_weight": 11000
+          "strength_weight": 11000,
+          "death_damage": 78
         }
       ]
     },
@@ -795,7 +809,8 @@
           "upgrade_cost": 100000,
           "required_lab_level": 1,
           "required_townhall": 3,
-          "strength_weight": 1400
+          "strength_weight": 1400,
+          "death_damage": 25
         },
         {
           "level": 2,
@@ -805,7 +820,8 @@
           "upgrade_cost": 400000,
           "required_lab_level": 2,
           "required_townhall": 4,
-          "strength_weight": 1600
+          "strength_weight": 1600,
+          "death_damage": 32
         },
         {
           "level": 3,
@@ -815,7 +831,8 @@
           "upgrade_cost": 720000,
           "required_lab_level": 4,
           "required_townhall": 6,
-          "strength_weight": 1800
+          "strength_weight": 1800,
+          "death_damage": 48
         },
         {
           "level": 4,
@@ -825,7 +842,8 @@
           "upgrade_cost": 1300000,
           "required_lab_level": 5,
           "required_townhall": 7,
-          "strength_weight": 2000
+          "strength_weight": 2000,
+          "death_damage": 72
         },
         {
           "level": 5,
@@ -835,7 +853,8 @@
           "upgrade_cost": 2750000,
           "required_lab_level": 6,
           "required_townhall": 8,
-          "strength_weight": 2200
+          "strength_weight": 2200,
+          "death_damage": 108
         },
         {
           "level": 6,
@@ -845,7 +864,8 @@
           "upgrade_cost": 4400000,
           "required_lab_level": 7,
           "required_townhall": 9,
-          "strength_weight": 3000
+          "strength_weight": 3000,
+          "death_damage": 162
         },
         {
           "level": 7,
@@ -855,7 +875,8 @@
           "upgrade_cost": 5000000,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 4000
+          "strength_weight": 4000,
+          "death_damage": 214
         },
         {
           "level": 8,
@@ -865,7 +886,8 @@
           "upgrade_cost": 7000000,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 5000
+          "strength_weight": 5000,
+          "death_damage": 268
         },
         {
           "level": 9,
@@ -875,7 +897,8 @@
           "upgrade_cost": 10000000,
           "required_lab_level": 11,
           "required_townhall": 13,
-          "strength_weight": 6000
+          "strength_weight": 6000,
+          "death_damage": 322
         },
         {
           "level": 10,
@@ -885,7 +908,8 @@
           "upgrade_cost": 14000000,
           "required_lab_level": 12,
           "required_townhall": 14,
-          "strength_weight": 8000
+          "strength_weight": 8000,
+          "death_damage": 352
         },
         {
           "level": 11,
@@ -895,7 +919,8 @@
           "upgrade_cost": 17500000,
           "required_lab_level": 14,
           "required_townhall": 16,
-          "strength_weight": 10000
+          "strength_weight": 10000,
+          "death_damage": 375
         },
         {
           "level": 12,
@@ -905,7 +930,8 @@
           "upgrade_cost": 28000000,
           "required_lab_level": 15,
           "required_townhall": 17,
-          "strength_weight": 11000
+          "strength_weight": 11000,
+          "death_damage": 398
         },
         {
           "level": 13,
@@ -915,7 +941,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
-          "strength_weight": 12000
+          "strength_weight": 12000,
+          "death_damage": 425
         }
       ]
     },
@@ -2030,7 +2057,8 @@
           "upgrade_cost": 4000,
           "required_lab_level": 1,
           "required_townhall": 3,
-          "strength_weight": 1800
+          "strength_weight": 1800,
+          "death_damage": 350
         },
         {
           "level": 2,
@@ -2040,7 +2068,8 @@
           "upgrade_cost": 6000,
           "required_lab_level": 6,
           "required_townhall": 8,
-          "strength_weight": 2000
+          "strength_weight": 2000,
+          "death_damage": 400
         },
         {
           "level": 3,
@@ -2050,7 +2079,8 @@
           "upgrade_cost": 10000,
           "required_lab_level": 7,
           "required_townhall": 9,
-          "strength_weight": 2200
+          "strength_weight": 2200,
+          "death_damage": 450
         },
         {
           "level": 4,
@@ -2060,7 +2090,8 @@
           "upgrade_cost": 18500,
           "required_lab_level": 7,
           "required_townhall": 9,
-          "strength_weight": 2500
+          "strength_weight": 2500,
+          "death_damage": 500
         },
         {
           "level": 5,
@@ -2070,7 +2101,8 @@
           "upgrade_cost": 26500,
           "required_lab_level": 8,
           "required_townhall": 10,
-          "strength_weight": 3000
+          "strength_weight": 3000,
+          "death_damage": 550
         },
         {
           "level": 6,
@@ -2080,7 +2112,8 @@
           "upgrade_cost": 38500,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 3500
+          "strength_weight": 3500,
+          "death_damage": 600
         },
         {
           "level": 7,
@@ -2090,7 +2123,8 @@
           "upgrade_cost": 50000,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 4000
+          "strength_weight": 4000,
+          "death_damage": 650
         },
         {
           "level": 8,
@@ -2100,7 +2134,8 @@
           "upgrade_cost": 62500,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 4500
+          "strength_weight": 4500,
+          "death_damage": 700
         },
         {
           "level": 9,
@@ -2110,7 +2145,8 @@
           "upgrade_cost": 80000,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 5000
+          "strength_weight": 5000,
+          "death_damage": 750
         },
         {
           "level": 10,
@@ -2120,7 +2156,8 @@
           "upgrade_cost": 105000,
           "required_lab_level": 11,
           "required_townhall": 13,
-          "strength_weight": 6000
+          "strength_weight": 6000,
+          "death_damage": 800
         },
         {
           "level": 11,
@@ -2130,7 +2167,8 @@
           "upgrade_cost": 122500,
           "required_lab_level": 12,
           "required_townhall": 14,
-          "strength_weight": 7000
+          "strength_weight": 7000,
+          "death_damage": 850
         },
         {
           "level": 12,
@@ -2140,7 +2178,8 @@
           "upgrade_cost": 175000,
           "required_lab_level": 13,
           "required_townhall": 15,
-          "strength_weight": 8000
+          "strength_weight": 8000,
+          "death_damage": 900
         },
         {
           "level": 13,
@@ -2150,7 +2189,8 @@
           "upgrade_cost": 230000,
           "required_lab_level": 14,
           "required_townhall": 16,
-          "strength_weight": 9000
+          "strength_weight": 9000,
+          "death_damage": 950
         },
         {
           "level": 14,
@@ -2160,7 +2200,8 @@
           "upgrade_cost": 350000,
           "required_lab_level": 15,
           "required_townhall": 17,
-          "strength_weight": 10000
+          "strength_weight": 10000,
+          "death_damage": 1000
         },
         {
           "level": 15,
@@ -2170,7 +2211,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
-          "strength_weight": 11000
+          "strength_weight": 11000,
+          "death_damage": 1050
         }
       ]
     },
@@ -2306,7 +2348,8 @@
           "upgrade_cost": 14000,
           "required_lab_level": 1,
           "required_townhall": 3,
-          "strength_weight": 2000
+          "strength_weight": 2000,
+          "death_damage": 100
         },
         {
           "level": 2,
@@ -2316,7 +2359,8 @@
           "upgrade_cost": 21500,
           "required_lab_level": 7,
           "required_townhall": 9,
-          "strength_weight": 3000
+          "strength_weight": 3000,
+          "death_damage": 150
         },
         {
           "level": 3,
@@ -2326,7 +2370,8 @@
           "upgrade_cost": 42500,
           "required_lab_level": 8,
           "required_townhall": 10,
-          "strength_weight": 4000
+          "strength_weight": 4000,
+          "death_damage": 200
         },
         {
           "level": 4,
@@ -2336,7 +2381,8 @@
           "upgrade_cost": 60000,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 5000
+          "strength_weight": 5000,
+          "death_damage": 250
         },
         {
           "level": 5,
@@ -2346,7 +2392,8 @@
           "upgrade_cost": 80000,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 6000
+          "strength_weight": 6000,
+          "death_damage": 300
         },
         {
           "level": 6,
@@ -2356,7 +2403,8 @@
           "upgrade_cost": 200000,
           "required_lab_level": 11,
           "required_townhall": 13,
-          "strength_weight": 7000
+          "strength_weight": 7000,
+          "death_damage": 350
         },
         {
           "level": 7,
@@ -2366,7 +2414,8 @@
           "upgrade_cost": 345000,
           "required_lab_level": 14,
           "required_townhall": 16,
-          "strength_weight": 10000
+          "strength_weight": 10000,
+          "death_damage": 400
         },
         {
           "level": 8,
@@ -2376,7 +2425,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
-          "strength_weight": 12000
+          "strength_weight": 12000,
+          "death_damage": 450
         }
       ]
     },
@@ -3067,7 +3117,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 6,
           "required_townhall": 8,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 105
         },
         {
           "level": 6,
@@ -3077,7 +3128,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 8,
           "required_townhall": 10,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 140
         },
         {
           "level": 7,
@@ -3087,7 +3139,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 175
         },
         {
           "level": 8,
@@ -3097,7 +3150,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 225
         },
         {
           "level": 9,
@@ -3107,7 +3161,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 11,
           "required_townhall": 13,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 275
         },
         {
           "level": 10,
@@ -3117,7 +3172,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 12,
           "required_townhall": 14,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 313
         },
         {
           "level": 11,
@@ -3127,7 +3183,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 13,
           "required_townhall": 15,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 338
         },
         {
           "level": 12,
@@ -3137,7 +3194,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 14,
           "required_townhall": 16,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 363
         },
         {
           "level": 13,
@@ -3147,7 +3205,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 15,
           "required_townhall": 17,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 388
         },
         {
           "level": 14,
@@ -3157,7 +3216,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 413
         }
       ]
     },
@@ -4764,7 +4824,8 @@
           "upgrade_cost": 2400000,
           "required_lab_level": 7,
           "required_townhall": 9,
-          "strength_weight": 4800
+          "strength_weight": 4800,
+          "death_damage": 300
         },
         {
           "level": 12,
@@ -4774,7 +4835,8 @@
           "upgrade_cost": 2600000,
           "required_lab_level": 7,
           "required_townhall": 9,
-          "strength_weight": 5000
+          "strength_weight": 5000,
+          "death_damage": 300
         },
         {
           "level": 13,
@@ -4784,7 +4846,8 @@
           "upgrade_cost": 2800000,
           "required_lab_level": 7,
           "required_townhall": 9,
-          "strength_weight": 5200
+          "strength_weight": 5200,
+          "death_damage": 300
         },
         {
           "level": 14,
@@ -4794,7 +4857,8 @@
           "upgrade_cost": 3600000,
           "required_lab_level": 7,
           "required_townhall": 9,
-          "strength_weight": 5400
+          "strength_weight": 5400,
+          "death_damage": 400
         },
         {
           "level": 15,
@@ -4804,7 +4868,8 @@
           "upgrade_cost": 3800000,
           "required_lab_level": 8,
           "required_townhall": 10,
-          "strength_weight": 5600
+          "strength_weight": 5600,
+          "death_damage": 400
         },
         {
           "level": 16,
@@ -4814,7 +4879,8 @@
           "upgrade_cost": 4300000,
           "required_lab_level": 8,
           "required_townhall": 10,
-          "strength_weight": 5800
+          "strength_weight": 5800,
+          "death_damage": 400
         },
         {
           "level": 17,
@@ -4824,7 +4890,8 @@
           "upgrade_cost": 4500000,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 6000
+          "strength_weight": 6000,
+          "death_damage": 400
         },
         {
           "level": 18,
@@ -4834,7 +4901,8 @@
           "upgrade_cost": 5500000,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 6200
+          "strength_weight": 6200,
+          "death_damage": 500
         },
         {
           "level": 19,
@@ -4844,7 +4912,8 @@
           "upgrade_cost": 5700000,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 6400
+          "strength_weight": 6400,
+          "death_damage": 500
         },
         {
           "level": 20,
@@ -4854,7 +4923,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 6600
+          "strength_weight": 6600,
+          "death_damage": 500
         }
       ]
     },
@@ -5675,7 +5745,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 6,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1400
         },
         {
           "level": 2,
@@ -5685,7 +5756,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 7,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1600
         },
         {
           "level": 3,
@@ -5695,7 +5767,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 8,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1800
         },
         {
           "level": 4,
@@ -5705,7 +5778,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 9,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 2000
         },
         {
           "level": 5,
@@ -5715,7 +5789,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 10,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 2200
         },
         {
           "level": 6,
@@ -5725,7 +5800,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 11,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 2400
         },
         {
           "level": 7,
@@ -5735,7 +5811,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 12,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 2600
         },
         {
           "level": 8,
@@ -5745,7 +5822,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 13,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 2800
         },
         {
           "level": 9,
@@ -5755,7 +5833,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 14,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 3000
         },
         {
           "level": 10,
@@ -5765,7 +5844,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 15,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 3200
         },
         {
           "level": 11,
@@ -5775,7 +5855,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 16,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 3400
         },
         {
           "level": 12,
@@ -5785,7 +5866,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 17,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 3600
         },
         {
           "level": 13,
@@ -5795,7 +5877,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 18,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 3800
         }
       ]
     },
@@ -5911,7 +5994,8 @@
           "upgrade_cost": 2500000,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 6000
+          "strength_weight": 6000,
+          "death_damage": 700
         },
         {
           "level": 2,
@@ -5921,7 +6005,8 @@
           "upgrade_cost": 3500000,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 6500
+          "strength_weight": 6500,
+          "death_damage": 800
         },
         {
           "level": 3,
@@ -5931,7 +6016,8 @@
           "upgrade_cost": 6500000,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 7000
+          "strength_weight": 7000,
+          "death_damage": 900
         },
         {
           "level": 4,
@@ -5941,7 +6027,8 @@
           "upgrade_cost": 10000000,
           "required_lab_level": 11,
           "required_townhall": 13,
-          "strength_weight": 8000
+          "strength_weight": 8000,
+          "death_damage": 1000
         },
         {
           "level": 5,
@@ -5951,7 +6038,8 @@
           "upgrade_cost": 26000000,
           "required_lab_level": 13,
           "required_townhall": 15,
-          "strength_weight": 10000
+          "strength_weight": 10000,
+          "death_damage": 1100
         },
         {
           "level": 6,
@@ -5961,7 +6049,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
-          "strength_weight": 13000
+          "strength_weight": 13000,
+          "death_damage": 1200
         }
       ]
     },
@@ -6188,7 +6277,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 1,
           "required_townhall": 3,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 800
         },
         {
           "level": 2,
@@ -6198,7 +6288,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 8,
           "required_townhall": 10,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 900
         },
         {
           "level": 3,
@@ -6208,7 +6299,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 8,
           "required_townhall": 10,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1000
         },
         {
           "level": 4,
@@ -6218,7 +6310,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1100
         },
         {
           "level": 5,
@@ -6228,7 +6321,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1200
         },
         {
           "level": 6,
@@ -6238,7 +6332,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1300
         },
         {
           "level": 7,
@@ -6248,7 +6343,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 11,
           "required_townhall": 13,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1400
         },
         {
           "level": 8,
@@ -6258,7 +6354,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 12,
           "required_townhall": 14,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1600
         },
         {
           "level": 9,
@@ -6268,7 +6365,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 13,
           "required_townhall": 15,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1800
         },
         {
           "level": 10,
@@ -6278,7 +6376,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 14,
           "required_townhall": 16,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 2000
         },
         {
           "level": 11,
@@ -6288,7 +6387,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 15,
           "required_townhall": 17,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 2200
         },
         {
           "level": 12,
@@ -6298,7 +6398,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 2400
         }
       ]
     },
@@ -6335,7 +6436,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 6,
           "required_townhall": 8,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 300
         },
         {
           "level": 6,
@@ -6345,7 +6447,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 7,
           "required_townhall": 9,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 400
         },
         {
           "level": 7,
@@ -6355,7 +6458,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 500
         },
         {
           "level": 8,
@@ -6365,7 +6469,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 580
         },
         {
           "level": 9,
@@ -6375,7 +6480,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 11,
           "required_townhall": 13,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 620
         },
         {
           "level": 10,
@@ -6385,7 +6491,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 12,
           "required_townhall": 14,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 650
         },
         {
           "level": 11,
@@ -6395,7 +6502,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 14,
           "required_townhall": 16,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 700
         },
         {
           "level": 12,
@@ -6405,7 +6513,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 15,
           "required_townhall": 17,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 730
         },
         {
           "level": 13,
@@ -6415,7 +6524,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 760
         }
       ]
     },
@@ -6830,7 +6940,8 @@
           "upgrade_cost": 2500000,
           "required_lab_level": 9,
           "required_townhall": 11,
-          "strength_weight": 6000
+          "strength_weight": 6000,
+          "death_damage": 500
         },
         {
           "level": 2,
@@ -6840,7 +6951,8 @@
           "upgrade_cost": 3500000,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 6500
+          "strength_weight": 6500,
+          "death_damage": 500
         },
         {
           "level": 3,
@@ -6850,7 +6962,8 @@
           "upgrade_cost": 6500000,
           "required_lab_level": 10,
           "required_townhall": 12,
-          "strength_weight": 7000
+          "strength_weight": 7000,
+          "death_damage": 500
         },
         {
           "level": 4,
@@ -6860,7 +6973,8 @@
           "upgrade_cost": 10000000,
           "required_lab_level": 11,
           "required_townhall": 13,
-          "strength_weight": 8000
+          "strength_weight": 8000,
+          "death_damage": 500
         },
         {
           "level": 5,
@@ -6870,7 +6984,8 @@
           "upgrade_cost": 26000000,
           "required_lab_level": 13,
           "required_townhall": 15,
-          "strength_weight": 10000
+          "strength_weight": 10000,
+          "death_damage": 500
         },
         {
           "level": 6,
@@ -6880,7 +6995,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
-          "strength_weight": 13000
+          "strength_weight": 13000,
+          "death_damage": 500
         }
       ]
     },
@@ -7207,7 +7323,8 @@
           "upgrade_cost": 7500000,
           "required_lab_level": 1,
           "required_townhall": 3,
-          "strength_weight": 6000
+          "strength_weight": 6000,
+          "death_damage": 700
         },
         {
           "level": 2,
@@ -7217,7 +7334,8 @@
           "upgrade_cost": 12000000,
           "required_lab_level": 11,
           "required_townhall": 13,
-          "strength_weight": 7000
+          "strength_weight": 7000,
+          "death_damage": 800
         },
         {
           "level": 3,
@@ -7227,7 +7345,8 @@
           "upgrade_cost": 14500000,
           "required_lab_level": 12,
           "required_townhall": 14,
-          "strength_weight": 8000
+          "strength_weight": 8000,
+          "death_damage": 900
         },
         {
           "level": 4,
@@ -7237,7 +7356,8 @@
           "upgrade_cost": 19000000,
           "required_lab_level": 14,
           "required_townhall": 16,
-          "strength_weight": 10000
+          "strength_weight": 10000,
+          "death_damage": 1000
         },
         {
           "level": 5,
@@ -7247,7 +7367,8 @@
           "upgrade_cost": 29500000,
           "required_lab_level": 15,
           "required_townhall": 17,
-          "strength_weight": 11000
+          "strength_weight": 11000,
+          "death_damage": 1100
         },
         {
           "level": 6,
@@ -7257,7 +7378,8 @@
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
-          "strength_weight": 12000
+          "strength_weight": 12000,
+          "death_damage": 1200
         }
       ]
     },
@@ -9402,7 +9524,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 6,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 150
         },
         {
           "level": 2,
@@ -9412,7 +9535,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 7,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 200
         },
         {
           "level": 3,
@@ -9422,7 +9546,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 8,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 250
         },
         {
           "level": 4,
@@ -9432,7 +9557,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 9,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 350
         },
         {
           "level": 5,
@@ -9442,7 +9568,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 10,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 550
         },
         {
           "level": 6,
@@ -9452,7 +9579,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 11,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 650
         },
         {
           "level": 7,
@@ -9462,7 +9590,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 12,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 750
         },
         {
           "level": 8,
@@ -9472,7 +9601,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 13,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 800
         },
         {
           "level": 9,
@@ -9482,7 +9612,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 14,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 850
         },
         {
           "level": 10,
@@ -9492,7 +9623,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 15,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 900
         },
         {
           "level": 11,
@@ -9502,7 +9634,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 16,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 950
         },
         {
           "level": 12,
@@ -9512,7 +9645,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 17,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1000
         },
         {
           "level": 13,
@@ -9522,7 +9656,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 18,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1050
         }
       ]
     },
@@ -9710,7 +9845,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 6,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 200
         },
         {
           "level": 2,
@@ -9720,7 +9856,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 7,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 450
         },
         {
           "level": 3,
@@ -9730,7 +9867,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 8,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 500
         },
         {
           "level": 4,
@@ -9740,7 +9878,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 9,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 600
         },
         {
           "level": 5,
@@ -9750,7 +9889,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 10,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 720
         },
         {
           "level": 6,
@@ -9760,7 +9900,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 11,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 840
         },
         {
           "level": 7,
@@ -9770,7 +9911,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 12,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 960
         },
         {
           "level": 8,
@@ -9780,7 +9922,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 13,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1000
         },
         {
           "level": 9,
@@ -9790,7 +9933,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 14,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1050
         },
         {
           "level": 10,
@@ -9800,7 +9944,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 15,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1100
         },
         {
           "level": 11,
@@ -9810,7 +9955,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 16,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1150
         },
         {
           "level": 12,
@@ -9820,7 +9966,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 17,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1160
         },
         {
           "level": 13,
@@ -9830,7 +9977,8 @@
           "upgrade_cost": 0,
           "required_lab_level": null,
           "required_townhall": 18,
-          "strength_weight": 0
+          "strength_weight": 0,
+          "death_damage": 1200
         }
       ]
     },
@@ -13171,6 +13319,210 @@
           "level": 18,
           "hitpoints": 7300,
           "dps": 880,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 18,
+          "strength_weight": 0
+        }
+      ]
+    },
+    {
+      "_id": 4000194,
+      "name": "Totem Thrower",
+      "info": "With a belly brimming with Sour Elixir stew, this hurler from the highlands fashioned a budding best friend from a boulder. Tear up villages with this loveable lugger who affectionately chucks his chunky chum.\\n\\nEvery few throws unleash a new Tiny Totem that stuns surrounding defenses and soaks up damage.",
+      "TID": {
+        "name": "TID_CHARACTER_TOTEM_THROWER",
+        "info": "TID_CHARACTER_INFO_TOTEM_THROWER"
+      },
+      "production_building": "Barracks",
+      "production_building_level": 0,
+      "upgrade_resource": "Elixir",
+      "is_flying": false,
+      "is_air_targeting": false,
+      "is_ground_targeting": true,
+      "movement_speed": 270,
+      "attack_speed": 2500,
+      "attack_range": 600,
+      "housing_space": 28,
+      "village": "home",
+      "warden_weight": 14,
+      "is_seasonal": true,
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 2000,
+          "dps": 215,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 1,
+          "strength_weight": 0
+        },
+        {
+          "level": 2,
+          "hitpoints": 2100,
+          "dps": 216,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 2,
+          "strength_weight": 0
+        },
+        {
+          "level": 3,
+          "hitpoints": 2200,
+          "dps": 217,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 3,
+          "strength_weight": 0
+        },
+        {
+          "level": 4,
+          "hitpoints": 2300,
+          "dps": 218,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 4,
+          "strength_weight": 0
+        },
+        {
+          "level": 5,
+          "hitpoints": 2400,
+          "dps": 219,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 5,
+          "strength_weight": 0
+        },
+        {
+          "level": 6,
+          "hitpoints": 2600,
+          "dps": 250,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 6,
+          "strength_weight": 0
+        },
+        {
+          "level": 7,
+          "hitpoints": 2700,
+          "dps": 251,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 7,
+          "strength_weight": 0
+        },
+        {
+          "level": 8,
+          "hitpoints": 2800,
+          "dps": 252,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 8,
+          "strength_weight": 0
+        },
+        {
+          "level": 9,
+          "hitpoints": 2900,
+          "dps": 253,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 9,
+          "strength_weight": 0
+        },
+        {
+          "level": 10,
+          "hitpoints": 3200,
+          "dps": 295,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 10,
+          "strength_weight": 0
+        },
+        {
+          "level": 11,
+          "hitpoints": 3300,
+          "dps": 296,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 11,
+          "strength_weight": 0
+        },
+        {
+          "level": 12,
+          "hitpoints": 3400,
+          "dps": 297,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 12,
+          "strength_weight": 0
+        },
+        {
+          "level": 13,
+          "hitpoints": 3500,
+          "dps": 298,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 13,
+          "strength_weight": 0
+        },
+        {
+          "level": 14,
+          "hitpoints": 3900,
+          "dps": 330,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 14,
+          "strength_weight": 0
+        },
+        {
+          "level": 15,
+          "hitpoints": 4200,
+          "dps": 355,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 15,
+          "strength_weight": 0
+        },
+        {
+          "level": 16,
+          "hitpoints": 4600,
+          "dps": 395,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 16,
+          "strength_weight": 0
+        },
+        {
+          "level": 17,
+          "hitpoints": 5100,
+          "dps": 430,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": null,
+          "required_townhall": 17,
+          "strength_weight": 0
+        },
+        {
+          "level": 18,
+          "hitpoints": 5600,
+          "dps": 450,
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": null,

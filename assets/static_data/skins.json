@@ -2467,15 +2467,6 @@
       "character": "Minion Prince"
     },
     {
-      "_id": 52000354,
-      "name": "League Prince",
-      "TID": {
-        "name": "TID_LEAGUE_MINION_PRINCE"
-      },
-      "tier": "Legendary",
-      "character": "Minion Prince"
-    },
-    {
       "_id": 52000378,
       "name": "Amber Half-Time Champion",
       "TID": {
