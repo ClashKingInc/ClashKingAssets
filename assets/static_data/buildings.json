@@ -132,7 +132,7 @@
     {
       "_id": 1000001,
       "name": "Town Hall",
-      "info": "The heart of your village! Upgrade your Town Hall to unlock new defenses, buildings, traps, and much more.\\n\\nDestroying an opponent's Town Hall earns you one star in battle. Protect your Town Hall from attacks by placing it in the middle of your village and surrounding it with walls, traps, and defenses.",
+      "info": "The heart of your village! Upgrade your Town Hall to unlock new defenses, buildings, traps, and much more.\\n\\nDestroying an opponent's Town Hall awards one star in battle. Protect your Town Hall from attacks by placing it in the middle of your village and surrounding it with walls, traps, and defenses.",
       "TID": {
         "name": "TID_BUILDING_TOWN_HALL",
         "info": "TID_TOWN_HALL_INFO"
@@ -10563,7 +10563,7 @@
           "modules": [
             {
               "_id": 102000033,
-              "name": "Inferno Candle HP Module",
+              "name": "Hot Candle Hitpoints",
               "TID": {
                 "name": "TID_SEASONAL_DEFENSE_INFERNO_CANDLE_MODULE_HP"
               },
@@ -10663,7 +10663,7 @@
             },
             {
               "_id": 102000034,
-              "name": "Inferno Candle Attack Module",
+              "name": "Hot Candle Damage",
               "TID": {
                 "name": "TID_SEASONAL_DEFENSE_INFERNO_CANDLE_MODULE_ATTACK"
               },
@@ -10773,7 +10773,7 @@
             },
             {
               "_id": 102000035,
-              "name": "Inferno Candle Effect Module",
+              "name": "Hot Candle Duration",
               "TID": {
                 "name": "TID_SEASONAL_DEFENSE_INFERNO_CANDLE_MODULE_EFFECT"
               },
@@ -10864,7 +10864,7 @@
           "modules": [
             {
               "_id": 102000036,
-              "name": "Headhunter Tower HP Module",
+              "name": "Hero Hunter Hitpoints",
               "TID": {
                 "name": "TID_SEASONAL_DEFENSE_HEADHUNTER_TOWER_MODULE_HP"
               },
@@ -10964,7 +10964,7 @@
             },
             {
               "_id": 102000037,
-              "name": "Headhunter Tower Attack Module",
+              "name": "Hero Hunter Damage",
               "TID": {
                 "name": "TID_SEASONAL_DEFENSE_HEADHUNTER_TOWER_MODULE_ATTACK"
               },
@@ -11074,7 +11074,7 @@
             },
             {
               "_id": 102000038,
-              "name": "Headhunter Tower Effect Module",
+              "name": "Hero Hunter Poison Effect",
               "TID": {
                 "name": "TID_SEASONAL_DEFENSE_HEADHUNTER_TOWER_MODULE_EFFECT"
               },
@@ -11185,7 +11185,7 @@
           "modules": [
             {
               "_id": 102000039,
-              "name": "Snow Mortar HP Module",
+              "name": "Cake-A-Pult Hitpoints",
               "TID": {
                 "name": "TID_SEASONAL_DEFENSE_SNOW_MORTAR_MODULE_HP"
               },
@@ -11285,7 +11285,7 @@
             },
             {
               "_id": 102000040,
-              "name": "Snow Mortar Attack Module",
+              "name": "Cake-A-Pult Damage",
               "TID": {
                 "name": "TID_SEASONAL_DEFENSE_SNOW_MORTAR_MODULE_ATTACK"
               },
@@ -11395,7 +11395,7 @@
             },
             {
               "_id": 102000041,
-              "name": "Snow Mortar Effect Module",
+              "name": "Cake-A-Pult Splash Damage",
               "TID": {
                 "name": "TID_SEASONAL_DEFENSE_SNOW_MORTAR_MODULE_EFFECT"
               },

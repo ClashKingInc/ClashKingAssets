@@ -35,7 +35,75 @@ Examples:
 - `https://assets.clashk.ing/buildings/home-village/{cleaned_name}/level_{level}.webp`
 - `https://assets.clashk.ing/decorations/home-village/{cleaned_name}.webp`
 
+## Ability data
+
+`assets/static_data/abilities.json` contains player-facing abilities grouped by owning
+item `_id`, with ability names, available `TID.name`/`TID.info`, and values per item
+level. It covers exported hero equipment and Builder Base troops. This collection
+is separate from the master `assets/static_data.json`; existing equipment fields
+in the master remain compatible.
+
+`generate_abilities.py` contains the generator. `update_static.py` calls it with
+parsed game tables, the current item catalog, and patched translations before
+translation pruning and source cleanup. No prototype or temporary files are needed.
+Spatial values retain the existing static-data scale, and no `unit` or ability
+`key` is exported. Source ability names group levels internally. Unknown effect
+fields stop generation rather than silently dropping new mechanics; known
+mechanics on new equipment require no item-specific rule.
+
+## Local preview server
+
+Run `python3 scripts/serve-local-assets.py` to serve this checkout's `assets/`
+on `http://127.0.0.1:8001`. Use `--prefix /dev-assets` behind a tunnel that
+preserves that URL prefix. The server allows cross-origin read requests and
+serves original files; it does not perform the production Worker's AVIF transforms.
+Set the App launcher's `DEV_APP_ASSET_ORIGIN` to the public URL including its
+prefix. The override applies only to development builds.
+
 ## Contributing
+
+### Discord application emojis
+
+`python generate_emoji_catalog.py --check` validates a transient sync inventory
+from static game data and canonical images. No emoji catalog is published or
+loaded by bot renderers. `update_static.py` validates the same sources after
+extraction. Missing images fail validation before Discord can be changed.
+The sync script derives its desired inventory directly from these sources.
+Renderers read Discord application emojis by name, such as `war_star`, `pekka`,
+and `gold_15`; utility and number underscores are preserved.
+
+The catalog includes troops, spells, heroes, pets, equipment, Capital leagues,
+league tiers, CWL leagues, Builder leagues, resources, player/clan labels, icons,
+Town Hall badges, and the bot's number images. Category prefixes disambiguate
+Capital/CWL/Builder leagues and labels; game unit names retain the normalized
+names used by log renderers. Utility icons without generated game equivalents
+remain supported under `/bot/icons`, including URLs used by deployed app and
+dashboard versions. Do not remove those paths until those consumers migrate.
+
+After the R2 sync, the release action mirrors configured Discord applications:
+
+- Production: repository variable `DISCORD_APPLICATION_ID`, secret `DISCORD_BOT_TOKEN`.
+- Beta: repository variable `DISCORD_BETA_APPLICATION_ID`, secret `DISCORD_BETA_BOT_TOKEN`.
+
+An unset application variable skips that target; a configured target with missing
+or mismatched credentials fails. No credentials are included in the catalog.
+For a read-only plan, run `python sync_discord_emojis.py` with
+`DISCORD_APPLICATION_ID` and `DISCORD_BOT_TOKEN` in the environment; add `--apply`
+to mirror that application's **entire** emoji inventory. New definitions are added,
+changed images are replaced, and definitions no longer present are removed.
+This is not a guild emoji sync. Manually added application emojis must have a
+catalog definition or the next sync will remove them.
+Use `--preserve-unmanaged` for a targeted update that keeps remote names outside
+the generated inventory, including manually added application emojis. Review
+the read-only plan before adding `--apply`; use the same preservation option for
+both commands. This does not preserve old IDs when a managed image changes.
+
+All images are validated before mutations. Discord cannot change an existing
+emoji's image, so replacement creates a temporary emoji before removing the old
+one; it needs one free application slot. GIF animation is retained. The tracker
+refreshes application emoji IDs periodically because replaced images get new IDs.
+The action is not transactional with R2; a failed Discord step can be rerun after
+fixing its cause without repeating unchanged emojis.
 
 Contributions are welcome, especially:
 

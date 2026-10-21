@@ -32,7 +32,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install boto3 python-dotenv
+          python -m pip install boto3 python-dotenv pillow
+
+      - name: Verify generated emoji catalog
+        run: python generate_emoji_catalog.py --check
 
       - name: Verify asset manifest
         run: python generate_manifest.py --check
@@ -48,3 +51,17 @@ jobs:
           ASSETS_WORKER_PURGE_TOKEN: ${{ secrets.ASSETS_WORKER_PURGE_TOKEN }}
           ASSETS_WORKER_PURGE_REQUIRED: 'true'
         run: python build.py
+
+      - name: Sync production application emojis
+        if: vars.DISCORD_APPLICATION_ID != ''
+        env:
+          DISCORD_APPLICATION_ID: ${{ vars.DISCORD_APPLICATION_ID }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+        run: python sync_discord_emojis.py --apply
+
+      - name: Sync beta application emojis
+        if: vars.DISCORD_BETA_APPLICATION_ID != ''
+        env:
+          DISCORD_APPLICATION_ID: ${{ vars.DISCORD_BETA_APPLICATION_ID }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BETA_BOT_TOKEN }}
+        run: python sync_discord_emojis.py --apply

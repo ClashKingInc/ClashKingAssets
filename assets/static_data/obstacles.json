@@ -1806,6 +1806,19 @@
       "loot_resource": "Gold",
       "loot_count": 14000,
       "village": "home"
+    },
+    {
+      "_id": 8000139,
+      "name": "Curious Stump",
+      "TID": {
+        "name": "TID_OBSTACLE_HALLOWEEN2026"
+      },
+      "width": 2,
+      "clear_resource": "Elixir",
+      "clear_cost": 2026,
+      "loot_resource": "Elixir",
+      "loot_count": 100000,
+      "village": "home"
     }
   ]
 }
