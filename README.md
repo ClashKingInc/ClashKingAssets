@@ -51,6 +51,15 @@ Spatial values retain the existing static-data scale, and no `unit` or ability
 fields stop generation rather than silently dropping new mechanics; known
 mechanics on new equipment require no item-specific rule.
 
+## Local preview server
+
+Run `python3 scripts/serve-local-assets.py` to serve this checkout's `assets/`
+on `http://127.0.0.1:8001`. Use `--prefix /dev-assets` behind a tunnel that
+preserves that URL prefix. The server allows cross-origin read requests and
+serves original files; it does not perform the production Worker's AVIF transforms.
+Set the App launcher's `DEV_APP_ASSET_ORIGIN` to the public URL including its
+prefix. The override applies only to development builds.
+
 ## Contributing
 
 ### Discord application emojis
