@@ -5,6 +5,8 @@ on:
     paths:
       - 'worker/**'
       - 'build.py'
+      - 'generate_emoji_catalog.py'
+      - 'sync_discord_emojis.py'
       - 'update_static.py'
       - 'worker_purge.py'
       - 'check_image_sources.py'
@@ -34,5 +36,6 @@ jobs:
       - run: npm run typecheck --prefix worker
       - run: npm run build --prefix worker
       - run: python -m pip install python-dotenv ruff pillow
+      - run: python generate_emoji_catalog.py --check
       - run: python check_image_sources.py
-      - run: python -m ruff check build.py worker_purge.py check_image_sources.py
+      - run: python -m ruff check build.py worker_purge.py check_image_sources.py generate_emoji_catalog.py sync_discord_emojis.py
