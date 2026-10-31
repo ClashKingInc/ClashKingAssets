@@ -2799,9 +2799,6 @@ class StaticUpdater:
     def run(self):
         asyncio.run(self.download_files())
         assets_root = Path(self.BASE_PATH)
-        from generate_emoji_catalog import write_catalog
-
-        write_catalog(assets_root)
         write_manifest(assets_root, assets_root / "manifest.json")
 
 

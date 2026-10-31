@@ -3956,7 +3956,7 @@
                 "_id": 4000011,
                 "level": 8
               },
-              "spawned_unit_hitpoints": 810,
+              "spawned_unit_hitpoints": 870,
               "spawned_unit_dps": 155
             },
             {
@@ -3969,7 +3969,7 @@
                 "_id": 4000011,
                 "level": 8
               },
-              "spawned_unit_hitpoints": 810,
+              "spawned_unit_hitpoints": 870,
               "spawned_unit_dps": 155
             },
             {
@@ -3982,7 +3982,7 @@
                 "_id": 4000011,
                 "level": 8
               },
-              "spawned_unit_hitpoints": 810,
+              "spawned_unit_hitpoints": 870,
               "spawned_unit_dps": 155
             },
             {
@@ -3995,7 +3995,7 @@
                 "_id": 4000011,
                 "level": 9
               },
-              "spawned_unit_hitpoints": 890,
+              "spawned_unit_hitpoints": 960,
               "spawned_unit_dps": 165
             },
             {
@@ -4008,7 +4008,7 @@
                 "_id": 4000011,
                 "level": 9
               },
-              "spawned_unit_hitpoints": 890,
+              "spawned_unit_hitpoints": 960,
               "spawned_unit_dps": 165
             },
             {
@@ -4021,7 +4021,7 @@
                 "_id": 4000011,
                 "level": 9
               },
-              "spawned_unit_hitpoints": 890,
+              "spawned_unit_hitpoints": 960,
               "spawned_unit_dps": 165
             },
             {
@@ -4034,7 +4034,7 @@
                 "_id": 4000011,
                 "level": 10
               },
-              "spawned_unit_hitpoints": 970,
+              "spawned_unit_hitpoints": 1050,
               "spawned_unit_dps": 176
             },
             {
@@ -4047,7 +4047,7 @@
                 "_id": 4000011,
                 "level": 10
               },
-              "spawned_unit_hitpoints": 970,
+              "spawned_unit_hitpoints": 1050,
               "spawned_unit_dps": 176
             },
             {
@@ -4060,7 +4060,7 @@
                 "_id": 4000011,
                 "level": 10
               },
-              "spawned_unit_hitpoints": 970,
+              "spawned_unit_hitpoints": 1050,
               "spawned_unit_dps": 176
             },
             {
@@ -4073,7 +4073,7 @@
                 "_id": 4000011,
                 "level": 12
               },
-              "spawned_unit_hitpoints": 1230,
+              "spawned_unit_hitpoints": 1350,
               "spawned_unit_dps": 200
             }
           ]
@@ -5194,137 +5194,137 @@
           "levels": [
             {
               "level": 1,
-              "slowdown_percent": 25,
+              "slowdown_percent": 30,
               "slowdown_duration": 0.75
             },
             {
               "level": 2,
-              "slowdown_percent": 25,
+              "slowdown_percent": 30,
               "slowdown_duration": 1.0
             },
             {
               "level": 3,
-              "slowdown_percent": 30,
+              "slowdown_percent": 35,
               "slowdown_duration": 1.0
             },
             {
               "level": 4,
-              "slowdown_percent": 30,
+              "slowdown_percent": 35,
               "slowdown_duration": 1.0
             },
             {
               "level": 5,
-              "slowdown_percent": 30,
+              "slowdown_percent": 35,
               "slowdown_duration": 1.25
             },
             {
               "level": 6,
-              "slowdown_percent": 35,
+              "slowdown_percent": 40,
               "slowdown_duration": 1.25
             },
             {
               "level": 7,
-              "slowdown_percent": 35,
+              "slowdown_percent": 40,
               "slowdown_duration": 1.25
             },
             {
               "level": 8,
-              "slowdown_percent": 35,
+              "slowdown_percent": 40,
               "slowdown_duration": 1.5
             },
             {
               "level": 9,
-              "slowdown_percent": 37,
+              "slowdown_percent": 42,
               "slowdown_duration": 1.5
             },
             {
               "level": 10,
-              "slowdown_percent": 37,
+              "slowdown_percent": 42,
               "slowdown_duration": 1.5
             },
             {
               "level": 11,
-              "slowdown_percent": 37,
+              "slowdown_percent": 42,
               "slowdown_duration": 1.75
             },
             {
               "level": 12,
-              "slowdown_percent": 40,
+              "slowdown_percent": 45,
               "slowdown_duration": 1.75
             },
             {
               "level": 13,
-              "slowdown_percent": 40,
+              "slowdown_percent": 45,
               "slowdown_duration": 1.75
             },
             {
               "level": 14,
-              "slowdown_percent": 40,
+              "slowdown_percent": 45,
               "slowdown_duration": 2.0
             },
             {
               "level": 15,
-              "slowdown_percent": 45,
+              "slowdown_percent": 50,
               "slowdown_duration": 2.0
             },
             {
               "level": 16,
-              "slowdown_percent": 45,
+              "slowdown_percent": 50,
               "slowdown_duration": 2.0
             },
             {
               "level": 17,
-              "slowdown_percent": 45,
+              "slowdown_percent": 50,
               "slowdown_duration": 2.25
             },
             {
               "level": 18,
-              "slowdown_percent": 50,
+              "slowdown_percent": 55,
               "slowdown_duration": 2.25
             },
             {
               "level": 19,
-              "slowdown_percent": 50,
+              "slowdown_percent": 55,
               "slowdown_duration": 2.25
             },
             {
               "level": 20,
-              "slowdown_percent": 50,
+              "slowdown_percent": 55,
               "slowdown_duration": 2.5
             },
             {
               "level": 21,
-              "slowdown_percent": 55,
+              "slowdown_percent": 60,
               "slowdown_duration": 2.5
             },
             {
               "level": 22,
-              "slowdown_percent": 55,
+              "slowdown_percent": 60,
               "slowdown_duration": 2.5
             },
             {
               "level": 23,
-              "slowdown_percent": 55,
+              "slowdown_percent": 60,
               "slowdown_duration": 2.75
             },
             {
               "level": 24,
-              "slowdown_percent": 60,
+              "slowdown_percent": 65,
               "slowdown_duration": 2.75
             },
             {
               "level": 25,
-              "slowdown_percent": 60,
+              "slowdown_percent": 65,
               "slowdown_duration": 2.75
             },
             {
               "level": 26,
-              "slowdown_percent": 60,
+              "slowdown_percent": 65,
               "slowdown_duration": 3.0
             },
             {
               "level": 27,
-              "slowdown_percent": 65,
+              "slowdown_percent": 70,
               "slowdown_duration": 3.0
             }
           ]
@@ -11625,31 +11625,31 @@
             },
             {
               "level": 12,
-              "healing_per_second": 130.0
+              "healing_per_second": 120.0
             },
             {
               "level": 13,
-              "healing_per_second": 130.0
+              "healing_per_second": 120.0
             },
             {
               "level": 14,
-              "healing_per_second": 130.0
+              "healing_per_second": 120.0
             },
             {
               "level": 15,
-              "healing_per_second": 140.0
+              "healing_per_second": 130.0
             },
             {
               "level": 16,
-              "healing_per_second": 140.0
+              "healing_per_second": 130.0
             },
             {
               "level": 17,
-              "healing_per_second": 140.0
+              "healing_per_second": 130.0
             },
             {
               "level": 18,
-              "healing_per_second": 150.0
+              "healing_per_second": 140.0
             }
           ]
         }
@@ -12624,6 +12624,515 @@
               "reflected_damage": 225,
               "healing_per_reflection": 60,
               "reflection_cooldown": 0.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_id": 90000061,
+      "name": "Portal Pendant",
+      "abilities": [
+        {
+          "name": "Portal Pendant",
+          "TID": {
+            "name": "TID_GEAR_TITLE_COSMIC_PORTAL",
+            "info": "TID_GEAR_INFO_COSMIC_PORTAL"
+          },
+          "trigger": "activated",
+          "info": "Pulls Minion Prince and nearby ally units back to the deployment bar to be summoned elsewhere with extra health and Haste",
+          "levels": [
+            {
+              "level": 1,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 22,
+              "recall_housing_space": 160,
+              "recall_speed_boost_duration": 3.5,
+              "recall_radius": 700,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 2,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 22,
+              "recall_housing_space": 160,
+              "recall_speed_boost_duration": 3.5,
+              "recall_radius": 700,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 3,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 24,
+              "recall_housing_space": 175,
+              "recall_speed_boost_duration": 4.0,
+              "recall_radius": 720,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 4,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 24,
+              "recall_housing_space": 175,
+              "recall_speed_boost_duration": 4.0,
+              "recall_radius": 720,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 5,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 24,
+              "recall_housing_space": 175,
+              "recall_speed_boost_duration": 4.0,
+              "recall_radius": 720,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 6,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 26,
+              "recall_housing_space": 190,
+              "recall_speed_boost_duration": 4.5,
+              "recall_radius": 740,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 7,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 26,
+              "recall_housing_space": 190,
+              "recall_speed_boost_duration": 4.5,
+              "recall_radius": 740,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 8,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 26,
+              "recall_housing_space": 190,
+              "recall_speed_boost_duration": 4.5,
+              "recall_radius": 740,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 9,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 28,
+              "recall_housing_space": 205,
+              "recall_speed_boost_duration": 5.0,
+              "recall_radius": 760,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 10,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 28,
+              "recall_housing_space": 205,
+              "recall_speed_boost_duration": 5.0,
+              "recall_radius": 760,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 11,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 28,
+              "recall_housing_space": 205,
+              "recall_speed_boost_duration": 5.0,
+              "recall_radius": 760,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 12,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 30,
+              "recall_housing_space": 220,
+              "recall_speed_boost_duration": 5.5,
+              "recall_radius": 780,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 13,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 30,
+              "recall_housing_space": 220,
+              "recall_speed_boost_duration": 5.5,
+              "recall_radius": 780,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 14,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 30,
+              "recall_housing_space": 220,
+              "recall_speed_boost_duration": 5.5,
+              "recall_radius": 780,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 15,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 31,
+              "recall_housing_space": 280,
+              "recall_speed_boost_duration": 6.0,
+              "recall_radius": 800,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 16,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 31,
+              "recall_housing_space": 280,
+              "recall_speed_boost_duration": 6.0,
+              "recall_radius": 800,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 17,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 31,
+              "recall_housing_space": 280,
+              "recall_speed_boost_duration": 6.0,
+              "recall_radius": 800,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 18,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 32,
+              "recall_housing_space": 340,
+              "recall_speed_boost_duration": 6.5,
+              "recall_radius": 850,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 19,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 32,
+              "recall_housing_space": 340,
+              "recall_speed_boost_duration": 6.5,
+              "recall_radius": 850,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 20,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 32,
+              "recall_housing_space": 340,
+              "recall_speed_boost_duration": 6.5,
+              "recall_radius": 850,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 21,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 33,
+              "recall_housing_space": 360,
+              "recall_speed_boost_duration": 7.0,
+              "recall_radius": 900,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 22,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 33,
+              "recall_housing_space": 360,
+              "recall_speed_boost_duration": 7.0,
+              "recall_radius": 900,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 23,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 33,
+              "recall_housing_space": 360,
+              "recall_speed_boost_duration": 7.0,
+              "recall_radius": 900,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 24,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 34,
+              "recall_housing_space": 380,
+              "recall_speed_boost_duration": 7.5,
+              "recall_radius": 950,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 25,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 34,
+              "recall_housing_space": 380,
+              "recall_speed_boost_duration": 7.5,
+              "recall_radius": 950,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 26,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 34,
+              "recall_housing_space": 380,
+              "recall_speed_boost_duration": 7.5,
+              "recall_radius": 950,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            },
+            {
+              "level": 27,
+              "damage_reduction_percent": 100,
+              "recall_speed_boost": 56,
+              "recall_healing_percent": 35,
+              "recall_housing_space": 400,
+              "recall_speed_boost_duration": 8.0,
+              "recall_radius": 1000,
+              "untargetable": true,
+              "immune_to_friendly_spells": true,
+              "invisible": true,
+              "invisibility_duration": 0.5,
+              "duration": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Health recovery",
+          "trigger": "activated",
+          "levels": [
+            {
+              "level": 1,
+              "healing": 558
+            },
+            {
+              "level": 2,
+              "healing": 587
+            },
+            {
+              "level": 3,
+              "healing": 615
+            },
+            {
+              "level": 4,
+              "healing": 644
+            },
+            {
+              "level": 5,
+              "healing": 673
+            },
+            {
+              "level": 6,
+              "healing": 702
+            },
+            {
+              "level": 7,
+              "healing": 730
+            },
+            {
+              "level": 8,
+              "healing": 759
+            },
+            {
+              "level": 9,
+              "healing": 788
+            },
+            {
+              "level": 10,
+              "healing": 817
+            },
+            {
+              "level": 11,
+              "healing": 845
+            },
+            {
+              "level": 12,
+              "healing": 874
+            },
+            {
+              "level": 13,
+              "healing": 903
+            },
+            {
+              "level": 14,
+              "healing": 932
+            },
+            {
+              "level": 15,
+              "healing": 960
+            },
+            {
+              "level": 16,
+              "healing": 989
+            },
+            {
+              "level": 17,
+              "healing": 1018
+            },
+            {
+              "level": 18,
+              "healing": 1047
+            },
+            {
+              "level": 19,
+              "healing": 1107
+            },
+            {
+              "level": 20,
+              "healing": 1139
+            },
+            {
+              "level": 21,
+              "healing": 1171
+            },
+            {
+              "level": 22,
+              "healing": 1205
+            },
+            {
+              "level": 23,
+              "healing": 1239
+            },
+            {
+              "level": 24,
+              "healing": 1273
+            },
+            {
+              "level": 25,
+              "healing": 1309
+            },
+            {
+              "level": 26,
+              "healing": 1345
+            },
+            {
+              "level": 27,
+              "healing": 1381
             }
           ]
         }

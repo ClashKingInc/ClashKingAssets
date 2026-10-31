@@ -1489,7 +1489,7 @@
         {
           "level": 8,
           "hitpoints": 6300,
-          "dps": 610,
+          "dps": 660,
           "upgrade_time": 345600,
           "upgrade_cost": 5800000,
           "required_lab_level": 10,
@@ -1499,7 +1499,7 @@
         {
           "level": 9,
           "hitpoints": 6700,
-          "dps": 680,
+          "dps": 735,
           "upgrade_time": 475200,
           "upgrade_cost": 10500000,
           "required_lab_level": 11,
@@ -1509,7 +1509,7 @@
         {
           "level": 10,
           "hitpoints": 7200,
-          "dps": 750,
+          "dps": 810,
           "upgrade_time": 604800,
           "upgrade_cost": 12000000,
           "required_lab_level": 13,
@@ -1519,7 +1519,7 @@
         {
           "level": 11,
           "hitpoints": 7700,
-          "dps": 810,
+          "dps": 875,
           "upgrade_time": 864000,
           "upgrade_cost": 16000000,
           "required_lab_level": 14,
@@ -1529,7 +1529,7 @@
         {
           "level": 12,
           "hitpoints": 8200,
-          "dps": 870,
+          "dps": 940,
           "upgrade_time": 1252800,
           "upgrade_cost": 28000000,
           "required_lab_level": 15,
@@ -1539,7 +1539,7 @@
         {
           "level": 13,
           "hitpoints": 8800,
-          "dps": 940,
+          "dps": 1015,
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 16,
@@ -1804,7 +1804,7 @@
         },
         {
           "level": 8,
-          "hitpoints": 810,
+          "hitpoints": 870,
           "dps": 155,
           "upgrade_time": 302400,
           "upgrade_cost": 50000,
@@ -1814,7 +1814,7 @@
         },
         {
           "level": 9,
-          "hitpoints": 890,
+          "hitpoints": 960,
           "dps": 165,
           "upgrade_time": 345600,
           "upgrade_cost": 85000,
@@ -1824,7 +1824,7 @@
         },
         {
           "level": 10,
-          "hitpoints": 970,
+          "hitpoints": 1050,
           "dps": 176,
           "upgrade_time": 432000,
           "upgrade_cost": 107500,
@@ -1834,7 +1834,7 @@
         },
         {
           "level": 11,
-          "hitpoints": 1080,
+          "hitpoints": 1150,
           "dps": 187,
           "upgrade_time": 475200,
           "upgrade_cost": 125000,
@@ -1844,7 +1844,7 @@
         },
         {
           "level": 12,
-          "hitpoints": 1230,
+          "hitpoints": 1350,
           "dps": 200,
           "upgrade_time": 561600,
           "upgrade_cost": 175000,
@@ -1854,7 +1854,7 @@
         },
         {
           "level": 13,
-          "hitpoints": 1380,
+          "hitpoints": 1500,
           "dps": 213,
           "upgrade_time": 864000,
           "upgrade_cost": 240000,
@@ -1864,7 +1864,7 @@
         },
         {
           "level": 14,
-          "hitpoints": 1500,
+          "hitpoints": 1600,
           "dps": 225,
           "upgrade_time": 1252800,
           "upgrade_cost": 340000,
@@ -1874,7 +1874,7 @@
         },
         {
           "level": 15,
-          "hitpoints": 1750,
+          "hitpoints": 1950,
           "dps": 250,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -2819,7 +2819,7 @@
         },
         {
           "level": 11,
-          "hitpoints": 1750,
+          "hitpoints": 1850,
           "dps": 175,
           "upgrade_time": 1252800,
           "upgrade_cost": 28000000,
@@ -2829,7 +2829,7 @@
         },
         {
           "level": 12,
-          "hitpoints": 2050,
+          "hitpoints": 2150,
           "dps": 195,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -6381,7 +6381,7 @@
         },
         {
           "level": 11,
-          "hitpoints": 4400,
+          "hitpoints": 4650,
           "dps": 245,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -6392,7 +6392,7 @@
         },
         {
           "level": 12,
-          "hitpoints": 5000,
+          "hitpoints": 5150,
           "dps": 265,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -9259,7 +9259,7 @@
         },
         {
           "level": 8,
-          "hitpoints": 1300,
+          "hitpoints": 1400,
           "dps": 160,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -9269,7 +9269,7 @@
         },
         {
           "level": 9,
-          "hitpoints": 1400,
+          "hitpoints": 1500,
           "dps": 175,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -9279,7 +9279,7 @@
         },
         {
           "level": 10,
-          "hitpoints": 1500,
+          "hitpoints": 1600,
           "dps": 190,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -9289,7 +9289,7 @@
         },
         {
           "level": 11,
-          "hitpoints": 1600,
+          "hitpoints": 1700,
           "dps": 210,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -9299,7 +9299,7 @@
         },
         {
           "level": 12,
-          "hitpoints": 1750,
+          "hitpoints": 1900,
           "dps": 230,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -9309,7 +9309,7 @@
         },
         {
           "level": 13,
-          "hitpoints": 1900,
+          "hitpoints": 2050,
           "dps": 250,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -9319,7 +9319,7 @@
         },
         {
           "level": 14,
-          "hitpoints": 2100,
+          "hitpoints": 2250,
           "dps": 270,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -9329,7 +9329,7 @@
         },
         {
           "level": 15,
-          "hitpoints": 2350,
+          "hitpoints": 2500,
           "dps": 300,
           "upgrade_time": 0,
           "upgrade_cost": 0,
@@ -12825,7 +12825,7 @@
       "levels": [
         {
           "level": 1,
-          "hitpoints": 14500,
+          "hitpoints": 15300,
           "dps": 480,
           "upgrade_time": 1209600,
           "upgrade_cost": 28000000,
@@ -12835,7 +12835,7 @@
         },
         {
           "level": 2,
-          "hitpoints": 16000,
+          "hitpoints": 16900,
           "dps": 530,
           "upgrade_time": 1382400,
           "upgrade_cost": 30000000,
@@ -12845,7 +12845,7 @@
         },
         {
           "level": 3,
-          "hitpoints": 17500,
+          "hitpoints": 18500,
           "dps": 580,
           "upgrade_time": 0,
           "upgrade_cost": 0,

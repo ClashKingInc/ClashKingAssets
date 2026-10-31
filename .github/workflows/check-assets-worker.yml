@@ -5,8 +5,6 @@ on:
     paths:
       - 'worker/**'
       - 'build.py'
-      - 'generate_emoji_catalog.py'
-      - 'sync_discord_emojis.py'
       - 'update_static.py'
       - 'worker_purge.py'
       - 'check_image_sources.py'
@@ -21,7 +19,7 @@ permissions:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -36,6 +34,5 @@ jobs:
       - run: npm run typecheck --prefix worker
       - run: npm run build --prefix worker
       - run: python -m pip install python-dotenv ruff pillow
-      - run: python generate_emoji_catalog.py --check
       - run: python check_image_sources.py
       - run: python -m ruff check build.py worker_purge.py check_image_sources.py

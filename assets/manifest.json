@@ -9341,6 +9341,12 @@
         "animated": false
       },
       {
+        "path": "equipment/portal_pendant.webp",
+        "display_name": "portal pendant",
+        "sha": "3b25900842e6dac1ac7f0c34cf601a47cced20e7dabb49a23db47e60625922de",
+        "animated": false
+      },
+      {
         "path": "equipment/rage_gem.webp",
         "display_name": "rage gem",
         "sha": "284feb7f7e65050354f2777b17b132fc6a5b8af6a28407070d7945e5a1889b99",
@@ -15798,7 +15804,7 @@
     "stats": [
       {
         "path": "static_data/abilities.json",
-        "sha": "c87b289076f98085bd2e46444a28e392d9366bffa60b10720af76de978eddf20"
+        "sha": "802428ebf021730e0ace4ead39a69434dab66f766dfc4ba5e0cd11d1c0053d5f"
       },
       {
         "path": "static_data/achievements.json",
@@ -15838,7 +15844,7 @@
       },
       {
         "path": "static_data/equipment.json",
-        "sha": "c834da35836e620471b27bfd85725fe666b129ce95e2586049b21b2883d25403"
+        "sha": "cb9d068ad943d7a88499db3d108fdc0ee34603c73f00f9769491bb69ef4d03a7"
       },
       {
         "path": "static_data/guardians.json",
@@ -15902,7 +15908,7 @@
       },
       {
         "path": "static_data/troops.json",
-        "sha": "0b3554caa45d0fc754219ca6f363e00f50426acdc20cefaaa78197674dc3580f"
+        "sha": "f3ff2c4432b22331998e9fd2ac1c7ffa5be12f974cbaa907855880ba89d7e1ed"
       },
       {
         "path": "static_data/war_leagues.json",
@@ -15912,19 +15918,19 @@
     "translations": [
       {
         "path": "translations/AR.json",
-        "sha": "2c65d7994cb2a908cf940a45d65535922de1c9ed904fd7e5118a57b063c3743f"
+        "sha": "0ad5b8f89e6dbcb5434a9469e58153d4aacc7dd3d281430eb3dfe5225d0a9a8d"
       },
       {
         "path": "translations/CN.json",
-        "sha": "52e44ad81500579dc648bf3bbf98f77a885a90c07f52645666b63be1735fa380"
+        "sha": "c165fab7acbcc661fed9c5416e78d12295582f6c7d6765710fdf4dee92a0cc6f"
       },
       {
         "path": "translations/CNT.json",
-        "sha": "8a6f27d1f59faaa937f14988c7bb6a06b2e7d0064b93b31b587eff642f46b560"
+        "sha": "32449f9faa90b92d5193f944e19e4f8426399f161483eb4b5c012972425f5ed0"
       },
       {
         "path": "translations/DE.json",
-        "sha": "38b261aa94d116cf6d0b846dc69310f7369e8474f7e912fff6b754a08bb9303c"
+        "sha": "4d7b49c24bcca0f7882d2c751a4fcd07289853dc3e09bd512e80fdea7c6e3cba"
       },
       {
         "path": "translations/EN.json",
@@ -15932,71 +15938,71 @@
       },
       {
         "path": "translations/ES.json",
-        "sha": "a2b216a7f2758319471333d1ca1f093b8ff87385a9345f30f794734d54cc5b59"
+        "sha": "c33aa440f8ad5e48f746b28861d7baa0030b885afc2c7aa0b646a60d0b318434"
       },
       {
         "path": "translations/FA.json",
-        "sha": "5f88b5f414d9151c50f9ad58bcbf341d4fe20ca0c0e0ca0644148b37986ada4b"
+        "sha": "19477485f30bc1a66afebe7f52c96d931db6b9794e263610a70a50d367e63000"
       },
       {
         "path": "translations/FI.json",
-        "sha": "8f66999ecd24e81f3e0c3c96b65f92e48b6445293305c845cf605f433ca05e91"
+        "sha": "9314f70fe96d170a85a0e809df8ab6bfb31a81d7a3ee4dbb281b0960f14f7bc9"
       },
       {
         "path": "translations/FR.json",
-        "sha": "f7c83c03040eb40e3fa915d8ad34a035c7ae5b3760b2d5ca2af4d22f65a9e123"
+        "sha": "7ea0dace506a9c0174304b0b00011ce6c9167929ed1f4ce28f566073308cee6b"
       },
       {
         "path": "translations/ID.json",
-        "sha": "cb8c1f071c9128516bac1f36eecc49745e7fe30015ddc69015914ba67356e081"
+        "sha": "c4aad730f58174a292ccf28767d8be5b6b88252e29afbed2605941109cd74552"
       },
       {
         "path": "translations/IT.json",
-        "sha": "84e8c50e214f045fd8d43531213e65a302b993dde47cbd202083eaaf73793c17"
+        "sha": "c1a518bbf50e48636acd94f1da4bfd0ec132ffd84d18e761a4238bc22fb5d411"
       },
       {
         "path": "translations/JP.json",
-        "sha": "7559f6438b8ecb7d0da5c5a037ba52a98806e1e16c06165e0680c7387835af28"
+        "sha": "63d2afd43bde1e50f60161afd8c6a663dd997cf4b443481f0b30dccb2ab3a2bc"
       },
       {
         "path": "translations/KR.json",
-        "sha": "eb5f94328c275422d82bc28d1cba7701ec3383e10fcbf29fc5b0bff6545dce8e"
+        "sha": "ad354b50196944dab7dc7d6dbc0aac463da86d17f4b9a937f40db77e7afbb3e1"
       },
       {
         "path": "translations/MS.json",
-        "sha": "9bcac72c79e60dac3c5f7c20f585619d1311f82a29e14d3fb254a7ef363272a2"
+        "sha": "766117c80841ffd078597a727af7f0af57bb86963d3d0e5a39ab4ce29ca1be62"
       },
       {
         "path": "translations/NL.json",
-        "sha": "9b4b243af3a3f4193ede1d4730e670321739b1868a19f44dca1a68d9c1e04735"
+        "sha": "6f01b0ad1fc5718cc871d67b0be323ad563aa7ddcb6a4dbcd8801586f06d745c"
       },
       {
         "path": "translations/NO.json",
-        "sha": "f0465227a07e3755ca56a76b5fc35d287b3dc0e7544ea4bdb2741ed9a3173074"
+        "sha": "b29b1307c3d2de2c07742d712cd8f54301f4a2e8f94d7757082fd00f45628227"
       },
       {
         "path": "translations/PL.json",
-        "sha": "214a912e73a22e1b0096c03657476cb3606a88eb4dd8c3d4b6ec4f1e968e1b7f"
+        "sha": "0b256a9e5d2e879965c2e4fd03fcac6e46749053e547d60aa3b6df8d9464d511"
       },
       {
         "path": "translations/PT.json",
-        "sha": "68b478d951f259ddf8d1242e6f892c4c1810cef328250ef7e8825f2f57c28466"
+        "sha": "3c657486b77da8cd692620c747299df60e6835d5916f066847768812b6b176ea"
       },
       {
         "path": "translations/RU.json",
-        "sha": "912e34fec0a9321c94d2f1310cb602bfe52e47144de76ffc237bc7fcf47779b8"
+        "sha": "61533e0d40f57815c273444dfd9fd73680a9d2afaf20788a7f88d94a86cb8572"
       },
       {
         "path": "translations/TH.json",
-        "sha": "4afe43f3a691c6d94f4eca262c83c2be3cb9423fa70ac9bd3e58a4443394fa5c"
+        "sha": "dac04d818b7f9deadae175533e776e14815fdd8af79bbb7cc48d3c3031f89241"
       },
       {
         "path": "translations/TR.json",
-        "sha": "edcacb71c9492a631300571902a4f77a5a7278fc46861f7b2f0a0783b24c2b39"
+        "sha": "48ac27c56672c4bf7edc04f590b437c3dbe986e4f8adfa69016867c871561017"
       },
       {
         "path": "translations/VI.json",
-        "sha": "6191d9cb23b296d401337b00024ec0f625284145408df0b5dd3c313dd5abc528"
+        "sha": "8220b811af9dd216aa58af85000edd810732c8dcc03eecd8bcf3545a1712ac37"
       }
     ]
   }

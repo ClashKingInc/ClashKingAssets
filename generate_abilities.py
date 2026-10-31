@@ -52,6 +52,18 @@ ROOT_RULES = {
     'ExtraDamagePercentageAgainstTarget': ('target_damage_multiplier_percent', None),
     'ChainAttackDepth': ('chain_targets', None),
     'ChainAttackDamageReductionPercent': ('damage_loss_per_chain_percent', None),
+    # Recall stats describe the recalled allies, not the equipment owner's
+    # ordinary movement or healing. Keep their scope and source spatial scale.
+    'RecallSpeedBoost': ('recall_speed_boost', None),
+    'RecallHealPercent': ('recall_healing_percent', None),
+    'RecallHousing': ('recall_housing_space', None),
+    'RecallSpeedBoostTimeMS': ('recall_speed_boost_duration', seconds),
+    'RecallTroopsRadius': ('recall_radius', None),
+}
+
+ROOT_BOOLEAN_RULES = {
+    'Untargetable': 'untargetable',
+    'ImmuneToFriendlySpells': 'immune_to_friendly_spells',
 }
 
 ROOT_CONTROL = {
@@ -416,7 +428,12 @@ class AbilityGenerator:
         unknown = [
             k
             for k in node.get('properties', {})
-            if k not in ROOT_RULES and k not in ROOT_CONTROL and (not GRAPHICS.search(k))
+            if (
+                k not in ROOT_RULES
+                and k not in ROOT_BOOLEAN_RULES
+                and k not in ROOT_CONTROL
+                and not GRAPHICS.search(k)
+            )
         ]
         if unknown:
             raise ValueError(f"Unclassified ability fields: {node['source_name']}: {unknown}")
@@ -509,6 +526,14 @@ class AbilityGenerator:
                             if converter
                             else 'copy',
                         )
+                for field, key in ROOT_BOOLEAN_RULES.items():
+                    if field not in q:
+                        continue
+                    if not isinstance(q[field], bool):
+                        raise ValueError(
+                            f"Unexpected type for {node['source_name']}/{field}: {type(q[field]).__name__}"
+                        )
+                    add(prefix + key, q[field], node, [field])
                 if q.get('HealthOverride', 0) > 0:
                     add(prefix + 'hitpoints', q['HealthOverride'], node, ['HealthOverride'], replace=True)
                 if q.get('Regeneration', 0) > 0 and q.get('RegenerationTimeBetweenHitsMS', 0) > 0:

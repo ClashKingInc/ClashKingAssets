@@ -37248,7 +37248,28 @@
     "VI": "Bộ thẻ Báo thù"
   },
   "TID_GEAR_DRAGON_SCALE": {
-    "EN": "Draconic Counter"
+    "EN": "Draconic Counter",
+    "AR": null,
+    "CN": null,
+    "CNT": null,
+    "DE": null,
+    "ES": null,
+    "FA": null,
+    "FI": null,
+    "FR": null,
+    "ID": null,
+    "IT": null,
+    "JP": null,
+    "KR": null,
+    "MS": null,
+    "NL": null,
+    "NO": null,
+    "PL": null,
+    "PT": null,
+    "RU": null,
+    "TH": null,
+    "TR": null,
+    "VI": null
   },
   "TID_GEAR_INFO_DRAGON_SCALE": {
     "EN": "Defenders who strike Dragon Duke are dealt a painful hand",
@@ -38186,6 +38207,54 @@
     "TR": "Kanka Kuvveti",
     "VI": "Anh em sát cánh"
   },
+  "TID_GEAR_TITLE_COSMIC_PORTAL": {
+    "EN": "Portal Pendant",
+    "AR": "قلادة البوابة",
+    "CN": "传送吊坠",
+    "CNT": "傳送吊飾",
+    "DE": "Portalanhänger",
+    "ES": "Portal portátil",
+    "FA": "آویز درگاه",
+    "FI": "Portaaliriipus",
+    "FR": "Médaillon de portail",
+    "ID": "Liontin Portal",
+    "IT": "Pendaglio del portale",
+    "JP": "ポータルペンダント",
+    "KR": "포털 펜던트",
+    "MS": "Loket Portal",
+    "NL": "Portaalpendant",
+    "NO": "Portalanheng",
+    "PL": "Medalion portali",
+    "PT": "Portal Portátil",
+    "RU": "Портальный кулон",
+    "TH": "จี้พอร์ทัล",
+    "TR": "Portal Kolyesi",
+    "VI": "Huy hiệu cổng dịch chuyển"
+  },
+  "TID_GEAR_INFO_COSMIC_PORTAL": {
+    "EN": "Pulls Minion Prince and nearby ally units back to the deployment bar to be summoned elsewhere with extra health and Haste",
+    "AR": "تسحب أمير المينيون والوحدات الحليفة القريبة إلى شريط النشر مرة أخرى لتتمكن من نشرهم في مكان مختلف مع صحة وتسرع إضافيين.",
+    "CN": "将亡灵王子和附近的友军单位召回部署栏，随后可在其他位置重新部署，并获得额外生命值和急速效果。",
+    "CNT": "將亡靈王子和附近的友軍單位召回部署欄位，隨後可在其他位置重新部署，並獲得額外生命值和加速效果。",
+    "DE": "Holt den Lakaienprinzen und nahe Verbündete in die Entsendungsleiste zurück, sodass sie mit mehr TP und Tempo neu beschworen werden können.",
+    "ES": "Lleva al príncipe esbirro y a las unidades aliadas cercanas a la barra de despliegue para invocarlos de nuevo con vida extra y aceleración.",
+    "FA": "شاهزاده مینیون و نیروهای متحد نزدیک را به نوار استقرار بازمی‌گرداند تا در جای دیگری با سلامت بیشتر و طلسم شتاب احضار شوند",
+    "FI": "Vetää kätyriprinssin ja läheiset liittolaiset sijoituspalkille, josta heidät voidaan kutsua muualle lisäelinvoiman ja vauhtiloitsun kera.",
+    "FR": "Attire le Prince gargouille et les alliés autour vers la barre de déploiement. Déployez-les ailleurs, avec plus de PV et précipités.",
+    "ID": "Pangeran Minion dan rekan terdekat kembali ke bilah pengerahan, lalu bisa dikerahkan lagi di tempat lain dengan tambahan HP dan efek Gesit.",
+    "IT": "Rimette nella barra dello schieramento il principe e gli alleati vicini per rischierarli di nuovo con salute extra e l'effetto di Rapidità.",
+    "JP": "ガーゴイルプリンスと近くにいる味方ユニットを配置バーに戻し、他の場所に再び配置できます。再配置後は追加HPとヘイスト効果を獲得します。",
+    "KR": "미니언 프린스와 주변 아군 유닛을 배치 바로 되돌려 다시 배치할 수 있으며, 추가 HP 및 신속 마법 효과를 얻습니다.",
+    "MS": "Tarik Putera Konco dan unit sekutu berdekatan kembali ke bar pengerahan untuk dikerahkan ke tempat lain dengan nyawa tambahan dan kelajuan.",
+    "NL": "Sleept de gunstelingenprins en nabije teamgenoten weer naar de inzetbalk zodat je ze elders kunt inzetten met extra gezondheid en haast.",
+    "NO": "Drar lakeiprinsen og allierte i nærheten tilbake til utplasseringslinjen, hvor de blir påkalt til andre steder med ekstra helse og turbo",
+    "PL": "Przenosi Księcia Minionów i pobliskie jednostki z powrotem na pasek, by mogły zostać rozstawione ponownie z większymi PŻ i przyspieszeniem",
+    "PT": "Traz o Príncipe Servo e aliados próximos de volta à barra de mobilização para que sejam gerados em outro local com mais saúde e aceleração.",
+    "RU": "Отзывает принца миньонов и ближайших союзников, после чего их можно вновь отправить в бой. При этом они исцеляются и получают эффект спешки.",
+    "TH": "ดึงเจ้าชายลูกกระจ๊อกและหน่วยพันธมิตรใกล้เคียงกลับมายังแถบวางกองกำลังเพื่อส่งกองกำลังไปที่อื่นพร้อมพลังชีวิตเพิ่มเติมและอาคมเร่งรีบ",
+    "TR": "Minyon Prensi ve yakındaki dost birlikleri, daha çok can ve hız ile başka bir yerde çağrılabilmeleri için gönderme çubuğuna çeker.",
+    "VI": "Kéo Hoàng tử Minion và các đơn vị đồng minh ở gần quay lại thanh triển khai để được triệu hồi ở nơi khác với lượng máu và tốc độ cao hơn."
+  },
   "TID_OBSTACLE_HALLOWEEN2026": {
     "EN": "Curious Stump",
     "AR": "الجذل الفضولي",
@@ -38353,11 +38422,5 @@
     "TH": "ยอดนักรบชุดการแสดงพักครึ่งสีแดง",
     "TR": "Kehribar Devre Arası Şampiyonu",
     "VI": "Nữ tướng Giữa hiệp Hổ phách"
-  },
-  "TID_GEAR_TITLE_COSMIC_PORTAL": {
-    "EN": "Portal Pendant"
-  },
-  "TID_GEAR_INFO_COSMIC_PORTAL": {
-    "EN": "Pulls Minion Prince and nearby ally units back to the deployment bar to be summoned elsewhere with extra health and Haste"
   }
 }

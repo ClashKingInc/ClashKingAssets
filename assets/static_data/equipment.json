@@ -7219,7 +7219,7 @@
             {
               "Level": 1,
               "FrostOnHitTime": 750,
-              "FrostOnHitPercent": 25,
+              "FrostOnHitPercent": 30,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7242,7 +7242,7 @@
             {
               "Level": 2,
               "FrostOnHitTime": 1000,
-              "FrostOnHitPercent": 25,
+              "FrostOnHitPercent": 30,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7265,7 +7265,7 @@
             {
               "Level": 3,
               "FrostOnHitTime": 1000,
-              "FrostOnHitPercent": 30,
+              "FrostOnHitPercent": 35,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7288,7 +7288,7 @@
             {
               "Level": 4,
               "FrostOnHitTime": 1000,
-              "FrostOnHitPercent": 30,
+              "FrostOnHitPercent": 35,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7311,7 +7311,7 @@
             {
               "Level": 5,
               "FrostOnHitTime": 1250,
-              "FrostOnHitPercent": 30,
+              "FrostOnHitPercent": 35,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7334,7 +7334,7 @@
             {
               "Level": 6,
               "FrostOnHitTime": 1250,
-              "FrostOnHitPercent": 35,
+              "FrostOnHitPercent": 40,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7357,7 +7357,7 @@
             {
               "Level": 7,
               "FrostOnHitTime": 1250,
-              "FrostOnHitPercent": 35,
+              "FrostOnHitPercent": 40,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7380,7 +7380,7 @@
             {
               "Level": 8,
               "FrostOnHitTime": 1500,
-              "FrostOnHitPercent": 35,
+              "FrostOnHitPercent": 40,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7403,7 +7403,7 @@
             {
               "Level": 9,
               "FrostOnHitTime": 1500,
-              "FrostOnHitPercent": 37,
+              "FrostOnHitPercent": 42,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7426,7 +7426,7 @@
             {
               "Level": 10,
               "FrostOnHitTime": 1500,
-              "FrostOnHitPercent": 37,
+              "FrostOnHitPercent": 42,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7449,7 +7449,7 @@
             {
               "Level": 11,
               "FrostOnHitTime": 1750,
-              "FrostOnHitPercent": 37,
+              "FrostOnHitPercent": 42,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7472,7 +7472,7 @@
             {
               "Level": 12,
               "FrostOnHitTime": 1750,
-              "FrostOnHitPercent": 40,
+              "FrostOnHitPercent": 45,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7495,7 +7495,7 @@
             {
               "Level": 13,
               "FrostOnHitTime": 1750,
-              "FrostOnHitPercent": 40,
+              "FrostOnHitPercent": 45,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7518,7 +7518,7 @@
             {
               "Level": 14,
               "FrostOnHitTime": 2000,
-              "FrostOnHitPercent": 40,
+              "FrostOnHitPercent": 45,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7541,7 +7541,7 @@
             {
               "Level": 15,
               "FrostOnHitTime": 2000,
-              "FrostOnHitPercent": 45,
+              "FrostOnHitPercent": 50,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7564,7 +7564,7 @@
             {
               "Level": 16,
               "FrostOnHitTime": 2000,
-              "FrostOnHitPercent": 45,
+              "FrostOnHitPercent": 50,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7587,7 +7587,7 @@
             {
               "Level": 17,
               "FrostOnHitTime": 2250,
-              "FrostOnHitPercent": 45,
+              "FrostOnHitPercent": 50,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7610,7 +7610,7 @@
             {
               "Level": 18,
               "FrostOnHitTime": 2250,
-              "FrostOnHitPercent": 50,
+              "FrostOnHitPercent": 55,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7633,7 +7633,7 @@
             {
               "Level": 19,
               "FrostOnHitTime": 2250,
-              "FrostOnHitPercent": 50,
+              "FrostOnHitPercent": 55,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7656,7 +7656,7 @@
             {
               "Level": 20,
               "FrostOnHitTime": 2500,
-              "FrostOnHitPercent": 50,
+              "FrostOnHitPercent": 55,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7665,7 +7665,7 @@
         {
           "level": 21,
           "hitpoints": 0,
-          "dps": 144,
+          "dps": 145,
           "heal_on_activation": 0,
           "required_blacksmith_level": 7,
           "required_townhall": 14,
@@ -7679,7 +7679,7 @@
             {
               "Level": 21,
               "FrostOnHitTime": 2500,
-              "FrostOnHitPercent": 55,
+              "FrostOnHitPercent": 60,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7688,7 +7688,7 @@
         {
           "level": 22,
           "hitpoints": 0,
-          "dps": 148,
+          "dps": 150,
           "heal_on_activation": 0,
           "required_blacksmith_level": 8,
           "required_townhall": 15,
@@ -7702,7 +7702,7 @@
             {
               "Level": 22,
               "FrostOnHitTime": 2500,
-              "FrostOnHitPercent": 55,
+              "FrostOnHitPercent": 60,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7711,7 +7711,7 @@
         {
           "level": 23,
           "hitpoints": 0,
-          "dps": 152,
+          "dps": 155,
           "heal_on_activation": 0,
           "required_blacksmith_level": 8,
           "required_townhall": 15,
@@ -7725,7 +7725,7 @@
             {
               "Level": 23,
               "FrostOnHitTime": 2750,
-              "FrostOnHitPercent": 55,
+              "FrostOnHitPercent": 60,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7734,7 +7734,7 @@
         {
           "level": 24,
           "hitpoints": 0,
-          "dps": 156,
+          "dps": 160,
           "heal_on_activation": 0,
           "required_blacksmith_level": 8,
           "required_townhall": 15,
@@ -7748,7 +7748,7 @@
             {
               "Level": 24,
               "FrostOnHitTime": 2750,
-              "FrostOnHitPercent": 60,
+              "FrostOnHitPercent": 65,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7757,7 +7757,7 @@
         {
           "level": 25,
           "hitpoints": 0,
-          "dps": 160,
+          "dps": 165,
           "heal_on_activation": 0,
           "required_blacksmith_level": 9,
           "required_townhall": 16,
@@ -7771,7 +7771,7 @@
             {
               "Level": 25,
               "FrostOnHitTime": 2750,
-              "FrostOnHitPercent": 60,
+              "FrostOnHitPercent": 65,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7780,7 +7780,7 @@
         {
           "level": 26,
           "hitpoints": 0,
-          "dps": 164,
+          "dps": 170,
           "heal_on_activation": 0,
           "required_blacksmith_level": 9,
           "required_townhall": 16,
@@ -7794,7 +7794,7 @@
             {
               "Level": 26,
               "FrostOnHitTime": 3000,
-              "FrostOnHitPercent": 60,
+              "FrostOnHitPercent": 65,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -7803,7 +7803,7 @@
         {
           "level": 27,
           "hitpoints": 0,
-          "dps": 168,
+          "dps": 175,
           "heal_on_activation": 0,
           "required_blacksmith_level": 9,
           "required_townhall": 16,
@@ -7817,7 +7817,7 @@
             {
               "Level": 27,
               "FrostOnHitTime": 3000,
-              "FrostOnHitPercent": 65,
+              "FrostOnHitPercent": 70,
               "name": "Frozen Arrow",
               "info": "Icy arrows slow down the targets they hit"
             }
@@ -20041,8 +20041,8 @@
       "levels": [
         {
           "level": 1,
-          "hitpoints": 900,
-          "dps": 10,
+          "hitpoints": 830,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -20068,8 +20068,8 @@
         },
         {
           "level": 2,
-          "hitpoints": 1200,
-          "dps": 10,
+          "hitpoints": 1100,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -20095,8 +20095,8 @@
         },
         {
           "level": 3,
-          "hitpoints": 1450,
-          "dps": 12,
+          "hitpoints": 1350,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -20122,8 +20122,8 @@
         },
         {
           "level": 4,
-          "hitpoints": 1750,
-          "dps": 12,
+          "hitpoints": 1600,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -20149,8 +20149,8 @@
         },
         {
           "level": 5,
-          "hitpoints": 2000,
-          "dps": 12,
+          "hitpoints": 1850,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -20176,8 +20176,8 @@
         },
         {
           "level": 6,
-          "hitpoints": 2300,
-          "dps": 14,
+          "hitpoints": 2100,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -20203,8 +20203,8 @@
         },
         {
           "level": 7,
-          "hitpoints": 2600,
-          "dps": 14,
+          "hitpoints": 2400,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -20230,8 +20230,8 @@
         },
         {
           "level": 8,
-          "hitpoints": 2850,
-          "dps": 14,
+          "hitpoints": 2600,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -20257,8 +20257,8 @@
         },
         {
           "level": 9,
-          "hitpoints": 3150,
-          "dps": 16,
+          "hitpoints": 2900,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 1,
           "required_townhall": 8,
@@ -20284,8 +20284,8 @@
         },
         {
           "level": 10,
-          "hitpoints": 3400,
-          "dps": 16,
+          "hitpoints": 3150,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 3,
           "required_townhall": 10,
@@ -20311,8 +20311,8 @@
         },
         {
           "level": 11,
-          "hitpoints": 3700,
-          "dps": 16,
+          "hitpoints": 3400,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 3,
           "required_townhall": 10,
@@ -20338,8 +20338,8 @@
         },
         {
           "level": 12,
-          "hitpoints": 4000,
-          "dps": 18,
+          "hitpoints": 3700,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 3,
           "required_townhall": 10,
@@ -20358,15 +20358,15 @@
             },
             {
               "Level": 5,
-              "Regeneration": 130,
+              "Regeneration": 120,
               "name": "Ram Rider Charge"
             }
           ]
         },
         {
           "level": 13,
-          "hitpoints": 4250,
-          "dps": 18,
+          "hitpoints": 3900,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 5,
           "required_townhall": 12,
@@ -20385,15 +20385,15 @@
             },
             {
               "Level": 5,
-              "Regeneration": 130,
+              "Regeneration": 120,
               "name": "Ram Rider Charge"
             }
           ]
         },
         {
           "level": 14,
-          "hitpoints": 4550,
-          "dps": 18,
+          "hitpoints": 4200,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 5,
           "required_townhall": 12,
@@ -20412,15 +20412,15 @@
             },
             {
               "Level": 5,
-              "Regeneration": 130,
+              "Regeneration": 120,
               "name": "Ram Rider Charge"
             }
           ]
         },
         {
           "level": 15,
-          "hitpoints": 4800,
-          "dps": 20,
+          "hitpoints": 4400,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 5,
           "required_townhall": 12,
@@ -20439,15 +20439,15 @@
             },
             {
               "Level": 6,
-              "Regeneration": 140,
+              "Regeneration": 130,
               "name": "Ram Rider Charge"
             }
           ]
         },
         {
           "level": 16,
-          "hitpoints": 5100,
-          "dps": 20,
+          "hitpoints": 4700,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 7,
           "required_townhall": 14,
@@ -20466,15 +20466,15 @@
             },
             {
               "Level": 6,
-              "Regeneration": 140,
+              "Regeneration": 130,
               "name": "Ram Rider Charge"
             }
           ]
         },
         {
           "level": 17,
-          "hitpoints": 5450,
-          "dps": 20,
+          "hitpoints": 5000,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 7,
           "required_townhall": 14,
@@ -20493,15 +20493,15 @@
             },
             {
               "Level": 6,
-              "Regeneration": 140,
+              "Regeneration": 130,
               "name": "Ram Rider Charge"
             }
           ]
         },
         {
           "level": 18,
-          "hitpoints": 5600,
-          "dps": 23,
+          "hitpoints": 5150,
+          "dps": 0,
           "heal_on_activation": 0,
           "required_blacksmith_level": 7,
           "required_townhall": 14,
@@ -20520,7 +20520,7 @@
             },
             {
               "Level": 7,
-              "Regeneration": 150,
+              "Regeneration": 140,
               "name": "Ram Rider Charge"
             }
           ]
@@ -23233,7 +23233,7 @@
       "levels": [
         {
           "level": 1,
-          "hitpoints": 0,
+          "hitpoints": 550,
           "dps": 0,
           "heal_on_activation": 558,
           "required_blacksmith_level": 1,
@@ -23258,7 +23258,7 @@
         },
         {
           "level": 2,
-          "hitpoints": 0,
+          "hitpoints": 575,
           "dps": 0,
           "heal_on_activation": 587,
           "required_blacksmith_level": 1,
@@ -23283,7 +23283,7 @@
         },
         {
           "level": 3,
-          "hitpoints": 0,
+          "hitpoints": 600,
           "dps": 0,
           "heal_on_activation": 615,
           "required_blacksmith_level": 1,
@@ -23308,7 +23308,7 @@
         },
         {
           "level": 4,
-          "hitpoints": 0,
+          "hitpoints": 625,
           "dps": 0,
           "heal_on_activation": 644,
           "required_blacksmith_level": 1,
@@ -23333,7 +23333,7 @@
         },
         {
           "level": 5,
-          "hitpoints": 0,
+          "hitpoints": 650,
           "dps": 0,
           "heal_on_activation": 673,
           "required_blacksmith_level": 1,
@@ -23358,7 +23358,7 @@
         },
         {
           "level": 6,
-          "hitpoints": 0,
+          "hitpoints": 675,
           "dps": 0,
           "heal_on_activation": 702,
           "required_blacksmith_level": 1,
@@ -23383,7 +23383,7 @@
         },
         {
           "level": 7,
-          "hitpoints": 0,
+          "hitpoints": 700,
           "dps": 0,
           "heal_on_activation": 730,
           "required_blacksmith_level": 1,
@@ -23408,7 +23408,7 @@
         },
         {
           "level": 8,
-          "hitpoints": 0,
+          "hitpoints": 725,
           "dps": 0,
           "heal_on_activation": 759,
           "required_blacksmith_level": 1,
@@ -23433,7 +23433,7 @@
         },
         {
           "level": 9,
-          "hitpoints": 0,
+          "hitpoints": 750,
           "dps": 0,
           "heal_on_activation": 788,
           "required_blacksmith_level": 1,
@@ -23458,7 +23458,7 @@
         },
         {
           "level": 10,
-          "hitpoints": 0,
+          "hitpoints": 775,
           "dps": 0,
           "heal_on_activation": 817,
           "required_blacksmith_level": 1,
@@ -23483,7 +23483,7 @@
         },
         {
           "level": 11,
-          "hitpoints": 0,
+          "hitpoints": 800,
           "dps": 0,
           "heal_on_activation": 845,
           "required_blacksmith_level": 1,
@@ -23508,7 +23508,7 @@
         },
         {
           "level": 12,
-          "hitpoints": 0,
+          "hitpoints": 825,
           "dps": 0,
           "heal_on_activation": 874,
           "required_blacksmith_level": 1,
@@ -23533,7 +23533,7 @@
         },
         {
           "level": 13,
-          "hitpoints": 0,
+          "hitpoints": 850,
           "dps": 0,
           "heal_on_activation": 903,
           "required_blacksmith_level": 3,
@@ -23558,7 +23558,7 @@
         },
         {
           "level": 14,
-          "hitpoints": 0,
+          "hitpoints": 875,
           "dps": 0,
           "heal_on_activation": 932,
           "required_blacksmith_level": 3,
@@ -23583,7 +23583,7 @@
         },
         {
           "level": 15,
-          "hitpoints": 0,
+          "hitpoints": 900,
           "dps": 0,
           "heal_on_activation": 960,
           "required_blacksmith_level": 3,
@@ -23608,7 +23608,7 @@
         },
         {
           "level": 16,
-          "hitpoints": 0,
+          "hitpoints": 925,
           "dps": 0,
           "heal_on_activation": 989,
           "required_blacksmith_level": 5,
@@ -23633,7 +23633,7 @@
         },
         {
           "level": 17,
-          "hitpoints": 0,
+          "hitpoints": 950,
           "dps": 0,
           "heal_on_activation": 1018,
           "required_blacksmith_level": 5,
@@ -23658,7 +23658,7 @@
         },
         {
           "level": 18,
-          "hitpoints": 0,
+          "hitpoints": 975,
           "dps": 0,
           "heal_on_activation": 1047,
           "required_blacksmith_level": 5,
@@ -23683,7 +23683,7 @@
         },
         {
           "level": 19,
-          "hitpoints": 0,
+          "hitpoints": 1000,
           "dps": 0,
           "heal_on_activation": 1107,
           "required_blacksmith_level": 7,
@@ -23708,7 +23708,7 @@
         },
         {
           "level": 20,
-          "hitpoints": 0,
+          "hitpoints": 1025,
           "dps": 0,
           "heal_on_activation": 1139,
           "required_blacksmith_level": 7,
@@ -23733,7 +23733,7 @@
         },
         {
           "level": 21,
-          "hitpoints": 0,
+          "hitpoints": 1050,
           "dps": 0,
           "heal_on_activation": 1171,
           "required_blacksmith_level": 7,
@@ -23758,7 +23758,7 @@
         },
         {
           "level": 22,
-          "hitpoints": 0,
+          "hitpoints": 1075,
           "dps": 0,
           "heal_on_activation": 1205,
           "required_blacksmith_level": 8,
@@ -23783,7 +23783,7 @@
         },
         {
           "level": 23,
-          "hitpoints": 0,
+          "hitpoints": 1100,
           "dps": 0,
           "heal_on_activation": 1239,
           "required_blacksmith_level": 8,
@@ -23808,7 +23808,7 @@
         },
         {
           "level": 24,
-          "hitpoints": 0,
+          "hitpoints": 1125,
           "dps": 0,
           "heal_on_activation": 1273,
           "required_blacksmith_level": 8,
@@ -23833,7 +23833,7 @@
         },
         {
           "level": 25,
-          "hitpoints": 0,
+          "hitpoints": 1150,
           "dps": 0,
           "heal_on_activation": 1309,
           "required_blacksmith_level": 9,
@@ -23858,7 +23858,7 @@
         },
         {
           "level": 26,
-          "hitpoints": 0,
+          "hitpoints": 1175,
           "dps": 0,
           "heal_on_activation": 1345,
           "required_blacksmith_level": 9,
@@ -23883,7 +23883,7 @@
         },
         {
           "level": 27,
-          "hitpoints": 0,
+          "hitpoints": 1200,
           "dps": 0,
           "heal_on_activation": 1381,
           "required_blacksmith_level": 9,
