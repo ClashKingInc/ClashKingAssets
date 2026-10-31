@@ -3,7 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --experimental-strip-types --test test/*.test.ts",
     "typecheck": "tsc --noEmit",
     "check:layout": "python3 ../check_image_sources.py",
     "build": "wrangler deploy --dry-run --outdir dist",

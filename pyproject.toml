@@ -8,6 +8,7 @@ dependencies = [
     "aiohttp",
     "boto3",
     "python-dotenv",
+    "Pillow>=11.3.0",
     "zstandard>=0.25.0",
 ]
 
