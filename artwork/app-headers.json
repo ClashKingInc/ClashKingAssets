@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "description": "Canonical illustrations used by native App headers. Generated App copies remain bundled for offline navigation. Tiny app-generated scrims and native icons are not part of this collection.",
+  "files": [
+    {
+      "id": "backgrounds/assets-goblin-v2.webp",
+      "path": "clashking/headers/assets-goblin-v2.webp",
+      "sha256": "3a3cab968c8b15fa621fc311a11af14e79302113a9bf140bdcba0bc6b2826d2b",
+      "bytes": 219872
+    },
+    {
+      "id": "backgrounds/blue.webp",
+      "path": "clashking/headers/blue.webp",
+      "sha256": "6102d2a6685800b5b3733dfeff66a6c3a7d974401b0dbaf1d2034e0a63bf67ca",
+      "bytes": 43202
+    },
+    {
+      "id": "backgrounds/clan-clearing-v5-dark.webp",
+      "path": "clashking/headers/clan-clearing-v5-dark.webp",
+      "sha256": "a2088e8520479424bab2fb5f1f6311c433f76cb20b70844b692c86198f9c110d",
+      "bytes": 209962
+    },
+    {
+      "id": "backgrounds/green.webp",
+      "path": "clashking/headers/green.webp",
+      "sha256": "0fe191d88c83cb0f653f08af00c80bf7cb60e4b99e7820da43fe4306efe17f5c",
+      "bytes": 41642
+    },
+    {
+      "id": "backgrounds/landscapes/achievement-landscape.webp",
+      "path": "clashking/landscapes/achievement-landscape.webp",
+      "sha256": "ed07c8cd70c6ffed5ff9d63082863681a6eb5a0251b1f9309830f6b30d6f6c4d",
+      "bytes": 200756
+    },
+    {
+      "id": "backgrounds/landscapes/builder-landscape.webp",
+      "path": "clashking/landscapes/builder-landscape.webp",
+      "sha256": "1e0b5e83878c32d731c09725cc649cf64ace3493536f9b83b232d8c0c0e69343",
+      "bytes": 139442
+    },
+    {
+      "id": "backgrounds/landscapes/clan-capital-landscape.webp",
+      "path": "clashking/landscapes/clan-capital-landscape.webp",
+      "sha256": "bc764b79a5f6b7396277ee2b618f78d620923f9d69236fddab3a26e84319149b",
+      "bytes": 103284
+    },
+    {
+      "id": "backgrounds/landscapes/clan-landscape.webp",
+      "path": "clashking/landscapes/clan-landscape.webp",
+      "sha256": "d6f47287fe3d468e601817edf7dbdef3747490bc0ca6a22b5d82d1984ed543be",
+      "bytes": 157766
+    },
+    {
+      "id": "backgrounds/landscapes/cwl-landscape.webp",
+      "path": "clashking/landscapes/cwl-landscape.webp",
+      "sha256": "b025ff7329f0b3af21f84efa8aca6c8a6310a516c0965a6c2ebad859b7e1d978",
+      "bytes": 69112
+    },
+    {
+      "id": "backgrounds/landscapes/home-landscape.webp",
+      "path": "clashking/landscapes/home-landscape.webp",
+      "sha256": "9ef0f102a32e7500a03bc9ce5564e81df8d044e3f2ada568f0da88350184f96f",
+      "bytes": 164324
+    },
+    {
+      "id": "backgrounds/landscapes/legend-landscape.webp",
+      "path": "clashking/landscapes/legend-landscape.webp",
+      "sha256": "3cd9f4b31e2a7e963b2ec8c48edd9d3efca3213aa41823ae7b489320424dfc62",
+      "bytes": 84270
+    },
+    {
+      "id": "backgrounds/landscapes/war-landscape.webp",
+      "path": "clashking/landscapes/war-landscape.webp",
+      "sha256": "953301b25612e5a65aea0cdc6377221270cfdeff461349f9d376b921b9d45925",
+      "bytes": 191734
+    },
+    {
+      "id": "backgrounds/landscapes/war-stats.webp",
+      "path": "clashking/landscapes/war-stats.webp",
+      "sha256": "065b144dd48f5dfd9f74f1d5aad637426f55bbc4eae540763b44412706c75a7b",
+      "bytes": 117074
+    },
+    {
+      "id": "backgrounds/legends-pekka-classic-v1.webp",
+      "path": "clashking/headers/legends-pekka-classic-v1.webp",
+      "sha256": "dc5a0911d5ce36317b34791f16c2f781f8c3556450de269156113ad252857228",
+      "bytes": 156784
+    },
+    {
+      "id": "backgrounds/library-barbarians.webp",
+      "path": "clashking/headers/library-barbarians.webp",
+      "sha256": "fb43c9f853752db384f8202dc9dce453b8f48407c6846e44a397b519ae30da4b",
+      "bytes": 208660
+    },
+    {
+      "id": "backgrounds/player-electro-dragon-quiet-v3.webp",
+      "path": "clashking/headers/player-electro-dragon-quiet-v3.webp",
+      "sha256": "c2853261bc8d90a49b9e770edd30e50f466daea1f53ad23af186b925b8741f02",
+      "bytes": 217508
+    },
+    {
+      "id": "backgrounds/purple.webp",
+      "path": "clashking/headers/purple.webp",
+      "sha256": "07bf093757214ebcddd1f919e492310fc6cabb095ca90be5fae74623d0968155",
+      "bytes": 33722
+    },
+    {
+      "id": "backgrounds/ranked-cloud-trophy-v1.webp",
+      "path": "clashking/headers/ranked-cloud-trophy-v1.webp",
+      "sha256": "f3cef12618df0a047094bd159206fe84ce6d00c133f0e67e6cb3e2afe3ef21cc",
+      "bytes": 112368
+    },
+    {
+      "id": "backgrounds/red.webp",
+      "path": "clashking/headers/red.webp",
+      "sha256": "6beb2d43a304ece3c0ac8187de361ee0ecfdeed5b581e92eb706ced63c610b89",
+      "bytes": 42946
+    },
+    {
+      "id": "competitive/esports-trophy-clean.png",
+      "path": "clashking/headers/competitive/esports-trophy-clean.png",
+      "sha256": "57fe0cd9887da9555cbede9db0634d2472081bf56114c9037ddb5da8b58b4cc8",
+      "bytes": 2018895
+    },
+    {
+      "id": "cwl/bronze.webp",
+      "path": "clashking/headers/cwl/bronze.webp",
+      "sha256": "e396c85d84e8c77de72427ec4b67976d24d65081ff1fc00c255ba3fad94d002a",
+      "bytes": 114826
+    },
+    {
+      "id": "cwl/champion.webp",
+      "path": "clashking/headers/cwl/champion.webp",
+      "sha256": "bb19ac2d5322f15ce507e1faa8b432c0a732fbf2ef692b8d98a7505a329c09d8",
+      "bytes": 61222
+    },
+    {
+      "id": "cwl/crystal.webp",
+      "path": "clashking/headers/cwl/crystal.webp",
+      "sha256": "d311b08ca7c5ad872ca9c601d08a78959d8939068c51a663903585a3575b2484",
+      "bytes": 104718
+    },
+    {
+      "id": "cwl/gold.webp",
+      "path": "clashking/headers/cwl/gold.webp",
+      "sha256": "d3d230eef496c3fd89b3ffcbf1fb5bbd12586518b21880ab9719b7ba4a4c256e",
+      "bytes": 64422
+    },
+    {
+      "id": "cwl/legend.webp",
+      "path": "clashking/headers/cwl/legend.webp",
+      "sha256": "0a355fada0457b0fe0b08cc851b8fb379e1c62e7996f8ba38a77fe734921fedf",
+      "bytes": 57894
+    },
+    {
+      "id": "cwl/master.webp",
+      "path": "clashking/headers/cwl/master.webp",
+      "sha256": "be0b65accec7bceb975c8b0f7ae0ae2901a8b1c97ef9481c5db16d8eb38235e8",
+      "bytes": 90696
+    },
+    {
+      "id": "cwl/silver.webp",
+      "path": "clashking/headers/cwl/silver.webp",
+      "sha256": "9bb8d878d517a19c5440ef42e969b272b208f87775393ceb0ac7a180ac17d7b1",
+      "bytes": 111928
+    },
+    {
+      "id": "cwl/titan.webp",
+      "path": "clashking/headers/cwl/titan.webp",
+      "sha256": "60c0b65ae9f425e4cef89a72ebc793df7cab7f27c0fe37aac16e59e2a37389a5",
+      "bytes": 58870
+    },
+    {
+      "id": "profile/profile-selected-banner.png",
+      "path": "clashking/headers/profile/profile-selected-banner.png",
+      "sha256": "ed6ab03084af1fb4ad37fe2aad27c74fecd90e7745847f6e2417c3cb038b6fcc",
+      "bytes": 2405870
+    },
+    {
+      "id": "todo/builder-meeting.jpg",
+      "path": "clashking/headers/todo/builder-meeting.jpg",
+      "sha256": "47bcffa1fc9b4aa869fbc7371360300ee3226607431ad50615abf8e9b01ac16e",
+      "bytes": 440021
+    },
+    {
+      "id": "tracker/builder-village-flat-roof.jpg",
+      "path": "clashking/headers/tracker/builder-village-flat-roof.jpg",
+      "sha256": "9e7d49f7deda9eace72aa19150be5e7bcac3fc54ba2dd5f8034d2f1be1aa5e96",
+      "bytes": 233138
+    },
+    {
+      "id": "war/war-wood-header.webp",
+      "path": "clashking/headers/war/war-wood-header.webp",
+      "sha256": "2fb51059ffc160daa977618607c4e9f3d9f35ac2114fd11576d212ce6d29a6c5",
+      "bytes": 112322
+    }
+  ]
+}
