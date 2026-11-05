@@ -6155,6 +6155,200 @@
         "animated": false
       }
     ],
+    "clashking": [
+      {
+        "path": "clashking/headers/assets-goblin-v2.webp",
+        "display_name": "assets goblin v2",
+        "sha": "3a3cab968c8b15fa621fc311a11af14e79302113a9bf140bdcba0bc6b2826d2b",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/blue.webp",
+        "display_name": "blue",
+        "sha": "6102d2a6685800b5b3733dfeff66a6c3a7d974401b0dbaf1d2034e0a63bf67ca",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/clan-clearing-v5-dark.webp",
+        "display_name": "clan clearing v5 dark",
+        "sha": "a2088e8520479424bab2fb5f1f6311c433f76cb20b70844b692c86198f9c110d",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/competitive/esports-trophy-clean.png",
+        "display_name": "esports trophy clean",
+        "sha": "57fe0cd9887da9555cbede9db0634d2472081bf56114c9037ddb5da8b58b4cc8",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/cwl/bronze.webp",
+        "display_name": "bronze",
+        "sha": "e396c85d84e8c77de72427ec4b67976d24d65081ff1fc00c255ba3fad94d002a",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/cwl/champion.webp",
+        "display_name": "champion",
+        "sha": "bb19ac2d5322f15ce507e1faa8b432c0a732fbf2ef692b8d98a7505a329c09d8",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/cwl/crystal.webp",
+        "display_name": "crystal",
+        "sha": "d311b08ca7c5ad872ca9c601d08a78959d8939068c51a663903585a3575b2484",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/cwl/gold.webp",
+        "display_name": "gold",
+        "sha": "d3d230eef496c3fd89b3ffcbf1fb5bbd12586518b21880ab9719b7ba4a4c256e",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/cwl/legend.webp",
+        "display_name": "legend",
+        "sha": "0a355fada0457b0fe0b08cc851b8fb379e1c62e7996f8ba38a77fe734921fedf",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/cwl/master.webp",
+        "display_name": "master",
+        "sha": "be0b65accec7bceb975c8b0f7ae0ae2901a8b1c97ef9481c5db16d8eb38235e8",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/cwl/silver.webp",
+        "display_name": "silver",
+        "sha": "9bb8d878d517a19c5440ef42e969b272b208f87775393ceb0ac7a180ac17d7b1",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/cwl/titan.webp",
+        "display_name": "titan",
+        "sha": "60c0b65ae9f425e4cef89a72ebc793df7cab7f27c0fe37aac16e59e2a37389a5",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/green.webp",
+        "display_name": "green",
+        "sha": "0fe191d88c83cb0f653f08af00c80bf7cb60e4b99e7820da43fe4306efe17f5c",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/legends-pekka-classic-v1.webp",
+        "display_name": "legends pekka classic v1",
+        "sha": "dc5a0911d5ce36317b34791f16c2f781f8c3556450de269156113ad252857228",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/library-barbarians.webp",
+        "display_name": "library barbarians",
+        "sha": "fb43c9f853752db384f8202dc9dce453b8f48407c6846e44a397b519ae30da4b",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/player-electro-dragon-quiet-v3.webp",
+        "display_name": "player electro dragon quiet v3",
+        "sha": "c2853261bc8d90a49b9e770edd30e50f466daea1f53ad23af186b925b8741f02",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/profile/profile-selected-banner.png",
+        "display_name": "profile selected banner",
+        "sha": "ed6ab03084af1fb4ad37fe2aad27c74fecd90e7745847f6e2417c3cb038b6fcc",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/purple.webp",
+        "display_name": "purple",
+        "sha": "07bf093757214ebcddd1f919e492310fc6cabb095ca90be5fae74623d0968155",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/ranked-cloud-trophy-v1.webp",
+        "display_name": "ranked cloud trophy v1",
+        "sha": "f3cef12618df0a047094bd159206fe84ce6d00c133f0e67e6cb3e2afe3ef21cc",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/red.webp",
+        "display_name": "red",
+        "sha": "6beb2d43a304ece3c0ac8187de361ee0ecfdeed5b581e92eb706ced63c610b89",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/todo/builder-meeting.jpg",
+        "display_name": "builder meeting",
+        "sha": "47bcffa1fc9b4aa869fbc7371360300ee3226607431ad50615abf8e9b01ac16e",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/tracker/builder-village-flat-roof.jpg",
+        "display_name": "builder village flat roof",
+        "sha": "9e7d49f7deda9eace72aa19150be5e7bcac3fc54ba2dd5f8034d2f1be1aa5e96",
+        "animated": false
+      },
+      {
+        "path": "clashking/headers/war/war-wood-header.webp",
+        "display_name": "war wood header",
+        "sha": "2fb51059ffc160daa977618607c4e9f3d9f35ac2114fd11576d212ce6d29a6c5",
+        "animated": false
+      },
+      {
+        "path": "clashking/landscapes/achievement-landscape.webp",
+        "display_name": "achievement landscape",
+        "sha": "ed07c8cd70c6ffed5ff9d63082863681a6eb5a0251b1f9309830f6b30d6f6c4d",
+        "animated": false
+      },
+      {
+        "path": "clashking/landscapes/builder-landscape.webp",
+        "display_name": "builder landscape",
+        "sha": "1e0b5e83878c32d731c09725cc649cf64ace3493536f9b83b232d8c0c0e69343",
+        "animated": false
+      },
+      {
+        "path": "clashking/landscapes/clan-capital-landscape.webp",
+        "display_name": "clan capital landscape",
+        "sha": "bc764b79a5f6b7396277ee2b618f78d620923f9d69236fddab3a26e84319149b",
+        "animated": false
+      },
+      {
+        "path": "clashking/landscapes/clan-landscape.webp",
+        "display_name": "clan landscape",
+        "sha": "d6f47287fe3d468e601817edf7dbdef3747490bc0ca6a22b5d82d1984ed543be",
+        "animated": false
+      },
+      {
+        "path": "clashking/landscapes/cwl-landscape.webp",
+        "display_name": "cwl landscape",
+        "sha": "b025ff7329f0b3af21f84efa8aca6c8a6310a516c0965a6c2ebad859b7e1d978",
+        "animated": false
+      },
+      {
+        "path": "clashking/landscapes/home-landscape.webp",
+        "display_name": "home landscape",
+        "sha": "9ef0f102a32e7500a03bc9ce5564e81df8d044e3f2ada568f0da88350184f96f",
+        "animated": false
+      },
+      {
+        "path": "clashking/landscapes/legend-landscape.webp",
+        "display_name": "legend landscape",
+        "sha": "3cd9f4b31e2a7e963b2ec8c48edd9d3efca3213aa41823ae7b489320424dfc62",
+        "animated": false
+      },
+      {
+        "path": "clashking/landscapes/war-landscape.webp",
+        "display_name": "war landscape",
+        "sha": "953301b25612e5a65aea0cdc6377221270cfdeff461349f9d376b921b9d45925",
+        "animated": false
+      },
+      {
+        "path": "clashking/landscapes/war-stats.webp",
+        "display_name": "war stats",
+        "sha": "065b144dd48f5dfd9f74f1d5aad637426f55bbc4eae540763b44412706c75a7b",
+        "animated": false
+      }
+    ],
     "country-flags": [
       {
         "path": "country-flags/ad.png",

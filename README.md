@@ -48,3 +48,15 @@ If you add assets, keep paths organized under [`assets/`](assets) so they map cl
 ## License
 
 This repository is licensed under the GNU GPL v3. See [`LICENSE`](LICENSE).
+
+## Native App header artwork
+
+Canonical header illustrations live in `assets/clashking/headers` and
+`assets/clashking/landscapes`. `artwork/app-headers.json` selects each illustration
+by stable ID, path, byte size and SHA-256. Verify it with
+`python scripts/check-app-artwork.py`, then regenerate `assets/manifest.json`
+with the normal manifest command before an asset release.
+
+The App vendors a pinned generated subset into its native bundle. Moving source
+ownership here does not introduce a first-launch download or change native
+header warmup. Tiny generated scrims and platform icons remain App-owned.

@@ -37,6 +37,9 @@ jobs:
       - name: Verify generated emoji catalog
         run: python generate_emoji_catalog.py --check
 
+      - name: Verify canonical App artwork
+        run: python scripts/check-app-artwork.py
+
       - name: Verify asset manifest
         run: python generate_manifest.py --check
 
@@ -57,11 +60,11 @@ jobs:
         env:
           DISCORD_APPLICATION_ID: ${{ vars.DISCORD_APPLICATION_ID }}
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-        run: python sync_discord_emojis.py --apply
+        run: python sync_discord_emojis.py --apply --preserve-unmanaged
 
       - name: Sync beta application emojis
         if: vars.DISCORD_BETA_APPLICATION_ID != ''
         env:
           DISCORD_APPLICATION_ID: ${{ vars.DISCORD_BETA_APPLICATION_ID }}
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BETA_BOT_TOKEN }}
-        run: python sync_discord_emojis.py --apply
+        run: python sync_discord_emojis.py --apply --preserve-unmanaged
