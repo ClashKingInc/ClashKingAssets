@@ -1027,37 +1027,41 @@ class StaticUpdater:
                 isinstance(level_data, dict) and level_data.get("UnlockWeaponMode")
                 for level_data in building_data.values()
             )
-            superchargeable = False
-
+            # A target name alone is not eligibility: the game retains unused
+            # definitions (notably regular Wizard Tower). Follow the building's
+            # explicit reference, and keep its separate Town Hall requirement.
+            supercharge_reference = building_data.get("MiniLevels")
+            supercharge_data = self.full_supercharges_data.get(supercharge_reference)
+            if supercharge_reference and (
+                supercharge_data is None or supercharge_data.get("TargetBuilding") != building_name
+            ):
+                raise ValueError(f"Invalid supercharge reference for {building_name}: {supercharge_reference}")
+            superchargeable = supercharge_data is not None
             supercharge_level_data = {}
-            for supercharge_data in self.full_supercharges_data.values():
-                if supercharge_data.get("TargetBuilding") == building_name:
-                    superchargeable = True
-                    hold_data = {
-                        "upgrade_resource": self._parse_resource(resource=supercharge_data.get("BuildResource")),
-                        "levels": [],
-                    }
-                    for level, level_data in supercharge_data.items():
-                        if not isinstance(level_data, dict):
-                            continue
-                        upgrade_time_seconds = self._parse_upgrade_time(level_data)
-
-                        DPS = level_data.get("DPS", 0)
-                        # A row without DPS or hitpoints represents a DPS upgrade.
-                        # unless it is a resource pump, but we dont handle those anyways
-                        if not DPS and not level_data.get("Hitpoints"):
-                            DPS = supercharge_data.get("DPS", 0)
-                        hold_data["levels"].append(
-                            {
-                                "level": int(level),
-                                "build_cost": level_data.get("BuildCost"),
-                                "build_time": upgrade_time_seconds,
-                                "hitpoints_buff": level_data.get("Hitpoints", 0),
-                                "dps_buff": DPS,
-                            }
-                        )
-                    supercharge_level_data = hold_data
-                    break
+            if superchargeable:
+                supercharge_level_data = {
+                    "upgrade_resource": self._parse_resource(resource=supercharge_data.get("BuildResource")),
+                    "required_townhall": supercharge_data["RequiredTownHallLevel"],
+                    "levels": [],
+                }
+                for level, level_data in supercharge_data.items():
+                    if not isinstance(level_data, dict):
+                        continue
+                    upgrade_time_seconds = self._parse_upgrade_time(level_data)
+                    dps = level_data.get("DPS", 0)
+                    # Rows with neither DPS nor hitpoints inherit the definition's
+                    # DPS increase; resource-pump production is handled elsewhere.
+                    if not dps and not level_data.get("Hitpoints"):
+                        dps = supercharge_data.get("DPS", 0)
+                    supercharge_level_data["levels"].append(
+                        {
+                            "level": int(level),
+                            "build_cost": level_data.get("BuildCost"),
+                            "build_time": upgrade_time_seconds,
+                            "hitpoints_buff": level_data.get("Hitpoints", 0),
+                            "dps_buff": dps,
+                        }
+                    )
 
             # Merged buildings need the requirement at level 1.
             if building_data.get("MergeRequirement") is not None:

@@ -1270,6 +1270,7 @@
           "dps": 0,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -1618,6 +1619,7 @@
           "dps": 0,
           "supercharge": {
             "upgrade_resource": "Elixir",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -3074,7 +3076,7 @@
       "village": "home",
       "width": 3,
       "hitbox_width": 2,
-      "superchargeable": true,
+      "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": true,
       "levels": [
@@ -3263,26 +3265,7 @@
           "dps": 110,
           "attack_speed": 1300,
           "attack_range": 700,
-          "strength_weight": 4800,
-          "supercharge": {
-            "upgrade_resource": "Gold",
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 4500000,
-                "build_time": 172800,
-                "hitpoints_buff": 0,
-                "dps_buff": 4
-              },
-              {
-                "level": 2,
-                "build_cost": 2000000,
-                "build_time": 302400,
-                "hitpoints_buff": 75,
-                "dps_buff": 0
-              }
-            ]
-          }
+          "strength_weight": 4800
         }
       ]
     },
@@ -3480,6 +3463,7 @@
           "strength_weight": 3900,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -3847,6 +3831,7 @@
           "strength_weight": 4500,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -4131,6 +4116,7 @@
           "strength_weight": 9000,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 17,
             "levels": [
               {
                 "level": 1,
@@ -4356,6 +4342,7 @@
           "strength_weight": 2300,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -4696,6 +4683,7 @@
           "strength_weight": 11800,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -4820,6 +4808,7 @@
           "dps": 0,
           "supercharge": {
             "upgrade_resource": "Elixir",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -5304,6 +5293,7 @@
           "strength_weight": 40500,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -5767,6 +5757,7 @@
           "strength_weight": 9200,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -9275,6 +9266,7 @@
           "strength_weight": 23850,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -9764,6 +9756,7 @@
           "strength_weight": 45500,
           "supercharge": {
             "upgrade_resource": "Dark Elixir",
+            "required_townhall": 17,
             "levels": [
               {
                 "level": 1,
@@ -9966,6 +9959,7 @@
           "strength_weight": 18000,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -10269,6 +10263,7 @@
           "strength_weight": 14500,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -10365,6 +10360,7 @@
           "strength_weight": 15000,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -10425,6 +10421,7 @@
           "strength_weight": 52500,
           "supercharge": {
             "upgrade_resource": "Dark Elixir",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -10498,6 +10495,7 @@
           "strength_weight": 39500,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
@@ -11551,6 +11549,7 @@
           "strength_weight": 14000,
           "supercharge": {
             "upgrade_resource": "Gold",
+            "required_townhall": 18,
             "levels": [
               {
                 "level": 1,
