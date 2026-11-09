@@ -2161,7 +2161,6 @@ class StaticUpdater:
                 hold_data.pop("upgrade_resource")
                 hold_data.update({
                     "requires_gold_pass": True,
-                    "is_seasonal": True,
                     "required_townhall": fixed_data.get("RequiredTownHallLevel"),
                     "boost_time_seconds": fixed_data.get("BoostTimeSeconds"),
                     "boost_multiplier": fixed_data.get("BoostMultiplier"),
