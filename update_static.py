@@ -2153,18 +2153,32 @@ class StaticUpdater:
                 "upgrade_resource": self._parse_resource(resource=helper_data.get("CostResource")),
                 "levels": [],
             }
-            for level, level_data in helper_data.items():
-                if not isinstance(level_data, dict):
-                    continue
-                hold_data["levels"].append(
-                    {
-                        "level": int(level),
-                        "required_townhall": level_data.get("RequiredTownHallLevel"),
-                        "upgrade_cost": level_data.get("Cost"),
-                        "boost_time_seconds": level_data.get("BoostTimeSeconds"),
-                        "boost_multiplier": level_data.get("BoostMultiplier"),
-                    }
-                )
+            if helper_data.get("Type") == "PROSPECTOR":
+                # The client table retains unused gem-purchase/upgrade rows.
+                # Prospector is hired seasonally through Gold Pass and cannot
+                # be upgraded; those rows must not become purchasable levels.
+                fixed_data = helper_data.get("1", {})
+                hold_data.pop("upgrade_resource")
+                hold_data.update({
+                    "requires_gold_pass": True,
+                    "is_seasonal": True,
+                    "required_townhall": fixed_data.get("RequiredTownHallLevel"),
+                    "boost_time_seconds": fixed_data.get("BoostTimeSeconds"),
+                    "boost_multiplier": fixed_data.get("BoostMultiplier"),
+                })
+            else:
+                for level, level_data in helper_data.items():
+                    if not isinstance(level_data, dict):
+                        continue
+                    hold_data["levels"].append(
+                        {
+                            "level": int(level),
+                            "required_townhall": level_data.get("RequiredTownHallLevel"),
+                            "upgrade_cost": level_data.get("Cost"),
+                            "boost_time_seconds": level_data.get("BoostTimeSeconds"),
+                            "boost_multiplier": level_data.get("BoostMultiplier"),
+                        }
+                    )
 
             new_helper_data.append(hold_data)
 

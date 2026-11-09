@@ -68841,58 +68841,12 @@
         "name": "TID_PROSPECTOR_APPRENTICE",
         "info": "TID_PROSPECTOR_APPRENTICE_INFO"
       },
-      "upgrade_resource": "Gems",
-      "levels": [
-        {
-          "level": 1,
-          "required_townhall": 10,
-          "upgrade_cost": 100,
-          "boost_time_seconds": 4,
-          "boost_multiplier": 0
-        },
-        {
-          "level": 2,
-          "required_townhall": 10,
-          "upgrade_cost": 250,
-          "boost_time_seconds": 4,
-          "boost_multiplier": 0
-        },
-        {
-          "level": 3,
-          "required_townhall": 10,
-          "upgrade_cost": 500,
-          "boost_time_seconds": 4,
-          "boost_multiplier": 0
-        },
-        {
-          "level": 4,
-          "required_townhall": 10,
-          "upgrade_cost": 1000,
-          "boost_time_seconds": 4,
-          "boost_multiplier": 0
-        },
-        {
-          "level": 5,
-          "required_townhall": 10,
-          "upgrade_cost": 1000,
-          "boost_time_seconds": 4,
-          "boost_multiplier": 0
-        },
-        {
-          "level": 6,
-          "required_townhall": 10,
-          "upgrade_cost": 1500,
-          "boost_time_seconds": 4,
-          "boost_multiplier": 0
-        },
-        {
-          "level": 7,
-          "required_townhall": 10,
-          "upgrade_cost": 1500,
-          "boost_time_seconds": 4,
-          "boost_multiplier": 0
-        }
-      ]
+      "levels": [],
+      "requires_gold_pass": true,
+      "is_seasonal": true,
+      "required_townhall": 10,
+      "boost_time_seconds": 4,
+      "boost_multiplier": 0
     }
   ],
   "battle_modifiers": [
