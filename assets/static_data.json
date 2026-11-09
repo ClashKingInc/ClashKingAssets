@@ -68843,7 +68843,6 @@
       },
       "levels": [],
       "requires_gold_pass": true,
-      "is_seasonal": true,
       "required_townhall": 10,
       "boost_time_seconds": 4,
       "boost_multiplier": 0
