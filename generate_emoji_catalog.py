@@ -90,6 +90,10 @@ def build_catalog(root: Path) -> dict:
                 add(path.stem, path, category)
     for name, relative in ICON_ALIASES.items():
         add(name, root / relative, "icons")
+    # Preserve originals; clients opt into fitted variants for inline resource
+    # counts instead of centering the small source sprite on a 128px canvas.
+    for name in ("gold", "elixir", "dark_elixir"):
+        add("full_" + name, root / ICON_ALIASES[name], "fitted_resources")
     # Preserve utility artwork that has no game-generated equivalent. These are
     # still consumed by deployed clients at /bot/icons; they are not game data.
     for path in sorted((root / "bot/icons").glob("*")):

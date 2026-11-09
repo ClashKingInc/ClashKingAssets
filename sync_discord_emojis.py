@@ -74,7 +74,7 @@ def _canonical_pixels(image: Image.Image) -> bytes:
     return bytes(pixels)
 
 
-def _prepare_png(source: bytes, name: str) -> PreparedEmoji:
+def _prepare_png(source: bytes, name: str, *, fit_visible: bool = False) -> PreparedEmoji:
     try:
         with Image.open(io.BytesIO(source)) as original:
             original.seek(0)
@@ -83,7 +83,13 @@ def _prepare_png(source: bytes, name: str) -> PreparedEmoji:
         raise EmojiSyncError(f'Invalid source image for {name}: {exc}') from None
     if not image.width or not image.height:
         raise EmojiSyncError(f'Empty source image for {name}')
-    image.thumbnail((128, 128), Image.Resampling.LANCZOS)
+    if fit_visible:
+        bounds = image.getchannel('A').getbbox()
+        if bounds is None:
+            raise EmojiSyncError(f'Empty visible resource image for {name}')
+        image = ImageOps.contain(image.crop(bounds), (128, 128), Image.Resampling.LANCZOS)
+    else:
+        image.thumbnail((128, 128), Image.Resampling.LANCZOS)
     canvas = Image.new('RGBA', (128, 128), (0, 0, 0, 0))
     canvas.alpha_composite(image, ((128 - image.width) // 2, (128 - image.height) // 2))
     pixels = _canonical_pixels(canvas)
@@ -188,7 +194,11 @@ def load_catalog(catalog_path: Path | None, assets_root: Path) -> dict[str, Prep
         source = image_path.read_bytes()
         if hashlib.sha256(source).hexdigest() != digest:
             raise EmojiSyncError(f'Asset SHA-256 mismatch for {name}; regenerate the catalog')
-        names[name] = _prepare_gif(source, name) if path.lower().endswith('.gif') else _prepare_png(source, name)
+        names[name] = (
+            _prepare_gif(source, name)
+            if path.lower().endswith('.gif')
+            else _prepare_png(source, name, fit_visible=row.get('category') == 'fitted_resources')
+        )
     return names
 
 
