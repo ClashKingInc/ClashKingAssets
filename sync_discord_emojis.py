@@ -197,7 +197,7 @@ def load_catalog(catalog_path: Path | None, assets_root: Path) -> dict[str, Prep
         names[name] = (
             _prepare_gif(source, name)
             if path.lower().endswith('.gif')
-            else _prepare_png(source, name, fit_visible=row.get('category') == 'fitted_resources')
+            else _prepare_png(source, name, fit_visible=name in {'gold', 'elixir', 'dark_elixir'})
         )
     return names
 
