@@ -97,32 +97,32 @@
         },
         {
           "level": 11,
-          "build_cost": 7500000,
-          "build_time": 432000,
+          "build_cost": 7000000,
+          "build_time": 388800,
           "required_townhall": 13,
           "hitpoints": 800,
           "dps": 0
         },
         {
           "level": 12,
-          "build_cost": 10000000,
-          "build_time": 518400,
+          "build_cost": 8500000,
+          "build_time": 432000,
           "required_townhall": 15,
           "hitpoints": 850,
           "dps": 0
         },
         {
           "level": 13,
-          "build_cost": 17000000,
-          "build_time": 648000,
+          "build_cost": 14500000,
+          "build_time": 604800,
           "required_townhall": 17,
           "hitpoints": 900,
           "dps": 0
         },
         {
           "level": 14,
-          "build_cost": 26000000,
-          "build_time": 1296000,
+          "build_cost": 24000000,
+          "build_time": 1123200,
           "required_townhall": 18,
           "hitpoints": 950,
           "dps": 0
@@ -151,6 +151,7 @@
           "required_townhall": 0,
           "hitpoints": 400,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Army Camp",
@@ -211,6 +212,7 @@
           "required_townhall": 1,
           "hitpoints": 800,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -246,6 +248,7 @@
           "required_townhall": 2,
           "hitpoints": 1600,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Army Camp",
@@ -301,6 +304,7 @@
           "required_townhall": 3,
           "hitpoints": 2000,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -346,6 +350,7 @@
           "required_townhall": 4,
           "hitpoints": 2400,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Army Camp",
@@ -406,6 +411,7 @@
           "required_townhall": 5,
           "hitpoints": 2800,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -461,6 +467,7 @@
           "required_townhall": 6,
           "hitpoints": 3300,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Army Camp",
@@ -536,6 +543,7 @@
           "required_townhall": 7,
           "hitpoints": 3900,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Storage",
@@ -616,6 +624,11 @@
               "name": "Blacksmith",
               "_id": 1000070,
               "quantity": 1
+            },
+            {
+              "name": "Squad Barracks",
+              "_id": 1000106,
+              "quantity": 1
             }
           ]
         },
@@ -626,6 +639,7 @@
           "required_townhall": 8,
           "hitpoints": 4600,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Storage",
@@ -711,6 +725,7 @@
           "required_townhall": 9,
           "hitpoints": 5500,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Cannon",
@@ -771,6 +786,7 @@
           "required_townhall": 10,
           "hitpoints": 6800,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Cannon",
@@ -816,6 +832,7 @@
           "required_townhall": 11,
           "hitpoints": 7500,
           "dps": 140,
+          "strength_weight": 0,
           "attack_speed": 500,
           "attack_range": 1000,
           "unlocks": [
@@ -859,10 +876,11 @@
         {
           "level": 13,
           "build_cost": 9000000,
-          "build_time": 604800,
+          "build_time": 561600,
           "required_townhall": 12,
           "hitpoints": 8200,
           "dps": 220,
+          "strength_weight": 0,
           "attack_speed": 128,
           "attack_range": 1000,
           "unlocks": [
@@ -890,11 +908,12 @@
         },
         {
           "level": 14,
-          "build_cost": 12000000,
-          "build_time": 648000,
+          "build_cost": 11500000,
+          "build_time": 604800,
           "required_townhall": 13,
           "hitpoints": 8900,
           "dps": 280,
+          "strength_weight": 0,
           "attack_speed": 128,
           "attack_range": 1000,
           "unlocks": [
@@ -938,10 +957,11 @@
         {
           "level": 15,
           "build_cost": 13000000,
-          "build_time": 691200,
+          "build_time": 648000,
           "required_townhall": 14,
           "hitpoints": 9600,
           "dps": 300,
+          "strength_weight": 0,
           "attack_speed": 128,
           "attack_range": 1000,
           "unlocks": [
@@ -960,10 +980,11 @@
         {
           "level": 16,
           "build_cost": 15000000,
-          "build_time": 777600,
+          "build_time": 734400,
           "required_townhall": 15,
           "hitpoints": 10000,
           "dps": 300,
+          "strength_weight": 0,
           "attack_speed": 128,
           "attack_range": 1000,
           "unlocks": [
@@ -982,10 +1003,11 @@
         {
           "level": 17,
           "build_cost": 16000000,
-          "build_time": 864000,
+          "build_time": 820800,
           "required_townhall": 16,
           "hitpoints": 10400,
-          "dps": 0,
+          "dps": 60,
+          "strength_weight": 0,
           "merge_requirement": [
             {
               "name": "Eagle Artillery",
@@ -996,48 +1018,6 @@
           ],
           "attack_speed": 3500,
           "attack_range": 1200,
-          "weapon": {
-            "name": "Inferno Artillery",
-            "info": "Bring the heat! The Inferno Artillery launches 4 enemy-seeking explosives and leaves burning pools of fire where it strikes. If there are less than 4 enemies in range, it can strike the same target multiple times. Ouch!",
-            "TID": {
-              "name": "TID_WEAPON_TOWN_HALL_17",
-              "info": "TID_WEAPON_TOWN_HALL_17_INFO"
-            },
-            "upgrade_resource": "Gold",
-            "strength_weight": 0,
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 16000000,
-                "build_time": 0,
-                "dps": 40
-              },
-              {
-                "level": 2,
-                "build_cost": 16000000,
-                "build_time": 518400,
-                "dps": 45
-              },
-              {
-                "level": 3,
-                "build_cost": 16000000,
-                "build_time": 604800,
-                "dps": 50
-              },
-              {
-                "level": 4,
-                "build_cost": 16000000,
-                "build_time": 691200,
-                "dps": 55
-              },
-              {
-                "level": 5,
-                "build_cost": 16000000,
-                "build_time": 864000,
-                "dps": 60
-              }
-            ]
-          },
           "unlocks": [
             {
               "name": "Archer Tower",
@@ -1083,11 +1063,12 @@
         },
         {
           "level": 18,
-          "build_cost": 25000000,
-          "build_time": 1036800,
+          "build_cost": 20000000,
+          "build_time": 864000,
           "required_townhall": 17,
           "hitpoints": 10800,
           "dps": 0,
+          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wizard Tower",
@@ -1100,11 +1081,6 @@
               "quantity": 1
             },
             {
-              "name": "Crafting Station",
-              "_id": 1000097,
-              "quantity": 1
-            },
-            {
               "name": "Revenge Tower",
               "_id": 1000086,
               "quantity": 1
@@ -1112,6 +1088,90 @@
             {
               "name": "Super Wizard Tower",
               "_id": 1000102,
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "level": 19,
+          "build_cost": 27000000,
+          "build_time": 1123200,
+          "required_townhall": 18,
+          "hitpoints": 11200,
+          "dps": 0,
+          "strength_weight": 20000,
+          "variants": [
+            {
+              "_id": 119000002,
+              "name": "Barbarian Hall",
+              "info": "A mustachioed lodging with zero house rules. Stop by for a barbaric beating.",
+              "TID": {
+                "name": "TID_BUILDING_VARIANT_BARBARIAN_TH",
+                "info": "TID_BUILDING_VARIANT_BARBARIAN_TH_INFO"
+              },
+              "required_troop": null
+            },
+            {
+              "_id": 119000001,
+              "name": "Archer Hall",
+              "info": "A perfect pad for pink-haired snipers! Arrows may find those who visit.",
+              "TID": {
+                "name": "TID_BUILDING_VARIANT_ARCHER_TH",
+                "info": "TID_BUILDING_VARIANT_ARCHER_TH_INFO"
+              },
+              "required_troop": {
+                "_id": 4000001,
+                "level": 15
+              }
+            },
+            {
+              "_id": 119000000,
+              "name": "Wizard Hall",
+              "info": "A furnished crib brimming with knowledge. Guests may receive fireballs.",
+              "TID": {
+                "name": "TID_BUILDING_VARIANT_WIZARD_TH",
+                "info": "TID_BUILDING_VARIANT_WIZARD_TH_INFO"
+              },
+              "required_troop": {
+                "_id": 4000006,
+                "level": 15
+              }
+            }
+          ],
+          "unlocks": [
+            {
+              "name": "Wall",
+              "_id": 1000010,
+              "quantity": 25
+            },
+            {
+              "name": "Air Defense",
+              "_id": 1000012,
+              "quantity": 1
+            },
+            {
+              "name": "Spring Trap",
+              "_id": 12000001,
+              "quantity": 1
+            },
+            {
+              "name": "Crafting Station",
+              "_id": 1000097,
+              "quantity": 1
+            },
+            {
+              "name": "Guardian Shrine",
+              "_id": 1000105,
+              "quantity": 1
+            },
+            {
+              "name": "Spiky Tower",
+              "_id": 1000107,
+              "quantity": 2
+            },
+            {
+              "name": "Firecracker Tower",
+              "_id": 1000108,
               "quantity": 2
             }
           ]
@@ -1131,7 +1191,7 @@
       "village": "home",
       "width": 3,
       "hitbox_width": 2,
-      "superchargeable": true,
+      "superchargeable": false,
       "levels": [
         {
           "level": 1,
@@ -1263,38 +1323,19 @@
         },
         {
           "level": 17,
-          "build_cost": 8000000,
+          "build_cost": 4200000,
           "build_time": 172800,
           "required_townhall": 16,
           "hitpoints": 1400,
-          "dps": 0,
-          "supercharge": {
-            "upgrade_resource": "Gold",
-            "required_townhall": 18,
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 1700000,
-                "build_time": 172800,
-                "hitpoints_buff": 0,
-                "dps_buff": 0
-              },
-              {
-                "level": 2,
-                "build_cost": 1500000,
-                "build_time": 259200,
-                "hitpoints_buff": 0,
-                "dps_buff": 0
-              },
-              {
-                "level": 3,
-                "build_cost": 1300000,
-                "build_time": 345600,
-                "hitpoints_buff": 50,
-                "dps_buff": 0
-              }
-            ]
-          }
+          "dps": 0
+        },
+        {
+          "level": 18,
+          "build_cost": 8500000,
+          "build_time": 259200,
+          "required_townhall": 18,
+          "hitpoints": 1450,
+          "dps": 0
         }
       ]
     },
@@ -1451,18 +1492,26 @@
         },
         {
           "level": 18,
-          "build_cost": 10000000,
-          "build_time": 432000,
+          "build_cost": 8500000,
+          "build_time": 367200,
           "required_townhall": 17,
           "hitpoints": 4200,
           "dps": 0
         },
         {
           "level": 19,
-          "build_cost": 18000000,
-          "build_time": 1080000,
+          "build_cost": 12500000,
+          "build_time": 648000,
           "required_townhall": 18,
           "hitpoints": 4300,
+          "dps": 0
+        },
+        {
+          "level": 20,
+          "build_cost": 18000000,
+          "build_time": 950400,
+          "required_townhall": 19,
+          "hitpoints": 4400,
           "dps": 0
         }
       ]
@@ -1480,7 +1529,7 @@
       "village": "home",
       "width": 3,
       "hitbox_width": 2,
-      "superchargeable": true,
+      "superchargeable": false,
       "levels": [
         {
           "level": 1,
@@ -1612,38 +1661,19 @@
         },
         {
           "level": 17,
-          "build_cost": 8000000,
+          "build_cost": 4200000,
           "build_time": 172800,
           "required_townhall": 16,
           "hitpoints": 1400,
-          "dps": 0,
-          "supercharge": {
-            "upgrade_resource": "Elixir",
-            "required_townhall": 18,
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 1700000,
-                "build_time": 172800,
-                "hitpoints_buff": 0,
-                "dps_buff": 0
-              },
-              {
-                "level": 2,
-                "build_cost": 1500000,
-                "build_time": 259200,
-                "hitpoints_buff": 0,
-                "dps_buff": 0
-              },
-              {
-                "level": 3,
-                "build_cost": 1300000,
-                "build_time": 345600,
-                "hitpoints_buff": 50,
-                "dps_buff": 0
-              }
-            ]
-          }
+          "dps": 0
+        },
+        {
+          "level": 18,
+          "build_cost": 8500000,
+          "build_time": 259200,
+          "required_townhall": 18,
+          "hitpoints": 1450,
+          "dps": 0
         }
       ]
     },
@@ -1800,18 +1830,26 @@
         },
         {
           "level": 18,
-          "build_cost": 10000000,
-          "build_time": 432000,
+          "build_cost": 8500000,
+          "build_time": 367200,
           "required_townhall": 17,
           "hitpoints": 4200,
           "dps": 0
         },
         {
           "level": 19,
-          "build_cost": 18000000,
-          "build_time": 1080000,
+          "build_cost": 12500000,
+          "build_time": 648000,
           "required_townhall": 18,
           "hitpoints": 4300,
+          "dps": 0
+        },
+        {
+          "level": 20,
+          "build_cost": 18000000,
+          "build_time": 950400,
+          "required_townhall": 19,
+          "hitpoints": 4400,
           "dps": 0
         }
       ]
@@ -1929,7 +1967,7 @@
         },
         {
           "level": 13,
-          "build_cost": 6000000,
+          "build_cost": 5500000,
           "build_time": 432000,
           "required_townhall": 11,
           "hitpoints": 980,
@@ -1977,7 +2015,7 @@
         },
         {
           "level": 19,
-          "build_cost": 26000000,
+          "build_cost": 18000000,
           "build_time": 907200,
           "required_townhall": 17,
           "hitpoints": 1520,
@@ -2114,7 +2152,7 @@
         },
         {
           "level": 15,
-          "build_cost": 18000000,
+          "build_cost": 17000000,
           "build_time": 864000,
           "required_townhall": 17,
           "hitpoints": 1450,
@@ -2122,10 +2160,18 @@
         },
         {
           "level": 16,
-          "build_cost": 27000000,
-          "build_time": 1382400,
+          "build_cost": 25000000,
+          "build_time": 1166400,
           "required_townhall": 18,
           "hitpoints": 1500,
+          "dps": 0
+        },
+        {
+          "level": 17,
+          "build_cost": 30500000,
+          "build_time": 1296000,
+          "required_townhall": 19,
+          "hitpoints": 1550,
           "dps": 0
         }
       ]
@@ -3043,7 +3089,7 @@
         },
         {
           "level": 18,
-          "build_cost": 7000000,
+          "build_cost": 6000000,
           "build_time": 0,
           "required_townhall": 17,
           "hitpoints": 13000,
@@ -3053,12 +3099,22 @@
         },
         {
           "level": 19,
-          "build_cost": 10000000,
+          "build_cost": 8000000,
           "build_time": 0,
           "required_townhall": 18,
           "hitpoints": 14000,
           "dps": 0,
           "strength_weight": 66,
+          "alt_upgrade_resource": "Elixir"
+        },
+        {
+          "level": 20,
+          "build_cost": 10000000,
+          "build_time": 0,
+          "required_townhall": 19,
+          "hitpoints": 15000,
+          "dps": 0,
+          "strength_weight": 70,
           "alt_upgrade_resource": "Elixir"
         }
       ]
@@ -3192,7 +3248,7 @@
         },
         {
           "level": 11,
-          "build_cost": 2500000,
+          "build_cost": 2100000,
           "build_time": 129600,
           "required_townhall": 12,
           "hitpoints": 2120,
@@ -3214,7 +3270,7 @@
         },
         {
           "level": 13,
-          "build_cost": 3000000,
+          "build_cost": 2800000,
           "build_time": 172800,
           "required_townhall": 13,
           "hitpoints": 2500,
@@ -3225,8 +3281,8 @@
         },
         {
           "level": 14,
-          "build_cost": 4500000,
-          "build_time": 259200,
+          "build_cost": 3800000,
+          "build_time": 216000,
           "required_townhall": 14,
           "hitpoints": 2800,
           "dps": 90,
@@ -3258,8 +3314,8 @@
         },
         {
           "level": 17,
-          "build_cost": 14000000,
-          "build_time": 475200,
+          "build_cost": 12000000,
+          "build_time": 432000,
           "required_townhall": 17,
           "hitpoints": 3300,
           "dps": 110,
@@ -3282,7 +3338,7 @@
       "village": "home",
       "width": 3,
       "hitbox_width": 2,
-      "superchargeable": true,
+      "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": false,
       "levels": [
@@ -3387,8 +3443,8 @@
         },
         {
           "level": 10,
-          "build_cost": 5000000,
-          "build_time": 345600,
+          "build_cost": 3800000,
+          "build_time": 280800,
           "required_townhall": 12,
           "hitpoints": 1400,
           "dps": 400,
@@ -3398,8 +3454,8 @@
         },
         {
           "level": 11,
-          "build_cost": 5600000,
-          "build_time": 388800,
+          "build_cost": 4000000,
+          "build_time": 302400,
           "required_townhall": 13,
           "hitpoints": 1500,
           "dps": 440,
@@ -3409,8 +3465,8 @@
         },
         {
           "level": 12,
-          "build_cost": 6500000,
-          "build_time": 432000,
+          "build_cost": 5000000,
+          "build_time": 345600,
           "required_townhall": 14,
           "hitpoints": 1650,
           "dps": 500,
@@ -3421,7 +3477,7 @@
         {
           "level": 13,
           "build_cost": 8000000,
-          "build_time": 518400,
+          "build_time": 432000,
           "required_townhall": 15,
           "hitpoints": 1750,
           "dps": 540,
@@ -3431,8 +3487,8 @@
         },
         {
           "level": 14,
-          "build_cost": 9000000,
-          "build_time": 561600,
+          "build_cost": 8500000,
+          "build_time": 475200,
           "required_townhall": 16,
           "hitpoints": 1850,
           "dps": 600,
@@ -3442,7 +3498,7 @@
         },
         {
           "level": 15,
-          "build_cost": 15000000,
+          "build_cost": 13500000,
           "build_time": 604800,
           "required_townhall": 17,
           "hitpoints": 1950,
@@ -3453,34 +3509,25 @@
         },
         {
           "level": 16,
-          "build_cost": 26000000,
-          "build_time": 1144800,
+          "build_cost": 18500000,
+          "build_time": 864000,
           "required_townhall": 18,
-          "hitpoints": 2000,
+          "hitpoints": 2050,
           "dps": 700,
           "attack_speed": 1000,
           "attack_range": 1000,
-          "strength_weight": 3900,
-          "supercharge": {
-            "upgrade_resource": "Gold",
-            "required_townhall": 18,
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 6000000,
-                "build_time": 237600,
-                "hitpoints_buff": 0,
-                "dps_buff": 20
-              },
-              {
-                "level": 2,
-                "build_cost": 3000000,
-                "build_time": 367200,
-                "hitpoints_buff": 0,
-                "dps_buff": 40
-              }
-            ]
-          }
+          "strength_weight": 3900
+        },
+        {
+          "level": 17,
+          "build_cost": 28500000,
+          "build_time": 1209600,
+          "required_townhall": 19,
+          "hitpoints": 2150,
+          "dps": 790,
+          "attack_speed": 1000,
+          "attack_range": 1000,
+          "strength_weight": 4250
         }
       ]
     },
@@ -3688,7 +3735,7 @@
         },
         {
           "level": 11,
-          "build_cost": 2300000,
+          "build_cost": 2000000,
           "build_time": 108000,
           "required_townhall": 12,
           "hitpoints": 1300,
@@ -3706,7 +3753,7 @@
         },
         {
           "level": 12,
-          "build_cost": 2400000,
+          "build_cost": 2200000,
           "build_time": 129600,
           "required_townhall": 12,
           "hitpoints": 1500,
@@ -3742,8 +3789,8 @@
         },
         {
           "level": 14,
-          "build_cost": 4300000,
-          "build_time": 216000,
+          "build_cost": 3400000,
+          "build_time": 194400,
           "required_townhall": 14,
           "hitpoints": 1950,
           "dps": 48,
@@ -3796,8 +3843,8 @@
         },
         {
           "level": 17,
-          "build_cost": 13000000,
-          "build_time": 432000,
+          "build_cost": 8500000,
+          "build_time": 367200,
           "required_townhall": 17,
           "hitpoints": 2450,
           "dps": 66,
@@ -3814,8 +3861,8 @@
         },
         {
           "level": 18,
-          "build_cost": 21000000,
-          "build_time": 1080000,
+          "build_cost": 15500000,
+          "build_time": 734400,
           "required_townhall": 18,
           "hitpoints": 2550,
           "dps": 72,
@@ -3994,7 +4041,7 @@
         },
         {
           "level": 13,
-          "build_cost": 19000000,
+          "build_cost": 17500000,
           "build_time": 864000,
           "required_townhall": 17,
           "hitpoints": 5800,
@@ -4004,13 +4051,23 @@
         },
         {
           "level": 14,
-          "build_cost": 28000000,
-          "build_time": 1209600,
+          "build_cost": 25500000,
+          "build_time": 1123200,
           "required_townhall": 18,
           "hitpoints": 6000,
           "dps": 0,
           "attack_range": 1300,
           "strength_weight": 8400
+        },
+        {
+          "level": 15,
+          "build_cost": 31500000,
+          "build_time": 1382400,
+          "required_townhall": 19,
+          "hitpoints": 6200,
+          "dps": 0,
+          "attack_range": 1300,
+          "strength_weight": 9000
         }
       ]
     },
@@ -4027,7 +4084,7 @@
       "village": "home",
       "width": 2,
       "hitbox_width": 1,
-      "superchargeable": true,
+      "superchargeable": false,
       "levels": [
         {
           "level": 1,
@@ -4051,8 +4108,8 @@
         },
         {
           "level": 3,
-          "build_cost": 4000000,
-          "build_time": 259200,
+          "build_cost": 3400000,
+          "build_time": 216000,
           "required_townhall": 14,
           "hitpoints": 1300,
           "dps": 100,
@@ -4062,8 +4119,8 @@
         },
         {
           "level": 4,
-          "build_cost": 6000000,
-          "build_time": 345600,
+          "build_cost": 5000000,
+          "build_time": 302400,
           "required_townhall": 14,
           "hitpoints": 1600,
           "dps": 120,
@@ -4073,8 +4130,8 @@
         },
         {
           "level": 5,
-          "build_cost": 7000000,
-          "build_time": 432000,
+          "build_cost": 5500000,
+          "build_time": 345600,
           "required_townhall": 15,
           "hitpoints": 1800,
           "dps": 135,
@@ -4084,8 +4141,8 @@
         },
         {
           "level": 6,
-          "build_cost": 8000000,
-          "build_time": 475200,
+          "build_cost": 7000000,
+          "build_time": 388800,
           "required_townhall": 16,
           "hitpoints": 1900,
           "dps": 150,
@@ -4095,7 +4152,7 @@
         },
         {
           "level": 7,
-          "build_cost": 15500000,
+          "build_cost": 13500000,
           "build_time": 604800,
           "required_townhall": 17,
           "hitpoints": 2000,
@@ -4106,34 +4163,25 @@
         },
         {
           "level": 8,
-          "build_cost": 24000000,
-          "build_time": 1123200,
+          "build_cost": 20000000,
+          "build_time": 950400,
           "required_townhall": 18,
           "hitpoints": 2100,
           "dps": 180,
           "attack_speed": 400,
           "attack_range": 700,
-          "strength_weight": 9000,
-          "supercharge": {
-            "upgrade_resource": "Gold",
-            "required_townhall": 17,
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 10000000,
-                "build_time": 345600,
-                "hitpoints_buff": 0,
-                "dps_buff": 7
-              },
-              {
-                "level": 2,
-                "build_cost": 8000000,
-                "build_time": 518400,
-                "hitpoints_buff": 50,
-                "dps_buff": 0
-              }
-            ]
-          }
+          "strength_weight": 9000
+        },
+        {
+          "level": 9,
+          "build_cost": 26000000,
+          "build_time": 1209600,
+          "required_townhall": 19,
+          "hitpoints": 2200,
+          "dps": 195,
+          "attack_speed": 400,
+          "attack_range": 700,
+          "strength_weight": 9500
         }
       ]
     },
@@ -4150,7 +4198,7 @@
       "village": "home",
       "width": 2,
       "hitbox_width": 1,
-      "superchargeable": true,
+      "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": true,
       "levels": [
@@ -4255,7 +4303,7 @@
         },
         {
           "level": 10,
-          "build_cost": 3000000,
+          "build_cost": 2500000,
           "build_time": 172800,
           "required_townhall": 12,
           "hitpoints": 980,
@@ -4266,8 +4314,8 @@
         },
         {
           "level": 11,
-          "build_cost": 3100000,
-          "build_time": 216000,
+          "build_cost": 2800000,
+          "build_time": 194400,
           "required_townhall": 13,
           "hitpoints": 1100,
           "dps": 130,
@@ -4277,8 +4325,8 @@
         },
         {
           "level": 12,
-          "build_cost": 3700000,
-          "build_time": 259200,
+          "build_cost": 3000000,
+          "build_time": 216000,
           "required_townhall": 13,
           "hitpoints": 1200,
           "dps": 140,
@@ -4288,8 +4336,8 @@
         },
         {
           "level": 13,
-          "build_cost": 5100000,
-          "build_time": 302400,
+          "build_cost": 4400000,
+          "build_time": 259200,
           "required_townhall": 14,
           "hitpoints": 1350,
           "dps": 150,
@@ -4310,8 +4358,8 @@
         },
         {
           "level": 15,
-          "build_cost": 8200000,
-          "build_time": 432000,
+          "build_cost": 7000000,
+          "build_time": 367200,
           "required_townhall": 16,
           "hitpoints": 1550,
           "dps": 170,
@@ -4321,7 +4369,7 @@
         },
         {
           "level": 16,
-          "build_cost": 15000000,
+          "build_cost": 13500000,
           "build_time": 604800,
           "required_townhall": 17,
           "hitpoints": 1650,
@@ -4332,34 +4380,25 @@
         },
         {
           "level": 17,
-          "build_cost": 25000000,
-          "build_time": 1123200,
+          "build_cost": 16500000,
+          "build_time": 777600,
           "required_townhall": 18,
           "hitpoints": 1750,
           "dps": 190,
           "attack_speed": 600,
           "attack_range": 700,
-          "strength_weight": 2300,
-          "supercharge": {
-            "upgrade_resource": "Gold",
-            "required_townhall": 18,
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 12000000,
-                "build_time": 388800,
-                "hitpoints_buff": 0,
-                "dps_buff": 5
-              },
-              {
-                "level": 2,
-                "build_cost": 8000000,
-                "build_time": 561600,
-                "hitpoints_buff": 50,
-                "dps_buff": 0
-              }
-            ]
-          }
+          "strength_weight": 2300
+        },
+        {
+          "level": 18,
+          "build_cost": 27500000,
+          "build_time": 1209600,
+          "required_townhall": 19,
+          "hitpoints": 1950,
+          "dps": 210,
+          "attack_speed": 600,
+          "attack_range": 700,
+          "strength_weight": 2400
         }
       ]
     },
@@ -4444,10 +4483,18 @@
         },
         {
           "level": 9,
-          "build_cost": 24000000,
+          "build_cost": 16000000,
           "build_time": 777600,
           "required_townhall": 16,
           "hitpoints": 1150,
+          "dps": 0
+        },
+        {
+          "level": 10,
+          "build_cost": 18500000,
+          "build_time": 907200,
+          "required_townhall": 17,
+          "hitpoints": 1220,
           "dps": 0
         }
       ]
@@ -4465,7 +4512,7 @@
       "village": "home",
       "width": 3,
       "hitbox_width": 2,
-      "superchargeable": true,
+      "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": true,
       "alt": {
@@ -4556,8 +4603,8 @@
         },
         {
           "level": 6,
-          "build_cost": 5000000,
-          "build_time": 302400,
+          "build_cost": 4300000,
+          "build_time": 280800,
           "required_townhall": 12,
           "hitpoints": 3400,
           "dps": 110,
@@ -4572,8 +4619,8 @@
         },
         {
           "level": 7,
-          "build_cost": 6000000,
-          "build_time": 345600,
+          "build_cost": 4600000,
+          "build_time": 302400,
           "required_townhall": 13,
           "hitpoints": 3700,
           "dps": 130,
@@ -4588,8 +4635,8 @@
         },
         {
           "level": 8,
-          "build_cost": 7000000,
-          "build_time": 388800,
+          "build_cost": 5500000,
+          "build_time": 324000,
           "required_townhall": 13,
           "hitpoints": 4000,
           "dps": 155,
@@ -4604,8 +4651,8 @@
         },
         {
           "level": 9,
-          "build_cost": 9000000,
-          "build_time": 432000,
+          "build_cost": 7000000,
+          "build_time": 345600,
           "required_townhall": 14,
           "hitpoints": 4200,
           "dps": 185,
@@ -4620,8 +4667,8 @@
         },
         {
           "level": 10,
-          "build_cost": 9500000,
-          "build_time": 475200,
+          "build_cost": 8000000,
+          "build_time": 388800,
           "required_townhall": 15,
           "hitpoints": 4400,
           "dps": 205,
@@ -4636,8 +4683,8 @@
         },
         {
           "level": 11,
-          "build_cost": 10000000,
-          "build_time": 518400,
+          "build_cost": 8500000,
+          "build_time": 432000,
           "required_townhall": 16,
           "hitpoints": 4600,
           "dps": 225,
@@ -4652,8 +4699,8 @@
         },
         {
           "level": 12,
-          "build_cost": 16000000,
-          "build_time": 691200,
+          "build_cost": 13000000,
+          "build_time": 604800,
           "required_townhall": 17,
           "hitpoints": 4800,
           "dps": 235,
@@ -4668,8 +4715,8 @@
         },
         {
           "level": 13,
-          "build_cost": 26000000,
-          "build_time": 1166400,
+          "build_cost": 18500000,
+          "build_time": 864000,
           "required_townhall": 18,
           "hitpoints": 5000,
           "dps": 245,
@@ -4680,27 +4727,23 @@
             "attack_speed": 128,
             "attack_range": 1150
           },
-          "strength_weight": 11800,
-          "supercharge": {
-            "upgrade_resource": "Gold",
-            "required_townhall": 18,
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 14000000,
-                "build_time": 475200,
-                "hitpoints_buff": 0,
-                "dps_buff": 10
-              },
-              {
-                "level": 2,
-                "build_cost": 9000000,
-                "build_time": 648000,
-                "hitpoints_buff": 100,
-                "dps_buff": 0
-              }
-            ]
-          }
+          "strength_weight": 11800
+        },
+        {
+          "level": 14,
+          "build_cost": 28000000,
+          "build_time": 1209600,
+          "required_townhall": 19,
+          "hitpoints": 5450,
+          "dps": 270,
+          "attack_speed": 128,
+          "attack_range": 1400,
+          "alt": {
+            "dps": 270,
+            "attack_speed": 128,
+            "attack_range": 1150
+          },
+          "strength_weight": 12600
         }
       ]
     },
@@ -4717,7 +4760,7 @@
       "village": "home",
       "width": 3,
       "hitbox_width": 2,
-      "superchargeable": true,
+      "superchargeable": false,
       "levels": [
         {
           "level": 1,
@@ -4785,54 +4828,35 @@
         },
         {
           "level": 9,
-          "build_cost": 3700000,
-          "build_time": 216000,
+          "build_cost": 3000000,
+          "build_time": 194400,
           "required_townhall": 12,
           "hitpoints": 1480,
           "dps": 0
         },
         {
           "level": 10,
-          "build_cost": 5300000,
-          "build_time": 259200,
+          "build_cost": 4400000,
+          "build_time": 216000,
           "required_townhall": 14,
           "hitpoints": 1550,
           "dps": 0
         },
         {
           "level": 11,
-          "build_cost": 12000000,
-          "build_time": 518400,
+          "build_cost": 8000000,
+          "build_time": 432000,
           "required_townhall": 16,
           "hitpoints": 1600,
-          "dps": 0,
-          "supercharge": {
-            "upgrade_resource": "Elixir",
-            "required_townhall": 18,
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 5100000,
-                "build_time": 259200,
-                "hitpoints_buff": 0,
-                "dps_buff": 0
-              },
-              {
-                "level": 2,
-                "build_cost": 4500000,
-                "build_time": 345600,
-                "hitpoints_buff": 0,
-                "dps_buff": 0
-              },
-              {
-                "level": 3,
-                "build_cost": 3900000,
-                "build_time": 432000,
-                "hitpoints_buff": 50,
-                "dps_buff": 0
-              }
-            ]
-          }
+          "dps": 0
+        },
+        {
+          "level": 12,
+          "build_cost": 12500000,
+          "build_time": 561600,
+          "required_townhall": 18,
+          "hitpoints": 1650,
+          "dps": 0
         }
       ]
     },
@@ -4901,47 +4925,47 @@
         },
         {
           "level": 7,
-          "build_cost": 3800000,
-          "build_time": 259200,
+          "build_cost": 3200000,
+          "build_time": 216000,
           "required_townhall": 12,
           "hitpoints": 3500,
           "dps": 0
         },
         {
           "level": 8,
-          "build_cost": 5400000,
-          "build_time": 302400,
+          "build_cost": 3800000,
+          "build_time": 237600,
           "required_townhall": 13,
           "hitpoints": 3800,
           "dps": 0
         },
         {
           "level": 9,
-          "build_cost": 6600000,
-          "build_time": 345600,
+          "build_cost": 4800000,
+          "build_time": 302400,
           "required_townhall": 14,
           "hitpoints": 4100,
           "dps": 0
         },
         {
           "level": 10,
-          "build_cost": 8000000,
-          "build_time": 388800,
+          "build_cost": 6000000,
+          "build_time": 324000,
           "required_townhall": 15,
           "hitpoints": 4300,
           "dps": 0
         },
         {
           "level": 11,
-          "build_cost": 10000000,
-          "build_time": 432000,
+          "build_cost": 8000000,
+          "build_time": 345600,
           "required_townhall": 16,
           "hitpoints": 4500,
           "dps": 0
         },
         {
           "level": 12,
-          "build_cost": 16000000,
+          "build_cost": 15000000,
           "build_time": 604800,
           "required_townhall": 17,
           "hitpoints": 4700,
@@ -4949,10 +4973,18 @@
         },
         {
           "level": 13,
-          "build_cost": 25000000,
-          "build_time": 1123200,
+          "build_cost": 20000000,
+          "build_time": 864000,
           "required_townhall": 18,
           "hitpoints": 4800,
+          "dps": 0
+        },
+        {
+          "level": 14,
+          "build_cost": 24000000,
+          "build_time": 1123200,
+          "required_townhall": 19,
+          "hitpoints": 4900,
           "dps": 0
         }
       ]
@@ -5030,7 +5062,7 @@
         },
         {
           "level": 8,
-          "build_cost": 7000000,
+          "build_cost": 6000000,
           "build_time": 518400,
           "required_townhall": 11,
           "hitpoints": 850,
@@ -5062,7 +5094,7 @@
         },
         {
           "level": 12,
-          "build_cost": 20000000,
+          "build_cost": 14000000,
           "build_time": 777600,
           "required_townhall": 15,
           "hitpoints": 1050,
@@ -5070,7 +5102,7 @@
         },
         {
           "level": 13,
-          "build_cost": 23000000,
+          "build_cost": 15500000,
           "build_time": 864000,
           "required_townhall": 16,
           "hitpoints": 1100,
@@ -5182,8 +5214,8 @@
         },
         {
           "level": 6,
-          "build_cost": 6000000,
-          "build_time": 345600,
+          "build_cost": 4500000,
+          "build_time": 280800,
           "required_townhall": 12,
           "hitpoints": 3000,
           "dps": 55,
@@ -5198,8 +5230,8 @@
         },
         {
           "level": 7,
-          "build_cost": 8000000,
-          "build_time": 432000,
+          "build_cost": 5500000,
+          "build_time": 302400,
           "required_townhall": 13,
           "hitpoints": 3300,
           "dps": 65,
@@ -5214,8 +5246,8 @@
         },
         {
           "level": 8,
-          "build_cost": 9500000,
-          "build_time": 518400,
+          "build_cost": 8000000,
+          "build_time": 432000,
           "required_townhall": 14,
           "hitpoints": 3700,
           "dps": 80,
@@ -5230,8 +5262,8 @@
         },
         {
           "level": 9,
-          "build_cost": 10000000,
-          "build_time": 561600,
+          "build_cost": 8500000,
+          "build_time": 475200,
           "required_townhall": 15,
           "hitpoints": 4000,
           "dps": 100,
@@ -5262,8 +5294,8 @@
         },
         {
           "level": 11,
-          "build_cost": 16000000,
-          "build_time": 691200,
+          "build_cost": 13500000,
+          "build_time": 626400,
           "required_townhall": 17,
           "hitpoints": 4800,
           "dps": 140,
@@ -5278,8 +5310,8 @@
         },
         {
           "level": 12,
-          "build_cost": 26500000,
-          "build_time": 1166400,
+          "build_cost": 20000000,
+          "build_time": 907200,
           "required_townhall": 18,
           "hitpoints": 5100,
           "dps": 155,
@@ -5537,7 +5569,7 @@
         {
           "level": 3,
           "build_cost": 9000000,
-          "build_time": 604800,
+          "build_time": 518400,
           "required_townhall": 12,
           "hitpoints": 4800,
           "damage": 30,
@@ -5549,7 +5581,7 @@
         {
           "level": 4,
           "build_cost": 10000000,
-          "build_time": 648000,
+          "build_time": 561600,
           "required_townhall": 13,
           "hitpoints": 5200,
           "damage": 35,
@@ -5561,7 +5593,7 @@
         {
           "level": 5,
           "build_cost": 12000000,
-          "build_time": 691200,
+          "build_time": 604800,
           "required_townhall": 14,
           "hitpoints": 5600,
           "damage": 40,
@@ -5573,7 +5605,7 @@
         {
           "level": 6,
           "build_cost": 13000000,
-          "build_time": 777600,
+          "build_time": 691200,
           "required_townhall": 15,
           "hitpoints": 5900,
           "damage": 45,
@@ -5585,7 +5617,7 @@
         {
           "level": 7,
           "build_cost": 14000000,
-          "build_time": 820800,
+          "build_time": 777600,
           "required_townhall": 16,
           "hitpoints": 6200,
           "damage": 50,
@@ -5681,8 +5713,8 @@
         },
         {
           "level": 7,
-          "build_cost": 4000000,
-          "build_time": 259200,
+          "build_cost": 3300000,
+          "build_time": 216000,
           "required_townhall": 12,
           "hitpoints": 1600,
           "dps": 64,
@@ -5692,8 +5724,8 @@
         },
         {
           "level": 8,
-          "build_cost": 5000000,
-          "build_time": 302400,
+          "build_cost": 3600000,
+          "build_time": 237600,
           "required_townhall": 13,
           "hitpoints": 1900,
           "dps": 72,
@@ -5703,8 +5735,8 @@
         },
         {
           "level": 9,
-          "build_cost": 6000000,
-          "build_time": 345600,
+          "build_cost": 5000000,
+          "build_time": 302400,
           "required_townhall": 14,
           "hitpoints": 2300,
           "dps": 84,
@@ -5714,8 +5746,8 @@
         },
         {
           "level": 10,
-          "build_cost": 7000000,
-          "build_time": 388800,
+          "build_cost": 5500000,
+          "build_time": 324000,
           "required_townhall": 15,
           "hitpoints": 2500,
           "dps": 94,
@@ -5725,8 +5757,8 @@
         },
         {
           "level": 11,
-          "build_cost": 8500000,
-          "build_time": 432000,
+          "build_cost": 7000000,
+          "build_time": 345600,
           "required_townhall": 16,
           "hitpoints": 2700,
           "dps": 104,
@@ -5736,7 +5768,7 @@
         },
         {
           "level": 12,
-          "build_cost": 14500000,
+          "build_cost": 13500000,
           "build_time": 604800,
           "required_townhall": 17,
           "hitpoints": 2900,
@@ -5747,8 +5779,8 @@
         },
         {
           "level": 13,
-          "build_cost": 25000000,
-          "build_time": 1123200,
+          "build_cost": 16500000,
+          "build_time": 777600,
           "required_townhall": 18,
           "hitpoints": 3050,
           "dps": 122,
@@ -8888,48 +8920,48 @@
         },
         {
           "level": 2,
-          "build_cost": 3700000,
-          "build_time": 259200,
+          "build_cost": 3100000,
+          "build_time": 216000,
           "required_townhall": 12,
           "hitpoints": 1100,
           "dps": 0
         },
         {
           "level": 3,
-          "build_cost": 5000000,
-          "build_time": 302400,
+          "build_cost": 3600000,
+          "build_time": 237600,
           "required_townhall": 12,
           "hitpoints": 1200,
           "dps": 0
         },
         {
           "level": 4,
-          "build_cost": 8700000,
-          "build_time": 345600,
+          "build_cost": 6500000,
+          "build_time": 259200,
           "required_townhall": 13,
           "hitpoints": 1300,
           "dps": 0
         },
         {
           "level": 5,
-          "build_cost": 9000000,
-          "build_time": 432000,
+          "build_cost": 8000000,
+          "build_time": 388800,
           "required_townhall": 13,
           "hitpoints": 1400,
           "dps": 0
         },
         {
           "level": 6,
-          "build_cost": 10000000,
-          "build_time": 475200,
+          "build_cost": 8500000,
+          "build_time": 410400,
           "required_townhall": 14,
           "hitpoints": 1500,
           "dps": 0
         },
         {
           "level": 7,
-          "build_cost": 11000000,
-          "build_time": 518400,
+          "build_cost": 9500000,
+          "build_time": 432000,
           "required_townhall": 15,
           "hitpoints": 1600,
           "dps": 0
@@ -8944,8 +8976,8 @@
         },
         {
           "level": 9,
-          "build_cost": 26000000,
-          "build_time": 1166400,
+          "build_cost": 18500000,
+          "build_time": 907200,
           "required_townhall": 17,
           "hitpoints": 1800,
           "dps": 0
@@ -9243,7 +9275,7 @@
         },
         {
           "level": 6,
-          "build_cost": 16500000,
+          "build_cost": 15500000,
           "build_time": 777600,
           "required_townhall": 17,
           "hitpoints": 5600,
@@ -9255,8 +9287,8 @@
         },
         {
           "level": 7,
-          "build_cost": 26500000,
-          "build_time": 1296000,
+          "build_cost": 19500000,
+          "build_time": 907200,
           "required_townhall": 18,
           "hitpoints": 5800,
           "dps": 190,
@@ -9384,7 +9416,7 @@
         },
         {
           "level": 11,
-          "build_cost": 16500000,
+          "build_cost": 15000000,
           "build_time": 691200,
           "required_townhall": 17,
           "hitpoints": 1350,
@@ -9392,8 +9424,8 @@
         },
         {
           "level": 12,
-          "build_cost": 25500000,
-          "build_time": 1166400,
+          "build_cost": 23000000,
+          "build_time": 1080000,
           "required_townhall": 18,
           "hitpoints": 1400,
           "dps": 0
@@ -9489,7 +9521,7 @@
         },
         {
           "level": 10,
-          "build_cost": 18000000,
+          "build_cost": 17000000,
           "build_time": 864000,
           "required_townhall": 17,
           "hitpoints": 1600,
@@ -9594,7 +9626,7 @@
         },
         {
           "level": 11,
-          "build_cost": 17000000,
+          "build_cost": 15500000,
           "build_time": 777600,
           "required_townhall": 17,
           "hitpoints": 5800,
@@ -9602,10 +9634,18 @@
         },
         {
           "level": 12,
-          "build_cost": 26000000,
-          "build_time": 1166400,
+          "build_cost": 23500000,
+          "build_time": 1080000,
           "required_townhall": 18,
           "hitpoints": 6000,
+          "dps": 0
+        },
+        {
+          "level": 13,
+          "build_cost": 30500000,
+          "build_time": 1339200,
+          "required_townhall": 19,
+          "hitpoints": 6200,
           "dps": 0
         }
       ]
@@ -9642,7 +9682,7 @@
         {
           "level": 2,
           "build_cost": 11000000,
-          "build_time": 691200,
+          "build_time": 648000,
           "required_townhall": 15,
           "hitpoints": 2800,
           "name": "Poison",
@@ -9656,7 +9696,7 @@
         {
           "level": 3,
           "build_cost": 12000000,
-          "build_time": 734400,
+          "build_time": 691200,
           "required_townhall": 15,
           "hitpoints": 3100,
           "name": "Invisibility",
@@ -9669,7 +9709,7 @@
         },
         {
           "level": 4,
-          "build_cost": 27000000,
+          "build_cost": 17000000,
           "build_time": 864000,
           "required_townhall": 17,
           "hitpoints": 3200,
@@ -9746,8 +9786,8 @@
         },
         {
           "level": 5,
-          "build_cost": 470000,
-          "build_time": 1296000,
+          "build_cost": 405000,
+          "build_time": 1036800,
           "required_townhall": 18,
           "hitpoints": 5959,
           "dps": 225,
@@ -9887,7 +9927,7 @@
       "village": "home",
       "width": 3,
       "hitbox_width": 2,
-      "superchargeable": true,
+      "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": true,
       "alt": {
@@ -9944,8 +9984,8 @@
         },
         {
           "level": 3,
-          "build_cost": 28000000,
-          "build_time": 1209600,
+          "build_cost": 23500000,
+          "build_time": 950400,
           "required_townhall": 18,
           "hitpoints": 4350,
           "dps": 390,
@@ -9956,27 +9996,23 @@
             "attack_speed": 350,
             "attack_range": 800
           },
-          "strength_weight": 18000,
-          "supercharge": {
-            "upgrade_resource": "Gold",
-            "required_townhall": 18,
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 12000000,
-                "build_time": 518400,
-                "hitpoints_buff": 0,
-                "dps_buff": 10
-              },
-              {
-                "level": 2,
-                "build_cost": 10000000,
-                "build_time": 604800,
-                "hitpoints_buff": 150,
-                "dps_buff": 0
-              }
-            ]
-          }
+          "strength_weight": 18000
+        },
+        {
+          "level": 4,
+          "build_cost": 30000000,
+          "build_time": 1252800,
+          "required_townhall": 19,
+          "hitpoints": 4700,
+          "dps": 430,
+          "attack_speed": 1000,
+          "attack_range": 1200,
+          "alt": {
+            "dps": 770,
+            "attack_speed": 350,
+            "attack_range": 800
+          },
+          "strength_weight": 19000
         }
       ]
     },
@@ -10200,7 +10236,7 @@
       "village": "home",
       "width": 3,
       "hitbox_width": 2,
-      "superchargeable": true,
+      "superchargeable": false,
       "is_air_targeting": true,
       "is_ground_targeting": true,
       "levels": [
@@ -10253,34 +10289,25 @@
         },
         {
           "level": 4,
-          "build_cost": 27000000,
-          "build_time": 1209600,
+          "build_cost": 23000000,
+          "build_time": 950400,
           "required_townhall": 18,
           "hitpoints": 5500,
           "damage": 73,
           "attack_speed": 600,
           "attack_range": 1000,
-          "strength_weight": 14500,
-          "supercharge": {
-            "upgrade_resource": "Gold",
-            "required_townhall": 18,
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 12000000,
-                "build_time": 518400,
-                "hitpoints_buff": 0,
-                "dps_buff": 5
-              },
-              {
-                "level": 2,
-                "build_cost": 10000000,
-                "build_time": 604800,
-                "hitpoints_buff": 100,
-                "dps_buff": 0
-              }
-            ]
-          }
+          "strength_weight": 14500
+        },
+        {
+          "level": 5,
+          "build_cost": 29000000,
+          "build_time": 1252800,
+          "required_townhall": 19,
+          "hitpoints": 5900,
+          "damage": 82,
+          "attack_speed": 600,
+          "attack_range": 1000,
+          "strength_weight": 16000
         }
       ]
     },
@@ -10297,7 +10324,7 @@
       "village": "home",
       "width": 3,
       "hitbox_width": 2,
-      "superchargeable": true,
+      "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": true,
       "levels": [
@@ -10350,34 +10377,25 @@
         },
         {
           "level": 4,
-          "build_cost": 26500000,
-          "build_time": 1166400,
+          "build_cost": 22000000,
+          "build_time": 864000,
           "required_townhall": 18,
           "hitpoints": 6100,
           "dps": 412,
           "attack_speed": 800,
           "attack_range": 900,
-          "strength_weight": 15000,
-          "supercharge": {
-            "upgrade_resource": "Gold",
-            "required_townhall": 18,
-            "levels": [
-              {
-                "level": 1,
-                "build_cost": 12000000,
-                "build_time": 518400,
-                "hitpoints_buff": 0,
-                "dps_buff": 8
-              },
-              {
-                "level": 2,
-                "build_cost": 10000000,
-                "build_time": 604800,
-                "hitpoints_buff": 150,
-                "dps_buff": 0
-              }
-            ]
-          }
+          "strength_weight": 15000
+        },
+        {
+          "level": 5,
+          "build_cost": 28000000,
+          "build_time": 1209600,
+          "required_townhall": 19,
+          "hitpoints": 6500,
+          "dps": 440,
+          "attack_speed": 800,
+          "attack_range": 900,
+          "strength_weight": 16000
         }
       ]
     },
@@ -10400,8 +10418,8 @@
       "levels": [
         {
           "level": 1,
-          "build_cost": 430000,
-          "build_time": 1123205,
+          "build_cost": 335000,
+          "build_time": 864000,
           "required_townhall": 18,
           "hitpoints": 5800,
           "damage": 50,
@@ -10411,8 +10429,8 @@
         },
         {
           "level": 2,
-          "build_cost": 460000,
-          "build_time": 1209600,
+          "build_cost": 365000,
+          "build_time": 950400,
           "required_townhall": 18,
           "hitpoints": 6200,
           "damage": 60,
@@ -10463,7 +10481,7 @@
       "levels": [
         {
           "level": 1,
-          "build_cost": 17000000,
+          "build_cost": 15500000,
           "build_time": 734400,
           "required_townhall": 17,
           "hitpoints": 4500,
@@ -10474,7 +10492,7 @@
         },
         {
           "level": 2,
-          "build_cost": 18000000,
+          "build_cost": 17000000,
           "build_time": 864000,
           "required_townhall": 17,
           "hitpoints": 5000,
@@ -10485,8 +10503,8 @@
         },
         {
           "level": 3,
-          "build_cost": 29000000,
-          "build_time": 1296000,
+          "build_cost": 22500000,
+          "build_time": 950400,
           "required_townhall": 18,
           "hitpoints": 5300,
           "dps": 456,
@@ -11498,7 +11516,7 @@
     {
       "_id": 1000102,
       "name": "Super Wizard Tower",
-      "info": "Super Wizard’s first strike can shock up to fifteen nearby enemies. Chained targets take less damage.",
+      "info": "When neighboring Wizards put their egos aside and their towers and minds together, the result is superb. Super Wizard’s first strike can shock up to fifteen nearby enemies. Chained targets take less damage.",
       "TID": {
         "name": "TID_BUILDING_MERGED_WIZARD_TOWER",
         "info": "TID_MERGED_WIZARD_TOWER_INFO"
@@ -11514,8 +11532,8 @@
       "levels": [
         {
           "level": 1,
-          "build_cost": 29000000,
-          "build_time": 1123200,
+          "build_cost": 24000000,
+          "build_time": 864000,
           "required_townhall": 18,
           "hitpoints": 6000,
           "dps": 290,
@@ -11539,8 +11557,8 @@
         },
         {
           "level": 2,
-          "build_cost": 30000000,
-          "build_time": 1209600,
+          "build_cost": 25500000,
+          "build_time": 950400,
           "required_townhall": 18,
           "hitpoints": 6300,
           "dps": 320,
@@ -11567,6 +11585,227 @@
               }
             ]
           }
+        }
+      ]
+    },
+    {
+      "_id": 1000105,
+      "name": "Guardian Shrine",
+      "info": "Guardians didn’t appreciate Builder’s Town Hall renovations, so they hauled their hunk of meteorite elsewhere. Visit the Guardian Shrine to upgrade Guardians and choose which one defends your village. Think of it as a Hero Banner, but cooler, just look at that glowing space rock for P.E.K.K.A’s sake!",
+      "TID": {
+        "name": "TID_BUILDING_GUARDIAN_BUILDING",
+        "info": "TID_BUILDING_GUARDIAN_BUILDING_INFO"
+      },
+      "type": "Army",
+      "upgrade_resource": "Gold",
+      "village": "home",
+      "width": 3,
+      "hitbox_width": 3,
+      "superchargeable": false,
+      "levels": []
+    },
+    {
+      "_id": 1000106,
+      "name": "Squad Barracks",
+      "info": "Troops together strong!\\n\\nWarriors travel from far and wide to learn the art of buddy-to-buddy combat in the Squad Barracks. Graduated troops are so close-knit they couldn’t fathom fighting alone.",
+      "TID": {
+        "name": "TID_BUILDING_SQUAD_BARRACKS",
+        "info": "TID_BUILDING_SQUAD_BARRACKS_INFO"
+      },
+      "type": "Army",
+      "upgrade_resource": "Elixir",
+      "village": "home",
+      "width": 3,
+      "hitbox_width": 2,
+      "superchargeable": false,
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 1700000,
+          "build_time": 172800,
+          "required_townhall": 8,
+          "hitpoints": 500,
+          "dps": 0
+        },
+        {
+          "level": 2,
+          "build_cost": 3000000,
+          "build_time": 259200,
+          "required_townhall": 9,
+          "hitpoints": 560,
+          "dps": 0
+        },
+        {
+          "level": 3,
+          "build_cost": 3800000,
+          "build_time": 432000,
+          "required_townhall": 10,
+          "hitpoints": 620,
+          "dps": 0
+        },
+        {
+          "level": 4,
+          "build_cost": 6000000,
+          "build_time": 518400,
+          "required_townhall": 11,
+          "hitpoints": 680,
+          "dps": 0
+        },
+        {
+          "level": 5,
+          "build_cost": 7500000,
+          "build_time": 604800,
+          "required_townhall": 12,
+          "hitpoints": 740,
+          "dps": 0
+        },
+        {
+          "level": 6,
+          "build_cost": 10000000,
+          "build_time": 648000,
+          "required_townhall": 13,
+          "hitpoints": 800,
+          "dps": 0
+        },
+        {
+          "level": 7,
+          "build_cost": 12500000,
+          "build_time": 691200,
+          "required_townhall": 14,
+          "hitpoints": 860,
+          "dps": 0
+        },
+        {
+          "level": 8,
+          "build_cost": 15000000,
+          "build_time": 820800,
+          "required_townhall": 15,
+          "hitpoints": 920,
+          "dps": 0
+        },
+        {
+          "level": 9,
+          "build_cost": 16000000,
+          "build_time": 864000,
+          "required_townhall": 16,
+          "hitpoints": 980,
+          "dps": 0
+        },
+        {
+          "level": 10,
+          "build_cost": 20000000,
+          "build_time": 950400,
+          "required_townhall": 17,
+          "hitpoints": 1040,
+          "dps": 0
+        },
+        {
+          "level": 11,
+          "build_cost": 26000000,
+          "build_time": 1166400,
+          "required_townhall": 18,
+          "hitpoints": 1100,
+          "dps": 0
+        },
+        {
+          "level": 12,
+          "build_cost": 32000000,
+          "build_time": 1382400,
+          "required_townhall": 19,
+          "hitpoints": 1160,
+          "dps": 0
+        }
+      ]
+    },
+    {
+      "_id": 1000107,
+      "name": "Spiky Tower",
+      "info": "Spins, spikes, and skewered troops.\\n\\nAttack this dizzy defense, and its whirring gears will muster a storm of sharp edges. The spikes are whisper-quiet, outrageously accurate, and inclined to damage targets based on their maximum hit points. Builder calls them Smart Spikes.",
+      "TID": {
+        "name": "TID_BUILDING_SPIKY_TOWER",
+        "info": "TID_BUILDING_SPIKY_TOWER_INFO"
+      },
+      "type": "Defense",
+      "upgrade_resource": "Dark Elixir",
+      "village": "home",
+      "width": 3,
+      "hitbox_width": 2,
+      "superchargeable": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 500000,
+          "build_time": 1296000,
+          "required_townhall": 19,
+          "hitpoints": 5959,
+          "attack_range": 0,
+          "strength_weight": 24000
+        },
+        {
+          "level": 2,
+          "build_cost": 510000,
+          "build_time": 1339200,
+          "required_townhall": 19,
+          "hitpoints": 6363,
+          "attack_range": 0,
+          "strength_weight": 25000
+        }
+      ]
+    },
+    {
+      "_id": 1000108,
+      "name": "Firecracker Tower",
+      "info": "Archers were peeved when big sis stole top bunk.\\n\\nFirecracker hollers atop this kooky combination of an Archer Tower and a Scattershot with a strange love of blasting air and ground units. The spluttering sparks of its rockets singe troops en route to their final destination: your enemies’ faces!",
+      "TID": {
+        "name": "TID_BUILDING_FIRECRACKER_TOWER",
+        "info": "TID_BUILDING_FIRECRACKER_TOWER_INFO"
+      },
+      "type": "Defense",
+      "upgrade_resource": "Gold",
+      "village": "home",
+      "width": 3,
+      "hitbox_width": 2,
+      "superchargeable": false,
+      "is_air_targeting": true,
+      "is_ground_targeting": true,
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 31000000,
+          "build_time": 1252800,
+          "required_townhall": null,
+          "hitpoints": 6500,
+          "dps": 270,
+          "attack_speed": 1792,
+          "attack_range": 1000,
+          "strength_weight": 30000,
+          "merge_requirement": [
+            {
+              "name": "Archer Tower",
+              "_id": 1000009,
+              "geared_up": false,
+              "level": 21
+            },
+            {
+              "name": "Scattershot",
+              "_id": 1000067,
+              "geared_up": false,
+              "level": 7
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "build_cost": 32000000,
+          "build_time": 1296000,
+          "required_townhall": null,
+          "hitpoints": 6700,
+          "dps": 280,
+          "attack_speed": 1792,
+          "attack_range": 1000,
+          "strength_weight": 31000
         }
       ]
     }

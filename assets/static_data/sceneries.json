@@ -606,7 +606,7 @@
         "name": "TID_SCENERY_CYBERCLASH"
       },
       "type": "home",
-      "music": null,
+      "music": "sceneries/cyber_scenery/music.ogg",
       "thumbnail": "sceneries/cyber_scenery/thumbnail.webp"
     },
     {
@@ -760,7 +760,7 @@
       "thumbnail": "sceneries/anime_fury_scenery/thumbnail.webp"
     },
     {
-      "_id": 60000091,
+      "_id": 60000092,
       "name": "Barbarian's Odyssey Scenery",
       "TID": {
         "name": "TID_SCENERY_BARBARIAN_ODYSSEY"
@@ -778,6 +778,26 @@
       "type": "home",
       "music": "sceneries/the_awesome_quest_scenery/music.ogg",
       "thumbnail": "sceneries/the_awesome_quest_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000094,
+      "name": "Money in the Bank Scenery",
+      "TID": {
+        "name": "TID_SCENERY_WWE26"
+      },
+      "type": "home",
+      "music": "sceneries/money_in_the_bank_scenery/music.ogg",
+      "thumbnail": "sceneries/money_in_the_bank_scenery/thumbnail.webp"
+    },
+    {
+      "_id": 60000096,
+      "name": "Cosmic Portals Scenery",
+      "TID": {
+        "name": "TID_SCENERY_COSMIC26"
+      },
+      "type": "home",
+      "music": "sceneries/cosmic_portals_scenery/music.ogg",
+      "thumbnail": "sceneries/cosmic_portals_scenery/thumbnail.webp"
     }
   ]
 }

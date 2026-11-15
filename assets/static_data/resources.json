@@ -146,6 +146,13 @@
       "TID": {
         "name": "TID_PRESTIGE_RESOURCE"
       }
+    },
+    {
+      "_id": 172059641141296,
+      "name": "Ranked Medals",
+      "TID": {
+        "name": "TID_RANKED_PRESTIGE_RESOURCE"
+      }
     }
   ]
 }

@@ -122,8 +122,9 @@ class StaticUpdater:
         self.KEEP_JSON = False
         # removes any TIDs not used in the static files
         self.PRUNE_TRANSLATIONS = True
-        # selects a unique seasonal-defense season by source order; -1 is the latest
-        self.SEASONAL_DEFENSE_SEASON = -1
+        # APKs contain future seasons. Select the released season explicitly;
+        # never activate unreleased defenses just because a row was appended.
+        self.SEASONAL_DEFENSE_SEASON = os.getenv("SEASONAL_DEFENSE_SEASON", "Season4")
         # base path for the static files to be stored in
         self.BASE_PATH = "assets"
 
@@ -267,13 +268,18 @@ class StaticUpdater:
 
     def season_defense_archetypes_to_export(self) -> set[str]:
         full_season_data = self.open_file("logic/seasonal_defense.json")
+        current_season = self._select_seasonal_defense(full_season_data)
         archetypes: set[str] = set()
+        # Keep historical art, but stop at the explicitly selected live season.
+        # APKs also ship future seasons; those must not leak into asset exports.
         for season_data in full_season_data.values():
             if not season_data.get("TID"):
                 continue
             for key, value in season_data.items():
                 if key.isdigit() and value.get("Archetypes"):
                     archetypes.add(value.get("Archetypes"))
+            if season_data is current_season:
+                break
         return archetypes
 
     def register_seasonal_defense_assets(self) -> None:
@@ -629,7 +635,11 @@ class StaticUpdater:
                     reordered_rows.append(row)
             rows = rows[:2] + reordered_rows
 
-        is_numeric_level = types_row[1].lower() == "int" or "level" in columns[1].lower()
+        # VisualLevel selects reused artwork; repeated values do not merge
+        # actual character levels (Smasher 5-10 share the same visual level).
+        is_numeric_level = columns[1] != "VisualLevel" and (
+            types_row[1].lower() == "int" or "level" in columns[1].lower()
+        )
 
         final_data = {}
         current_troop = None
@@ -1284,6 +1294,9 @@ class StaticUpdater:
                             hold_weapon_data["levels"].append(hold_weapon_level_data)
                         hold_level_data["weapon"] = hold_weapon_data
 
+                variants = self._register_building_variants(building_name, building_data, level_data)
+                if variants:
+                    hold_level_data["variants"] = variants
                 hold_data["levels"].append(hold_level_data)
 
             if superchargeable:
@@ -1327,17 +1340,10 @@ class StaticUpdater:
         return new_building_data
 
     def _select_seasonal_defense(self, full_season_data: dict) -> dict:
-        seasons = [season_data for season_data in full_season_data.values() if season_data.get("TID")]
-
-        if not seasons:
-            return {}
-        try:
-            return seasons[self.SEASONAL_DEFENSE_SEASON]
-        except IndexError as exc:
-            raise ValueError(
-                f"SEASONAL_DEFENSE_SEASON index {self.SEASONAL_DEFENSE_SEASON} "
-                f"is out of range for {len(seasons)} seasons"
-            ) from exc
+        season = full_season_data.get(self.SEASONAL_DEFENSE_SEASON)
+        if not season or not season.get("TID"):
+            raise ValueError(f"Configured seasonal-defense season not found: {self.SEASONAL_DEFENSE_SEASON}")
+        return season
 
     def _parse_seasonal_defense_data(self):
         full_seasonal_defenses = self.open_file("logic/seasonal_defense_archetypes.json")
@@ -1494,7 +1500,18 @@ class StaticUpdater:
 
                 if not is_super_troop and not is_seasonal_troop:
                     required_lab_level = level_data.get("LaboratoryLevel")
-                    required_townhall = max_townhall_converter[level_data.get("LaboratoryLevel")]
+                    required_townhall = max_townhall_converter[required_lab_level]
+                    if not village_type:
+                        unlock_building = self.full_building_data[troop_data["ProductionBuilding"]]
+                        unlock_townhall = unlock_building[str(troop_data["BarrackLevel"])]["TownHallLevel"]
+                        # Home troops (including squads and siege machines) unlock
+                        # through their production building, not level-1 research.
+                        # Later research cannot make them available before that unlock.
+                        if int(level) == 1:
+                            required_lab_level = None
+                            required_townhall = unlock_townhall
+                        else:
+                            required_townhall = max(unlock_townhall, required_townhall)
                 elif is_super_troop:  # for super troops use the original troop's lab level'
                     original_troop = self.full_troop_data.get(super_troop_data["Original"])
                     required_lab_level = original_troop.get(level).get("LaboratoryLevel")
@@ -1531,6 +1548,12 @@ class StaticUpdater:
 
     def _parse_guardian_data(self):
         full_guardian_data = self.open_file("logic/guardians.json")
+        full_upgrade_data = self.open_file("logic/upgrade_data.json")
+        unlock_townhall = min(
+            int(level)
+            for level, row in self.full_building_data["Town Hall"].items()
+            if isinstance(row, dict) and row.get("HousesGuardians")
+        )
 
         new_guardian_data = []
         for _id, (guardian_name, guardian_data) in enumerate(full_guardian_data.items(), 107000000):
@@ -1538,7 +1561,8 @@ class StaticUpdater:
                 continue
             if self.is_ignored_id(_id):
                 continue
-            character_data = self.full_troop_data.get(guardian_data.get("CharacterDatas"))
+            character_data = self.full_troop_data[guardian_data["CharacterDatas"]]
+            upgrade_data = full_upgrade_data[guardian_data["UpgradeData"]]
 
             self.register_sc_asset(
                 source_sc=guardian_data.get("IconSWF"),
@@ -1551,7 +1575,7 @@ class StaticUpdater:
                 "name": self._translate(tid=guardian_data.get("TID")),
                 "info": self._translate(tid=guardian_data.get("InfoTID")),
                 "TID": {"name": guardian_data.get("TID"), "info": guardian_data.get("InfoTID")},
-                "upgrade_resource": self._parse_resource(resource=character_data.get("UpgradeResource")),
+                "upgrade_resource": self._parse_resource(resource=upgrade_data.get("UpgradeResource", character_data.get("UpgradeResource"))),
                 "is_flying": character_data.get("IsFlying"),
                 "is_air_targeting": character_data.get("AirTargets"),
                 "is_ground_targeting": character_data.get("GroundTargets"),
@@ -1561,24 +1585,43 @@ class StaticUpdater:
                 "levels": [],
             }
 
-            for level, level_data in character_data.items():
-                if not isinstance(level_data, dict):
-                    continue
-                # convert times to seconds, all times for all things will be in seconds
-                upgrade_time_seconds = self._parse_upgrade_time(level_data)
-
-                # hard coded for now, didn't find where this is defined, except "HousesGuardians" on the Townhall data
-                required_townhall = 18
-
-                new_level_data = {
-                    "level": int(level),
+            guardian_levels = {
+                int(level): row for level, row in guardian_data.items() if isinstance(row, dict)
+            }
+            if not guardian_levels:
+                # A flat guardian record (Logger) does not enumerate progression.
+                # Its character table still contains all research levels; using
+                # the flat CharacterLevels value would collapse them to one row.
+                guardian_levels = {
+                    int(level): {"CharacterLevels": int(level)}
+                    for level, row in character_data.items() if isinstance(row, dict)
+                }
+            for level, guardian_level in sorted(guardian_levels.items()):
+                character_level = guardian_level["CharacterLevels"]
+                level_data = character_data[str(character_level)]
+                # UpgradeData rows describe leaving a level. Keep outgoing
+                # costs/times, but use the previous row's gate to reach this level.
+                upgrade = upgrade_data.get(str(level), {}) if level + 1 in guardian_levels else {}
+                required_townhall = unlock_townhall
+                if level > min(guardian_levels):
+                    required_townhall = max(
+                        unlock_townhall, upgrade_data[str(level - 1)]["RequiredTownHallLevel"]
+                    )
+                upgrade_time_seconds = sum(
+                    upgrade.get(field, 0) * multiplier
+                    for field, multiplier in (
+                        ("UpgradeTimeDays", 86400), ("UpgradeTimeHours", 3600),
+                        ("UpgradeTimeMinutes", 60), ("UpgradeTimeSeconds", 1),
+                    )
+                )
+                hold_data["levels"].append({
+                    "level": level,
                     "hitpoints": level_data.get("Hitpoints"),
                     "dps": level_data.get("DPS"),
                     "upgrade_time": upgrade_time_seconds,
-                    "upgrade_cost": level_data.get("UpgradeCost", 0),
+                    "upgrade_cost": upgrade.get("UpgradeCost", 0),
                     "required_townhall": required_townhall,
-                }
-                hold_data["levels"].append(new_level_data)
+                })
 
             new_guardian_data.append(hold_data)
 
@@ -1757,6 +1800,68 @@ class StaticUpdater:
 
         return new_pet_data
 
+    def _parse_emote_data(self):
+        items = []
+        for source_name, data in self.open_file("logic/emotes.json").items():
+            if data.get("Deprecated") or self.is_ignored_id(data["GlobalID"]):
+                continue
+            # Game IDs let consumers resolve art without exporting internal names
+            # or maintaining a second name-to-path mapping.
+            slug = str(data["GlobalID"])
+            icon = f"emotes/{slug}/static.webp"
+            animated = f"emotes/{slug}/animated.webp"
+            self.register_sc_asset(data["IconSWF"], data["IconExportName"], icon, first_frame=True)
+            self.register_sc_asset(data["SWF"], data["ExportName"], animated)
+            items.append((data.get("SortOrder", 0), {
+                "_id": data["GlobalID"], "name": self._translate(tid=data["TID"]),
+                "TID": {"name": data["TID"], "info": data.get("InfoTID")},
+                "set_id": data.get("SetID"),
+                "set_name": self._translate(tid=data.get("SetTID")),
+                "prestige_medal_cost": data.get("Cost") if data.get("CostResource") == "RankedPrestige" else None,
+                "required_league_tier": data.get("MinLeagueTier"),
+                "default_unlocked": data.get("DefaultSet", False),
+                "required_emotes": [
+                    member["GlobalID"]
+                    for member in self.open_file("logic/emotes.json").values()
+                    if member.get("SetID") == data.get("SetID") and not member.get("IsBonusEmote")
+                ] if data.get("IsBonusEmote") else [],
+            }))
+        return [item for _, item in sorted(items, key=lambda entry: (entry[0], entry[1]["_id"]))]
+
+    def _register_building_variants(self, building_name, building_data, level_data):
+        variants = []
+        export_name = level_data.get("ExportName", "")
+        level = level_data["BuildingLevel"]
+        folder = f"{self.village_asset_folder('buildings', building_data.get('VillageType', 0))}/{self.clean_name(self._translate(tid=building_data['TID']))}"
+        for variant_id, (source_name, data) in enumerate(
+            self.open_file("logic/building_variants.json").items(), 119000000
+        ):
+            if self.is_ignored_id(variant_id) or data.get("Deprecated") or data.get("Building") != building_name:
+                continue
+            # Variant metadata uses an internal level range in this APK. Match
+            # the exported level's family instead of interpreting it as TH level.
+            variant_export = data.get("IconExportName", "")
+            if not export_name.endswith("_default") or not variant_export.startswith(export_name.removesuffix("_default") + "_"):
+                continue
+            slug = variant_export[len(export_name.removesuffix("_default")) + 1:]
+            image = f"{folder}/level_{level}_{slug}.webp"
+            self.register_sc_asset(data["IconSWF"], variant_export, image, first_frame=True)
+            variant = {
+                "_id": variant_id,
+                "name": self._translate(tid=data["TID"]),
+                "info": self._translate(tid=data.get("InfoTID")),
+                "TID": {"name": data["TID"], "info": data.get("InfoTID")},
+                "required_troop": None,
+            }
+            if data.get("RequiredCharacter"):
+                troop = self.open_file("logic/characters.json")[data["RequiredCharacter"]]
+                variant["required_troop"] = {
+                    "_id": troop["GlobalID"],
+                    "level": data["RequiredCharacterLevel"],
+                }
+            variants.append((data.get("SortOrder", 0), variant))
+        return [item for _, item in sorted(variants, key=lambda entry: entry[0])]
+
     def _parse_equipment_data(self):
         full_equipment_data = self.open_file("logic/character_items.json")
 
@@ -1773,8 +1878,6 @@ class StaticUpdater:
                 save_path=f'equipment/{self.clean_name(self._translate(tid=equipment_data.get("TID")))}'
             )
 
-            main_abilities = equipment_data.get("MainAbilities").split(";")
-            extra_abilities = equipment_data.get("ExtraAbilities", "").split(";")
             hero_TID = self.full_hero_data.get(equipment_data.get("AllowedCharacters").split(";")[0]).get("TID")
             hold_data = {
                 "_id": _id,
@@ -1826,33 +1929,8 @@ class StaticUpdater:
                     "upgrade_cost": {"shiny_ore": shiny_ore, "glowy_ore": glowy_ore, "starry_ore": starry_ore},
                 }
 
-                main_ability_levels = str(level_data.get("MainAbilityLevels", "")).split(";")
-
-                if main_ability_levels[0] != "":
-                    main_ability_json = []
-                    for main_ability, main_ability_level in zip(main_abilities, main_ability_levels):
-                        full_ability = self.full_abilities_data.get(main_ability)
-                        ability = full_ability.get(main_ability_level)
-                        ability["name"] = self._translate(tid=full_ability.get("TID"))
-                        ability["info"] = self._translate(tid=full_ability.get("InfoTID"))
-                        main_ability_json.append(ability)
-
-                    if main_ability_json:
-                        new_level_data["abilities"] = main_ability_json
-
-                extra_ability_levels = str(level_data.get("ExtraAbilityLevels", "")).split(";")
-                if extra_ability_levels[0] != "":
-                    extra_ability_json = []
-                    for extra_ability, extra_ability_level in zip(extra_abilities, extra_ability_levels):
-                        full_ability = self.full_abilities_data.get(extra_ability)
-                        ability = full_ability.get(extra_ability_level)
-                        if ability:
-                            ability["name"] = self._translate(tid=full_ability.get("TID"))
-                            extra_ability_json.append(ability)
-
-                    if extra_ability_json:
-                        new_level_data["abilities"].extend(extra_ability_json)
-
+                # Detailed effects are generated independently from the raw
+                # game tables into abilities.json, joined by equipment ID.
                 hold_data["levels"].append(new_level_data)
 
             new_equipment_data.append(hold_data)
@@ -2317,14 +2395,6 @@ class StaticUpdater:
                             "elixir": level_data.get("ElixirReward"),
                             "dark_elixir": level_data.get("DarkElixirReward"),
                         },
-                        "star_bonus": {
-                            "gold": level_data.get("GoldRewardStarBonus"),
-                            "elixir": level_data.get("ElixirRewardStarBonus"),
-                            "dark_elixir": level_data.get("DarkElixirRewardStarBonus"),
-                            "shiny_ore": level_data.get("CommonOreRewardStarBonus"),
-                            "glowy_ore": level_data.get("RareOreRewardStarBonus"),
-                            "starry_ore": level_data.get("EpicOreRewardStarBonus"),
-                        },
                     }
                 )
             hold_data["townhall_cap"] = highest_townhall
@@ -2332,6 +2402,23 @@ class StaticUpdater:
             new_league_tier_data.append(hold_data)
 
         return new_league_tier_data
+
+    def _parse_star_bonus_data(self):
+        # Export the resource-bearing track directly. The Small track contains
+        # no direct resources and only differs in chest rewards, which we omit.
+        data = self.open_file("logic/star_bonus.json")["StarBonusLarge"]
+        resource_fields = {
+            "gold": "GoldReward", "elixir": "ElixirReward",
+            "dark_elixir": "DarkElixirReward", "shiny_ore": "CommonOreReward",
+            "glowy_ore": "RareOreReward", "starry_ore": "EpicOreReward",
+        }
+        return sorted(
+            ({
+                "townhall_level": row["TH"],
+                "resources": {key: row[field] for key, field in resource_fields.items()},
+            } for row in data.values() if isinstance(row, dict)),
+            key=lambda row: row["townhall_level"],
+        )
 
     def _parse_builder_league_data(self):
         full_builder_league_data = self.open_file("logic/leagues2.json")
@@ -2609,6 +2696,7 @@ class StaticUpdater:
             "heroes": self._parse_hero_data(),
             "pets": self._parse_pet_data(),
             "equipment": self._parse_equipment_data(),
+            "emotes": self._parse_emote_data(),
             "decorations": self._parse_decoration_data(),
             "obstacles": self._parse_obstacle_data(),
             "sceneries": self._parse_scenery_data(),
@@ -2618,6 +2706,7 @@ class StaticUpdater:
             "battle_modifiers": self._parse_battle_modifiers(),
             "war_leagues": self._parse_war_league_data(),
             "league_tiers": self._parse_league_tier_data(),
+            "star_bonus": self._parse_star_bonus_data(),
             "builder_leagues": self._parse_builder_league_data(),
             "capital_leagues": self._parse_capital_league_data(),
             "magic_items": self._parse_magic_items_data(),

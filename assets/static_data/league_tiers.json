@@ -13,7 +13,7 @@
       "battle_count": 0,
       "trophy_start": 0,
       "clan_score": 0,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 2,
@@ -21,14 +21,6 @@
             "gold": 300,
             "elixir": 300,
             "dark_elixir": 0
-          },
-          "star_bonus": {
-            "gold": 20000,
-            "elixir": 20000,
-            "dark_elixir": 0,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -37,14 +29,6 @@
             "gold": 400,
             "elixir": 400,
             "dark_elixir": 0
-          },
-          "star_bonus": {
-            "gold": 40000,
-            "elixir": 40000,
-            "dark_elixir": 0,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -53,14 +37,6 @@
             "gold": 500,
             "elixir": 500,
             "dark_elixir": 0
-          },
-          "star_bonus": {
-            "gold": 50000,
-            "elixir": 50000,
-            "dark_elixir": 0,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -69,14 +45,6 @@
             "gold": 600,
             "elixir": 600,
             "dark_elixir": 0
-          },
-          "star_bonus": {
-            "gold": 60000,
-            "elixir": 60000,
-            "dark_elixir": 0,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -85,14 +53,6 @@
             "gold": 700,
             "elixir": 700,
             "dark_elixir": 0
-          },
-          "star_bonus": {
-            "gold": 150000,
-            "elixir": 150000,
-            "dark_elixir": 0,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -101,14 +61,6 @@
             "gold": 900,
             "elixir": 900,
             "dark_elixir": 90
-          },
-          "star_bonus": {
-            "gold": 270000,
-            "elixir": 270000,
-            "dark_elixir": 1400,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -117,14 +69,6 @@
             "gold": 1800,
             "elixir": 1800,
             "dark_elixir": 140
-          },
-          "star_bonus": {
-            "gold": 320000,
-            "elixir": 320000,
-            "dark_elixir": 1600,
-            "shiny_ore": 360,
-            "glowy_ore": 23,
-            "starry_ore": 0
           }
         },
         {
@@ -133,14 +77,6 @@
             "gold": 2700,
             "elixir": 2700,
             "dark_elixir": 180
-          },
-          "star_bonus": {
-            "gold": 360000,
-            "elixir": 360000,
-            "dark_elixir": 1800,
-            "shiny_ore": 450,
-            "glowy_ore": 27,
-            "starry_ore": 0
           }
         },
         {
@@ -149,14 +85,6 @@
             "gold": 12000,
             "elixir": 12000,
             "dark_elixir": 270
-          },
-          "star_bonus": {
-            "gold": 450000,
-            "elixir": 450000,
-            "dark_elixir": 2300,
-            "shiny_ore": 590,
-            "glowy_ore": 33,
-            "starry_ore": 0
           }
         },
         {
@@ -165,14 +93,6 @@
             "gold": 14000,
             "elixir": 14000,
             "dark_elixir": 360
-          },
-          "star_bonus": {
-            "gold": 500000,
-            "elixir": 500000,
-            "dark_elixir": 2500,
-            "shiny_ore": 640,
-            "glowy_ore": 34,
-            "starry_ore": 0
           }
         },
         {
@@ -181,14 +101,6 @@
             "gold": 30000,
             "elixir": 30000,
             "dark_elixir": 600
-          },
-          "star_bonus": {
-            "gold": 600000,
-            "elixir": 600000,
-            "dark_elixir": 3000,
-            "shiny_ore": 730,
-            "glowy_ore": 39,
-            "starry_ore": 1
           }
         },
         {
@@ -197,14 +109,6 @@
             "gold": 80000,
             "elixir": 80000,
             "dark_elixir": 900
-          },
-          "star_bonus": {
-            "gold": 700000,
-            "elixir": 700000,
-            "dark_elixir": 3500,
-            "shiny_ore": 830,
-            "glowy_ore": 43,
-            "starry_ore": 1
           }
         },
         {
@@ -213,14 +117,6 @@
             "gold": 170000,
             "elixir": 170000,
             "dark_elixir": 1200
-          },
-          "star_bonus": {
-            "gold": 800000,
-            "elixir": 800000,
-            "dark_elixir": 4000,
-            "shiny_ore": 900,
-            "glowy_ore": 48,
-            "starry_ore": 1
           }
         },
         {
@@ -229,14 +125,6 @@
             "gold": 230000,
             "elixir": 230000,
             "dark_elixir": 1500
-          },
-          "star_bonus": {
-            "gold": 900000,
-            "elixir": 900000,
-            "dark_elixir": 4500,
-            "shiny_ore": 960,
-            "glowy_ore": 52,
-            "starry_ore": 1
           }
         },
         {
@@ -245,14 +133,6 @@
             "gold": 270000,
             "elixir": 270000,
             "dark_elixir": 1800
-          },
-          "star_bonus": {
-            "gold": 1000000,
-            "elixir": 1000000,
-            "dark_elixir": 5000,
-            "shiny_ore": 1020,
-            "glowy_ore": 55,
-            "starry_ore": 1
           }
         },
         {
@@ -261,14 +141,6 @@
             "gold": 300000,
             "elixir": 300000,
             "dark_elixir": 2100
-          },
-          "star_bonus": {
-            "gold": 1100000,
-            "elixir": 1100000,
-            "dark_elixir": 5500,
-            "shiny_ore": 1050,
-            "glowy_ore": 59,
-            "starry_ore": 1
           }
         },
         {
@@ -277,14 +149,14 @@
             "gold": 320000,
             "elixir": 320000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 1200000,
-            "elixir": 1200000,
-            "dark_elixir": 6000,
-            "shiny_ore": 1080,
-            "glowy_ore": 63,
-            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 320000,
+            "elixir": 320000,
+            "dark_elixir": 2400
           }
         }
       ]
@@ -310,14 +182,6 @@
             "gold": 1000,
             "elixir": 1000,
             "dark_elixir": 100
-          },
-          "star_bonus": {
-            "gold": 300000,
-            "elixir": 300000,
-            "dark_elixir": 1500,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         }
       ]
@@ -343,14 +207,6 @@
             "gold": 2000,
             "elixir": 2000,
             "dark_elixir": 150
-          },
-          "star_bonus": {
-            "gold": 301000,
-            "elixir": 301000,
-            "dark_elixir": 1505,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -359,14 +215,6 @@
             "gold": 2000,
             "elixir": 2000,
             "dark_elixir": 150
-          },
-          "star_bonus": {
-            "gold": 350000,
-            "elixir": 350000,
-            "dark_elixir": 1750,
-            "shiny_ore": 395,
-            "glowy_ore": 25,
-            "starry_ore": 1
           }
         }
       ]
@@ -392,14 +240,6 @@
             "gold": 3000,
             "elixir": 3000,
             "dark_elixir": 200
-          },
-          "star_bonus": {
-            "gold": 302000,
-            "elixir": 302000,
-            "dark_elixir": 1510,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -408,14 +248,6 @@
             "gold": 3000,
             "elixir": 3000,
             "dark_elixir": 200
-          },
-          "star_bonus": {
-            "gold": 351000,
-            "elixir": 351000,
-            "dark_elixir": 1755,
-            "shiny_ore": 400,
-            "glowy_ore": 25,
-            "starry_ore": 1
           }
         },
         {
@@ -424,14 +256,6 @@
             "gold": 3000,
             "elixir": 3000,
             "dark_elixir": 200
-          },
-          "star_bonus": {
-            "gold": 400000,
-            "elixir": 400000,
-            "dark_elixir": 2000,
-            "shiny_ore": 500,
-            "glowy_ore": 30,
-            "starry_ore": 1
           }
         }
       ]
@@ -457,14 +281,6 @@
             "gold": 13000,
             "elixir": 13000,
             "dark_elixir": 300
-          },
-          "star_bonus": {
-            "gold": 352000,
-            "elixir": 352000,
-            "dark_elixir": 1760,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -473,14 +289,6 @@
             "gold": 13000,
             "elixir": 13000,
             "dark_elixir": 300
-          },
-          "star_bonus": {
-            "gold": 401000,
-            "elixir": 401000,
-            "dark_elixir": 2005,
-            "shiny_ore": 450,
-            "glowy_ore": 30,
-            "starry_ore": 1
           }
         },
         {
@@ -489,14 +297,6 @@
             "gold": 13000,
             "elixir": 13000,
             "dark_elixir": 300
-          },
-          "star_bonus": {
-            "gold": 450000,
-            "elixir": 450000,
-            "dark_elixir": 2250,
-            "shiny_ore": 550,
-            "glowy_ore": 35,
-            "starry_ore": 1
           }
         },
         {
@@ -505,14 +305,6 @@
             "gold": 13000,
             "elixir": 13000,
             "dark_elixir": 300
-          },
-          "star_bonus": {
-            "gold": 500000,
-            "elixir": 500000,
-            "dark_elixir": 2500,
-            "shiny_ore": 650,
-            "glowy_ore": 36,
-            "starry_ore": 1
           }
         }
       ]
@@ -538,14 +330,6 @@
             "gold": 14000,
             "elixir": 14000,
             "dark_elixir": 350
-          },
-          "star_bonus": {
-            "gold": 357000,
-            "elixir": 357000,
-            "dark_elixir": 1785,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -554,14 +338,6 @@
             "gold": 14000,
             "elixir": 14000,
             "dark_elixir": 350
-          },
-          "star_bonus": {
-            "gold": 406000,
-            "elixir": 406000,
-            "dark_elixir": 2030,
-            "shiny_ore": 455,
-            "glowy_ore": 30,
-            "starry_ore": 1
           }
         },
         {
@@ -570,14 +346,6 @@
             "gold": 14000,
             "elixir": 14000,
             "dark_elixir": 350
-          },
-          "star_bonus": {
-            "gold": 455000,
-            "elixir": 455000,
-            "dark_elixir": 2275,
-            "shiny_ore": 555,
-            "glowy_ore": 35,
-            "starry_ore": 1
           }
         },
         {
@@ -586,14 +354,6 @@
             "gold": 14000,
             "elixir": 14000,
             "dark_elixir": 350
-          },
-          "star_bonus": {
-            "gold": 505000,
-            "elixir": 505000,
-            "dark_elixir": 2525,
-            "shiny_ore": 655,
-            "glowy_ore": 36,
-            "starry_ore": 1
           }
         }
       ]
@@ -619,14 +379,6 @@
             "gold": 15000,
             "elixir": 15000,
             "dark_elixir": 400
-          },
-          "star_bonus": {
-            "gold": 362000,
-            "elixir": 362000,
-            "dark_elixir": 1810,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -635,14 +387,6 @@
             "gold": 15000,
             "elixir": 15000,
             "dark_elixir": 400
-          },
-          "star_bonus": {
-            "gold": 411000,
-            "elixir": 411000,
-            "dark_elixir": 2055,
-            "shiny_ore": 460,
-            "glowy_ore": 30,
-            "starry_ore": 1
           }
         },
         {
@@ -651,14 +395,6 @@
             "gold": 15000,
             "elixir": 15000,
             "dark_elixir": 400
-          },
-          "star_bonus": {
-            "gold": 460000,
-            "elixir": 460000,
-            "dark_elixir": 2300,
-            "shiny_ore": 560,
-            "glowy_ore": 35,
-            "starry_ore": 1
           }
         },
         {
@@ -667,14 +403,6 @@
             "gold": 15000,
             "elixir": 15000,
             "dark_elixir": 400
-          },
-          "star_bonus": {
-            "gold": 510000,
-            "elixir": 510000,
-            "dark_elixir": 2550,
-            "shiny_ore": 660,
-            "glowy_ore": 36,
-            "starry_ore": 1
           }
         },
         {
@@ -683,14 +411,6 @@
             "gold": 15000,
             "elixir": 15000,
             "dark_elixir": 400
-          },
-          "star_bonus": {
-            "gold": 560000,
-            "elixir": 560000,
-            "dark_elixir": 2800,
-            "shiny_ore": 710,
-            "glowy_ore": 37,
-            "starry_ore": 1
           }
         }
       ]
@@ -716,14 +436,6 @@
             "gold": 25000,
             "elixir": 25000,
             "dark_elixir": 600
-          },
-          "star_bonus": {
-            "gold": 412000,
-            "elixir": 412000,
-            "dark_elixir": 2060,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -732,14 +444,6 @@
             "gold": 25000,
             "elixir": 25000,
             "dark_elixir": 600
-          },
-          "star_bonus": {
-            "gold": 461000,
-            "elixir": 461000,
-            "dark_elixir": 2305,
-            "shiny_ore": 510,
-            "glowy_ore": 35,
-            "starry_ore": 1
           }
         },
         {
@@ -748,14 +452,6 @@
             "gold": 25000,
             "elixir": 25000,
             "dark_elixir": 600
-          },
-          "star_bonus": {
-            "gold": 510000,
-            "elixir": 510000,
-            "dark_elixir": 2550,
-            "shiny_ore": 610,
-            "glowy_ore": 40,
-            "starry_ore": 1
           }
         },
         {
@@ -764,14 +460,6 @@
             "gold": 25000,
             "elixir": 25000,
             "dark_elixir": 600
-          },
-          "star_bonus": {
-            "gold": 560000,
-            "elixir": 560000,
-            "dark_elixir": 2800,
-            "shiny_ore": 710,
-            "glowy_ore": 41,
-            "starry_ore": 1
           }
         },
         {
@@ -780,14 +468,6 @@
             "gold": 25000,
             "elixir": 25000,
             "dark_elixir": 600
-          },
-          "star_bonus": {
-            "gold": 610000,
-            "elixir": 610000,
-            "dark_elixir": 3050,
-            "shiny_ore": 760,
-            "glowy_ore": 42,
-            "starry_ore": 1
           }
         }
       ]
@@ -800,8 +480,8 @@
         "name": "TID_LEAGUE_TIER_3_RANK_2"
       },
       "group_size": 100,
-      "demote_percentage": 5,
-      "promote_percentage": 50,
+      "demote_percentage": 10,
+      "promote_percentage": 40,
       "battle_count": 8,
       "trophy_start": 0,
       "clan_score": 800,
@@ -813,14 +493,6 @@
             "gold": 35000,
             "elixir": 35000,
             "dark_elixir": 650
-          },
-          "star_bonus": {
-            "gold": 417000,
-            "elixir": 417000,
-            "dark_elixir": 2085,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -829,14 +501,6 @@
             "gold": 35000,
             "elixir": 35000,
             "dark_elixir": 650
-          },
-          "star_bonus": {
-            "gold": 466000,
-            "elixir": 466000,
-            "dark_elixir": 2330,
-            "shiny_ore": 515,
-            "glowy_ore": 35,
-            "starry_ore": 1
           }
         },
         {
@@ -845,14 +509,6 @@
             "gold": 35000,
             "elixir": 35000,
             "dark_elixir": 650
-          },
-          "star_bonus": {
-            "gold": 515000,
-            "elixir": 515000,
-            "dark_elixir": 2575,
-            "shiny_ore": 615,
-            "glowy_ore": 40,
-            "starry_ore": 1
           }
         },
         {
@@ -861,14 +517,6 @@
             "gold": 35000,
             "elixir": 35000,
             "dark_elixir": 650
-          },
-          "star_bonus": {
-            "gold": 565000,
-            "elixir": 565000,
-            "dark_elixir": 2825,
-            "shiny_ore": 715,
-            "glowy_ore": 41,
-            "starry_ore": 1
           }
         },
         {
@@ -877,14 +525,6 @@
             "gold": 35000,
             "elixir": 35000,
             "dark_elixir": 650
-          },
-          "star_bonus": {
-            "gold": 615000,
-            "elixir": 615000,
-            "dark_elixir": 3075,
-            "shiny_ore": 765,
-            "glowy_ore": 42,
-            "starry_ore": 1
           }
         },
         {
@@ -893,14 +533,6 @@
             "gold": 35000,
             "elixir": 35000,
             "dark_elixir": 650
-          },
-          "star_bonus": {
-            "gold": 665000,
-            "elixir": 665000,
-            "dark_elixir": 3325,
-            "shiny_ore": 815,
-            "glowy_ore": 43,
-            "starry_ore": 1
           }
         }
       ]
@@ -913,7 +545,7 @@
         "name": "TID_LEAGUE_TIER_3_RANK_1"
       },
       "group_size": 100,
-      "demote_percentage": 5,
+      "demote_percentage": 10,
       "promote_percentage": 40,
       "battle_count": 8,
       "trophy_start": 0,
@@ -926,14 +558,6 @@
             "gold": 45000,
             "elixir": 45000,
             "dark_elixir": 700
-          },
-          "star_bonus": {
-            "gold": 422000,
-            "elixir": 422000,
-            "dark_elixir": 2110,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -942,14 +566,6 @@
             "gold": 45000,
             "elixir": 45000,
             "dark_elixir": 700
-          },
-          "star_bonus": {
-            "gold": 471000,
-            "elixir": 471000,
-            "dark_elixir": 2355,
-            "shiny_ore": 520,
-            "glowy_ore": 35,
-            "starry_ore": 1
           }
         },
         {
@@ -958,14 +574,6 @@
             "gold": 45000,
             "elixir": 45000,
             "dark_elixir": 700
-          },
-          "star_bonus": {
-            "gold": 520000,
-            "elixir": 520000,
-            "dark_elixir": 2600,
-            "shiny_ore": 620,
-            "glowy_ore": 40,
-            "starry_ore": 1
           }
         },
         {
@@ -974,14 +582,6 @@
             "gold": 45000,
             "elixir": 45000,
             "dark_elixir": 700
-          },
-          "star_bonus": {
-            "gold": 570000,
-            "elixir": 570000,
-            "dark_elixir": 2850,
-            "shiny_ore": 720,
-            "glowy_ore": 41,
-            "starry_ore": 1
           }
         },
         {
@@ -990,14 +590,6 @@
             "gold": 45000,
             "elixir": 45000,
             "dark_elixir": 700
-          },
-          "star_bonus": {
-            "gold": 620000,
-            "elixir": 620000,
-            "dark_elixir": 3100,
-            "shiny_ore": 770,
-            "glowy_ore": 42,
-            "starry_ore": 1
           }
         },
         {
@@ -1006,14 +598,6 @@
             "gold": 45000,
             "elixir": 45000,
             "dark_elixir": 700
-          },
-          "star_bonus": {
-            "gold": 670000,
-            "elixir": 670000,
-            "dark_elixir": 3350,
-            "shiny_ore": 820,
-            "glowy_ore": 43,
-            "starry_ore": 1
           }
         }
       ]
@@ -1039,14 +623,6 @@
             "gold": 80000,
             "elixir": 80000,
             "dark_elixir": 900
-          },
-          "star_bonus": {
-            "gold": 472000,
-            "elixir": 472000,
-            "dark_elixir": 2360,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -1055,14 +631,6 @@
             "gold": 80000,
             "elixir": 80000,
             "dark_elixir": 900
-          },
-          "star_bonus": {
-            "gold": 521000,
-            "elixir": 521000,
-            "dark_elixir": 2605,
-            "shiny_ore": 570,
-            "glowy_ore": 38,
-            "starry_ore": 1
           }
         },
         {
@@ -1071,14 +639,6 @@
             "gold": 80000,
             "elixir": 80000,
             "dark_elixir": 900
-          },
-          "star_bonus": {
-            "gold": 570000,
-            "elixir": 570000,
-            "dark_elixir": 2850,
-            "shiny_ore": 670,
-            "glowy_ore": 43,
-            "starry_ore": 1
           }
         },
         {
@@ -1087,14 +647,6 @@
             "gold": 80000,
             "elixir": 80000,
             "dark_elixir": 900
-          },
-          "star_bonus": {
-            "gold": 620000,
-            "elixir": 620000,
-            "dark_elixir": 3100,
-            "shiny_ore": 770,
-            "glowy_ore": 44,
-            "starry_ore": 1
           }
         },
         {
@@ -1103,14 +655,6 @@
             "gold": 80000,
             "elixir": 80000,
             "dark_elixir": 900
-          },
-          "star_bonus": {
-            "gold": 670000,
-            "elixir": 670000,
-            "dark_elixir": 3350,
-            "shiny_ore": 820,
-            "glowy_ore": 45,
-            "starry_ore": 1
           }
         },
         {
@@ -1119,14 +663,6 @@
             "gold": 80000,
             "elixir": 80000,
             "dark_elixir": 900
-          },
-          "star_bonus": {
-            "gold": 720000,
-            "elixir": 720000,
-            "dark_elixir": 3600,
-            "shiny_ore": 870,
-            "glowy_ore": 46,
-            "starry_ore": 1
           }
         }
       ]
@@ -1139,8 +675,8 @@
         "name": "TID_LEAGUE_TIER_4_RANK_2"
       },
       "group_size": 100,
-      "demote_percentage": 10,
-      "promote_percentage": 50,
+      "demote_percentage": 15,
+      "promote_percentage": 40,
       "battle_count": 8,
       "trophy_start": 0,
       "clan_score": 1100,
@@ -1152,14 +688,6 @@
             "gold": 90000,
             "elixir": 90000,
             "dark_elixir": 950
-          },
-          "star_bonus": {
-            "gold": 477000,
-            "elixir": 477000,
-            "dark_elixir": 2385,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -1168,14 +696,6 @@
             "gold": 90000,
             "elixir": 90000,
             "dark_elixir": 950
-          },
-          "star_bonus": {
-            "gold": 526000,
-            "elixir": 526000,
-            "dark_elixir": 2630,
-            "shiny_ore": 575,
-            "glowy_ore": 38,
-            "starry_ore": 1
           }
         },
         {
@@ -1184,14 +704,6 @@
             "gold": 90000,
             "elixir": 90000,
             "dark_elixir": 950
-          },
-          "star_bonus": {
-            "gold": 575000,
-            "elixir": 575000,
-            "dark_elixir": 2875,
-            "shiny_ore": 675,
-            "glowy_ore": 43,
-            "starry_ore": 1
           }
         },
         {
@@ -1200,14 +712,6 @@
             "gold": 90000,
             "elixir": 90000,
             "dark_elixir": 950
-          },
-          "star_bonus": {
-            "gold": 625000,
-            "elixir": 625000,
-            "dark_elixir": 3125,
-            "shiny_ore": 775,
-            "glowy_ore": 44,
-            "starry_ore": 1
           }
         },
         {
@@ -1216,14 +720,6 @@
             "gold": 90000,
             "elixir": 90000,
             "dark_elixir": 950
-          },
-          "star_bonus": {
-            "gold": 675000,
-            "elixir": 675000,
-            "dark_elixir": 3375,
-            "shiny_ore": 825,
-            "glowy_ore": 45,
-            "starry_ore": 1
           }
         },
         {
@@ -1232,14 +728,6 @@
             "gold": 90000,
             "elixir": 90000,
             "dark_elixir": 950
-          },
-          "star_bonus": {
-            "gold": 725000,
-            "elixir": 725000,
-            "dark_elixir": 3625,
-            "shiny_ore": 875,
-            "glowy_ore": 46,
-            "starry_ore": 1
           }
         },
         {
@@ -1248,14 +736,6 @@
             "gold": 90000,
             "elixir": 90000,
             "dark_elixir": 950
-          },
-          "star_bonus": {
-            "gold": 775000,
-            "elixir": 775000,
-            "dark_elixir": 3875,
-            "shiny_ore": 925,
-            "glowy_ore": 47,
-            "starry_ore": 1
           }
         }
       ]
@@ -1268,8 +748,8 @@
         "name": "TID_LEAGUE_TIER_4_RANK_1"
       },
       "group_size": 100,
-      "demote_percentage": 10,
-      "promote_percentage": 40,
+      "demote_percentage": 15,
+      "promote_percentage": 35,
       "battle_count": 8,
       "trophy_start": 0,
       "clan_score": 1200,
@@ -1281,14 +761,6 @@
             "gold": 100000,
             "elixir": 100000,
             "dark_elixir": 1000
-          },
-          "star_bonus": {
-            "gold": 482000,
-            "elixir": 482000,
-            "dark_elixir": 2410,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -1297,14 +769,6 @@
             "gold": 100000,
             "elixir": 100000,
             "dark_elixir": 1000
-          },
-          "star_bonus": {
-            "gold": 531000,
-            "elixir": 531000,
-            "dark_elixir": 2655,
-            "shiny_ore": 580,
-            "glowy_ore": 38,
-            "starry_ore": 1
           }
         },
         {
@@ -1313,14 +777,6 @@
             "gold": 100000,
             "elixir": 100000,
             "dark_elixir": 1000
-          },
-          "star_bonus": {
-            "gold": 580000,
-            "elixir": 580000,
-            "dark_elixir": 2900,
-            "shiny_ore": 680,
-            "glowy_ore": 43,
-            "starry_ore": 1
           }
         },
         {
@@ -1329,14 +785,6 @@
             "gold": 100000,
             "elixir": 100000,
             "dark_elixir": 1000
-          },
-          "star_bonus": {
-            "gold": 630000,
-            "elixir": 630000,
-            "dark_elixir": 3150,
-            "shiny_ore": 780,
-            "glowy_ore": 44,
-            "starry_ore": 1
           }
         },
         {
@@ -1345,14 +793,6 @@
             "gold": 100000,
             "elixir": 100000,
             "dark_elixir": 1000
-          },
-          "star_bonus": {
-            "gold": 680000,
-            "elixir": 680000,
-            "dark_elixir": 3400,
-            "shiny_ore": 830,
-            "glowy_ore": 45,
-            "starry_ore": 1
           }
         },
         {
@@ -1361,14 +801,6 @@
             "gold": 100000,
             "elixir": 100000,
             "dark_elixir": 1000
-          },
-          "star_bonus": {
-            "gold": 730000,
-            "elixir": 730000,
-            "dark_elixir": 3650,
-            "shiny_ore": 880,
-            "glowy_ore": 46,
-            "starry_ore": 1
           }
         },
         {
@@ -1377,14 +809,6 @@
             "gold": 100000,
             "elixir": 100000,
             "dark_elixir": 1000
-          },
-          "star_bonus": {
-            "gold": 780000,
-            "elixir": 780000,
-            "dark_elixir": 3900,
-            "shiny_ore": 930,
-            "glowy_ore": 47,
-            "starry_ore": 1
           }
         }
       ]
@@ -1397,8 +821,8 @@
         "name": "TID_LEAGUE_TIER_5_RANK_3"
       },
       "group_size": 100,
-      "demote_percentage": 10,
-      "promote_percentage": 35,
+      "demote_percentage": 15,
+      "promote_percentage": 30,
       "battle_count": 10,
       "trophy_start": 0,
       "clan_score": 1300,
@@ -1410,14 +834,6 @@
             "gold": 180000,
             "elixir": 180000,
             "dark_elixir": 1200
-          },
-          "star_bonus": {
-            "gold": 532000,
-            "elixir": 532000,
-            "dark_elixir": 2660,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -1426,14 +842,6 @@
             "gold": 180000,
             "elixir": 180000,
             "dark_elixir": 1200
-          },
-          "star_bonus": {
-            "gold": 581000,
-            "elixir": 581000,
-            "dark_elixir": 2905,
-            "shiny_ore": 630,
-            "glowy_ore": 43,
-            "starry_ore": 1
           }
         },
         {
@@ -1442,14 +850,6 @@
             "gold": 180000,
             "elixir": 180000,
             "dark_elixir": 1200
-          },
-          "star_bonus": {
-            "gold": 630000,
-            "elixir": 630000,
-            "dark_elixir": 3150,
-            "shiny_ore": 730,
-            "glowy_ore": 48,
-            "starry_ore": 1
           }
         },
         {
@@ -1458,14 +858,6 @@
             "gold": 180000,
             "elixir": 180000,
             "dark_elixir": 1200
-          },
-          "star_bonus": {
-            "gold": 680000,
-            "elixir": 680000,
-            "dark_elixir": 3400,
-            "shiny_ore": 830,
-            "glowy_ore": 49,
-            "starry_ore": 1
           }
         },
         {
@@ -1474,14 +866,6 @@
             "gold": 180000,
             "elixir": 180000,
             "dark_elixir": 1200
-          },
-          "star_bonus": {
-            "gold": 730000,
-            "elixir": 730000,
-            "dark_elixir": 3650,
-            "shiny_ore": 880,
-            "glowy_ore": 50,
-            "starry_ore": 1
           }
         },
         {
@@ -1490,14 +874,6 @@
             "gold": 180000,
             "elixir": 180000,
             "dark_elixir": 1200
-          },
-          "star_bonus": {
-            "gold": 780000,
-            "elixir": 780000,
-            "dark_elixir": 3900,
-            "shiny_ore": 930,
-            "glowy_ore": 51,
-            "starry_ore": 1
           }
         },
         {
@@ -1506,14 +882,6 @@
             "gold": 180000,
             "elixir": 180000,
             "dark_elixir": 1200
-          },
-          "star_bonus": {
-            "gold": 830000,
-            "elixir": 830000,
-            "dark_elixir": 4150,
-            "shiny_ore": 980,
-            "glowy_ore": 52,
-            "starry_ore": 1
           }
         }
       ]
@@ -1526,8 +894,8 @@
         "name": "TID_LEAGUE_TIER_5_RANK_2"
       },
       "group_size": 100,
-      "demote_percentage": 10,
-      "promote_percentage": 50,
+      "demote_percentage": 15,
+      "promote_percentage": 40,
       "battle_count": 10,
       "trophy_start": 0,
       "clan_score": 1400,
@@ -1539,14 +907,6 @@
             "gold": 190000,
             "elixir": 190000,
             "dark_elixir": 1300
-          },
-          "star_bonus": {
-            "gold": 537000,
-            "elixir": 537000,
-            "dark_elixir": 2685,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -1555,14 +915,6 @@
             "gold": 190000,
             "elixir": 190000,
             "dark_elixir": 1300
-          },
-          "star_bonus": {
-            "gold": 586000,
-            "elixir": 586000,
-            "dark_elixir": 2930,
-            "shiny_ore": 635,
-            "glowy_ore": 43,
-            "starry_ore": 1
           }
         },
         {
@@ -1571,14 +923,6 @@
             "gold": 190000,
             "elixir": 190000,
             "dark_elixir": 1300
-          },
-          "star_bonus": {
-            "gold": 635000,
-            "elixir": 635000,
-            "dark_elixir": 3175,
-            "shiny_ore": 735,
-            "glowy_ore": 48,
-            "starry_ore": 1
           }
         },
         {
@@ -1587,14 +931,6 @@
             "gold": 190000,
             "elixir": 190000,
             "dark_elixir": 1300
-          },
-          "star_bonus": {
-            "gold": 685000,
-            "elixir": 685000,
-            "dark_elixir": 3425,
-            "shiny_ore": 835,
-            "glowy_ore": 49,
-            "starry_ore": 1
           }
         },
         {
@@ -1603,14 +939,6 @@
             "gold": 190000,
             "elixir": 190000,
             "dark_elixir": 1300
-          },
-          "star_bonus": {
-            "gold": 735000,
-            "elixir": 735000,
-            "dark_elixir": 3675,
-            "shiny_ore": 885,
-            "glowy_ore": 50,
-            "starry_ore": 1
           }
         },
         {
@@ -1619,14 +947,6 @@
             "gold": 190000,
             "elixir": 190000,
             "dark_elixir": 1300
-          },
-          "star_bonus": {
-            "gold": 785000,
-            "elixir": 785000,
-            "dark_elixir": 3925,
-            "shiny_ore": 935,
-            "glowy_ore": 51,
-            "starry_ore": 1
           }
         },
         {
@@ -1635,14 +955,6 @@
             "gold": 190000,
             "elixir": 190000,
             "dark_elixir": 1300
-          },
-          "star_bonus": {
-            "gold": 835000,
-            "elixir": 835000,
-            "dark_elixir": 4175,
-            "shiny_ore": 985,
-            "glowy_ore": 52,
-            "starry_ore": 1
           }
         },
         {
@@ -1651,14 +963,6 @@
             "gold": 190000,
             "elixir": 190000,
             "dark_elixir": 1300
-          },
-          "star_bonus": {
-            "gold": 885000,
-            "elixir": 885000,
-            "dark_elixir": 4425,
-            "shiny_ore": 995,
-            "glowy_ore": 53,
-            "starry_ore": 1
           }
         }
       ]
@@ -1671,8 +975,8 @@
         "name": "TID_LEAGUE_TIER_5_RANK_1"
       },
       "group_size": 100,
-      "demote_percentage": 10,
-      "promote_percentage": 40,
+      "demote_percentage": 15,
+      "promote_percentage": 35,
       "battle_count": 10,
       "trophy_start": 0,
       "clan_score": 1500,
@@ -1684,14 +988,6 @@
             "gold": 200000,
             "elixir": 200000,
             "dark_elixir": 1400
-          },
-          "star_bonus": {
-            "gold": 542000,
-            "elixir": 542000,
-            "dark_elixir": 2710,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -1700,14 +996,6 @@
             "gold": 200000,
             "elixir": 200000,
             "dark_elixir": 1400
-          },
-          "star_bonus": {
-            "gold": 591000,
-            "elixir": 591000,
-            "dark_elixir": 2955,
-            "shiny_ore": 640,
-            "glowy_ore": 43,
-            "starry_ore": 1
           }
         },
         {
@@ -1716,14 +1004,6 @@
             "gold": 200000,
             "elixir": 200000,
             "dark_elixir": 1400
-          },
-          "star_bonus": {
-            "gold": 640000,
-            "elixir": 640000,
-            "dark_elixir": 3200,
-            "shiny_ore": 740,
-            "glowy_ore": 48,
-            "starry_ore": 1
           }
         },
         {
@@ -1732,14 +1012,6 @@
             "gold": 200000,
             "elixir": 200000,
             "dark_elixir": 1400
-          },
-          "star_bonus": {
-            "gold": 690000,
-            "elixir": 690000,
-            "dark_elixir": 3450,
-            "shiny_ore": 840,
-            "glowy_ore": 49,
-            "starry_ore": 1
           }
         },
         {
@@ -1748,14 +1020,6 @@
             "gold": 200000,
             "elixir": 200000,
             "dark_elixir": 1400
-          },
-          "star_bonus": {
-            "gold": 740000,
-            "elixir": 740000,
-            "dark_elixir": 3700,
-            "shiny_ore": 890,
-            "glowy_ore": 50,
-            "starry_ore": 1
           }
         },
         {
@@ -1764,14 +1028,6 @@
             "gold": 200000,
             "elixir": 200000,
             "dark_elixir": 1400
-          },
-          "star_bonus": {
-            "gold": 790000,
-            "elixir": 790000,
-            "dark_elixir": 3950,
-            "shiny_ore": 940,
-            "glowy_ore": 51,
-            "starry_ore": 1
           }
         },
         {
@@ -1780,14 +1036,6 @@
             "gold": 200000,
             "elixir": 200000,
             "dark_elixir": 1400
-          },
-          "star_bonus": {
-            "gold": 840000,
-            "elixir": 840000,
-            "dark_elixir": 4200,
-            "shiny_ore": 990,
-            "glowy_ore": 52,
-            "starry_ore": 1
           }
         },
         {
@@ -1796,14 +1044,6 @@
             "gold": 200000,
             "elixir": 200000,
             "dark_elixir": 1400
-          },
-          "star_bonus": {
-            "gold": 890000,
-            "elixir": 890000,
-            "dark_elixir": 4450,
-            "shiny_ore": 1000,
-            "glowy_ore": 53,
-            "starry_ore": 1
           }
         }
       ]
@@ -1816,8 +1056,8 @@
         "name": "TID_LEAGUE_TIER_6_RANK_3"
       },
       "group_size": 100,
-      "demote_percentage": 10,
-      "promote_percentage": 35,
+      "demote_percentage": 15,
+      "promote_percentage": 30,
       "battle_count": 10,
       "trophy_start": 0,
       "clan_score": 1600,
@@ -1829,14 +1069,6 @@
             "gold": 250000,
             "elixir": 250000,
             "dark_elixir": 1600
-          },
-          "star_bonus": {
-            "gold": 592000,
-            "elixir": 592000,
-            "dark_elixir": 2960,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -1845,14 +1077,6 @@
             "gold": 250000,
             "elixir": 250000,
             "dark_elixir": 1600
-          },
-          "star_bonus": {
-            "gold": 641000,
-            "elixir": 641000,
-            "dark_elixir": 3205,
-            "shiny_ore": 690,
-            "glowy_ore": 46,
-            "starry_ore": 1
           }
         },
         {
@@ -1861,14 +1085,6 @@
             "gold": 250000,
             "elixir": 250000,
             "dark_elixir": 1600
-          },
-          "star_bonus": {
-            "gold": 690000,
-            "elixir": 690000,
-            "dark_elixir": 3450,
-            "shiny_ore": 790,
-            "glowy_ore": 51,
-            "starry_ore": 1
           }
         },
         {
@@ -1877,14 +1093,6 @@
             "gold": 250000,
             "elixir": 250000,
             "dark_elixir": 1600
-          },
-          "star_bonus": {
-            "gold": 740000,
-            "elixir": 740000,
-            "dark_elixir": 3700,
-            "shiny_ore": 890,
-            "glowy_ore": 52,
-            "starry_ore": 1
           }
         },
         {
@@ -1893,14 +1101,6 @@
             "gold": 250000,
             "elixir": 250000,
             "dark_elixir": 1600
-          },
-          "star_bonus": {
-            "gold": 790000,
-            "elixir": 790000,
-            "dark_elixir": 3950,
-            "shiny_ore": 940,
-            "glowy_ore": 53,
-            "starry_ore": 1
           }
         },
         {
@@ -1909,14 +1109,6 @@
             "gold": 250000,
             "elixir": 250000,
             "dark_elixir": 1600
-          },
-          "star_bonus": {
-            "gold": 840000,
-            "elixir": 840000,
-            "dark_elixir": 4200,
-            "shiny_ore": 990,
-            "glowy_ore": 54,
-            "starry_ore": 1
           }
         },
         {
@@ -1925,14 +1117,6 @@
             "gold": 250000,
             "elixir": 250000,
             "dark_elixir": 1600
-          },
-          "star_bonus": {
-            "gold": 890000,
-            "elixir": 890000,
-            "dark_elixir": 4450,
-            "shiny_ore": 1040,
-            "glowy_ore": 55,
-            "starry_ore": 1
           }
         },
         {
@@ -1941,14 +1125,6 @@
             "gold": 250000,
             "elixir": 250000,
             "dark_elixir": 1600
-          },
-          "star_bonus": {
-            "gold": 940000,
-            "elixir": 940000,
-            "dark_elixir": 4700,
-            "shiny_ore": 1050,
-            "glowy_ore": 56,
-            "starry_ore": 1
           }
         }
       ]
@@ -1961,8 +1137,8 @@
         "name": "TID_LEAGUE_TIER_6_RANK_2"
       },
       "group_size": 100,
-      "demote_percentage": 10,
-      "promote_percentage": 50,
+      "demote_percentage": 15,
+      "promote_percentage": 40,
       "battle_count": 10,
       "trophy_start": 0,
       "clan_score": 1700,
@@ -1974,14 +1150,6 @@
             "gold": 260000,
             "elixir": 260000,
             "dark_elixir": 1700
-          },
-          "star_bonus": {
-            "gold": 597000,
-            "elixir": 597000,
-            "dark_elixir": 2985,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -1990,14 +1158,6 @@
             "gold": 260000,
             "elixir": 260000,
             "dark_elixir": 1700
-          },
-          "star_bonus": {
-            "gold": 646000,
-            "elixir": 646000,
-            "dark_elixir": 3230,
-            "shiny_ore": 695,
-            "glowy_ore": 46,
-            "starry_ore": 1
           }
         },
         {
@@ -2006,14 +1166,6 @@
             "gold": 260000,
             "elixir": 260000,
             "dark_elixir": 1700
-          },
-          "star_bonus": {
-            "gold": 695000,
-            "elixir": 695000,
-            "dark_elixir": 3475,
-            "shiny_ore": 795,
-            "glowy_ore": 51,
-            "starry_ore": 1
           }
         },
         {
@@ -2022,14 +1174,6 @@
             "gold": 260000,
             "elixir": 260000,
             "dark_elixir": 1700
-          },
-          "star_bonus": {
-            "gold": 745000,
-            "elixir": 745000,
-            "dark_elixir": 3725,
-            "shiny_ore": 895,
-            "glowy_ore": 52,
-            "starry_ore": 1
           }
         },
         {
@@ -2038,14 +1182,6 @@
             "gold": 260000,
             "elixir": 260000,
             "dark_elixir": 1700
-          },
-          "star_bonus": {
-            "gold": 795000,
-            "elixir": 795000,
-            "dark_elixir": 3975,
-            "shiny_ore": 945,
-            "glowy_ore": 53,
-            "starry_ore": 1
           }
         },
         {
@@ -2054,14 +1190,6 @@
             "gold": 260000,
             "elixir": 260000,
             "dark_elixir": 1700
-          },
-          "star_bonus": {
-            "gold": 845000,
-            "elixir": 845000,
-            "dark_elixir": 4225,
-            "shiny_ore": 995,
-            "glowy_ore": 54,
-            "starry_ore": 1
           }
         },
         {
@@ -2070,14 +1198,6 @@
             "gold": 260000,
             "elixir": 260000,
             "dark_elixir": 1700
-          },
-          "star_bonus": {
-            "gold": 895000,
-            "elixir": 895000,
-            "dark_elixir": 4475,
-            "shiny_ore": 1045,
-            "glowy_ore": 55,
-            "starry_ore": 1
           }
         },
         {
@@ -2086,14 +1206,6 @@
             "gold": 260000,
             "elixir": 260000,
             "dark_elixir": 1700
-          },
-          "star_bonus": {
-            "gold": 945000,
-            "elixir": 945000,
-            "dark_elixir": 4725,
-            "shiny_ore": 1055,
-            "glowy_ore": 56,
-            "starry_ore": 1
           }
         },
         {
@@ -2102,14 +1214,6 @@
             "gold": 260000,
             "elixir": 260000,
             "dark_elixir": 1700
-          },
-          "star_bonus": {
-            "gold": 995000,
-            "elixir": 995000,
-            "dark_elixir": 4975,
-            "shiny_ore": 1065,
-            "glowy_ore": 57,
-            "starry_ore": 1
           }
         }
       ]
@@ -2122,8 +1226,8 @@
         "name": "TID_LEAGUE_TIER_6_RANK_1"
       },
       "group_size": 100,
-      "demote_percentage": 10,
-      "promote_percentage": 40,
+      "demote_percentage": 15,
+      "promote_percentage": 35,
       "battle_count": 10,
       "trophy_start": 0,
       "clan_score": 1800,
@@ -2135,14 +1239,6 @@
             "gold": 270000,
             "elixir": 270000,
             "dark_elixir": 1800
-          },
-          "star_bonus": {
-            "gold": 602000,
-            "elixir": 602000,
-            "dark_elixir": 3010,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -2151,14 +1247,6 @@
             "gold": 270000,
             "elixir": 270000,
             "dark_elixir": 1800
-          },
-          "star_bonus": {
-            "gold": 651000,
-            "elixir": 651000,
-            "dark_elixir": 3255,
-            "shiny_ore": 700,
-            "glowy_ore": 46,
-            "starry_ore": 1
           }
         },
         {
@@ -2167,14 +1255,6 @@
             "gold": 270000,
             "elixir": 270000,
             "dark_elixir": 1800
-          },
-          "star_bonus": {
-            "gold": 700000,
-            "elixir": 700000,
-            "dark_elixir": 3500,
-            "shiny_ore": 800,
-            "glowy_ore": 51,
-            "starry_ore": 1
           }
         },
         {
@@ -2183,14 +1263,6 @@
             "gold": 270000,
             "elixir": 270000,
             "dark_elixir": 1800
-          },
-          "star_bonus": {
-            "gold": 750000,
-            "elixir": 750000,
-            "dark_elixir": 3750,
-            "shiny_ore": 900,
-            "glowy_ore": 52,
-            "starry_ore": 1
           }
         },
         {
@@ -2199,14 +1271,6 @@
             "gold": 270000,
             "elixir": 270000,
             "dark_elixir": 1800
-          },
-          "star_bonus": {
-            "gold": 800000,
-            "elixir": 800000,
-            "dark_elixir": 4000,
-            "shiny_ore": 950,
-            "glowy_ore": 53,
-            "starry_ore": 1
           }
         },
         {
@@ -2215,14 +1279,6 @@
             "gold": 270000,
             "elixir": 270000,
             "dark_elixir": 1800
-          },
-          "star_bonus": {
-            "gold": 850000,
-            "elixir": 850000,
-            "dark_elixir": 4250,
-            "shiny_ore": 1000,
-            "glowy_ore": 54,
-            "starry_ore": 1
           }
         },
         {
@@ -2231,14 +1287,6 @@
             "gold": 270000,
             "elixir": 270000,
             "dark_elixir": 1800
-          },
-          "star_bonus": {
-            "gold": 900000,
-            "elixir": 900000,
-            "dark_elixir": 4500,
-            "shiny_ore": 1050,
-            "glowy_ore": 55,
-            "starry_ore": 1
           }
         },
         {
@@ -2247,14 +1295,6 @@
             "gold": 270000,
             "elixir": 270000,
             "dark_elixir": 1800
-          },
-          "star_bonus": {
-            "gold": 950000,
-            "elixir": 950000,
-            "dark_elixir": 4750,
-            "shiny_ore": 1060,
-            "glowy_ore": 56,
-            "starry_ore": 1
           }
         },
         {
@@ -2263,14 +1303,6 @@
             "gold": 270000,
             "elixir": 270000,
             "dark_elixir": 1800
-          },
-          "star_bonus": {
-            "gold": 1000000,
-            "elixir": 1000000,
-            "dark_elixir": 5000,
-            "shiny_ore": 1070,
-            "glowy_ore": 57,
-            "starry_ore": 1
           }
         }
       ]
@@ -2283,8 +1315,8 @@
         "name": "TID_LEAGUE_TIER_7_RANK_3"
       },
       "group_size": 100,
-      "demote_percentage": 10,
-      "promote_percentage": 35,
+      "demote_percentage": 15,
+      "promote_percentage": 30,
       "battle_count": 12,
       "trophy_start": 0,
       "clan_score": 1900,
@@ -2296,14 +1328,6 @@
             "gold": 290000,
             "elixir": 290000,
             "dark_elixir": 2000
-          },
-          "star_bonus": {
-            "gold": 652000,
-            "elixir": 652000,
-            "dark_elixir": 3260,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -2312,14 +1336,6 @@
             "gold": 290000,
             "elixir": 290000,
             "dark_elixir": 2000
-          },
-          "star_bonus": {
-            "gold": 701000,
-            "elixir": 701000,
-            "dark_elixir": 3505,
-            "shiny_ore": 750,
-            "glowy_ore": 49,
-            "starry_ore": 1
           }
         },
         {
@@ -2328,14 +1344,6 @@
             "gold": 290000,
             "elixir": 290000,
             "dark_elixir": 2000
-          },
-          "star_bonus": {
-            "gold": 750000,
-            "elixir": 750000,
-            "dark_elixir": 3750,
-            "shiny_ore": 850,
-            "glowy_ore": 54,
-            "starry_ore": 1
           }
         },
         {
@@ -2344,14 +1352,6 @@
             "gold": 290000,
             "elixir": 290000,
             "dark_elixir": 2000
-          },
-          "star_bonus": {
-            "gold": 800000,
-            "elixir": 800000,
-            "dark_elixir": 4000,
-            "shiny_ore": 950,
-            "glowy_ore": 55,
-            "starry_ore": 1
           }
         },
         {
@@ -2360,14 +1360,6 @@
             "gold": 290000,
             "elixir": 290000,
             "dark_elixir": 2000
-          },
-          "star_bonus": {
-            "gold": 850000,
-            "elixir": 850000,
-            "dark_elixir": 4250,
-            "shiny_ore": 1000,
-            "glowy_ore": 56,
-            "starry_ore": 1
           }
         },
         {
@@ -2376,14 +1368,6 @@
             "gold": 290000,
             "elixir": 290000,
             "dark_elixir": 2000
-          },
-          "star_bonus": {
-            "gold": 900000,
-            "elixir": 900000,
-            "dark_elixir": 4500,
-            "shiny_ore": 1050,
-            "glowy_ore": 57,
-            "starry_ore": 1
           }
         },
         {
@@ -2392,14 +1376,6 @@
             "gold": 290000,
             "elixir": 290000,
             "dark_elixir": 2000
-          },
-          "star_bonus": {
-            "gold": 950000,
-            "elixir": 950000,
-            "dark_elixir": 4750,
-            "shiny_ore": 1100,
-            "glowy_ore": 58,
-            "starry_ore": 1
           }
         },
         {
@@ -2408,14 +1384,6 @@
             "gold": 290000,
             "elixir": 290000,
             "dark_elixir": 2000
-          },
-          "star_bonus": {
-            "gold": 1000000,
-            "elixir": 1000000,
-            "dark_elixir": 5000,
-            "shiny_ore": 1110,
-            "glowy_ore": 59,
-            "starry_ore": 1
           }
         },
         {
@@ -2424,14 +1392,6 @@
             "gold": 290000,
             "elixir": 290000,
             "dark_elixir": 2000
-          },
-          "star_bonus": {
-            "gold": 1050000,
-            "elixir": 1050000,
-            "dark_elixir": 5250,
-            "shiny_ore": 1120,
-            "glowy_ore": 60,
-            "starry_ore": 1
           }
         }
       ]
@@ -2444,8 +1404,8 @@
         "name": "TID_LEAGUE_TIER_7_RANK_2"
       },
       "group_size": 100,
-      "demote_percentage": 10,
-      "promote_percentage": 50,
+      "demote_percentage": 20,
+      "promote_percentage": 35,
       "battle_count": 12,
       "trophy_start": 0,
       "clan_score": 2000,
@@ -2457,14 +1417,6 @@
             "gold": 300000,
             "elixir": 300000,
             "dark_elixir": 2050
-          },
-          "star_bonus": {
-            "gold": 657000,
-            "elixir": 657000,
-            "dark_elixir": 3285,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -2473,14 +1425,6 @@
             "gold": 300000,
             "elixir": 300000,
             "dark_elixir": 2050
-          },
-          "star_bonus": {
-            "gold": 706000,
-            "elixir": 706000,
-            "dark_elixir": 3530,
-            "shiny_ore": 755,
-            "glowy_ore": 49,
-            "starry_ore": 1
           }
         },
         {
@@ -2489,14 +1433,6 @@
             "gold": 300000,
             "elixir": 300000,
             "dark_elixir": 2050
-          },
-          "star_bonus": {
-            "gold": 755000,
-            "elixir": 755000,
-            "dark_elixir": 3775,
-            "shiny_ore": 855,
-            "glowy_ore": 54,
-            "starry_ore": 1
           }
         },
         {
@@ -2505,14 +1441,6 @@
             "gold": 300000,
             "elixir": 300000,
             "dark_elixir": 2050
-          },
-          "star_bonus": {
-            "gold": 805000,
-            "elixir": 805000,
-            "dark_elixir": 4025,
-            "shiny_ore": 955,
-            "glowy_ore": 55,
-            "starry_ore": 1
           }
         },
         {
@@ -2521,14 +1449,6 @@
             "gold": 300000,
             "elixir": 300000,
             "dark_elixir": 2050
-          },
-          "star_bonus": {
-            "gold": 855000,
-            "elixir": 855000,
-            "dark_elixir": 4275,
-            "shiny_ore": 1005,
-            "glowy_ore": 56,
-            "starry_ore": 1
           }
         },
         {
@@ -2537,14 +1457,6 @@
             "gold": 300000,
             "elixir": 300000,
             "dark_elixir": 2050
-          },
-          "star_bonus": {
-            "gold": 905000,
-            "elixir": 905000,
-            "dark_elixir": 4525,
-            "shiny_ore": 1055,
-            "glowy_ore": 57,
-            "starry_ore": 1
           }
         },
         {
@@ -2553,14 +1465,6 @@
             "gold": 300000,
             "elixir": 300000,
             "dark_elixir": 2050
-          },
-          "star_bonus": {
-            "gold": 955000,
-            "elixir": 955000,
-            "dark_elixir": 4775,
-            "shiny_ore": 1105,
-            "glowy_ore": 58,
-            "starry_ore": 1
           }
         },
         {
@@ -2569,14 +1473,6 @@
             "gold": 300000,
             "elixir": 300000,
             "dark_elixir": 2050
-          },
-          "star_bonus": {
-            "gold": 1005000,
-            "elixir": 1005000,
-            "dark_elixir": 5025,
-            "shiny_ore": 1115,
-            "glowy_ore": 59,
-            "starry_ore": 1
           }
         },
         {
@@ -2585,14 +1481,6 @@
             "gold": 300000,
             "elixir": 300000,
             "dark_elixir": 2050
-          },
-          "star_bonus": {
-            "gold": 1055000,
-            "elixir": 1055000,
-            "dark_elixir": 5275,
-            "shiny_ore": 1125,
-            "glowy_ore": 60,
-            "starry_ore": 1
           }
         },
         {
@@ -2601,14 +1489,6 @@
             "gold": 300000,
             "elixir": 300000,
             "dark_elixir": 2050
-          },
-          "star_bonus": {
-            "gold": 1105000,
-            "elixir": 1105000,
-            "dark_elixir": 5525,
-            "shiny_ore": 1135,
-            "glowy_ore": 61,
-            "starry_ore": 1
           }
         }
       ]
@@ -2621,8 +1501,8 @@
         "name": "TID_LEAGUE_TIER_7_RANK_1"
       },
       "group_size": 100,
-      "demote_percentage": 10,
-      "promote_percentage": 40,
+      "demote_percentage": 20,
+      "promote_percentage": 30,
       "battle_count": 12,
       "trophy_start": 0,
       "clan_score": 2100,
@@ -2634,14 +1514,6 @@
             "gold": 310000,
             "elixir": 310000,
             "dark_elixir": 2100
-          },
-          "star_bonus": {
-            "gold": 662000,
-            "elixir": 662000,
-            "dark_elixir": 3310,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -2650,14 +1522,6 @@
             "gold": 310000,
             "elixir": 310000,
             "dark_elixir": 2100
-          },
-          "star_bonus": {
-            "gold": 711000,
-            "elixir": 711000,
-            "dark_elixir": 3555,
-            "shiny_ore": 760,
-            "glowy_ore": 49,
-            "starry_ore": 1
           }
         },
         {
@@ -2666,14 +1530,6 @@
             "gold": 310000,
             "elixir": 310000,
             "dark_elixir": 2100
-          },
-          "star_bonus": {
-            "gold": 760000,
-            "elixir": 760000,
-            "dark_elixir": 3800,
-            "shiny_ore": 860,
-            "glowy_ore": 54,
-            "starry_ore": 1
           }
         },
         {
@@ -2682,14 +1538,6 @@
             "gold": 310000,
             "elixir": 310000,
             "dark_elixir": 2100
-          },
-          "star_bonus": {
-            "gold": 810000,
-            "elixir": 810000,
-            "dark_elixir": 4050,
-            "shiny_ore": 960,
-            "glowy_ore": 55,
-            "starry_ore": 1
           }
         },
         {
@@ -2698,14 +1546,6 @@
             "gold": 310000,
             "elixir": 310000,
             "dark_elixir": 2100
-          },
-          "star_bonus": {
-            "gold": 860000,
-            "elixir": 860000,
-            "dark_elixir": 4300,
-            "shiny_ore": 1010,
-            "glowy_ore": 56,
-            "starry_ore": 1
           }
         },
         {
@@ -2714,14 +1554,6 @@
             "gold": 310000,
             "elixir": 310000,
             "dark_elixir": 2100
-          },
-          "star_bonus": {
-            "gold": 910000,
-            "elixir": 910000,
-            "dark_elixir": 4550,
-            "shiny_ore": 1060,
-            "glowy_ore": 57,
-            "starry_ore": 1
           }
         },
         {
@@ -2730,14 +1562,6 @@
             "gold": 310000,
             "elixir": 310000,
             "dark_elixir": 2100
-          },
-          "star_bonus": {
-            "gold": 960000,
-            "elixir": 960000,
-            "dark_elixir": 4800,
-            "shiny_ore": 1110,
-            "glowy_ore": 58,
-            "starry_ore": 1
           }
         },
         {
@@ -2746,14 +1570,6 @@
             "gold": 310000,
             "elixir": 310000,
             "dark_elixir": 2100
-          },
-          "star_bonus": {
-            "gold": 1010000,
-            "elixir": 1010000,
-            "dark_elixir": 5050,
-            "shiny_ore": 1120,
-            "glowy_ore": 59,
-            "starry_ore": 1
           }
         },
         {
@@ -2762,14 +1578,6 @@
             "gold": 310000,
             "elixir": 310000,
             "dark_elixir": 2100
-          },
-          "star_bonus": {
-            "gold": 1060000,
-            "elixir": 1060000,
-            "dark_elixir": 5300,
-            "shiny_ore": 1130,
-            "glowy_ore": 60,
-            "starry_ore": 1
           }
         },
         {
@@ -2778,14 +1586,6 @@
             "gold": 310000,
             "elixir": 310000,
             "dark_elixir": 2100
-          },
-          "star_bonus": {
-            "gold": 1110000,
-            "elixir": 1110000,
-            "dark_elixir": 5550,
-            "shiny_ore": 1140,
-            "glowy_ore": 61,
-            "starry_ore": 1
           }
         }
       ]
@@ -2798,7 +1598,7 @@
         "name": "TID_LEAGUE_TIER_8_RANK_3"
       },
       "group_size": 100,
-      "demote_percentage": 15,
+      "demote_percentage": 20,
       "promote_percentage": 30,
       "battle_count": 12,
       "trophy_start": 0,
@@ -2811,14 +1611,6 @@
             "gold": 325000,
             "elixir": 325000,
             "dark_elixir": 2300
-          },
-          "star_bonus": {
-            "gold": 712000,
-            "elixir": 712000,
-            "dark_elixir": 3560,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -2827,14 +1619,6 @@
             "gold": 325000,
             "elixir": 325000,
             "dark_elixir": 2300
-          },
-          "star_bonus": {
-            "gold": 761000,
-            "elixir": 761000,
-            "dark_elixir": 3805,
-            "shiny_ore": 770,
-            "glowy_ore": 52,
-            "starry_ore": 1
           }
         },
         {
@@ -2843,14 +1627,6 @@
             "gold": 325000,
             "elixir": 325000,
             "dark_elixir": 2300
-          },
-          "star_bonus": {
-            "gold": 810000,
-            "elixir": 810000,
-            "dark_elixir": 4050,
-            "shiny_ore": 870,
-            "glowy_ore": 57,
-            "starry_ore": 1
           }
         },
         {
@@ -2859,14 +1635,6 @@
             "gold": 325000,
             "elixir": 325000,
             "dark_elixir": 2300
-          },
-          "star_bonus": {
-            "gold": 860000,
-            "elixir": 860000,
-            "dark_elixir": 4300,
-            "shiny_ore": 970,
-            "glowy_ore": 58,
-            "starry_ore": 1
           }
         },
         {
@@ -2875,14 +1643,6 @@
             "gold": 325000,
             "elixir": 325000,
             "dark_elixir": 2300
-          },
-          "star_bonus": {
-            "gold": 910000,
-            "elixir": 910000,
-            "dark_elixir": 4550,
-            "shiny_ore": 1020,
-            "glowy_ore": 59,
-            "starry_ore": 1
           }
         },
         {
@@ -2891,14 +1651,6 @@
             "gold": 325000,
             "elixir": 325000,
             "dark_elixir": 2300
-          },
-          "star_bonus": {
-            "gold": 960000,
-            "elixir": 960000,
-            "dark_elixir": 4800,
-            "shiny_ore": 1070,
-            "glowy_ore": 60,
-            "starry_ore": 1
           }
         },
         {
@@ -2907,14 +1659,6 @@
             "gold": 325000,
             "elixir": 325000,
             "dark_elixir": 2300
-          },
-          "star_bonus": {
-            "gold": 1010000,
-            "elixir": 1010000,
-            "dark_elixir": 5050,
-            "shiny_ore": 1120,
-            "glowy_ore": 61,
-            "starry_ore": 1
           }
         },
         {
@@ -2923,14 +1667,6 @@
             "gold": 325000,
             "elixir": 325000,
             "dark_elixir": 2300
-          },
-          "star_bonus": {
-            "gold": 1060000,
-            "elixir": 1060000,
-            "dark_elixir": 5300,
-            "shiny_ore": 1130,
-            "glowy_ore": 62,
-            "starry_ore": 1
           }
         },
         {
@@ -2939,14 +1675,6 @@
             "gold": 325000,
             "elixir": 325000,
             "dark_elixir": 2300
-          },
-          "star_bonus": {
-            "gold": 1110000,
-            "elixir": 1110000,
-            "dark_elixir": 5550,
-            "shiny_ore": 1140,
-            "glowy_ore": 63,
-            "starry_ore": 1
           }
         },
         {
@@ -2955,14 +1683,6 @@
             "gold": 325000,
             "elixir": 325000,
             "dark_elixir": 2300
-          },
-          "star_bonus": {
-            "gold": 1160000,
-            "elixir": 1160000,
-            "dark_elixir": 5800,
-            "shiny_ore": 1150,
-            "glowy_ore": 64,
-            "starry_ore": 1
           }
         }
       ]
@@ -2975,8 +1695,8 @@
         "name": "TID_LEAGUE_TIER_8_RANK_2"
       },
       "group_size": 100,
-      "demote_percentage": 15,
-      "promote_percentage": 50,
+      "demote_percentage": 20,
+      "promote_percentage": 35,
       "battle_count": 12,
       "trophy_start": 0,
       "clan_score": 2300,
@@ -2988,14 +1708,6 @@
             "gold": 330000,
             "elixir": 330000,
             "dark_elixir": 2350
-          },
-          "star_bonus": {
-            "gold": 717000,
-            "elixir": 717000,
-            "dark_elixir": 3585,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -3004,14 +1716,6 @@
             "gold": 330000,
             "elixir": 330000,
             "dark_elixir": 2350
-          },
-          "star_bonus": {
-            "gold": 766000,
-            "elixir": 766000,
-            "dark_elixir": 3830,
-            "shiny_ore": 775,
-            "glowy_ore": 52,
-            "starry_ore": 1
           }
         },
         {
@@ -3020,14 +1724,6 @@
             "gold": 330000,
             "elixir": 330000,
             "dark_elixir": 2350
-          },
-          "star_bonus": {
-            "gold": 815000,
-            "elixir": 815000,
-            "dark_elixir": 4075,
-            "shiny_ore": 875,
-            "glowy_ore": 57,
-            "starry_ore": 1
           }
         },
         {
@@ -3036,14 +1732,6 @@
             "gold": 330000,
             "elixir": 330000,
             "dark_elixir": 2350
-          },
-          "star_bonus": {
-            "gold": 865000,
-            "elixir": 865000,
-            "dark_elixir": 4325,
-            "shiny_ore": 975,
-            "glowy_ore": 58,
-            "starry_ore": 1
           }
         },
         {
@@ -3052,14 +1740,6 @@
             "gold": 330000,
             "elixir": 330000,
             "dark_elixir": 2350
-          },
-          "star_bonus": {
-            "gold": 915000,
-            "elixir": 915000,
-            "dark_elixir": 4575,
-            "shiny_ore": 1025,
-            "glowy_ore": 59,
-            "starry_ore": 1
           }
         },
         {
@@ -3068,14 +1748,6 @@
             "gold": 330000,
             "elixir": 330000,
             "dark_elixir": 2350
-          },
-          "star_bonus": {
-            "gold": 965000,
-            "elixir": 965000,
-            "dark_elixir": 4825,
-            "shiny_ore": 1075,
-            "glowy_ore": 60,
-            "starry_ore": 1
           }
         },
         {
@@ -3084,14 +1756,6 @@
             "gold": 330000,
             "elixir": 330000,
             "dark_elixir": 2350
-          },
-          "star_bonus": {
-            "gold": 1015000,
-            "elixir": 1015000,
-            "dark_elixir": 5075,
-            "shiny_ore": 1125,
-            "glowy_ore": 61,
-            "starry_ore": 1
           }
         },
         {
@@ -3100,14 +1764,6 @@
             "gold": 330000,
             "elixir": 330000,
             "dark_elixir": 2350
-          },
-          "star_bonus": {
-            "gold": 1065000,
-            "elixir": 1065000,
-            "dark_elixir": 5325,
-            "shiny_ore": 1135,
-            "glowy_ore": 62,
-            "starry_ore": 1
           }
         },
         {
@@ -3116,14 +1772,6 @@
             "gold": 330000,
             "elixir": 330000,
             "dark_elixir": 2350
-          },
-          "star_bonus": {
-            "gold": 1115000,
-            "elixir": 1115000,
-            "dark_elixir": 5575,
-            "shiny_ore": 1145,
-            "glowy_ore": 63,
-            "starry_ore": 1
           }
         },
         {
@@ -3132,14 +1780,6 @@
             "gold": 330000,
             "elixir": 330000,
             "dark_elixir": 2350
-          },
-          "star_bonus": {
-            "gold": 1165000,
-            "elixir": 1165000,
-            "dark_elixir": 5825,
-            "shiny_ore": 1155,
-            "glowy_ore": 64,
-            "starry_ore": 1
           }
         },
         {
@@ -3148,14 +1788,6 @@
             "gold": 330000,
             "elixir": 330000,
             "dark_elixir": 2350
-          },
-          "star_bonus": {
-            "gold": 1215000,
-            "elixir": 1215000,
-            "dark_elixir": 6075,
-            "shiny_ore": 1165,
-            "glowy_ore": 65,
-            "starry_ore": 1
           }
         }
       ]
@@ -3168,8 +1800,8 @@
         "name": "TID_LEAGUE_TIER_8_RANK_1"
       },
       "group_size": 100,
-      "demote_percentage": 15,
-      "promote_percentage": 40,
+      "demote_percentage": 20,
+      "promote_percentage": 30,
       "battle_count": 12,
       "trophy_start": 0,
       "clan_score": 2400,
@@ -3181,14 +1813,6 @@
             "gold": 335000,
             "elixir": 335000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 722000,
-            "elixir": 722000,
-            "dark_elixir": 3610,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -3197,14 +1821,6 @@
             "gold": 335000,
             "elixir": 335000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 771000,
-            "elixir": 771000,
-            "dark_elixir": 3855,
-            "shiny_ore": 780,
-            "glowy_ore": 52,
-            "starry_ore": 1
           }
         },
         {
@@ -3213,14 +1829,6 @@
             "gold": 335000,
             "elixir": 335000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 820000,
-            "elixir": 820000,
-            "dark_elixir": 4100,
-            "shiny_ore": 880,
-            "glowy_ore": 57,
-            "starry_ore": 1
           }
         },
         {
@@ -3229,14 +1837,6 @@
             "gold": 335000,
             "elixir": 335000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 870000,
-            "elixir": 870000,
-            "dark_elixir": 4350,
-            "shiny_ore": 980,
-            "glowy_ore": 58,
-            "starry_ore": 1
           }
         },
         {
@@ -3245,14 +1845,6 @@
             "gold": 335000,
             "elixir": 335000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 920000,
-            "elixir": 920000,
-            "dark_elixir": 4600,
-            "shiny_ore": 1030,
-            "glowy_ore": 59,
-            "starry_ore": 1
           }
         },
         {
@@ -3261,14 +1853,6 @@
             "gold": 335000,
             "elixir": 335000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 970000,
-            "elixir": 970000,
-            "dark_elixir": 4850,
-            "shiny_ore": 1080,
-            "glowy_ore": 60,
-            "starry_ore": 1
           }
         },
         {
@@ -3277,14 +1861,6 @@
             "gold": 335000,
             "elixir": 335000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 1020000,
-            "elixir": 1020000,
-            "dark_elixir": 5100,
-            "shiny_ore": 1130,
-            "glowy_ore": 61,
-            "starry_ore": 1
           }
         },
         {
@@ -3293,14 +1869,6 @@
             "gold": 335000,
             "elixir": 335000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 1070000,
-            "elixir": 1070000,
-            "dark_elixir": 5350,
-            "shiny_ore": 1140,
-            "glowy_ore": 62,
-            "starry_ore": 1
           }
         },
         {
@@ -3309,14 +1877,6 @@
             "gold": 335000,
             "elixir": 335000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 1120000,
-            "elixir": 1120000,
-            "dark_elixir": 5600,
-            "shiny_ore": 1150,
-            "glowy_ore": 63,
-            "starry_ore": 1
           }
         },
         {
@@ -3325,14 +1885,6 @@
             "gold": 335000,
             "elixir": 335000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 1170000,
-            "elixir": 1170000,
-            "dark_elixir": 5850,
-            "shiny_ore": 1160,
-            "glowy_ore": 64,
-            "starry_ore": 1
           }
         },
         {
@@ -3341,14 +1893,6 @@
             "gold": 335000,
             "elixir": 335000,
             "dark_elixir": 2400
-          },
-          "star_bonus": {
-            "gold": 1220000,
-            "elixir": 1220000,
-            "dark_elixir": 6100,
-            "shiny_ore": 1170,
-            "glowy_ore": 65,
-            "starry_ore": 1
           }
         }
       ]
@@ -3361,8 +1905,8 @@
         "name": "TID_LEAGUE_TIER_9_RANK_3"
       },
       "group_size": 100,
-      "demote_percentage": 15,
-      "promote_percentage": 30,
+      "demote_percentage": 20,
+      "promote_percentage": 25,
       "battle_count": 12,
       "trophy_start": 0,
       "clan_score": 2500,
@@ -3374,14 +1918,6 @@
             "gold": 350000,
             "elixir": 350000,
             "dark_elixir": 2600
-          },
-          "star_bonus": {
-            "gold": 772000,
-            "elixir": 772000,
-            "dark_elixir": 3860,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -3390,14 +1926,6 @@
             "gold": 350000,
             "elixir": 350000,
             "dark_elixir": 2600
-          },
-          "star_bonus": {
-            "gold": 821000,
-            "elixir": 821000,
-            "dark_elixir": 4105,
-            "shiny_ore": 790,
-            "glowy_ore": 55,
-            "starry_ore": 1
           }
         },
         {
@@ -3406,14 +1934,6 @@
             "gold": 350000,
             "elixir": 350000,
             "dark_elixir": 2600
-          },
-          "star_bonus": {
-            "gold": 870000,
-            "elixir": 870000,
-            "dark_elixir": 4350,
-            "shiny_ore": 890,
-            "glowy_ore": 60,
-            "starry_ore": 1
           }
         },
         {
@@ -3422,14 +1942,6 @@
             "gold": 350000,
             "elixir": 350000,
             "dark_elixir": 2600
-          },
-          "star_bonus": {
-            "gold": 920000,
-            "elixir": 920000,
-            "dark_elixir": 4600,
-            "shiny_ore": 990,
-            "glowy_ore": 61,
-            "starry_ore": 1
           }
         },
         {
@@ -3438,14 +1950,6 @@
             "gold": 350000,
             "elixir": 350000,
             "dark_elixir": 2600
-          },
-          "star_bonus": {
-            "gold": 970000,
-            "elixir": 970000,
-            "dark_elixir": 4850,
-            "shiny_ore": 1040,
-            "glowy_ore": 62,
-            "starry_ore": 1
           }
         },
         {
@@ -3454,14 +1958,6 @@
             "gold": 350000,
             "elixir": 350000,
             "dark_elixir": 2600
-          },
-          "star_bonus": {
-            "gold": 1020000,
-            "elixir": 1020000,
-            "dark_elixir": 5100,
-            "shiny_ore": 1090,
-            "glowy_ore": 63,
-            "starry_ore": 1
           }
         },
         {
@@ -3470,14 +1966,6 @@
             "gold": 350000,
             "elixir": 350000,
             "dark_elixir": 2600
-          },
-          "star_bonus": {
-            "gold": 1070000,
-            "elixir": 1070000,
-            "dark_elixir": 5350,
-            "shiny_ore": 1140,
-            "glowy_ore": 64,
-            "starry_ore": 1
           }
         },
         {
@@ -3486,14 +1974,6 @@
             "gold": 350000,
             "elixir": 350000,
             "dark_elixir": 2600
-          },
-          "star_bonus": {
-            "gold": 1120000,
-            "elixir": 1120000,
-            "dark_elixir": 5600,
-            "shiny_ore": 1150,
-            "glowy_ore": 65,
-            "starry_ore": 1
           }
         },
         {
@@ -3502,14 +1982,6 @@
             "gold": 350000,
             "elixir": 350000,
             "dark_elixir": 2600
-          },
-          "star_bonus": {
-            "gold": 1170000,
-            "elixir": 1170000,
-            "dark_elixir": 5850,
-            "shiny_ore": 1160,
-            "glowy_ore": 66,
-            "starry_ore": 1
           }
         },
         {
@@ -3518,14 +1990,6 @@
             "gold": 350000,
             "elixir": 350000,
             "dark_elixir": 2600
-          },
-          "star_bonus": {
-            "gold": 1220000,
-            "elixir": 1220000,
-            "dark_elixir": 6100,
-            "shiny_ore": 1170,
-            "glowy_ore": 67,
-            "starry_ore": 1
           }
         },
         {
@@ -3534,14 +1998,6 @@
             "gold": 350000,
             "elixir": 350000,
             "dark_elixir": 2600
-          },
-          "star_bonus": {
-            "gold": 1270000,
-            "elixir": 1270000,
-            "dark_elixir": 6350,
-            "shiny_ore": 1180,
-            "glowy_ore": 68,
-            "starry_ore": 1
           }
         }
       ]
@@ -3554,12 +2010,12 @@
         "name": "TID_LEAGUE_TIER_9_RANK_2"
       },
       "group_size": 100,
-      "demote_percentage": 15,
-      "promote_percentage": 50,
+      "demote_percentage": 20,
+      "promote_percentage": 35,
       "battle_count": 12,
       "trophy_start": 0,
       "clan_score": 2750,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 7,
@@ -3567,14 +2023,6 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 777000,
-            "elixir": 777000,
-            "dark_elixir": 3885,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -3583,14 +2031,6 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 826000,
-            "elixir": 826000,
-            "dark_elixir": 4130,
-            "shiny_ore": 795,
-            "glowy_ore": 55,
-            "starry_ore": 1
           }
         },
         {
@@ -3599,14 +2039,6 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 875000,
-            "elixir": 875000,
-            "dark_elixir": 4375,
-            "shiny_ore": 895,
-            "glowy_ore": 60,
-            "starry_ore": 1
           }
         },
         {
@@ -3615,14 +2047,6 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 925000,
-            "elixir": 925000,
-            "dark_elixir": 4625,
-            "shiny_ore": 995,
-            "glowy_ore": 61,
-            "starry_ore": 1
           }
         },
         {
@@ -3631,14 +2055,6 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 975000,
-            "elixir": 975000,
-            "dark_elixir": 4875,
-            "shiny_ore": 1045,
-            "glowy_ore": 62,
-            "starry_ore": 1
           }
         },
         {
@@ -3647,14 +2063,6 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 1025000,
-            "elixir": 1025000,
-            "dark_elixir": 5125,
-            "shiny_ore": 1095,
-            "glowy_ore": 63,
-            "starry_ore": 1
           }
         },
         {
@@ -3663,14 +2071,6 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 1075000,
-            "elixir": 1075000,
-            "dark_elixir": 5375,
-            "shiny_ore": 1145,
-            "glowy_ore": 64,
-            "starry_ore": 1
           }
         },
         {
@@ -3679,14 +2079,6 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 1125000,
-            "elixir": 1125000,
-            "dark_elixir": 5625,
-            "shiny_ore": 1155,
-            "glowy_ore": 65,
-            "starry_ore": 1
           }
         },
         {
@@ -3695,14 +2087,6 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 1175000,
-            "elixir": 1175000,
-            "dark_elixir": 5875,
-            "shiny_ore": 1165,
-            "glowy_ore": 66,
-            "starry_ore": 1
           }
         },
         {
@@ -3711,14 +2095,6 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 1225000,
-            "elixir": 1225000,
-            "dark_elixir": 6125,
-            "shiny_ore": 1175,
-            "glowy_ore": 67,
-            "starry_ore": 1
           }
         },
         {
@@ -3727,14 +2103,6 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 1275000,
-            "elixir": 1275000,
-            "dark_elixir": 6375,
-            "shiny_ore": 1185,
-            "glowy_ore": 68,
-            "starry_ore": 1
           }
         },
         {
@@ -3743,14 +2111,14 @@
             "gold": 355000,
             "elixir": 355000,
             "dark_elixir": 2625
-          },
-          "star_bonus": {
-            "gold": 1325000,
-            "elixir": 1325000,
-            "dark_elixir": 6625,
-            "shiny_ore": 1195,
-            "glowy_ore": 69,
-            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 355000,
+            "elixir": 355000,
+            "dark_elixir": 2625
           }
         }
       ]
@@ -3763,12 +2131,12 @@
         "name": "TID_LEAGUE_TIER_9_RANK_1"
       },
       "group_size": 100,
-      "demote_percentage": 15,
-      "promote_percentage": 40,
+      "demote_percentage": 20,
+      "promote_percentage": 30,
       "battle_count": 12,
       "trophy_start": 0,
       "clan_score": 3000,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 7,
@@ -3776,14 +2144,6 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 782000,
-            "elixir": 782000,
-            "dark_elixir": 3910,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -3792,14 +2152,6 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 831000,
-            "elixir": 831000,
-            "dark_elixir": 4155,
-            "shiny_ore": 800,
-            "glowy_ore": 55,
-            "starry_ore": 1
           }
         },
         {
@@ -3808,14 +2160,6 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 880000,
-            "elixir": 880000,
-            "dark_elixir": 4400,
-            "shiny_ore": 900,
-            "glowy_ore": 60,
-            "starry_ore": 1
           }
         },
         {
@@ -3824,14 +2168,6 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 930000,
-            "elixir": 930000,
-            "dark_elixir": 4650,
-            "shiny_ore": 1000,
-            "glowy_ore": 61,
-            "starry_ore": 1
           }
         },
         {
@@ -3840,14 +2176,6 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 980000,
-            "elixir": 980000,
-            "dark_elixir": 4900,
-            "shiny_ore": 1050,
-            "glowy_ore": 62,
-            "starry_ore": 1
           }
         },
         {
@@ -3856,14 +2184,6 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 1030000,
-            "elixir": 1030000,
-            "dark_elixir": 5150,
-            "shiny_ore": 1100,
-            "glowy_ore": 63,
-            "starry_ore": 1
           }
         },
         {
@@ -3872,14 +2192,6 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 1080000,
-            "elixir": 1080000,
-            "dark_elixir": 5400,
-            "shiny_ore": 1150,
-            "glowy_ore": 64,
-            "starry_ore": 1
           }
         },
         {
@@ -3888,14 +2200,6 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 1130000,
-            "elixir": 1130000,
-            "dark_elixir": 5650,
-            "shiny_ore": 1160,
-            "glowy_ore": 65,
-            "starry_ore": 1
           }
         },
         {
@@ -3904,14 +2208,6 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 1180000,
-            "elixir": 1180000,
-            "dark_elixir": 5900,
-            "shiny_ore": 1170,
-            "glowy_ore": 66,
-            "starry_ore": 1
           }
         },
         {
@@ -3920,14 +2216,6 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 1230000,
-            "elixir": 1230000,
-            "dark_elixir": 6150,
-            "shiny_ore": 1180,
-            "glowy_ore": 67,
-            "starry_ore": 1
           }
         },
         {
@@ -3936,14 +2224,6 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 1280000,
-            "elixir": 1280000,
-            "dark_elixir": 6400,
-            "shiny_ore": 1190,
-            "glowy_ore": 68,
-            "starry_ore": 1
           }
         },
         {
@@ -3952,14 +2232,14 @@
             "gold": 360000,
             "elixir": 360000,
             "dark_elixir": 2650
-          },
-          "star_bonus": {
-            "gold": 1330000,
-            "elixir": 1330000,
-            "dark_elixir": 6650,
-            "shiny_ore": 1200,
-            "glowy_ore": 69,
-            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 360000,
+            "elixir": 360000,
+            "dark_elixir": 2650
           }
         }
       ]
@@ -3972,12 +2252,12 @@
         "name": "TID_LEAGUE_TIER_10_RANK_3"
       },
       "group_size": 100,
-      "demote_percentage": 15,
-      "promote_percentage": 30,
+      "demote_percentage": 20,
+      "promote_percentage": 25,
       "battle_count": 14,
       "trophy_start": 0,
       "clan_score": 3250,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 7,
@@ -3985,14 +2265,6 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 832000,
-            "elixir": 832000,
-            "dark_elixir": 4160,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -4001,14 +2273,6 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 881000,
-            "elixir": 881000,
-            "dark_elixir": 4405,
-            "shiny_ore": 810,
-            "glowy_ore": 56,
-            "starry_ore": 1
           }
         },
         {
@@ -4017,14 +2281,6 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 930000,
-            "elixir": 930000,
-            "dark_elixir": 4650,
-            "shiny_ore": 910,
-            "glowy_ore": 61,
-            "starry_ore": 1
           }
         },
         {
@@ -4033,14 +2289,6 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 980000,
-            "elixir": 980000,
-            "dark_elixir": 4900,
-            "shiny_ore": 1010,
-            "glowy_ore": 62,
-            "starry_ore": 1
           }
         },
         {
@@ -4049,14 +2297,6 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 1030000,
-            "elixir": 1030000,
-            "dark_elixir": 5150,
-            "shiny_ore": 1060,
-            "glowy_ore": 63,
-            "starry_ore": 1
           }
         },
         {
@@ -4065,14 +2305,6 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 1080000,
-            "elixir": 1080000,
-            "dark_elixir": 5400,
-            "shiny_ore": 1110,
-            "glowy_ore": 64,
-            "starry_ore": 1
           }
         },
         {
@@ -4081,14 +2313,6 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 1130000,
-            "elixir": 1130000,
-            "dark_elixir": 5650,
-            "shiny_ore": 1160,
-            "glowy_ore": 65,
-            "starry_ore": 1
           }
         },
         {
@@ -4097,14 +2321,6 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 1180000,
-            "elixir": 1180000,
-            "dark_elixir": 5900,
-            "shiny_ore": 1170,
-            "glowy_ore": 66,
-            "starry_ore": 1
           }
         },
         {
@@ -4113,14 +2329,6 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 1230000,
-            "elixir": 1230000,
-            "dark_elixir": 6150,
-            "shiny_ore": 1180,
-            "glowy_ore": 67,
-            "starry_ore": 1
           }
         },
         {
@@ -4129,14 +2337,6 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 1280000,
-            "elixir": 1280000,
-            "dark_elixir": 6400,
-            "shiny_ore": 1190,
-            "glowy_ore": 68,
-            "starry_ore": 1
           }
         },
         {
@@ -4145,14 +2345,6 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 1330000,
-            "elixir": 1330000,
-            "dark_elixir": 6650,
-            "shiny_ore": 1200,
-            "glowy_ore": 69,
-            "starry_ore": 1
           }
         },
         {
@@ -4161,14 +2353,14 @@
             "gold": 370000,
             "elixir": 370000,
             "dark_elixir": 2750
-          },
-          "star_bonus": {
-            "gold": 1380000,
-            "elixir": 1380000,
-            "dark_elixir": 6900,
-            "shiny_ore": 1210,
-            "glowy_ore": 70,
-            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 370000,
+            "elixir": 370000,
+            "dark_elixir": 2750
           }
         }
       ]
@@ -4181,12 +2373,12 @@
         "name": "TID_LEAGUE_TIER_10_RANK_2"
       },
       "group_size": 100,
-      "demote_percentage": 15,
-      "promote_percentage": 25,
+      "demote_percentage": 20,
+      "promote_percentage": 20,
       "battle_count": 14,
       "trophy_start": 0,
       "clan_score": 3500,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 7,
@@ -4194,14 +2386,6 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 837000,
-            "elixir": 837000,
-            "dark_elixir": 4185,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -4210,14 +2394,6 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 886000,
-            "elixir": 886000,
-            "dark_elixir": 4430,
-            "shiny_ore": 815,
-            "glowy_ore": 56,
-            "starry_ore": 1
           }
         },
         {
@@ -4226,14 +2402,6 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 935000,
-            "elixir": 935000,
-            "dark_elixir": 4675,
-            "shiny_ore": 915,
-            "glowy_ore": 61,
-            "starry_ore": 1
           }
         },
         {
@@ -4242,14 +2410,6 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 985000,
-            "elixir": 985000,
-            "dark_elixir": 4925,
-            "shiny_ore": 1015,
-            "glowy_ore": 62,
-            "starry_ore": 1
           }
         },
         {
@@ -4258,14 +2418,6 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 1035000,
-            "elixir": 1035000,
-            "dark_elixir": 5175,
-            "shiny_ore": 1065,
-            "glowy_ore": 63,
-            "starry_ore": 1
           }
         },
         {
@@ -4274,14 +2426,6 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 1085000,
-            "elixir": 1085000,
-            "dark_elixir": 5425,
-            "shiny_ore": 1115,
-            "glowy_ore": 64,
-            "starry_ore": 1
           }
         },
         {
@@ -4290,14 +2434,6 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 1135000,
-            "elixir": 1135000,
-            "dark_elixir": 5675,
-            "shiny_ore": 1165,
-            "glowy_ore": 65,
-            "starry_ore": 1
           }
         },
         {
@@ -4306,14 +2442,6 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 1185000,
-            "elixir": 1185000,
-            "dark_elixir": 5925,
-            "shiny_ore": 1175,
-            "glowy_ore": 66,
-            "starry_ore": 1
           }
         },
         {
@@ -4322,14 +2450,6 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 1235000,
-            "elixir": 1235000,
-            "dark_elixir": 6175,
-            "shiny_ore": 1185,
-            "glowy_ore": 67,
-            "starry_ore": 1
           }
         },
         {
@@ -4338,14 +2458,6 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 1285000,
-            "elixir": 1285000,
-            "dark_elixir": 6425,
-            "shiny_ore": 1195,
-            "glowy_ore": 68,
-            "starry_ore": 1
           }
         },
         {
@@ -4354,14 +2466,6 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 1335000,
-            "elixir": 1335000,
-            "dark_elixir": 6675,
-            "shiny_ore": 1205,
-            "glowy_ore": 69,
-            "starry_ore": 1
           }
         },
         {
@@ -4370,14 +2474,14 @@
             "gold": 375000,
             "elixir": 375000,
             "dark_elixir": 2775
-          },
-          "star_bonus": {
-            "gold": 1385000,
-            "elixir": 1385000,
-            "dark_elixir": 6925,
-            "shiny_ore": 1215,
-            "glowy_ore": 70,
-            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 375000,
+            "elixir": 375000,
+            "dark_elixir": 2775
           }
         }
       ]
@@ -4390,12 +2494,12 @@
         "name": "TID_LEAGUE_TIER_10_RANK_1"
       },
       "group_size": 100,
-      "demote_percentage": 15,
-      "promote_percentage": 25,
+      "demote_percentage": 20,
+      "promote_percentage": 20,
       "battle_count": 14,
       "trophy_start": 0,
       "clan_score": 3750,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 7,
@@ -4403,14 +2507,6 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 842000,
-            "elixir": 842000,
-            "dark_elixir": 4210,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -4419,14 +2515,6 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 891000,
-            "elixir": 891000,
-            "dark_elixir": 4455,
-            "shiny_ore": 820,
-            "glowy_ore": 56,
-            "starry_ore": 1
           }
         },
         {
@@ -4435,14 +2523,6 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 940000,
-            "elixir": 940000,
-            "dark_elixir": 4700,
-            "shiny_ore": 920,
-            "glowy_ore": 61,
-            "starry_ore": 1
           }
         },
         {
@@ -4451,14 +2531,6 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 990000,
-            "elixir": 990000,
-            "dark_elixir": 4950,
-            "shiny_ore": 1020,
-            "glowy_ore": 62,
-            "starry_ore": 1
           }
         },
         {
@@ -4467,14 +2539,6 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 1040000,
-            "elixir": 1040000,
-            "dark_elixir": 5200,
-            "shiny_ore": 1070,
-            "glowy_ore": 63,
-            "starry_ore": 1
           }
         },
         {
@@ -4483,14 +2547,6 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 1090000,
-            "elixir": 1090000,
-            "dark_elixir": 5450,
-            "shiny_ore": 1120,
-            "glowy_ore": 64,
-            "starry_ore": 1
           }
         },
         {
@@ -4499,14 +2555,6 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 1140000,
-            "elixir": 1140000,
-            "dark_elixir": 5700,
-            "shiny_ore": 1170,
-            "glowy_ore": 65,
-            "starry_ore": 1
           }
         },
         {
@@ -4515,14 +2563,6 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 1190000,
-            "elixir": 1190000,
-            "dark_elixir": 5950,
-            "shiny_ore": 1180,
-            "glowy_ore": 66,
-            "starry_ore": 1
           }
         },
         {
@@ -4531,14 +2571,6 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 1240000,
-            "elixir": 1240000,
-            "dark_elixir": 6200,
-            "shiny_ore": 1190,
-            "glowy_ore": 67,
-            "starry_ore": 1
           }
         },
         {
@@ -4547,14 +2579,6 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 1290000,
-            "elixir": 1290000,
-            "dark_elixir": 6450,
-            "shiny_ore": 1200,
-            "glowy_ore": 68,
-            "starry_ore": 1
           }
         },
         {
@@ -4563,14 +2587,6 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 1340000,
-            "elixir": 1340000,
-            "dark_elixir": 6700,
-            "shiny_ore": 1210,
-            "glowy_ore": 69,
-            "starry_ore": 1
           }
         },
         {
@@ -4579,14 +2595,14 @@
             "gold": 380000,
             "elixir": 380000,
             "dark_elixir": 2800
-          },
-          "star_bonus": {
-            "gold": 1390000,
-            "elixir": 1390000,
-            "dark_elixir": 6950,
-            "shiny_ore": 1220,
-            "glowy_ore": 70,
-            "starry_ore": 1
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 380000,
+            "elixir": 380000,
+            "dark_elixir": 2800
           }
         }
       ]
@@ -4599,12 +2615,12 @@
         "name": "TID_LEAGUE_TIER_11_RANK_3"
       },
       "group_size": 100,
-      "demote_percentage": 15,
+      "demote_percentage": 20,
       "promote_percentage": 20,
       "battle_count": 18,
       "trophy_start": 0,
       "clan_score": 4000,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 7,
@@ -4612,14 +2628,6 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 892000,
-            "elixir": 892000,
-            "dark_elixir": 4460,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -4628,14 +2636,6 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 941000,
-            "elixir": 941000,
-            "dark_elixir": 4705,
-            "shiny_ore": 830,
-            "glowy_ore": 57,
-            "starry_ore": 2
           }
         },
         {
@@ -4644,14 +2644,6 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 990000,
-            "elixir": 990000,
-            "dark_elixir": 4950,
-            "shiny_ore": 930,
-            "glowy_ore": 62,
-            "starry_ore": 2
           }
         },
         {
@@ -4660,14 +2652,6 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 1040000,
-            "elixir": 1040000,
-            "dark_elixir": 5200,
-            "shiny_ore": 1030,
-            "glowy_ore": 63,
-            "starry_ore": 2
           }
         },
         {
@@ -4676,14 +2660,6 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 1090000,
-            "elixir": 1090000,
-            "dark_elixir": 5450,
-            "shiny_ore": 1080,
-            "glowy_ore": 64,
-            "starry_ore": 2
           }
         },
         {
@@ -4692,14 +2668,6 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 1140000,
-            "elixir": 1140000,
-            "dark_elixir": 5700,
-            "shiny_ore": 1130,
-            "glowy_ore": 65,
-            "starry_ore": 2
           }
         },
         {
@@ -4708,14 +2676,6 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 1190000,
-            "elixir": 1190000,
-            "dark_elixir": 5950,
-            "shiny_ore": 1180,
-            "glowy_ore": 66,
-            "starry_ore": 2
           }
         },
         {
@@ -4724,14 +2684,6 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 1240000,
-            "elixir": 1240000,
-            "dark_elixir": 6200,
-            "shiny_ore": 1190,
-            "glowy_ore": 67,
-            "starry_ore": 2
           }
         },
         {
@@ -4740,14 +2692,6 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 1290000,
-            "elixir": 1290000,
-            "dark_elixir": 6450,
-            "shiny_ore": 1200,
-            "glowy_ore": 68,
-            "starry_ore": 2
           }
         },
         {
@@ -4756,14 +2700,6 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 1340000,
-            "elixir": 1340000,
-            "dark_elixir": 6700,
-            "shiny_ore": 1210,
-            "glowy_ore": 69,
-            "starry_ore": 2
           }
         },
         {
@@ -4772,14 +2708,6 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 1390000,
-            "elixir": 1390000,
-            "dark_elixir": 6950,
-            "shiny_ore": 1220,
-            "glowy_ore": 70,
-            "starry_ore": 2
           }
         },
         {
@@ -4788,14 +2716,14 @@
             "gold": 390000,
             "elixir": 390000,
             "dark_elixir": 2900
-          },
-          "star_bonus": {
-            "gold": 1440000,
-            "elixir": 1440000,
-            "dark_elixir": 7200,
-            "shiny_ore": 1230,
-            "glowy_ore": 71,
-            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 390000,
+            "elixir": 390000,
+            "dark_elixir": 2900
           }
         }
       ]
@@ -4808,12 +2736,12 @@
         "name": "TID_LEAGUE_TIER_11_RANK_2"
       },
       "group_size": 100,
-      "demote_percentage": 15,
+      "demote_percentage": 20,
       "promote_percentage": 20,
       "battle_count": 18,
       "trophy_start": 0,
       "clan_score": 4250,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 7,
@@ -4821,14 +2749,6 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 897000,
-            "elixir": 897000,
-            "dark_elixir": 4485,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -4837,14 +2757,6 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 946000,
-            "elixir": 946000,
-            "dark_elixir": 4730,
-            "shiny_ore": 835,
-            "glowy_ore": 57,
-            "starry_ore": 2
           }
         },
         {
@@ -4853,14 +2765,6 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 995000,
-            "elixir": 995000,
-            "dark_elixir": 4975,
-            "shiny_ore": 935,
-            "glowy_ore": 62,
-            "starry_ore": 2
           }
         },
         {
@@ -4869,14 +2773,6 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 1045000,
-            "elixir": 1045000,
-            "dark_elixir": 5225,
-            "shiny_ore": 1035,
-            "glowy_ore": 63,
-            "starry_ore": 2
           }
         },
         {
@@ -4885,14 +2781,6 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 1095000,
-            "elixir": 1095000,
-            "dark_elixir": 5475,
-            "shiny_ore": 1085,
-            "glowy_ore": 64,
-            "starry_ore": 2
           }
         },
         {
@@ -4901,14 +2789,6 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 1145000,
-            "elixir": 1145000,
-            "dark_elixir": 5725,
-            "shiny_ore": 1135,
-            "glowy_ore": 65,
-            "starry_ore": 2
           }
         },
         {
@@ -4917,14 +2797,6 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 1195000,
-            "elixir": 1195000,
-            "dark_elixir": 5975,
-            "shiny_ore": 1185,
-            "glowy_ore": 66,
-            "starry_ore": 2
           }
         },
         {
@@ -4933,14 +2805,6 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 1245000,
-            "elixir": 1245000,
-            "dark_elixir": 6225,
-            "shiny_ore": 1195,
-            "glowy_ore": 67,
-            "starry_ore": 2
           }
         },
         {
@@ -4949,14 +2813,6 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 1295000,
-            "elixir": 1295000,
-            "dark_elixir": 6475,
-            "shiny_ore": 1205,
-            "glowy_ore": 68,
-            "starry_ore": 2
           }
         },
         {
@@ -4965,14 +2821,6 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 1345000,
-            "elixir": 1345000,
-            "dark_elixir": 6725,
-            "shiny_ore": 1215,
-            "glowy_ore": 69,
-            "starry_ore": 2
           }
         },
         {
@@ -4981,14 +2829,6 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 1395000,
-            "elixir": 1395000,
-            "dark_elixir": 6975,
-            "shiny_ore": 1225,
-            "glowy_ore": 70,
-            "starry_ore": 2
           }
         },
         {
@@ -4997,14 +2837,14 @@
             "gold": 395000,
             "elixir": 395000,
             "dark_elixir": 2925
-          },
-          "star_bonus": {
-            "gold": 1445000,
-            "elixir": 1445000,
-            "dark_elixir": 7225,
-            "shiny_ore": 1235,
-            "glowy_ore": 71,
-            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 395000,
+            "elixir": 395000,
+            "dark_elixir": 2925
           }
         }
       ]
@@ -5022,7 +2862,7 @@
       "battle_count": 18,
       "trophy_start": 0,
       "clan_score": 4500,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 7,
@@ -5030,14 +2870,6 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 902000,
-            "elixir": 902000,
-            "dark_elixir": 4510,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -5046,14 +2878,6 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 951000,
-            "elixir": 951000,
-            "dark_elixir": 4755,
-            "shiny_ore": 840,
-            "glowy_ore": 57,
-            "starry_ore": 2
           }
         },
         {
@@ -5062,14 +2886,6 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 1000000,
-            "elixir": 1000000,
-            "dark_elixir": 5000,
-            "shiny_ore": 940,
-            "glowy_ore": 62,
-            "starry_ore": 2
           }
         },
         {
@@ -5078,14 +2894,6 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 1050000,
-            "elixir": 1050000,
-            "dark_elixir": 5250,
-            "shiny_ore": 1040,
-            "glowy_ore": 63,
-            "starry_ore": 2
           }
         },
         {
@@ -5094,14 +2902,6 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 1100000,
-            "elixir": 1100000,
-            "dark_elixir": 5500,
-            "shiny_ore": 1090,
-            "glowy_ore": 64,
-            "starry_ore": 2
           }
         },
         {
@@ -5110,14 +2910,6 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 1150000,
-            "elixir": 1150000,
-            "dark_elixir": 5750,
-            "shiny_ore": 1140,
-            "glowy_ore": 65,
-            "starry_ore": 2
           }
         },
         {
@@ -5126,14 +2918,6 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 1200000,
-            "elixir": 1200000,
-            "dark_elixir": 6000,
-            "shiny_ore": 1190,
-            "glowy_ore": 66,
-            "starry_ore": 2
           }
         },
         {
@@ -5142,14 +2926,6 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 1250000,
-            "elixir": 1250000,
-            "dark_elixir": 6250,
-            "shiny_ore": 1200,
-            "glowy_ore": 67,
-            "starry_ore": 2
           }
         },
         {
@@ -5158,14 +2934,6 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 1300000,
-            "elixir": 1300000,
-            "dark_elixir": 6500,
-            "shiny_ore": 1210,
-            "glowy_ore": 68,
-            "starry_ore": 2
           }
         },
         {
@@ -5174,14 +2942,6 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 1350000,
-            "elixir": 1350000,
-            "dark_elixir": 6750,
-            "shiny_ore": 1220,
-            "glowy_ore": 69,
-            "starry_ore": 2
           }
         },
         {
@@ -5190,14 +2950,6 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 1400000,
-            "elixir": 1400000,
-            "dark_elixir": 7000,
-            "shiny_ore": 1230,
-            "glowy_ore": 70,
-            "starry_ore": 2
           }
         },
         {
@@ -5206,14 +2958,14 @@
             "gold": 400000,
             "elixir": 400000,
             "dark_elixir": 2950
-          },
-          "star_bonus": {
-            "gold": 1450000,
-            "elixir": 1450000,
-            "dark_elixir": 7250,
-            "shiny_ore": 1240,
-            "glowy_ore": 71,
-            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 400000,
+            "elixir": 400000,
+            "dark_elixir": 2950
           }
         }
       ]
@@ -5223,7 +2975,7 @@
       "name": "Legend League III",
       "league_tier": 34,
       "TID": {
-        "name": "TID_LEAGUE_LEGENDARY"
+        "name": "TID_LEAGUE_LEGENDARY_RANK_3"
       },
       "group_size": 100,
       "demote_percentage": 15,
@@ -5231,7 +2983,7 @@
       "battle_count": 24,
       "trophy_start": null,
       "clan_score": 5000,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 7,
@@ -5239,14 +2991,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 952000,
-            "elixir": 952000,
-            "dark_elixir": 4760,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -5255,14 +2999,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1001000,
-            "elixir": 1001000,
-            "dark_elixir": 5005,
-            "shiny_ore": 850,
-            "glowy_ore": 58,
-            "starry_ore": 2
           }
         },
         {
@@ -5271,14 +3007,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1050000,
-            "elixir": 1050000,
-            "dark_elixir": 5250,
-            "shiny_ore": 950,
-            "glowy_ore": 63,
-            "starry_ore": 2
           }
         },
         {
@@ -5287,14 +3015,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1100000,
-            "elixir": 1100000,
-            "dark_elixir": 5500,
-            "shiny_ore": 1050,
-            "glowy_ore": 64,
-            "starry_ore": 2
           }
         },
         {
@@ -5303,14 +3023,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1150000,
-            "elixir": 1150000,
-            "dark_elixir": 5750,
-            "shiny_ore": 1100,
-            "glowy_ore": 65,
-            "starry_ore": 2
           }
         },
         {
@@ -5319,14 +3031,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1200000,
-            "elixir": 1200000,
-            "dark_elixir": 6000,
-            "shiny_ore": 1150,
-            "glowy_ore": 66,
-            "starry_ore": 2
           }
         },
         {
@@ -5335,14 +3039,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1250000,
-            "elixir": 1250000,
-            "dark_elixir": 6250,
-            "shiny_ore": 1200,
-            "glowy_ore": 67,
-            "starry_ore": 2
           }
         },
         {
@@ -5351,14 +3047,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1300000,
-            "elixir": 1300000,
-            "dark_elixir": 6500,
-            "shiny_ore": 1210,
-            "glowy_ore": 68,
-            "starry_ore": 2
           }
         },
         {
@@ -5367,14 +3055,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1350000,
-            "elixir": 1350000,
-            "dark_elixir": 6750,
-            "shiny_ore": 1220,
-            "glowy_ore": 69,
-            "starry_ore": 2
           }
         },
         {
@@ -5383,14 +3063,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1400000,
-            "elixir": 1400000,
-            "dark_elixir": 7000,
-            "shiny_ore": 1230,
-            "glowy_ore": 70,
-            "starry_ore": 2
           }
         },
         {
@@ -5399,14 +3071,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1450000,
-            "elixir": 1450000,
-            "dark_elixir": 7250,
-            "shiny_ore": 1240,
-            "glowy_ore": 71,
-            "starry_ore": 2
           }
         },
         {
@@ -5415,14 +3079,14 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1500000,
-            "elixir": 1500000,
-            "dark_elixir": 7500,
-            "shiny_ore": 1250,
-            "glowy_ore": 72,
-            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 410000,
+            "elixir": 410000,
+            "dark_elixir": 3000
           }
         }
       ],
@@ -5433,7 +3097,7 @@
       "name": "Legend League II",
       "league_tier": 35,
       "TID": {
-        "name": "TID_LEAGUE_LEGENDARY"
+        "name": "TID_LEAGUE_LEGENDARY_RANK_2"
       },
       "group_size": 100,
       "demote_percentage": 15,
@@ -5441,7 +3105,7 @@
       "battle_count": 30,
       "trophy_start": null,
       "clan_score": 5000,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 7,
@@ -5449,14 +3113,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 952000,
-            "elixir": 952000,
-            "dark_elixir": 4760,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -5465,14 +3121,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1001000,
-            "elixir": 1001000,
-            "dark_elixir": 5005,
-            "shiny_ore": 850,
-            "glowy_ore": 58,
-            "starry_ore": 2
           }
         },
         {
@@ -5481,14 +3129,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1050000,
-            "elixir": 1050000,
-            "dark_elixir": 5250,
-            "shiny_ore": 950,
-            "glowy_ore": 63,
-            "starry_ore": 2
           }
         },
         {
@@ -5497,14 +3137,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1100000,
-            "elixir": 1100000,
-            "dark_elixir": 5500,
-            "shiny_ore": 1050,
-            "glowy_ore": 64,
-            "starry_ore": 2
           }
         },
         {
@@ -5513,14 +3145,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1150000,
-            "elixir": 1150000,
-            "dark_elixir": 5750,
-            "shiny_ore": 1100,
-            "glowy_ore": 65,
-            "starry_ore": 2
           }
         },
         {
@@ -5529,14 +3153,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1200000,
-            "elixir": 1200000,
-            "dark_elixir": 6000,
-            "shiny_ore": 1150,
-            "glowy_ore": 66,
-            "starry_ore": 2
           }
         },
         {
@@ -5545,14 +3161,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1250000,
-            "elixir": 1250000,
-            "dark_elixir": 6250,
-            "shiny_ore": 1200,
-            "glowy_ore": 67,
-            "starry_ore": 2
           }
         },
         {
@@ -5561,14 +3169,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1300000,
-            "elixir": 1300000,
-            "dark_elixir": 6500,
-            "shiny_ore": 1210,
-            "glowy_ore": 68,
-            "starry_ore": 2
           }
         },
         {
@@ -5577,14 +3177,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1350000,
-            "elixir": 1350000,
-            "dark_elixir": 6750,
-            "shiny_ore": 1220,
-            "glowy_ore": 69,
-            "starry_ore": 2
           }
         },
         {
@@ -5593,14 +3185,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1400000,
-            "elixir": 1400000,
-            "dark_elixir": 7000,
-            "shiny_ore": 1230,
-            "glowy_ore": 70,
-            "starry_ore": 2
           }
         },
         {
@@ -5609,14 +3193,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1450000,
-            "elixir": 1450000,
-            "dark_elixir": 7250,
-            "shiny_ore": 1240,
-            "glowy_ore": 71,
-            "starry_ore": 2
           }
         },
         {
@@ -5625,14 +3201,14 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1500000,
-            "elixir": 1500000,
-            "dark_elixir": 7500,
-            "shiny_ore": 1250,
-            "glowy_ore": 72,
-            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 410000,
+            "elixir": 410000,
+            "dark_elixir": 3000
           }
         }
       ],
@@ -5643,7 +3219,7 @@
       "name": "Legend League I",
       "league_tier": 36,
       "TID": {
-        "name": "TID_LEAGUE_LEGENDARY"
+        "name": "TID_LEAGUE_LEGENDARY_RANK_1"
       },
       "group_size": 1500,
       "demote_percentage": null,
@@ -5651,7 +3227,7 @@
       "battle_count": 8,
       "trophy_start": 5000,
       "clan_score": 5000,
-      "townhall_cap": 18,
+      "townhall_cap": 19,
       "rewards": [
         {
           "townhall_level": 7,
@@ -5659,14 +3235,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 952000,
-            "elixir": 952000,
-            "dark_elixir": 4760,
-            "shiny_ore": 0,
-            "glowy_ore": 0,
-            "starry_ore": 0
           }
         },
         {
@@ -5675,14 +3243,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1001000,
-            "elixir": 1001000,
-            "dark_elixir": 5005,
-            "shiny_ore": 850,
-            "glowy_ore": 58,
-            "starry_ore": 2
           }
         },
         {
@@ -5691,14 +3251,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1050000,
-            "elixir": 1050000,
-            "dark_elixir": 5250,
-            "shiny_ore": 950,
-            "glowy_ore": 63,
-            "starry_ore": 2
           }
         },
         {
@@ -5707,14 +3259,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1100000,
-            "elixir": 1100000,
-            "dark_elixir": 5500,
-            "shiny_ore": 1050,
-            "glowy_ore": 64,
-            "starry_ore": 2
           }
         },
         {
@@ -5723,14 +3267,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1150000,
-            "elixir": 1150000,
-            "dark_elixir": 5750,
-            "shiny_ore": 1100,
-            "glowy_ore": 65,
-            "starry_ore": 2
           }
         },
         {
@@ -5739,14 +3275,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1200000,
-            "elixir": 1200000,
-            "dark_elixir": 6000,
-            "shiny_ore": 1150,
-            "glowy_ore": 66,
-            "starry_ore": 2
           }
         },
         {
@@ -5755,14 +3283,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1250000,
-            "elixir": 1250000,
-            "dark_elixir": 6250,
-            "shiny_ore": 1200,
-            "glowy_ore": 67,
-            "starry_ore": 2
           }
         },
         {
@@ -5771,14 +3291,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1300000,
-            "elixir": 1300000,
-            "dark_elixir": 6500,
-            "shiny_ore": 1210,
-            "glowy_ore": 68,
-            "starry_ore": 2
           }
         },
         {
@@ -5787,14 +3299,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1350000,
-            "elixir": 1350000,
-            "dark_elixir": 6750,
-            "shiny_ore": 1220,
-            "glowy_ore": 69,
-            "starry_ore": 2
           }
         },
         {
@@ -5803,14 +3307,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1400000,
-            "elixir": 1400000,
-            "dark_elixir": 7000,
-            "shiny_ore": 1230,
-            "glowy_ore": 70,
-            "starry_ore": 2
           }
         },
         {
@@ -5819,14 +3315,6 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1450000,
-            "elixir": 1450000,
-            "dark_elixir": 7250,
-            "shiny_ore": 1240,
-            "glowy_ore": 71,
-            "starry_ore": 2
           }
         },
         {
@@ -5835,14 +3323,14 @@
             "gold": 410000,
             "elixir": 410000,
             "dark_elixir": 3000
-          },
-          "star_bonus": {
-            "gold": 1500000,
-            "elixir": 1500000,
-            "dark_elixir": 7500,
-            "shiny_ore": 1250,
-            "glowy_ore": 72,
-            "starry_ore": 2
+          }
+        },
+        {
+          "townhall_level": 19,
+          "resources": {
+            "gold": 410000,
+            "elixir": 410000,
+            "dark_elixir": 3000
           }
         }
       ],

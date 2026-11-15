@@ -254,8 +254,20 @@
           "trigger": "first_attacks",
           "levels": [
             {
-              "level": 3,
+              "level": 1,
               "damage": 60,
+              "attack_range": 770,
+              "empowered_attacks": 4
+            },
+            {
+              "level": 2,
+              "damage": 75,
+              "attack_range": 770,
+              "empowered_attacks": 4
+            },
+            {
+              "level": 3,
+              "damage": 75,
               "attack_range": 770,
               "empowered_attacks": 4
             },
@@ -263,23 +275,23 @@
               "level": 4,
               "damage": 75,
               "attack_range": 770,
-              "empowered_attacks": 4
+              "empowered_attacks": 5
             },
             {
               "level": 5,
               "damage": 75,
               "attack_range": 770,
-              "empowered_attacks": 4
+              "empowered_attacks": 5
             },
             {
               "level": 6,
-              "damage": 75,
+              "damage": 90,
               "attack_range": 770,
               "empowered_attacks": 5
             },
             {
               "level": 7,
-              "damage": 75,
+              "damage": 90,
               "attack_range": 770,
               "empowered_attacks": 5
             },
@@ -297,13 +309,13 @@
             },
             {
               "level": 10,
-              "damage": 90,
+              "damage": 110,
               "attack_range": 770,
               "empowered_attacks": 5
             },
             {
               "level": 11,
-              "damage": 90,
+              "damage": 110,
               "attack_range": 770,
               "empowered_attacks": 5
             },
@@ -311,23 +323,23 @@
               "level": 12,
               "damage": 110,
               "attack_range": 770,
-              "empowered_attacks": 5
+              "empowered_attacks": 6
             },
             {
               "level": 13,
               "damage": 110,
               "attack_range": 770,
-              "empowered_attacks": 5
+              "empowered_attacks": 6
             },
             {
               "level": 14,
-              "damage": 110,
+              "damage": 130,
               "attack_range": 770,
               "empowered_attacks": 6
             },
             {
               "level": 15,
-              "damage": 110,
+              "damage": 130,
               "attack_range": 770,
               "empowered_attacks": 6
             },
@@ -335,28 +347,16 @@
               "level": 16,
               "damage": 130,
               "attack_range": 770,
-              "empowered_attacks": 6
+              "empowered_attacks": 7
             },
             {
               "level": 17,
               "damage": 130,
               "attack_range": 770,
-              "empowered_attacks": 6
+              "empowered_attacks": 7
             },
             {
               "level": 18,
-              "damage": 130,
-              "attack_range": 770,
-              "empowered_attacks": 7
-            },
-            {
-              "level": 19,
-              "damage": 130,
-              "attack_range": 770,
-              "empowered_attacks": 7
-            },
-            {
-              "level": 20,
               "damage": 150,
               "attack_range": 770,
               "empowered_attacks": 7
@@ -378,18 +378,28 @@
           "trigger": "on_deploy",
           "levels": [
             {
+              "level": 1,
+              "damage": 550,
+              "empowered_attacks": 1
+            },
+            {
+              "level": 2,
+              "damage": 550,
+              "empowered_attacks": 1
+            },
+            {
               "level": 3,
               "damage": 550,
               "empowered_attacks": 1
             },
             {
               "level": 4,
-              "damage": 550,
+              "damage": 700,
               "empowered_attacks": 1
             },
             {
               "level": 5,
-              "damage": 550,
+              "damage": 700,
               "empowered_attacks": 1
             },
             {
@@ -404,12 +414,12 @@
             },
             {
               "level": 8,
-              "damage": 700,
+              "damage": 900,
               "empowered_attacks": 1
             },
             {
               "level": 9,
-              "damage": 700,
+              "damage": 900,
               "empowered_attacks": 1
             },
             {
@@ -424,12 +434,12 @@
             },
             {
               "level": 12,
-              "damage": 900,
+              "damage": 1150,
               "empowered_attacks": 1
             },
             {
               "level": 13,
-              "damage": 900,
+              "damage": 1150,
               "empowered_attacks": 1
             },
             {
@@ -444,26 +454,16 @@
             },
             {
               "level": 16,
-              "damage": 1150,
+              "damage": 1400,
               "empowered_attacks": 1
             },
             {
               "level": 17,
-              "damage": 1150,
+              "damage": 1400,
               "empowered_attacks": 1
             },
             {
               "level": 18,
-              "damage": 1400,
-              "empowered_attacks": 1
-            },
-            {
-              "level": 19,
-              "damage": 1400,
-              "empowered_attacks": 1
-            },
-            {
-              "level": 20,
               "damage": 1400,
               "empowered_attacks": 1
             }
@@ -478,6 +478,18 @@
           "trigger": "activated",
           "levels": [
             {
+              "level": 2,
+              "damage_reduction_percent": 100,
+              "duration": 5.0,
+              "uses": 1
+            },
+            {
+              "level": 3,
+              "damage_reduction_percent": 100,
+              "duration": 5.0,
+              "uses": 1
+            },
+            {
               "level": 4,
               "damage_reduction_percent": 100,
               "duration": 5.0,
@@ -492,13 +504,13 @@
             {
               "level": 6,
               "damage_reduction_percent": 100,
-              "duration": 5.0,
+              "duration": 6.0,
               "uses": 1
             },
             {
               "level": 7,
               "damage_reduction_percent": 100,
-              "duration": 5.0,
+              "duration": 6.0,
               "uses": 1
             },
             {
@@ -516,13 +528,13 @@
             {
               "level": 10,
               "damage_reduction_percent": 100,
-              "duration": 6.0,
+              "duration": 7.0,
               "uses": 1
             },
             {
               "level": 11,
               "damage_reduction_percent": 100,
-              "duration": 6.0,
+              "duration": 7.0,
               "uses": 1
             },
             {
@@ -540,13 +552,13 @@
             {
               "level": 14,
               "damage_reduction_percent": 100,
-              "duration": 7.0,
+              "duration": 7.5,
               "uses": 1
             },
             {
               "level": 15,
               "damage_reduction_percent": 100,
-              "duration": 7.0,
+              "duration": 7.5,
               "uses": 1
             },
             {
@@ -563,18 +575,6 @@
             },
             {
               "level": 18,
-              "damage_reduction_percent": 100,
-              "duration": 7.5,
-              "uses": 1
-            },
-            {
-              "level": 19,
-              "damage_reduction_percent": 100,
-              "duration": 7.5,
-              "uses": 1
-            },
-            {
-              "level": 20,
               "damage_reduction_percent": 100,
               "duration": 8.0,
               "uses": 1
@@ -596,7 +596,7 @@
           "trigger": "activated",
           "levels": [
             {
-              "level": 5,
+              "level": 1,
               "dps": 320,
               "damage_radius": 160,
               "attack_range": 350,
@@ -607,7 +607,7 @@
               "damage": 80.0
             },
             {
-              "level": 6,
+              "level": 2,
               "dps": 400,
               "damage_radius": 160,
               "attack_range": 350,
@@ -616,152 +616,152 @@
               "empowered_attacks": 1,
               "landings": 3,
               "damage": 100.0
+            },
+            {
+              "level": 3,
+              "dps": 400,
+              "damage_radius": 160,
+              "attack_range": 350,
+              "attack_speed": 250,
+              "cooldown": 22.0,
+              "empowered_attacks": 1,
+              "landings": 3,
+              "damage": 100.0
+            },
+            {
+              "level": 4,
+              "dps": 480,
+              "damage_radius": 160,
+              "attack_range": 350,
+              "attack_speed": 250,
+              "cooldown": 22.0,
+              "empowered_attacks": 1,
+              "landings": 3,
+              "damage": 120.0
+            },
+            {
+              "level": 5,
+              "dps": 480,
+              "damage_radius": 160,
+              "attack_range": 350,
+              "attack_speed": 250,
+              "cooldown": 22.0,
+              "empowered_attacks": 1,
+              "landings": 3,
+              "damage": 120.0
+            },
+            {
+              "level": 6,
+              "dps": 560,
+              "damage_radius": 160,
+              "attack_range": 350,
+              "attack_speed": 250,
+              "cooldown": 22.0,
+              "empowered_attacks": 1,
+              "landings": 3,
+              "damage": 140.0
             },
             {
               "level": 7,
-              "dps": 400,
+              "dps": 560,
               "damage_radius": 160,
               "attack_range": 350,
               "attack_speed": 250,
               "cooldown": 22.0,
               "empowered_attacks": 1,
               "landings": 3,
-              "damage": 100.0
+              "damage": 140.0
             },
             {
               "level": 8,
-              "dps": 480,
+              "dps": 640,
               "damage_radius": 160,
               "attack_range": 350,
               "attack_speed": 250,
               "cooldown": 22.0,
               "empowered_attacks": 1,
               "landings": 3,
-              "damage": 120.0
+              "damage": 160.0
             },
             {
               "level": 9,
-              "dps": 480,
+              "dps": 640,
               "damage_radius": 160,
               "attack_range": 350,
               "attack_speed": 250,
               "cooldown": 22.0,
               "empowered_attacks": 1,
               "landings": 3,
-              "damage": 120.0
+              "damage": 160.0
             },
             {
               "level": 10,
-              "dps": 560,
+              "dps": 720,
               "damage_radius": 160,
               "attack_range": 350,
               "attack_speed": 250,
               "cooldown": 22.0,
               "empowered_attacks": 1,
               "landings": 3,
-              "damage": 140.0
+              "damage": 180.0
             },
             {
               "level": 11,
-              "dps": 560,
+              "dps": 720,
               "damage_radius": 160,
               "attack_range": 350,
               "attack_speed": 250,
               "cooldown": 22.0,
               "empowered_attacks": 1,
               "landings": 3,
-              "damage": 140.0
+              "damage": 180.0
             },
             {
               "level": 12,
-              "dps": 640,
+              "dps": 800,
               "damage_radius": 160,
               "attack_range": 350,
               "attack_speed": 250,
               "cooldown": 22.0,
               "empowered_attacks": 1,
               "landings": 3,
-              "damage": 160.0
+              "damage": 200.0
             },
             {
               "level": 13,
-              "dps": 640,
+              "dps": 800,
               "damage_radius": 160,
               "attack_range": 350,
               "attack_speed": 250,
               "cooldown": 22.0,
               "empowered_attacks": 1,
               "landings": 3,
-              "damage": 160.0
+              "damage": 200.0
             },
             {
               "level": 14,
-              "dps": 720,
+              "dps": 880,
               "damage_radius": 160,
               "attack_range": 350,
               "attack_speed": 250,
               "cooldown": 22.0,
               "empowered_attacks": 1,
               "landings": 3,
-              "damage": 180.0
+              "damage": 220.0
             },
             {
               "level": 15,
-              "dps": 720,
+              "dps": 880,
               "damage_radius": 160,
               "attack_range": 350,
               "attack_speed": 250,
               "cooldown": 22.0,
               "empowered_attacks": 1,
               "landings": 3,
-              "damage": 180.0
+              "damage": 220.0
             },
             {
               "level": 16,
-              "dps": 800,
-              "damage_radius": 160,
-              "attack_range": 350,
-              "attack_speed": 250,
-              "cooldown": 22.0,
-              "empowered_attacks": 1,
-              "landings": 3,
-              "damage": 200.0
-            },
-            {
-              "level": 17,
-              "dps": 800,
-              "damage_radius": 160,
-              "attack_range": 350,
-              "attack_speed": 250,
-              "cooldown": 22.0,
-              "empowered_attacks": 1,
-              "landings": 3,
-              "damage": 200.0
-            },
-            {
-              "level": 18,
-              "dps": 880,
-              "damage_radius": 160,
-              "attack_range": 350,
-              "attack_speed": 250,
-              "cooldown": 22.0,
-              "empowered_attacks": 1,
-              "landings": 3,
-              "damage": 220.0
-            },
-            {
-              "level": 19,
-              "dps": 880,
-              "damage_radius": 160,
-              "attack_range": 350,
-              "attack_speed": 250,
-              "cooldown": 22.0,
-              "empowered_attacks": 1,
-              "landings": 3,
-              "damage": 220.0
-            },
-            {
-              "level": 20,
               "dps": 960,
               "damage_radius": 160,
               "attack_range": 350,
@@ -788,49 +788,49 @@
           "trigger": "activated",
           "levels": [
             {
-              "level": 13,
+              "level": 1,
               "uses": 1,
               "damage": 920,
               "damage_radius": 250
             },
             {
-              "level": 14,
+              "level": 2,
               "uses": 1,
               "damage": 1060,
               "damage_radius": 250
             },
             {
-              "level": 15,
+              "level": 3,
               "uses": 1,
               "damage": 1060,
               "damage_radius": 250
             },
             {
-              "level": 16,
+              "level": 4,
               "uses": 1,
               "damage": 1200,
               "damage_radius": 250
             },
             {
-              "level": 17,
+              "level": 5,
               "uses": 1,
               "damage": 1200,
               "damage_radius": 250
             },
             {
-              "level": 18,
+              "level": 6,
               "uses": 1,
               "damage": 1350,
               "damage_radius": 250
             },
             {
-              "level": 19,
+              "level": 7,
               "uses": 1,
               "damage": 1350,
               "damage_radius": 250
             },
             {
-              "level": 20,
+              "level": 8,
               "uses": 1,
               "damage": 1500,
               "damage_radius": 250
@@ -852,7 +852,7 @@
           "trigger": "toggle",
           "levels": [
             {
-              "level": 7,
+              "level": 1,
               "attack_range": 850,
               "attack_speed": 2500,
               "movement_speed": 0,
@@ -862,13 +862,73 @@
               "damage_radius": 180
             },
             {
-              "level": 8,
+              "level": 2,
               "attack_range": 850,
               "attack_speed": 2500,
               "movement_speed": 0,
               "cooldown": 0.8,
               "damage": 170,
               "min_damage": 57,
+              "damage_radius": 180
+            },
+            {
+              "level": 3,
+              "attack_range": 850,
+              "attack_speed": 2500,
+              "movement_speed": 0,
+              "cooldown": 0.8,
+              "damage": 170,
+              "min_damage": 57,
+              "damage_radius": 180
+            },
+            {
+              "level": 4,
+              "attack_range": 850,
+              "attack_speed": 2500,
+              "movement_speed": 0,
+              "cooldown": 0.8,
+              "damage": 195,
+              "min_damage": 65,
+              "damage_radius": 180
+            },
+            {
+              "level": 5,
+              "attack_range": 850,
+              "attack_speed": 2500,
+              "movement_speed": 0,
+              "cooldown": 0.8,
+              "damage": 195,
+              "min_damage": 65,
+              "damage_radius": 180
+            },
+            {
+              "level": 6,
+              "attack_range": 850,
+              "attack_speed": 2500,
+              "movement_speed": 0,
+              "cooldown": 0.8,
+              "damage": 225,
+              "min_damage": 75,
+              "damage_radius": 180
+            },
+            {
+              "level": 7,
+              "attack_range": 850,
+              "attack_speed": 2500,
+              "movement_speed": 0,
+              "cooldown": 0.8,
+              "damage": 225,
+              "min_damage": 75,
+              "damage_radius": 180
+            },
+            {
+              "level": 8,
+              "attack_range": 850,
+              "attack_speed": 2500,
+              "movement_speed": 0,
+              "cooldown": 0.8,
+              "damage": 255,
+              "min_damage": 85,
               "damage_radius": 180
             },
             {
@@ -877,8 +937,8 @@
               "attack_speed": 2500,
               "movement_speed": 0,
               "cooldown": 0.8,
-              "damage": 170,
-              "min_damage": 57,
+              "damage": 255,
+              "min_damage": 85,
               "damage_radius": 180
             },
             {
@@ -887,8 +947,8 @@
               "attack_speed": 2500,
               "movement_speed": 0,
               "cooldown": 0.8,
-              "damage": 195,
-              "min_damage": 65,
+              "damage": 285,
+              "min_damage": 95,
               "damage_radius": 180
             },
             {
@@ -897,8 +957,8 @@
               "attack_speed": 2500,
               "movement_speed": 0,
               "cooldown": 0.8,
-              "damage": 195,
-              "min_damage": 65,
+              "damage": 285,
+              "min_damage": 95,
               "damage_radius": 180
             },
             {
@@ -907,8 +967,8 @@
               "attack_speed": 2500,
               "movement_speed": 0,
               "cooldown": 0.8,
-              "damage": 225,
-              "min_damage": 75,
+              "damage": 325,
+              "min_damage": 108,
               "damage_radius": 180
             },
             {
@@ -917,72 +977,12 @@
               "attack_speed": 2500,
               "movement_speed": 0,
               "cooldown": 0.8,
-              "damage": 225,
-              "min_damage": 75,
+              "damage": 325,
+              "min_damage": 108,
               "damage_radius": 180
             },
             {
               "level": 14,
-              "attack_range": 850,
-              "attack_speed": 2500,
-              "movement_speed": 0,
-              "cooldown": 0.8,
-              "damage": 255,
-              "min_damage": 85,
-              "damage_radius": 180
-            },
-            {
-              "level": 15,
-              "attack_range": 850,
-              "attack_speed": 2500,
-              "movement_speed": 0,
-              "cooldown": 0.8,
-              "damage": 255,
-              "min_damage": 85,
-              "damage_radius": 180
-            },
-            {
-              "level": 16,
-              "attack_range": 850,
-              "attack_speed": 2500,
-              "movement_speed": 0,
-              "cooldown": 0.8,
-              "damage": 285,
-              "min_damage": 95,
-              "damage_radius": 180
-            },
-            {
-              "level": 17,
-              "attack_range": 850,
-              "attack_speed": 2500,
-              "movement_speed": 0,
-              "cooldown": 0.8,
-              "damage": 285,
-              "min_damage": 95,
-              "damage_radius": 180
-            },
-            {
-              "level": 18,
-              "attack_range": 850,
-              "attack_speed": 2500,
-              "movement_speed": 0,
-              "cooldown": 0.8,
-              "damage": 325,
-              "min_damage": 108,
-              "damage_radius": 180
-            },
-            {
-              "level": 19,
-              "attack_range": 850,
-              "attack_speed": 2500,
-              "movement_speed": 0,
-              "cooldown": 0.8,
-              "damage": 325,
-              "min_damage": 108,
-              "damage_radius": 180
-            },
-            {
-              "level": 20,
               "attack_range": 850,
               "attack_speed": 2500,
               "movement_speed": 0,
@@ -998,98 +998,98 @@
           "trigger": "default_mode",
           "levels": [
             {
-              "level": 7,
+              "level": 1,
               "dps": 115,
+              "attack_range": 450,
+              "attack_speed": 1200,
+              "movement_speed": 240
+            },
+            {
+              "level": 2,
+              "dps": 115,
+              "attack_range": 450,
+              "attack_speed": 1200,
+              "movement_speed": 240
+            },
+            {
+              "level": 3,
+              "dps": 130,
+              "attack_range": 450,
+              "attack_speed": 1200,
+              "movement_speed": 240
+            },
+            {
+              "level": 4,
+              "dps": 130,
+              "attack_range": 450,
+              "attack_speed": 1200,
+              "movement_speed": 240
+            },
+            {
+              "level": 5,
+              "dps": 150,
+              "attack_range": 450,
+              "attack_speed": 1200,
+              "movement_speed": 240
+            },
+            {
+              "level": 6,
+              "dps": 150,
+              "attack_range": 450,
+              "attack_speed": 1200,
+              "movement_speed": 240
+            },
+            {
+              "level": 7,
+              "dps": 170,
               "attack_range": 450,
               "attack_speed": 1200,
               "movement_speed": 240
             },
             {
               "level": 8,
-              "dps": 115,
+              "dps": 170,
               "attack_range": 450,
               "attack_speed": 1200,
               "movement_speed": 240
             },
             {
               "level": 9,
-              "dps": 130,
+              "dps": 190,
               "attack_range": 450,
               "attack_speed": 1200,
               "movement_speed": 240
             },
             {
               "level": 10,
-              "dps": 130,
+              "dps": 190,
               "attack_range": 450,
               "attack_speed": 1200,
               "movement_speed": 240
             },
             {
               "level": 11,
-              "dps": 150,
+              "dps": 215,
               "attack_range": 450,
               "attack_speed": 1200,
               "movement_speed": 240
             },
             {
               "level": 12,
-              "dps": 150,
+              "dps": 215,
               "attack_range": 450,
               "attack_speed": 1200,
               "movement_speed": 240
             },
             {
               "level": 13,
-              "dps": 170,
-              "attack_range": 450,
-              "attack_speed": 1200,
-              "movement_speed": 240
-            },
-            {
-              "level": 14,
-              "dps": 170,
-              "attack_range": 450,
-              "attack_speed": 1200,
-              "movement_speed": 240
-            },
-            {
-              "level": 15,
-              "dps": 190,
-              "attack_range": 450,
-              "attack_speed": 1200,
-              "movement_speed": 240
-            },
-            {
-              "level": 16,
-              "dps": 190,
-              "attack_range": 450,
-              "attack_speed": 1200,
-              "movement_speed": 240
-            },
-            {
-              "level": 17,
-              "dps": 215,
-              "attack_range": 450,
-              "attack_speed": 1200,
-              "movement_speed": 240
-            },
-            {
-              "level": 18,
-              "dps": 215,
-              "attack_range": 450,
-              "attack_speed": 1200,
-              "movement_speed": 240
-            },
-            {
-              "level": 19,
               "dps": 240,
               "attack_range": 450,
               "attack_speed": 1200,
               "movement_speed": 240
             },
             {
-              "level": 20,
+              "level": 14,
               "dps": 240,
               "attack_range": 450,
               "attack_speed": 1200,
@@ -1112,7 +1112,7 @@
           "trigger": "activated",
           "levels": [
             {
-              "level": 11,
+              "level": 1,
               "uses": 1,
               "damage": 600,
               "damage_radius": 225,
@@ -1127,7 +1127,7 @@
               "spawned_unit_dps": 20
             },
             {
-              "level": 12,
+              "level": 2,
               "uses": 1,
               "damage": 700,
               "damage_radius": 225,
@@ -1142,7 +1142,7 @@
               "spawned_unit_dps": 20
             },
             {
-              "level": 13,
+              "level": 3,
               "uses": 1,
               "damage": 700,
               "damage_radius": 225,
@@ -1157,7 +1157,7 @@
               "spawned_unit_dps": 20
             },
             {
-              "level": 14,
+              "level": 4,
               "uses": 1,
               "damage": 700,
               "damage_radius": 225,
@@ -1172,7 +1172,7 @@
               "spawned_unit_dps": 20
             },
             {
-              "level": 15,
+              "level": 5,
               "uses": 1,
               "damage": 700,
               "damage_radius": 225,
@@ -1187,7 +1187,7 @@
               "spawned_unit_dps": 20
             },
             {
-              "level": 16,
+              "level": 6,
               "uses": 1,
               "damage": 800,
               "damage_radius": 225,
@@ -1202,7 +1202,7 @@
               "spawned_unit_dps": 20
             },
             {
-              "level": 17,
+              "level": 7,
               "uses": 1,
               "damage": 800,
               "damage_radius": 225,
@@ -1217,7 +1217,7 @@
               "spawned_unit_dps": 20
             },
             {
-              "level": 18,
+              "level": 8,
               "uses": 1,
               "damage": 800,
               "damage_radius": 225,
@@ -1232,7 +1232,7 @@
               "spawned_unit_dps": 20
             },
             {
-              "level": 19,
+              "level": 9,
               "uses": 1,
               "damage": 800,
               "damage_radius": 225,
@@ -1247,7 +1247,7 @@
               "spawned_unit_dps": 20
             },
             {
-              "level": 20,
+              "level": 10,
               "uses": 1,
               "damage": 900,
               "damage_radius": 225,
@@ -1268,7 +1268,7 @@
           "trigger": "on_attack",
           "levels": [
             {
-              "level": 11,
+              "level": 1,
               "units_spawned": 3,
               "spawned_unit": {
                 "name": "Skeleton",
@@ -1278,7 +1278,7 @@
               "summon_interval": 2.7
             },
             {
-              "level": 12,
+              "level": 2,
               "units_spawned": 3,
               "spawned_unit": {
                 "name": "Skeleton",
@@ -1288,7 +1288,7 @@
               "summon_interval": 2.7
             },
             {
-              "level": 13,
+              "level": 3,
               "units_spawned": 3,
               "spawned_unit": {
                 "name": "Skeleton",
@@ -1298,7 +1298,7 @@
               "summon_interval": 2.7
             },
             {
-              "level": 14,
+              "level": 4,
               "units_spawned": 3,
               "spawned_unit": {
                 "name": "Skeleton",
@@ -1308,7 +1308,7 @@
               "summon_interval": 2.7
             },
             {
-              "level": 15,
+              "level": 5,
               "units_spawned": 3,
               "spawned_unit": {
                 "name": "Skeleton",
@@ -1318,7 +1318,7 @@
               "summon_interval": 2.7
             },
             {
-              "level": 16,
+              "level": 6,
               "units_spawned": 3,
               "spawned_unit": {
                 "name": "Skeleton",
@@ -1328,7 +1328,7 @@
               "summon_interval": 2.7
             },
             {
-              "level": 17,
+              "level": 7,
               "units_spawned": 3,
               "spawned_unit": {
                 "name": "Skeleton",
@@ -1338,7 +1338,7 @@
               "summon_interval": 2.7
             },
             {
-              "level": 18,
+              "level": 8,
               "units_spawned": 3,
               "spawned_unit": {
                 "name": "Skeleton",
@@ -1348,7 +1348,7 @@
               "summon_interval": 2.7
             },
             {
-              "level": 19,
+              "level": 9,
               "units_spawned": 3,
               "spawned_unit": {
                 "name": "Skeleton",
@@ -1358,7 +1358,7 @@
               "summon_interval": 2.7
             },
             {
-              "level": 20,
+              "level": 10,
               "units_spawned": 3,
               "spawned_unit": {
                 "name": "Skeleton",
@@ -1374,52 +1374,52 @@
           "trigger": "on_death",
           "levels": [
             {
-              "level": 11,
+              "level": 1,
               "damage": 300,
               "damage_radius": 200
             },
             {
-              "level": 12,
+              "level": 2,
               "damage": 300,
               "damage_radius": 200
             },
             {
-              "level": 13,
+              "level": 3,
               "damage": 300,
               "damage_radius": 200
             },
             {
-              "level": 14,
+              "level": 4,
               "damage": 400,
               "damage_radius": 200
             },
             {
-              "level": 15,
+              "level": 5,
               "damage": 400,
               "damage_radius": 200
             },
             {
-              "level": 16,
+              "level": 6,
               "damage": 400,
               "damage_radius": 200
             },
             {
-              "level": 17,
+              "level": 7,
               "damage": 400,
               "damage_radius": 200
             },
             {
-              "level": 18,
+              "level": 8,
               "damage": 500,
               "damage_radius": 200
             },
             {
-              "level": 19,
+              "level": 9,
               "damage": 500,
               "damage_radius": 200
             },
             {
-              "level": 20,
+              "level": 10,
               "damage": 500,
               "damage_radius": 200
             }
@@ -1440,11 +1440,47 @@
           "trigger": "activated",
           "levels": [
             {
-              "level": 5,
+              "level": 1,
               "uses": 1,
               "affected_by_damage_boosts": true,
               "damage": 100,
               "min_damage": 80,
+              "damage_radius": 750,
+              "cone_angle": 90
+            },
+            {
+              "level": 2,
+              "uses": 1,
+              "affected_by_damage_boosts": true,
+              "damage": 100,
+              "min_damage": 80,
+              "damage_radius": 750,
+              "cone_angle": 90
+            },
+            {
+              "level": 3,
+              "uses": 1,
+              "affected_by_damage_boosts": true,
+              "damage": 100,
+              "min_damage": 80,
+              "damage_radius": 750,
+              "cone_angle": 90
+            },
+            {
+              "level": 4,
+              "uses": 1,
+              "affected_by_damage_boosts": true,
+              "damage": 160,
+              "min_damage": 128,
+              "damage_radius": 750,
+              "cone_angle": 90
+            },
+            {
+              "level": 5,
+              "uses": 1,
+              "affected_by_damage_boosts": true,
+              "damage": 160,
+              "min_damage": 128,
               "damage_radius": 750,
               "cone_angle": 90
             },
@@ -1452,8 +1488,8 @@
               "level": 6,
               "uses": 1,
               "affected_by_damage_boosts": true,
-              "damage": 100,
-              "min_damage": 80,
+              "damage": 160,
+              "min_damage": 128,
               "damage_radius": 750,
               "cone_angle": 90
             },
@@ -1461,8 +1497,8 @@
               "level": 7,
               "uses": 1,
               "affected_by_damage_boosts": true,
-              "damage": 100,
-              "min_damage": 80,
+              "damage": 160,
+              "min_damage": 128,
               "damage_radius": 750,
               "cone_angle": 90
             },
@@ -1470,8 +1506,8 @@
               "level": 8,
               "uses": 1,
               "affected_by_damage_boosts": true,
-              "damage": 160,
-              "min_damage": 128,
+              "damage": 275,
+              "min_damage": 220,
               "damage_radius": 750,
               "cone_angle": 90
             },
@@ -1479,8 +1515,8 @@
               "level": 9,
               "uses": 1,
               "affected_by_damage_boosts": true,
-              "damage": 160,
-              "min_damage": 128,
+              "damage": 275,
+              "min_damage": 220,
               "damage_radius": 750,
               "cone_angle": 90
             },
@@ -1488,8 +1524,8 @@
               "level": 10,
               "uses": 1,
               "affected_by_damage_boosts": true,
-              "damage": 160,
-              "min_damage": 128,
+              "damage": 275,
+              "min_damage": 220,
               "damage_radius": 750,
               "cone_angle": 90
             },
@@ -1497,8 +1533,8 @@
               "level": 11,
               "uses": 1,
               "affected_by_damage_boosts": true,
-              "damage": 160,
-              "min_damage": 128,
+              "damage": 275,
+              "min_damage": 220,
               "damage_radius": 750,
               "cone_angle": 90
             },
@@ -1506,8 +1542,8 @@
               "level": 12,
               "uses": 1,
               "affected_by_damage_boosts": true,
-              "damage": 275,
-              "min_damage": 220,
+              "damage": 400,
+              "min_damage": 320,
               "damage_radius": 750,
               "cone_angle": 90
             },
@@ -1515,8 +1551,8 @@
               "level": 13,
               "uses": 1,
               "affected_by_damage_boosts": true,
-              "damage": 275,
-              "min_damage": 220,
+              "damage": 400,
+              "min_damage": 320,
               "damage_radius": 750,
               "cone_angle": 90
             },
@@ -1524,8 +1560,8 @@
               "level": 14,
               "uses": 1,
               "affected_by_damage_boosts": true,
-              "damage": 275,
-              "min_damage": 220,
+              "damage": 400,
+              "min_damage": 320,
               "damage_radius": 750,
               "cone_angle": 90
             },
@@ -1533,49 +1569,13 @@
               "level": 15,
               "uses": 1,
               "affected_by_damage_boosts": true,
-              "damage": 275,
-              "min_damage": 220,
+              "damage": 400,
+              "min_damage": 320,
               "damage_radius": 750,
               "cone_angle": 90
             },
             {
               "level": 16,
-              "uses": 1,
-              "affected_by_damage_boosts": true,
-              "damage": 400,
-              "min_damage": 320,
-              "damage_radius": 750,
-              "cone_angle": 90
-            },
-            {
-              "level": 17,
-              "uses": 1,
-              "affected_by_damage_boosts": true,
-              "damage": 400,
-              "min_damage": 320,
-              "damage_radius": 750,
-              "cone_angle": 90
-            },
-            {
-              "level": 18,
-              "uses": 1,
-              "affected_by_damage_boosts": true,
-              "damage": 400,
-              "min_damage": 320,
-              "damage_radius": 750,
-              "cone_angle": 90
-            },
-            {
-              "level": 19,
-              "uses": 1,
-              "affected_by_damage_boosts": true,
-              "damage": 400,
-              "min_damage": 320,
-              "damage_radius": 750,
-              "cone_angle": 90
-            },
-            {
-              "level": 20,
               "uses": 1,
               "affected_by_damage_boosts": true,
               "damage": 550,
@@ -1594,100 +1594,116 @@
           "trigger": "while_alone",
           "levels": [
             {
-              "level": 5,
+              "level": 1,
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
               "damage_increase_percent": 60,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "attack_speed_increase_percent": 50
+            },
+            {
+              "level": 2,
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 70,
+              "attack_speed_increase_percent": 50
+            },
+            {
+              "level": 3,
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 70,
+              "attack_speed_increase_percent": 50
+            },
+            {
+              "level": 4,
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 70,
+              "attack_speed_increase_percent": 50
+            },
+            {
+              "level": 5,
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 70,
+              "attack_speed_increase_percent": 50
             },
             {
               "level": 6,
-              "damage_increase_percent": 70,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 80,
+              "attack_speed_increase_percent": 50
             },
             {
               "level": 7,
-              "damage_increase_percent": 70,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 80,
+              "attack_speed_increase_percent": 50
             },
             {
               "level": 8,
-              "damage_increase_percent": 70,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 80,
+              "attack_speed_increase_percent": 50
             },
             {
               "level": 9,
-              "damage_increase_percent": 70,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 80,
+              "attack_speed_increase_percent": 50
             },
             {
               "level": 10,
-              "damage_increase_percent": 80,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 90,
+              "attack_speed_increase_percent": 50
             },
             {
               "level": 11,
-              "damage_increase_percent": 80,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 90,
+              "attack_speed_increase_percent": 50
             },
             {
               "level": 12,
-              "damage_increase_percent": 80,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 90,
+              "attack_speed_increase_percent": 50
             },
             {
               "level": 13,
-              "damage_increase_percent": 80,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 90,
+              "attack_speed_increase_percent": 50
             },
             {
               "level": 14,
-              "damage_increase_percent": 90,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 100,
+              "attack_speed_increase_percent": 50
             },
             {
               "level": 15,
-              "damage_increase_percent": 90,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
+              "damage_increase_percent": 100,
+              "attack_speed_increase_percent": 50
             },
             {
               "level": 16,
-              "damage_increase_percent": 90,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
-            },
-            {
-              "level": 17,
-              "damage_increase_percent": 90,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
-            },
-            {
-              "level": 18,
+              "proximity_radius": 400,
+              "proximity_deactivate_radius": 400,
               "damage_increase_percent": 100,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
-            },
-            {
-              "level": 19,
-              "damage_increase_percent": 100,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
-            },
-            {
-              "level": 20,
-              "damage_increase_percent": 100,
-              "attack_speed_increase_percent": 50,
-              "isolation_radius": 400
+              "attack_speed_increase_percent": 50
             }
           ]
         }
@@ -1706,9 +1722,129 @@
           "trigger": "activated",
           "levels": [
             {
-              "level": 9,
+              "level": 1,
               "uses": 1,
               "units_spawned": 7,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000105,
+                "level": 1
+              },
+              "spawned_unit_hitpoints": 10,
+              "spawned_unit_dps": 20,
+              "spawned_unit_damage_increase_percent": 200,
+              "spawned_unit_movement_speed_increase": 733,
+              "spawned_unit_duration": 4.0
+            },
+            {
+              "level": 2,
+              "uses": 1,
+              "units_spawned": 7,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000105,
+                "level": 1
+              },
+              "spawned_unit_hitpoints": 10,
+              "spawned_unit_dps": 20,
+              "spawned_unit_damage_increase_percent": 200,
+              "spawned_unit_movement_speed_increase": 733,
+              "spawned_unit_duration": 4.0
+            },
+            {
+              "level": 3,
+              "uses": 1,
+              "units_spawned": 7,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000105,
+                "level": 1
+              },
+              "spawned_unit_hitpoints": 10,
+              "spawned_unit_dps": 20,
+              "spawned_unit_damage_increase_percent": 200,
+              "spawned_unit_movement_speed_increase": 733,
+              "spawned_unit_duration": 4.0
+            },
+            {
+              "level": 4,
+              "uses": 1,
+              "units_spawned": 8,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000105,
+                "level": 1
+              },
+              "spawned_unit_hitpoints": 10,
+              "spawned_unit_dps": 20,
+              "spawned_unit_damage_increase_percent": 200,
+              "spawned_unit_movement_speed_increase": 733,
+              "spawned_unit_duration": 4.0
+            },
+            {
+              "level": 5,
+              "uses": 1,
+              "units_spawned": 8,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000105,
+                "level": 1
+              },
+              "spawned_unit_hitpoints": 10,
+              "spawned_unit_dps": 20,
+              "spawned_unit_damage_increase_percent": 200,
+              "spawned_unit_movement_speed_increase": 733,
+              "spawned_unit_duration": 4.0
+            },
+            {
+              "level": 6,
+              "uses": 1,
+              "units_spawned": 8,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000105,
+                "level": 1
+              },
+              "spawned_unit_hitpoints": 10,
+              "spawned_unit_dps": 20,
+              "spawned_unit_damage_increase_percent": 200,
+              "spawned_unit_movement_speed_increase": 733,
+              "spawned_unit_duration": 4.0
+            },
+            {
+              "level": 7,
+              "uses": 1,
+              "units_spawned": 8,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000105,
+                "level": 1
+              },
+              "spawned_unit_hitpoints": 10,
+              "spawned_unit_dps": 20,
+              "spawned_unit_damage_increase_percent": 200,
+              "spawned_unit_movement_speed_increase": 733,
+              "spawned_unit_duration": 4.0
+            },
+            {
+              "level": 8,
+              "uses": 1,
+              "units_spawned": 9,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000105,
+                "level": 1
+              },
+              "spawned_unit_hitpoints": 10,
+              "spawned_unit_dps": 20,
+              "spawned_unit_damage_increase_percent": 200,
+              "spawned_unit_movement_speed_increase": 733,
+              "spawned_unit_duration": 4.0
+            },
+            {
+              "level": 9,
+              "uses": 1,
+              "units_spawned": 9,
               "spawned_unit": {
                 "name": "Bat",
                 "_id": 4000105,
@@ -1723,7 +1859,7 @@
             {
               "level": 10,
               "uses": 1,
-              "units_spawned": 7,
+              "units_spawned": 10,
               "spawned_unit": {
                 "name": "Bat",
                 "_id": 4000105,
@@ -1738,7 +1874,7 @@
             {
               "level": 11,
               "uses": 1,
-              "units_spawned": 7,
+              "units_spawned": 10,
               "spawned_unit": {
                 "name": "Bat",
                 "_id": 4000105,
@@ -1752,126 +1888,6 @@
             },
             {
               "level": 12,
-              "uses": 1,
-              "units_spawned": 8,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000105,
-                "level": 1
-              },
-              "spawned_unit_hitpoints": 10,
-              "spawned_unit_dps": 20,
-              "spawned_unit_damage_increase_percent": 200,
-              "spawned_unit_movement_speed_increase": 733,
-              "spawned_unit_duration": 4.0
-            },
-            {
-              "level": 13,
-              "uses": 1,
-              "units_spawned": 8,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000105,
-                "level": 1
-              },
-              "spawned_unit_hitpoints": 10,
-              "spawned_unit_dps": 20,
-              "spawned_unit_damage_increase_percent": 200,
-              "spawned_unit_movement_speed_increase": 733,
-              "spawned_unit_duration": 4.0
-            },
-            {
-              "level": 14,
-              "uses": 1,
-              "units_spawned": 8,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000105,
-                "level": 1
-              },
-              "spawned_unit_hitpoints": 10,
-              "spawned_unit_dps": 20,
-              "spawned_unit_damage_increase_percent": 200,
-              "spawned_unit_movement_speed_increase": 733,
-              "spawned_unit_duration": 4.0
-            },
-            {
-              "level": 15,
-              "uses": 1,
-              "units_spawned": 8,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000105,
-                "level": 1
-              },
-              "spawned_unit_hitpoints": 10,
-              "spawned_unit_dps": 20,
-              "spawned_unit_damage_increase_percent": 200,
-              "spawned_unit_movement_speed_increase": 733,
-              "spawned_unit_duration": 4.0
-            },
-            {
-              "level": 16,
-              "uses": 1,
-              "units_spawned": 9,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000105,
-                "level": 1
-              },
-              "spawned_unit_hitpoints": 10,
-              "spawned_unit_dps": 20,
-              "spawned_unit_damage_increase_percent": 200,
-              "spawned_unit_movement_speed_increase": 733,
-              "spawned_unit_duration": 4.0
-            },
-            {
-              "level": 17,
-              "uses": 1,
-              "units_spawned": 9,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000105,
-                "level": 1
-              },
-              "spawned_unit_hitpoints": 10,
-              "spawned_unit_dps": 20,
-              "spawned_unit_damage_increase_percent": 200,
-              "spawned_unit_movement_speed_increase": 733,
-              "spawned_unit_duration": 4.0
-            },
-            {
-              "level": 18,
-              "uses": 1,
-              "units_spawned": 10,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000105,
-                "level": 1
-              },
-              "spawned_unit_hitpoints": 10,
-              "spawned_unit_dps": 20,
-              "spawned_unit_damage_increase_percent": 200,
-              "spawned_unit_movement_speed_increase": 733,
-              "spawned_unit_duration": 4.0
-            },
-            {
-              "level": 19,
-              "uses": 1,
-              "units_spawned": 10,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000105,
-                "level": 1
-              },
-              "spawned_unit_hitpoints": 10,
-              "spawned_unit_dps": 20,
-              "spawned_unit_damage_increase_percent": 200,
-              "spawned_unit_movement_speed_increase": 733,
-              "spawned_unit_duration": 4.0
-            },
-            {
-              "level": 20,
               "uses": 1,
               "units_spawned": 11,
               "spawned_unit": {
@@ -1892,7 +1908,7 @@
           "trigger": "ongoing",
           "levels": [
             {
-              "level": 9,
+              "level": 1,
               "units_spawned": 3,
               "spawned_unit": {
                 "name": "Bat",
@@ -1902,8 +1918,88 @@
               "summon_interval": 6.0
             },
             {
-              "level": 10,
+              "level": 2,
               "units_spawned": 3,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000043,
+                "level": 1
+              },
+              "summon_interval": 4.8
+            },
+            {
+              "level": 3,
+              "units_spawned": 3,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000043,
+                "level": 1
+              },
+              "summon_interval": 4.8
+            },
+            {
+              "level": 4,
+              "units_spawned": 3,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000043,
+                "level": 1
+              },
+              "summon_interval": 4.8
+            },
+            {
+              "level": 5,
+              "units_spawned": 3,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000043,
+                "level": 1
+              },
+              "summon_interval": 4.8
+            },
+            {
+              "level": 6,
+              "units_spawned": 4,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000043,
+                "level": 1
+              },
+              "summon_interval": 4.8
+            },
+            {
+              "level": 7,
+              "units_spawned": 4,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000043,
+                "level": 1
+              },
+              "summon_interval": 4.8
+            },
+            {
+              "level": 8,
+              "units_spawned": 4,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000043,
+                "level": 1
+              },
+              "summon_interval": 4.8
+            },
+            {
+              "level": 9,
+              "units_spawned": 4,
+              "spawned_unit": {
+                "name": "Bat",
+                "_id": 4000043,
+                "level": 1
+              },
+              "summon_interval": 4.8
+            },
+            {
+              "level": 10,
+              "units_spawned": 4,
               "spawned_unit": {
                 "name": "Bat",
                 "_id": 4000043,
@@ -1913,7 +2009,7 @@
             },
             {
               "level": 11,
-              "units_spawned": 3,
+              "units_spawned": 4,
               "spawned_unit": {
                 "name": "Bat",
                 "_id": 4000043,
@@ -1923,86 +2019,6 @@
             },
             {
               "level": 12,
-              "units_spawned": 3,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000043,
-                "level": 1
-              },
-              "summon_interval": 4.8
-            },
-            {
-              "level": 13,
-              "units_spawned": 3,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000043,
-                "level": 1
-              },
-              "summon_interval": 4.8
-            },
-            {
-              "level": 14,
-              "units_spawned": 4,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000043,
-                "level": 1
-              },
-              "summon_interval": 4.8
-            },
-            {
-              "level": 15,
-              "units_spawned": 4,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000043,
-                "level": 1
-              },
-              "summon_interval": 4.8
-            },
-            {
-              "level": 16,
-              "units_spawned": 4,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000043,
-                "level": 1
-              },
-              "summon_interval": 4.8
-            },
-            {
-              "level": 17,
-              "units_spawned": 4,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000043,
-                "level": 1
-              },
-              "summon_interval": 4.8
-            },
-            {
-              "level": 18,
-              "units_spawned": 4,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000043,
-                "level": 1
-              },
-              "summon_interval": 4.8
-            },
-            {
-              "level": 19,
-              "units_spawned": 4,
-              "spawned_unit": {
-                "name": "Bat",
-                "_id": 4000043,
-                "level": 1
-              },
-              "summon_interval": 4.8
-            },
-            {
-              "level": 20,
               "units_spawned": 4,
               "spawned_unit": {
                 "name": "Bat",
@@ -2028,32 +2044,32 @@
           "trigger": "first_attacks",
           "levels": [
             {
-              "level": 15,
+              "level": 1,
               "stun_duration": 5.0,
               "empowered_attacks": 1
             },
             {
-              "level": 16,
+              "level": 2,
               "stun_duration": 5.0,
               "empowered_attacks": 1
             },
             {
-              "level": 17,
+              "level": 3,
               "stun_duration": 5.0,
               "empowered_attacks": 1
             },
             {
-              "level": 18,
+              "level": 4,
               "stun_duration": 6.0,
               "empowered_attacks": 1
             },
             {
-              "level": 19,
+              "level": 5,
               "stun_duration": 6.0,
               "empowered_attacks": 1
             },
             {
-              "level": 20,
+              "level": 6,
               "stun_duration": 6.0,
               "empowered_attacks": 1
             }
@@ -2064,7 +2080,7 @@
           "trigger": "after_attack",
           "levels": [
             {
-              "level": 15,
+              "level": 1,
               "units_spawned": 1,
               "spawned_unit": {
                 "name": "Hog Rider",
@@ -2073,7 +2089,7 @@
               }
             },
             {
-              "level": 16,
+              "level": 2,
               "units_spawned": 1,
               "spawned_unit": {
                 "name": "Hog Rider",
@@ -2082,7 +2098,7 @@
               }
             },
             {
-              "level": 17,
+              "level": 3,
               "units_spawned": 1,
               "spawned_unit": {
                 "name": "Hog Rider",
@@ -2091,7 +2107,7 @@
               }
             },
             {
-              "level": 18,
+              "level": 4,
               "units_spawned": 1,
               "spawned_unit": {
                 "name": "Hog Rider",
@@ -2100,7 +2116,7 @@
               }
             },
             {
-              "level": 19,
+              "level": 5,
               "units_spawned": 1,
               "spawned_unit": {
                 "name": "Hog Rider",
@@ -2109,7 +2125,7 @@
               }
             },
             {
-              "level": 20,
+              "level": 6,
               "units_spawned": 1,
               "spawned_unit": {
                 "name": "Hog Rider",
@@ -2134,7 +2150,7 @@
           "trigger": "toggle",
           "levels": [
             {
-              "level": 17,
+              "level": 1,
               "dps": 200,
               "attack_speed": 3500,
               "chain_targets": 4,
@@ -2142,7 +2158,7 @@
               "cooldown": 1.5
             },
             {
-              "level": 18,
+              "level": 2,
               "dps": 218,
               "attack_speed": 3500,
               "chain_targets": 4,
@@ -2150,7 +2166,7 @@
               "cooldown": 1.5
             },
             {
-              "level": 19,
+              "level": 3,
               "dps": 218,
               "attack_speed": 3500,
               "chain_targets": 4,
@@ -2158,7 +2174,7 @@
               "cooldown": 1.5
             },
             {
-              "level": 20,
+              "level": 4,
               "dps": 234,
               "attack_speed": 3500,
               "chain_targets": 4,
@@ -2172,7 +2188,7 @@
           "trigger": "default_mode",
           "levels": [
             {
-              "level": 17,
+              "level": 1,
               "dps": 220,
               "attack_range": 350,
               "attack_speed": 128,
@@ -2183,7 +2199,7 @@
               "stage_3_after": 3.0
             },
             {
-              "level": 18,
+              "level": 2,
               "dps": 220,
               "attack_range": 350,
               "attack_speed": 128,
@@ -2194,7 +2210,7 @@
               "stage_3_after": 3.0
             },
             {
-              "level": 19,
+              "level": 3,
               "dps": 253,
               "attack_range": 350,
               "attack_speed": 128,
@@ -2205,7 +2221,7 @@
               "stage_3_after": 3.0
             },
             {
-              "level": 20,
+              "level": 4,
               "dps": 253,
               "attack_range": 350,
               "attack_speed": 128,
@@ -3293,6 +3309,7 @@
               "aura_radius": 900,
               "health_increase_percent": 50.0,
               "max_health_increase": 640,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3300,6 +3317,7 @@
               "aura_radius": 900,
               "health_increase_percent": 50.0,
               "max_health_increase": 640,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3307,6 +3325,7 @@
               "aura_radius": 900,
               "health_increase_percent": 60.0,
               "max_health_increase": 750,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3314,6 +3333,7 @@
               "aura_radius": 900,
               "health_increase_percent": 60.0,
               "max_health_increase": 750,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3321,6 +3341,7 @@
               "aura_radius": 900,
               "health_increase_percent": 60.0,
               "max_health_increase": 750,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3328,6 +3349,7 @@
               "aura_radius": 900,
               "health_increase_percent": 75.0,
               "max_health_increase": 830,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3335,6 +3357,7 @@
               "aura_radius": 900,
               "health_increase_percent": 75.0,
               "max_health_increase": 830,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3342,6 +3365,7 @@
               "aura_radius": 900,
               "health_increase_percent": 75.0,
               "max_health_increase": 830,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3349,6 +3373,7 @@
               "aura_radius": 900,
               "health_increase_percent": 90.0,
               "max_health_increase": 930,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3356,6 +3381,7 @@
               "aura_radius": 900,
               "health_increase_percent": 90.0,
               "max_health_increase": 930,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3363,6 +3389,7 @@
               "aura_radius": 900,
               "health_increase_percent": 90.0,
               "max_health_increase": 930,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3370,6 +3397,7 @@
               "aura_radius": 900,
               "health_increase_percent": 100.0,
               "max_health_increase": 1010,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3377,6 +3405,7 @@
               "aura_radius": 900,
               "health_increase_percent": 100.0,
               "max_health_increase": 1010,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3384,6 +3413,7 @@
               "aura_radius": 900,
               "health_increase_percent": 100.0,
               "max_health_increase": 1010,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3391,6 +3421,7 @@
               "aura_radius": 900,
               "health_increase_percent": 110.0,
               "max_health_increase": 1120,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3398,6 +3429,7 @@
               "aura_radius": 900,
               "health_increase_percent": 110.0,
               "max_health_increase": 1120,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3405,6 +3437,7 @@
               "aura_radius": 900,
               "health_increase_percent": 110.0,
               "max_health_increase": 1120,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
@@ -3412,6 +3445,7 @@
               "aura_radius": 900,
               "health_increase_percent": 120.0,
               "max_health_increase": 1200,
+              "housing_limit": 260,
               "affects_owner": false
             }
           ]
@@ -5830,8 +5864,8 @@
         {
           "name": "Giant Arrow",
           "TID": {
-            "name": "TID_GEAR_PIERCING_ARROW",
-            "info": "TID_GEAR_INFO_PIERCING_ARROW"
+            "name": "TID_GEAR_GIANT_ARROW",
+            "info": "TID_GEAR_INFO_GIANT_ARROW"
           },
           "trigger": "activated",
           "info": "Shoots a giant piercing arrow that crosses the entire village",
@@ -6731,108 +6765,126 @@
               "level": 1,
               "aura_radius": 900,
               "damage_increase_percent": 15,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 2,
               "aura_radius": 900,
               "damage_increase_percent": 15,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 3,
               "aura_radius": 900,
               "damage_increase_percent": 20,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 4,
               "aura_radius": 900,
               "damage_increase_percent": 20,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 5,
               "aura_radius": 900,
               "damage_increase_percent": 20,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 6,
               "aura_radius": 900,
               "damage_increase_percent": 25,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 7,
               "aura_radius": 900,
               "damage_increase_percent": 25,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 8,
               "aura_radius": 900,
               "damage_increase_percent": 25,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 9,
               "aura_radius": 900,
               "damage_increase_percent": 30,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 10,
               "aura_radius": 900,
               "damage_increase_percent": 30,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 11,
               "aura_radius": 900,
               "damage_increase_percent": 30,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 12,
               "aura_radius": 900,
               "damage_increase_percent": 35,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 13,
               "aura_radius": 900,
               "damage_increase_percent": 35,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 14,
               "aura_radius": 900,
               "damage_increase_percent": 35,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 15,
               "aura_radius": 900,
               "damage_increase_percent": 45,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 16,
               "aura_radius": 900,
               "damage_increase_percent": 45,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 17,
               "aura_radius": 900,
               "damage_increase_percent": 45,
+              "housing_limit": 260,
               "affects_owner": false
             },
             {
               "level": 18,
               "aura_radius": 900,
               "damage_increase_percent": 50,
+              "housing_limit": 260,
               "affects_owner": false
             }
           ]
@@ -13133,6 +13185,87 @@
             {
               "level": 27,
               "healing": 1381
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_id": 119000000,
+      "name": "Wizard Hall",
+      "abilities": [
+        {
+          "name": "WizardTownHallSpawnAbility",
+          "trigger": "enemy_in_range",
+          "levels": [
+            {
+              "level": 1,
+              "proximity_radius": 1300,
+              "proximity_altitude": "AirAndGround",
+              "proximity_requires_can_open_cc": true,
+              "units_spawned": 4,
+              "spawned_unit": {
+                "name": "Wizard",
+                "_id": 4000006,
+                "level_from": "owned_troop"
+              },
+              "units_per_wave": 1,
+              "spawn_distance": 100,
+              "spawn_interval": 0.128
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_id": 119000001,
+      "name": "Archer Hall",
+      "abilities": [
+        {
+          "name": "ArcherTownHallSpawnAbility",
+          "trigger": "enemy_in_range",
+          "levels": [
+            {
+              "level": 1,
+              "proximity_radius": 1300,
+              "proximity_altitude": "AirAndGround",
+              "proximity_requires_can_open_cc": true,
+              "units_spawned": 15,
+              "spawned_unit": {
+                "name": "Archer",
+                "_id": 4000001,
+                "level_from": "owned_troop"
+              },
+              "units_per_wave": 4,
+              "spawn_distance": 100,
+              "spawn_interval": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_id": 119000002,
+      "name": "Barbarian Hall",
+      "abilities": [
+        {
+          "name": "BarbarianTownHallSpawnAbility",
+          "trigger": "enemy_in_range",
+          "levels": [
+            {
+              "level": 1,
+              "proximity_radius": 1300,
+              "proximity_altitude": "Ground",
+              "proximity_requires_can_open_cc": true,
+              "units_spawned": 15,
+              "spawned_unit": {
+                "name": "Barbarian",
+                "_id": 4000000,
+                "level_from": "owned_troop"
+              },
+              "units_per_wave": 3,
+              "spawn_distance": 100,
+              "spawn_interval": 0.5
             }
           ]
         }

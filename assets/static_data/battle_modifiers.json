@@ -9,25 +9,25 @@
         {
           "type": "buildings",
           "defender": true,
-          "damage_multiplier": 125
+          "damage_multiplier": 130
         },
         {
           "type": "heroes",
           "attacker": true,
-          "damage_multiplier": 80,
-          "hp_multiplier": 80
+          "damage_multiplier": 75,
+          "hp_multiplier": 75
         },
         {
           "type": "heroes",
           "defender": true,
-          "damage_multiplier": 125,
-          "hp_multiplier": 125
+          "damage_multiplier": 130,
+          "hp_multiplier": 130
         },
         {
           "type": "guardians",
           "defender": true,
-          "damage_multiplier": 120,
-          "hp_multiplier": 120
+          "damage_multiplier": 125,
+          "hp_multiplier": 125
         },
         {
           "type": "common_equipment",
@@ -50,7 +50,7 @@
         {
           "type": "buildings",
           "defender": true,
-          "damage_multiplier": 120
+          "damage_multiplier": 125
         },
         {
           "type": "heroes",
@@ -61,14 +61,14 @@
         {
           "type": "heroes",
           "defender": true,
-          "damage_multiplier": 120,
-          "hp_multiplier": 120
+          "damage_multiplier": 125,
+          "hp_multiplier": 125
         },
         {
           "type": "guardians",
           "defender": true,
-          "damage_multiplier": 120,
-          "hp_multiplier": 120
+          "damage_multiplier": 125,
+          "hp_multiplier": 125
         }
       ]
     },
@@ -76,6 +76,37 @@
       "name": "Minus Two",
       "TID": {
         "name": "TID_MODE_TITLE_MINUS_TWO"
+      },
+      "modifiers": [
+        {
+          "type": "buildings",
+          "defender": true,
+          "damage_multiplier": 120
+        },
+        {
+          "type": "heroes",
+          "attacker": true,
+          "damage_multiplier": 85,
+          "hp_multiplier": 85
+        },
+        {
+          "type": "heroes",
+          "defender": true,
+          "damage_multiplier": 120,
+          "hp_multiplier": 120
+        },
+        {
+          "type": "guardians",
+          "defender": true,
+          "damage_multiplier": 115,
+          "hp_multiplier": 115
+        }
+      ]
+    },
+    {
+      "name": "Minus Three",
+      "TID": {
+        "name": "TID_MODE_TITLE_MINUS_THREE"
       },
       "modifiers": [
         {
@@ -100,37 +131,6 @@
           "defender": true,
           "damage_multiplier": 110,
           "hp_multiplier": 110
-        }
-      ]
-    },
-    {
-      "name": "Minus Three",
-      "TID": {
-        "name": "TID_MODE_TITLE_MINUS_THREE"
-      },
-      "modifiers": [
-        {
-          "type": "buildings",
-          "defender": true,
-          "damage_multiplier": 110
-        },
-        {
-          "type": "heroes",
-          "attacker": true,
-          "damage_multiplier": 95,
-          "hp_multiplier": 95
-        },
-        {
-          "type": "heroes",
-          "defender": true,
-          "damage_multiplier": 110,
-          "hp_multiplier": 110
-        },
-        {
-          "type": "guardians",
-          "defender": true,
-          "damage_multiplier": 105,
-          "hp_multiplier": 105
         }
       ]
     }

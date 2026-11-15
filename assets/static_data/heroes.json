@@ -29,7 +29,7 @@
           "upgrade_cost": 5000,
           "required_townhall": 4,
           "required_hero_tavern_level": 1,
-          "strength_weight": 1564
+          "strength_weight": 1750
         },
         {
           "level": 2,
@@ -39,7 +39,7 @@
           "upgrade_cost": 5500,
           "required_townhall": 7,
           "required_hero_tavern_level": 1,
-          "strength_weight": 1601
+          "strength_weight": 1800
         },
         {
           "level": 3,
@@ -49,7 +49,7 @@
           "upgrade_cost": 6000,
           "required_townhall": 7,
           "required_hero_tavern_level": 1,
-          "strength_weight": 1634
+          "strength_weight": 1840
         },
         {
           "level": 4,
@@ -59,7 +59,7 @@
           "upgrade_cost": 6500,
           "required_townhall": 7,
           "required_hero_tavern_level": 1,
-          "strength_weight": 1677
+          "strength_weight": 1900
         },
         {
           "level": 5,
@@ -69,7 +69,7 @@
           "upgrade_cost": 7000,
           "required_townhall": 7,
           "required_hero_tavern_level": 1,
-          "strength_weight": 1802
+          "strength_weight": 2070
         },
         {
           "level": 6,
@@ -79,7 +79,7 @@
           "upgrade_cost": 7500,
           "required_townhall": 7,
           "required_hero_tavern_level": 1,
-          "strength_weight": 1844
+          "strength_weight": 2120
         },
         {
           "level": 7,
@@ -89,7 +89,7 @@
           "upgrade_cost": 8000,
           "required_townhall": 7,
           "required_hero_tavern_level": 1,
-          "strength_weight": 1890
+          "strength_weight": 2190
         },
         {
           "level": 8,
@@ -99,7 +99,7 @@
           "upgrade_cost": 8500,
           "required_townhall": 7,
           "required_hero_tavern_level": 1,
-          "strength_weight": 1929
+          "strength_weight": 2240
         },
         {
           "level": 9,
@@ -109,7 +109,7 @@
           "upgrade_cost": 10000,
           "required_townhall": 7,
           "required_hero_tavern_level": 1,
-          "strength_weight": 1978
+          "strength_weight": 2300
         },
         {
           "level": 10,
@@ -119,7 +119,7 @@
           "upgrade_cost": 10500,
           "required_townhall": 7,
           "required_hero_tavern_level": 1,
-          "strength_weight": 2125
+          "strength_weight": 2500
         },
         {
           "level": 11,
@@ -129,7 +129,7 @@
           "upgrade_cost": 11000,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2174
+          "strength_weight": 2550
         },
         {
           "level": 12,
@@ -139,7 +139,7 @@
           "upgrade_cost": 11500,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2227
+          "strength_weight": 2600
         },
         {
           "level": 13,
@@ -149,7 +149,7 @@
           "upgrade_cost": 12000,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2277
+          "strength_weight": 2640
         },
         {
           "level": 14,
@@ -159,7 +159,7 @@
           "upgrade_cost": 12500,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2334
+          "strength_weight": 2700
         },
         {
           "level": 15,
@@ -169,7 +169,7 @@
           "upgrade_cost": 13000,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2495
+          "strength_weight": 2850
         },
         {
           "level": 16,
@@ -179,7 +179,7 @@
           "upgrade_cost": 13500,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2556
+          "strength_weight": 2900
         },
         {
           "level": 17,
@@ -189,7 +189,7 @@
           "upgrade_cost": 14000,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2613
+          "strength_weight": 2960
         },
         {
           "level": 18,
@@ -199,7 +199,7 @@
           "upgrade_cost": 14500,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2680
+          "strength_weight": 3020
         },
         {
           "level": 19,
@@ -209,7 +209,7 @@
           "upgrade_cost": 15000,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2740
+          "strength_weight": 3080
         },
         {
           "level": 20,
@@ -219,7 +219,7 @@
           "upgrade_cost": 17000,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2927
+          "strength_weight": 3250
         },
         {
           "level": 21,
@@ -229,7 +229,7 @@
           "upgrade_cost": 19000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 2997
+          "strength_weight": 3330
         },
         {
           "level": 22,
@@ -239,7 +239,7 @@
           "upgrade_cost": 21000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3069
+          "strength_weight": 3410
         },
         {
           "level": 23,
@@ -249,7 +249,7 @@
           "upgrade_cost": 23000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3141
+          "strength_weight": 3500
         },
         {
           "level": 24,
@@ -259,7 +259,7 @@
           "upgrade_cost": 25000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3220
+          "strength_weight": 3590
         },
         {
           "level": 25,
@@ -269,7 +269,7 @@
           "upgrade_cost": 27000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3433
+          "strength_weight": 3830
         },
         {
           "level": 26,
@@ -279,7 +279,7 @@
           "upgrade_cost": 29000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3513
+          "strength_weight": 3920
         },
         {
           "level": 27,
@@ -289,7 +289,7 @@
           "upgrade_cost": 31000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3596
+          "strength_weight": 4020
         },
         {
           "level": 28,
@@ -299,7 +299,7 @@
           "upgrade_cost": 33000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3679
+          "strength_weight": 4110
         },
         {
           "level": 29,
@@ -309,7 +309,7 @@
           "upgrade_cost": 35000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3770
+          "strength_weight": 4220
         },
         {
           "level": 30,
@@ -319,7 +319,7 @@
           "upgrade_cost": 37000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4015
+          "strength_weight": 4500
         },
         {
           "level": 31,
@@ -329,7 +329,7 @@
           "upgrade_cost": 39000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 4108
+          "strength_weight": 4600
         },
         {
           "level": 32,
@@ -339,7 +339,7 @@
           "upgrade_cost": 41000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 4209
+          "strength_weight": 4700
         },
         {
           "level": 33,
@@ -349,7 +349,7 @@
           "upgrade_cost": 43000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 4310
+          "strength_weight": 4800
         },
         {
           "level": 34,
@@ -359,7 +359,7 @@
           "upgrade_cost": 45000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 4414
+          "strength_weight": 4910
         },
         {
           "level": 35,
@@ -369,7 +369,7 @@
           "upgrade_cost": 47000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 4694
+          "strength_weight": 5200
         },
         {
           "level": 36,
@@ -379,7 +379,7 @@
           "upgrade_cost": 49000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 4800
+          "strength_weight": 5310
         },
         {
           "level": 37,
@@ -389,7 +389,7 @@
           "upgrade_cost": 51000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 4914
+          "strength_weight": 5430
         },
         {
           "level": 38,
@@ -399,7 +399,7 @@
           "upgrade_cost": 53000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 5035
+          "strength_weight": 5550
         },
         {
           "level": 39,
@@ -409,7 +409,7 @@
           "upgrade_cost": 55000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 5154
+          "strength_weight": 5670
         },
         {
           "level": 40,
@@ -419,7 +419,7 @@
           "upgrade_cost": 58000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 5471
+          "strength_weight": 6000
         },
         {
           "level": 41,
@@ -429,7 +429,7 @@
           "upgrade_cost": 61000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 5655
+          "strength_weight": 6200
         },
         {
           "level": 42,
@@ -439,7 +439,7 @@
           "upgrade_cost": 64000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 5792
+          "strength_weight": 6350
         },
         {
           "level": 43,
@@ -449,7 +449,7 @@
           "upgrade_cost": 67000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 5932
+          "strength_weight": 6510
         },
         {
           "level": 44,
@@ -459,7 +459,7 @@
           "upgrade_cost": 70000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 6074
+          "strength_weight": 6670
         },
         {
           "level": 45,
@@ -469,7 +469,7 @@
           "upgrade_cost": 73000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 6440
+          "strength_weight": 7070
         },
         {
           "level": 46,
@@ -479,7 +479,7 @@
           "upgrade_cost": 76000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 6593
+          "strength_weight": 7240
         },
         {
           "level": 47,
@@ -489,7 +489,7 @@
           "upgrade_cost": 79000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 6756
+          "strength_weight": 7420
         },
         {
           "level": 48,
@@ -499,7 +499,7 @@
           "upgrade_cost": 82000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 6915
+          "strength_weight": 7600
         },
         {
           "level": 49,
@@ -509,7 +509,7 @@
           "upgrade_cost": 85000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7084
+          "strength_weight": 7780
         },
         {
           "level": 50,
@@ -519,7 +519,7 @@
           "upgrade_cost": 86000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7506
+          "strength_weight": 8250
         },
         {
           "level": 51,
@@ -529,7 +529,7 @@
           "upgrade_cost": 87000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 7688
+          "strength_weight": 8450
         },
         {
           "level": 52,
@@ -539,7 +539,7 @@
           "upgrade_cost": 88000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 7874
+          "strength_weight": 8660
         },
         {
           "level": 53,
@@ -549,7 +549,7 @@
           "upgrade_cost": 89000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 8063
+          "strength_weight": 8860
         },
         {
           "level": 54,
@@ -559,7 +559,7 @@
           "upgrade_cost": 90000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 8262
+          "strength_weight": 9080
         },
         {
           "level": 55,
@@ -569,7 +569,7 @@
           "upgrade_cost": 93000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 8747
+          "strength_weight": 9620
         },
         {
           "level": 56,
@@ -579,7 +579,7 @@
           "upgrade_cost": 96000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 8955
+          "strength_weight": 9850
         },
         {
           "level": 57,
@@ -589,7 +589,7 @@
           "upgrade_cost": 99000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 9174
+          "strength_weight": 10090
         },
         {
           "level": 58,
@@ -599,7 +599,7 @@
           "upgrade_cost": 102000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 9397
+          "strength_weight": 10340
         },
         {
           "level": 59,
@@ -609,7 +609,7 @@
           "upgrade_cost": 105000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 9622
+          "strength_weight": 10580
         },
         {
           "level": 60,
@@ -619,7 +619,7 @@
           "upgrade_cost": 107000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 10180
+          "strength_weight": 11200
         },
         {
           "level": 61,
@@ -629,7 +629,7 @@
           "upgrade_cost": 109000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 10417
+          "strength_weight": 11460
         },
         {
           "level": 62,
@@ -639,7 +639,7 @@
           "upgrade_cost": 111000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 10665
+          "strength_weight": 11730
         },
         {
           "level": 63,
@@ -649,7 +649,7 @@
           "upgrade_cost": 113000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 10925
+          "strength_weight": 12020
         },
         {
           "level": 64,
@@ -659,7 +659,7 @@
           "upgrade_cost": 115000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 11185
+          "strength_weight": 12310
         },
         {
           "level": 65,
@@ -669,7 +669,7 @@
           "upgrade_cost": 117000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 11813
+          "strength_weight": 13000
         },
         {
           "level": 66,
@@ -679,7 +679,7 @@
           "upgrade_cost": 119000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 12098
+          "strength_weight": 13310
         },
         {
           "level": 67,
@@ -689,7 +689,7 @@
           "upgrade_cost": 121000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 12379
+          "strength_weight": 13610
         },
         {
           "level": 68,
@@ -699,7 +699,7 @@
           "upgrade_cost": 123000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 12668
+          "strength_weight": 13920
         },
         {
           "level": 69,
@@ -709,7 +709,7 @@
           "upgrade_cost": 125000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 12962
+          "strength_weight": 14240
         },
         {
           "level": 70,
@@ -719,7 +719,7 @@
           "upgrade_cost": 130000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 13641
+          "strength_weight": 14970
         },
         {
           "level": 71,
@@ -729,7 +729,7 @@
           "upgrade_cost": 135000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 13933
+          "strength_weight": 15280
         },
         {
           "level": 72,
@@ -739,7 +739,7 @@
           "upgrade_cost": 140000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 14219
+          "strength_weight": 15590
         },
         {
           "level": 73,
@@ -749,7 +749,7 @@
           "upgrade_cost": 145000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 14511
+          "strength_weight": 15900
         },
         {
           "level": 74,
@@ -759,7 +759,7 @@
           "upgrade_cost": 150000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 14797
+          "strength_weight": 16210
         },
         {
           "level": 75,
@@ -769,7 +769,7 @@
           "upgrade_cost": 155000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 15533
+          "strength_weight": 17000
         },
         {
           "level": 76,
@@ -779,7 +779,7 @@
           "upgrade_cost": 160000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 15809
+          "strength_weight": 17310
         },
         {
           "level": 77,
@@ -789,7 +789,7 @@
           "upgrade_cost": 165000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 16090
+          "strength_weight": 17630
         },
         {
           "level": 78,
@@ -799,7 +799,7 @@
           "upgrade_cost": 170000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 16366
+          "strength_weight": 17940
         },
         {
           "level": 79,
@@ -809,7 +809,7 @@
           "upgrade_cost": 175000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 16647
+          "strength_weight": 18250
         },
         {
           "level": 80,
@@ -819,7 +819,7 @@
           "upgrade_cost": 180000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17414
+          "strength_weight": 19110
         },
         {
           "level": 81,
@@ -829,7 +829,7 @@
           "upgrade_cost": 185000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17647
+          "strength_weight": 19380
         },
         {
           "level": 82,
@@ -839,7 +839,7 @@
           "upgrade_cost": 190000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17875
+          "strength_weight": 19630
         },
         {
           "level": 83,
@@ -849,7 +849,7 @@
           "upgrade_cost": 195000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 18108
+          "strength_weight": 19890
         },
         {
           "level": 84,
@@ -859,7 +859,7 @@
           "upgrade_cost": 200000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 18343
+          "strength_weight": 20160
         },
         {
           "level": 85,
@@ -869,7 +869,7 @@
           "upgrade_cost": 215000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 19092
+          "strength_weight": 21000
         },
         {
           "level": 86,
@@ -879,7 +879,7 @@
           "upgrade_cost": 225000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 19333
+          "strength_weight": 21280
         },
         {
           "level": 87,
@@ -889,7 +889,7 @@
           "upgrade_cost": 235000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 19566
+          "strength_weight": 21540
         },
         {
           "level": 88,
@@ -899,7 +899,7 @@
           "upgrade_cost": 245000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 19807
+          "strength_weight": 21820
         },
         {
           "level": 89,
@@ -909,7 +909,7 @@
           "upgrade_cost": 255000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 20047
+          "strength_weight": 22100
         },
         {
           "level": 90,
@@ -919,7 +919,7 @@
           "upgrade_cost": 280000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 20836
+          "strength_weight": 23000
         },
         {
           "level": 91,
@@ -929,7 +929,7 @@
           "upgrade_cost": 290000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21082
+          "strength_weight": 23270
         },
         {
           "level": 92,
@@ -939,7 +939,7 @@
           "upgrade_cost": 300000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21323
+          "strength_weight": 23540
         },
         {
           "level": 93,
@@ -949,7 +949,7 @@
           "upgrade_cost": 310000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21569
+          "strength_weight": 23810
         },
         {
           "level": 94,
@@ -959,57 +959,57 @@
           "upgrade_cost": 320000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21817
+          "strength_weight": 24090
         },
         {
           "level": 95,
           "hitpoints": 11475,
           "dps": 608,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 340000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 22643
+          "strength_weight": 25000
         },
         {
           "level": 96,
           "hitpoints": 11600,
           "dps": 615,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 350000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22900
+          "strength_weight": 25310
         },
         {
           "level": 97,
           "hitpoints": 11725,
           "dps": 622,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 360000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 23150
+          "strength_weight": 25610
         },
         {
           "level": 98,
           "hitpoints": 11850,
           "dps": 629,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 370000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 23400
+          "strength_weight": 25910
         },
         {
           "level": 99,
           "hitpoints": 11975,
           "dps": 636,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 380000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 23650
+          "strength_weight": 26220
         },
         {
           "level": 100,
@@ -1019,7 +1019,7 @@
           "upgrade_cost": 400000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 24300
+          "strength_weight": 27000
         },
         {
           "level": 101,
@@ -1029,7 +1029,7 @@
           "upgrade_cost": 410000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 24450
+          "strength_weight": 27150
         },
         {
           "level": 102,
@@ -1039,7 +1039,7 @@
           "upgrade_cost": 420000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 24600
+          "strength_weight": 27300
         },
         {
           "level": 103,
@@ -1049,77 +1049,127 @@
           "upgrade_cost": 430000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 24750
+          "strength_weight": 27450
         },
         {
           "level": 104,
           "hitpoints": 12600,
           "dps": 671,
           "upgrade_time": 691200,
-          "upgrade_cost": 450000,
+          "upgrade_cost": 440000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 24900
+          "strength_weight": 27600
         },
         {
           "level": 105,
           "hitpoints": 12725,
           "dps": 678,
           "upgrade_time": 691200,
-          "upgrade_cost": 460000,
+          "upgrade_cost": 445000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 25300
+          "strength_weight": 28000
         },
         {
           "level": 106,
           "hitpoints": 12850,
           "dps": 685,
           "upgrade_time": 691200,
-          "upgrade_cost": 470000,
+          "upgrade_cost": 450000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 25450
+          "strength_weight": 28150
         },
         {
           "level": 107,
           "hitpoints": 12975,
           "dps": 692,
           "upgrade_time": 691200,
-          "upgrade_cost": 475000,
+          "upgrade_cost": 455000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 25600
+          "strength_weight": 28300
         },
         {
           "level": 108,
           "hitpoints": 13100,
           "dps": 699,
           "upgrade_time": 691200,
-          "upgrade_cost": 485000,
+          "upgrade_cost": 460000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 25750
+          "strength_weight": 28450
         },
         {
           "level": 109,
           "hitpoints": 13225,
           "dps": 706,
           "upgrade_time": 691200,
-          "upgrade_cost": 490000,
+          "upgrade_cost": 465000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 25900
+          "strength_weight": 28600
         },
         {
           "level": 110,
           "hitpoints": 13350,
           "dps": 713,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 691200,
+          "upgrade_cost": 500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 26300
+          "strength_weight": 29000
+        },
+        {
+          "level": 111,
+          "hitpoints": 13475,
+          "dps": 720,
+          "upgrade_time": 691200,
+          "upgrade_cost": 505000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29150
+        },
+        {
+          "level": 112,
+          "hitpoints": 13600,
+          "dps": 727,
+          "upgrade_time": 691200,
+          "upgrade_cost": 510000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29300
+        },
+        {
+          "level": 113,
+          "hitpoints": 13725,
+          "dps": 734,
+          "upgrade_time": 691200,
+          "upgrade_cost": 515000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29450
+        },
+        {
+          "level": 114,
+          "hitpoints": 13850,
+          "dps": 741,
+          "upgrade_time": 691200,
+          "upgrade_cost": 520000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29600
+        },
+        {
+          "level": 115,
+          "hitpoints": 13975,
+          "dps": 748,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 30000
         }
       ]
     },
@@ -1152,7 +1202,7 @@
           "upgrade_cost": 5000,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2520
+          "strength_weight": 2550
         },
         {
           "level": 2,
@@ -1162,7 +1212,7 @@
           "upgrade_cost": 5500,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2574
+          "strength_weight": 2600
         },
         {
           "level": 3,
@@ -1172,7 +1222,7 @@
           "upgrade_cost": 6000,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2638
+          "strength_weight": 2670
         },
         {
           "level": 4,
@@ -1182,7 +1232,7 @@
           "upgrade_cost": 6500,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2694
+          "strength_weight": 2730
         },
         {
           "level": 5,
@@ -1192,7 +1242,7 @@
           "upgrade_cost": 7000,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2815
+          "strength_weight": 2850
         },
         {
           "level": 6,
@@ -1202,7 +1252,7 @@
           "upgrade_cost": 7500,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2883
+          "strength_weight": 2920
         },
         {
           "level": 7,
@@ -1212,7 +1262,7 @@
           "upgrade_cost": 8000,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 2942
+          "strength_weight": 2980
         },
         {
           "level": 8,
@@ -1222,7 +1272,7 @@
           "upgrade_cost": 8500,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 3019
+          "strength_weight": 3050
         },
         {
           "level": 9,
@@ -1232,7 +1282,7 @@
           "upgrade_cost": 10000,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 3080
+          "strength_weight": 3120
         },
         {
           "level": 10,
@@ -1242,7 +1292,7 @@
           "upgrade_cost": 10500,
           "required_townhall": 8,
           "required_hero_tavern_level": 2,
-          "strength_weight": 3212
+          "strength_weight": 3250
         },
         {
           "level": 11,
@@ -1252,7 +1302,7 @@
           "upgrade_cost": 11000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3284
+          "strength_weight": 3290
         },
         {
           "level": 12,
@@ -1262,7 +1312,7 @@
           "upgrade_cost": 11500,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3368
+          "strength_weight": 3340
         },
         {
           "level": 13,
@@ -1272,7 +1322,7 @@
           "upgrade_cost": 12000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3451
+          "strength_weight": 3380
         },
         {
           "level": 14,
@@ -1282,7 +1332,7 @@
           "upgrade_cost": 12500,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3524
+          "strength_weight": 3420
         },
         {
           "level": 15,
@@ -1292,7 +1342,7 @@
           "upgrade_cost": 13000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3678
+          "strength_weight": 3510
         },
         {
           "level": 16,
@@ -1302,7 +1352,7 @@
           "upgrade_cost": 13500,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3757
+          "strength_weight": 3550
         },
         {
           "level": 17,
@@ -1312,7 +1362,7 @@
           "upgrade_cost": 14000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3844
+          "strength_weight": 3600
         },
         {
           "level": 18,
@@ -1322,7 +1372,7 @@
           "upgrade_cost": 14500,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3945
+          "strength_weight": 3650
         },
         {
           "level": 19,
@@ -1332,7 +1382,7 @@
           "upgrade_cost": 15000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4032
+          "strength_weight": 3700
         },
         {
           "level": 20,
@@ -1342,7 +1392,7 @@
           "upgrade_cost": 17000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4203
+          "strength_weight": 3790
         },
         {
           "level": 21,
@@ -1352,7 +1402,7 @@
           "upgrade_cost": 19000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4305
+          "strength_weight": 3850
         },
         {
           "level": 22,
@@ -1362,7 +1412,7 @@
           "upgrade_cost": 21000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4400
+          "strength_weight": 3900
         },
         {
           "level": 23,
@@ -1372,7 +1422,7 @@
           "upgrade_cost": 23000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4506
+          "strength_weight": 3960
         },
         {
           "level": 24,
@@ -1382,7 +1432,7 @@
           "upgrade_cost": 25000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4612
+          "strength_weight": 4020
         },
         {
           "level": 25,
@@ -1392,7 +1442,7 @@
           "upgrade_cost": 27000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4805
+          "strength_weight": 4130
         },
         {
           "level": 26,
@@ -1402,7 +1452,7 @@
           "upgrade_cost": 29000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4915
+          "strength_weight": 4190
         },
         {
           "level": 27,
@@ -1412,7 +1462,7 @@
           "upgrade_cost": 31000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 5027
+          "strength_weight": 4250
         },
         {
           "level": 28,
@@ -1422,7 +1472,7 @@
           "upgrade_cost": 33000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 5139
+          "strength_weight": 4310
         },
         {
           "level": 29,
@@ -1432,7 +1482,7 @@
           "upgrade_cost": 35000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 5265
+          "strength_weight": 4380
         },
         {
           "level": 30,
@@ -1442,7 +1492,7 @@
           "upgrade_cost": 37000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 5486
+          "strength_weight": 4500
         },
         {
           "level": 31,
@@ -1452,7 +1502,7 @@
           "upgrade_cost": 39000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 5616
+          "strength_weight": 4620
         },
         {
           "level": 32,
@@ -1462,7 +1512,7 @@
           "upgrade_cost": 41000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 5743
+          "strength_weight": 4730
         },
         {
           "level": 33,
@@ -1472,7 +1522,7 @@
           "upgrade_cost": 43000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 5873
+          "strength_weight": 4850
         },
         {
           "level": 34,
@@ -1482,7 +1532,7 @@
           "upgrade_cost": 45000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 6017
+          "strength_weight": 4980
         },
         {
           "level": 35,
@@ -1492,7 +1542,7 @@
           "upgrade_cost": 47000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 6270
+          "strength_weight": 5200
         },
         {
           "level": 36,
@@ -1502,7 +1552,7 @@
           "upgrade_cost": 49000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 6407
+          "strength_weight": 5330
         },
         {
           "level": 37,
@@ -1512,7 +1562,7 @@
           "upgrade_cost": 51000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 6569
+          "strength_weight": 5470
         },
         {
           "level": 38,
@@ -1522,7 +1572,7 @@
           "upgrade_cost": 53000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 6705
+          "strength_weight": 5600
         },
         {
           "level": 39,
@@ -1532,7 +1582,7 @@
           "upgrade_cost": 55000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 6870
+          "strength_weight": 5740
         },
         {
           "level": 40,
@@ -1542,7 +1592,7 @@
           "upgrade_cost": 58000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 7155
+          "strength_weight": 6000
         },
         {
           "level": 41,
@@ -1552,7 +1602,7 @@
           "upgrade_cost": 61000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7322
+          "strength_weight": 6170
         },
         {
           "level": 42,
@@ -1562,7 +1612,7 @@
           "upgrade_cost": 64000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7491
+          "strength_weight": 6350
         },
         {
           "level": 43,
@@ -1572,7 +1622,7 @@
           "upgrade_cost": 67000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7663
+          "strength_weight": 6530
         },
         {
           "level": 44,
@@ -1582,7 +1632,7 @@
           "upgrade_cost": 70000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7846
+          "strength_weight": 6720
         },
         {
           "level": 45,
@@ -1592,7 +1642,7 @@
           "upgrade_cost": 73000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8170
+          "strength_weight": 7050
         },
         {
           "level": 46,
@@ -1602,7 +1652,7 @@
           "upgrade_cost": 76000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8361
+          "strength_weight": 7250
         },
         {
           "level": 47,
@@ -1612,7 +1662,7 @@
           "upgrade_cost": 79000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8550
+          "strength_weight": 7450
         },
         {
           "level": 48,
@@ -1622,7 +1672,7 @@
           "upgrade_cost": 82000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8756
+          "strength_weight": 7660
         },
         {
           "level": 49,
@@ -1632,7 +1682,7 @@
           "upgrade_cost": 85000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8961
+          "strength_weight": 7870
         },
         {
           "level": 50,
@@ -1642,7 +1692,7 @@
           "upgrade_cost": 86000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 9326
+          "strength_weight": 8250
         },
         {
           "level": 51,
@@ -1652,7 +1702,7 @@
           "upgrade_cost": 87000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 9530
+          "strength_weight": 8440
         },
         {
           "level": 52,
@@ -1662,7 +1712,7 @@
           "upgrade_cost": 88000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 9739
+          "strength_weight": 8640
         },
         {
           "level": 53,
@@ -1672,7 +1722,7 @@
           "upgrade_cost": 89000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 9972
+          "strength_weight": 8870
         },
         {
           "level": 54,
@@ -1682,7 +1732,7 @@
           "upgrade_cost": 90000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 10198
+          "strength_weight": 9080
         },
         {
           "level": 55,
@@ -1692,7 +1742,7 @@
           "upgrade_cost": 93000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 10773
+          "strength_weight": 9630
         },
         {
           "level": 56,
@@ -1702,7 +1752,7 @@
           "upgrade_cost": 96000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 11011
+          "strength_weight": 9860
         },
         {
           "level": 57,
@@ -1712,7 +1762,7 @@
           "upgrade_cost": 99000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 11264
+          "strength_weight": 10100
         },
         {
           "level": 58,
@@ -1722,7 +1772,7 @@
           "upgrade_cost": 102000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 11520
+          "strength_weight": 10350
         },
         {
           "level": 59,
@@ -1732,7 +1782,7 @@
           "upgrade_cost": 105000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 11780
+          "strength_weight": 10600
         },
         {
           "level": 60,
@@ -1742,7 +1792,7 @@
           "upgrade_cost": 107000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 12429
+          "strength_weight": 11220
         },
         {
           "level": 61,
@@ -1752,7 +1802,7 @@
           "upgrade_cost": 109000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 12700
+          "strength_weight": 11470
         },
         {
           "level": 62,
@@ -1762,7 +1812,7 @@
           "upgrade_cost": 111000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 12977
+          "strength_weight": 11740
         },
         {
           "level": 63,
@@ -1772,7 +1822,7 @@
           "upgrade_cost": 113000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 13268
+          "strength_weight": 12020
         },
         {
           "level": 64,
@@ -1782,7 +1832,7 @@
           "upgrade_cost": 115000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 13565
+          "strength_weight": 12300
         },
         {
           "level": 65,
@@ -1792,7 +1842,7 @@
           "upgrade_cost": 117000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 14296
+          "strength_weight": 13000
         },
         {
           "level": 66,
@@ -1802,7 +1852,7 @@
           "upgrade_cost": 119000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 14583
+          "strength_weight": 13380
         },
         {
           "level": 67,
@@ -1812,7 +1862,7 @@
           "upgrade_cost": 121000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 14842
+          "strength_weight": 13730
         },
         {
           "level": 68,
@@ -1822,7 +1872,7 @@
           "upgrade_cost": 123000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 15090
+          "strength_weight": 14060
         },
         {
           "level": 69,
@@ -1832,7 +1882,7 @@
           "upgrade_cost": 125000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 15301
+          "strength_weight": 14350
         },
         {
           "level": 70,
@@ -1842,7 +1892,7 @@
           "upgrade_cost": 130000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 15972
+          "strength_weight": 15250
         },
         {
           "level": 71,
@@ -1852,7 +1902,7 @@
           "upgrade_cost": 135000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 16154
+          "strength_weight": 15490
         },
         {
           "level": 72,
@@ -1862,7 +1912,7 @@
           "upgrade_cost": 140000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 16323
+          "strength_weight": 15720
         },
         {
           "level": 73,
@@ -1872,7 +1922,7 @@
           "upgrade_cost": 145000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 16478
+          "strength_weight": 15920
         },
         {
           "level": 74,
@@ -1882,7 +1932,7 @@
           "upgrade_cost": 150000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 16633
+          "strength_weight": 16130
         },
         {
           "level": 75,
@@ -1892,7 +1942,7 @@
           "upgrade_cost": 155000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 17282
+          "strength_weight": 17000
         },
         {
           "level": 76,
@@ -1902,7 +1952,7 @@
           "upgrade_cost": 160000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17430
+          "strength_weight": 17250
         },
         {
           "level": 77,
@@ -1912,7 +1962,7 @@
           "upgrade_cost": 165000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17564
+          "strength_weight": 17480
         },
         {
           "level": 78,
@@ -1922,7 +1972,7 @@
           "upgrade_cost": 170000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17713
+          "strength_weight": 17730
         },
         {
           "level": 79,
@@ -1932,7 +1982,7 @@
           "upgrade_cost": 175000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17847
+          "strength_weight": 17960
         },
         {
           "level": 80,
@@ -1942,7 +1992,7 @@
           "upgrade_cost": 180000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 18495
+          "strength_weight": 19070
         },
         {
           "level": 81,
@@ -1952,7 +2002,7 @@
           "upgrade_cost": 185000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 18619
+          "strength_weight": 19280
         },
         {
           "level": 82,
@@ -1962,7 +2012,7 @@
           "upgrade_cost": 190000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 18746
+          "strength_weight": 19500
         },
         {
           "level": 83,
@@ -1972,7 +2022,7 @@
           "upgrade_cost": 195000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 18858
+          "strength_weight": 19690
         },
         {
           "level": 84,
@@ -1982,7 +2032,7 @@
           "upgrade_cost": 200000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 18985
+          "strength_weight": 19900
         },
         {
           "level": 85,
@@ -1992,7 +2042,7 @@
           "upgrade_cost": 215000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 19628
+          "strength_weight": 21000
         },
         {
           "level": 86,
@@ -2002,7 +2052,7 @@
           "upgrade_cost": 225000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 19743
+          "strength_weight": 21200
         },
         {
           "level": 87,
@@ -2012,7 +2062,7 @@
           "upgrade_cost": 235000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 19873
+          "strength_weight": 21420
         },
         {
           "level": 88,
@@ -2022,7 +2072,7 @@
           "upgrade_cost": 245000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 19989
+          "strength_weight": 21630
         },
         {
           "level": 89,
@@ -2032,7 +2082,7 @@
           "upgrade_cost": 255000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 20119
+          "strength_weight": 21850
         },
         {
           "level": 90,
@@ -2042,7 +2092,7 @@
           "upgrade_cost": 280000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 20781
+          "strength_weight": 23000
         },
         {
           "level": 91,
@@ -2052,7 +2102,7 @@
           "upgrade_cost": 290000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 20900
+          "strength_weight": 23200
         },
         {
           "level": 92,
@@ -2062,7 +2112,7 @@
           "upgrade_cost": 300000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21034
+          "strength_weight": 23430
         },
         {
           "level": 93,
@@ -2072,7 +2122,7 @@
           "upgrade_cost": 310000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21152
+          "strength_weight": 23630
         },
         {
           "level": 94,
@@ -2082,57 +2132,57 @@
           "upgrade_cost": 320000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21286
+          "strength_weight": 23850
         },
         {
           "level": 95,
           "hitpoints": 3216,
           "dps": 765,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 340000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21968
+          "strength_weight": 25000
         },
         {
           "level": 96,
           "hitpoints": 3240,
           "dps": 768,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 350000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22100
+          "strength_weight": 25210
         },
         {
           "level": 97,
           "hitpoints": 3264,
           "dps": 771,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 360000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22250
+          "strength_weight": 25460
         },
         {
           "level": 98,
           "hitpoints": 3288,
           "dps": 774,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 370000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22400
+          "strength_weight": 25700
         },
         {
           "level": 99,
           "hitpoints": 3312,
           "dps": 777,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 380000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22550
+          "strength_weight": 25940
         },
         {
           "level": 100,
@@ -2142,7 +2192,7 @@
           "upgrade_cost": 400000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 23200
+          "strength_weight": 27000
         },
         {
           "level": 101,
@@ -2152,7 +2202,7 @@
           "upgrade_cost": 410000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23350
+          "strength_weight": 27150
         },
         {
           "level": 102,
@@ -2162,7 +2212,7 @@
           "upgrade_cost": 420000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23500
+          "strength_weight": 27300
         },
         {
           "level": 103,
@@ -2172,77 +2222,127 @@
           "upgrade_cost": 430000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23650
+          "strength_weight": 27450
         },
         {
           "level": 104,
           "hitpoints": 3432,
           "dps": 792,
           "upgrade_time": 691200,
-          "upgrade_cost": 450000,
+          "upgrade_cost": 440000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23800
+          "strength_weight": 27600
         },
         {
           "level": 105,
           "hitpoints": 3456,
           "dps": 795,
           "upgrade_time": 691200,
-          "upgrade_cost": 460000,
+          "upgrade_cost": 445000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 24200
+          "strength_weight": 28000
         },
         {
           "level": 106,
           "hitpoints": 3480,
           "dps": 798,
           "upgrade_time": 691200,
-          "upgrade_cost": 470000,
+          "upgrade_cost": 450000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 24350
+          "strength_weight": 28150
         },
         {
           "level": 107,
           "hitpoints": 3504,
           "dps": 801,
           "upgrade_time": 691200,
-          "upgrade_cost": 475000,
+          "upgrade_cost": 455000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 24500
+          "strength_weight": 28300
         },
         {
           "level": 108,
           "hitpoints": 3528,
           "dps": 804,
           "upgrade_time": 691200,
-          "upgrade_cost": 485000,
+          "upgrade_cost": 460000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 24650
+          "strength_weight": 28450
         },
         {
           "level": 109,
           "hitpoints": 3552,
           "dps": 807,
           "upgrade_time": 691200,
-          "upgrade_cost": 490000,
+          "upgrade_cost": 465000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 24800
+          "strength_weight": 28600
         },
         {
           "level": 110,
           "hitpoints": 3576,
           "dps": 810,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 691200,
+          "upgrade_cost": 500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 25200
+          "strength_weight": 29000
+        },
+        {
+          "level": 111,
+          "hitpoints": 3600,
+          "dps": 813,
+          "upgrade_time": 691200,
+          "upgrade_cost": 505000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29150
+        },
+        {
+          "level": 112,
+          "hitpoints": 3624,
+          "dps": 816,
+          "upgrade_time": 691200,
+          "upgrade_cost": 510000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29300
+        },
+        {
+          "level": 113,
+          "hitpoints": 3648,
+          "dps": 819,
+          "upgrade_time": 691200,
+          "upgrade_cost": 515000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29450
+        },
+        {
+          "level": 114,
+          "hitpoints": 3672,
+          "dps": 822,
+          "upgrade_time": 691200,
+          "upgrade_cost": 520000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29600
+        },
+        {
+          "level": 115,
+          "hitpoints": 3696,
+          "dps": 825,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 30000
         }
       ]
     },
@@ -2275,7 +2375,7 @@
           "upgrade_cost": 1000000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 6150
+          "strength_weight": 4610
         },
         {
           "level": 2,
@@ -2285,7 +2385,7 @@
           "upgrade_cost": 1100000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 6300
+          "strength_weight": 4720
         },
         {
           "level": 3,
@@ -2295,7 +2395,7 @@
           "upgrade_cost": 1200000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 6450
+          "strength_weight": 4840
         },
         {
           "level": 4,
@@ -2305,7 +2405,7 @@
           "upgrade_cost": 1400000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 6600
+          "strength_weight": 4950
         },
         {
           "level": 5,
@@ -2315,7 +2415,7 @@
           "upgrade_cost": 1500000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7000
+          "strength_weight": 5250
         },
         {
           "level": 6,
@@ -2325,7 +2425,7 @@
           "upgrade_cost": 1700000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7150
+          "strength_weight": 5360
         },
         {
           "level": 7,
@@ -2335,7 +2435,7 @@
           "upgrade_cost": 1800000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7300
+          "strength_weight": 5480
         },
         {
           "level": 8,
@@ -2345,7 +2445,7 @@
           "upgrade_cost": 2000000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7450
+          "strength_weight": 5590
         },
         {
           "level": 9,
@@ -2355,7 +2455,7 @@
           "upgrade_cost": 2300000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7600
+          "strength_weight": 5700
         },
         {
           "level": 10,
@@ -2365,7 +2465,7 @@
           "upgrade_cost": 2700000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8000
+          "strength_weight": 6000
         },
         {
           "level": 11,
@@ -2375,7 +2475,7 @@
           "upgrade_cost": 3000000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8150
+          "strength_weight": 6110
         },
         {
           "level": 12,
@@ -2385,7 +2485,7 @@
           "upgrade_cost": 3400000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8300
+          "strength_weight": 6220
         },
         {
           "level": 13,
@@ -2395,7 +2495,7 @@
           "upgrade_cost": 3700000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8450
+          "strength_weight": 6340
         },
         {
           "level": 14,
@@ -2405,7 +2505,7 @@
           "upgrade_cost": 4100000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8600
+          "strength_weight": 6450
         },
         {
           "level": 15,
@@ -2415,7 +2515,7 @@
           "upgrade_cost": 4400000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 9000
+          "strength_weight": 6750
         },
         {
           "level": 16,
@@ -2425,7 +2525,7 @@
           "upgrade_cost": 4800000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 9300
+          "strength_weight": 6980
         },
         {
           "level": 17,
@@ -2435,7 +2535,7 @@
           "upgrade_cost": 5100000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 9600
+          "strength_weight": 7200
         },
         {
           "level": 18,
@@ -2445,7 +2545,7 @@
           "upgrade_cost": 5500000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 9900
+          "strength_weight": 7420
         },
         {
           "level": 19,
@@ -2455,7 +2555,7 @@
           "upgrade_cost": 6000000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 10200
+          "strength_weight": 7650
         },
         {
           "level": 20,
@@ -2465,7 +2565,7 @@
           "upgrade_cost": 6100000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 11000
+          "strength_weight": 8250
         },
         {
           "level": 21,
@@ -2475,7 +2575,7 @@
           "upgrade_cost": 6200000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 11300
+          "strength_weight": 8390
         },
         {
           "level": 22,
@@ -2485,7 +2585,7 @@
           "upgrade_cost": 6300000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 11600
+          "strength_weight": 8540
         },
         {
           "level": 23,
@@ -2495,7 +2595,7 @@
           "upgrade_cost": 6400000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 11900
+          "strength_weight": 8680
         },
         {
           "level": 24,
@@ -2505,7 +2605,7 @@
           "upgrade_cost": 6500000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 12200
+          "strength_weight": 8820
         },
         {
           "level": 25,
@@ -2515,7 +2615,7 @@
           "upgrade_cost": 6600000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 13000
+          "strength_weight": 9200
         },
         {
           "level": 26,
@@ -2525,7 +2625,7 @@
           "upgrade_cost": 6700000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 13300
+          "strength_weight": 9340
         },
         {
           "level": 27,
@@ -2535,7 +2635,7 @@
           "upgrade_cost": 6800000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 13600
+          "strength_weight": 9480
         },
         {
           "level": 28,
@@ -2545,7 +2645,7 @@
           "upgrade_cost": 6900000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 13900
+          "strength_weight": 9630
         },
         {
           "level": 29,
@@ -2555,7 +2655,7 @@
           "upgrade_cost": 7000000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 14200
+          "strength_weight": 9770
         },
         {
           "level": 30,
@@ -2565,7 +2665,7 @@
           "upgrade_cost": 7100000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 15000
+          "strength_weight": 10150
         },
         {
           "level": 31,
@@ -2575,7 +2675,7 @@
           "upgrade_cost": 7200000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 15450
+          "strength_weight": 10360
         },
         {
           "level": 32,
@@ -2585,7 +2685,7 @@
           "upgrade_cost": 7300000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 15900
+          "strength_weight": 10580
         },
         {
           "level": 33,
@@ -2595,7 +2695,7 @@
           "upgrade_cost": 7400000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 16350
+          "strength_weight": 10790
         },
         {
           "level": 34,
@@ -2605,7 +2705,7 @@
           "upgrade_cost": 7500000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 16800
+          "strength_weight": 11000
         },
         {
           "level": 35,
@@ -2615,7 +2715,7 @@
           "upgrade_cost": 7600000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 18000
+          "strength_weight": 11580
         },
         {
           "level": 36,
@@ -2625,7 +2725,7 @@
           "upgrade_cost": 7700000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 18450
+          "strength_weight": 11790
         },
         {
           "level": 37,
@@ -2635,7 +2735,7 @@
           "upgrade_cost": 7800000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 18900
+          "strength_weight": 12000
         },
         {
           "level": 38,
@@ -2645,7 +2745,7 @@
           "upgrade_cost": 7900000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 19350
+          "strength_weight": 12220
         },
         {
           "level": 39,
@@ -2655,7 +2755,7 @@
           "upgrade_cost": 8000000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 19800
+          "strength_weight": 12430
         },
         {
           "level": 40,
@@ -2665,7 +2765,7 @@
           "upgrade_cost": 8300000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 21000
+          "strength_weight": 13000
         },
         {
           "level": 41,
@@ -2675,7 +2775,7 @@
           "upgrade_cost": 8600000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 21300
+          "strength_weight": 13300
         },
         {
           "level": 42,
@@ -2685,7 +2785,7 @@
           "upgrade_cost": 8900000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 21600
+          "strength_weight": 13600
         },
         {
           "level": 43,
@@ -2695,7 +2795,7 @@
           "upgrade_cost": 9200000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 21900
+          "strength_weight": 13900
         },
         {
           "level": 44,
@@ -2705,7 +2805,7 @@
           "upgrade_cost": 9500000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 22200
+          "strength_weight": 14200
         },
         {
           "level": 45,
@@ -2715,7 +2815,7 @@
           "upgrade_cost": 9800000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 23000
+          "strength_weight": 15000
         },
         {
           "level": 46,
@@ -2725,7 +2825,7 @@
           "upgrade_cost": 10100000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 23300
+          "strength_weight": 15300
         },
         {
           "level": 47,
@@ -2735,7 +2835,7 @@
           "upgrade_cost": 10400000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 23600
+          "strength_weight": 15600
         },
         {
           "level": 48,
@@ -2745,7 +2845,7 @@
           "upgrade_cost": 10700000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 23900
+          "strength_weight": 15900
         },
         {
           "level": 49,
@@ -2755,7 +2855,7 @@
           "upgrade_cost": 11000000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 24200
+          "strength_weight": 16200
         },
         {
           "level": 50,
@@ -2765,7 +2865,7 @@
           "upgrade_cost": 11400000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 25000
+          "strength_weight": 17000
         },
         {
           "level": 51,
@@ -2775,7 +2875,7 @@
           "upgrade_cost": 11800000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 25300
+          "strength_weight": 17300
         },
         {
           "level": 52,
@@ -2785,7 +2885,7 @@
           "upgrade_cost": 12200000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 25600
+          "strength_weight": 17600
         },
         {
           "level": 53,
@@ -2795,7 +2895,7 @@
           "upgrade_cost": 12600000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 25900
+          "strength_weight": 17900
         },
         {
           "level": 54,
@@ -2805,7 +2905,7 @@
           "upgrade_cost": 13000000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 26200
+          "strength_weight": 18200
         },
         {
           "level": 55,
@@ -2815,7 +2915,7 @@
           "upgrade_cost": 13400000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 27000
+          "strength_weight": 19000
         },
         {
           "level": 56,
@@ -2825,7 +2925,7 @@
           "upgrade_cost": 13800000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 27300
+          "strength_weight": 19300
         },
         {
           "level": 57,
@@ -2835,7 +2935,7 @@
           "upgrade_cost": 14200000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 27600
+          "strength_weight": 19600
         },
         {
           "level": 58,
@@ -2845,7 +2945,7 @@
           "upgrade_cost": 14600000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 27900
+          "strength_weight": 19900
         },
         {
           "level": 59,
@@ -2855,7 +2955,7 @@
           "upgrade_cost": 15000000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 28200
+          "strength_weight": 20200
         },
         {
           "level": 60,
@@ -2865,7 +2965,7 @@
           "upgrade_cost": 15500000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 29000
+          "strength_weight": 21000
         },
         {
           "level": 61,
@@ -2875,7 +2975,7 @@
           "upgrade_cost": 16000000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 29300
+          "strength_weight": 21300
         },
         {
           "level": 62,
@@ -2885,7 +2985,7 @@
           "upgrade_cost": 16500000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 29600
+          "strength_weight": 21600
         },
         {
           "level": 63,
@@ -2895,7 +2995,7 @@
           "upgrade_cost": 17000000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 29900
+          "strength_weight": 21900
         },
         {
           "level": 64,
@@ -2905,7 +3005,7 @@
           "upgrade_cost": 17500000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 30200
+          "strength_weight": 22200
         },
         {
           "level": 65,
@@ -2915,7 +3015,7 @@
           "upgrade_cost": 18000000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 31000
+          "strength_weight": 23000
         },
         {
           "level": 66,
@@ -2925,7 +3025,7 @@
           "upgrade_cost": 18500000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 31150
+          "strength_weight": 23300
         },
         {
           "level": 67,
@@ -2935,7 +3035,7 @@
           "upgrade_cost": 19000000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 31300
+          "strength_weight": 23600
         },
         {
           "level": 68,
@@ -2945,177 +3045,227 @@
           "upgrade_cost": 19500000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 31450
+          "strength_weight": 23900
         },
         {
           "level": 69,
           "hitpoints": 2397,
           "dps": 307,
-          "upgrade_time": 648000,
+          "upgrade_time": 604800,
           "upgrade_cost": 20000000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 31600
+          "strength_weight": 24200
         },
         {
           "level": 70,
           "hitpoints": 2414,
           "dps": 309,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 20500000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 32000
+          "strength_weight": 25000
         },
         {
           "level": 71,
           "hitpoints": 2431,
           "dps": 312,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 21000000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 32150
+          "strength_weight": 25300
         },
         {
           "level": 72,
           "hitpoints": 2448,
           "dps": 315,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 21500000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 32300
+          "strength_weight": 25600
         },
         {
           "level": 73,
           "hitpoints": 2465,
           "dps": 318,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 22000000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 32450
+          "strength_weight": 25900
         },
         {
           "level": 74,
           "hitpoints": 2482,
           "dps": 321,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 22500000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 32600
+          "strength_weight": 26200
         },
         {
           "level": 75,
           "hitpoints": 2499,
           "dps": 324,
           "upgrade_time": 691200,
-          "upgrade_cost": 24000000,
+          "upgrade_cost": 23000000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 33000
+          "strength_weight": 27000
         },
         {
           "level": 76,
           "hitpoints": 2516,
           "dps": 327,
           "upgrade_time": 691200,
-          "upgrade_cost": 25500000,
+          "upgrade_cost": 23500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 33150
+          "strength_weight": 27150
         },
         {
           "level": 77,
           "hitpoints": 2533,
           "dps": 330,
           "upgrade_time": 691200,
-          "upgrade_cost": 27000000,
+          "upgrade_cost": 24000000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 33300
+          "strength_weight": 27300
         },
         {
           "level": 78,
           "hitpoints": 2550,
           "dps": 333,
           "upgrade_time": 691200,
-          "upgrade_cost": 27500000,
+          "upgrade_cost": 24500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 33450
+          "strength_weight": 27450
         },
         {
           "level": 79,
           "hitpoints": 2567,
           "dps": 336,
           "upgrade_time": 691200,
-          "upgrade_cost": 28000000,
+          "upgrade_cost": 25500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 33600
+          "strength_weight": 27600
         },
         {
           "level": 80,
           "hitpoints": 2584,
           "dps": 339,
           "upgrade_time": 691200,
-          "upgrade_cost": 28500000,
+          "upgrade_cost": 26500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 34000
+          "strength_weight": 28000
         },
         {
           "level": 81,
           "hitpoints": 2601,
           "dps": 342,
           "upgrade_time": 691200,
-          "upgrade_cost": 29000000,
+          "upgrade_cost": 27500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 34150
+          "strength_weight": 28150
         },
         {
           "level": 82,
           "hitpoints": 2618,
           "dps": 345,
           "upgrade_time": 691200,
-          "upgrade_cost": 29500000,
+          "upgrade_cost": 28500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 34300
+          "strength_weight": 28300
         },
         {
           "level": 83,
           "hitpoints": 2635,
           "dps": 348,
           "upgrade_time": 691200,
-          "upgrade_cost": 30000000,
+          "upgrade_cost": 29000000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 34450
+          "strength_weight": 28450
         },
         {
           "level": 84,
           "hitpoints": 2652,
           "dps": 351,
           "upgrade_time": 691200,
-          "upgrade_cost": 30500000,
+          "upgrade_cost": 29500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 34600
+          "strength_weight": 28600
         },
         {
           "level": 85,
           "hitpoints": 2669,
           "dps": 354,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 691200,
+          "upgrade_cost": 31000000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 35000
+          "strength_weight": 29000
+        },
+        {
+          "level": 86,
+          "hitpoints": 2686,
+          "dps": 357,
+          "upgrade_time": 691200,
+          "upgrade_cost": 31250000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29150
+        },
+        {
+          "level": 87,
+          "hitpoints": 2703,
+          "dps": 360,
+          "upgrade_time": 691200,
+          "upgrade_cost": 31500000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29300
+        },
+        {
+          "level": 88,
+          "hitpoints": 2720,
+          "dps": 363,
+          "upgrade_time": 691200,
+          "upgrade_cost": 31750000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29450
+        },
+        {
+          "level": 89,
+          "hitpoints": 2737,
+          "dps": 366,
+          "upgrade_time": 691200,
+          "upgrade_cost": 32000000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29600
+        },
+        {
+          "level": 90,
+          "hitpoints": 2754,
+          "dps": 369,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 30000
         }
       ]
     },
@@ -3519,7 +3669,7 @@
           "upgrade_cost": 10000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 20000
+          "strength_weight": 7730
         },
         {
           "level": 2,
@@ -3529,7 +3679,7 @@
           "upgrade_cost": 15000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 21000
+          "strength_weight": 8110
         },
         {
           "level": 3,
@@ -3539,7 +3689,7 @@
           "upgrade_cost": 20000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 22000
+          "strength_weight": 8500
         },
         {
           "level": 4,
@@ -3549,7 +3699,7 @@
           "upgrade_cost": 25000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 23000
+          "strength_weight": 8890
         },
         {
           "level": 5,
@@ -3559,7 +3709,7 @@
           "upgrade_cost": 30000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 25000
+          "strength_weight": 9660
         },
         {
           "level": 6,
@@ -3569,7 +3719,7 @@
           "upgrade_cost": 35000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 26000
+          "strength_weight": 10050
         },
         {
           "level": 7,
@@ -3579,7 +3729,7 @@
           "upgrade_cost": 40000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 27000
+          "strength_weight": 10430
         },
         {
           "level": 8,
@@ -3589,7 +3739,7 @@
           "upgrade_cost": 45000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 28000
+          "strength_weight": 10820
         },
         {
           "level": 9,
@@ -3599,7 +3749,7 @@
           "upgrade_cost": 50000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 29000
+          "strength_weight": 11200
         },
         {
           "level": 10,
@@ -3609,7 +3759,7 @@
           "upgrade_cost": 53000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 31000
+          "strength_weight": 11980
         },
         {
           "level": 11,
@@ -3619,7 +3769,7 @@
           "upgrade_cost": 56000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 32000
+          "strength_weight": 12360
         },
         {
           "level": 12,
@@ -3629,7 +3779,7 @@
           "upgrade_cost": 59000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 33000
+          "strength_weight": 12750
         },
         {
           "level": 13,
@@ -3639,7 +3789,7 @@
           "upgrade_cost": 62000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 34000
+          "strength_weight": 13140
         },
         {
           "level": 14,
@@ -3649,7 +3799,7 @@
           "upgrade_cost": 65000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 35000
+          "strength_weight": 13520
         },
         {
           "level": 15,
@@ -3659,7 +3809,7 @@
           "upgrade_cost": 70000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 36000
+          "strength_weight": 13910
         },
         {
           "level": 16,
@@ -3669,7 +3819,7 @@
           "upgrade_cost": 75000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 37000
+          "strength_weight": 14300
         },
         {
           "level": 17,
@@ -3679,7 +3829,7 @@
           "upgrade_cost": 80000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 38000
+          "strength_weight": 14680
         },
         {
           "level": 18,
@@ -3689,7 +3839,7 @@
           "upgrade_cost": 85000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 39000
+          "strength_weight": 15070
         },
         {
           "level": 19,
@@ -3699,7 +3849,7 @@
           "upgrade_cost": 90000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 40000
+          "strength_weight": 15450
         },
         {
           "level": 20,
@@ -3709,7 +3859,7 @@
           "upgrade_cost": 95000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 41000
+          "strength_weight": 15840
         },
         {
           "level": 21,
@@ -3719,7 +3869,7 @@
           "upgrade_cost": 100000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 41500
+          "strength_weight": 16030
         },
         {
           "level": 22,
@@ -3729,7 +3879,7 @@
           "upgrade_cost": 105000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 42000
+          "strength_weight": 16230
         },
         {
           "level": 23,
@@ -3739,7 +3889,7 @@
           "upgrade_cost": 110000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 42500
+          "strength_weight": 16420
         },
         {
           "level": 24,
@@ -3749,7 +3899,7 @@
           "upgrade_cost": 115000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 43000
+          "strength_weight": 16610
         },
         {
           "level": 25,
@@ -3759,7 +3909,7 @@
           "upgrade_cost": 120000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 44000
+          "strength_weight": 17000
         },
         {
           "level": 26,
@@ -3769,7 +3919,7 @@
           "upgrade_cost": 125000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 44500
+          "strength_weight": 17670
         },
         {
           "level": 27,
@@ -3779,7 +3929,7 @@
           "upgrade_cost": 130000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 45000
+          "strength_weight": 18330
         },
         {
           "level": 28,
@@ -3789,7 +3939,7 @@
           "upgrade_cost": 135000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 45500
+          "strength_weight": 19000
         },
         {
           "level": 29,
@@ -3799,7 +3949,7 @@
           "upgrade_cost": 140000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 46000
+          "strength_weight": 19670
         },
         {
           "level": 30,
@@ -3809,7 +3959,7 @@
           "upgrade_cost": 145000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 47000
+          "strength_weight": 21000
         },
         {
           "level": 31,
@@ -3819,7 +3969,7 @@
           "upgrade_cost": 150000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 47100
+          "strength_weight": 21100
         },
         {
           "level": 32,
@@ -3829,7 +3979,7 @@
           "upgrade_cost": 155000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 47200
+          "strength_weight": 21200
         },
         {
           "level": 33,
@@ -3839,7 +3989,7 @@
           "upgrade_cost": 160000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 47300
+          "strength_weight": 21300
         },
         {
           "level": 34,
@@ -3849,7 +3999,7 @@
           "upgrade_cost": 165000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 47400
+          "strength_weight": 21400
         },
         {
           "level": 35,
@@ -3859,7 +4009,7 @@
           "upgrade_cost": 170000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 48000
+          "strength_weight": 22000
         },
         {
           "level": 36,
@@ -3869,7 +4019,7 @@
           "upgrade_cost": 175000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 48100
+          "strength_weight": 22100
         },
         {
           "level": 37,
@@ -3879,7 +4029,7 @@
           "upgrade_cost": 180000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 48200
+          "strength_weight": 22200
         },
         {
           "level": 38,
@@ -3889,7 +4039,7 @@
           "upgrade_cost": 200000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 48300
+          "strength_weight": 22300
         },
         {
           "level": 39,
@@ -3899,7 +4049,7 @@
           "upgrade_cost": 220000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 48400
+          "strength_weight": 22400
         },
         {
           "level": 40,
@@ -3909,7 +4059,7 @@
           "upgrade_cost": 240000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 49000
+          "strength_weight": 23000
         },
         {
           "level": 41,
@@ -3919,7 +4069,7 @@
           "upgrade_cost": 260000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 49100
+          "strength_weight": 23200
         },
         {
           "level": 42,
@@ -3929,7 +4079,7 @@
           "upgrade_cost": 280000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 49200
+          "strength_weight": 23400
         },
         {
           "level": 43,
@@ -3939,67 +4089,67 @@
           "upgrade_cost": 300000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 49300
+          "strength_weight": 23600
         },
         {
           "level": 44,
           "hitpoints": 4012,
           "dps": 542,
-          "upgrade_time": 648000,
+          "upgrade_time": 604800,
           "upgrade_cost": 320000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 49400
+          "strength_weight": 23800
         },
         {
           "level": 45,
           "hitpoints": 4038,
           "dps": 545,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 340000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 50000
+          "strength_weight": 25000
         },
         {
           "level": 46,
           "hitpoints": 4064,
           "dps": 548,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 350000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 50100
+          "strength_weight": 25200
         },
         {
           "level": 47,
           "hitpoints": 4090,
           "dps": 551,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 360000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 50200
+          "strength_weight": 25400
         },
         {
           "level": 48,
           "hitpoints": 4116,
           "dps": 554,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 370000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 50300
+          "strength_weight": 25600
         },
         {
           "level": 49,
           "hitpoints": 4142,
           "dps": 557,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 380000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 50400
+          "strength_weight": 25800
         },
         {
           "level": 50,
@@ -4009,7 +4159,7 @@
           "upgrade_cost": 400000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 51000
+          "strength_weight": 27000
         },
         {
           "level": 51,
@@ -4019,7 +4169,7 @@
           "upgrade_cost": 410000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 51100
+          "strength_weight": 27200
         },
         {
           "level": 52,
@@ -4029,7 +4179,7 @@
           "upgrade_cost": 420000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 51200
+          "strength_weight": 27400
         },
         {
           "level": 53,
@@ -4039,7 +4189,7 @@
           "upgrade_cost": 430000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 51300
+          "strength_weight": 27600
         },
         {
           "level": 54,
@@ -4049,17 +4199,67 @@
           "upgrade_cost": 450000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 51400
+          "strength_weight": 27800
         },
         {
           "level": 55,
           "hitpoints": 4298,
           "dps": 575,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 691200,
+          "upgrade_cost": 500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 52000
+          "strength_weight": 29000
+        },
+        {
+          "level": 56,
+          "hitpoints": 4324,
+          "dps": 578,
+          "upgrade_time": 691200,
+          "upgrade_cost": 505000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29100
+        },
+        {
+          "level": 57,
+          "hitpoints": 4350,
+          "dps": 581,
+          "upgrade_time": 691200,
+          "upgrade_cost": 510000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29200
+        },
+        {
+          "level": 58,
+          "hitpoints": 4376,
+          "dps": 584,
+          "upgrade_time": 691200,
+          "upgrade_cost": 515000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29300
+        },
+        {
+          "level": 59,
+          "hitpoints": 4402,
+          "dps": 587,
+          "upgrade_time": 691200,
+          "upgrade_cost": 520000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29400
+        },
+        {
+          "level": 60,
+          "hitpoints": 4428,
+          "dps": 590,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 30000
         }
       ]
     },
@@ -4083,7 +4283,7 @@
       "village": "builderBase",
       "levels": [
         {
-          "level": 15,
+          "level": 1,
           "hitpoints": 2857,
           "dps": 112,
           "upgrade_time": 432000,
@@ -4093,7 +4293,7 @@
           "strength_weight": 5000
         },
         {
-          "level": 16,
+          "level": 2,
           "hitpoints": 2885,
           "dps": 116,
           "upgrade_time": 432000,
@@ -4103,7 +4303,7 @@
           "strength_weight": 5500
         },
         {
-          "level": 17,
+          "level": 3,
           "hitpoints": 2915,
           "dps": 119,
           "upgrade_time": 432000,
@@ -4113,7 +4313,7 @@
           "strength_weight": 6000
         },
         {
-          "level": 18,
+          "level": 4,
           "hitpoints": 2943,
           "dps": 123,
           "upgrade_time": 432000,
@@ -4123,7 +4323,7 @@
           "strength_weight": 6500
         },
         {
-          "level": 19,
+          "level": 5,
           "hitpoints": 2972,
           "dps": 126,
           "upgrade_time": 432000,
@@ -4133,7 +4333,7 @@
           "strength_weight": 7000
         },
         {
-          "level": 20,
+          "level": 6,
           "hitpoints": 3003,
           "dps": 130,
           "upgrade_time": 432000,
@@ -4143,7 +4343,7 @@
           "strength_weight": 7500
         },
         {
-          "level": 21,
+          "level": 7,
           "hitpoints": 3032,
           "dps": 134,
           "upgrade_time": 432000,
@@ -4153,7 +4353,7 @@
           "strength_weight": 8000
         },
         {
-          "level": 22,
+          "level": 8,
           "hitpoints": 3062,
           "dps": 137,
           "upgrade_time": 432000,
@@ -4163,7 +4363,7 @@
           "strength_weight": 8500
         },
         {
-          "level": 23,
+          "level": 9,
           "hitpoints": 3094,
           "dps": 141,
           "upgrade_time": 432000,
@@ -4173,7 +4373,7 @@
           "strength_weight": 9000
         },
         {
-          "level": 24,
+          "level": 10,
           "hitpoints": 3124,
           "dps": 144,
           "upgrade_time": 432000,
@@ -4183,7 +4383,7 @@
           "strength_weight": 9500
         },
         {
-          "level": 25,
+          "level": 11,
           "hitpoints": 3155,
           "dps": 148,
           "upgrade_time": 518400,
@@ -4193,7 +4393,7 @@
           "strength_weight": 10000
         },
         {
-          "level": 26,
+          "level": 12,
           "hitpoints": 3187,
           "dps": 153,
           "upgrade_time": 518400,
@@ -4203,7 +4403,7 @@
           "strength_weight": 10500
         },
         {
-          "level": 27,
+          "level": 13,
           "hitpoints": 3220,
           "dps": 157,
           "upgrade_time": 518400,
@@ -4213,7 +4413,7 @@
           "strength_weight": 11000
         },
         {
-          "level": 28,
+          "level": 14,
           "hitpoints": 3252,
           "dps": 162,
           "upgrade_time": 518400,
@@ -4223,7 +4423,7 @@
           "strength_weight": 11500
         },
         {
-          "level": 29,
+          "level": 15,
           "hitpoints": 3285,
           "dps": 166,
           "upgrade_time": 518400,
@@ -4233,7 +4433,7 @@
           "strength_weight": 12000
         },
         {
-          "level": 30,
+          "level": 16,
           "hitpoints": 3318,
           "dps": 171,
           "upgrade_time": 604800,
@@ -4243,7 +4443,7 @@
           "strength_weight": 12500
         },
         {
-          "level": 31,
+          "level": 17,
           "hitpoints": 3348,
           "dps": 175,
           "upgrade_time": 604800,
@@ -4253,7 +4453,7 @@
           "strength_weight": 13000
         },
         {
-          "level": 32,
+          "level": 18,
           "hitpoints": 3375,
           "dps": 180,
           "upgrade_time": 604800,
@@ -4263,7 +4463,7 @@
           "strength_weight": 13500
         },
         {
-          "level": 33,
+          "level": 19,
           "hitpoints": 3402,
           "dps": 184,
           "upgrade_time": 604800,
@@ -4273,7 +4473,7 @@
           "strength_weight": 14000
         },
         {
-          "level": 34,
+          "level": 20,
           "hitpoints": 3429,
           "dps": 189,
           "upgrade_time": 604800,
@@ -4283,7 +4483,7 @@
           "strength_weight": 14500
         },
         {
-          "level": 35,
+          "level": 21,
           "hitpoints": 3456,
           "dps": 193,
           "upgrade_time": 0,
@@ -4323,7 +4523,7 @@
           "upgrade_cost": 5000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3200
+          "strength_weight": 2880
         },
         {
           "level": 2,
@@ -4333,7 +4533,7 @@
           "upgrade_cost": 5500,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3400
+          "strength_weight": 3060
         },
         {
           "level": 3,
@@ -4343,7 +4543,7 @@
           "upgrade_cost": 6000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3600
+          "strength_weight": 3240
         },
         {
           "level": 4,
@@ -4353,7 +4553,7 @@
           "upgrade_cost": 6500,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 3800
+          "strength_weight": 3420
         },
         {
           "level": 5,
@@ -4363,7 +4563,7 @@
           "upgrade_cost": 7000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4000
+          "strength_weight": 3600
         },
         {
           "level": 6,
@@ -4373,7 +4573,7 @@
           "upgrade_cost": 7500,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4200
+          "strength_weight": 3780
         },
         {
           "level": 7,
@@ -4383,7 +4583,7 @@
           "upgrade_cost": 8000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4400
+          "strength_weight": 3960
         },
         {
           "level": 8,
@@ -4393,7 +4593,7 @@
           "upgrade_cost": 8500,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4600
+          "strength_weight": 4140
         },
         {
           "level": 9,
@@ -4403,7 +4603,7 @@
           "upgrade_cost": 10000,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 4800
+          "strength_weight": 4320
         },
         {
           "level": 10,
@@ -4413,7 +4613,7 @@
           "upgrade_cost": 10500,
           "required_townhall": 9,
           "required_hero_tavern_level": 3,
-          "strength_weight": 5000
+          "strength_weight": 4500
         },
         {
           "level": 11,
@@ -4423,7 +4623,7 @@
           "upgrade_cost": 11000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 5200
+          "strength_weight": 4650
         },
         {
           "level": 12,
@@ -4433,7 +4633,7 @@
           "upgrade_cost": 11500,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 5400
+          "strength_weight": 4800
         },
         {
           "level": 13,
@@ -4443,7 +4643,7 @@
           "upgrade_cost": 12000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 5600
+          "strength_weight": 4950
         },
         {
           "level": 14,
@@ -4453,7 +4653,7 @@
           "upgrade_cost": 12500,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 5800
+          "strength_weight": 5100
         },
         {
           "level": 15,
@@ -4463,7 +4663,7 @@
           "upgrade_cost": 13000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 6000
+          "strength_weight": 5250
         },
         {
           "level": 16,
@@ -4473,7 +4673,7 @@
           "upgrade_cost": 13500,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 6200
+          "strength_weight": 5400
         },
         {
           "level": 17,
@@ -4483,7 +4683,7 @@
           "upgrade_cost": 14000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 6400
+          "strength_weight": 5550
         },
         {
           "level": 18,
@@ -4493,7 +4693,7 @@
           "upgrade_cost": 14500,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 6600
+          "strength_weight": 5700
         },
         {
           "level": 19,
@@ -4503,7 +4703,7 @@
           "upgrade_cost": 15000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 6800
+          "strength_weight": 5850
         },
         {
           "level": 20,
@@ -4513,7 +4713,7 @@
           "upgrade_cost": 17000,
           "required_townhall": 10,
           "required_hero_tavern_level": 4,
-          "strength_weight": 7000
+          "strength_weight": 6000
         },
         {
           "level": 21,
@@ -4523,7 +4723,7 @@
           "upgrade_cost": 19000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7200
+          "strength_weight": 6220
         },
         {
           "level": 22,
@@ -4533,7 +4733,7 @@
           "upgrade_cost": 21000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7400
+          "strength_weight": 6450
         },
         {
           "level": 23,
@@ -4543,7 +4743,7 @@
           "upgrade_cost": 23000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7600
+          "strength_weight": 6680
         },
         {
           "level": 24,
@@ -4553,7 +4753,7 @@
           "upgrade_cost": 25000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 7800
+          "strength_weight": 6900
         },
         {
           "level": 25,
@@ -4563,7 +4763,7 @@
           "upgrade_cost": 27000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8000
+          "strength_weight": 7120
         },
         {
           "level": 26,
@@ -4573,7 +4773,7 @@
           "upgrade_cost": 29000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8200
+          "strength_weight": 7350
         },
         {
           "level": 27,
@@ -4583,7 +4783,7 @@
           "upgrade_cost": 31000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8400
+          "strength_weight": 7580
         },
         {
           "level": 28,
@@ -4593,7 +4793,7 @@
           "upgrade_cost": 33000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8600
+          "strength_weight": 7800
         },
         {
           "level": 29,
@@ -4603,7 +4803,7 @@
           "upgrade_cost": 35000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 8800
+          "strength_weight": 8020
         },
         {
           "level": 30,
@@ -4613,7 +4813,7 @@
           "upgrade_cost": 36000,
           "required_townhall": 11,
           "required_hero_tavern_level": 5,
-          "strength_weight": 9000
+          "strength_weight": 8250
         },
         {
           "level": 31,
@@ -4623,7 +4823,7 @@
           "upgrade_cost": 37000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 9500
+          "strength_weight": 8720
         },
         {
           "level": 32,
@@ -4633,7 +4833,7 @@
           "upgrade_cost": 38000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 10000
+          "strength_weight": 9200
         },
         {
           "level": 33,
@@ -4643,7 +4843,7 @@
           "upgrade_cost": 39000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 10500
+          "strength_weight": 9680
         },
         {
           "level": 34,
@@ -4653,7 +4853,7 @@
           "upgrade_cost": 40000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 11000
+          "strength_weight": 10150
         },
         {
           "level": 35,
@@ -4663,7 +4863,7 @@
           "upgrade_cost": 41000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 11500
+          "strength_weight": 10620
         },
         {
           "level": 36,
@@ -4673,7 +4873,7 @@
           "upgrade_cost": 42000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 12000
+          "strength_weight": 11100
         },
         {
           "level": 37,
@@ -4683,7 +4883,7 @@
           "upgrade_cost": 43000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 12500
+          "strength_weight": 11580
         },
         {
           "level": 38,
@@ -4693,7 +4893,7 @@
           "upgrade_cost": 44000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 13000
+          "strength_weight": 12050
         },
         {
           "level": 39,
@@ -4703,7 +4903,7 @@
           "upgrade_cost": 45000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 13500
+          "strength_weight": 12520
         },
         {
           "level": 40,
@@ -4713,7 +4913,7 @@
           "upgrade_cost": 50000,
           "required_townhall": 12,
           "required_hero_tavern_level": 6,
-          "strength_weight": 14000
+          "strength_weight": 13000
         },
         {
           "level": 41,
@@ -4723,7 +4923,7 @@
           "upgrade_cost": 55000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 14300
+          "strength_weight": 13400
         },
         {
           "level": 42,
@@ -4733,7 +4933,7 @@
           "upgrade_cost": 60000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 14600
+          "strength_weight": 13800
         },
         {
           "level": 43,
@@ -4743,7 +4943,7 @@
           "upgrade_cost": 65000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 14900
+          "strength_weight": 14200
         },
         {
           "level": 44,
@@ -4753,7 +4953,7 @@
           "upgrade_cost": 70000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 15200
+          "strength_weight": 14600
         },
         {
           "level": 45,
@@ -4763,7 +4963,7 @@
           "upgrade_cost": 75000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 15500
+          "strength_weight": 15000
         },
         {
           "level": 46,
@@ -4773,7 +4973,7 @@
           "upgrade_cost": 80000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 15800
+          "strength_weight": 15400
         },
         {
           "level": 47,
@@ -4783,7 +4983,7 @@
           "upgrade_cost": 85000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 16100
+          "strength_weight": 15800
         },
         {
           "level": 48,
@@ -4793,7 +4993,7 @@
           "upgrade_cost": 90000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 16400
+          "strength_weight": 16200
         },
         {
           "level": 49,
@@ -4803,7 +5003,7 @@
           "upgrade_cost": 95000,
           "required_townhall": 13,
           "required_hero_tavern_level": 7,
-          "strength_weight": 16700
+          "strength_weight": 16600
         },
         {
           "level": 50,
@@ -4823,7 +5023,7 @@
           "upgrade_cost": 105000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17100
+          "strength_weight": 17400
         },
         {
           "level": 52,
@@ -4833,7 +5033,7 @@
           "upgrade_cost": 110000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17200
+          "strength_weight": 17800
         },
         {
           "level": 53,
@@ -4843,7 +5043,7 @@
           "upgrade_cost": 115000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17300
+          "strength_weight": 18200
         },
         {
           "level": 54,
@@ -4853,7 +5053,7 @@
           "upgrade_cost": 120000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17400
+          "strength_weight": 18600
         },
         {
           "level": 55,
@@ -4863,7 +5063,7 @@
           "upgrade_cost": 125000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17500
+          "strength_weight": 19000
         },
         {
           "level": 56,
@@ -4873,7 +5073,7 @@
           "upgrade_cost": 130000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17600
+          "strength_weight": 19400
         },
         {
           "level": 57,
@@ -4883,7 +5083,7 @@
           "upgrade_cost": 135000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17700
+          "strength_weight": 19800
         },
         {
           "level": 58,
@@ -4893,7 +5093,7 @@
           "upgrade_cost": 140000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17800
+          "strength_weight": 20200
         },
         {
           "level": 59,
@@ -4903,7 +5103,7 @@
           "upgrade_cost": 145000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 17900
+          "strength_weight": 20600
         },
         {
           "level": 60,
@@ -4913,7 +5113,7 @@
           "upgrade_cost": 150000,
           "required_townhall": 14,
           "required_hero_tavern_level": 8,
-          "strength_weight": 18000
+          "strength_weight": 21000
         },
         {
           "level": 61,
@@ -4923,7 +5123,7 @@
           "upgrade_cost": 155000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 18200
+          "strength_weight": 21200
         },
         {
           "level": 62,
@@ -4933,7 +5133,7 @@
           "upgrade_cost": 160000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 18400
+          "strength_weight": 21400
         },
         {
           "level": 63,
@@ -4943,7 +5143,7 @@
           "upgrade_cost": 165000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 18600
+          "strength_weight": 21600
         },
         {
           "level": 64,
@@ -4953,7 +5153,7 @@
           "upgrade_cost": 170000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 18800
+          "strength_weight": 21800
         },
         {
           "level": 65,
@@ -4963,7 +5163,7 @@
           "upgrade_cost": 175000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 19000
+          "strength_weight": 22000
         },
         {
           "level": 66,
@@ -4973,7 +5173,7 @@
           "upgrade_cost": 180000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 19200
+          "strength_weight": 22200
         },
         {
           "level": 67,
@@ -4983,7 +5183,7 @@
           "upgrade_cost": 185000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 19400
+          "strength_weight": 22400
         },
         {
           "level": 68,
@@ -4993,7 +5193,7 @@
           "upgrade_cost": 190000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 19600
+          "strength_weight": 22600
         },
         {
           "level": 69,
@@ -5003,7 +5203,7 @@
           "upgrade_cost": 195000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 19800
+          "strength_weight": 22800
         },
         {
           "level": 70,
@@ -5013,7 +5213,7 @@
           "upgrade_cost": 200000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 20000
+          "strength_weight": 23000
         },
         {
           "level": 71,
@@ -5023,7 +5223,7 @@
           "upgrade_cost": 205000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 20150
+          "strength_weight": 23200
         },
         {
           "level": 72,
@@ -5033,7 +5233,7 @@
           "upgrade_cost": 210000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 20300
+          "strength_weight": 23400
         },
         {
           "level": 73,
@@ -5043,7 +5243,7 @@
           "upgrade_cost": 220000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 20450
+          "strength_weight": 23600
         },
         {
           "level": 74,
@@ -5053,157 +5253,157 @@
           "upgrade_cost": 230000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 20600
+          "strength_weight": 23800
         },
         {
           "level": 75,
           "hitpoints": 3413,
           "dps": 675,
-          "upgrade_time": 648000,
+          "upgrade_time": 604800,
           "upgrade_cost": 240000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 20750
+          "strength_weight": 24000
         },
         {
           "level": 76,
           "hitpoints": 3476,
           "dps": 680,
-          "upgrade_time": 648000,
+          "upgrade_time": 604800,
           "upgrade_cost": 250000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 20900
+          "strength_weight": 24200
         },
         {
           "level": 77,
           "hitpoints": 3539,
           "dps": 685,
-          "upgrade_time": 648000,
+          "upgrade_time": 604800,
           "upgrade_cost": 260000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21050
+          "strength_weight": 24400
         },
         {
           "level": 78,
           "hitpoints": 3602,
           "dps": 690,
-          "upgrade_time": 648000,
+          "upgrade_time": 604800,
           "upgrade_cost": 270000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21200
+          "strength_weight": 24600
         },
         {
           "level": 79,
           "hitpoints": 3665,
           "dps": 695,
-          "upgrade_time": 648000,
+          "upgrade_time": 604800,
           "upgrade_cost": 280000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21350
+          "strength_weight": 24800
         },
         {
           "level": 80,
           "hitpoints": 3728,
           "dps": 700,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 290000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 21500
+          "strength_weight": 25000
         },
         {
           "level": 81,
           "hitpoints": 3791,
           "dps": 705,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 300000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 21650
+          "strength_weight": 25200
         },
         {
           "level": 82,
           "hitpoints": 3854,
           "dps": 710,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 310000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 21800
+          "strength_weight": 25400
         },
         {
           "level": 83,
           "hitpoints": 3917,
           "dps": 715,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 320000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 21950
+          "strength_weight": 25600
         },
         {
           "level": 84,
           "hitpoints": 3980,
           "dps": 720,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 330000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22100
+          "strength_weight": 25800
         },
         {
           "level": 85,
           "hitpoints": 4043,
           "dps": 725,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 340000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22250
+          "strength_weight": 26000
         },
         {
           "level": 86,
           "hitpoints": 4106,
           "dps": 730,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 350000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22400
+          "strength_weight": 26200
         },
         {
           "level": 87,
           "hitpoints": 4169,
           "dps": 735,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 360000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22550
+          "strength_weight": 26400
         },
         {
           "level": 88,
           "hitpoints": 4232,
           "dps": 740,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 370000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22700
+          "strength_weight": 26600
         },
         {
           "level": 89,
           "hitpoints": 4295,
           "dps": 745,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 380000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22850
+          "strength_weight": 26800
         },
         {
           "level": 90,
@@ -5213,7 +5413,7 @@
           "upgrade_cost": 400000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 23000
+          "strength_weight": 27000
         },
         {
           "level": 91,
@@ -5223,7 +5423,7 @@
           "upgrade_cost": 410000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23150
+          "strength_weight": 27400
         },
         {
           "level": 92,
@@ -5233,7 +5433,7 @@
           "upgrade_cost": 420000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23300
+          "strength_weight": 27800
         },
         {
           "level": 93,
@@ -5243,7 +5443,7 @@
           "upgrade_cost": 430000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23450
+          "strength_weight": 28200
         },
         {
           "level": 94,
@@ -5253,17 +5453,67 @@
           "upgrade_cost": 450000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23600
+          "strength_weight": 28600
         },
         {
           "level": 95,
           "hitpoints": 4510,
           "dps": 765,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 691200,
+          "upgrade_cost": 500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23750
+          "strength_weight": 29000
+        },
+        {
+          "level": 96,
+          "hitpoints": 4540,
+          "dps": 768,
+          "upgrade_time": 691200,
+          "upgrade_cost": 505000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29200
+        },
+        {
+          "level": 97,
+          "hitpoints": 4570,
+          "dps": 771,
+          "upgrade_time": 691200,
+          "upgrade_cost": 510000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29400
+        },
+        {
+          "level": 98,
+          "hitpoints": 4600,
+          "dps": 774,
+          "upgrade_time": 691200,
+          "upgrade_cost": 515000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29600
+        },
+        {
+          "level": 99,
+          "hitpoints": 4630,
+          "dps": 777,
+          "upgrade_time": 691200,
+          "upgrade_cost": 520000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29800
+        },
+        {
+          "level": 100,
+          "hitpoints": 4660,
+          "dps": 780,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 30000
         }
       ]
     },
@@ -5296,7 +5546,7 @@
           "upgrade_cost": 50000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 20500
+          "strength_weight": 21580
         },
         {
           "level": 2,
@@ -5306,7 +5556,7 @@
           "upgrade_cost": 60000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 20650
+          "strength_weight": 21740
         },
         {
           "level": 3,
@@ -5316,7 +5566,7 @@
           "upgrade_cost": 70000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 20800
+          "strength_weight": 21890
         },
         {
           "level": 4,
@@ -5326,7 +5576,7 @@
           "upgrade_cost": 80000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 20950
+          "strength_weight": 22050
         },
         {
           "level": 5,
@@ -5336,7 +5586,7 @@
           "upgrade_cost": 90000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 21100
+          "strength_weight": 22210
         },
         {
           "level": 6,
@@ -5346,7 +5596,7 @@
           "upgrade_cost": 100000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 21250
+          "strength_weight": 22370
         },
         {
           "level": 7,
@@ -5356,7 +5606,7 @@
           "upgrade_cost": 110000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 21400
+          "strength_weight": 22530
         },
         {
           "level": 8,
@@ -5366,7 +5616,7 @@
           "upgrade_cost": 120000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 21550
+          "strength_weight": 22680
         },
         {
           "level": 9,
@@ -5376,7 +5626,7 @@
           "upgrade_cost": 130000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 21700
+          "strength_weight": 22840
         },
         {
           "level": 10,
@@ -5386,7 +5636,7 @@
           "upgrade_cost": 150000,
           "required_townhall": 15,
           "required_hero_tavern_level": 9,
-          "strength_weight": 21850
+          "strength_weight": 23000
         },
         {
           "level": 11,
@@ -5396,7 +5646,7 @@
           "upgrade_cost": 175000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 22000
+          "strength_weight": 23400
         },
         {
           "level": 12,
@@ -5406,7 +5656,7 @@
           "upgrade_cost": 200000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 22150
+          "strength_weight": 23800
         },
         {
           "level": 13,
@@ -5416,7 +5666,7 @@
           "upgrade_cost": 225000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 22300
+          "strength_weight": 24200
         },
         {
           "level": 14,
@@ -5426,7 +5676,7 @@
           "upgrade_cost": 250000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 22450
+          "strength_weight": 24600
         },
         {
           "level": 15,
@@ -5436,7 +5686,7 @@
           "upgrade_cost": 275000,
           "required_townhall": 16,
           "required_hero_tavern_level": 10,
-          "strength_weight": 22600
+          "strength_weight": 25000
         },
         {
           "level": 16,
@@ -5446,37 +5696,37 @@
           "upgrade_cost": 300000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22750
+          "strength_weight": 25460
         },
         {
           "level": 17,
           "hitpoints": 10300,
           "dps": 368,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 325000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22800
+          "strength_weight": 25620
         },
         {
           "level": 18,
           "hitpoints": 10375,
           "dps": 372,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 350000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 22950
+          "strength_weight": 26080
         },
         {
           "level": 19,
           "hitpoints": 10450,
           "dps": 376,
-          "upgrade_time": 691200,
+          "upgrade_time": 604800,
           "upgrade_cost": 375000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 23100
+          "strength_weight": 26540
         },
         {
           "level": 20,
@@ -5486,57 +5736,107 @@
           "upgrade_cost": 400000,
           "required_townhall": 17,
           "required_hero_tavern_level": 11,
-          "strength_weight": 23250
+          "strength_weight": 27000
         },
         {
           "level": 21,
           "hitpoints": 10600,
           "dps": 384,
           "upgrade_time": 691200,
-          "upgrade_cost": 420000,
+          "upgrade_cost": 415000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23400
+          "strength_weight": 27400
         },
         {
           "level": 22,
           "hitpoints": 10675,
           "dps": 388,
           "upgrade_time": 691200,
-          "upgrade_cost": 440000,
+          "upgrade_cost": 430000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23550
+          "strength_weight": 27800
         },
         {
           "level": 23,
           "hitpoints": 10750,
           "dps": 392,
           "upgrade_time": 691200,
-          "upgrade_cost": 460000,
+          "upgrade_cost": 445000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23700
+          "strength_weight": 28200
         },
         {
           "level": 24,
           "hitpoints": 10825,
           "dps": 396,
           "upgrade_time": 691200,
-          "upgrade_cost": 480000,
+          "upgrade_cost": 460000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 23850
+          "strength_weight": 28600
         },
         {
           "level": 25,
           "hitpoints": 10900,
           "dps": 400,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 691200,
+          "upgrade_cost": 500000,
           "required_townhall": 18,
           "required_hero_tavern_level": 12,
-          "strength_weight": 24000
+          "strength_weight": 29000
+        },
+        {
+          "level": 26,
+          "hitpoints": 10975,
+          "dps": 404,
+          "upgrade_time": 691200,
+          "upgrade_cost": 505000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29200
+        },
+        {
+          "level": 27,
+          "hitpoints": 11050,
+          "dps": 408,
+          "upgrade_time": 691200,
+          "upgrade_cost": 510000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29400
+        },
+        {
+          "level": 28,
+          "hitpoints": 11125,
+          "dps": 412,
+          "upgrade_time": 691200,
+          "upgrade_cost": 515000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29600
+        },
+        {
+          "level": 29,
+          "hitpoints": 11200,
+          "dps": 416,
+          "upgrade_time": 691200,
+          "upgrade_cost": 520000,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 29800
+        },
+        {
+          "level": 30,
+          "hitpoints": 11275,
+          "dps": 420,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_townhall": 19,
+          "required_hero_tavern_level": 13,
+          "strength_weight": 30000
         }
       ]
     }
