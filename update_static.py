@@ -19,6 +19,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import zstandard
+from PIL import Image
 
 from generate_abilities import FILES as ABILITY_TABLES
 from generate_abilities import ability_tids, generate_abilities, write_abilities
@@ -109,6 +110,26 @@ def load_ignored_ids(path: Path = Path(".ignored.txt")) -> set[int]:
         except ValueError as exc:
             raise ValueError(f"invalid ID in {path} on line {line_number}: {value!r}") from exc
     return ignored_ids
+
+
+def save_emote_preview(source: Path, destination: Path) -> None:
+    """Select visible artwork, not a blank entrance or dark silhouette frame."""
+    best_frame = None
+    best_score = -1
+    with Image.open(source) as animation:
+        for index in range(animation.n_frames):
+            animation.seek(index)
+            frame = animation.convert("RGBA")
+            # Alpha-weighted color favors a fully revealed character over the
+            # black silhouette used by some emotes' entrance animations.
+            sample = frame.copy()
+            sample.thumbnail((96, 96))
+            score = sum(a * (r + g + b) for r, g, b, a in sample.getdata())
+            if score > best_score:
+                best_score, best_frame = score, frame.copy()
+    if best_frame is None or best_score <= 0:
+        raise ValueError(f"Emote has no visible preview frame: {source}")
+    best_frame.save(destination, format="WEBP", lossless=True)
 
 
 class StaticUpdater:
@@ -318,7 +339,10 @@ class StaticUpdater:
         if self.should_skip_registered_asset(request):
             return
         destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(local_path, destination)
+        if request.save_path.startswith("emotes/") and request.save_path.endswith("/static.webp"):
+            save_emote_preview(local_path, destination)
+        else:
+            shutil.copy2(local_path, destination)
 
     async def _download_source_file(
         self,
@@ -1514,7 +1538,12 @@ class StaticUpdater:
                             required_townhall = max(unlock_townhall, required_townhall)
                 elif is_super_troop:  # for super troops use the original troop's lab level'
                     original_troop = self.full_troop_data.get(super_troop_data["Original"])
-                    required_lab_level = original_troop.get(level).get("LaboratoryLevel")
+                    # Map the super-troop row to its base troop visual level,
+                    # bounded by the licence minimum, not the ordinal row index.
+                    original_level = max(
+                        int(level_data["VisualLevel"]), super_troop_data["MinOriginalLevel"]
+                    )
+                    required_lab_level = original_troop[str(original_level)]["LaboratoryLevel"]
                     required_townhall = max_townhall_converter[required_lab_level]
                 elif is_seasonal_troop:
                     required_lab_level = None
@@ -1810,8 +1839,13 @@ class StaticUpdater:
             slug = str(data["GlobalID"])
             icon = f"emotes/{slug}/static.webp"
             animated = f"emotes/{slug}/animated.webp"
-            self.register_sc_asset(data["IconSWF"], data["IconExportName"], icon, first_frame=True)
+            # Several live emotes still point at shared placeholder IconExportName values.
+            # Use each real animation export for its static preview as well.
+            self.register_sc_asset(data["SWF"], data["ExportName"], icon)
             self.register_sc_asset(data["SWF"], data["ExportName"], animated)
+            # Retain every description exposed through TID.info during pruning.
+            if data.get("InfoTID"):
+                self.USED_TIDS.add(data["InfoTID"])
             items.append((data.get("SortOrder", 0), {
                 "_id": data["GlobalID"], "name": self._translate(tid=data["TID"]),
                 "TID": {"name": data["TID"], "info": data.get("InfoTID")},

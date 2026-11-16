@@ -3064,8 +3064,8 @@
           "dps": 120,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0
         },
         {
@@ -3074,8 +3074,8 @@
           "dps": 140,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0
         },
         {
@@ -3084,8 +3084,8 @@
           "dps": 160,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0
         },
         {
@@ -3094,8 +3094,8 @@
           "dps": 180,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -3104,8 +3104,8 @@
           "dps": 200,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -3114,8 +3114,8 @@
           "dps": 220,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 12,
+          "required_townhall": 14,
           "strength_weight": 0
         },
         {
@@ -3124,8 +3124,8 @@
           "dps": 240,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 13,
+          "required_townhall": 15,
           "strength_weight": 0
         },
         {
@@ -3134,8 +3134,8 @@
           "dps": 250,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 14,
+          "required_townhall": 16,
           "strength_weight": 0
         },
         {
@@ -3144,8 +3144,8 @@
           "dps": 270,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_lab_level": 16,
+          "required_townhall": 18,
           "strength_weight": 0
         },
         {
@@ -3154,8 +3154,8 @@
           "dps": 290,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 12,
-          "required_townhall": 14,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -3191,8 +3191,8 @@
           "dps": 84,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0
         },
         {
@@ -3201,8 +3201,8 @@
           "dps": 96,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0
         },
         {
@@ -3211,8 +3211,8 @@
           "dps": 108,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0
         },
         {
@@ -3221,8 +3221,8 @@
           "dps": 120,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -3231,8 +3231,8 @@
           "dps": 132,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -3241,8 +3241,8 @@
           "dps": 144,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 12,
+          "required_townhall": 14,
           "strength_weight": 0
         },
         {
@@ -3251,8 +3251,8 @@
           "dps": 156,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 13,
+          "required_townhall": 15,
           "strength_weight": 0
         },
         {
@@ -3261,8 +3261,8 @@
           "dps": 162,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 14,
+          "required_townhall": 16,
           "strength_weight": 0
         },
         {
@@ -3271,8 +3271,8 @@
           "dps": 166,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_lab_level": 15,
+          "required_townhall": 17,
           "strength_weight": 0
         },
         {
@@ -3281,8 +3281,8 @@
           "dps": 170,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 12,
-          "required_townhall": 14,
+          "required_lab_level": 16,
+          "required_townhall": 18,
           "strength_weight": 0
         },
         {
@@ -3291,8 +3291,8 @@
           "dps": 174,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 13,
-          "required_townhall": 15,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -3329,8 +3329,8 @@
           "dps": 34,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0,
           "death_damage": 105
         },
@@ -3340,8 +3340,8 @@
           "dps": 56,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 2,
-          "required_townhall": 4,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0,
           "death_damage": 140
         },
@@ -3351,8 +3351,8 @@
           "dps": 78,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0,
           "death_damage": 175
         },
@@ -3362,8 +3362,8 @@
           "dps": 100,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 225
         },
@@ -3373,8 +3373,8 @@
           "dps": 120,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 11,
+          "required_townhall": 13,
           "strength_weight": 0,
           "death_damage": 275
         },
@@ -3384,8 +3384,8 @@
           "dps": 130,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 12,
+          "required_townhall": 14,
           "strength_weight": 0,
           "death_damage": 313
         },
@@ -3395,8 +3395,8 @@
           "dps": 140,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 13,
+          "required_townhall": 15,
           "strength_weight": 0,
           "death_damage": 338
         },
@@ -3406,8 +3406,8 @@
           "dps": 150,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_lab_level": 14,
+          "required_townhall": 16,
           "strength_weight": 0,
           "death_damage": 363
         },
@@ -3417,8 +3417,8 @@
           "dps": 160,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 11,
-          "required_townhall": 13,
+          "required_lab_level": 15,
+          "required_townhall": 17,
           "strength_weight": 0,
           "death_damage": 388
         },
@@ -3428,8 +3428,8 @@
           "dps": 170,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 12,
-          "required_townhall": 14,
+          "required_lab_level": 16,
+          "required_townhall": 18,
           "strength_weight": 0,
           "death_damage": 413
         },
@@ -3439,8 +3439,8 @@
           "dps": 180,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 13,
-          "required_townhall": 15,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0,
           "death_damage": 438
         }
@@ -3477,8 +3477,8 @@
           "dps": 90,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -3487,8 +3487,8 @@
           "dps": 100,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 2,
-          "required_townhall": 4,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -3497,8 +3497,8 @@
           "dps": 110,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -3507,8 +3507,8 @@
           "dps": 120,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -3517,8 +3517,8 @@
           "dps": 130,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -3527,8 +3527,8 @@
           "dps": 140,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 11,
+          "required_townhall": 13,
           "strength_weight": 0
         },
         {
@@ -3537,8 +3537,8 @@
           "dps": 150,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 13,
+          "required_townhall": 15,
           "strength_weight": 0
         },
         {
@@ -3547,8 +3547,8 @@
           "dps": 160,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 14,
+          "required_townhall": 16,
           "strength_weight": 0
         },
         {
@@ -3557,8 +3557,8 @@
           "dps": 175,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_lab_level": 15,
+          "required_townhall": 17,
           "strength_weight": 0
         },
         {
@@ -3567,8 +3567,8 @@
           "dps": 205,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 11,
-          "required_townhall": 13,
+          "required_lab_level": 16,
+          "required_townhall": 18,
           "strength_weight": 0
         },
         {
@@ -3577,8 +3577,8 @@
           "dps": 235,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 13,
-          "required_townhall": 15,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -6433,8 +6433,8 @@
           "dps": 120,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 7,
+          "required_townhall": 9,
           "strength_weight": 0
         },
         {
@@ -6443,8 +6443,8 @@
           "dps": 140,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 7,
+          "required_townhall": 9,
           "strength_weight": 0
         },
         {
@@ -6453,8 +6453,8 @@
           "dps": 155,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0
         },
         {
@@ -6463,8 +6463,8 @@
           "dps": 170,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -6473,8 +6473,8 @@
           "dps": 180,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 13,
+          "required_townhall": 15,
           "strength_weight": 0
         },
         {
@@ -6483,8 +6483,8 @@
           "dps": 190,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 16,
+          "required_townhall": 18,
           "strength_weight": 0
         },
         {
@@ -6493,8 +6493,8 @@
           "dps": 200,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -6530,8 +6530,8 @@
           "dps": 80,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 800
         },
@@ -6541,8 +6541,8 @@
           "dps": 95,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 900
         },
@@ -6552,8 +6552,8 @@
           "dps": 110,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 1000
         },
@@ -6563,8 +6563,8 @@
           "dps": 125,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 1100
         },
@@ -6574,8 +6574,8 @@
           "dps": 140,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 1200
         },
@@ -6700,8 +6700,8 @@
           "dps": 170,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0,
           "death_damage": 300
         },
@@ -6711,8 +6711,8 @@
           "dps": 220,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 2,
-          "required_townhall": 4,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0,
           "death_damage": 400
         },
@@ -6722,8 +6722,8 @@
           "dps": 260,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0,
           "death_damage": 500
         },
@@ -6733,8 +6733,8 @@
           "dps": 270,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 580
         },
@@ -6744,8 +6744,8 @@
           "dps": 280,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 11,
+          "required_townhall": 13,
           "strength_weight": 0,
           "death_damage": 620
         },
@@ -6755,8 +6755,8 @@
           "dps": 285,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 12,
+          "required_townhall": 14,
           "strength_weight": 0,
           "death_damage": 650
         },
@@ -6766,8 +6766,8 @@
           "dps": 290,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 14,
+          "required_townhall": 16,
           "strength_weight": 0,
           "death_damage": 700
         },
@@ -6777,8 +6777,8 @@
           "dps": 304,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_lab_level": 15,
+          "required_townhall": 17,
           "strength_weight": 0,
           "death_damage": 730
         },
@@ -6788,8 +6788,8 @@
           "dps": 326,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 11,
-          "required_townhall": 13,
+          "required_lab_level": 16,
+          "required_townhall": 18,
           "strength_weight": 0,
           "death_damage": 760
         },
@@ -6799,8 +6799,8 @@
           "dps": 350,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 12,
-          "required_townhall": 14,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0,
           "death_damage": 790
         }
@@ -7318,8 +7318,8 @@
           "dps": 55,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7328,8 +7328,8 @@
           "dps": 59,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7338,8 +7338,8 @@
           "dps": 63,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7348,8 +7348,8 @@
           "dps": 67,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7475,8 +7475,8 @@
           "dps": 100,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7485,8 +7485,8 @@
           "dps": 125,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7495,8 +7495,8 @@
           "dps": 150,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7505,8 +7505,8 @@
           "dps": 175,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7515,8 +7515,8 @@
           "dps": 200,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7732,8 +7732,8 @@
           "dps": 240,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7742,8 +7742,8 @@
           "dps": 270,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7752,8 +7752,8 @@
           "dps": 300,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8322,8 +8322,8 @@
           "dps": 2,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8332,8 +8332,8 @@
           "dps": 4,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8342,8 +8342,8 @@
           "dps": 6,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8439,8 +8439,8 @@
           "dps": 125,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8449,8 +8449,8 @@
           "dps": 140,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8576,8 +8576,8 @@
           "dps": 301,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8586,8 +8586,8 @@
           "dps": 326,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8596,8 +8596,8 @@
           "dps": 352,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8606,8 +8606,8 @@
           "dps": 377,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8616,8 +8616,8 @@
           "dps": 402,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -8626,8 +8626,8 @@
           "dps": 427,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 11,
+          "required_townhall": 13,
           "strength_weight": 0
         },
         {
@@ -8636,8 +8636,8 @@
           "dps": 452,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_lab_level": 12,
+          "required_townhall": 14,
           "strength_weight": 0
         },
         {
@@ -8646,8 +8646,8 @@
           "dps": 477,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 11,
-          "required_townhall": 13,
+          "required_lab_level": 13,
+          "required_townhall": 15,
           "strength_weight": 0
         },
         {
@@ -8656,8 +8656,8 @@
           "dps": 497,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 12,
-          "required_townhall": 14,
+          "required_lab_level": 14,
+          "required_townhall": 16,
           "strength_weight": 0
         },
         {
@@ -8666,8 +8666,8 @@
           "dps": 517,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 13,
-          "required_townhall": 15,
+          "required_lab_level": 15,
+          "required_townhall": 17,
           "strength_weight": 0
         },
         {
@@ -8676,8 +8676,8 @@
           "dps": 537,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 14,
-          "required_townhall": 16,
+          "required_lab_level": 16,
+          "required_townhall": 18,
           "strength_weight": 0
         },
         {
@@ -8686,8 +8686,8 @@
           "dps": 557,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 15,
-          "required_townhall": 17,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -8797,8 +8797,8 @@
           "dps": 140,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8807,8 +8807,8 @@
           "dps": 160,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8817,8 +8817,8 @@
           "dps": 180,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8827,8 +8827,8 @@
           "dps": 200,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8837,8 +8837,8 @@
           "dps": 220,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -8847,8 +8847,8 @@
           "dps": 240,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 11,
+          "required_townhall": 13,
           "strength_weight": 0
         },
         {
@@ -8857,8 +8857,8 @@
           "dps": 265,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 13,
+          "required_townhall": 15,
           "strength_weight": 0
         },
         {
@@ -8867,8 +8867,8 @@
           "dps": 285,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 14,
+          "required_townhall": 16,
           "strength_weight": 0
         },
         {
@@ -8877,8 +8877,8 @@
           "dps": 305,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_lab_level": 15,
+          "required_townhall": 17,
           "strength_weight": 0
         },
         {
@@ -8887,8 +8887,8 @@
           "dps": 335,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 11,
-          "required_townhall": 13,
+          "required_lab_level": 16,
+          "required_townhall": 18,
           "strength_weight": 0
         },
         {
@@ -8897,8 +8897,8 @@
           "dps": 365,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 13,
-          "required_townhall": 15,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -8934,8 +8934,8 @@
           "dps": 200,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8944,8 +8944,8 @@
           "dps": 225,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8954,8 +8954,8 @@
           "dps": 250,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8964,8 +8964,8 @@
           "dps": 275,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8974,8 +8974,8 @@
           "dps": 300,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -8984,8 +8984,8 @@
           "dps": 325,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 11,
+          "required_townhall": 13,
           "strength_weight": 0
         },
         {
@@ -8994,8 +8994,8 @@
           "dps": 350,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 12,
+          "required_townhall": 14,
           "strength_weight": 0
         },
         {
@@ -9004,8 +9004,8 @@
           "dps": 360,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_lab_level": 13,
+          "required_townhall": 15,
           "strength_weight": 0
         },
         {
@@ -9014,8 +9014,8 @@
           "dps": 370,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 11,
-          "required_townhall": 13,
+          "required_lab_level": 14,
+          "required_townhall": 16,
           "strength_weight": 0
         },
         {
@@ -9024,8 +9024,8 @@
           "dps": 385,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 12,
-          "required_townhall": 14,
+          "required_lab_level": 15,
+          "required_townhall": 17,
           "strength_weight": 0
         },
         {
@@ -9034,8 +9034,8 @@
           "dps": 400,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 13,
-          "required_townhall": 15,
+          "required_lab_level": 16,
+          "required_townhall": 18,
           "strength_weight": 0
         },
         {
@@ -9044,8 +9044,8 @@
           "dps": 415,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 14,
-          "required_townhall": 16,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -9631,8 +9631,8 @@
           "dps": 100,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -9641,8 +9641,8 @@
           "dps": 115,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -9651,8 +9651,8 @@
           "dps": 130,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -9661,8 +9661,8 @@
           "dps": 145,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -9671,8 +9671,8 @@
           "dps": 160,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -9681,8 +9681,8 @@
           "dps": 175,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -9691,8 +9691,8 @@
           "dps": 190,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 11,
+          "required_townhall": 13,
           "strength_weight": 0
         },
         {
@@ -9701,8 +9701,8 @@
           "dps": 210,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_lab_level": 12,
+          "required_townhall": 14,
           "strength_weight": 0
         },
         {
@@ -9711,8 +9711,8 @@
           "dps": 230,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_lab_level": 13,
+          "required_townhall": 15,
           "strength_weight": 0
         },
         {
@@ -9721,8 +9721,8 @@
           "dps": 250,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 11,
-          "required_townhall": 13,
+          "required_lab_level": 14,
+          "required_townhall": 16,
           "strength_weight": 0
         },
         {
@@ -9731,8 +9731,8 @@
           "dps": 270,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 12,
-          "required_townhall": 14,
+          "required_lab_level": 15,
+          "required_townhall": 17,
           "strength_weight": 0
         },
         {
@@ -9741,8 +9741,8 @@
           "dps": 300,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 13,
-          "required_townhall": 15,
+          "required_lab_level": 16,
+          "required_townhall": 18,
           "strength_weight": 0
         },
         {
@@ -9751,8 +9751,8 @@
           "dps": 330,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 14,
-          "required_townhall": 16,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -12256,8 +12256,8 @@
           "dps": 360,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
