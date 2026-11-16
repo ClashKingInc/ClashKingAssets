@@ -61,7 +61,7 @@
     {
       "_id": 107000001,
       "name": "Smasher",
-      "info": "This tanky Guardian deals splash damage to ground and air troops. Smasher is a seriously sore loser, raging when the Town Hall is destroyed and leaving rage in his wake when defeated.",
+      "info": "This tanky Guardian deals splash damage to ground and air troops. Smasher is a seriously sore loser, raging when the Town Hall is destroyed and leaving a rage aura in his wake when defeated.",
       "TID": {
         "name": "TID_MELEE_AREA_GUARDIAN",
         "info": "TID_MELEE_AREA_GUARDIAN_INFO"
@@ -78,41 +78,81 @@
           "level": 1,
           "hitpoints": 12000,
           "dps": 500,
-          "upgrade_time": 604800,
-          "upgrade_cost": 18000000,
+          "upgrade_time": 432000,
+          "upgrade_cost": 13000000,
           "required_townhall": 18
         },
         {
           "level": 2,
           "hitpoints": 13000,
           "dps": 550,
-          "upgrade_time": 777600,
-          "upgrade_cost": 22000000,
+          "upgrade_time": 604800,
+          "upgrade_cost": 16000000,
           "required_townhall": 18
         },
         {
           "level": 3,
           "hitpoints": 14000,
           "dps": 600,
-          "upgrade_time": 950400,
-          "upgrade_cost": 26000000,
+          "upgrade_time": 777600,
+          "upgrade_cost": 19000000,
           "required_townhall": 18
         },
         {
           "level": 4,
           "hitpoints": 15000,
           "dps": 650,
-          "upgrade_time": 1123200,
-          "upgrade_cost": 28000000,
+          "upgrade_time": 950400,
+          "upgrade_cost": 21500000,
           "required_townhall": 18
         },
         {
           "level": 5,
           "hitpoints": 16000,
           "dps": 700,
+          "upgrade_time": 1036800,
+          "upgrade_cost": 24000000,
+          "required_townhall": 18
+        },
+        {
+          "level": 6,
+          "hitpoints": 17000,
+          "dps": 750,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 25000000,
+          "required_townhall": 19
+        },
+        {
+          "level": 7,
+          "hitpoints": 18000,
+          "dps": 800,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 26000000,
+          "required_townhall": 19
+        },
+        {
+          "level": 8,
+          "hitpoints": 19000,
+          "dps": 850,
+          "upgrade_time": 1166400,
+          "upgrade_cost": 27000000,
+          "required_townhall": 19
+        },
+        {
+          "level": 9,
+          "hitpoints": 20000,
+          "dps": 900,
+          "upgrade_time": 1209600,
+          "upgrade_cost": 28000000,
+          "required_townhall": 19
+        },
+        {
+          "level": 10,
+          "hitpoints": 21000,
+          "dps": 950,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_townhall": 18
+          "required_townhall": 19
         }
       ]
     },

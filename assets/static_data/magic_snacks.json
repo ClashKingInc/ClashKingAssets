@@ -59,6 +59,56 @@
         "info": "TID_CONSUMABLE_CC_REFILL_INFO"
       },
       "duration": 43200
+    },
+    {
+      "_id": 34019729405766,
+      "name": "4x Battle Bake",
+      "info": "Every Chief deserves a sweet treat! These frosting-tipped delights boost the amount of Gold, Elixir, and Dark Elixir earned in the next battle. Works in Home Village!",
+      "TID": {
+        "name": "TID_CONSUMABLE_BOOST_LOOT_ELITE",
+        "info": "TID_CONSUMABLE_BOOST_LOOT_INFO"
+      },
+      "duration": 0
+    },
+    {
+      "_id": 626644580712136,
+      "name": "Clan Castle Slice",
+      "info": "A hefty slice! Your Clan Castle is automatically filled with Reinforcements for the next <battles> battles.",
+      "TID": {
+        "name": "TID_CONSUMABLE_CC_CRUMBS",
+        "info": "TID_CONSUMABLE_CC_CRUMBS_INFO"
+      },
+      "duration": 0
+    },
+    {
+      "_id": 316907614826529,
+      "name": "3x Battle Bake",
+      "info": "Every Chief deserves a sweet treat! These frosting-tipped delights boost the amount of Gold, Elixir, and Dark Elixir earned in the next battle. Works in Home Village!",
+      "TID": {
+        "name": "TID_CONSUMABLE_BOOST_LOOT_PRO",
+        "info": "TID_CONSUMABLE_BOOST_LOOT_INFO"
+      },
+      "duration": 0
+    },
+    {
+      "_id": 785333832017841,
+      "name": "2x Battle Bake",
+      "info": "Every Chief deserves a sweet treat! These frosting-tipped delights boost the amount of Gold, Elixir, and Dark Elixir earned in the next battle. Works in Home Village!",
+      "TID": {
+        "name": "TID_CONSUMABLE_BOOST_LOOT_SIGNATURE",
+        "info": "TID_CONSUMABLE_BOOST_LOOT_INFO"
+      },
+      "duration": 0
+    },
+    {
+      "_id": 7010528196406,
+      "name": "Star Bonus Snack",
+      "info": "A crumbly snack that makes the Star Bonus available again in Home Village. Once activated, it will work right away, or when an ongoing Star Bonus ends. Works in Home Village only!",
+      "TID": {
+        "name": "TID_CONSUMABLE_HV_STAR_BONUS",
+        "info": "TID_CONSUMABLE_HV_STAR_BONUS_INFO"
+      },
+      "duration": 0
     }
   ]
 }

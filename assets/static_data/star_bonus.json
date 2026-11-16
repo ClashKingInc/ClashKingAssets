@@ -1,0 +1,213 @@
+{
+  "items": [
+    {
+      "townhall_level": 1,
+      "resources": {
+        "gold": 1000,
+        "elixir": 1000,
+        "dark_elixir": 0,
+        "shiny_ore": 0,
+        "glowy_ore": 0,
+        "starry_ore": 0
+      }
+    },
+    {
+      "townhall_level": 2,
+      "resources": {
+        "gold": 5000,
+        "elixir": 5000,
+        "dark_elixir": 0,
+        "shiny_ore": 0,
+        "glowy_ore": 0,
+        "starry_ore": 0
+      }
+    },
+    {
+      "townhall_level": 3,
+      "resources": {
+        "gold": 40000,
+        "elixir": 40000,
+        "dark_elixir": 0,
+        "shiny_ore": 0,
+        "glowy_ore": 0,
+        "starry_ore": 0
+      }
+    },
+    {
+      "townhall_level": 4,
+      "resources": {
+        "gold": 50000,
+        "elixir": 50000,
+        "dark_elixir": 0,
+        "shiny_ore": 0,
+        "glowy_ore": 0,
+        "starry_ore": 0
+      }
+    },
+    {
+      "townhall_level": 5,
+      "resources": {
+        "gold": 60000,
+        "elixir": 60000,
+        "dark_elixir": 0,
+        "shiny_ore": 0,
+        "glowy_ore": 0,
+        "starry_ore": 0
+      }
+    },
+    {
+      "townhall_level": 6,
+      "resources": {
+        "gold": 150000,
+        "elixir": 150000,
+        "dark_elixir": 0,
+        "shiny_ore": 0,
+        "glowy_ore": 0,
+        "starry_ore": 0
+      }
+    },
+    {
+      "townhall_level": 7,
+      "resources": {
+        "gold": 300000,
+        "elixir": 300000,
+        "dark_elixir": 1500,
+        "shiny_ore": 0,
+        "glowy_ore": 0,
+        "starry_ore": 0
+      }
+    },
+    {
+      "townhall_level": 8,
+      "resources": {
+        "gold": 400000,
+        "elixir": 400000,
+        "dark_elixir": 2000,
+        "shiny_ore": 480,
+        "glowy_ore": 33,
+        "starry_ore": 1
+      }
+    },
+    {
+      "townhall_level": 9,
+      "resources": {
+        "gold": 460000,
+        "elixir": 460000,
+        "dark_elixir": 2300,
+        "shiny_ore": 630,
+        "glowy_ore": 42,
+        "starry_ore": 1
+      }
+    },
+    {
+      "townhall_level": 10,
+      "resources": {
+        "gold": 570000,
+        "elixir": 570000,
+        "dark_elixir": 2800,
+        "shiny_ore": 760,
+        "glowy_ore": 43,
+        "starry_ore": 1
+      }
+    },
+    {
+      "townhall_level": 11,
+      "resources": {
+        "gold": 670000,
+        "elixir": 670000,
+        "dark_elixir": 3400,
+        "shiny_ore": 860,
+        "glowy_ore": 47,
+        "starry_ore": 1
+      }
+    },
+    {
+      "townhall_level": 12,
+      "resources": {
+        "gold": 780000,
+        "elixir": 780000,
+        "dark_elixir": 3900,
+        "shiny_ore": 950,
+        "glowy_ore": 51,
+        "starry_ore": 1
+      }
+    },
+    {
+      "townhall_level": 13,
+      "resources": {
+        "gold": 900000,
+        "elixir": 900000,
+        "dark_elixir": 4500,
+        "shiny_ore": 1050,
+        "glowy_ore": 56,
+        "starry_ore": 1
+      }
+    },
+    {
+      "townhall_level": 14,
+      "resources": {
+        "gold": 1000000,
+        "elixir": 1000000,
+        "dark_elixir": 5100,
+        "shiny_ore": 1100,
+        "glowy_ore": 60,
+        "starry_ore": 1
+      }
+    },
+    {
+      "townhall_level": 15,
+      "resources": {
+        "gold": 1200000,
+        "elixir": 1200000,
+        "dark_elixir": 5900,
+        "shiny_ore": 1200,
+        "glowy_ore": 66,
+        "starry_ore": 2
+      }
+    },
+    {
+      "townhall_level": 16,
+      "resources": {
+        "gold": 1300000,
+        "elixir": 1300000,
+        "dark_elixir": 6400,
+        "shiny_ore": 1300,
+        "glowy_ore": 69,
+        "starry_ore": 2
+      }
+    },
+    {
+      "townhall_level": 17,
+      "resources": {
+        "gold": 1400000,
+        "elixir": 1400000,
+        "dark_elixir": 7000,
+        "shiny_ore": 1400,
+        "glowy_ore": 78,
+        "starry_ore": 2
+      }
+    },
+    {
+      "townhall_level": 18,
+      "resources": {
+        "gold": 1500000,
+        "elixir": 1500000,
+        "dark_elixir": 7500,
+        "shiny_ore": 1500,
+        "glowy_ore": 81,
+        "starry_ore": 2
+      }
+    },
+    {
+      "townhall_level": 19,
+      "resources": {
+        "gold": 1600000,
+        "elixir": 1600000,
+        "dark_elixir": 8000,
+        "shiny_ore": 1600,
+        "glowy_ore": 87,
+        "starry_ore": 3
+      }
+    }
+  ]
+}

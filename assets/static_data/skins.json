@@ -31,7 +31,7 @@
       "_id": 52000003,
       "name": "Grand Warden",
       "TID": {
-        "name": "TID_GRAND_WARDEN"
+        "name": "TID_GRAND_WARDEN26"
       },
       "tier": "Default",
       "character": "Grand Warden"
@@ -1792,6 +1792,15 @@
       "character": "Archer Queen"
     },
     {
+      "_id": 52000229,
+      "name": "Manga Fury Queen",
+      "TID": {
+        "name": "TID_MANGA26_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
       "_id": 52000230,
       "name": "Dark Minion Warden",
       "TID": {
@@ -2134,6 +2143,15 @@
       "character": "Minion Prince"
     },
     {
+      "_id": 52000268,
+      "name": "Manga Fury Prince",
+      "TID": {
+        "name": "TID_MANGA26_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
       "_id": 52000269,
       "name": "Midas Prince",
       "TID": {
@@ -2192,6 +2210,15 @@
       "name": "Shadow Samurai",
       "TID": {
         "name": "TID_JAPAN26_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000290,
+      "name": "Manga Fury King",
+      "TID": {
+        "name": "TID_MANGA26_KING"
       },
       "tier": "Legendary",
       "character": "Barbarian King"
@@ -2296,6 +2323,15 @@
       "character": "Royal Champion"
     },
     {
+      "_id": 52000302,
+      "name": "Manga Fury Champion",
+      "TID": {
+        "name": "TID_MANGA26_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
       "_id": 52000303,
       "name": "Hades Champion",
       "TID": {
@@ -2350,6 +2386,33 @@
       "character": "Archer Queen"
     },
     {
+      "_id": 52000323,
+      "name": "Alexa Queen",
+      "TID": {
+        "name": "TID_SEP26_QUEEN"
+      },
+      "tier": "Legendary",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000324,
+      "name": "Shroud Queen",
+      "TID": {
+        "name": "TID_COSMIC2_QUEEN"
+      },
+      "tier": "Gold",
+      "character": "Archer Queen"
+    },
+    {
+      "_id": 52000329,
+      "name": "Manga Fury Warden",
+      "TID": {
+        "name": "TID_MANGA26_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
       "_id": 52000330,
       "name": "Poseidon Warden",
       "TID": {
@@ -2381,6 +2444,24 @@
       "name": "Grand Mage",
       "TID": {
         "name": "TID_TCG_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000335,
+      "name": "Undertaker Warden",
+      "TID": {
+        "name": "TID_SEP26_WARDEN"
+      },
+      "tier": "Legendary",
+      "character": "Grand Warden"
+    },
+    {
+      "_id": 52000336,
+      "name": "Spider Warden",
+      "TID": {
+        "name": "TID_COSMIC2_WARDEN"
       },
       "tier": "Legendary",
       "character": "Grand Warden"
@@ -2431,6 +2512,15 @@
       "character": "Dragon Duke"
     },
     {
+      "_id": 52000347,
+      "name": "Manga Fury Duke",
+      "TID": {
+        "name": "TID_MANGA26_DUKE"
+      },
+      "tier": "Gold",
+      "character": "Dragon Duke"
+    },
+    {
       "_id": 52000348,
       "name": "Hydra Duke",
       "TID": {
@@ -2458,6 +2548,24 @@
       "character": "Dragon Duke"
     },
     {
+      "_id": 52000351,
+      "name": "KANE DUKE",
+      "TID": {
+        "name": "TID_SEP26_DUKE"
+      },
+      "tier": "Legendary",
+      "character": "Dragon Duke"
+    },
+    {
+      "_id": 52000352,
+      "name": "Behemoth Duke",
+      "TID": {
+        "name": "TID_COSMIC2_DUKE"
+      },
+      "tier": "Legendary",
+      "character": "Dragon Duke"
+    },
+    {
       "_id": 52000353,
       "name": "Lich Prince",
       "TID": {
@@ -2465,6 +2573,51 @@
       },
       "tier": "Legendary",
       "character": "Minion Prince"
+    },
+    {
+      "_id": 52000354,
+      "name": "League Prince",
+      "TID": {
+        "name": "TID_LEAGUE_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000355,
+      "name": "Uso Prince",
+      "TID": {
+        "name": "TID_SEP26_MINION_PRINCE"
+      },
+      "tier": "Gold",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000356,
+      "name": "Nasty Prince",
+      "TID": {
+        "name": "TID_COSMIC2_MINION_PRINCE"
+      },
+      "tier": "Legendary",
+      "character": "Minion Prince"
+    },
+    {
+      "_id": 52000368,
+      "name": "King Rhodes",
+      "TID": {
+        "name": "TID_SEP26_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
+    },
+    {
+      "_id": 52000369,
+      "name": "Savage King",
+      "TID": {
+        "name": "TID_COSMIC2_KING"
+      },
+      "tier": "Legendary",
+      "character": "Barbarian King"
     },
     {
       "_id": 52000378,
@@ -2482,6 +2635,24 @@
         "name": "TID_TCG_CHAMPION"
       },
       "tier": "Gold",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000380,
+      "name": "Sky Champion",
+      "TID": {
+        "name": "TID_SEP26_CHAMPION"
+      },
+      "tier": "Legendary",
+      "character": "Royal Champion"
+    },
+    {
+      "_id": 52000381,
+      "name": "Terror Champion",
+      "TID": {
+        "name": "TID_COSMIC2_CHAMPION"
+      },
+      "tier": "Legendary",
       "character": "Royal Champion"
     }
   ]

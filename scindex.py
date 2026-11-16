@@ -142,7 +142,17 @@ def split_row_blocks(payload: bytes, *, context: str) -> tuple[bytes, ...]:
 
     blocks = []
     while reader.position < len(payload):
-        blocks.append(reader.sized_bytes())
+        # SCIndex block headers pack a 24-bit payload length and a padding
+        # count in the high nibble. Padding precedes the payload, and must not
+        # be interpreted as length or included in a FlatBuffer's root offsets.
+        header = reader.uint32()
+        size = header & 0xFFFFFF
+        if header & 0x0F000000:
+            raise SCIndexError(f"{context}: unsupported block header flags {header:#x}")
+        padding = reader._take(header >> 28)
+        if any(padding):
+            raise SCIndexError(f"{context}: block padding contains non-zero bytes")
+        blocks.append(reader._take(size))
     if not blocks:
         raise SCIndexError(f"{context}: row has no data blocks")
     return tuple(blocks)
@@ -262,19 +272,21 @@ def decode_decorations(deco_data: bytes, asset_data: bytes) -> dict[str, dict]:
 
         base = FlatBufferTable(blocks[1], context=f"{context} base data")
         details = FlatBufferTable(blocks[2], context=f"{context} details")
+        # These are FlatBuffer vtable slots, not CSV column positions.
+        # BuildResource is slot 12; using 13 reads the cost as a string offset.
         decoded = {
             "GlobalID": global_id,
             "TID": names[1],
             "Width": details.uint32(0),
             "MaxCount": details.uint32(5),
-            "BuildResource": details.string(13),
-            "BuildCost": details.uint32(14),
-            "NotInShop": not details.boolean(20),
-            "BPReward": details.boolean(33),
+            "BuildResource": details.string(12),
+            "BuildCost": details.uint32(13),
+            "NotInShop": not details.boolean(19),
+            "BPReward": details.boolean(32),
             "VillageType": base.uint32(0),
         }
 
-        movie_clip_index = details.uint32(12, default=UINT32_MAX)
+        movie_clip_index = details.uint32(11, default=UINT32_MAX)
         if movie_clip_index != UINT32_MAX:
             movie_clip_key = decorations.value(movie_clip_index, context=f"{context} movie clip")
             movie_clip_row = asset_rows.get(movie_clip_key)

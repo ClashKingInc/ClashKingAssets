@@ -27,9 +27,9 @@
           "dps": 9,
           "upgrade_time": 0,
           "upgrade_cost": 10000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
-          "strength_weight": 800
+          "required_lab_level": null,
+          "required_townhall": 1,
+          "strength_weight": 1000
         },
         {
           "level": 2,
@@ -115,8 +115,8 @@
           "level": 10,
           "hitpoints": 250,
           "dps": 42,
-          "upgrade_time": 259200,
-          "upgrade_cost": 6000000,
+          "upgrade_time": 216000,
+          "upgrade_cost": 5000000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 6000
@@ -125,8 +125,8 @@
           "level": 11,
           "hitpoints": 270,
           "dps": 45,
-          "upgrade_time": 345600,
-          "upgrade_cost": 8000000,
+          "upgrade_time": 259200,
+          "upgrade_cost": 6000000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 7000
@@ -135,8 +135,8 @@
           "level": 12,
           "hitpoints": 290,
           "dps": 48,
-          "upgrade_time": 1080000,
-          "upgrade_cost": 24000000,
+          "upgrade_time": 777600,
+          "upgrade_cost": 18000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 8000
@@ -145,11 +145,21 @@
           "level": 13,
           "hitpoints": 310,
           "dps": 51,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1166400,
+          "upgrade_cost": 30000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 10000
+        },
+        {
+          "level": 14,
+          "hitpoints": 330,
+          "dps": 54,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 12000
         }
       ]
     },
@@ -180,8 +190,8 @@
           "dps": 8,
           "upgrade_time": 3600,
           "upgrade_cost": 20000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 2,
           "strength_weight": 800
         },
         {
@@ -258,8 +268,8 @@
           "level": 9,
           "hitpoints": 56,
           "dps": 31,
-          "upgrade_time": 259200,
-          "upgrade_cost": 4500000,
+          "upgrade_time": 216000,
+          "upgrade_cost": 3800000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 4000
@@ -268,8 +278,8 @@
           "level": 10,
           "hitpoints": 60,
           "dps": 34,
-          "upgrade_time": 345600,
-          "upgrade_cost": 6500000,
+          "upgrade_time": 302400,
+          "upgrade_cost": 5500000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 6000
@@ -278,8 +288,8 @@
           "level": 11,
           "hitpoints": 64,
           "dps": 37,
-          "upgrade_time": 388800,
-          "upgrade_cost": 9000000,
+          "upgrade_time": 345600,
+          "upgrade_cost": 8000000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 7000
@@ -288,8 +298,8 @@
           "level": 12,
           "hitpoints": 68,
           "dps": 40,
-          "upgrade_time": 777600,
-          "upgrade_cost": 14000000,
+          "upgrade_time": 604800,
+          "upgrade_cost": 11000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 8000
@@ -298,8 +308,8 @@
           "level": 13,
           "hitpoints": 72,
           "dps": 43,
-          "upgrade_time": 1166400,
-          "upgrade_cost": 25000000,
+          "upgrade_time": 777600,
+          "upgrade_cost": 19000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 9000
@@ -308,11 +318,21 @@
           "level": 14,
           "hitpoints": 76,
           "dps": 46,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1209600,
+          "upgrade_cost": 31000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 10000
+        },
+        {
+          "level": 15,
+          "hitpoints": 80,
+          "dps": 49,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 12000
         }
       ]
     },
@@ -343,8 +363,8 @@
           "dps": 11,
           "upgrade_time": 7200,
           "upgrade_cost": 45000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 2,
           "strength_weight": 700
         },
         {
@@ -401,8 +421,8 @@
           "level": 7,
           "hitpoints": 105,
           "dps": 52,
-          "upgrade_time": 194400,
-          "upgrade_cost": 3700000,
+          "upgrade_time": 172800,
+          "upgrade_cost": 3300000,
           "required_lab_level": 8,
           "required_townhall": 10,
           "strength_weight": 2000
@@ -411,8 +431,8 @@
           "level": 8,
           "hitpoints": 126,
           "dps": 62,
-          "upgrade_time": 432000,
-          "upgrade_cost": 8000000,
+          "upgrade_time": 302400,
+          "upgrade_cost": 5500000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 4000
@@ -421,8 +441,8 @@
           "level": 9,
           "hitpoints": 146,
           "dps": 72,
-          "upgrade_time": 1209600,
-          "upgrade_cost": 26000000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 15000000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 7000
@@ -431,11 +451,21 @@
           "level": 10,
           "hitpoints": 166,
           "dps": 82,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 907200,
+          "upgrade_cost": 22000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 10000
+        },
+        {
+          "level": 11,
+          "hitpoints": 186,
+          "dps": 92,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 11000
         }
       ]
     },
@@ -466,8 +496,8 @@
           "dps": 12,
           "upgrade_time": 7200,
           "upgrade_cost": 40000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 2,
           "strength_weight": 1000
         },
         {
@@ -544,8 +574,8 @@
           "level": 9,
           "hitpoints": 1850,
           "dps": 70,
-          "upgrade_time": 259200,
-          "upgrade_cost": 5000000,
+          "upgrade_time": 237600,
+          "upgrade_cost": 4600000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 5000
@@ -554,8 +584,8 @@
           "level": 10,
           "hitpoints": 2000,
           "dps": 78,
-          "upgrade_time": 345600,
-          "upgrade_cost": 7500000,
+          "upgrade_time": 302400,
+          "upgrade_cost": 6500000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 6000
@@ -564,8 +594,8 @@
           "level": 11,
           "hitpoints": 2200,
           "dps": 86,
-          "upgrade_time": 432000,
-          "upgrade_cost": 10000000,
+          "upgrade_time": 345600,
+          "upgrade_cost": 8000000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 8000
@@ -574,8 +604,8 @@
           "level": 12,
           "hitpoints": 2400,
           "dps": 94,
-          "upgrade_time": 820800,
-          "upgrade_cost": 15000000,
+          "upgrade_time": 561600,
+          "upgrade_cost": 10500000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 9000
@@ -584,8 +614,8 @@
           "level": 13,
           "hitpoints": 2700,
           "dps": 104,
-          "upgrade_time": 1166400,
-          "upgrade_cost": 25000000,
+          "upgrade_time": 691200,
+          "upgrade_cost": 20000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 10000
@@ -594,11 +624,21 @@
           "level": 14,
           "hitpoints": 3000,
           "dps": 114,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 29500000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 11000
+        },
+        {
+          "level": 15,
+          "hitpoints": 3600,
+          "dps": 124,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 12000
         }
       ]
     },
@@ -630,7 +670,7 @@
           "dps": 10,
           "upgrade_time": 10800,
           "upgrade_cost": 80000,
-          "required_lab_level": 1,
+          "required_lab_level": null,
           "required_townhall": 3,
           "strength_weight": 900,
           "death_damage": 6
@@ -694,8 +734,8 @@
           "level": 7,
           "hitpoints": 82,
           "dps": 66,
-          "upgrade_time": 216000,
-          "upgrade_cost": 3800000,
+          "upgrade_time": 172800,
+          "upgrade_cost": 3200000,
           "required_lab_level": 9,
           "required_townhall": 11,
           "strength_weight": 4000,
@@ -705,8 +745,8 @@
           "level": 8,
           "hitpoints": 92,
           "dps": 75,
-          "upgrade_time": 259200,
-          "upgrade_cost": 5200000,
+          "upgrade_time": 216000,
+          "upgrade_cost": 4300000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 5000,
@@ -716,8 +756,8 @@
           "level": 9,
           "hitpoints": 112,
           "dps": 86,
-          "upgrade_time": 432000,
-          "upgrade_cost": 6500000,
+          "upgrade_time": 345600,
+          "upgrade_cost": 5000000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 6000,
@@ -727,8 +767,8 @@
           "level": 10,
           "hitpoints": 130,
           "dps": 94,
-          "upgrade_time": 475200,
-          "upgrade_cost": 9500000,
+          "upgrade_time": 388800,
+          "upgrade_cost": 8000000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 7000,
@@ -738,8 +778,8 @@
           "level": 11,
           "hitpoints": 140,
           "dps": 102,
-          "upgrade_time": 518400,
-          "upgrade_cost": 11000000,
+          "upgrade_time": 432000,
+          "upgrade_cost": 9000000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 8000,
@@ -749,8 +789,8 @@
           "level": 12,
           "hitpoints": 150,
           "dps": 110,
-          "upgrade_time": 864000,
-          "upgrade_cost": 15500000,
+          "upgrade_time": 561600,
+          "upgrade_cost": 10000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 9000,
@@ -760,8 +800,8 @@
           "level": 13,
           "hitpoints": 160,
           "dps": 118,
-          "upgrade_time": 1209600,
-          "upgrade_cost": 26000000,
+          "upgrade_time": 777600,
+          "upgrade_cost": 19000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 10000,
@@ -771,12 +811,23 @@
           "level": 14,
           "hitpoints": 170,
           "dps": 126,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 29000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 11000,
           "death_damage": 78
+        },
+        {
+          "level": 15,
+          "hitpoints": 180,
+          "dps": 134,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 12000,
+          "death_damage": 84
         }
       ]
     },
@@ -807,8 +858,8 @@
           "dps": 25,
           "upgrade_time": 14400,
           "upgrade_cost": 100000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 4,
           "strength_weight": 1400,
           "death_damage": 25
         },
@@ -882,8 +933,8 @@
           "level": 8,
           "hitpoints": 840,
           "dps": 236,
-          "upgrade_time": 388800,
-          "upgrade_cost": 7000000,
+          "upgrade_time": 345600,
+          "upgrade_cost": 6000000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 5000,
@@ -904,8 +955,8 @@
           "level": 10,
           "hitpoints": 1040,
           "dps": 276,
-          "upgrade_time": 734400,
-          "upgrade_cost": 14000000,
+          "upgrade_time": 691200,
+          "upgrade_cost": 13000000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 8000,
@@ -915,8 +966,8 @@
           "level": 11,
           "hitpoints": 1140,
           "dps": 290,
-          "upgrade_time": 950400,
-          "upgrade_cost": 17500000,
+          "upgrade_time": 864000,
+          "upgrade_cost": 15500000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000,
@@ -926,8 +977,8 @@
           "level": 12,
           "hitpoints": 1240,
           "dps": 304,
-          "upgrade_time": 1274400,
-          "upgrade_cost": 28000000,
+          "upgrade_time": 993600,
+          "upgrade_cost": 22500000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000,
@@ -937,12 +988,23 @@
           "level": 13,
           "hitpoints": 1360,
           "dps": 326,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1036800,
+          "upgrade_cost": 28000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000,
           "death_damage": 425
+        },
+        {
+          "level": 14,
+          "hitpoints": 1600,
+          "dps": 350,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000,
+          "death_damage": 450
         }
       ]
     },
@@ -973,8 +1035,8 @@
           "dps": 50,
           "upgrade_time": 14400,
           "upgrade_cost": 120000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 5,
           "strength_weight": 1400
         },
         {
@@ -1051,8 +1113,8 @@
           "level": 9,
           "hitpoints": 230,
           "dps": 230,
-          "upgrade_time": 302400,
-          "upgrade_cost": 5500000,
+          "upgrade_time": 259200,
+          "upgrade_cost": 4700000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 6000
@@ -1061,8 +1123,8 @@
           "level": 10,
           "hitpoints": 250,
           "dps": 245,
-          "upgrade_time": 475200,
-          "upgrade_cost": 10000000,
+          "upgrade_time": 388800,
+          "upgrade_cost": 7000000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000
@@ -1072,7 +1134,7 @@
           "hitpoints": 270,
           "dps": 260,
           "upgrade_time": 604800,
-          "upgrade_cost": 11500000,
+          "upgrade_cost": 9000000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 8000
@@ -1081,8 +1143,8 @@
           "level": 12,
           "hitpoints": 290,
           "dps": 275,
-          "upgrade_time": 907200,
-          "upgrade_cost": 16000000,
+          "upgrade_time": 648000,
+          "upgrade_cost": 11500000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 9000
@@ -1091,8 +1153,8 @@
           "level": 13,
           "hitpoints": 310,
           "dps": 290,
-          "upgrade_time": 1209600,
-          "upgrade_cost": 27000000,
+          "upgrade_time": 777600,
+          "upgrade_cost": 21000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 10000
@@ -1101,11 +1163,21 @@
           "level": 14,
           "hitpoints": 330,
           "dps": 310,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1252800,
+          "upgrade_cost": 32000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 11000
+        },
+        {
+          "level": 15,
+          "hitpoints": 350,
+          "dps": 330,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 12000
         }
       ]
     },
@@ -1136,8 +1208,8 @@
           "dps": -36,
           "upgrade_time": 43200,
           "upgrade_cost": 450000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 6,
           "strength_weight": 1400
         },
         {
@@ -1174,8 +1246,8 @@
           "level": 5,
           "hitpoints": 1500,
           "dps": -72,
-          "upgrade_time": 388800,
-          "upgrade_cost": 6000000,
+          "upgrade_time": 345600,
+          "upgrade_cost": 5500000,
           "required_lab_level": 9,
           "required_townhall": 11,
           "strength_weight": 4000
@@ -1214,8 +1286,8 @@
           "level": 9,
           "hitpoints": 1900,
           "dps": -80,
-          "upgrade_time": 950400,
-          "upgrade_cost": 17000000,
+          "upgrade_time": 820800,
+          "upgrade_cost": 15000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 9000
@@ -1224,8 +1296,8 @@
           "level": 10,
           "hitpoints": 2000,
           "dps": -80,
-          "upgrade_time": 1296000,
-          "upgrade_cost": 28500000,
+          "upgrade_time": 993600,
+          "upgrade_cost": 20000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 10000
@@ -1234,11 +1306,21 @@
           "level": 11,
           "hitpoints": 2100,
           "dps": -82,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 29500000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 11000
+        },
+        {
+          "level": 12,
+          "hitpoints": 2200,
+          "dps": -84,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 12000
         }
       ]
     },
@@ -1269,8 +1351,8 @@
           "dps": 140,
           "upgrade_time": 64800,
           "upgrade_cost": 1000000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 7,
           "strength_weight": 1800
         },
         {
@@ -1357,8 +1439,8 @@
           "level": 10,
           "hitpoints": 4900,
           "dps": 370,
-          "upgrade_time": 734400,
-          "upgrade_cost": 14000000,
+          "upgrade_time": 691200,
+          "upgrade_cost": 13500000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -1367,8 +1449,8 @@
           "level": 11,
           "hitpoints": 5300,
           "dps": 390,
-          "upgrade_time": 864000,
-          "upgrade_cost": 18500000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 15500000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -1377,8 +1459,8 @@
           "level": 12,
           "hitpoints": 5700,
           "dps": 410,
-          "upgrade_time": 1296000,
-          "upgrade_cost": 28500000,
+          "upgrade_time": 993600,
+          "upgrade_cost": 21000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -1387,11 +1469,21 @@
           "level": 13,
           "hitpoints": 6000,
           "dps": 430,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 28500000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 14,
+          "hitpoints": 6300,
+          "dps": 450,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -1422,8 +1514,8 @@
           "dps": 260,
           "upgrade_time": 43200,
           "upgrade_cost": 600000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 8,
           "strength_weight": 1600
         },
         {
@@ -1500,8 +1592,8 @@
           "level": 9,
           "hitpoints": 6700,
           "dps": 735,
-          "upgrade_time": 475200,
-          "upgrade_cost": 10500000,
+          "upgrade_time": 432000,
+          "upgrade_cost": 7500000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000
@@ -1511,7 +1603,7 @@
           "hitpoints": 7200,
           "dps": 810,
           "upgrade_time": 604800,
-          "upgrade_cost": 12000000,
+          "upgrade_cost": 9500000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -1520,8 +1612,8 @@
           "level": 11,
           "hitpoints": 7700,
           "dps": 875,
-          "upgrade_time": 864000,
-          "upgrade_cost": 16000000,
+          "upgrade_time": 648000,
+          "upgrade_cost": 12000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -1530,8 +1622,8 @@
           "level": 12,
           "hitpoints": 8200,
           "dps": 940,
-          "upgrade_time": 1252800,
-          "upgrade_cost": 28000000,
+          "upgrade_time": 864000,
+          "upgrade_cost": 21000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -1540,11 +1632,21 @@
           "level": 13,
           "hitpoints": 8800,
           "dps": 1015,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 993600,
+          "upgrade_cost": 28000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 14,
+          "hitpoints": 10000,
+          "dps": 1100,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -1575,8 +1677,8 @@
           "dps": 38,
           "upgrade_time": 21600,
           "upgrade_cost": 1000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 7,
           "strength_weight": 1500
         },
         {
@@ -1643,8 +1745,8 @@
           "level": 8,
           "hitpoints": 96,
           "dps": 62,
-          "upgrade_time": 259200,
-          "upgrade_cost": 75000,
+          "upgrade_time": 216000,
+          "upgrade_cost": 60000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 4000
@@ -1653,8 +1755,8 @@
           "level": 9,
           "hitpoints": 102,
           "dps": 66,
-          "upgrade_time": 345600,
-          "upgrade_cost": 100000,
+          "upgrade_time": 302400,
+          "upgrade_cost": 80000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 5000
@@ -1663,8 +1765,8 @@
           "level": 10,
           "hitpoints": 108,
           "dps": 70,
-          "upgrade_time": 388800,
-          "upgrade_cost": 115000,
+          "upgrade_time": 345600,
+          "upgrade_cost": 100000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 6000
@@ -1673,8 +1775,8 @@
           "level": 11,
           "hitpoints": 114,
           "dps": 74,
-          "upgrade_time": 432000,
-          "upgrade_cost": 160000,
+          "upgrade_time": 388800,
+          "upgrade_cost": 120000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 7000
@@ -1683,8 +1785,8 @@
           "level": 12,
           "hitpoints": 120,
           "dps": 78,
-          "upgrade_time": 777600,
-          "upgrade_cost": 220000,
+          "upgrade_time": 518400,
+          "upgrade_cost": 150000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 8000
@@ -1693,8 +1795,8 @@
           "level": 13,
           "hitpoints": 130,
           "dps": 84,
-          "upgrade_time": 1209600,
-          "upgrade_cost": 335000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 280000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 9000
@@ -1703,11 +1805,21 @@
           "level": 14,
           "hitpoints": 140,
           "dps": 92,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 430000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 10000
+        },
+        {
+          "level": 15,
+          "hitpoints": 150,
+          "dps": 100,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 11000
         }
       ]
     },
@@ -1738,8 +1850,8 @@
           "dps": 60,
           "upgrade_time": 36000,
           "upgrade_cost": 2000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 7,
           "strength_weight": 1800
         },
         {
@@ -1826,8 +1938,8 @@
           "level": 10,
           "hitpoints": 1050,
           "dps": 176,
-          "upgrade_time": 432000,
-          "upgrade_cost": 107500,
+          "upgrade_time": 388800,
+          "upgrade_cost": 95000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000
@@ -1836,8 +1948,8 @@
           "level": 11,
           "hitpoints": 1150,
           "dps": 187,
-          "upgrade_time": 475200,
-          "upgrade_cost": 125000,
+          "upgrade_time": 432000,
+          "upgrade_cost": 115000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 8000
@@ -1846,8 +1958,8 @@
           "level": 12,
           "hitpoints": 1350,
           "dps": 200,
-          "upgrade_time": 561600,
-          "upgrade_cost": 175000,
+          "upgrade_time": 475200,
+          "upgrade_cost": 135000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -1856,8 +1968,8 @@
           "level": 13,
           "hitpoints": 1500,
           "dps": 213,
-          "upgrade_time": 864000,
-          "upgrade_cost": 240000,
+          "upgrade_time": 561600,
+          "upgrade_cost": 155000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -1866,8 +1978,8 @@
           "level": 14,
           "hitpoints": 1600,
           "dps": 225,
-          "upgrade_time": 1252800,
-          "upgrade_cost": 340000,
+          "upgrade_time": 907200,
+          "upgrade_cost": 285000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -1876,11 +1988,21 @@
           "level": 15,
           "hitpoints": 1950,
           "dps": 250,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1166400,
+          "upgrade_cost": 440000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 16,
+          "hitpoints": 2150,
+          "dps": 275,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -1911,8 +2033,8 @@
           "dps": 94,
           "upgrade_time": 28800,
           "upgrade_cost": 3000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 8,
           "strength_weight": 1800
         },
         {
@@ -1969,8 +2091,8 @@
           "level": 7,
           "hitpoints": 1650,
           "dps": 185,
-          "upgrade_time": 259200,
-          "upgrade_cost": 77500,
+          "upgrade_time": 237600,
+          "upgrade_cost": 70000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 6000
@@ -1979,8 +2101,8 @@
           "level": 8,
           "hitpoints": 1800,
           "dps": 196,
-          "upgrade_time": 388800,
-          "upgrade_cost": 105000,
+          "upgrade_time": 345600,
+          "upgrade_cost": 95000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000
@@ -1989,8 +2111,8 @@
           "level": 9,
           "hitpoints": 2000,
           "dps": 208,
-          "upgrade_time": 432000,
-          "upgrade_cost": 120000,
+          "upgrade_time": 388800,
+          "upgrade_cost": 110000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 8000
@@ -1999,8 +2121,8 @@
           "level": 10,
           "hitpoints": 2400,
           "dps": 223,
-          "upgrade_time": 518400,
-          "upgrade_cost": 170000,
+          "upgrade_time": 432000,
+          "upgrade_cost": 140000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -2009,8 +2131,8 @@
           "level": 11,
           "hitpoints": 2600,
           "dps": 238,
-          "upgrade_time": 1209600,
-          "upgrade_cost": 340000,
+          "upgrade_time": 820800,
+          "upgrade_cost": 235000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -2019,11 +2141,21 @@
           "level": 12,
           "hitpoints": 2900,
           "dps": 255,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 907200,
+          "upgrade_cost": 370000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
+        },
+        {
+          "level": 13,
+          "hitpoints": 3400,
+          "dps": 272,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 12000
         }
       ]
     },
@@ -2055,8 +2187,8 @@
           "dps": 35,
           "upgrade_time": 57600,
           "upgrade_cost": 4000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 8,
           "strength_weight": 1800,
           "death_damage": 350
         },
@@ -2152,8 +2284,8 @@
           "level": 10,
           "hitpoints": 8200,
           "dps": 80,
-          "upgrade_time": 432000,
-          "upgrade_cost": 105000,
+          "upgrade_time": 388800,
+          "upgrade_cost": 95000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 6000,
@@ -2163,8 +2295,8 @@
           "level": 11,
           "hitpoints": 8500,
           "dps": 85,
-          "upgrade_time": 475200,
-          "upgrade_cost": 122500,
+          "upgrade_time": 432000,
+          "upgrade_cost": 110000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 7000,
@@ -2174,8 +2306,8 @@
           "level": 12,
           "hitpoints": 8800,
           "dps": 90,
-          "upgrade_time": 518400,
-          "upgrade_cost": 175000,
+          "upgrade_time": 475200,
+          "upgrade_cost": 135000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 8000,
@@ -2185,8 +2317,8 @@
           "level": 13,
           "hitpoints": 9200,
           "dps": 95,
-          "upgrade_time": 864000,
-          "upgrade_cost": 230000,
+          "upgrade_time": 561600,
+          "upgrade_cost": 160000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 9000,
@@ -2196,8 +2328,8 @@
           "level": 14,
           "hitpoints": 9600,
           "dps": 100,
-          "upgrade_time": 1252800,
-          "upgrade_cost": 350000,
+          "upgrade_time": 907200,
+          "upgrade_cost": 295000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 10000,
@@ -2207,12 +2339,23 @@
           "level": 15,
           "hitpoints": 10600,
           "dps": 120,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1209600,
+          "upgrade_cost": 455000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 11000,
           "death_damage": 1050
+        },
+        {
+          "level": 16,
+          "hitpoints": 11800,
+          "dps": 140,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 12000,
+          "death_damage": 1100
         }
       ]
     },
@@ -2243,8 +2386,8 @@
           "dps": 100,
           "upgrade_time": 172800,
           "upgrade_cost": 20000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 9,
           "strength_weight": 2000
         },
         {
@@ -2281,8 +2424,8 @@
           "level": 5,
           "hitpoints": 520,
           "dps": 185,
-          "upgrade_time": 475200,
-          "upgrade_cost": 150000,
+          "upgrade_time": 388800,
+          "upgrade_cost": 125000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 6000
@@ -2291,8 +2434,8 @@
           "level": 6,
           "hitpoints": 540,
           "dps": 200,
-          "upgrade_time": 626400,
-          "upgrade_cost": 180000,
+          "upgrade_time": 604800,
+          "upgrade_cost": 175000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -2301,8 +2444,8 @@
           "level": 7,
           "hitpoints": 560,
           "dps": 220,
-          "upgrade_time": 1339200,
-          "upgrade_cost": 355000,
+          "upgrade_time": 864000,
+          "upgrade_cost": 300000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -2311,11 +2454,21 @@
           "level": 8,
           "hitpoints": 650,
           "dps": 260,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1252800,
+          "upgrade_cost": 460000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 9,
+          "hitpoints": 750,
+          "dps": 300,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -2346,8 +2499,8 @@
           "dps": 10,
           "upgrade_time": 172800,
           "upgrade_cost": 14000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 9,
           "strength_weight": 2000,
           "death_damage": 100
         },
@@ -2377,8 +2530,8 @@
           "level": 4,
           "hitpoints": 7200,
           "dps": 16,
-          "upgrade_time": 345600,
-          "upgrade_cost": 60000,
+          "upgrade_time": 302400,
+          "upgrade_cost": 50000,
           "required_lab_level": 9,
           "required_townhall": 11,
           "strength_weight": 5000,
@@ -2399,8 +2552,8 @@
           "level": 6,
           "hitpoints": 8000,
           "dps": 20,
-          "upgrade_time": 691200,
-          "upgrade_cost": 200000,
+          "upgrade_time": 648000,
+          "upgrade_cost": 190000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000,
@@ -2410,8 +2563,8 @@
           "level": 7,
           "hitpoints": 8500,
           "dps": 22,
-          "upgrade_time": 1317600,
-          "upgrade_cost": 345000,
+          "upgrade_time": 907200,
+          "upgrade_cost": 285000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000,
@@ -2421,12 +2574,23 @@
           "level": 8,
           "hitpoints": 9500,
           "dps": 24,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 950400,
+          "upgrade_cost": 375000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000,
           "death_damage": 450
+        },
+        {
+          "level": 9,
+          "hitpoints": 11000,
+          "dps": 26,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000,
+          "death_damage": 500
         }
       ]
     },
@@ -2457,8 +2621,8 @@
           "dps": 60,
           "upgrade_time": 172800,
           "upgrade_cost": 32500,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 10,
           "strength_weight": 3000
         },
         {
@@ -2485,8 +2649,8 @@
           "level": 4,
           "hitpoints": 470,
           "dps": 96,
-          "upgrade_time": 345600,
-          "upgrade_cost": 85000,
+          "upgrade_time": 302400,
+          "upgrade_cost": 75000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 6000
@@ -2495,8 +2659,8 @@
           "level": 5,
           "hitpoints": 505,
           "dps": 102,
-          "upgrade_time": 518400,
-          "upgrade_cost": 110000,
+          "upgrade_time": 475200,
+          "upgrade_cost": 100000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000
@@ -2525,8 +2689,8 @@
           "level": 8,
           "hitpoints": 600,
           "dps": 126,
-          "upgrade_time": 864000,
-          "upgrade_cost": 260000,
+          "upgrade_time": 691200,
+          "upgrade_cost": 205000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -2535,8 +2699,8 @@
           "level": 9,
           "hitpoints": 700,
           "dps": 140,
-          "upgrade_time": 1296000,
-          "upgrade_cost": 360000,
+          "upgrade_time": 777600,
+          "upgrade_cost": 245000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -2545,11 +2709,21 @@
           "level": 10,
           "hitpoints": 860,
           "dps": 160,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 993600,
+          "upgrade_cost": 385000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 11,
+          "hitpoints": 1050,
+          "dps": 180,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -2580,8 +2754,8 @@
           "dps": 75,
           "upgrade_time": 86400,
           "upgrade_cost": 1500000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 9,
           "strength_weight": 2000
         },
         {
@@ -2628,8 +2802,8 @@
           "level": 6,
           "hitpoints": 1700,
           "dps": 125,
-          "upgrade_time": 345600,
-          "upgrade_cost": 6200000,
+          "upgrade_time": 302400,
+          "upgrade_cost": 5500000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 6000
@@ -2638,8 +2812,8 @@
           "level": 7,
           "hitpoints": 1800,
           "dps": 135,
-          "upgrade_time": 518400,
-          "upgrade_cost": 9500000,
+          "upgrade_time": 475200,
+          "upgrade_cost": 8500000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000
@@ -2668,8 +2842,8 @@
           "level": 10,
           "hitpoints": 2100,
           "dps": 165,
-          "upgrade_time": 864000,
-          "upgrade_cost": 16500000,
+          "upgrade_time": 648000,
+          "upgrade_cost": 15000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -2678,8 +2852,8 @@
           "level": 11,
           "hitpoints": 2200,
           "dps": 175,
-          "upgrade_time": 1317600,
-          "upgrade_cost": 29000000,
+          "upgrade_time": 950400,
+          "upgrade_cost": 21000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -2688,11 +2862,21 @@
           "level": 12,
           "hitpoints": 2350,
           "dps": 185,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 29000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 13,
+          "hitpoints": 2500,
+          "dps": 195,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -2723,8 +2907,8 @@
           "dps": 80,
           "upgrade_time": 86400,
           "upgrade_cost": 1500000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 10,
           "strength_weight": 3000
         },
         {
@@ -2771,8 +2955,8 @@
           "level": 6,
           "hitpoints": 900,
           "dps": 120,
-          "upgrade_time": 345600,
-          "upgrade_cost": 6000000,
+          "upgrade_time": 302400,
+          "upgrade_cost": 5500000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 6000
@@ -2781,8 +2965,8 @@
           "level": 7,
           "hitpoints": 1000,
           "dps": 128,
-          "upgrade_time": 518400,
-          "upgrade_cost": 8600000,
+          "upgrade_time": 432000,
+          "upgrade_cost": 7000000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000
@@ -2791,8 +2975,8 @@
           "level": 8,
           "hitpoints": 1150,
           "dps": 136,
-          "upgrade_time": 561600,
-          "upgrade_cost": 10500000,
+          "upgrade_time": 475200,
+          "upgrade_cost": 9000000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 8000
@@ -2801,8 +2985,8 @@
           "level": 9,
           "hitpoints": 1350,
           "dps": 144,
-          "upgrade_time": 604800,
-          "upgrade_cost": 12500000,
+          "upgrade_time": 518400,
+          "upgrade_cost": 10500000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -2811,8 +2995,8 @@
           "level": 10,
           "hitpoints": 1550,
           "dps": 160,
-          "upgrade_time": 820800,
-          "upgrade_cost": 16500000,
+          "upgrade_time": 561600,
+          "upgrade_cost": 12000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -2821,8 +3005,8 @@
           "level": 11,
           "hitpoints": 1850,
           "dps": 175,
-          "upgrade_time": 1252800,
-          "upgrade_cost": 28000000,
+          "upgrade_time": 691200,
+          "upgrade_cost": 19000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -2831,11 +3015,21 @@
           "level": 12,
           "hitpoints": 2150,
           "dps": 195,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 950400,
+          "upgrade_cost": 28000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 13,
+          "hitpoints": 2350,
+          "dps": 215,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -2865,27 +3059,27 @@
       },
       "levels": [
         {
-          "level": 5,
+          "level": 1,
           "hitpoints": 700,
           "dps": 120,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0
         },
         {
-          "level": 6,
+          "level": 2,
           "hitpoints": 800,
           "dps": 140,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0
         },
         {
-          "level": 7,
+          "level": 3,
           "hitpoints": 900,
           "dps": 160,
           "upgrade_time": 0,
@@ -2895,7 +3089,7 @@
           "strength_weight": 0
         },
         {
-          "level": 8,
+          "level": 4,
           "hitpoints": 1000,
           "dps": 180,
           "upgrade_time": 0,
@@ -2905,7 +3099,7 @@
           "strength_weight": 0
         },
         {
-          "level": 9,
+          "level": 5,
           "hitpoints": 1100,
           "dps": 200,
           "upgrade_time": 0,
@@ -2915,7 +3109,7 @@
           "strength_weight": 0
         },
         {
-          "level": 10,
+          "level": 6,
           "hitpoints": 1200,
           "dps": 220,
           "upgrade_time": 0,
@@ -2925,7 +3119,7 @@
           "strength_weight": 0
         },
         {
-          "level": 11,
+          "level": 7,
           "hitpoints": 1300,
           "dps": 240,
           "upgrade_time": 0,
@@ -2935,7 +3129,7 @@
           "strength_weight": 0
         },
         {
-          "level": 12,
+          "level": 8,
           "hitpoints": 1350,
           "dps": 250,
           "upgrade_time": 0,
@@ -2945,13 +3139,23 @@
           "strength_weight": 0
         },
         {
-          "level": 13,
+          "level": 9,
           "hitpoints": 1450,
           "dps": 270,
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
+          "strength_weight": 0
+        },
+        {
+          "level": 10,
+          "hitpoints": 1550,
+          "dps": 290,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -2982,27 +3186,27 @@
       },
       "levels": [
         {
-          "level": 5,
+          "level": 1,
           "hitpoints": 300,
           "dps": 84,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0
         },
         {
-          "level": 6,
+          "level": 2,
           "hitpoints": 350,
           "dps": 96,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0
         },
         {
-          "level": 7,
+          "level": 3,
           "hitpoints": 400,
           "dps": 108,
           "upgrade_time": 0,
@@ -3012,7 +3216,7 @@
           "strength_weight": 0
         },
         {
-          "level": 8,
+          "level": 4,
           "hitpoints": 450,
           "dps": 120,
           "upgrade_time": 0,
@@ -3022,7 +3226,7 @@
           "strength_weight": 0
         },
         {
-          "level": 9,
+          "level": 5,
           "hitpoints": 510,
           "dps": 132,
           "upgrade_time": 0,
@@ -3032,7 +3236,7 @@
           "strength_weight": 0
         },
         {
-          "level": 10,
+          "level": 6,
           "hitpoints": 565,
           "dps": 144,
           "upgrade_time": 0,
@@ -3042,7 +3246,7 @@
           "strength_weight": 0
         },
         {
-          "level": 11,
+          "level": 7,
           "hitpoints": 605,
           "dps": 156,
           "upgrade_time": 0,
@@ -3052,7 +3256,7 @@
           "strength_weight": 0
         },
         {
-          "level": 12,
+          "level": 8,
           "hitpoints": 645,
           "dps": 162,
           "upgrade_time": 0,
@@ -3062,7 +3266,7 @@
           "strength_weight": 0
         },
         {
-          "level": 13,
+          "level": 9,
           "hitpoints": 685,
           "dps": 166,
           "upgrade_time": 0,
@@ -3072,13 +3276,23 @@
           "strength_weight": 0
         },
         {
-          "level": 14,
+          "level": 10,
           "hitpoints": 725,
           "dps": 170,
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
+          "strength_weight": 0
+        },
+        {
+          "level": 11,
+          "hitpoints": 765,
+          "dps": 174,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -3110,18 +3324,18 @@
       },
       "levels": [
         {
-          "level": 5,
+          "level": 1,
           "hitpoints": 250,
           "dps": 34,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 8,
+          "required_townhall": 10,
           "strength_weight": 0,
           "death_damage": 105
         },
         {
-          "level": 6,
+          "level": 2,
           "hitpoints": 300,
           "dps": 56,
           "upgrade_time": 0,
@@ -3132,7 +3346,7 @@
           "death_damage": 140
         },
         {
-          "level": 7,
+          "level": 3,
           "hitpoints": 350,
           "dps": 78,
           "upgrade_time": 0,
@@ -3143,7 +3357,7 @@
           "death_damage": 175
         },
         {
-          "level": 8,
+          "level": 4,
           "hitpoints": 400,
           "dps": 100,
           "upgrade_time": 0,
@@ -3154,7 +3368,7 @@
           "death_damage": 225
         },
         {
-          "level": 9,
+          "level": 5,
           "hitpoints": 450,
           "dps": 120,
           "upgrade_time": 0,
@@ -3165,7 +3379,7 @@
           "death_damage": 275
         },
         {
-          "level": 10,
+          "level": 6,
           "hitpoints": 475,
           "dps": 130,
           "upgrade_time": 0,
@@ -3176,7 +3390,7 @@
           "death_damage": 313
         },
         {
-          "level": 11,
+          "level": 7,
           "hitpoints": 500,
           "dps": 140,
           "upgrade_time": 0,
@@ -3187,7 +3401,7 @@
           "death_damage": 338
         },
         {
-          "level": 12,
+          "level": 8,
           "hitpoints": 525,
           "dps": 150,
           "upgrade_time": 0,
@@ -3198,7 +3412,7 @@
           "death_damage": 363
         },
         {
-          "level": 13,
+          "level": 9,
           "hitpoints": 550,
           "dps": 160,
           "upgrade_time": 0,
@@ -3209,7 +3423,7 @@
           "death_damage": 388
         },
         {
-          "level": 14,
+          "level": 10,
           "hitpoints": 575,
           "dps": 170,
           "upgrade_time": 0,
@@ -3218,6 +3432,17 @@
           "required_townhall": 18,
           "strength_weight": 0,
           "death_damage": 413
+        },
+        {
+          "level": 11,
+          "hitpoints": 600,
+          "dps": 180,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 0,
+          "death_damage": 438
         }
       ]
     },
@@ -3247,37 +3472,37 @@
       },
       "levels": [
         {
-          "level": 5,
+          "level": 1,
           "hitpoints": 3200,
           "dps": 90,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 6,
+          "level": 2,
           "hitpoints": 3400,
           "dps": 100,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 7,
+          "level": 3,
           "hitpoints": 3600,
           "dps": 110,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 8,
+          "level": 4,
           "hitpoints": 3800,
           "dps": 120,
           "upgrade_time": 0,
@@ -3287,7 +3512,7 @@
           "strength_weight": 0
         },
         {
-          "level": 9,
+          "level": 5,
           "hitpoints": 4000,
           "dps": 130,
           "upgrade_time": 0,
@@ -3297,7 +3522,7 @@
           "strength_weight": 0
         },
         {
-          "level": 10,
+          "level": 6,
           "hitpoints": 4200,
           "dps": 140,
           "upgrade_time": 0,
@@ -3307,7 +3532,7 @@
           "strength_weight": 0
         },
         {
-          "level": 11,
+          "level": 7,
           "hitpoints": 4400,
           "dps": 150,
           "upgrade_time": 0,
@@ -3317,7 +3542,7 @@
           "strength_weight": 0
         },
         {
-          "level": 12,
+          "level": 8,
           "hitpoints": 4600,
           "dps": 160,
           "upgrade_time": 0,
@@ -3327,7 +3552,7 @@
           "strength_weight": 0
         },
         {
-          "level": 13,
+          "level": 9,
           "hitpoints": 4900,
           "dps": 175,
           "upgrade_time": 0,
@@ -3337,13 +3562,23 @@
           "strength_weight": 0
         },
         {
-          "level": 14,
+          "level": 10,
           "hitpoints": 5600,
           "dps": 205,
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
+          "strength_weight": 0
+        },
+        {
+          "level": 11,
+          "hitpoints": 6300,
+          "dps": 235,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -3967,7 +4202,7 @@
       "village": "builderBase",
       "levels": [
         {
-          "level": 3,
+          "level": 1,
           "hitpoints": 200,
           "dps": 60,
           "upgrade_time": 14400,
@@ -3977,7 +4212,7 @@
           "strength_weight": 3200
         },
         {
-          "level": 4,
+          "level": 2,
           "hitpoints": 200,
           "dps": 60,
           "upgrade_time": 28800,
@@ -3987,7 +4222,7 @@
           "strength_weight": 3400
         },
         {
-          "level": 5,
+          "level": 3,
           "hitpoints": 220,
           "dps": 65,
           "upgrade_time": 43200,
@@ -3997,7 +4232,7 @@
           "strength_weight": 3600
         },
         {
-          "level": 6,
+          "level": 4,
           "hitpoints": 220,
           "dps": 65,
           "upgrade_time": 64800,
@@ -4007,7 +4242,7 @@
           "strength_weight": 3800
         },
         {
-          "level": 7,
+          "level": 5,
           "hitpoints": 242,
           "dps": 72,
           "upgrade_time": 86400,
@@ -4017,7 +4252,7 @@
           "strength_weight": 4000
         },
         {
-          "level": 8,
+          "level": 6,
           "hitpoints": 242,
           "dps": 72,
           "upgrade_time": 129600,
@@ -4027,7 +4262,7 @@
           "strength_weight": 4200
         },
         {
-          "level": 9,
+          "level": 7,
           "hitpoints": 266,
           "dps": 81,
           "upgrade_time": 172800,
@@ -4037,7 +4272,7 @@
           "strength_weight": 4400
         },
         {
-          "level": 10,
+          "level": 8,
           "hitpoints": 266,
           "dps": 81,
           "upgrade_time": 172800,
@@ -4047,7 +4282,7 @@
           "strength_weight": 4600
         },
         {
-          "level": 11,
+          "level": 9,
           "hitpoints": 293,
           "dps": 90,
           "upgrade_time": 216000,
@@ -4057,7 +4292,7 @@
           "strength_weight": 4800
         },
         {
-          "level": 12,
+          "level": 10,
           "hitpoints": 293,
           "dps": 90,
           "upgrade_time": 302400,
@@ -4067,7 +4302,7 @@
           "strength_weight": 5000
         },
         {
-          "level": 13,
+          "level": 11,
           "hitpoints": 322,
           "dps": 99,
           "upgrade_time": 388800,
@@ -4077,7 +4312,7 @@
           "strength_weight": 5200
         },
         {
-          "level": 14,
+          "level": 12,
           "hitpoints": 322,
           "dps": 99,
           "upgrade_time": 475200,
@@ -4087,7 +4322,7 @@
           "strength_weight": 5400
         },
         {
-          "level": 15,
+          "level": 13,
           "hitpoints": 355,
           "dps": 108,
           "upgrade_time": 475200,
@@ -4097,7 +4332,7 @@
           "strength_weight": 5600
         },
         {
-          "level": 16,
+          "level": 14,
           "hitpoints": 355,
           "dps": 108,
           "upgrade_time": 518400,
@@ -4107,7 +4342,7 @@
           "strength_weight": 5800
         },
         {
-          "level": 17,
+          "level": 15,
           "hitpoints": 390,
           "dps": 117,
           "upgrade_time": 518400,
@@ -4117,7 +4352,7 @@
           "strength_weight": 6000
         },
         {
-          "level": 18,
+          "level": 16,
           "hitpoints": 390,
           "dps": 117,
           "upgrade_time": 561600,
@@ -4127,7 +4362,7 @@
           "strength_weight": 6200
         },
         {
-          "level": 19,
+          "level": 17,
           "hitpoints": 429,
           "dps": 126,
           "upgrade_time": 561600,
@@ -4137,7 +4372,7 @@
           "strength_weight": 6400
         },
         {
-          "level": 20,
+          "level": 18,
           "hitpoints": 429,
           "dps": 126,
           "upgrade_time": 0,
@@ -4169,7 +4404,7 @@
       "village": "builderBase",
       "levels": [
         {
-          "level": 3,
+          "level": 1,
           "hitpoints": 2530,
           "dps": 65,
           "upgrade_time": 18000,
@@ -4179,7 +4414,7 @@
           "strength_weight": 3200
         },
         {
-          "level": 4,
+          "level": 2,
           "hitpoints": 2530,
           "dps": 65,
           "upgrade_time": 36000,
@@ -4189,7 +4424,7 @@
           "strength_weight": 3400
         },
         {
-          "level": 5,
+          "level": 3,
           "hitpoints": 2783,
           "dps": 70,
           "upgrade_time": 57600,
@@ -4199,7 +4434,7 @@
           "strength_weight": 3600
         },
         {
-          "level": 6,
+          "level": 4,
           "hitpoints": 2783,
           "dps": 70,
           "upgrade_time": 72000,
@@ -4209,7 +4444,7 @@
           "strength_weight": 3800
         },
         {
-          "level": 7,
+          "level": 5,
           "hitpoints": 3061,
           "dps": 76,
           "upgrade_time": 86400,
@@ -4219,7 +4454,7 @@
           "strength_weight": 4000
         },
         {
-          "level": 8,
+          "level": 6,
           "hitpoints": 3061,
           "dps": 76,
           "upgrade_time": 129600,
@@ -4229,7 +4464,7 @@
           "strength_weight": 4200
         },
         {
-          "level": 9,
+          "level": 7,
           "hitpoints": 3367,
           "dps": 83,
           "upgrade_time": 172800,
@@ -4239,7 +4474,7 @@
           "strength_weight": 4400
         },
         {
-          "level": 10,
+          "level": 8,
           "hitpoints": 3367,
           "dps": 83,
           "upgrade_time": 172800,
@@ -4249,7 +4484,7 @@
           "strength_weight": 4600
         },
         {
-          "level": 11,
+          "level": 9,
           "hitpoints": 3704,
           "dps": 91,
           "upgrade_time": 216000,
@@ -4259,7 +4494,7 @@
           "strength_weight": 4800
         },
         {
-          "level": 12,
+          "level": 10,
           "hitpoints": 3704,
           "dps": 91,
           "upgrade_time": 302400,
@@ -4269,7 +4504,7 @@
           "strength_weight": 5000
         },
         {
-          "level": 13,
+          "level": 11,
           "hitpoints": 4075,
           "dps": 100,
           "upgrade_time": 388800,
@@ -4279,7 +4514,7 @@
           "strength_weight": 5200
         },
         {
-          "level": 14,
+          "level": 12,
           "hitpoints": 4075,
           "dps": 100,
           "upgrade_time": 475200,
@@ -4289,7 +4524,7 @@
           "strength_weight": 5400
         },
         {
-          "level": 15,
+          "level": 13,
           "hitpoints": 4482,
           "dps": 109,
           "upgrade_time": 475200,
@@ -4299,7 +4534,7 @@
           "strength_weight": 5600
         },
         {
-          "level": 16,
+          "level": 14,
           "hitpoints": 4482,
           "dps": 109,
           "upgrade_time": 518400,
@@ -4309,7 +4544,7 @@
           "strength_weight": 5800
         },
         {
-          "level": 17,
+          "level": 15,
           "hitpoints": 4930,
           "dps": 119,
           "upgrade_time": 518400,
@@ -4319,7 +4554,7 @@
           "strength_weight": 6000
         },
         {
-          "level": 18,
+          "level": 16,
           "hitpoints": 4930,
           "dps": 119,
           "upgrade_time": 561600,
@@ -4329,7 +4564,7 @@
           "strength_weight": 6200
         },
         {
-          "level": 19,
+          "level": 17,
           "hitpoints": 5423,
           "dps": 129,
           "upgrade_time": 561600,
@@ -4339,7 +4574,7 @@
           "strength_weight": 6400
         },
         {
-          "level": 20,
+          "level": 18,
           "hitpoints": 5423,
           "dps": 129,
           "upgrade_time": 0,
@@ -4371,7 +4606,7 @@
       "village": "builderBase",
       "levels": [
         {
-          "level": 5,
+          "level": 1,
           "hitpoints": 605,
           "dps": 80,
           "upgrade_time": 57600,
@@ -4381,7 +4616,7 @@
           "strength_weight": 3600
         },
         {
-          "level": 6,
+          "level": 2,
           "hitpoints": 605,
           "dps": 80,
           "upgrade_time": 72000,
@@ -4391,7 +4626,7 @@
           "strength_weight": 3800
         },
         {
-          "level": 7,
+          "level": 3,
           "hitpoints": 666,
           "dps": 90,
           "upgrade_time": 86400,
@@ -4401,7 +4636,7 @@
           "strength_weight": 4000
         },
         {
-          "level": 8,
+          "level": 4,
           "hitpoints": 666,
           "dps": 90,
           "upgrade_time": 129600,
@@ -4411,7 +4646,7 @@
           "strength_weight": 4200
         },
         {
-          "level": 9,
+          "level": 5,
           "hitpoints": 732,
           "dps": 100,
           "upgrade_time": 172800,
@@ -4421,7 +4656,7 @@
           "strength_weight": 4400
         },
         {
-          "level": 10,
+          "level": 6,
           "hitpoints": 732,
           "dps": 100,
           "upgrade_time": 172800,
@@ -4431,7 +4666,7 @@
           "strength_weight": 4600
         },
         {
-          "level": 11,
+          "level": 7,
           "hitpoints": 805,
           "dps": 110,
           "upgrade_time": 216000,
@@ -4441,7 +4676,7 @@
           "strength_weight": 4800
         },
         {
-          "level": 12,
+          "level": 8,
           "hitpoints": 805,
           "dps": 110,
           "upgrade_time": 302400,
@@ -4451,7 +4686,7 @@
           "strength_weight": 5000
         },
         {
-          "level": 13,
+          "level": 9,
           "hitpoints": 886,
           "dps": 120,
           "upgrade_time": 388800,
@@ -4461,7 +4696,7 @@
           "strength_weight": 5200
         },
         {
-          "level": 14,
+          "level": 10,
           "hitpoints": 886,
           "dps": 120,
           "upgrade_time": 475200,
@@ -4471,7 +4706,7 @@
           "strength_weight": 5400
         },
         {
-          "level": 15,
+          "level": 11,
           "hitpoints": 974,
           "dps": 130,
           "upgrade_time": 475200,
@@ -4481,7 +4716,7 @@
           "strength_weight": 5600
         },
         {
-          "level": 16,
+          "level": 12,
           "hitpoints": 974,
           "dps": 130,
           "upgrade_time": 518400,
@@ -4491,7 +4726,7 @@
           "strength_weight": 5800
         },
         {
-          "level": 17,
+          "level": 13,
           "hitpoints": 1072,
           "dps": 140,
           "upgrade_time": 518400,
@@ -4501,7 +4736,7 @@
           "strength_weight": 6000
         },
         {
-          "level": 18,
+          "level": 14,
           "hitpoints": 1072,
           "dps": 140,
           "upgrade_time": 561600,
@@ -4511,7 +4746,7 @@
           "strength_weight": 6200
         },
         {
-          "level": 19,
+          "level": 15,
           "hitpoints": 1179,
           "dps": 150,
           "upgrade_time": 561600,
@@ -4521,7 +4756,7 @@
           "strength_weight": 6400
         },
         {
-          "level": 20,
+          "level": 16,
           "hitpoints": 1179,
           "dps": 150,
           "upgrade_time": 0,
@@ -4553,7 +4788,7 @@
       "village": "builderBase",
       "levels": [
         {
-          "level": 13,
+          "level": 1,
           "hitpoints": 3900,
           "dps": 420,
           "upgrade_time": 388800,
@@ -4563,7 +4798,7 @@
           "strength_weight": 5200
         },
         {
-          "level": 14,
+          "level": 2,
           "hitpoints": 3900,
           "dps": 420,
           "upgrade_time": 475200,
@@ -4573,7 +4808,7 @@
           "strength_weight": 5400
         },
         {
-          "level": 15,
+          "level": 3,
           "hitpoints": 4290,
           "dps": 460,
           "upgrade_time": 475200,
@@ -4583,7 +4818,7 @@
           "strength_weight": 5600
         },
         {
-          "level": 16,
+          "level": 4,
           "hitpoints": 4290,
           "dps": 460,
           "upgrade_time": 518400,
@@ -4593,7 +4828,7 @@
           "strength_weight": 5800
         },
         {
-          "level": 17,
+          "level": 5,
           "hitpoints": 4719,
           "dps": 500,
           "upgrade_time": 518400,
@@ -4603,7 +4838,7 @@
           "strength_weight": 6000
         },
         {
-          "level": 18,
+          "level": 6,
           "hitpoints": 4719,
           "dps": 500,
           "upgrade_time": 561600,
@@ -4613,7 +4848,7 @@
           "strength_weight": 6200
         },
         {
-          "level": 19,
+          "level": 7,
           "hitpoints": 5191,
           "dps": 560,
           "upgrade_time": 561600,
@@ -4623,7 +4858,7 @@
           "strength_weight": 6400
         },
         {
-          "level": 20,
+          "level": 8,
           "hitpoints": 5191,
           "dps": 560,
           "upgrade_time": 0,
@@ -4655,7 +4890,7 @@
       "village": "builderBase",
       "levels": [
         {
-          "level": 7,
+          "level": 1,
           "hitpoints": 666,
           "dps": 115,
           "upgrade_time": 86400,
@@ -4665,7 +4900,7 @@
           "strength_weight": 4000
         },
         {
-          "level": 8,
+          "level": 2,
           "hitpoints": 666,
           "dps": 115,
           "upgrade_time": 129600,
@@ -4675,7 +4910,7 @@
           "strength_weight": 4200
         },
         {
-          "level": 9,
+          "level": 3,
           "hitpoints": 732,
           "dps": 130,
           "upgrade_time": 172800,
@@ -4685,7 +4920,7 @@
           "strength_weight": 4400
         },
         {
-          "level": 10,
+          "level": 4,
           "hitpoints": 732,
           "dps": 130,
           "upgrade_time": 172800,
@@ -4695,7 +4930,7 @@
           "strength_weight": 4600
         },
         {
-          "level": 11,
+          "level": 5,
           "hitpoints": 805,
           "dps": 150,
           "upgrade_time": 216000,
@@ -4705,7 +4940,7 @@
           "strength_weight": 4800
         },
         {
-          "level": 12,
+          "level": 6,
           "hitpoints": 805,
           "dps": 150,
           "upgrade_time": 302400,
@@ -4715,7 +4950,7 @@
           "strength_weight": 5000
         },
         {
-          "level": 13,
+          "level": 7,
           "hitpoints": 886,
           "dps": 170,
           "upgrade_time": 388800,
@@ -4725,7 +4960,7 @@
           "strength_weight": 5200
         },
         {
-          "level": 14,
+          "level": 8,
           "hitpoints": 886,
           "dps": 170,
           "upgrade_time": 475200,
@@ -4735,7 +4970,7 @@
           "strength_weight": 5400
         },
         {
-          "level": 15,
+          "level": 9,
           "hitpoints": 974,
           "dps": 190,
           "upgrade_time": 475200,
@@ -4745,7 +4980,7 @@
           "strength_weight": 5600
         },
         {
-          "level": 16,
+          "level": 10,
           "hitpoints": 974,
           "dps": 190,
           "upgrade_time": 518400,
@@ -4755,7 +4990,7 @@
           "strength_weight": 5800
         },
         {
-          "level": 17,
+          "level": 11,
           "hitpoints": 1072,
           "dps": 215,
           "upgrade_time": 518400,
@@ -4765,7 +5000,7 @@
           "strength_weight": 6000
         },
         {
-          "level": 18,
+          "level": 12,
           "hitpoints": 1072,
           "dps": 215,
           "upgrade_time": 561600,
@@ -4775,7 +5010,7 @@
           "strength_weight": 6200
         },
         {
-          "level": 19,
+          "level": 13,
           "hitpoints": 1179,
           "dps": 240,
           "upgrade_time": 561600,
@@ -4785,7 +5020,7 @@
           "strength_weight": 6400
         },
         {
-          "level": 20,
+          "level": 14,
           "hitpoints": 1179,
           "dps": 240,
           "upgrade_time": 0,
@@ -4817,7 +5052,7 @@
       "village": "builderBase",
       "levels": [
         {
-          "level": 11,
+          "level": 1,
           "hitpoints": 3400,
           "dps": 10,
           "upgrade_time": 216000,
@@ -4828,7 +5063,7 @@
           "death_damage": 300
         },
         {
-          "level": 12,
+          "level": 2,
           "hitpoints": 3400,
           "dps": 10,
           "upgrade_time": 302400,
@@ -4839,7 +5074,7 @@
           "death_damage": 300
         },
         {
-          "level": 13,
+          "level": 3,
           "hitpoints": 3740,
           "dps": 10,
           "upgrade_time": 388800,
@@ -4850,7 +5085,7 @@
           "death_damage": 300
         },
         {
-          "level": 14,
+          "level": 4,
           "hitpoints": 3740,
           "dps": 10,
           "upgrade_time": 475200,
@@ -4861,7 +5096,7 @@
           "death_damage": 400
         },
         {
-          "level": 15,
+          "level": 5,
           "hitpoints": 4114,
           "dps": 10,
           "upgrade_time": 475200,
@@ -4872,7 +5107,7 @@
           "death_damage": 400
         },
         {
-          "level": 16,
+          "level": 6,
           "hitpoints": 4114,
           "dps": 10,
           "upgrade_time": 518400,
@@ -4883,7 +5118,7 @@
           "death_damage": 400
         },
         {
-          "level": 17,
+          "level": 7,
           "hitpoints": 4525,
           "dps": 10,
           "upgrade_time": 518400,
@@ -4894,7 +5129,7 @@
           "death_damage": 400
         },
         {
-          "level": 18,
+          "level": 8,
           "hitpoints": 4525,
           "dps": 10,
           "upgrade_time": 561600,
@@ -4905,7 +5140,7 @@
           "death_damage": 500
         },
         {
-          "level": 19,
+          "level": 9,
           "hitpoints": 4978,
           "dps": 10,
           "upgrade_time": 561600,
@@ -4916,7 +5151,7 @@
           "death_damage": 500
         },
         {
-          "level": 20,
+          "level": 10,
           "hitpoints": 4978,
           "dps": 10,
           "upgrade_time": 0,
@@ -4949,7 +5184,7 @@
       "village": "builderBase",
       "levels": [
         {
-          "level": 5,
+          "level": 1,
           "hitpoints": 1331,
           "dps": 62,
           "upgrade_time": 57600,
@@ -4959,7 +5194,7 @@
           "strength_weight": 3600
         },
         {
-          "level": 6,
+          "level": 2,
           "hitpoints": 1331,
           "dps": 62,
           "upgrade_time": 72000,
@@ -4969,7 +5204,7 @@
           "strength_weight": 3800
         },
         {
-          "level": 7,
+          "level": 3,
           "hitpoints": 1464,
           "dps": 68,
           "upgrade_time": 86400,
@@ -4979,7 +5214,7 @@
           "strength_weight": 4000
         },
         {
-          "level": 8,
+          "level": 4,
           "hitpoints": 1464,
           "dps": 68,
           "upgrade_time": 129600,
@@ -4989,7 +5224,7 @@
           "strength_weight": 4200
         },
         {
-          "level": 9,
+          "level": 5,
           "hitpoints": 1611,
           "dps": 75,
           "upgrade_time": 172800,
@@ -4999,7 +5234,7 @@
           "strength_weight": 4400
         },
         {
-          "level": 10,
+          "level": 6,
           "hitpoints": 1611,
           "dps": 75,
           "upgrade_time": 172800,
@@ -5009,7 +5244,7 @@
           "strength_weight": 4600
         },
         {
-          "level": 11,
+          "level": 7,
           "hitpoints": 1772,
           "dps": 83,
           "upgrade_time": 216000,
@@ -5019,7 +5254,7 @@
           "strength_weight": 4800
         },
         {
-          "level": 12,
+          "level": 8,
           "hitpoints": 1772,
           "dps": 83,
           "upgrade_time": 302400,
@@ -5029,7 +5264,7 @@
           "strength_weight": 5000
         },
         {
-          "level": 13,
+          "level": 9,
           "hitpoints": 1949,
           "dps": 91,
           "upgrade_time": 388800,
@@ -5039,7 +5274,7 @@
           "strength_weight": 5200
         },
         {
-          "level": 14,
+          "level": 10,
           "hitpoints": 1949,
           "dps": 91,
           "upgrade_time": 475200,
@@ -5049,7 +5284,7 @@
           "strength_weight": 5400
         },
         {
-          "level": 15,
+          "level": 11,
           "hitpoints": 2144,
           "dps": 100,
           "upgrade_time": 475200,
@@ -5059,7 +5294,7 @@
           "strength_weight": 5600
         },
         {
-          "level": 16,
+          "level": 12,
           "hitpoints": 2144,
           "dps": 100,
           "upgrade_time": 518400,
@@ -5069,7 +5304,7 @@
           "strength_weight": 5800
         },
         {
-          "level": 17,
+          "level": 13,
           "hitpoints": 2358,
           "dps": 110,
           "upgrade_time": 518400,
@@ -5079,7 +5314,7 @@
           "strength_weight": 6000
         },
         {
-          "level": 18,
+          "level": 14,
           "hitpoints": 2358,
           "dps": 110,
           "upgrade_time": 561600,
@@ -5089,7 +5324,7 @@
           "strength_weight": 6200
         },
         {
-          "level": 19,
+          "level": 15,
           "hitpoints": 2358,
           "dps": 120,
           "upgrade_time": 561600,
@@ -5099,7 +5334,7 @@
           "strength_weight": 6400
         },
         {
-          "level": 20,
+          "level": 16,
           "hitpoints": 2358,
           "dps": 120,
           "upgrade_time": 0,
@@ -5131,7 +5366,7 @@
       "village": "builderBase",
       "levels": [
         {
-          "level": 9,
+          "level": 1,
           "hitpoints": 750,
           "dps": 176,
           "upgrade_time": 172800,
@@ -5141,7 +5376,7 @@
           "strength_weight": 4400
         },
         {
-          "level": 10,
+          "level": 2,
           "hitpoints": 750,
           "dps": 176,
           "upgrade_time": 172800,
@@ -5151,7 +5386,7 @@
           "strength_weight": 4600
         },
         {
-          "level": 11,
+          "level": 3,
           "hitpoints": 830,
           "dps": 193,
           "upgrade_time": 216000,
@@ -5161,7 +5396,7 @@
           "strength_weight": 4800
         },
         {
-          "level": 12,
+          "level": 4,
           "hitpoints": 830,
           "dps": 193,
           "upgrade_time": 302400,
@@ -5171,7 +5406,7 @@
           "strength_weight": 5000
         },
         {
-          "level": 13,
+          "level": 5,
           "hitpoints": 915,
           "dps": 216,
           "upgrade_time": 388800,
@@ -5181,7 +5416,7 @@
           "strength_weight": 5200
         },
         {
-          "level": 14,
+          "level": 6,
           "hitpoints": 915,
           "dps": 216,
           "upgrade_time": 475200,
@@ -5191,7 +5426,7 @@
           "strength_weight": 5400
         },
         {
-          "level": 15,
+          "level": 7,
           "hitpoints": 1000,
           "dps": 234,
           "upgrade_time": 475200,
@@ -5201,7 +5436,7 @@
           "strength_weight": 5600
         },
         {
-          "level": 16,
+          "level": 8,
           "hitpoints": 1000,
           "dps": 234,
           "upgrade_time": 518400,
@@ -5211,7 +5446,7 @@
           "strength_weight": 5800
         },
         {
-          "level": 17,
+          "level": 9,
           "hitpoints": 1100,
           "dps": 257,
           "upgrade_time": 518400,
@@ -5221,7 +5456,7 @@
           "strength_weight": 6000
         },
         {
-          "level": 18,
+          "level": 10,
           "hitpoints": 1100,
           "dps": 257,
           "upgrade_time": 561600,
@@ -5231,7 +5466,7 @@
           "strength_weight": 6200
         },
         {
-          "level": 19,
+          "level": 11,
           "hitpoints": 1220,
           "dps": 278,
           "upgrade_time": 561600,
@@ -5241,7 +5476,7 @@
           "strength_weight": 6400
         },
         {
-          "level": 20,
+          "level": 12,
           "hitpoints": 1220,
           "dps": 278,
           "upgrade_time": 0,
@@ -5570,7 +5805,7 @@
         "info": "TID_CHARACTER_INFO_PUMPKIN_BARBARIAN"
       },
       "production_building": "Barracks",
-      "production_building_level": 1,
+      "production_building_level": null,
       "upgrade_resource": "Elixir",
       "is_flying": false,
       "is_air_targeting": false,
@@ -5724,7 +5959,7 @@
         "info": "TID_CHARACTER_INFO_GIANT_SKELETON"
       },
       "production_building": "Barracks",
-      "production_building_level": 3,
+      "production_building_level": null,
       "upgrade_resource": "Elixir",
       "is_flying": false,
       "is_air_targeting": false,
@@ -5909,8 +6144,8 @@
           "dps": 250,
           "upgrade_time": 172800,
           "upgrade_cost": 2500000,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": null,
+          "required_townhall": 12,
           "strength_weight": 6000
         },
         {
@@ -5947,8 +6182,8 @@
           "level": 5,
           "hitpoints": 8500,
           "dps": 580,
-          "upgrade_time": 1166400,
-          "upgrade_cost": 26000000,
+          "upgrade_time": 864000,
+          "upgrade_cost": 17500000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 10000
@@ -5992,8 +6227,8 @@
           "dps": 100,
           "upgrade_time": 172800,
           "upgrade_cost": 2500000,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": null,
+          "required_townhall": 12,
           "strength_weight": 6000,
           "death_damage": 700
         },
@@ -6034,8 +6269,8 @@
           "level": 5,
           "hitpoints": 5000,
           "dps": 260,
-          "upgrade_time": 1166400,
-          "upgrade_cost": 26000000,
+          "upgrade_time": 907200,
+          "upgrade_cost": 18500000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 10000,
@@ -6081,16 +6316,16 @@
           "dps": 230,
           "upgrade_time": 259200,
           "upgrade_cost": 5000000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 12,
           "strength_weight": 5000
         },
         {
           "level": 2,
           "hitpoints": 3200,
           "dps": 250,
-          "upgrade_time": 388800,
-          "upgrade_cost": 6500000,
+          "upgrade_time": 345600,
+          "upgrade_cost": 6000000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 6000
@@ -6119,8 +6354,8 @@
           "level": 5,
           "hitpoints": 3900,
           "dps": 310,
-          "upgrade_time": 712800,
-          "upgrade_cost": 14500000,
+          "upgrade_time": 691200,
+          "upgrade_cost": 14000000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -6129,8 +6364,8 @@
           "level": 6,
           "hitpoints": 4100,
           "dps": 330,
-          "upgrade_time": 864000,
-          "upgrade_cost": 17000000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 15500000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -6139,8 +6374,8 @@
           "level": 7,
           "hitpoints": 4300,
           "dps": 350,
-          "upgrade_time": 1339200,
-          "upgrade_cost": 27500000,
+          "upgrade_time": 950400,
+          "upgrade_cost": 19000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -6149,11 +6384,21 @@
           "level": 8,
           "hitpoints": 4650,
           "dps": 380,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 993600,
+          "upgrade_cost": 25000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 9,
+          "hitpoints": 5300,
+          "dps": 410,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -6183,17 +6428,17 @@
       },
       "levels": [
         {
-          "level": 5,
+          "level": 1,
           "hitpoints": 200,
           "dps": 120,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 7,
+          "required_townhall": 9,
           "strength_weight": 0
         },
         {
-          "level": 6,
+          "level": 2,
           "hitpoints": 240,
           "dps": 140,
           "upgrade_time": 0,
@@ -6203,7 +6448,7 @@
           "strength_weight": 0
         },
         {
-          "level": 7,
+          "level": 3,
           "hitpoints": 270,
           "dps": 155,
           "upgrade_time": 0,
@@ -6213,7 +6458,7 @@
           "strength_weight": 0
         },
         {
-          "level": 8,
+          "level": 4,
           "hitpoints": 320,
           "dps": 170,
           "upgrade_time": 0,
@@ -6223,7 +6468,7 @@
           "strength_weight": 0
         },
         {
-          "level": 9,
+          "level": 5,
           "hitpoints": 350,
           "dps": 180,
           "upgrade_time": 0,
@@ -6233,13 +6478,23 @@
           "strength_weight": 0
         },
         {
-          "level": 10,
+          "level": 6,
           "hitpoints": 380,
           "dps": 190,
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
+          "strength_weight": 0
+        },
+        {
+          "level": 7,
+          "hitpoints": 410,
+          "dps": 200,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -6275,8 +6530,8 @@
           "dps": 80,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 800
         },
@@ -6286,8 +6541,8 @@
           "dps": 95,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 900
         },
@@ -6297,8 +6552,8 @@
           "dps": 110,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 1000
         },
@@ -6308,8 +6563,8 @@
           "dps": 125,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 1100
         },
@@ -6319,8 +6574,8 @@
           "dps": 140,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0,
           "death_damage": 1200
         },
@@ -6400,6 +6655,17 @@
           "required_townhall": 18,
           "strength_weight": 0,
           "death_damage": 2400
+        },
+        {
+          "level": 13,
+          "hitpoints": 5600,
+          "dps": 285,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 0,
+          "death_damage": 2600
         }
       ]
     },
@@ -6429,29 +6695,29 @@
       },
       "levels": [
         {
-          "level": 5,
+          "level": 1,
           "hitpoints": 390,
           "dps": 170,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0,
           "death_damage": 300
         },
         {
-          "level": 6,
+          "level": 2,
           "hitpoints": 545,
           "dps": 220,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0,
           "death_damage": 400
         },
         {
-          "level": 7,
+          "level": 3,
           "hitpoints": 690,
           "dps": 260,
           "upgrade_time": 0,
@@ -6462,7 +6728,7 @@
           "death_damage": 500
         },
         {
-          "level": 8,
+          "level": 4,
           "hitpoints": 840,
           "dps": 270,
           "upgrade_time": 0,
@@ -6473,7 +6739,7 @@
           "death_damage": 580
         },
         {
-          "level": 9,
+          "level": 5,
           "hitpoints": 940,
           "dps": 280,
           "upgrade_time": 0,
@@ -6484,7 +6750,7 @@
           "death_damage": 620
         },
         {
-          "level": 10,
+          "level": 6,
           "hitpoints": 1040,
           "dps": 285,
           "upgrade_time": 0,
@@ -6495,7 +6761,7 @@
           "death_damage": 650
         },
         {
-          "level": 11,
+          "level": 7,
           "hitpoints": 1140,
           "dps": 290,
           "upgrade_time": 0,
@@ -6506,7 +6772,7 @@
           "death_damage": 700
         },
         {
-          "level": 12,
+          "level": 8,
           "hitpoints": 1240,
           "dps": 304,
           "upgrade_time": 0,
@@ -6517,7 +6783,7 @@
           "death_damage": 730
         },
         {
-          "level": 13,
+          "level": 9,
           "hitpoints": 1360,
           "dps": 326,
           "upgrade_time": 0,
@@ -6526,6 +6792,17 @@
           "required_townhall": 18,
           "strength_weight": 0,
           "death_damage": 760
+        },
+        {
+          "level": 10,
+          "hitpoints": 1500,
+          "dps": 350,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 0,
+          "death_damage": 790
         }
       ]
     },
@@ -6557,8 +6834,8 @@
           "dps": 24,
           "upgrade_time": 172800,
           "upgrade_cost": 27500,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 11,
           "strength_weight": 3000
         },
         {
@@ -6575,7 +6852,7 @@
           "level": 3,
           "hitpoints": 3000,
           "dps": 32,
-          "upgrade_time": 280800,
+          "upgrade_time": 259200,
           "upgrade_cost": 50000,
           "required_lab_level": 9,
           "required_townhall": 11,
@@ -6585,8 +6862,8 @@
           "level": 4,
           "hitpoints": 3200,
           "dps": 36,
-          "upgrade_time": 345600,
-          "upgrade_cost": 62500,
+          "upgrade_time": 302400,
+          "upgrade_cost": 55000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 4500
@@ -6595,8 +6872,8 @@
           "level": 5,
           "hitpoints": 3400,
           "dps": 40,
-          "upgrade_time": 561600,
-          "upgrade_cost": 110000,
+          "upgrade_time": 518400,
+          "upgrade_cost": 100000,
           "required_lab_level": 10,
           "required_townhall": 12,
           "strength_weight": 5000
@@ -6605,8 +6882,8 @@
           "level": 6,
           "hitpoints": 3600,
           "dps": 44,
-          "upgrade_time": 648000,
-          "upgrade_cost": 140000,
+          "upgrade_time": 604800,
+          "upgrade_cost": 130000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 7000
@@ -6615,8 +6892,8 @@
           "level": 7,
           "hitpoints": 3900,
           "dps": 48,
-          "upgrade_time": 691200,
-          "upgrade_cost": 180000,
+          "upgrade_time": 648000,
+          "upgrade_cost": 170000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 8000
@@ -6625,8 +6902,8 @@
           "level": 8,
           "hitpoints": 4200,
           "dps": 52,
-          "upgrade_time": 914400,
-          "upgrade_cost": 280000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 225000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 9000
@@ -6670,8 +6947,8 @@
           "dps": 260,
           "upgrade_time": 345600,
           "upgrade_cost": 6000000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 11,
           "strength_weight": 4000
         },
         {
@@ -6698,8 +6975,8 @@
           "level": 4,
           "hitpoints": 4700,
           "dps": 350,
-          "upgrade_time": 691200,
-          "upgrade_cost": 11000000,
+          "upgrade_time": 648000,
+          "upgrade_cost": 10500000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000
@@ -6708,8 +6985,8 @@
           "level": 5,
           "hitpoints": 5000,
           "dps": 380,
-          "upgrade_time": 734400,
-          "upgrade_cost": 14000000,
+          "upgrade_time": 691200,
+          "upgrade_cost": 13000000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 8000
@@ -6718,8 +6995,8 @@
           "level": 6,
           "hitpoints": 5400,
           "dps": 410,
-          "upgrade_time": 777600,
-          "upgrade_cost": 16000000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 15000000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -6728,8 +7005,8 @@
           "level": 7,
           "hitpoints": 5700,
           "dps": 440,
-          "upgrade_time": 864000,
-          "upgrade_cost": 20000000,
+          "upgrade_time": 777600,
+          "upgrade_cost": 18000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -6738,8 +7015,8 @@
           "level": 8,
           "hitpoints": 6400,
           "dps": 475,
-          "upgrade_time": 1382400,
-          "upgrade_cost": 30000000,
+          "upgrade_time": 1036800,
+          "upgrade_cost": 22500000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -6748,11 +7025,21 @@
           "level": 9,
           "hitpoints": 6900,
           "dps": 510,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 29500000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 10,
+          "hitpoints": 8000,
+          "dps": 545,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -6765,7 +7052,7 @@
         "info": "TID_CHARACTER_INFO_SKELETON_BARREL"
       },
       "production_building": "Barracks",
-      "production_building_level": 6,
+      "production_building_level": null,
       "upgrade_resource": "Elixir",
       "is_flying": true,
       "is_air_targeting": false,
@@ -6938,8 +7225,8 @@
           "dps": 400,
           "upgrade_time": 172800,
           "upgrade_cost": 2500000,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": null,
+          "required_townhall": 12,
           "strength_weight": 6000,
           "death_damage": 500
         },
@@ -6980,8 +7267,8 @@
           "level": 5,
           "hitpoints": 6800,
           "dps": 750,
-          "upgrade_time": 1166400,
-          "upgrade_cost": 26000000,
+          "upgrade_time": 950400,
+          "upgrade_cost": 19500000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 10000,
@@ -7031,8 +7318,8 @@
           "dps": 55,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7041,8 +7328,8 @@
           "dps": 59,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7051,8 +7338,8 @@
           "dps": 63,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7061,8 +7348,8 @@
           "dps": 67,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7144,6 +7431,16 @@
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 0
+        },
+        {
+          "level": 13,
+          "hitpoints": 2900,
+          "dps": 93,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 0
         }
       ]
     },
@@ -7178,8 +7475,8 @@
           "dps": 100,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7188,8 +7485,8 @@
           "dps": 125,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7198,8 +7495,8 @@
           "dps": 150,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7208,8 +7505,8 @@
           "dps": 175,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7218,8 +7515,8 @@
           "dps": 200,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7291,6 +7588,16 @@
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 0
+        },
+        {
+          "level": 13,
+          "hitpoints": 5100,
+          "dps": 435,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 0
         }
       ]
     },
@@ -7319,10 +7626,10 @@
           "level": 1,
           "hitpoints": 4100,
           "dps": 340,
-          "upgrade_time": 518400,
-          "upgrade_cost": 7500000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "upgrade_time": 475200,
+          "upgrade_cost": 7000000,
+          "required_lab_level": null,
+          "required_townhall": 13,
           "strength_weight": 6000,
           "death_damage": 700
         },
@@ -7330,8 +7637,8 @@
           "level": 2,
           "hitpoints": 4400,
           "dps": 370,
-          "upgrade_time": 691200,
-          "upgrade_cost": 12000000,
+          "upgrade_time": 648000,
+          "upgrade_cost": 11000000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000,
@@ -7341,8 +7648,8 @@
           "level": 3,
           "hitpoints": 4700,
           "dps": 400,
-          "upgrade_time": 777600,
-          "upgrade_cost": 14500000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 13500000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 8000,
@@ -7352,8 +7659,8 @@
           "level": 4,
           "hitpoints": 5100,
           "dps": 430,
-          "upgrade_time": 885600,
-          "upgrade_cost": 19000000,
+          "upgrade_time": 820800,
+          "upgrade_cost": 17500000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000,
@@ -7363,8 +7670,8 @@
           "level": 5,
           "hitpoints": 5600,
           "dps": 470,
-          "upgrade_time": 1339200,
-          "upgrade_cost": 29500000,
+          "upgrade_time": 993600,
+          "upgrade_cost": 21000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000,
@@ -7374,12 +7681,23 @@
           "level": 6,
           "hitpoints": 5900,
           "dps": 490,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 28500000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000,
           "death_damage": 1200
+        },
+        {
+          "level": 7,
+          "hitpoints": 6200,
+          "dps": 510,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000,
+          "death_damage": 1300
         }
       ]
     },
@@ -7414,8 +7732,8 @@
           "dps": 240,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7424,8 +7742,8 @@
           "dps": 270,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7434,8 +7752,8 @@
           "dps": 300,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -7486,6 +7804,16 @@
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
+          "strength_weight": 0
+        },
+        {
+          "level": 9,
+          "hitpoints": 4450,
+          "dps": 510,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -7665,7 +7993,7 @@
       "village": "builderBase",
       "levels": [
         {
-          "level": 15,
+          "level": 1,
           "hitpoints": 600,
           "dps": 900,
           "upgrade_time": 475200,
@@ -7675,7 +8003,7 @@
           "strength_weight": 5600
         },
         {
-          "level": 16,
+          "level": 2,
           "hitpoints": 650,
           "dps": 1100,
           "upgrade_time": 518400,
@@ -7685,7 +8013,7 @@
           "strength_weight": 5800
         },
         {
-          "level": 17,
+          "level": 3,
           "hitpoints": 650,
           "dps": 1100,
           "upgrade_time": 518400,
@@ -7695,7 +8023,7 @@
           "strength_weight": 6000
         },
         {
-          "level": 18,
+          "level": 4,
           "hitpoints": 650,
           "dps": 1100,
           "upgrade_time": 561600,
@@ -7705,7 +8033,7 @@
           "strength_weight": 6200
         },
         {
-          "level": 19,
+          "level": 5,
           "hitpoints": 650,
           "dps": 1100,
           "upgrade_time": 561600,
@@ -7715,7 +8043,7 @@
           "strength_weight": 6400
         },
         {
-          "level": 20,
+          "level": 6,
           "hitpoints": 700,
           "dps": 1300,
           "upgrade_time": 0,
@@ -7907,8 +8235,8 @@
           "dps": 0,
           "upgrade_time": 259200,
           "upgrade_cost": 3500000,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": null,
+          "required_townhall": 13,
           "strength_weight": 6000
         },
         {
@@ -7918,7 +8246,7 @@
           "upgrade_time": 345600,
           "upgrade_cost": 5000000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 13,
           "strength_weight": 7000
         },
         {
@@ -7928,15 +8256,15 @@
           "upgrade_time": 604800,
           "upgrade_cost": 8000000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 13,
           "strength_weight": 8000
         },
         {
           "level": 4,
           "hitpoints": 4500,
           "dps": 0,
-          "upgrade_time": 1036800,
-          "upgrade_cost": 18000000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 14500000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 9000
@@ -7945,8 +8273,8 @@
           "level": 5,
           "hitpoints": 4800,
           "dps": 0,
-          "upgrade_time": 1296000,
-          "upgrade_cost": 27000000,
+          "upgrade_time": 993600,
+          "upgrade_cost": 20500000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 11000
@@ -7994,8 +8322,8 @@
           "dps": 2,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8004,8 +8332,8 @@
           "dps": 4,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8014,8 +8342,8 @@
           "dps": 6,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8067,6 +8395,16 @@
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 0
+        },
+        {
+          "level": 9,
+          "hitpoints": 12500,
+          "dps": 30,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 0
         }
       ]
     },
@@ -8101,8 +8439,8 @@
           "dps": 125,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8111,8 +8449,8 @@
           "dps": 140,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
@@ -8194,6 +8532,16 @@
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 0
+        },
+        {
+          "level": 11,
+          "hitpoints": 4000,
+          "dps": 330,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 0
         }
       ]
     },
@@ -8223,37 +8571,37 @@
       },
       "levels": [
         {
-          "level": 3,
+          "level": 1,
           "hitpoints": 3900,
           "dps": 301,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 4,
+          "level": 2,
           "hitpoints": 4500,
           "dps": 326,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 5,
+          "level": 3,
           "hitpoints": 5100,
           "dps": 352,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 6,
+          "level": 4,
           "hitpoints": 5600,
           "dps": 377,
           "upgrade_time": 0,
@@ -8263,7 +8611,7 @@
           "strength_weight": 0
         },
         {
-          "level": 7,
+          "level": 5,
           "hitpoints": 6100,
           "dps": 402,
           "upgrade_time": 0,
@@ -8273,7 +8621,7 @@
           "strength_weight": 0
         },
         {
-          "level": 8,
+          "level": 6,
           "hitpoints": 6400,
           "dps": 427,
           "upgrade_time": 0,
@@ -8283,7 +8631,7 @@
           "strength_weight": 0
         },
         {
-          "level": 9,
+          "level": 7,
           "hitpoints": 6700,
           "dps": 452,
           "upgrade_time": 0,
@@ -8293,7 +8641,7 @@
           "strength_weight": 0
         },
         {
-          "level": 10,
+          "level": 8,
           "hitpoints": 7200,
           "dps": 477,
           "upgrade_time": 0,
@@ -8303,7 +8651,7 @@
           "strength_weight": 0
         },
         {
-          "level": 11,
+          "level": 9,
           "hitpoints": 7600,
           "dps": 497,
           "upgrade_time": 0,
@@ -8313,7 +8661,7 @@
           "strength_weight": 0
         },
         {
-          "level": 12,
+          "level": 10,
           "hitpoints": 8000,
           "dps": 517,
           "upgrade_time": 0,
@@ -8323,13 +8671,23 @@
           "strength_weight": 0
         },
         {
-          "level": 13,
+          "level": 11,
           "hitpoints": 8400,
           "dps": 537,
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
+          "strength_weight": 0
+        },
+        {
+          "level": 12,
+          "hitpoints": 8800,
+          "dps": 557,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -8360,10 +8718,10 @@
           "level": 1,
           "hitpoints": 360,
           "dps": 105,
-          "upgrade_time": 432000,
-          "upgrade_cost": 57500,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "upgrade_time": 345600,
+          "upgrade_cost": 45000,
+          "required_lab_level": null,
+          "required_townhall": 12,
           "strength_weight": 5000
         },
         {
@@ -8380,8 +8738,8 @@
           "level": 3,
           "hitpoints": 440,
           "dps": 125,
-          "upgrade_time": 1339200,
-          "upgrade_cost": 370000,
+          "upgrade_time": 864000,
+          "upgrade_cost": 275000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000
@@ -8390,11 +8748,21 @@
           "level": 4,
           "hitpoints": 500,
           "dps": 135,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 425000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 5,
+          "hitpoints": 560,
+          "dps": 145,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -8424,37 +8792,37 @@
       },
       "levels": [
         {
-          "level": 5,
+          "level": 1,
           "hitpoints": 250,
           "dps": 140,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 6,
+          "level": 2,
           "hitpoints": 300,
           "dps": 160,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 7,
+          "level": 3,
           "hitpoints": 350,
           "dps": 180,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 8,
+          "level": 4,
           "hitpoints": 400,
           "dps": 200,
           "upgrade_time": 0,
@@ -8464,7 +8832,7 @@
           "strength_weight": 0
         },
         {
-          "level": 9,
+          "level": 5,
           "hitpoints": 545,
           "dps": 220,
           "upgrade_time": 0,
@@ -8474,7 +8842,7 @@
           "strength_weight": 0
         },
         {
-          "level": 10,
+          "level": 6,
           "hitpoints": 705,
           "dps": 240,
           "upgrade_time": 0,
@@ -8484,7 +8852,7 @@
           "strength_weight": 0
         },
         {
-          "level": 11,
+          "level": 7,
           "hitpoints": 760,
           "dps": 265,
           "upgrade_time": 0,
@@ -8494,7 +8862,7 @@
           "strength_weight": 0
         },
         {
-          "level": 12,
+          "level": 8,
           "hitpoints": 815,
           "dps": 285,
           "upgrade_time": 0,
@@ -8504,7 +8872,7 @@
           "strength_weight": 0
         },
         {
-          "level": 13,
+          "level": 9,
           "hitpoints": 870,
           "dps": 305,
           "upgrade_time": 0,
@@ -8514,13 +8882,23 @@
           "strength_weight": 0
         },
         {
-          "level": 14,
+          "level": 10,
           "hitpoints": 925,
           "dps": 335,
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
+          "strength_weight": 0
+        },
+        {
+          "level": 11,
+          "hitpoints": 980,
+          "dps": 365,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -8551,37 +8929,37 @@
       },
       "levels": [
         {
-          "level": 4,
+          "level": 1,
           "hitpoints": 1100,
           "dps": 200,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 5,
+          "level": 2,
           "hitpoints": 1200,
           "dps": 225,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 6,
+          "level": 3,
           "hitpoints": 1300,
           "dps": 250,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 9,
+          "required_townhall": 11,
           "strength_weight": 0
         },
         {
-          "level": 7,
+          "level": 4,
           "hitpoints": 1400,
           "dps": 275,
           "upgrade_time": 0,
@@ -8591,7 +8969,7 @@
           "strength_weight": 0
         },
         {
-          "level": 8,
+          "level": 5,
           "hitpoints": 1500,
           "dps": 300,
           "upgrade_time": 0,
@@ -8601,7 +8979,7 @@
           "strength_weight": 0
         },
         {
-          "level": 9,
+          "level": 6,
           "hitpoints": 1600,
           "dps": 325,
           "upgrade_time": 0,
@@ -8611,7 +8989,7 @@
           "strength_weight": 0
         },
         {
-          "level": 10,
+          "level": 7,
           "hitpoints": 1700,
           "dps": 350,
           "upgrade_time": 0,
@@ -8621,7 +8999,7 @@
           "strength_weight": 0
         },
         {
-          "level": 11,
+          "level": 8,
           "hitpoints": 1800,
           "dps": 360,
           "upgrade_time": 0,
@@ -8631,7 +9009,7 @@
           "strength_weight": 0
         },
         {
-          "level": 12,
+          "level": 9,
           "hitpoints": 1900,
           "dps": 370,
           "upgrade_time": 0,
@@ -8641,7 +9019,7 @@
           "strength_weight": 0
         },
         {
-          "level": 13,
+          "level": 10,
           "hitpoints": 2100,
           "dps": 385,
           "upgrade_time": 0,
@@ -8651,13 +9029,23 @@
           "strength_weight": 0
         },
         {
-          "level": 14,
+          "level": 11,
           "hitpoints": 2300,
           "dps": 400,
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
+          "strength_weight": 0
+        },
+        {
+          "level": 12,
+          "hitpoints": 2500,
+          "dps": 415,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -8689,8 +9077,8 @@
           "dps": 140,
           "upgrade_time": 259200,
           "upgrade_cost": 3200000,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": null,
+          "required_townhall": 13,
           "strength_weight": 6000
         },
         {
@@ -8700,7 +9088,7 @@
           "upgrade_time": 345600,
           "upgrade_cost": 4500000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 13,
           "strength_weight": 7000
         },
         {
@@ -8710,15 +9098,15 @@
           "upgrade_time": 604800,
           "upgrade_cost": 7500000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 13,
           "strength_weight": 8000
         },
         {
           "level": 4,
           "hitpoints": 5200,
           "dps": 200,
-          "upgrade_time": 1036800,
-          "upgrade_cost": 18000000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 14500000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 9000
@@ -8727,8 +9115,8 @@
           "level": 5,
           "hitpoints": 5500,
           "dps": 220,
-          "upgrade_time": 1296000,
-          "upgrade_cost": 27000000,
+          "upgrade_time": 1036800,
+          "upgrade_cost": 21500000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 11000
@@ -8772,8 +9160,8 @@
           "dps": 127,
           "upgrade_time": 259200,
           "upgrade_cost": 5500000,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": null,
+          "required_townhall": 14,
           "strength_weight": 7000
         },
         {
@@ -8783,7 +9171,7 @@
           "upgrade_time": 345600,
           "upgrade_cost": 8000000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 14,
           "strength_weight": 7500
         },
         {
@@ -8793,28 +9181,38 @@
           "upgrade_time": 604800,
           "upgrade_cost": 10000000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 14,
           "strength_weight": 8000
         },
         {
           "level": 4,
           "hitpoints": 2000,
           "dps": 169,
-          "upgrade_time": 1036800,
-          "upgrade_cost": 18000000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 14500000,
           "required_lab_level": 11,
-          "required_townhall": 13,
+          "required_townhall": 14,
           "strength_weight": 9000
         },
         {
           "level": 5,
           "hitpoints": 2100,
           "dps": 184,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1296000,
+          "upgrade_cost": 31000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 11000
+        },
+        {
+          "level": 6,
+          "hitpoints": 2200,
+          "dps": 210,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 14000
         }
       ]
     },
@@ -8845,7 +9243,7 @@
           "dps": 430,
           "upgrade_time": 345600,
           "upgrade_cost": 6000000,
-          "required_lab_level": 13,
+          "required_lab_level": null,
           "required_townhall": 15,
           "strength_weight": 7500
         },
@@ -8883,8 +9281,8 @@
           "level": 5,
           "hitpoints": 6300,
           "dps": 590,
-          "upgrade_time": 1339200,
-          "upgrade_cost": 28000000,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 24500000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 12000
@@ -9080,18 +9478,18 @@
           "level": 1,
           "hitpoints": 7200,
           "dps": 180,
-          "upgrade_time": 691200,
-          "upgrade_cost": 14000000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "upgrade_time": 648000,
+          "upgrade_cost": 11500000,
+          "required_lab_level": null,
+          "required_townhall": 14,
           "strength_weight": 7000
         },
         {
           "level": 2,
           "hitpoints": 7700,
           "dps": 200,
-          "upgrade_time": 777600,
-          "upgrade_cost": 16000000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 13500000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 8000
@@ -9100,8 +9498,8 @@
           "level": 3,
           "hitpoints": 8200,
           "dps": 220,
-          "upgrade_time": 950400,
-          "upgrade_cost": 18500000,
+          "upgrade_time": 777600,
+          "upgrade_cost": 15500000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -9110,8 +9508,8 @@
           "level": 4,
           "hitpoints": 8700,
           "dps": 240,
-          "upgrade_time": 1382400,
-          "upgrade_cost": 30000000,
+          "upgrade_time": 993600,
+          "upgrade_cost": 18000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -9120,11 +9518,21 @@
           "level": 5,
           "hitpoints": 9200,
           "dps": 270,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1036800,
+          "upgrade_cost": 28000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 6,
+          "hitpoints": 10000,
+          "dps": 300,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -9154,18 +9562,18 @@
           "level": 1,
           "hitpoints": 1500,
           "dps": 170,
-          "upgrade_time": 518400,
-          "upgrade_cost": 90000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "upgrade_time": 432000,
+          "upgrade_cost": 75000,
+          "required_lab_level": null,
+          "required_townhall": 13,
           "strength_weight": 6000
         },
         {
           "level": 2,
           "hitpoints": 1650,
           "dps": 185,
-          "upgrade_time": 648000,
-          "upgrade_cost": 135000,
+          "upgrade_time": 604800,
+          "upgrade_cost": 125000,
           "required_lab_level": 11,
           "required_townhall": 13,
           "strength_weight": 7000
@@ -9174,8 +9582,8 @@
           "level": 3,
           "hitpoints": 1800,
           "dps": 200,
-          "upgrade_time": 691200,
-          "upgrade_cost": 160000,
+          "upgrade_time": 648000,
+          "upgrade_cost": 150000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 8000
@@ -9218,47 +9626,47 @@
       },
       "levels": [
         {
-          "level": 4,
+          "level": 1,
           "hitpoints": 800,
           "dps": 100,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
-          "level": 5,
+          "level": 2,
           "hitpoints": 900,
           "dps": 115,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
-          "level": 6,
+          "level": 3,
           "hitpoints": 1100,
           "dps": 130,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
-          "level": 7,
+          "level": 4,
           "hitpoints": 1200,
           "dps": 145,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
-          "level": 8,
+          "level": 5,
           "hitpoints": 1400,
           "dps": 160,
           "upgrade_time": 0,
@@ -9268,7 +9676,7 @@
           "strength_weight": 0
         },
         {
-          "level": 9,
+          "level": 6,
           "hitpoints": 1500,
           "dps": 175,
           "upgrade_time": 0,
@@ -9278,7 +9686,7 @@
           "strength_weight": 0
         },
         {
-          "level": 10,
+          "level": 7,
           "hitpoints": 1600,
           "dps": 190,
           "upgrade_time": 0,
@@ -9288,7 +9696,7 @@
           "strength_weight": 0
         },
         {
-          "level": 11,
+          "level": 8,
           "hitpoints": 1700,
           "dps": 210,
           "upgrade_time": 0,
@@ -9298,7 +9706,7 @@
           "strength_weight": 0
         },
         {
-          "level": 12,
+          "level": 9,
           "hitpoints": 1900,
           "dps": 230,
           "upgrade_time": 0,
@@ -9308,7 +9716,7 @@
           "strength_weight": 0
         },
         {
-          "level": 13,
+          "level": 10,
           "hitpoints": 2050,
           "dps": 250,
           "upgrade_time": 0,
@@ -9318,7 +9726,7 @@
           "strength_weight": 0
         },
         {
-          "level": 14,
+          "level": 11,
           "hitpoints": 2250,
           "dps": 270,
           "upgrade_time": 0,
@@ -9328,13 +9736,23 @@
           "strength_weight": 0
         },
         {
-          "level": 15,
+          "level": 12,
           "hitpoints": 2500,
           "dps": 300,
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 16,
           "required_townhall": 18,
+          "strength_weight": 0
+        },
+        {
+          "level": 13,
+          "hitpoints": 2750,
+          "dps": 330,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
           "strength_weight": 0
         }
       ]
@@ -9348,7 +9766,7 @@
         "info": "TID_CHARACTER_INFO_BARCHER"
       },
       "production_building": "Barracks",
-      "production_building_level": 1,
+      "production_building_level": null,
       "upgrade_resource": "Elixir",
       "is_flying": false,
       "is_air_targeting": true,
@@ -9502,7 +9920,7 @@
         "info": "TID_CHARACTER_INFO_GRAVE_GOLEM"
       },
       "production_building": "Barracks",
-      "production_building_level": 1,
+      "production_building_level": null,
       "upgrade_resource": "Elixir",
       "is_flying": false,
       "is_air_targeting": false,
@@ -9670,7 +10088,7 @@
         "info": "TID_CHARACTER_INFO_HOG_WIZARD"
       },
       "production_building": "Barracks",
-      "production_building_level": 1,
+      "production_building_level": null,
       "upgrade_resource": "Elixir",
       "is_flying": false,
       "is_air_targeting": true,
@@ -9824,7 +10242,7 @@
         "info": "TID_CHARACTER_INFO_LAVALOON"
       },
       "production_building": "Barracks",
-      "production_building_level": 1,
+      "production_building_level": null,
       "upgrade_resource": "Elixir",
       "is_flying": true,
       "is_air_targeting": false,
@@ -10003,7 +10421,7 @@
       "village": "builderBase",
       "levels": [
         {
-          "level": 17,
+          "level": 1,
           "hitpoints": 1100,
           "dps": 220,
           "upgrade_time": 518400,
@@ -10013,7 +10431,7 @@
           "strength_weight": 6000
         },
         {
-          "level": 18,
+          "level": 2,
           "hitpoints": 1100,
           "dps": 220,
           "upgrade_time": 561600,
@@ -10023,7 +10441,7 @@
           "strength_weight": 6200
         },
         {
-          "level": 19,
+          "level": 3,
           "hitpoints": 1210,
           "dps": 253,
           "upgrade_time": 561600,
@@ -10033,7 +10451,7 @@
           "strength_weight": 6400
         },
         {
-          "level": 20,
+          "level": 4,
           "hitpoints": 1210,
           "dps": 253,
           "upgrade_time": 0,
@@ -10072,8 +10490,8 @@
           "dps": 25,
           "upgrade_time": 950400,
           "upgrade_cost": 220000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": null,
+          "required_townhall": 16,
           "strength_weight": 9000
         },
         {
@@ -10090,8 +10508,8 @@
           "level": 3,
           "hitpoints": 2800,
           "dps": 27,
-          "upgrade_time": 1339200,
-          "upgrade_cost": 380000,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 355000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -10100,11 +10518,21 @@
           "level": 4,
           "hitpoints": 3050,
           "dps": 28,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1166400,
+          "upgrade_cost": 435000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 5,
+          "hitpoints": 3300,
+          "dps": 29,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -10133,18 +10561,18 @@
           "level": 1,
           "hitpoints": 6200,
           "dps": 95,
-          "upgrade_time": 691200,
-          "upgrade_cost": 15000000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "upgrade_time": 648000,
+          "upgrade_cost": 14000000,
+          "required_lab_level": null,
+          "required_townhall": 15,
           "strength_weight": 8000
         },
         {
           "level": 2,
           "hitpoints": 6350,
           "dps": 105,
-          "upgrade_time": 864000,
-          "upgrade_cost": 17600000,
+          "upgrade_time": 777600,
+          "upgrade_cost": 16000000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -10153,8 +10581,8 @@
           "level": 3,
           "hitpoints": 6500,
           "dps": 115,
-          "upgrade_time": 1382400,
-          "upgrade_cost": 30000000,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 23000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -10163,11 +10591,21 @@
           "level": 4,
           "hitpoints": 6700,
           "dps": 125,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 29000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 5,
+          "hitpoints": 6900,
+          "dps": 135,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -10966,18 +11404,18 @@
           "level": 1,
           "hitpoints": 1300,
           "dps": -80,
-          "upgrade_time": 691200,
-          "upgrade_cost": 125000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "upgrade_time": 604800,
+          "upgrade_cost": 110000,
+          "required_lab_level": null,
+          "required_townhall": 14,
           "strength_weight": 7000
         },
         {
           "level": 2,
           "hitpoints": 1400,
           "dps": -85,
-          "upgrade_time": 777600,
-          "upgrade_cost": 175000,
+          "upgrade_time": 648000,
+          "upgrade_cost": 130000,
           "required_lab_level": 12,
           "required_townhall": 14,
           "strength_weight": 8000
@@ -10986,8 +11424,8 @@
           "level": 3,
           "hitpoints": 1500,
           "dps": -90,
-          "upgrade_time": 950400,
-          "upgrade_cost": 187500,
+          "upgrade_time": 691200,
+          "upgrade_cost": 150000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -10996,8 +11434,8 @@
           "level": 4,
           "hitpoints": 1600,
           "dps": -95,
-          "upgrade_time": 1036800,
-          "upgrade_cost": 300000,
+          "upgrade_time": 734400,
+          "upgrade_cost": 215000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -11006,8 +11444,8 @@
           "level": 5,
           "hitpoints": 1700,
           "dps": -105,
-          "upgrade_time": 1339200,
-          "upgrade_cost": 380000,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 340000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -11016,11 +11454,21 @@
           "level": 6,
           "hitpoints": 1850,
           "dps": -115,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 415000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 7,
+          "hitpoints": 2000,
+          "dps": -125,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -11187,7 +11635,7 @@
         "info": "TID_CHARACTER_INFO_ICEMINION"
       },
       "production_building": "Barracks",
-      "production_building_level": 1,
+      "production_building_level": null,
       "upgrade_resource": "Elixir",
       "is_flying": true,
       "is_air_targeting": true,
@@ -11357,18 +11805,18 @@
           "level": 1,
           "hitpoints": 2200,
           "dps": 190,
-          "upgrade_time": 820800,
-          "upgrade_cost": 16000000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "upgrade_time": 777600,
+          "upgrade_cost": 15500000,
+          "required_lab_level": null,
+          "required_townhall": 16,
           "strength_weight": 9000
         },
         {
           "level": 2,
           "hitpoints": 2350,
           "dps": 210,
-          "upgrade_time": 907200,
-          "upgrade_cost": 18000000,
+          "upgrade_time": 820800,
+          "upgrade_cost": 16000000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -11377,8 +11825,8 @@
           "level": 3,
           "hitpoints": 2500,
           "dps": 220,
-          "upgrade_time": 1296000,
-          "upgrade_cost": 27000000,
+          "upgrade_time": 993600,
+          "upgrade_cost": 20500000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -11387,11 +11835,21 @@
           "level": 4,
           "hitpoints": 2650,
           "dps": 230,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 29500000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 5,
+          "hitpoints": 2800,
+          "dps": 240,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -11422,8 +11880,8 @@
           "dps": 0,
           "upgrade_time": 518400,
           "upgrade_cost": 8500000,
-          "required_lab_level": 13,
-          "required_townhall": 15,
+          "required_lab_level": null,
+          "required_townhall": 16,
           "strength_weight": 9000
         },
         {
@@ -11621,7 +12079,7 @@
         "info": "TID_CHARACTER_INFO_SNAKE_BARREL"
       },
       "production_building": "Barracks",
-      "production_building_level": 1,
+      "production_building_level": null,
       "upgrade_resource": "Elixir",
       "is_flying": true,
       "is_air_targeting": false,
@@ -11798,8 +12256,8 @@
           "dps": 360,
           "upgrade_time": 0,
           "upgrade_cost": 0,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_lab_level": 10,
+          "required_townhall": 12,
           "strength_weight": 0
         },
         {
@@ -11871,6 +12329,16 @@
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 0
+        },
+        {
+          "level": 9,
+          "hitpoints": 7600,
+          "dps": 560,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 0
         }
       ]
     },
@@ -11900,18 +12368,18 @@
           "level": 1,
           "hitpoints": 1530,
           "dps": 1,
-          "upgrade_time": 777600,
-          "upgrade_cost": 200000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "upgrade_time": 734400,
+          "upgrade_cost": 175000,
+          "required_lab_level": null,
+          "required_townhall": 15,
           "strength_weight": 8000
         },
         {
           "level": 2,
           "hitpoints": 1620,
           "dps": 2,
-          "upgrade_time": 950400,
-          "upgrade_cost": 260000,
+          "upgrade_time": 777600,
+          "upgrade_cost": 200000,
           "required_lab_level": 13,
           "required_townhall": 15,
           "strength_weight": 9000
@@ -11920,8 +12388,8 @@
           "level": 3,
           "hitpoints": 1710,
           "dps": 3,
-          "upgrade_time": 1296000,
-          "upgrade_cost": 320000,
+          "upgrade_time": 993600,
+          "upgrade_cost": 265000,
           "required_lab_level": 14,
           "required_townhall": 16,
           "strength_weight": 10000
@@ -11930,8 +12398,8 @@
           "level": 4,
           "hitpoints": 1800,
           "dps": 4,
-          "upgrade_time": 1382400,
-          "upgrade_cost": 380000,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -12827,18 +13295,18 @@
           "level": 1,
           "hitpoints": 15300,
           "dps": 480,
-          "upgrade_time": 1209600,
-          "upgrade_cost": 28000000,
-          "required_lab_level": 1,
-          "required_townhall": 3,
+          "upgrade_time": 864000,
+          "upgrade_cost": 20000000,
+          "required_lab_level": null,
+          "required_townhall": 17,
           "strength_weight": 10000
         },
         {
           "level": 2,
           "hitpoints": 16900,
           "dps": 530,
-          "upgrade_time": 1382400,
-          "upgrade_cost": 30000000,
+          "upgrade_time": 993600,
+          "upgrade_cost": 22000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -12847,11 +13315,21 @@
           "level": 3,
           "hitpoints": 18500,
           "dps": 580,
-          "upgrade_time": 0,
-          "upgrade_cost": 0,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 28000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
+        },
+        {
+          "level": 4,
+          "hitpoints": 20000,
+          "dps": 630,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 13000
         }
       ]
     },
@@ -13086,16 +13564,16 @@
           "dps": 1,
           "upgrade_time": 864000,
           "upgrade_cost": 22000000,
-          "required_lab_level": 14,
-          "required_townhall": 16,
+          "required_lab_level": null,
+          "required_townhall": 17,
           "strength_weight": 10000
         },
         {
           "level": 2,
           "hitpoints": 3800,
           "dps": 2,
-          "upgrade_time": 1166400,
-          "upgrade_cost": 26000000,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 25000000,
           "required_lab_level": 15,
           "required_townhall": 17,
           "strength_weight": 11000
@@ -13104,8 +13582,8 @@
           "level": 3,
           "hitpoints": 4000,
           "dps": 3,
-          "upgrade_time": 1382400,
-          "upgrade_cost": 29000000,
+          "upgrade_time": 1166400,
+          "upgrade_cost": 28000000,
           "required_lab_level": 16,
           "required_townhall": 18,
           "strength_weight": 12000
@@ -13528,6 +14006,630 @@
           "required_lab_level": null,
           "required_townhall": 18,
           "strength_weight": 0
+        }
+      ]
+    },
+    {
+      "_id": 4000195,
+      "name": "Barch Squad",
+      "info": "Battle called. They answered.\\n\\nFifteen Barbarians. Fifteen Archers. Battle cries at charge with sniper support from the rear. It shouldn’t work, but it does, like a beautiful symphony of destruction.",
+      "TID": {
+        "name": "TID_BARCHER_SQUAD",
+        "info": "TID_CHARACTER_INFO_BARCHER_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 1,
+      "upgrade_resource": "Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": 15,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 950400,
+          "upgrade_cost": 23500000,
+          "required_lab_level": null,
+          "required_townhall": 8,
+          "strength_weight": 200
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1339200,
+          "upgrade_cost": 32500000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 1600
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
+        }
+      ]
+    },
+    {
+      "_id": 4000196,
+      "name": "Giant Wizard Squad",
+      "info": "Giants aren’t patient, and Wizards are famed for their fashionable lateness. For this Squad, punctuality isn’t a priority, but destruction sure is!\\n\\nThe big guys get to a smashing start while the brainy guys burn it all to the ground!",
+      "TID": {
+        "name": "TID_GIANT_WIZARD_SQUAD",
+        "info": "TID_CHARACTER_INFO_GIANT_WIZARD_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 2,
+      "upgrade_resource": "Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": 25,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1036800,
+          "upgrade_cost": 25000000,
+          "required_lab_level": null,
+          "required_townhall": 9,
+          "strength_weight": 300
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1382400,
+          "upgrade_cost": 32500000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 1600
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
+        }
+      ]
+    },
+    {
+      "_id": 4000197,
+      "name": "Wall Breaker Squad",
+      "info": "A demolition Squad of five Wall Breakers who never take lunch breaks. The newbie is keen to impress and rushes first to trigger traps and attention.\\n\\nYour enemies won’t miss their walls. Open-plan is all the rage.",
+      "TID": {
+        "name": "TID_WALL_BREAKER_SQUAD",
+        "info": "TID_CHARACTER_INFO_WALL_BREAKER_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 3,
+      "upgrade_resource": "Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": 8,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 907200,
+          "upgrade_cost": 23000000,
+          "required_lab_level": null,
+          "required_townhall": 10,
+          "strength_weight": 400
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1209600,
+          "upgrade_cost": 30500000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 1600
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
+        }
+      ]
+    },
+    {
+      "_id": 4000198,
+      "name": "Minion Squad",
+      "info": "Minions are surprisingly social creatures. These fellows were found in the crevice of a Dark Elixir ravine and are particularly playful in Squads of eight. Wizard studies show that they enter a village-ravishing frenzy when deployed.",
+      "TID": {
+        "name": "TID_MINION_SQUAD",
+        "info": "TID_CHARACTER_INFO_MINION_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 4,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": 12,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 993600,
+          "upgrade_cost": 370000,
+          "required_lab_level": null,
+          "required_townhall": 11,
+          "strength_weight": 600
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1209600,
+          "upgrade_cost": 465000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 1600
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
+        }
+      ]
+    },
+    {
+      "_id": 4000199,
+      "name": "Balloon Squad",
+      "info": "These defense-seekers used to live off the generous geysers of Balloon Bay before they enrolled in the Squad Barracks bootcamp. Don’t fret, Skeletons are impervious to homesickness.",
+      "TID": {
+        "name": "TID_BALLOON_SQUAD",
+        "info": "TID_CHARACTER_INFO_BALLOON_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 5,
+      "upgrade_resource": "Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": 16,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1166400,
+          "upgrade_cost": 28500000,
+          "required_lab_level": null,
+          "required_townhall": 12,
+          "strength_weight": 800
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1339200,
+          "upgrade_cost": 32000000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 1600
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
+        }
+      ]
+    },
+    {
+      "_id": 4000200,
+      "name": "Golem Witch Squad",
+      "info": "Stones and sorcery.\\n\\nNothing gets to the soft gooey center of a Golem faster than a Witch’s love. The rocky guys take charge at first, followed swiftly behind by Witches and their rickety Skeleton rioters.",
+      "TID": {
+        "name": "TID_GOLEMWITCH_SQUAD",
+        "info": "TID_CHARACTER_INFO_GOLEMWITCH_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 6,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": 55,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 420000,
+          "required_lab_level": null,
+          "required_townhall": 13,
+          "strength_weight": 1000
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1382400,
+          "upgrade_cost": 500000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 1700
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
+        }
+      ]
+    },
+    {
+      "_id": 4000201,
+      "name": "Hog Rider Squad",
+      "info": "This isn’t a Squad, it’s a stampede!\\n\\nThe ground trembles as the fierce leaping Hogs approach. Walls are a joke, so are defenses, and so is anyone who stands in their way. In truth, these guys have been squadding up for years.",
+      "TID": {
+        "name": "TID_HOG_RIDER_SQUAD",
+        "info": "TID_CHARACTER_INFO_HOG_RIDER_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 7,
+      "upgrade_resource": "Dark Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": 48,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1080000,
+          "upgrade_cost": 415000,
+          "required_lab_level": null,
+          "required_townhall": 14,
+          "strength_weight": 1200
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1296000,
+          "upgrade_cost": 480000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 1800
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
+        }
+      ]
+    },
+    {
+      "_id": 4000202,
+      "name": "Miner Squad",
+      "info": "Ten shovels. Ten tunnels. Ten surprises for your enemy!\\n\\nBonded by their long, sweltering stint in volcanic Gem caverns, walls remain no issue for these rogue terrain terrors who network in the deep to spring a synced attack!",
+      "TID": {
+        "name": "TID_MINER_SQUAD",
+        "info": "TID_CHARACTER_INFO_MINER_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 8,
+      "upgrade_resource": "Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": 48,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 864000,
+          "upgrade_cost": 21000000,
+          "required_lab_level": null,
+          "required_townhall": 15,
+          "strength_weight": 1200
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1166400,
+          "upgrade_cost": 30500000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 1800
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
+        }
+      ]
+    },
+    {
+      "_id": 4000203,
+      "name": "Healer Squad",
+      "info": "It's a foolproof strategy.\\n\\nA Balloon swoops first to rouse traps, leaving the skies easy and breezy for Healers to do their thing: Heal other units, obviously.",
+      "TID": {
+        "name": "TID_HEALER_SQUAD",
+        "info": "TID_CHARACTER_INFO_HEALER_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 9,
+      "upgrade_resource": "Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": 70,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1188000,
+          "upgrade_cost": 29000000,
+          "required_lab_level": null,
+          "required_townhall": 16,
+          "strength_weight": 1600
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1360800,
+          "upgrade_cost": 32000000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2000
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
+        }
+      ]
+    },
+    {
+      "_id": 4000204,
+      "name": "P.E.K.K.A Titan Squad",
+      "info": "P.E.K.K.A doesn’t talk much, Electro Titan likes that.\\n\\nThe way this Squad duo crushes buildings is like music to the ear: Thunk, Zap, Thud, Buzz. Too bad their shock aura eviscerates everyone in earshot.",
+      "TID": {
+        "name": "TID_PEKKA_ETITAN_SQUAD",
+        "info": "TID_CHARACTER_INFO_PEKKA_ETITAN_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 10,
+      "upgrade_resource": "Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": null,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1144800,
+          "upgrade_cost": 28000000,
+          "required_lab_level": null,
+          "required_townhall": 17,
+          "strength_weight": 1600
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1317600,
+          "upgrade_cost": 32000000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2000
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
+        }
+      ]
+    },
+    {
+      "_id": 4000205,
+      "name": "Dragons Squad",
+      "info": "This Squad is all burn, no bite.\\n\\nScorched villages are on the menu, and these beastly sky-dwellers are serving a dangerous double course: Dragons drop a spicy main dish, and if your enemy is still famished, Dragon Riders whirr up a dessert that’s harsh on the tongue and hard to swallow.",
+      "TID": {
+        "name": "TID_DRAGON_SQUAD",
+        "info": "TID_CHARACTER_INFO_DRAGON_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 11,
+      "upgrade_resource": "Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": 85,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1209600,
+          "upgrade_cost": 29500000,
+          "required_lab_level": null,
+          "required_townhall": 18,
+          "strength_weight": 2000
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1382400,
+          "upgrade_cost": 32000000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2200
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
+        }
+      ]
+    },
+    {
+      "_id": 4000206,
+      "name": "Baby Dragon Squad",
+      "info": "There’s a heavy bounty for the one who finds The Tantrum Triplets.\\n\\nThey barely had their flying wings beneath them when they busted out of Dragon Momma’s daycare. After their first upgrade, the trio will tantrum in the company of their own Squad, but get shy around others.",
+      "TID": {
+        "name": "TID_BABY_DRAGON_SQUAD",
+        "info": "TID_CHARACTER_INFO_BABY_DRAGON_SQUAD"
+      },
+      "production_building": "Squad Barracks",
+      "production_building_level": 12,
+      "upgrade_resource": "Elixir",
+      "is_flying": null,
+      "is_air_targeting": null,
+      "is_ground_targeting": null,
+      "movement_speed": 0,
+      "attack_speed": 0,
+      "attack_range": 0,
+      "housing_space": null,
+      "village": "home",
+      "levels": [
+        {
+          "level": 1,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1123200,
+          "upgrade_cost": 27500000,
+          "required_lab_level": null,
+          "required_townhall": 19,
+          "strength_weight": 900
+        },
+        {
+          "level": 2,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 1296000,
+          "upgrade_cost": 32000000,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2200
+        },
+        {
+          "level": 3,
+          "hitpoints": 0,
+          "dps": 0,
+          "upgrade_time": 0,
+          "upgrade_cost": 0,
+          "required_lab_level": 17,
+          "required_townhall": 19,
+          "strength_weight": 2400
         }
       ]
     }

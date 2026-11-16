@@ -1599,6 +1599,12 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/air_defense/level_17.webp",
+        "display_name": "air defense level 17",
+        "sha": "c08f39f2d6cf9b9c431a3ae15363cb535948b50e8e3ba053786da39812265140",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/air_defense/level_2.webp",
         "display_name": "air defense level 2",
         "sha": "cff186f9675d520e9aa651719936728d7b5db6e00931d18035ca554390d2de72",
@@ -2019,6 +2025,12 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/blacksmith/level_10.webp",
+        "display_name": "blacksmith level 10",
+        "sha": "04d5d2a729f3dc81ef2e7201565f1b4f7ba5224a8914c8049d28b17415efeac7",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/blacksmith/level_2.webp",
         "display_name": "blacksmith level 2",
         "sha": "9b415694e8b9bb376b235e4143b7bb21180738fd46d169bdea4edaf710f9ec05",
@@ -2193,6 +2205,12 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/builder's_hut/level_9.webp",
+        "display_name": "builder's hut level 9",
+        "sha": "e332066f6baf6309fe13f5819e3c12324b7a707c5457c4a8eb7a8ed9031c2348",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/cannon/level_1.webp",
         "display_name": "cannon level 1",
         "sha": "1b6dc211d733f17ff96973a34e95c5681c39bb2dc071bd52ffc28b35e71acc8e",
@@ -2355,6 +2373,12 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/clan_castle/level_15.webp",
+        "display_name": "clan castle level 15",
+        "sha": "76f2baa015dc613ac854846f2d9e31ff87ded3ac62bec40886e7b9564d5ac6c4",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/clan_castle/level_2.webp",
         "display_name": "clan castle level 2",
         "sha": "8a83dc650e391ed548b9c17b736affbf0f34cd5a7381505791e0563d631923d9",
@@ -2499,6 +2523,12 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/dark_elixir_drill/level_12.webp",
+        "display_name": "dark elixir drill level 12",
+        "sha": "5d77c7674bba43853f4f82800785b04bb64ecdf3dc2d78ad2f652f6939e88847",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/dark_elixir_drill/level_2.webp",
         "display_name": "dark elixir drill level 2",
         "sha": "cc1923df59be4a355d306d12f4ece06cdd90fbe7a66a631d91644e0cdf56fbbc",
@@ -2574,6 +2604,12 @@
         "path": "buildings/home-village/dark_elixir_storage/level_13.webp",
         "display_name": "dark elixir storage level 13",
         "sha": "ec11dc634330a8aa5f6d172eb7addcf2b77c9575c9e86b9bb29ba2b50fd900d8",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/dark_elixir_storage/level_14.webp",
+        "display_name": "dark elixir storage level 14",
+        "sha": "e73042393e45353ac5e4d2bc520074570be2d3571fe8b1bce3f9231adfbc9982",
         "animated": false
       },
       {
@@ -2769,6 +2805,12 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/elixir_collector/level_18.webp",
+        "display_name": "elixir collector level 18",
+        "sha": "f583586d792ea9b02749092175136a86090448d289eaa7c33586b1b794386b32",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/elixir_collector/level_2.webp",
         "display_name": "elixir collector level 2",
         "sha": "3e23744150dd97d2cd02c543ca783eae13d980754034e2298bdfd1dabcbb6dd1",
@@ -2889,6 +2931,12 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/elixir_storage/level_20.webp",
+        "display_name": "elixir storage level 20",
+        "sha": "6e0c102e49d72407e538ce7d8e26325af9720746e256008435d548e81a2d20c4",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/elixir_storage/level_3.webp",
         "display_name": "elixir storage level 3",
         "sha": "e1f402661241cf59206aaddffa9fb9235ccd345fae6e138fa6f2027a0d066d94",
@@ -2928,6 +2976,18 @@
         "path": "buildings/home-village/elixir_storage/level_9.webp",
         "display_name": "elixir storage level 9",
         "sha": "98ed962c65712e708b9456ede208ed3a285d741b13ec3187ae02f804b9868633",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/firecracker_tower/level_1.webp",
+        "display_name": "firecracker tower level 1",
+        "sha": "3fc9ec8e2860b695a368688c6f28d161fa3c62a9863498fea95a1fcb7222d473",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/firecracker_tower/level_2.webp",
+        "display_name": "firecracker tower level 2",
+        "sha": "402a1b77eaa6f485143cc91602e8c23cf1a37825515186ec19b0b0f1f4122f98",
         "animated": false
       },
       {
@@ -3000,6 +3060,12 @@
         "path": "buildings/home-village/gold_mine/level_17.webp",
         "display_name": "gold mine level 17",
         "sha": "204dcadb431b2cd2762279e6223850fc78ec0a419d900d37e9b17f63f4dd5893",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/gold_mine/level_18.webp",
+        "display_name": "gold mine level 18",
+        "sha": "0ceac100ddb51b0ba73db8554736326afbb8720894d5b8c72bc013ad525b05f9",
         "animated": false
       },
       {
@@ -3123,6 +3189,12 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/gold_storage/level_20.webp",
+        "display_name": "gold storage level 20",
+        "sha": "3948a45c59338ab8f282ca03bb0279f84bd915424e1fb32cbb3e776e3872c913",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/gold_storage/level_3.webp",
         "display_name": "gold storage level 3",
         "sha": "7bef9728dade5bb0d6da3c2aeb5597727d4429b9f4d7c7f8c1d435e14ae59723",
@@ -3186,6 +3258,12 @@
         "path": "buildings/home-village/hero_hall/level_12.webp",
         "display_name": "hero hall level 12",
         "sha": "5c02e8acc440f0e9fdf2c1f2a9df1ab3467c851613f269428ca6ac4a4e2353f7",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/hero_hall/level_13.webp",
+        "display_name": "hero hall level 13",
+        "sha": "aabee4e6bf7b9dc0f26a34e225af42e97bbe717b1bda85e4520f137196cfb90f",
         "animated": false
       },
       {
@@ -3288,6 +3366,12 @@
         "path": "buildings/home-village/hidden_tesla/level_17.webp",
         "display_name": "hidden tesla level 17",
         "sha": "e6cdd8a1c28e871bb4d8fa48331b9907b6d674976571b6e300ecd85ab48f69d5",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/hidden_tesla/level_18.webp",
+        "display_name": "hidden tesla level 18",
+        "sha": "16f1b64fab7a7e7bbdafa23ad7e5ed64ac7843a26ef1dd86b1a42f17d1ff9db6",
         "animated": false
       },
       {
@@ -3456,6 +3540,12 @@
         "path": "buildings/home-village/laboratory/level_16.webp",
         "display_name": "laboratory level 16",
         "sha": "74bf1cae9a2abea19467439049f7d6a5402a38e189ddc6c2dff6690cd4332897",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/laboratory/level_17.webp",
+        "display_name": "laboratory level 17",
+        "sha": "5b353fee34992a7a6a4c5b52ccae511b94bd99715e77fae64688f13aa7ec035e",
         "animated": false
       },
       {
@@ -3669,6 +3759,12 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/multi-archer_tower/level_5.webp",
+        "display_name": "multi archer tower level 5",
+        "sha": "78937c72c4c5fd74ebf42a6cf831a765fdc03f2c9b1d0cc26c34fcbfe1c3a912",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/multi-gear_tower/level_1.webp",
         "display_name": "multi gear tower level 1",
         "sha": "2df430024d016910feaaaa4ef8936bc07b37565dc717c6566b317e9d2734cb06",
@@ -3684,6 +3780,12 @@
         "path": "buildings/home-village/multi-gear_tower/level_3.webp",
         "display_name": "multi gear tower level 3",
         "sha": "81618c0aba7c5caab2ad4754a0e375ddfd22c631f54de689bfc7a99900d07855",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/multi-gear_tower/level_4.webp",
+        "display_name": "multi gear tower level 4",
+        "sha": "5206302fb85493ed122ae2b2033fa74ff37f51a5146c0cceeae8c9fe538a55fe",
         "animated": false
       },
       {
@@ -3795,6 +3897,12 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/ricochet_cannon/level_5.webp",
+        "display_name": "ricochet cannon level 5",
+        "sha": "bb3fbbc594c64c203453ad5f6086b92a53ff46584b572c1355e0e958686b8c2d",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/scattershot/level_1.webp",
         "display_name": "scattershot level 1",
         "sha": "0d540d11a4c3d38a794e56188d5e335e02ae773e125b58e112fa3ae99a81ebc6",
@@ -3840,6 +3948,12 @@
         "path": "buildings/home-village/spell_factory/level_1.webp",
         "display_name": "spell factory level 1",
         "sha": "a7a3cf687b3792f33a10a6a8b4ad9fff52a6eae4f295b030fbaa3d5b84d1413a",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/spell_factory/level_10.webp",
+        "display_name": "spell factory level 10",
+        "sha": "34fe75a54aca69697c2b7a282444202c4709e7f1f15d69b2a2e0c9208e03b95b",
         "animated": false
       },
       {
@@ -3915,6 +4029,90 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/spiky_tower/level_1.webp",
+        "display_name": "spiky tower level 1",
+        "sha": "62bb829a3b282ad3ec423027cbf93e2521a704a9eb7baa30a165a808e682f0f6",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/spiky_tower/level_2.webp",
+        "display_name": "spiky tower level 2",
+        "sha": "059a36b1667ac74f5be7ac35ffac90d82edfc0816d5d97f18704a885d491628d",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_1.webp",
+        "display_name": "squad barracks level 1",
+        "sha": "59965093497ac69468ad5c7a7782cd80c49662937ff0d35df8b5e3cff5868ad6",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_10.webp",
+        "display_name": "squad barracks level 10",
+        "sha": "52261544ceb7451fb7b7bde02849bfbb04045c01b62125e22bfbe604bf0954d7",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_11.webp",
+        "display_name": "squad barracks level 11",
+        "sha": "99c98d6b4324de1dde221d15de298b8dcee9a50b8b84378d62fbae8a438c43ea",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_12.webp",
+        "display_name": "squad barracks level 12",
+        "sha": "783a9a747d7c77108b1aec6e685a91308c9782de1adf4bdce99f87201b39891b",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_2.webp",
+        "display_name": "squad barracks level 2",
+        "sha": "519ac8c2cdbcc3962d99dc5b862df77caa038037d6aaedbeacbd0c5744bcabb0",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_3.webp",
+        "display_name": "squad barracks level 3",
+        "sha": "ba537ac8c249ef56f9487c062e93842406a38d94f5e3c9bec152e08b4d65cf79",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_4.webp",
+        "display_name": "squad barracks level 4",
+        "sha": "29d36024af8599753a447f30cd2b9768c6653be0d77a73cce855a310e9cd1e8b",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_5.webp",
+        "display_name": "squad barracks level 5",
+        "sha": "7ec3784f7145792f9df170e6642a66f03db619bda11c6d08f4ee802c1d186f3b",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_6.webp",
+        "display_name": "squad barracks level 6",
+        "sha": "f88a922d595fa25a19dd3bf5a7004062616ef4102e03602f8945597118161c8e",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_7.webp",
+        "display_name": "squad barracks level 7",
+        "sha": "24be1ab72eb2a18144fe40ecb1dc8d749512312b66bcdaa2465cbcc917b6414e",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_8.webp",
+        "display_name": "squad barracks level 8",
+        "sha": "6c171af6dc7fcd98f1df745e014cef87c252eb08fee9acb7fde16d58b2f3f3eb",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/squad_barracks/level_9.webp",
+        "display_name": "squad barracks level 9",
+        "sha": "dec8cd1a9592056d7aba512a990f0367857849827273f2e2c7e341c83d75f36a",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/super_wizard_tower/level_1.webp",
         "display_name": "super wizard tower level 1",
         "sha": "f6a598610b9b6f3ef32410b97ace2893b996a6b2349b0ef0046140f0da8c0899",
@@ -3984,6 +4182,30 @@
         "path": "buildings/home-village/town_hall/level_18.webp",
         "display_name": "town hall level 18",
         "sha": "b884a89df983d90afcb67a422f0ee62772c75c75d36e463ab78dcd5f17f5581f",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/town_hall/level_19.webp",
+        "display_name": "town hall level 19",
+        "sha": "f6b55ef63023357016c6910475ddfd081818758dda52354f527a3cea0ff61103",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/town_hall/level_19_archer.webp",
+        "display_name": "level 19 archer",
+        "sha": "2be1791f20345d4e09e84e1f41c0686606547a56e4d335505195954a5d4aa0cb",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/town_hall/level_19_barbarian.webp",
+        "display_name": "level 19 barbarian",
+        "sha": "481f07d7cbd0ab8272795d90e18831ec91ef1e126dbd98ffb9bbe3b766ec7765",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/town_hall/level_19_wizard.webp",
+        "display_name": "level 19 wizard",
+        "sha": "b9e97a160c6138a23df5add7185ffe940ea3abb196612119f51ad84fda7c9dff",
         "animated": false
       },
       {
@@ -4104,6 +4326,12 @@
         "path": "buildings/home-village/wall/level_2.webp",
         "display_name": "wall level 2",
         "sha": "9c83a0f337cb0a4b4947ab6ab177571db1cb14d5c8e5b07196385a535ded1486",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/wall/level_20.webp",
+        "display_name": "wall level 20",
+        "sha": "fe093e0261eb456be6a78e5b5cb5baf510fc1e4cd211183adc56ca1beeacc003",
         "animated": false
       },
       {
@@ -4332,6 +4560,12 @@
         "path": "buildings/home-village/x-bow/level_13.webp",
         "display_name": "x bow level 13",
         "sha": "fd3a88c449bbed5c16fe64170c213e7363f7b5dc52b158e05866d84d5ad0eb78",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/x-bow/level_14.webp",
+        "display_name": "x bow level 14",
+        "sha": "55baf70a85b563aef56a83c77ece866615bac812c3a145971d73bc17d2bbed8d",
         "animated": false
       },
       {
@@ -8237,6 +8471,12 @@
         "animated": false
       },
       {
+        "path": "decorations/home-village/amber_hot_streak.webp",
+        "display_name": "amber hot streak",
+        "sha": "b7222ec35c9321bac4aa3e5efed28a61a8779cf35b320b8ed49580c8e0942ba0",
+        "animated": false
+      },
+      {
         "path": "decorations/home-village/ancient_skull.webp",
         "display_name": "ancient skull",
         "sha": "17c7731b76d8377301a7321afd82beb29e0eb62e34e7f569e3e56d1ca2e30226",
@@ -8405,6 +8645,12 @@
         "animated": false
       },
       {
+        "path": "decorations/home-village/clash_contest.webp",
+        "display_name": "clash contest",
+        "sha": "571700e9d7ceba71ffb801474edde9f7e0ec48176e9c1dd074f5a250e1a6bd57",
+        "animated": false
+      },
+      {
         "path": "decorations/home-village/clashmas_sleigh.webp",
         "display_name": "clashmas sleigh",
         "sha": "001ae4b23675708fedf832cda4c309f8ab338837c374f3b62fda3e7fd5db1be0",
@@ -8444,6 +8690,12 @@
         "path": "decorations/home-village/codys_callout.webp",
         "display_name": "codys callout",
         "sha": "82e7830beb2c0efab3d0564506ff32a1f808c5f6de6daa8a90e94f2b046aa560",
+        "animated": false
+      },
+      {
+        "path": "decorations/home-village/coin_collector.webp",
+        "display_name": "coin collector",
+        "sha": "1933e2bb4c75355828fa3e36990f60326ba64be589fcb4283e69bc29415a3a8a",
         "animated": false
       },
       {
@@ -9047,6 +9299,12 @@
         "animated": false
       },
       {
+        "path": "decorations/home-village/portal_staff.webp",
+        "display_name": "portal staff",
+        "sha": "dd05b8eea3907a8e2db03be539afcf86f9193a5fc0c294bbc4a5a6f8c02d7e67",
+        "animated": false
+      },
+      {
         "path": "decorations/home-village/pretty_portal.webp",
         "display_name": "pretty portal",
         "sha": "ba22c32f65a78040ac8312a04bdc353889ac7ee3923b0e4a23abc0f7380f9afe",
@@ -9158,6 +9416,12 @@
         "path": "decorations/home-village/sour_elixir_cauldron.webp",
         "display_name": "sour elixir cauldron",
         "sha": "e5cc7107f2e1ea3e0bfee415b6ddad37f78d2dadd69b16bbc2ef5c36622f85b0",
+        "animated": false
+      },
+      {
+        "path": "decorations/home-village/sour_elixir_fountain.webp",
+        "display_name": "sour elixir fountain",
+        "sha": "95c25cc89d3ddd897c50fe1934db4b5fab0087ff1fe27cf3c749d3671b7ff46f",
         "animated": false
       },
       {
@@ -9299,6 +9563,12 @@
         "animated": false
       },
       {
+        "path": "decorations/home-village/violet_hot_streak.webp",
+        "display_name": "violet hot streak",
+        "sha": "ad2909b0a138195a0c399d39cb57c8004a7be123fc97f14c4a341c674dcdaaca",
+        "animated": false
+      },
+      {
         "path": "decorations/home-village/war_chief_2026.webp",
         "display_name": "war chief 2026",
         "sha": "7f68198f55a50782ce46787ecaee73691c8dacf5883460c1de59e4a89bd2ff26",
@@ -9350,6 +9620,248 @@
         "path": "decorations/home-village/wwe_title.webp",
         "display_name": "wwe title",
         "sha": "5389469d12b1c1fd0956fbd3ce23691605a4fe99c201ba79cd7e208d35b7e7d0",
+        "animated": false
+      }
+    ],
+    "emotes": [
+      {
+        "path": "emotes/126000000/animated.webp",
+        "display_name": "animated",
+        "sha": "633c14af8584fd32f7ea1b88a62a723071b0126d60147f180621512307014ad0",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000000/static.webp",
+        "display_name": "static",
+        "sha": "b5c2e7ca4e97fc1b60df9e4d9a5a6e484b7ad6c802041394b3eeb6004c3df3b9",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000001/animated.webp",
+        "display_name": "animated",
+        "sha": "e4d02f682f91c935692513d8016b55d90497fae08059681cc5c4697518d2bf69",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000001/static.webp",
+        "display_name": "static",
+        "sha": "3d2ead7495734d3dba276a7acf6943338d566c1675c2b0accfcd5ef90d18ad88",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000002/animated.webp",
+        "display_name": "animated",
+        "sha": "f473c451613b95b7684688a5976ae9133058ed6b51c35d5cdf286b69c92fa1b2",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000002/static.webp",
+        "display_name": "static",
+        "sha": "98e2f75cd47b14c1ff9aac530d009440917fe37c1f27c092b1ab43719a5e9f26",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000003/animated.webp",
+        "display_name": "animated",
+        "sha": "ae4a524efb7f4d2c90c297b26dce93a8b3fc4b28ba989d57a186e90c329e7437",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000003/static.webp",
+        "display_name": "static",
+        "sha": "8e976c75617c1eaba2617919f74fc8f4c57a41cef3cd6d50158bb6953f2401f1",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000004/animated.webp",
+        "display_name": "animated",
+        "sha": "c0723ab9ba7ec948e4ab9c22fdc4e9cdaffcfe4bb3d520c6cbfde0a07c241c31",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000004/static.webp",
+        "display_name": "static",
+        "sha": "448753b8a2ee9c6b6451146d6c0715c5f1c02f0083015aa47443f2d0427df132",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000005/animated.webp",
+        "display_name": "animated",
+        "sha": "6609e3acf1ceb32b832cf0a26308b5aaa37c3e6116b9f102e40e037d880e1c8e",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000005/static.webp",
+        "display_name": "static",
+        "sha": "8b26e6a80fa086fc2ebeeaf53d5bc4be6113e9a27fc940594c5186b8dc7ddf44",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000006/animated.webp",
+        "display_name": "animated",
+        "sha": "287349d1906c3c77ffd6a5694e20218aef2c5ac584a1f930b13e792fd017ca70",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000006/static.webp",
+        "display_name": "static",
+        "sha": "039a6914bfb767cd0953ba832705450d563369cd901e8951c5baa6a14a89f849",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000007/animated.webp",
+        "display_name": "animated",
+        "sha": "fc81af3849ba681bcc24668df551b7130289871600dec7905828e0908f9a76cb",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000007/static.webp",
+        "display_name": "static",
+        "sha": "1676b1c83f971a71e9e9f0ae0eaced83315e88dd9cbc61a6baac8ee5dff61c0d",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000008/animated.webp",
+        "display_name": "animated",
+        "sha": "c7abb4d0319ca49317a0927ed333467acac0060f83e73ea99018df48528b0b0e",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000008/static.webp",
+        "display_name": "static",
+        "sha": "7018a1971d2e57bc254c12cf873d9d2d9e477e008be72d2d55e3183f38f98d4e",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000009/animated.webp",
+        "display_name": "animated",
+        "sha": "887dbb8e8fcd3518f6f0ce7099239e63e70c8d7d4b28bca9b3126fa81e2baadd",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000009/static.webp",
+        "display_name": "static",
+        "sha": "2a9335b4348c32b15577aef432635128d163170cf937cdb21a8f85ce37cd6680",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000020/animated.webp",
+        "display_name": "animated",
+        "sha": "a310cddbe8ad15de2dc4e71dc83da364118a80e1c665ada6b7e5605682b68780",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000020/static.webp",
+        "display_name": "static",
+        "sha": "483b30f44a4afdb39a328aff9440ef2a246d460f6736022e839c97c69aa93a19",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000021/animated.webp",
+        "display_name": "animated",
+        "sha": "846bb1ebdff01632bcff1b34348b48f32c85bf8410847b12bea96c840914846e",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000021/static.webp",
+        "display_name": "static",
+        "sha": "741d0245a9e2a46bce6ee5cad15b1955a9304233585ceebbeae07d07174408ef",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000022/animated.webp",
+        "display_name": "animated",
+        "sha": "e19e4e6088e7c2df53868ed006b570bc50fa7a301751703efbe3221947342989",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000022/static.webp",
+        "display_name": "static",
+        "sha": "f4e362f84c4f1fdad4bd28f43d4e2069db6804ac11a763496868800560e119a5",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000023/animated.webp",
+        "display_name": "animated",
+        "sha": "9cb6a5b9f1f1da7a7d716221784a8b3b48df910a4f089a72c73bb9148a6ecbb8",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000023/static.webp",
+        "display_name": "static",
+        "sha": "1a58743207aae9ea84d86930c58bb816a7bdddbd443d81a0d1cc5bdc0fbc76df",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000024/animated.webp",
+        "display_name": "animated",
+        "sha": "8ebf83ac0cba813811e5ab4d8fd297db1ef288a409da81feb7463c9c7668b426",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000024/static.webp",
+        "display_name": "static",
+        "sha": "26f43bc016feaf6de26af0f1495aaa231ed2c15fbdc46821c3b2e7ad73ff61ab",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000025/animated.webp",
+        "display_name": "animated",
+        "sha": "b64395f109fb2ce442bc49838fcd0e9f0fc3e6bdc95894ec73fd3fa472f45a84",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000025/static.webp",
+        "display_name": "static",
+        "sha": "a7181c849b077819acf7f966ac5117b45467f4f135eeae7ff71b58079f0b2bfc",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000026/animated.webp",
+        "display_name": "animated",
+        "sha": "06ed272b4d2a3d72991e61fb439688f754ba67aa9461b106268578c25b55ad92",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000026/static.webp",
+        "display_name": "static",
+        "sha": "b3479d4bbd93e04256eabc6ea44df878715e3d297a408f327c565ad3ec1496e6",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000027/animated.webp",
+        "display_name": "animated",
+        "sha": "edb0197e2573120ea451579d9ed1de5f220c1e46495ac05a577824c4a25a7f34",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000027/static.webp",
+        "display_name": "static",
+        "sha": "34312fdf8d6e8d2bc2ca95ae34ed862b8e90756741724a715caf74d98624f269",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000028/animated.webp",
+        "display_name": "animated",
+        "sha": "83d5a4bc44e9e805481b2f76af86d39c2e9f662af62126c11c5b2b773f613917",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000028/static.webp",
+        "display_name": "static",
+        "sha": "657458b1d25ea4002bae2c05deb5802c0b0651d55b148a20d819bdf6c742c54a",
+        "animated": false
+      },
+      {
+        "path": "emotes/126000029/animated.webp",
+        "display_name": "animated",
+        "sha": "e97b53f7bef18575291c5d9639767cd9a98d761a98161b4a8c1fb4d75af4aac9",
+        "animated": true
+      },
+      {
+        "path": "emotes/126000029/static.webp",
+        "display_name": "static",
+        "sha": "57a9d1a96a8c019540b56716e2eb0413c8f16398087ff27c90e5c8d11ec793b0",
         "animated": false
       }
     ],
@@ -11125,15 +11637,45 @@
     ],
     "magic_snacks": [
       {
+        "path": "magic_snacks/2x_battle_bake.webp",
+        "display_name": "2x battle bake",
+        "sha": "2893b0a7559b681cb2f6ff952c0c5d8af56100d0b2e5964a9cceae0b44fef4ea",
+        "animated": false
+      },
+      {
+        "path": "magic_snacks/3x_battle_bake.webp",
+        "display_name": "3x battle bake",
+        "sha": "5d7d8430c5e7ef4b2801633f49bd212b055ab25d7db37e61bd639e92b256e9ed",
+        "animated": false
+      },
+      {
+        "path": "magic_snacks/4x_battle_bake.webp",
+        "display_name": "4x battle bake",
+        "sha": "5811cc19072b7a03b65698c62443679d39bb549475dc879b0124b877ccb0a13e",
+        "animated": false
+      },
+      {
         "path": "magic_snacks/builder_bite.webp",
         "display_name": "builder bite",
         "sha": "03ec767edc9198da7ba58c79ffdaf2783871244f725939bfc14131db4364b1ed",
         "animated": false
       },
       {
+        "path": "magic_snacks/challenger_contract.webp",
+        "display_name": "challenger contract",
+        "sha": "621b1c81d5a231a0980322a7ea58ddb81af1d5c9ee9060d2fb1dfc676dc9809e",
+        "animated": false
+      },
+      {
         "path": "magic_snacks/clan_castle_cake.webp",
         "display_name": "clan castle cake",
         "sha": "53b10d3db0e0c90e1b72de0a8726bd38830be42e7231079f81422162383d38bf",
+        "animated": false
+      },
+      {
+        "path": "magic_snacks/clan_castle_slice.webp",
+        "display_name": "clan castle slice",
+        "sha": "1c7f5270a5604962b899ddd78e377ce8ca984df162f9ddd3d38f007d0c47f753",
         "animated": false
       },
       {
@@ -11146,6 +11688,12 @@
         "path": "magic_snacks/power_pancakes.webp",
         "display_name": "power pancakes",
         "sha": "aa120b4ae574ba98df0937c5aba95c41249cb8fbdf54df633752dbd480e2890a",
+        "animated": false
+      },
+      {
+        "path": "magic_snacks/star_bonus_snack.webp",
+        "display_name": "star bonus snack",
+        "sha": "5e04c8563097a535091b9a118ce9f9259b1bd89d67589a1d4984d9c09ad18627",
         "animated": false
       },
       {
@@ -11928,6 +12476,12 @@
         "path": "resources/raid_medals.webp",
         "display_name": "raid medals",
         "sha": "fe14f3a2c029df9dff1490b1c1fe31fd7ab9177ca3c474daa848fa9e35b55692",
+        "animated": false
+      },
+      {
+        "path": "resources/ranked_medals.webp",
+        "display_name": "ranked medals",
+        "sha": "cfac4f277a85c3adf1cfee3eb7ef293afb6514ef20f379e3edd9ff3caf2132f6",
         "animated": false
       },
       {
@@ -14571,6 +15125,12 @@
         "animated": false
       },
       {
+        "path": "spells/heroic_spell.webp",
+        "display_name": "heroic spell",
+        "sha": "7bdf1f8c1c5c6a492fd9075ef142bfbb1680e1a8c840b47cd58c44e3f9354eb3",
+        "animated": false
+      },
+      {
         "path": "spells/ice_block_spell.webp",
         "display_name": "ice block spell",
         "sha": "2f27cf6ab829d34396e94d5d4fbf8bdc7ee774baf21b5191eca28dd3afef3b60",
@@ -15001,6 +15561,12 @@
         "animated": false
       },
       {
+        "path": "traps/home-village/air_bomb/level_14.webp",
+        "display_name": "air bomb level 14",
+        "sha": "109cac5f764609527cc1dde056662e2d06391d31a444ad63111ec5fcfe76b3b8",
+        "animated": false
+      },
+      {
         "path": "traps/home-village/air_bomb/level_2.webp",
         "display_name": "air bomb level 2",
         "sha": "5ba93af63dafd52b0c4d9bdbc0feb587f32cec0cdde95e3b553ebe77fbe0807a",
@@ -15307,6 +15873,12 @@
         "animated": false
       },
       {
+        "path": "traps/home-village/skeleton_trap/level_6.webp",
+        "display_name": "skeleton trap level 6",
+        "sha": "880ef7b0daaf1212459d45c45fa4b83765022daf960c38fc7f07548301a182b2",
+        "animated": false
+      },
+      {
         "path": "traps/home-village/spring_trap/level_1.webp",
         "display_name": "spring trap level 1",
         "sha": "8e725ef4df12b622ccaa6b682e81a177e4c3c139d687462d5408602d1d38f34c",
@@ -15334,6 +15906,12 @@
         "path": "traps/home-village/spring_trap/level_13.webp",
         "display_name": "spring trap level 13",
         "sha": "0ad052144f251497355f63aa84995f7637c80469db009540702bb290471a8dbf",
+        "animated": false
+      },
+      {
+        "path": "traps/home-village/spring_trap/level_14.webp",
+        "display_name": "spring trap level 14",
+        "sha": "e1b4fb5d08e02fc192c0fcd4e8157c83323bb697eb024162dda4c2ceb05e104c",
         "animated": false
       },
       {
@@ -15429,9 +16007,21 @@
         "animated": false
       },
       {
+        "path": "troops/baby_dragon_squad/icon.webp",
+        "display_name": "baby dragon squad",
+        "sha": "8ad60c8aca2cd70444aacf41b1272bf89eef1b12963412cfa02c8eb759109203",
+        "animated": false
+      },
+      {
         "path": "troops/balloon/icon.webp",
         "display_name": "balloon",
         "sha": "75655d1e1d108d98fed91042603deb574f4d5f5eac46b839f950dcf1ce23ea75",
+        "animated": false
+      },
+      {
+        "path": "troops/balloon_squad/icon.webp",
+        "display_name": "balloon squad",
+        "sha": "7b325196fb89ee768b319d25507e7f7e7f65c1750e343b73b36685cdd77cad75",
         "animated": false
       },
       {
@@ -15444,6 +16034,12 @@
         "path": "troops/barbarian_kicker/icon.webp",
         "display_name": "barbarian kicker",
         "sha": "9ed2380c75bc2f9ced214f754c58bdcdc8fcf84f496671cdadd049a5740832b7",
+        "animated": false
+      },
+      {
+        "path": "troops/barch_squad/icon.webp",
+        "display_name": "barch squad",
+        "sha": "be22fcc6a820fba86d9c537a73c26f0a60a5eb9f49f379f360bb3d0d47d03944",
         "animated": false
       },
       {
@@ -15531,6 +16127,12 @@
         "animated": false
       },
       {
+        "path": "troops/dragons_squad/icon.webp",
+        "display_name": "dragons squad",
+        "sha": "35f69370945ccbab1ba2536b33224ae48c3468611b238e9efeab4665c7690f25",
+        "animated": false
+      },
+      {
         "path": "troops/drop_ship/icon.webp",
         "display_name": "drop ship",
         "sha": "7ca965b45211c4a0df470ea00fa0f3653341b860a7dc7ddd924310f04c0d9241",
@@ -15609,6 +16211,12 @@
         "animated": false
       },
       {
+        "path": "troops/giant_wizard_squad/icon.webp",
+        "display_name": "giant wizard squad",
+        "sha": "4ca7ec0148b3c0b1f7e5251afd6076740afef591abf9dd9cb66ffa983a65693f",
+        "animated": false
+      },
+      {
         "path": "troops/goblin/icon.webp",
         "display_name": "goblin",
         "sha": "a21411fbf21e15ca1a49d75a0a050fbda8a9832e20948de306d9b36badae0216",
@@ -15618,6 +16226,12 @@
         "path": "troops/golem/icon.webp",
         "display_name": "golem",
         "sha": "4ce94b4b4bf4e983b21df4cda057362d3ce112acb4b2bc4a57027e19e3be7047",
+        "animated": false
+      },
+      {
+        "path": "troops/golem_witch_squad/icon.webp",
+        "display_name": "golem witch squad",
+        "sha": "f259e9bff3ebedadae376943a53be48a91f01a16a656e87b3af41cd0e92a0d29",
         "animated": false
       },
       {
@@ -15633,6 +16247,12 @@
         "animated": false
       },
       {
+        "path": "troops/healer_squad/icon.webp",
+        "display_name": "healer squad",
+        "sha": "b49fcd2e8506b46ce2aa43242bd847b37661354042fd3a7963935c1b81a76d0b",
+        "animated": false
+      },
+      {
         "path": "troops/hog_glider/icon.webp",
         "display_name": "hog glider",
         "sha": "c77a361d06ae0784ae24e99157954a3cb7ffd1e6977b97501241a7945a786ac9",
@@ -15642,6 +16262,12 @@
         "path": "troops/hog_rider/icon.webp",
         "display_name": "hog rider",
         "sha": "08e83e85586636cfc4c4501fbd1243568c36b6bec98e32d9c885231a90d183bc",
+        "animated": false
+      },
+      {
+        "path": "troops/hog_rider_squad/icon.webp",
+        "display_name": "hog rider squad",
+        "sha": "c7ae9e85a3e5d8823de2242eee50a0d118de3a9a3ff272b737fd607c965a81cc",
         "animated": false
       },
       {
@@ -15723,9 +16349,21 @@
         "animated": false
       },
       {
+        "path": "troops/miner_squad/icon.webp",
+        "display_name": "miner squad",
+        "sha": "92b33cb3cbeb01695e059d35594356bc65b3e6479db844488e2b2bf2f0eb8741",
+        "animated": false
+      },
+      {
         "path": "troops/minion/icon.webp",
         "display_name": "minion",
         "sha": "f42a3b74efc35e1ddd4d212971858a9422875b345feb8b4e633865cc4189bbb3",
+        "animated": false
+      },
+      {
+        "path": "troops/minion_squad/icon.webp",
+        "display_name": "minion squad",
+        "sha": "5efa57b098f2460e586a9e1ae2328ef19ad1e6ff7ea3347e4b8b179cdf691d19",
         "animated": false
       },
       {
@@ -15744,6 +16382,12 @@
         "path": "troops/pekka/icon.webp",
         "display_name": "pekka",
         "sha": "a966b660922e5b8379bf397d52e13532dbf4c5c22c21dbba56ae58e3c1df263e",
+        "animated": false
+      },
+      {
+        "path": "troops/pekka_titan_squad/icon.webp",
+        "display_name": "pekka titan squad",
+        "sha": "e42830f9508caedc2dbcb91f9c6da35d52688c1046c8ca70dd9b77397825f71e",
         "animated": false
       },
       {
@@ -15951,6 +16595,12 @@
         "animated": false
       },
       {
+        "path": "troops/wall_breaker_squad/icon.webp",
+        "display_name": "wall breaker squad",
+        "sha": "35df3aa02d1d31d7d80b47a515a13b1173ed0557baa494a2122cec56f458db13",
+        "animated": false
+      },
+      {
         "path": "troops/wall_wrecker/icon.webp",
         "display_name": "wall wrecker",
         "sha": "b979a5c27882ad3c5d5ffbba82250a890b43811bba8f3322580df35c4a32d864",
@@ -15998,7 +16648,7 @@
     "stats": [
       {
         "path": "static_data/abilities.json",
-        "sha": "802428ebf021730e0ace4ead39a69434dab66f766dfc4ba5e0cd11d1c0053d5f"
+        "sha": "3d65c15e7e61ec2311729582f07949181db85f358c193473cb4d79958a9e3d64"
       },
       {
         "path": "static_data/achievements.json",
@@ -16006,7 +16656,7 @@
       },
       {
         "path": "static_data/battle_modifiers.json",
-        "sha": "d8db2cccaedb8ce7d7084d7601655fbcda630c5bbda582ea0e5fc3129fcdbfd6"
+        "sha": "53351a63696094fb42fed1eb7264ec84607e6a30ffdc6a8c50d37ce264ac1fb8"
       },
       {
         "path": "static_data/builder_leagues.json",
@@ -16014,7 +16664,7 @@
       },
       {
         "path": "static_data/buildings.json",
-        "sha": "f8e5a52f9cc6dd7d379779ee2835d3025a815b339954d40e8865a1e4e6523769"
+        "sha": "fd1b1c17b7d9aff74c747c6009c12b67b428a40edc829ed64bcf318077fd9ace"
       },
       {
         "path": "static_data/capital_house_parts.json",
@@ -16034,15 +16684,19 @@
       },
       {
         "path": "static_data/decorations.json",
-        "sha": "5b99f07ed7e5a312fc2ab1fa222922bfdf21342dd4ebee3edbc4108d731a731c"
+        "sha": "fd91ffcd86761d8bb9a2f1a268f71e7d55faf085a422faadbaafea78848df71f"
+      },
+      {
+        "path": "static_data/emotes.json",
+        "sha": "cfd89d3cad83627a44c8d9635e54eaa7bb8482486a5dc8e6541431ee2434f52f"
       },
       {
         "path": "static_data/equipment.json",
-        "sha": "cb9d068ad943d7a88499db3d108fdc0ee34603c73f00f9769491bb69ef4d03a7"
+        "sha": "580e0b7e5ac172af8ecd51a8a80c6a3919a29b4ded6e909dac72fc40e2f22529"
       },
       {
         "path": "static_data/guardians.json",
-        "sha": "8099a4108a36c49d3ee9f4806c6680a82d91590bcb4b0a9ad8902cfe9ab78058"
+        "sha": "0e0d90ff517f94faf44473be1a7bb1a143e23563252c274fc6286066e099a279"
       },
       {
         "path": "static_data/helpers.json",
@@ -16050,11 +16704,11 @@
       },
       {
         "path": "static_data/heroes.json",
-        "sha": "d088dc4109310505b3aad60661bf8d7681cea23063e37fbc52cd393fda976931"
+        "sha": "d0a23d79684f737233a7e0398c22eb849b19bb6f6995ea0d236666822407cb49"
       },
       {
         "path": "static_data/league_tiers.json",
-        "sha": "436998c9547eac9a7857cd4d50c9431ddcfc4be7f33f20b3a106f5d9159c0dea"
+        "sha": "ad2fcc672b4aa024b28cb64bf249ca7fc9c106b5b004da97f4ba52644cc9d374"
       },
       {
         "path": "static_data/locales.json",
@@ -16066,7 +16720,7 @@
       },
       {
         "path": "static_data/magic_snacks.json",
-        "sha": "faccc76f947a257459c3a448be6d5bc9292116a69fc218b03c23bd00d2d34543"
+        "sha": "ce5ea1fac83bf55a09e241ce71135be1b7cf28e48fad19fe0eebb20b99e5529b"
       },
       {
         "path": "static_data/obstacles.json",
@@ -16074,7 +16728,7 @@
       },
       {
         "path": "static_data/pets.json",
-        "sha": "d3b6bc25471cf5401a8c5794dfccacac97ee57bdad63d29ea24abe81b81a633c"
+        "sha": "198f50f669be5dff068633510ca62d779e518dfc489f862ead8fc9cc939ef3a9"
       },
       {
         "path": "static_data/player_labels.json",
@@ -16082,121 +16736,125 @@
       },
       {
         "path": "static_data/resources.json",
-        "sha": "beb1c238a8a59710f40495a766702271752d54b4fc6ddfa6dede7a349527a9a8"
+        "sha": "c334a9b9d29967a249400b3520207c2556b9564fc2a0ab8c41b4880004e4fff3"
       },
       {
         "path": "static_data/sceneries.json",
-        "sha": "e3d336593041cf78e34e5d542287da651ddf4a7b8b42b5513d50a5a9b88a0534"
+        "sha": "7d914b4dcffe7dd0be999c7a3971638e08e3d2dc0e443360c919f6c8c7ea2e57"
       },
       {
         "path": "static_data/skins.json",
-        "sha": "9b075b80c04380f6f33648418635d54f99eb1635b9e6b8905b3e014b615991e5"
+        "sha": "ca13c1249f9b9eeb7a505ee464b8db3bd725d78604f314482be66942884ebaa7"
       },
       {
         "path": "static_data/spells.json",
-        "sha": "7cbff39341ad2cc6d0693945086906e19c2cebdd20f3df3b5a336777a5e35bb6"
+        "sha": "9aefd5bdb5b7f9f375166befb3b1e5c954244f395d9dd100c43994e46656ddea"
+      },
+      {
+        "path": "static_data/star_bonus.json",
+        "sha": "ea80a9063b2cfd2a951435a49d027201391b0426cd1603149861136ef7cbe538"
       },
       {
         "path": "static_data/traps.json",
-        "sha": "bfe6829ea59f1961a6770a90cff458eb6697a7484fa641f59e615308804aed85"
+        "sha": "ad8ad1bf594cdfdf6693bbbf4be1f54f6cefadaec2f82e02c9289473f29f856c"
       },
       {
         "path": "static_data/troops.json",
-        "sha": "f3ff2c4432b22331998e9fd2ac1c7ffa5be12f974cbaa907855880ba89d7e1ed"
+        "sha": "ab840cb7a306e9ea173723e90415ec1d6f46b84976ed1d864b7ab70f98fd457e"
       },
       {
         "path": "static_data/war_leagues.json",
-        "sha": "1c443b0c45f516d8d969e77a6565718b6a549d65c34cb237ffe2617777807bb8"
+        "sha": "4b69d16427f9e0dd8c3d2b9d8e7279ec07a5f352f2825d36ddb0322e4c8a9f22"
       }
     ],
     "translations": [
       {
         "path": "translations/AR.json",
-        "sha": "0ad5b8f89e6dbcb5434a9469e58153d4aacc7dd3d281430eb3dfe5225d0a9a8d"
+        "sha": "c5683a1c0a9b7203abf79a315eb624a2e2b2b3cc48c3877ce4d89c16e78b975f"
       },
       {
         "path": "translations/CN.json",
-        "sha": "c165fab7acbcc661fed9c5416e78d12295582f6c7d6765710fdf4dee92a0cc6f"
+        "sha": "25a95952e6df3efd1d1521d91670b243acdfb95fcc5560025976694290733a5b"
       },
       {
         "path": "translations/CNT.json",
-        "sha": "32449f9faa90b92d5193f944e19e4f8426399f161483eb4b5c012972425f5ed0"
+        "sha": "9be97a0dfa0a9dee31fb94f6c1bf957da11315489cbc0a9b539395a80ef666b5"
       },
       {
         "path": "translations/DE.json",
-        "sha": "4d7b49c24bcca0f7882d2c751a4fcd07289853dc3e09bd512e80fdea7c6e3cba"
+        "sha": "4281f607f4166f099db073471d2336dfa30842bd75030cc5ba6c0eddda0664c3"
       },
       {
         "path": "translations/EN.json",
-        "sha": "e1013209517b085c5e16973947a4a4d3a066cafbcbb07e352bfd1fd8ad89d605"
+        "sha": "9ea33857130aa084490c5bd865956cecaccce9b1a5fe06db79713456a1135332"
       },
       {
         "path": "translations/ES.json",
-        "sha": "c33aa440f8ad5e48f746b28861d7baa0030b885afc2c7aa0b646a60d0b318434"
+        "sha": "ace2187aa554ca4009e05626d3ccdd50599c6baaef55b4b1eee4dad58b6fab56"
       },
       {
         "path": "translations/FA.json",
-        "sha": "19477485f30bc1a66afebe7f52c96d931db6b9794e263610a70a50d367e63000"
+        "sha": "41fc26b73cad146891470fe8d1caf6684945df72328a1b3b861d73ef53ec2f41"
       },
       {
         "path": "translations/FI.json",
-        "sha": "9314f70fe96d170a85a0e809df8ab6bfb31a81d7a3ee4dbb281b0960f14f7bc9"
+        "sha": "7f3587cf88878941bfac8c85999e67ffc5c90e20d25e1ad5217e296ca89d4e0b"
       },
       {
         "path": "translations/FR.json",
-        "sha": "7ea0dace506a9c0174304b0b00011ce6c9167929ed1f4ce28f566073308cee6b"
+        "sha": "5204b7cc62a2e48f620a3922fa2fb458d6153abf581350212cce8acf71dd40db"
       },
       {
         "path": "translations/ID.json",
-        "sha": "c4aad730f58174a292ccf28767d8be5b6b88252e29afbed2605941109cd74552"
+        "sha": "0f91941b1d7b2d1fc3ee9973cda8e0e6874afd869a23d61cb4695e6b3ba70f6e"
       },
       {
         "path": "translations/IT.json",
-        "sha": "c1a518bbf50e48636acd94f1da4bfd0ec132ffd84d18e761a4238bc22fb5d411"
+        "sha": "34124894331087317438926b62804f8f79353907c0c97c3524b4fdc23ef60362"
       },
       {
         "path": "translations/JP.json",
-        "sha": "63d2afd43bde1e50f60161afd8c6a663dd997cf4b443481f0b30dccb2ab3a2bc"
+        "sha": "462fbd2481cdcfc8d45e84bf28836f3b3661d88d42932bf39403a021b9f78b37"
       },
       {
         "path": "translations/KR.json",
-        "sha": "ad354b50196944dab7dc7d6dbc0aac463da86d17f4b9a937f40db77e7afbb3e1"
+        "sha": "001a88c023bd95ccd4e80276826a55e01af042fb308d6d3cc332534c06213881"
       },
       {
         "path": "translations/MS.json",
-        "sha": "766117c80841ffd078597a727af7f0af57bb86963d3d0e5a39ab4ce29ca1be62"
+        "sha": "c75dcf4a67211820a3dcf2a43bed3061b59d3e666a0c7a0967f059c8d6040efb"
       },
       {
         "path": "translations/NL.json",
-        "sha": "6f01b0ad1fc5718cc871d67b0be323ad563aa7ddcb6a4dbcd8801586f06d745c"
+        "sha": "5c703234e8301b8ffb05cbd4695fbff4d793abcd9a978853b5c6fdd557d648dd"
       },
       {
         "path": "translations/NO.json",
-        "sha": "b29b1307c3d2de2c07742d712cd8f54301f4a2e8f94d7757082fd00f45628227"
+        "sha": "1e04616473e35fdb371e958c42d2f5bcda882c8fb0cad15cf1f77fa18d58d646"
       },
       {
         "path": "translations/PL.json",
-        "sha": "0b256a9e5d2e879965c2e4fd03fcac6e46749053e547d60aa3b6df8d9464d511"
+        "sha": "37d0f9b9edba96d8c2afb7fa0f423ae1d4a484e8e0a9ec360d735985306fdd7f"
       },
       {
         "path": "translations/PT.json",
-        "sha": "3c657486b77da8cd692620c747299df60e6835d5916f066847768812b6b176ea"
+        "sha": "8a7b6d58d0e76ec2ee91817dbf6ccb5463842ba4d788a7a0e2b6c4263f888c90"
       },
       {
         "path": "translations/RU.json",
-        "sha": "61533e0d40f57815c273444dfd9fd73680a9d2afaf20788a7f88d94a86cb8572"
+        "sha": "b67642c4a834020916d8023309c57832844077f4d4e73efffc9ff591c7dc9f3f"
       },
       {
         "path": "translations/TH.json",
-        "sha": "dac04d818b7f9deadae175533e776e14815fdd8af79bbb7cc48d3c3031f89241"
+        "sha": "48f2426c0aff28d506c822f7dbd9dc65ee36806d644de9c16132b8a2406a7d06"
       },
       {
         "path": "translations/TR.json",
-        "sha": "48ac27c56672c4bf7edc04f590b437c3dbe986e4f8adfa69016867c871561017"
+        "sha": "1918624e016024fb7bf8a63c411023c6d9e8d4fe86f0c44b986b81ac8c6c2942"
       },
       {
         "path": "translations/VI.json",
-        "sha": "8220b811af9dd216aa58af85000edd810732c8dcc03eecd8bcf3545a1712ac37"
+        "sha": "ae08764ad362432f97aaf3d839d7b3684ec7541359ae51e4627221b8b9b7b234"
       }
     ]
   }

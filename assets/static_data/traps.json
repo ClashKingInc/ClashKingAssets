@@ -114,7 +114,7 @@
         },
         {
           "level": 13,
-          "build_cost": 8500000,
+          "build_cost": 6500000,
           "build_time": 172800,
           "required_townhall": 17,
           "damage": 185,
@@ -122,8 +122,8 @@
         },
         {
           "level": 14,
-          "build_cost": 14000000,
-          "build_time": 691200,
+          "build_cost": 9000000,
+          "build_time": 432000,
           "required_townhall": 18,
           "damage": 200,
           "strength_weight": 200
@@ -236,19 +236,27 @@
         },
         {
           "level": 12,
-          "build_cost": 13000000,
-          "build_time": 259200,
+          "build_cost": 7000000,
+          "build_time": 216000,
           "required_townhall": 17,
           "damage": 1300,
           "strength_weight": 1309
         },
         {
           "level": 13,
-          "build_cost": 16000000,
-          "build_time": 950400,
+          "build_cost": 9500000,
+          "build_time": 432000,
           "required_townhall": 18,
           "damage": 1400,
           "strength_weight": 1370
+        },
+        {
+          "level": 14,
+          "build_cost": 17000000,
+          "build_time": 691200,
+          "required_townhall": 19,
+          "damage": 1500,
+          "strength_weight": 1445
         }
       ]
     },
@@ -358,19 +366,27 @@
         },
         {
           "level": 12,
-          "build_cost": 9500000,
-          "build_time": 259200,
+          "build_cost": 6500000,
+          "build_time": 216000,
           "required_townhall": 17,
           "damage": 400,
           "strength_weight": 400
         },
         {
           "level": 13,
-          "build_cost": 15000000,
-          "build_time": 777600,
+          "build_cost": 9000000,
+          "build_time": 432000,
           "required_townhall": 18,
           "damage": 425,
           "strength_weight": 425
+        },
+        {
+          "level": 14,
+          "build_cost": 17500000,
+          "build_time": 734400,
+          "required_townhall": 19,
+          "damage": 450,
+          "strength_weight": 450
         }
       ]
     },
@@ -472,16 +488,16 @@
         },
         {
           "level": 11,
-          "build_cost": 10000000,
-          "build_time": 345600,
+          "build_cost": 7000000,
+          "build_time": 259200,
           "required_townhall": 17,
           "damage": 475,
           "strength_weight": 750
         },
         {
           "level": 12,
-          "build_cost": 17000000,
-          "build_time": 907200,
+          "build_cost": 9000000,
+          "build_time": 432000,
           "required_townhall": 18,
           "damage": 490,
           "strength_weight": 825
@@ -554,16 +570,16 @@
         },
         {
           "level": 7,
-          "build_cost": 12000000,
-          "build_time": 432000,
+          "build_cost": 7500000,
+          "build_time": 345600,
           "required_townhall": 17,
           "damage": 3200,
           "strength_weight": 500
         },
         {
           "level": 8,
-          "build_cost": 19000000,
-          "build_time": 993600,
+          "build_cost": 11500000,
+          "build_time": 604800,
           "required_townhall": 18,
           "damage": 3350,
           "strength_weight": 550
@@ -620,11 +636,19 @@
         },
         {
           "level": 5,
-          "build_cost": 18000000,
-          "build_time": 604800,
+          "build_cost": 10500000,
+          "build_time": 475200,
           "required_townhall": 18,
           "damage": 0,
           "strength_weight": 480
+        },
+        {
+          "level": 6,
+          "build_cost": 18000000,
+          "build_time": 777600,
+          "required_townhall": 19,
+          "damage": 0,
+          "strength_weight": 560
         }
       ]
     },
@@ -712,8 +736,8 @@
         },
         {
           "level": 4,
-          "build_cost": 20000000,
-          "build_time": 1123200,
+          "build_cost": 14000000,
+          "build_time": 648000,
           "required_townhall": 18,
           "damage": 1400,
           "strength_weight": 6500

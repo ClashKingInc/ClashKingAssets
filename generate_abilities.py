@@ -10,7 +10,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
-FILES = ('special_abilities', 'character_items', 'characters', 'spells', 'projectiles', 'heroes')
+FILES = ('special_abilities', 'character_items', 'characters', 'spells', 'projectiles', 'heroes', 'building_variants')
 
 
 def seconds(ms):
@@ -22,6 +22,11 @@ def snake(name):
 
 
 ROOT_RULES = {
+    'ProximityRadius': ('proximity_radius', None),
+    'ProximityDeactivateRadius': ('proximity_deactivate_radius', None),
+    'AbsorbBurstRadiusMin': ('min_burst_radius', None),
+    'BarrierRadius': ('barrier_radius', None),
+    'AbsorbChargeMax': ('max_absorbed_damage', None),
     'Damage': ('damage', None),
     'MinDamage': ('min_damage', None),
     'DPS': ('dps', None),
@@ -62,11 +67,20 @@ ROOT_RULES = {
 }
 
 ROOT_BOOLEAN_RULES = {
+    'ProximityActivateOnAbsence': 'proximity_activate_on_absence',
+    'ProximityDetectsUntargetable': 'proximity_detects_untargetable',
+    'ProximityDetectsInvisible': 'proximity_detects_invisible',
+    'ProximityDetectsDashing': 'proximity_detects_dashing',
+    'ProximityRequiresCanOpenCC': 'proximity_requires_can_open_cc',
+    'ProximityIgnoreSquadMembers': 'proximity_ignore_squad_members',
+    'CastSpellOnDeactivation': 'cast_spell_on_deactivation',
     'Untargetable': 'untargetable',
     'ImmuneToFriendlySpells': 'immune_to_friendly_spells',
 }
 
 ROOT_CONTROL = {
+    'ProximityTeam',
+    'ProximityAltitude',
     'Name',
     'Level',
     'TID',
@@ -86,6 +100,10 @@ ROOT_CONTROL = {
     'SpawnnedTroopsPerHit',
     'SpawnDelayBetweenHitsMS',
     'SpawnPattern',
+    'SpawnDist',
+    'DontActivateWhenDead',
+    'DeactivateWhenAllSpawnsDone',
+    'SkipSpawnedDeployEffects',
     'CopySpawnnedTroopLevelFromAvatar',
     'AuraSpell',
     'AuraSpellLevel',
@@ -171,7 +189,7 @@ SPELL_FIELDS = set(
         'BoostTimeMS BuildingDamagePermil ChargingTimeMS ConeAngle Damage DamageBoostPercent DeployTimeMS '
         'DestroyWalls DisableDonate DisableProduction DoesNotAffectOwner ExecuteHealthPermil '
         'ExtraHealthMax ExtraHealthMin ExtraHealthPermil FreezeOuterTimeMS FreezeTimeMS GlobalID '
-        'HeroDamageMultiplier HitTimeMS ImmunityHeroes ImmunityOtherBuildings ImmunityOtherCharacters '
+        'HousingLimit HeroDamageMultiplier HitTimeMS ImmunityHeroes ImmunityOtherBuildings ImmunityOtherCharacters '
         'ImmunitySiegeMachines ImmunityStorages ImmunityTH_CC ImmunityTotems ImmunityWalls InfoTID Level '
         'MinDamage Name NoClipping NumberOfHits Radius RandomRadius RandomRadiusAffectsOnlyGfx '
         'ScaleDeployEffects ShieldProtectionPercent ShieldTime SpawnDuration SpawnFirstGroupSize '
@@ -407,6 +425,32 @@ class AbilitySourceResolver:
                         'levels': rows,
                     }
                 )
+        variants = {
+            variant['_id']: variant
+            for building in self.catalog.get('buildings', [])
+            for level in building.get('levels', [])
+            for variant in level.get('variants', [])
+        }
+        # Variant table rows are ability slots, not upgrade levels. Merge their
+        # effects into one variant level and omit the appearance-only slot.
+        for variant_id, (name, source) in enumerate(self.tables.get('building_variants', {}).items(), 119000000):
+            if variant_id not in variants:
+                continue
+            entries = []
+            for slot, row in source.items():
+                if not isinstance(row, dict):
+                    continue
+                for ability in self.ability_list(row, 'SpecialAbilities', 'SpecialAbilitiesLevel'):
+                    if ability['properties'].get('ActivateFromGameSystem'):
+                        continue
+                    entries.append(ability)
+            item = variants[variant_id]
+            groups.append({
+                'item_id': variant_id, 'item_type': 'building_variants',
+                'name': item['name'], 'village': 'home', 'TID': item['TID'],
+                'source_name': name, 'source_file': 'logic/building_variants.csv',
+                'levels': [{'level': 1, 'item_properties': {}, 'item_references': [], 'abilities': entries}],
+            })
         groups.sort(key=lambda g: g['item_id'])
         if self.issues:
             raise ValueError(f'Unresolved ability references: {self.issues}')
@@ -448,6 +492,10 @@ class AbilityGenerator:
         return unit
 
     def trigger(self, p):
+        if p.get('ProximityRadius') and p.get('ProximityRequiresCanOpenCC'):
+            return 'enemy_in_range'
+        if p.get('ProximityRadius') and p.get('ProximityActivateOnAbsence'):
+            return 'while_alone'
         for field, value in [
             ('ActiveOnDeath', 'on_death'),
             ('ActiveAfterTakingDamage', 'on_damage_taken'),
@@ -526,7 +574,22 @@ class AbilityGenerator:
                             if converter
                             else 'copy',
                         )
+                # Baby Dragon proximity filters describe its internal detection,
+                # not additional player-facing stats. Keep the radius and trigger.
+                baby_dragon_detection = node.get('source_name') in {
+                    'BabyDragonRageWhenAlone', 'BabyDragonBBRageWhenAlone', 'SquadBabyDragonRageAbility',
+                }
+                for field in ('ProximityTeam', 'ProximityAltitude'):
+                    if field in q and not baby_dragon_detection:
+                        if not isinstance(q[field], str):
+                            raise ValueError(f'Unexpected proximity filter: {field}')
+                        add(prefix + snake(field), q[field], node, [field])
                 for field, key in ROOT_BOOLEAN_RULES.items():
+                    if baby_dragon_detection and field in {
+                        'ProximityActivateOnAbsence', 'ProximityDetectsUntargetable',
+                        'ProximityDetectsInvisible', 'ProximityDetectsDashing',
+                    }:
+                        continue
                     if field not in q:
                         continue
                     if not isinstance(q[field], bool):
@@ -669,6 +732,7 @@ class AbilityGenerator:
                     ('DamageBoostPercent', 'damage_increase_percent', None),
                     ('ExtraHealthPermil', 'health_increase_percent', lambda n: n / 10),
                     ('ExtraHealthMax', 'max_health_increase', None),
+                    ('HousingLimit', 'housing_limit', None),
                     ('HeroDamageMultiplier', 'hero_damage_percent', None),
                     ('SpeedBoost', 'movement_speed_increase', None),
                     ('StunTimeMS', 'stun_duration', seconds),
@@ -759,11 +823,18 @@ class AbilityGenerator:
                 troop = self.unit_identity(child, troop_name)
                 level = q.get('TroopLevel', q.get('SpawnUpgradeLevel'))
                 if q.get('CopySpawnnedTroopLevelFromAvatar'):
-                    troop['level_from'] = 'hero'
+                    troop['level_from'] = 'owned_troop' if owner_type == 'building_variants' else 'hero'
                 elif level is not None:
                     troop['level'] = level
                 add(prefix + 'units_spawned', count, node, ['TroopCount' if 'TroopCount' in q else 'UnitsToSpawn'])
                 add(prefix + 'spawned_unit', troop, node, ['SpawnedTroop' if 'SpawnedTroop' in q else 'SummonTroop'])
+                if owner_type == 'building_variants':
+                    for field, key in [('SpawnnedTroopsPerHit', 'units_per_wave'), ('SpawnDist', 'spawn_distance')]:
+                        if field in q:
+                            add(prefix + key, q[field], node, [field])
+                    if 'SpawnDelayBetweenHitsMS' in q:
+                        add(prefix + 'spawn_interval', seconds(q['SpawnDelayBetweenHitsMS']), node,
+                            ['SpawnDelayBetweenHitsMS'], 'milliseconds / 1000')
             for nested in node.get('abilities', []):
                 visit(nested, prefix, 'spawned_ability')
             for child in node.get('references', []):

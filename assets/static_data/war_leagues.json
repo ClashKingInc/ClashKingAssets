@@ -254,7 +254,7 @@
       },
       "promotions": 1,
       "demotions": 2,
-      "15v15_only": true
+      "15v15_only": false
     },
     {
       "_id": 48000017,
@@ -270,7 +270,7 @@
       },
       "promotions": 1,
       "demotions": 2,
-      "15v15_only": true
+      "15v15_only": false
     },
     {
       "_id": 48000018,
@@ -286,7 +286,7 @@
       },
       "promotions": 1,
       "demotions": 2,
-      "15v15_only": true
+      "15v15_only": false
     },
     {
       "_id": 48000019,

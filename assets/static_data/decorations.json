@@ -2883,6 +2883,90 @@
       "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
+    },
+    {
+      "_id": 18000244,
+      "name": "Amber Hot Streak",
+      "TID": {
+        "name": "TID_DECO_COMMUNITY_FLAMER_ORANGE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000245,
+      "name": "Violet Hot Streak",
+      "TID": {
+        "name": "TID_DECO_COMMUNITY_FLAMER_PURPLE"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000246,
+      "name": "Clash Contest",
+      "TID": {
+        "name": "TID_SUPERDECO_CLASH_RING"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000247,
+      "name": "Coin Collector",
+      "TID": {
+        "name": "TID_SUPERDECO_COSMIC_COLLECTOR"
+      },
+      "width": 3,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 1,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000248,
+      "name": "Sour Elixir Fountain",
+      "TID": {
+        "name": "TID_DECO_COSMIC_FOUNTAIN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 10,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000250,
+      "name": "Portal Staff",
+      "TID": {
+        "name": "TID_DECO_COSMIC_STAFF"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 10,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
     }
   ]
 }
