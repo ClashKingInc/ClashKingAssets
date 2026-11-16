@@ -1820,7 +1820,7 @@ class StaticUpdater:
                     "name": self._translate(tid=data["SetTID"]),
                     "TID": {"name": data["SetTID"]},
                 },
-                "prestige_medal_cost": data.get("Cost") if data.get("CostResource") == "RankedPrestige" else None,
+                "cost": data.get("Cost") if data.get("CostResource") == "RankedPrestige" else None,
                 "required_league_tier": data.get("MinLeagueTier"),
                 "default_unlocked": data.get("DefaultSet", False),
                 **({"required_emotes": [

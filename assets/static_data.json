@@ -51557,7 +51557,7 @@
           "name": "TID_EMOTE_SET_BARBARIAN_MOODS"
         }
       },
-      "prestige_medal_cost": null,
+      "cost": null,
       "required_league_tier": null,
       "default_unlocked": true
     },
@@ -51575,7 +51575,7 @@
           "name": "TID_EMOTE_SET_BARBARIAN_MOODS"
         }
       },
-      "prestige_medal_cost": null,
+      "cost": null,
       "required_league_tier": null,
       "default_unlocked": true
     },
@@ -51593,7 +51593,7 @@
           "name": "TID_EMOTE_SET_BARBARIAN_MOODS"
         }
       },
-      "prestige_medal_cost": null,
+      "cost": null,
       "required_league_tier": null,
       "default_unlocked": true
     },
@@ -51611,7 +51611,7 @@
           "name": "TID_EMOTE_SET_BARBARIAN_MOODS"
         }
       },
-      "prestige_medal_cost": null,
+      "cost": null,
       "required_league_tier": null,
       "default_unlocked": true
     },
@@ -51629,7 +51629,7 @@
           "name": "TID_EMOTE_SET_BARBARIAN_MOODS"
         }
       },
-      "prestige_medal_cost": null,
+      "cost": null,
       "required_league_tier": null,
       "default_unlocked": false,
       "required_emotes": [
@@ -51653,7 +51653,7 @@
           "name": "TID_EMOTE_SET_RANKED_1"
         }
       },
-      "prestige_medal_cost": 500,
+      "cost": 500,
       "required_league_tier": 1,
       "default_unlocked": false
     },
@@ -51671,7 +51671,7 @@
           "name": "TID_EMOTE_SET_RANKED_1"
         }
       },
-      "prestige_medal_cost": 1000,
+      "cost": 1000,
       "required_league_tier": 4,
       "default_unlocked": false
     },
@@ -51689,7 +51689,7 @@
           "name": "TID_EMOTE_SET_RANKED_1"
         }
       },
-      "prestige_medal_cost": 1500,
+      "cost": 1500,
       "required_league_tier": 7,
       "default_unlocked": false
     },
@@ -51707,7 +51707,7 @@
           "name": "TID_EMOTE_SET_RANKED_1"
         }
       },
-      "prestige_medal_cost": 2000,
+      "cost": 2000,
       "required_league_tier": 10,
       "default_unlocked": false
     },
@@ -51725,7 +51725,7 @@
           "name": "TID_EMOTE_SET_RANKED_1"
         }
       },
-      "prestige_medal_cost": null,
+      "cost": null,
       "required_league_tier": null,
       "default_unlocked": false,
       "required_emotes": [
@@ -51749,7 +51749,7 @@
           "name": "TID_EMOTE_SET_RANKED_2"
         }
       },
-      "prestige_medal_cost": 2500,
+      "cost": 2500,
       "required_league_tier": 13,
       "default_unlocked": false
     },
@@ -51767,7 +51767,7 @@
           "name": "TID_EMOTE_SET_RANKED_2"
         }
       },
-      "prestige_medal_cost": 3000,
+      "cost": 3000,
       "required_league_tier": 16,
       "default_unlocked": false
     },
@@ -51785,7 +51785,7 @@
           "name": "TID_EMOTE_SET_RANKED_2"
         }
       },
-      "prestige_medal_cost": 3500,
+      "cost": 3500,
       "required_league_tier": 19,
       "default_unlocked": false
     },
@@ -51803,7 +51803,7 @@
           "name": "TID_EMOTE_SET_RANKED_2"
         }
       },
-      "prestige_medal_cost": 4000,
+      "cost": 4000,
       "required_league_tier": 22,
       "default_unlocked": false
     },
@@ -51821,7 +51821,7 @@
           "name": "TID_EMOTE_SET_RANKED_2"
         }
       },
-      "prestige_medal_cost": null,
+      "cost": null,
       "required_league_tier": null,
       "default_unlocked": false,
       "required_emotes": [
@@ -51845,7 +51845,7 @@
           "name": "TID_EMOTE_SET_RANKED_3"
         }
       },
-      "prestige_medal_cost": 4500,
+      "cost": 4500,
       "required_league_tier": 25,
       "default_unlocked": false
     },
@@ -51863,7 +51863,7 @@
           "name": "TID_EMOTE_SET_RANKED_3"
         }
       },
-      "prestige_medal_cost": 5000,
+      "cost": 5000,
       "required_league_tier": 28,
       "default_unlocked": false
     },
@@ -51881,7 +51881,7 @@
           "name": "TID_EMOTE_SET_RANKED_3"
         }
       },
-      "prestige_medal_cost": 10000,
+      "cost": 10000,
       "required_league_tier": 31,
       "default_unlocked": false
     },
@@ -51899,7 +51899,7 @@
           "name": "TID_EMOTE_SET_RANKED_3"
         }
       },
-      "prestige_medal_cost": 15000,
+      "cost": 15000,
       "required_league_tier": 34,
       "default_unlocked": false
     },
@@ -51917,7 +51917,7 @@
           "name": "TID_EMOTE_SET_RANKED_3"
         }
       },
-      "prestige_medal_cost": null,
+      "cost": null,
       "required_league_tier": null,
       "default_unlocked": false,
       "required_emotes": [
