@@ -7,12 +7,16 @@
         "name": "TID_EMOTE_BARBARIAN_THUMBSUP",
         "info": "TID_EMOTE_BARBARIAN_THUMBSUP_INFO"
       },
-      "set_id": 1,
-      "set_name": "Barbarian Moods",
+      "set": {
+        "id": 1,
+        "name": "Barbarian Moods",
+        "TID": {
+          "name": "TID_EMOTE_SET_BARBARIAN_MOODS"
+        }
+      },
       "prestige_medal_cost": null,
       "required_league_tier": null,
-      "default_unlocked": true,
-      "required_emotes": []
+      "default_unlocked": true
     },
     {
       "_id": 126000001,
@@ -21,12 +25,16 @@
         "name": "TID_EMOTE_BARBARIAN_ANGRY",
         "info": "TID_EMOTE_BARBARIAN_ANGRY_INFO"
       },
-      "set_id": 1,
-      "set_name": "Barbarian Moods",
+      "set": {
+        "id": 1,
+        "name": "Barbarian Moods",
+        "TID": {
+          "name": "TID_EMOTE_SET_BARBARIAN_MOODS"
+        }
+      },
       "prestige_medal_cost": null,
       "required_league_tier": null,
-      "default_unlocked": true,
-      "required_emotes": []
+      "default_unlocked": true
     },
     {
       "_id": 126000002,
@@ -35,12 +43,16 @@
         "name": "TID_EMOTE_BARBARIAN_SAD",
         "info": "TID_EMOTE_BARBARIAN_SAD_INFO"
       },
-      "set_id": 1,
-      "set_name": "Barbarian Moods",
+      "set": {
+        "id": 1,
+        "name": "Barbarian Moods",
+        "TID": {
+          "name": "TID_EMOTE_SET_BARBARIAN_MOODS"
+        }
+      },
       "prestige_medal_cost": null,
       "required_league_tier": null,
-      "default_unlocked": true,
-      "required_emotes": []
+      "default_unlocked": true
     },
     {
       "_id": 126000003,
@@ -49,12 +61,16 @@
         "name": "TID_EMOTE_BARBARIAN_LAUGH",
         "info": "TID_EMOTE_BARBARIAN_LAUGH_INFO"
       },
-      "set_id": 1,
-      "set_name": "Barbarian Moods",
+      "set": {
+        "id": 1,
+        "name": "Barbarian Moods",
+        "TID": {
+          "name": "TID_EMOTE_SET_BARBARIAN_MOODS"
+        }
+      },
       "prestige_medal_cost": null,
       "required_league_tier": null,
-      "default_unlocked": true,
-      "required_emotes": []
+      "default_unlocked": true
     },
     {
       "_id": 126000004,
@@ -63,8 +79,13 @@
         "name": "TID_EMOTE_BARBARIAN_CONFUSED",
         "info": "TID_EMOTE_BARBARIAN_CONFUSED_INFO"
       },
-      "set_id": 1,
-      "set_name": "Barbarian Moods",
+      "set": {
+        "id": 1,
+        "name": "Barbarian Moods",
+        "TID": {
+          "name": "TID_EMOTE_SET_BARBARIAN_MOODS"
+        }
+      },
       "prestige_medal_cost": null,
       "required_league_tier": null,
       "default_unlocked": false,
@@ -82,12 +103,16 @@
         "name": "TID_EMOTE_SKELETON_LEAGUE",
         "info": "TID_EMOTE_SKELETON_LEAGUE_INFO"
       },
-      "set_id": 2,
-      "set_name": "League Warriors",
+      "set": {
+        "id": 2,
+        "name": "League Warriors",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_1"
+        }
+      },
       "prestige_medal_cost": 500,
       "required_league_tier": 1,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000021,
@@ -96,12 +121,16 @@
         "name": "TID_EMOTE_BARBARIAN_LEAGUE",
         "info": "TID_EMOTE_BARBARIAN_LEAGUE_INFO"
       },
-      "set_id": 2,
-      "set_name": "League Warriors",
+      "set": {
+        "id": 2,
+        "name": "League Warriors",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_1"
+        }
+      },
       "prestige_medal_cost": 1000,
       "required_league_tier": 4,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000022,
@@ -110,12 +139,16 @@
         "name": "TID_EMOTE_ARCHER_LEAGUE",
         "info": "TID_EMOTE_ARCHER_LEAGUE_INFO"
       },
-      "set_id": 2,
-      "set_name": "League Warriors",
+      "set": {
+        "id": 2,
+        "name": "League Warriors",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_1"
+        }
+      },
       "prestige_medal_cost": 1500,
       "required_league_tier": 7,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000023,
@@ -124,12 +157,16 @@
         "name": "TID_EMOTE_WIZARD_LEAGUE",
         "info": "TID_EMOTE_WIZARD_LEAGUE_INFO"
       },
-      "set_id": 2,
-      "set_name": "League Warriors",
+      "set": {
+        "id": 2,
+        "name": "League Warriors",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_1"
+        }
+      },
       "prestige_medal_cost": 2000,
       "required_league_tier": 10,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000024,
@@ -138,8 +175,13 @@
         "name": "TID_EMOTE_RANKED1_BONUS",
         "info": "TID_EMOTE_RANKED1_BONUS_INFO"
       },
-      "set_id": 2,
-      "set_name": "League Warriors",
+      "set": {
+        "id": 2,
+        "name": "League Warriors",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_1"
+        }
+      },
       "prestige_medal_cost": null,
       "required_league_tier": null,
       "default_unlocked": false,
@@ -157,12 +199,16 @@
         "name": "TID_EMOTE_VALKYRIE_LEAGUE",
         "info": "TID_EMOTE_VALKYRIE_LEAGUE_INFO"
       },
-      "set_id": 3,
-      "set_name": "League Champions",
+      "set": {
+        "id": 3,
+        "name": "League Champions",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_2"
+        }
+      },
       "prestige_medal_cost": 2500,
       "required_league_tier": 13,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000026,
@@ -171,12 +217,16 @@
         "name": "TID_EMOTE_WITCH_LEAGUE",
         "info": "TID_EMOTE_WITCH_LEAGUE_INFO"
       },
-      "set_id": 3,
-      "set_name": "League Champions",
+      "set": {
+        "id": 3,
+        "name": "League Champions",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_2"
+        }
+      },
       "prestige_medal_cost": 3000,
       "required_league_tier": 16,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000027,
@@ -185,12 +235,16 @@
         "name": "TID_EMOTE_GOLEM_LEAGUE",
         "info": "TID_EMOTE_GOLEM_LEAGUE_INFO"
       },
-      "set_id": 3,
-      "set_name": "League Champions",
+      "set": {
+        "id": 3,
+        "name": "League Champions",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_2"
+        }
+      },
       "prestige_medal_cost": 3500,
       "required_league_tier": 19,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000028,
@@ -199,12 +253,16 @@
         "name": "TID_EMOTE_PEKKA_LEAGUE",
         "info": "TID_EMOTE_PEKKA_LEAGUE_INFO"
       },
-      "set_id": 3,
-      "set_name": "League Champions",
+      "set": {
+        "id": 3,
+        "name": "League Champions",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_2"
+        }
+      },
       "prestige_medal_cost": 4000,
       "required_league_tier": 22,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000029,
@@ -213,8 +271,13 @@
         "name": "TID_EMOTE_RANKED2_BONUS",
         "info": "TID_EMOTE_RANKED2_BONUS_INFO"
       },
-      "set_id": 3,
-      "set_name": "League Champions",
+      "set": {
+        "id": 3,
+        "name": "League Champions",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_2"
+        }
+      },
       "prestige_medal_cost": null,
       "required_league_tier": null,
       "default_unlocked": false,
@@ -232,12 +295,16 @@
         "name": "TID_EMOTE_TITAN_LEAGUE",
         "info": "TID_EMOTE_TITAN_LEAGUE_INFO"
       },
-      "set_id": 4,
-      "set_name": "League Masters",
+      "set": {
+        "id": 4,
+        "name": "League Masters",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_3"
+        }
+      },
       "prestige_medal_cost": 4500,
       "required_league_tier": 25,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000006,
@@ -246,12 +313,16 @@
         "name": "TID_EMOTE_DRAGON_LEAGUE",
         "info": "TID_EMOTE_DRAGON_LEAGUE_INFO"
       },
-      "set_id": 4,
-      "set_name": "League Masters",
+      "set": {
+        "id": 4,
+        "name": "League Masters",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_3"
+        }
+      },
       "prestige_medal_cost": 5000,
       "required_league_tier": 28,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000007,
@@ -260,12 +331,16 @@
         "name": "TID_EMOTE_ELECTRODRAGON_LEAGUE",
         "info": "TID_EMOTE_ELECTRODRAGON_LEAGUE_INFO"
       },
-      "set_id": 4,
-      "set_name": "League Masters",
+      "set": {
+        "id": 4,
+        "name": "League Masters",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_3"
+        }
+      },
       "prestige_medal_cost": 10000,
       "required_league_tier": 31,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000008,
@@ -274,12 +349,16 @@
         "name": "TID_EMOTE_SUPERDRAGON_LEAGUE",
         "info": "TID_EMOTE_SUPERDRAGON_LEAGUE_INFO"
       },
-      "set_id": 4,
-      "set_name": "League Masters",
+      "set": {
+        "id": 4,
+        "name": "League Masters",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_3"
+        }
+      },
       "prestige_medal_cost": 15000,
       "required_league_tier": 34,
-      "default_unlocked": false,
-      "required_emotes": []
+      "default_unlocked": false
     },
     {
       "_id": 126000009,
@@ -288,8 +367,13 @@
         "name": "TID_EMOTE_RANKED3_BONUS",
         "info": "TID_EMOTE_RANKED3_BONUS_INFO"
       },
-      "set_id": 4,
-      "set_name": "League Masters",
+      "set": {
+        "id": 4,
+        "name": "League Masters",
+        "TID": {
+          "name": "TID_EMOTE_SET_RANKED_3"
+        }
+      },
       "prestige_medal_cost": null,
       "required_league_tier": null,
       "default_unlocked": false,

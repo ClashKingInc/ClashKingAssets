@@ -1815,16 +1815,19 @@ class StaticUpdater:
             items.append((data.get("SortOrder", 0), {
                 "_id": data["GlobalID"], "name": self._translate(tid=data["TID"]),
                 "TID": {"name": data["TID"], "info": data.get("InfoTID")},
-                "set_id": data.get("SetID"),
-                "set_name": self._translate(tid=data.get("SetTID")),
+                "set": {
+                    "id": data["SetID"],
+                    "name": self._translate(tid=data["SetTID"]),
+                    "TID": {"name": data["SetTID"]},
+                },
                 "prestige_medal_cost": data.get("Cost") if data.get("CostResource") == "RankedPrestige" else None,
                 "required_league_tier": data.get("MinLeagueTier"),
                 "default_unlocked": data.get("DefaultSet", False),
-                "required_emotes": [
+                **({"required_emotes": [
                     member["GlobalID"]
                     for member in self.open_file("logic/emotes.json").values()
                     if member.get("SetID") == data.get("SetID") and not member.get("IsBonusEmote")
-                ] if data.get("IsBonusEmote") else [],
+                ]} if data.get("IsBonusEmote") else {}),
             }))
         return [item for _, item in sorted(items, key=lambda entry: (entry[0], entry[1]["_id"]))]
 
