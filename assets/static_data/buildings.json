@@ -7189,7 +7189,16 @@
       "width": 3,
       "hitbox_width": 2,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 0,
+          "build_time": 0,
+          "required_townhall": 1,
+          "hitpoints": 300,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000043,
@@ -7699,7 +7708,16 @@
       "width": 2,
       "hitbox_width": 1,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 1000,
+          "build_time": 0,
+          "required_townhall": 2,
+          "hitpoints": 300,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000048,
@@ -7899,7 +7917,16 @@
       "width": 3,
       "hitbox_width": 2,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 1500000,
+          "build_time": 0,
+          "required_townhall": 1,
+          "hitpoints": 300,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000050,
@@ -8280,7 +8307,16 @@
       "width": 3,
       "hitbox_width": 2,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 900000,
+          "build_time": 43200,
+          "required_townhall": 5,
+          "hitpoints": 250,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000054,
@@ -9137,7 +9173,16 @@
       "width": 2,
       "hitbox_width": 1,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 0,
+          "build_time": 0,
+          "required_townhall": 1,
+          "hitpoints": 250,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000065,
@@ -10030,7 +10075,16 @@
       "width": 3,
       "hitbox_width": 2,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 2500000,
+          "build_time": 0,
+          "required_townhall": 5,
+          "hitpoints": 250,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000081,
@@ -10206,22 +10260,6 @@
           "strength_weight": 4000
         }
       ]
-    },
-    {
-      "_id": 1000083,
-      "name": "Sour Elixir Cauldron",
-      "info": "This haunted creation by the strangely behaving Builder transforms your regular Elixir Storages into Sour Elixir. Hopefully this is just temporary.",
-      "TID": {
-        "name": "TID_BUILDING_CLASHOWEEN_BUILDING",
-        "info": "TID_CLASHOWEEN_BUILDING_INFO"
-      },
-      "type": "Resource",
-      "upgrade_resource": "Gold",
-      "village": "home",
-      "width": 3,
-      "hitbox_width": 2,
-      "superchargeable": false,
-      "levels": []
     },
     {
       "_id": 1000084,
@@ -10548,7 +10586,16 @@
       "width": 3,
       "hitbox_width": 2,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 1000000,
+          "build_time": 0,
+          "required_townhall": 9,
+          "hitpoints": 500,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000097,
@@ -10566,7 +10613,16 @@
       "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": false,
-      "levels": [],
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 0,
+          "build_time": 0,
+          "required_townhall": 17,
+          "hitpoints": 1000,
+          "dps": 0
+        }
+      ],
       "seasonal_defenses": [
         {
           "_id": 103000011,
@@ -11602,7 +11658,16 @@
       "width": 3,
       "hitbox_width": 3,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 0,
+          "build_time": 0,
+          "required_townhall": 19,
+          "hitpoints": 6200,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000106,

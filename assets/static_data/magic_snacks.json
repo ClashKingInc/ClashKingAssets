@@ -8,7 +8,9 @@
         "name": "TID_CONSUMABLE_BOOST_BUILDER",
         "info": "TID_CONSUMABLE_BOOST_BUILDER_INFO"
       },
-      "duration": 3600
+      "duration": 3600,
+      "boost_multiplier": 2,
+      "activation_expiry": 86400
     },
     {
       "_id": 210152651251664,
@@ -18,7 +20,9 @@
         "name": "TID_CONSUMABLE_BOOST_LAB",
         "info": "TID_CONSUMABLE_BOOST_LAB_INFO"
       },
-      "duration": 3600
+      "duration": 3600,
+      "boost_multiplier": 4,
+      "activation_expiry": 86400
     },
     {
       "_id": 84541856028440,
@@ -28,7 +32,9 @@
         "name": "TID_CONSUMABLE_BOOST_HERO",
         "info": "TID_CONSUMABLE_BOOST_HERO_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "battle_uses": 3,
+      "activation_expiry": 86400
     },
     {
       "_id": 909252305102259,
@@ -38,7 +44,9 @@
         "name": "TID_CONSUMABLE_BOOST_ARMY",
         "info": "TID_CONSUMABLE_BOOST_ARMY_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "battle_uses": 3,
+      "activation_expiry": 86400
     },
     {
       "_id": 860289445845268,
@@ -48,7 +56,9 @@
         "name": "TID_CONSUMABLE_INSTANT_TRAINING",
         "info": "TID_CONSUMABLE_INSTANT_TRAINING_INFO"
       },
-      "duration": 1200
+      "duration": 1200,
+      "battle_uses": 10,
+      "activation_expiry": 86400
     },
     {
       "_id": 272344549778277,
@@ -58,7 +68,8 @@
         "name": "TID_CONSUMABLE_CC_REFILL",
         "info": "TID_CONSUMABLE_CC_REFILL_INFO"
       },
-      "duration": 43200
+      "duration": 43200,
+      "activation_expiry": 86400
     },
     {
       "_id": 34019729405766,
@@ -68,7 +79,9 @@
         "name": "TID_CONSUMABLE_BOOST_LOOT_ELITE",
         "info": "TID_CONSUMABLE_BOOST_LOOT_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "battle_uses": 1,
+      "activation_expiry": 86400
     },
     {
       "_id": 626644580712136,
@@ -78,7 +91,8 @@
         "name": "TID_CONSUMABLE_CC_CRUMBS",
         "info": "TID_CONSUMABLE_CC_CRUMBS_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "activation_expiry": 86400
     },
     {
       "_id": 316907614826529,
@@ -88,7 +102,9 @@
         "name": "TID_CONSUMABLE_BOOST_LOOT_PRO",
         "info": "TID_CONSUMABLE_BOOST_LOOT_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "battle_uses": 1,
+      "activation_expiry": 86400
     },
     {
       "_id": 785333832017841,
@@ -98,7 +114,9 @@
         "name": "TID_CONSUMABLE_BOOST_LOOT_SIGNATURE",
         "info": "TID_CONSUMABLE_BOOST_LOOT_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "battle_uses": 1,
+      "activation_expiry": 86400
     },
     {
       "_id": 7010528196406,
@@ -108,7 +126,9 @@
         "name": "TID_CONSUMABLE_HV_STAR_BONUS",
         "info": "TID_CONSUMABLE_HV_STAR_BONUS_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "activation_expiry": 86400,
+      "max_inventory": 1
     }
   ]
 }

@@ -449,6 +449,15 @@ func decodeExternalTexture(swfPath, externalTexturePath string) (*image.NRGBA, e
 }
 
 func decodeKTXBytes(data []byte) (*image.NRGBA, error) {
+	// Current SC2 exports can label embedded SCTX payloads as KhronosTexture.
+	// Inspect the actual container before handing it to a KTX decoder.
+	if len(data) >= 12 && string(data[8:12]) == "SCTX" {
+		texture, err := parseSCTXTexture(data)
+		if err != nil {
+			return nil, err
+		}
+		return decodeSCTXTexture(texture)
+	}
 	tmpDir, err := os.MkdirTemp("", "sc-ktx-*")
 	if err != nil {
 		return nil, err

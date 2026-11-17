@@ -184,7 +184,10 @@
             "dark_elixir": 100
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 500
+      }
     },
     {
       "_id": 105000002,
@@ -217,7 +220,10 @@
             "dark_elixir": 150
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 550
+      }
     },
     {
       "_id": 105000003,
@@ -258,7 +264,10 @@
             "dark_elixir": 200
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 600
+      }
     },
     {
       "_id": 105000004,
@@ -307,7 +316,10 @@
             "dark_elixir": 300
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 650
+      }
     },
     {
       "_id": 105000005,
@@ -356,7 +368,10 @@
             "dark_elixir": 350
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 700
+      }
     },
     {
       "_id": 105000006,
@@ -413,7 +428,10 @@
             "dark_elixir": 400
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 750
+      }
     },
     {
       "_id": 105000007,
@@ -470,7 +488,10 @@
             "dark_elixir": 600
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 800
+      }
     },
     {
       "_id": 105000008,
@@ -535,7 +556,10 @@
             "dark_elixir": 650
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 850
+      }
     },
     {
       "_id": 105000009,
@@ -600,7 +624,10 @@
             "dark_elixir": 700
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 900
+      }
     },
     {
       "_id": 105000010,
@@ -665,7 +692,10 @@
             "dark_elixir": 900
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 950
+      }
     },
     {
       "_id": 105000011,
@@ -738,7 +768,10 @@
             "dark_elixir": 950
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1000
+      }
     },
     {
       "_id": 105000012,
@@ -811,7 +844,10 @@
             "dark_elixir": 1000
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1050
+      }
     },
     {
       "_id": 105000013,
@@ -884,7 +920,10 @@
             "dark_elixir": 1200
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1100
+      }
     },
     {
       "_id": 105000014,
@@ -965,7 +1004,10 @@
             "dark_elixir": 1300
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1200
+      }
     },
     {
       "_id": 105000015,
@@ -1046,7 +1088,10 @@
             "dark_elixir": 1400
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1300
+      }
     },
     {
       "_id": 105000016,
@@ -1127,7 +1172,10 @@
             "dark_elixir": 1600
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1400
+      }
     },
     {
       "_id": 105000017,
@@ -1216,7 +1264,10 @@
             "dark_elixir": 1700
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1500
+      }
     },
     {
       "_id": 105000018,
@@ -1305,7 +1356,10 @@
             "dark_elixir": 1800
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1600
+      }
     },
     {
       "_id": 105000019,
@@ -1394,7 +1448,10 @@
             "dark_elixir": 2000
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1700
+      }
     },
     {
       "_id": 105000020,
@@ -1491,7 +1548,10 @@
             "dark_elixir": 2050
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1800
+      }
     },
     {
       "_id": 105000021,
@@ -1588,7 +1648,10 @@
             "dark_elixir": 2100
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1900
+      }
     },
     {
       "_id": 105000022,
@@ -1685,7 +1748,10 @@
             "dark_elixir": 2300
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2000
+      }
     },
     {
       "_id": 105000023,
@@ -1790,7 +1856,10 @@
             "dark_elixir": 2350
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2100
+      }
     },
     {
       "_id": 105000024,
@@ -1895,7 +1964,10 @@
             "dark_elixir": 2400
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2200
+      }
     },
     {
       "_id": 105000025,
@@ -2000,7 +2072,10 @@
             "dark_elixir": 2600
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2300
+      }
     },
     {
       "_id": 105000026,
@@ -2121,7 +2196,10 @@
             "dark_elixir": 2625
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2400
+      }
     },
     {
       "_id": 105000027,
@@ -2242,7 +2320,10 @@
             "dark_elixir": 2650
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2500
+      }
     },
     {
       "_id": 105000028,
@@ -2363,7 +2444,10 @@
             "dark_elixir": 2750
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2600
+      }
     },
     {
       "_id": 105000029,
@@ -2484,7 +2568,10 @@
             "dark_elixir": 2775
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2700
+      }
     },
     {
       "_id": 105000030,
@@ -2605,7 +2692,10 @@
             "dark_elixir": 2800
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2800
+      }
     },
     {
       "_id": 105000031,
@@ -2726,7 +2816,10 @@
             "dark_elixir": 2900
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2900
+      }
     },
     {
       "_id": 105000032,
@@ -2847,7 +2940,10 @@
             "dark_elixir": 2925
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 3000
+      }
     },
     {
       "_id": 105000033,
@@ -2968,7 +3064,10 @@
             "dark_elixir": 2950
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 3100
+      }
     },
     {
       "_id": 105000034,
@@ -3090,7 +3189,10 @@
           }
         }
       ],
-      "battle_modifier": "Minus Three"
+      "battle_modifier": "Minus Three",
+      "ranked_medals": {
+        "maximum_per_week": 3300
+      }
     },
     {
       "_id": 105000035,
@@ -3212,7 +3314,10 @@
           }
         }
       ],
-      "battle_modifier": "Minus Two"
+      "battle_modifier": "Minus Two",
+      "ranked_medals": {
+        "maximum_per_week": 3500
+      }
     },
     {
       "_id": 105000036,
@@ -3334,7 +3439,31 @@
           }
         }
       ],
-      "battle_modifier": "Minus One"
+      "battle_modifier": "Minus One",
+      "ranked_medals": {
+        "placement_rewards": [
+          {
+            "minimum_rank": 1,
+            "medals": 4000
+          },
+          {
+            "minimum_rank": 201,
+            "medals": 3500
+          },
+          {
+            "minimum_rank": 501,
+            "medals": 3000
+          },
+          {
+            "minimum_rank": 1001,
+            "medals": 2500
+          },
+          {
+            "minimum_rank": 5001,
+            "medals": 2000
+          }
+        ]
+      }
     }
   ]
 }

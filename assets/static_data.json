@@ -7189,7 +7189,16 @@
       "width": 3,
       "hitbox_width": 2,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 0,
+          "build_time": 0,
+          "required_townhall": 1,
+          "hitpoints": 300,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000043,
@@ -7699,7 +7708,16 @@
       "width": 2,
       "hitbox_width": 1,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 1000,
+          "build_time": 0,
+          "required_townhall": 2,
+          "hitpoints": 300,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000048,
@@ -7899,7 +7917,16 @@
       "width": 3,
       "hitbox_width": 2,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 1500000,
+          "build_time": 0,
+          "required_townhall": 1,
+          "hitpoints": 300,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000050,
@@ -8280,7 +8307,16 @@
       "width": 3,
       "hitbox_width": 2,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 900000,
+          "build_time": 43200,
+          "required_townhall": 5,
+          "hitpoints": 250,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000054,
@@ -9137,7 +9173,16 @@
       "width": 2,
       "hitbox_width": 1,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 0,
+          "build_time": 0,
+          "required_townhall": 1,
+          "hitpoints": 250,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000065,
@@ -10030,7 +10075,16 @@
       "width": 3,
       "hitbox_width": 2,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 2500000,
+          "build_time": 0,
+          "required_townhall": 5,
+          "hitpoints": 250,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000081,
@@ -10206,22 +10260,6 @@
           "strength_weight": 4000
         }
       ]
-    },
-    {
-      "_id": 1000083,
-      "name": "Sour Elixir Cauldron",
-      "info": "This haunted creation by the strangely behaving Builder transforms your regular Elixir Storages into Sour Elixir. Hopefully this is just temporary.",
-      "TID": {
-        "name": "TID_BUILDING_CLASHOWEEN_BUILDING",
-        "info": "TID_CLASHOWEEN_BUILDING_INFO"
-      },
-      "type": "Resource",
-      "upgrade_resource": "Gold",
-      "village": "home",
-      "width": 3,
-      "hitbox_width": 2,
-      "superchargeable": false,
-      "levels": []
     },
     {
       "_id": 1000084,
@@ -10548,7 +10586,16 @@
       "width": 3,
       "hitbox_width": 2,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 1000000,
+          "build_time": 0,
+          "required_townhall": 9,
+          "hitpoints": 500,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000097,
@@ -10566,7 +10613,16 @@
       "superchargeable": false,
       "is_air_targeting": false,
       "is_ground_targeting": false,
-      "levels": [],
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 0,
+          "build_time": 0,
+          "required_townhall": 17,
+          "hitpoints": 1000,
+          "dps": 0
+        }
+      ],
       "seasonal_defenses": [
         {
           "_id": 103000011,
@@ -11602,7 +11658,16 @@
       "width": 3,
       "hitbox_width": 3,
       "superchargeable": false,
-      "levels": []
+      "levels": [
+        {
+          "level": 1,
+          "build_cost": 0,
+          "build_time": 0,
+          "required_townhall": 19,
+          "hitpoints": 6200,
+          "dps": 0
+        }
+      ]
     },
     {
       "_id": 1000106,
@@ -16673,7 +16738,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 3500,
           "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_townhall": 1,
           "strength_weight": 2800
         },
         {
@@ -16683,7 +16748,7 @@
           "upgrade_time": 300,
           "upgrade_cost": 7000,
           "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_townhall": 1,
           "strength_weight": 3000
         },
         {
@@ -16693,7 +16758,7 @@
           "upgrade_time": 900,
           "upgrade_cost": 10000,
           "required_lab_level": 2,
-          "required_townhall": 4,
+          "required_townhall": 2,
           "strength_weight": 3200
         },
         {
@@ -16703,7 +16768,7 @@
           "upgrade_time": 18000,
           "upgrade_cost": 90000,
           "required_lab_level": 2,
-          "required_townhall": 4,
+          "required_townhall": 2,
           "strength_weight": 3400
         },
         {
@@ -16713,7 +16778,7 @@
           "upgrade_time": 36000,
           "upgrade_cost": 180000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3600
         },
         {
@@ -16723,7 +16788,7 @@
           "upgrade_time": 54000,
           "upgrade_cost": 300000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3800
         },
         {
@@ -16733,7 +16798,7 @@
           "upgrade_time": 72000,
           "upgrade_cost": 330000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -16743,7 +16808,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 700000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -16753,7 +16818,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 900000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -16763,7 +16828,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1000000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -16773,7 +16838,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1200000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -16783,7 +16848,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2000000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -16793,7 +16858,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2200000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -16803,7 +16868,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3000000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -16813,7 +16878,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3200000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -16823,7 +16888,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 3800000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -16833,7 +16898,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4000000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -16843,7 +16908,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 4600000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -16853,7 +16918,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5200000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -16863,7 +16928,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -16895,7 +16960,7 @@
           "upgrade_time": 180,
           "upgrade_cost": 5000,
           "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_townhall": 2,
           "strength_weight": 2800
         },
         {
@@ -16905,7 +16970,7 @@
           "upgrade_time": 600,
           "upgrade_cost": 8000,
           "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_townhall": 2,
           "strength_weight": 3000
         },
         {
@@ -16915,7 +16980,7 @@
           "upgrade_time": 1800,
           "upgrade_cost": 12000,
           "required_lab_level": 2,
-          "required_townhall": 4,
+          "required_townhall": 2,
           "strength_weight": 3200
         },
         {
@@ -16925,7 +16990,7 @@
           "upgrade_time": 21600,
           "upgrade_cost": 100000,
           "required_lab_level": 2,
-          "required_townhall": 4,
+          "required_townhall": 2,
           "strength_weight": 3400
         },
         {
@@ -16935,7 +17000,7 @@
           "upgrade_time": 39600,
           "upgrade_cost": 200000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3600
         },
         {
@@ -16945,7 +17010,7 @@
           "upgrade_time": 57600,
           "upgrade_cost": 320000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3800
         },
         {
@@ -16955,7 +17020,7 @@
           "upgrade_time": 75600,
           "upgrade_cost": 350000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -16965,7 +17030,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 800000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -16975,7 +17040,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 1000000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -16985,7 +17050,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1100000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -16995,7 +17060,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1300000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -17005,7 +17070,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2100000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -17015,7 +17080,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2300000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -17025,7 +17090,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3100000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -17035,7 +17100,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3300000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -17045,7 +17110,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 3900000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -17055,7 +17120,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4100000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -17065,7 +17130,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 4700000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -17075,7 +17140,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5300000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -17085,7 +17150,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -17117,7 +17182,7 @@
           "upgrade_time": 14400,
           "upgrade_cost": 50000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3200
         },
         {
@@ -17127,7 +17192,7 @@
           "upgrade_time": 28800,
           "upgrade_cost": 110000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3400
         },
         {
@@ -17137,7 +17202,7 @@
           "upgrade_time": 43200,
           "upgrade_cost": 220000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3600
         },
         {
@@ -17147,7 +17212,7 @@
           "upgrade_time": 64800,
           "upgrade_cost": 330000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3800
         },
         {
@@ -17157,7 +17222,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 360000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -17167,7 +17232,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 900000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -17177,7 +17242,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1100000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -17187,7 +17252,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1300000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -17197,7 +17262,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1500000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -17207,7 +17272,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2300000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -17217,7 +17282,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2500000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -17227,7 +17292,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3300000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -17237,7 +17302,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3500000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -17247,7 +17312,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4000000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -17257,7 +17322,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4200000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -17267,7 +17332,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 4800000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -17277,7 +17342,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5400000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -17287,7 +17352,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -17319,7 +17384,7 @@
           "upgrade_time": 18000,
           "upgrade_cost": 60000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3200
         },
         {
@@ -17329,7 +17394,7 @@
           "upgrade_time": 36000,
           "upgrade_cost": 120000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3400
         },
         {
@@ -17339,7 +17404,7 @@
           "upgrade_time": 57600,
           "upgrade_cost": 240000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3600
         },
         {
@@ -17349,7 +17414,7 @@
           "upgrade_time": 72000,
           "upgrade_cost": 350000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3800
         },
         {
@@ -17359,7 +17424,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 380000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -17369,7 +17434,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 1000000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -17379,7 +17444,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1200000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -17389,7 +17454,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1300000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -17399,7 +17464,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1500000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -17409,7 +17474,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2300000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -17419,7 +17484,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2500000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -17429,7 +17494,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3300000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -17439,7 +17504,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3500000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -17449,7 +17514,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4000000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -17459,7 +17524,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4200000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -17469,7 +17534,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 4800000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -17479,7 +17544,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5400000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -17489,7 +17554,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -17521,7 +17586,7 @@
           "upgrade_time": 57600,
           "upgrade_cost": 320000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 3600
         },
         {
@@ -17531,7 +17596,7 @@
           "upgrade_time": 72000,
           "upgrade_cost": 340000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 3800
         },
         {
@@ -17541,7 +17606,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 360000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -17551,7 +17616,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 900000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -17561,7 +17626,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1000000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -17571,7 +17636,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1200000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -17581,7 +17646,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1400000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -17591,7 +17656,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2200000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -17601,7 +17666,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2400000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -17611,7 +17676,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3200000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -17621,7 +17686,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3400000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -17631,7 +17696,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 3900000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -17641,7 +17706,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4100000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -17651,7 +17716,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 4700000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -17661,7 +17726,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5300000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -17671,7 +17736,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -17703,7 +17768,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 3600000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5200
         },
         {
@@ -17713,7 +17778,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3800000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5400
         },
         {
@@ -17723,7 +17788,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 4000000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -17733,7 +17798,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4600000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -17743,7 +17808,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4800000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -17753,7 +17818,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5600000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -17763,7 +17828,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5800000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -17773,7 +17838,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -17805,7 +17870,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 1000000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4000
         },
         {
@@ -17815,7 +17880,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 1100000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4200
         },
         {
@@ -17825,7 +17890,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1200000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -17835,7 +17900,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1400000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -17845,7 +17910,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1600000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -17855,7 +17920,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2400000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -17865,7 +17930,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2600000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -17875,7 +17940,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3400000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -17885,7 +17950,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3600000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -17895,7 +17960,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4100000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -17905,7 +17970,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4300000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -17915,7 +17980,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5300000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -17925,7 +17990,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5700000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -17935,7 +18000,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -17967,7 +18032,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 2400000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 4800,
           "death_damage": 300
         },
@@ -17978,7 +18043,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2600000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5000,
           "death_damage": 300
         },
@@ -17989,7 +18054,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2800000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200,
           "death_damage": 300
         },
@@ -18000,7 +18065,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3600000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400,
           "death_damage": 400
         },
@@ -18011,7 +18076,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3800000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600,
           "death_damage": 400
         },
@@ -18022,7 +18087,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4300000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800,
           "death_damage": 400
         },
@@ -18033,7 +18098,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4500000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000,
           "death_damage": 400
         },
@@ -18044,7 +18109,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5500000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200,
           "death_damage": 500
         },
@@ -18055,7 +18120,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5700000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400,
           "death_damage": 500
         },
@@ -18066,7 +18131,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600,
           "death_damage": 500
         }
@@ -18099,7 +18164,7 @@
           "upgrade_time": 57600,
           "upgrade_cost": 360000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 3600
         },
         {
@@ -18109,7 +18174,7 @@
           "upgrade_time": 72000,
           "upgrade_cost": 380000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 3800
         },
         {
@@ -18119,7 +18184,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 400000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -18129,7 +18194,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 1000000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -18139,7 +18204,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1200000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -18149,7 +18214,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1400000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -18159,7 +18224,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1600000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -18169,7 +18234,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2400000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -18179,7 +18244,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2600000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -18189,7 +18254,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3400000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -18199,7 +18264,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3600000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -18209,7 +18274,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4100000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -18219,7 +18284,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4300000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -18229,7 +18294,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5100000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -18239,7 +18304,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5500000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -18249,7 +18314,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -18281,7 +18346,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1400000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4400
         },
         {
@@ -18291,7 +18356,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1600000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4600
         },
         {
@@ -18301,7 +18366,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1800000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -18311,7 +18376,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2500000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -18321,7 +18386,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2700000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -18331,7 +18396,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3500000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -18341,7 +18406,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3700000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -18351,7 +18416,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4200000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -18361,7 +18426,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4400000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -18371,7 +18436,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5200000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -18381,7 +18446,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5600000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -18391,7 +18456,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -20908,7 +20973,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 4000000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 5600
         },
         {
@@ -20918,7 +20983,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4200000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 5800
         },
         {
@@ -20928,7 +20993,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4400000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -20938,7 +21003,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5400000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -20948,7 +21013,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5800000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -20958,7 +21023,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -23336,7 +23401,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4400000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6000
         },
         {
@@ -23346,7 +23411,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5400000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6200
         },
         {
@@ -23356,7 +23421,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5800000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -23366,7 +23431,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -26968,7 +27033,47 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000000,
+            "count": 15
+          },
+          {
+            "troop_id": 4000001,
+            "count": 15
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 6
+          },
+          {
+            "level": 3,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 5
+          }
+        ]
+      }
     },
     {
       "_id": 4000196,
@@ -27020,7 +27125,47 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000003,
+            "count": 3
+          },
+          {
+            "troop_id": 4000006,
+            "count": 5
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 5
+          },
+          {
+            "level": 3,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 3,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 4
+          }
+        ]
+      }
     },
     {
       "_id": 4000197,
@@ -27072,7 +27217,43 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000004,
+            "count": 5
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadInvisibilityAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_INVISIBILITY",
+              "info": "TID_SQUAD_ABILITY_INVISIBILITY_INFO"
+            },
+            "duration_ms": 3000
+          },
+          {
+            "level": 3,
+            "ability": "SquadInvisibilityAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_INVISIBILITY",
+              "info": "TID_SQUAD_ABILITY_INVISIBILITY_INFO"
+            },
+            "duration_ms": 4000
+          }
+        ]
+      }
     },
     {
       "_id": 4000198,
@@ -27124,7 +27305,43 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000010,
+            "count": 8
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 4,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 3
+          },
+          {
+            "level": 3,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 5,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 2
+          }
+        ]
+      }
     },
     {
       "_id": 4000199,
@@ -27176,7 +27393,43 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000005,
+            "count": 4
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 15
+          },
+          {
+            "level": 3,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 20
+          }
+        ]
+      }
     },
     {
       "_id": 4000200,
@@ -27228,7 +27481,47 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000013,
+            "count": 1
+          },
+          {
+            "troop_id": 4000015,
+            "count": 4
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 4,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 3
+          },
+          {
+            "level": 3,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 5,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 2
+          }
+        ]
+      }
     },
     {
       "_id": 4000201,
@@ -27280,7 +27573,43 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000011,
+            "count": 12
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 3,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 30
+          },
+          {
+            "level": 3,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 4,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 40
+          }
+        ]
+      }
     },
     {
       "_id": 4000202,
@@ -27332,7 +27661,43 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000024,
+            "count": 10
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 3,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 30
+          },
+          {
+            "level": 3,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 4,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 40
+          }
+        ]
+      }
     },
     {
       "_id": 4000203,
@@ -27384,7 +27749,49 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000007,
+            "count": 5
+          },
+          {
+            "troop_id": 4000005,
+            "count": 1
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadDeployShieldAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_DEPLOY_SHIELD",
+              "info": "TID_SQUAD_ABILITY_DEPLOY_SHIELD_INFO"
+            },
+            "damage_reduction_percent": 100,
+            "duration_ms": 2000
+          },
+          {
+            "level": 3,
+            "ability": "SquadDeployShieldAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_DEPLOY_SHIELD",
+              "info": "TID_SQUAD_ABILITY_DEPLOY_SHIELD_INFO"
+            },
+            "damage_reduction_percent": 100,
+            "duration_ms": 3000
+          }
+        ]
+      }
     },
     {
       "_id": 4000204,
@@ -27436,7 +27843,47 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000009,
+            "count": 1
+          },
+          {
+            "troop_id": 4000095,
+            "count": 1
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadSharedTargetAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SHARED_TARGET",
+              "info": "TID_SQUAD_ABILITY_SHARED_TARGET_INFO"
+            },
+            "shared_targeting": true
+          },
+          {
+            "level": 3,
+            "ability": "SquadSharedTargetAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SHARED_TARGET",
+              "info": "TID_SQUAD_ABILITY_SHARED_TARGET_INFO"
+            },
+            "shared_targeting": true
+          }
+        ]
+      }
     },
     {
       "_id": 4000205,
@@ -27488,7 +27935,49 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000008,
+            "count": 2
+          },
+          {
+            "troop_id": 4000065,
+            "count": 2
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadDeployShieldAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_DEPLOY_SHIELD",
+              "info": "TID_SQUAD_ABILITY_DEPLOY_SHIELD_INFO"
+            },
+            "damage_reduction_percent": 100,
+            "duration_ms": 2000
+          },
+          {
+            "level": 3,
+            "ability": "SquadDeployShieldAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_DEPLOY_SHIELD",
+              "info": "TID_SQUAD_ABILITY_DEPLOY_SHIELD_INFO"
+            },
+            "damage_reduction_percent": 100,
+            "duration_ms": 3000
+          }
+        ]
+      }
     },
     {
       "_id": 4000206,
@@ -27540,7 +28029,45 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000023,
+            "count": 3
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadBabyDragonRageAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_BABY_DRAGON_ABILITY_NAME",
+              "info": "TID_BABY_DRAGON_ABILITY_HELP"
+            },
+            "damage_increase_percent": 100,
+            "attack_speed_increase_percent": 50
+          },
+          {
+            "level": 3,
+            "ability": "SquadBabyDragonRageAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_BABY_DRAGON_ABILITY_NAME",
+              "info": "TID_BABY_DRAGON_ABILITY_HELP"
+            },
+            "damage_increase_percent": 100,
+            "attack_speed_increase_percent": 50
+          }
+        ]
+      }
     }
   ],
   "guardians": [
@@ -52700,34 +53227,6 @@
       "village": "builderBase"
     },
     {
-      "_id": 18000081,
-      "name": "Goblin Chest",
-      "TID": {
-        "name": "TID_DECO_GOBLIN_CHEST"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "Gold",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000082,
-      "name": "Goblin Cart",
-      "TID": {
-        "name": "TID_DECO_GOBLIN_CART"
-      },
-      "width": 3,
-      "not_in_shop": true,
-      "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "Gold",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
       "_id": 18000089,
       "name": "Goblin Cellar",
       "TID": {
@@ -52752,76 +53251,6 @@
       "pass_reward": true,
       "max_count": 1,
       "build_resource": "Gold",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000091,
-      "name": "Goblin Barrel",
-      "TID": {
-        "name": "TID_DECO_GOBLIN_BARREL"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "Gold",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000092,
-      "name": "League Hammer",
-      "TID": {
-        "name": "TID_DECO_CWL_HAMMER"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "League Medals",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000093,
-      "name": "League Shield",
-      "TID": {
-        "name": "TID_DECO_CWL_SHIELD"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "League Medals",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000094,
-      "name": "Razer Deco",
-      "TID": {
-        "name": "TID_DECO_RAZER_PROMO"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 4,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000095,
-      "name": "Flexing Barbarian",
-      "TID": {
-        "name": "TID_DECO_FLEXING_BARB"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 4,
-      "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
     },
@@ -52924,76 +53353,6 @@
       "village": "home"
     },
     {
-      "_id": 18000104,
-      "name": "Crop Crates",
-      "TID": {
-        "name": "TID_DECO_HD_VEG_CRATES"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000105,
-      "name": "Blooming Beetroots",
-      "TID": {
-        "name": "TID_DECO_HD_BEETROOTS"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000106,
-      "name": "Sweet Carrots",
-      "TID": {
-        "name": "TID_DECO_HD_CARROTS"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000107,
-      "name": "Tasty Corn",
-      "TID": {
-        "name": "TID_DECO_HD_CORN"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000108,
-      "name": "Harvest Helper",
-      "TID": {
-        "name": "TID_DECO_HD_SOIL_SACKS"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
       "_id": 18000109,
       "name": "Hog Pen",
       "TID": {
@@ -53003,62 +53362,6 @@
       "not_in_shop": true,
       "pass_reward": true,
       "max_count": 4,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000110,
-      "name": "Scratchy Stack",
-      "TID": {
-        "name": "TID_DECO_HD_HAYSTACK"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000111,
-      "name": "Juicy Tomatoes",
-      "TID": {
-        "name": "TID_DECO_HD_TOMATOES"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000112,
-      "name": "Clumsy Wheelbarrow",
-      "TID": {
-        "name": "TID_DECO_HD_WHEELBARROW"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000113,
-      "name": "Woodcutter’s Pile",
-      "TID": {
-        "name": "TID_DECO_HD_WOOD_PILE"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
       "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
@@ -53498,20 +53801,6 @@
       "village": "home"
     },
     {
-      "_id": 18000146,
-      "name": "Beach Break",
-      "TID": {
-        "name": "TID_DECO_SC_BEACH_PARASOL"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 1,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
       "_id": 18000147,
       "name": "Brawl's Star",
       "TID": {
@@ -53530,20 +53819,6 @@
       "name": "Gargantuan Gauntlet",
       "TID": {
         "name": "TID_DECO_SC_GAUNTLET"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 1,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000149,
-      "name": "Heroic Chicken",
-      "TID": {
-        "name": "TID_DECO_SC_HAYDAY_CHICKEN"
       },
       "width": 2,
       "not_in_shop": true,
@@ -54324,34 +54599,6 @@
       "village": "home"
     },
     {
-      "_id": 18000205,
-      "name": "Darkness Throne",
-      "TID": {
-        "name": "TID_DECO_DARKNESS_THRONE"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 4,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000206,
-      "name": "Hog Skull",
-      "TID": {
-        "name": "TID_DECO_HOGSKULL"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 4,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
       "_id": 18000207,
       "name": "Builder Bust",
       "TID": {
@@ -54814,6 +55061,20 @@
       "village": "home"
     },
     {
+      "_id": 18000242,
+      "name": "Emerald Hot Streak",
+      "TID": {
+        "name": "TID_DECO_COMMUNITY_FLAMER_GREEN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 2,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
       "_id": 18000244,
       "name": "Amber Hot Streak",
       "TID": {
@@ -54900,279 +55161,6 @@
   ],
   "obstacles": [
     {
-      "_id": 8000000,
-      "name": "Tree",
-      "TID": {
-        "name": "TID_OBSTACLE_TREE"
-      },
-      "width": 2,
-      "clear_resource": "Elixir",
-      "clear_cost": 2000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000001,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 3,
-      "clear_resource": "Gold",
-      "clear_cost": 20000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000002,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000003,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000004,
-      "name": "Bush",
-      "TID": {
-        "name": "TID_OBSTACLE_BUSH"
-      },
-      "width": 2,
-      "clear_resource": "Elixir",
-      "clear_cost": 250,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000005,
-      "name": "Tree",
-      "TID": {
-        "name": "TID_OBSTACLE_TREE"
-      },
-      "width": 3,
-      "clear_resource": "Elixir",
-      "clear_cost": 7500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000006,
-      "name": "Trunk",
-      "TID": {
-        "name": "TID_OBSTACLE_TRUNK"
-      },
-      "width": 2,
-      "clear_resource": "Elixir",
-      "clear_cost": 1000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000007,
-      "name": "Trunk",
-      "TID": {
-        "name": "TID_OBSTACLE_TRUNK"
-      },
-      "width": 2,
-      "clear_resource": "Elixir",
-      "clear_cost": 1000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000008,
-      "name": "Mushroom",
-      "TID": {
-        "name": "TID_OBSTACLE_MUSHROOM"
-      },
-      "width": 2,
-      "clear_resource": "Elixir",
-      "clear_cost": 100,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000009,
-      "name": "Tombstone",
-      "TID": {
-        "name": "TID_OBSTACLE_TOMBSTONE"
-      },
-      "width": 1,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": "Elixir",
-      "loot_count": 20,
-      "village": "home"
-    },
-    {
-      "_id": 8000010,
-      "name": "Trunk",
-      "TID": {
-        "name": "TID_OBSTACLE_TRUNK"
-      },
-      "width": 2,
-      "clear_resource": "Elixir",
-      "clear_cost": 1000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000011,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000012,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000013,
-      "name": "Tree",
-      "TID": {
-        "name": "TID_OBSTACLE_TREE"
-      },
-      "width": 3,
-      "clear_resource": "Elixir",
-      "clear_cost": 10000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000014,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 10000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000015,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 3,
-      "clear_resource": "Gold",
-      "clear_cost": 20000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000016,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 10000,
-      "loot_resource": null,
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000017,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 10000,
-      "loot_resource": null,
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000018,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 10000,
-      "loot_resource": null,
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000019,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 3,
-      "clear_resource": "Gold",
-      "clear_cost": 10000,
-      "loot_resource": null,
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000020,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 3,
-      "clear_resource": "Gold",
-      "clear_cost": 10000,
-      "loot_resource": null,
-      "loot_count": null,
-      "village": "home"
-    },
-    {
       "_id": 8000021,
       "name": "2012 Clashmas Tree",
       "TID": {
@@ -55186,84 +55174,6 @@
       "village": "home"
     },
     {
-      "_id": 8000022,
-      "name": "Tombstone",
-      "TID": {
-        "name": "TID_OBSTACLE_TOMBSTONE"
-      },
-      "width": 1,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": "Dark Elixir",
-      "loot_count": 5,
-      "village": "home"
-    },
-    {
-      "_id": 8000023,
-      "name": "Tombstone",
-      "TID": {
-        "name": "TID_OBSTACLE_TOMBSTONE"
-      },
-      "width": 1,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": "Dark Elixir",
-      "loot_count": 1,
-      "village": "home"
-    },
-    {
-      "_id": 8000024,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": null,
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000025,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": null,
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000026,
-      "name": "Goblin Camp Fire",
-      "TID": {
-        "name": "TID_CAMP_FIRE_DECO"
-      },
-      "width": 3,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": null,
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000027,
-      "name": "Goblin Camp Fire",
-      "TID": {
-        "name": "TID_CAMP_FIRE_DECO"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": null,
-      "loot_count": null,
-      "village": "home"
-    },
-    {
       "_id": 8000028,
       "name": "2013 Clashmas Tree",
       "TID": {
@@ -55274,32 +55184,6 @@
       "clear_cost": 25000,
       "loot_resource": "Gold",
       "loot_count": 75000,
-      "village": "home"
-    },
-    {
-      "_id": 8000029,
-      "name": "Present",
-      "TID": {
-        "name": "TID_OBSTACLE_XMASPRESENT"
-      },
-      "width": 1,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": "Elixir",
-      "loot_count": 1000,
-      "village": "home"
-    },
-    {
-      "_id": 8000030,
-      "name": "Gem Box",
-      "TID": {
-        "name": "TID_BONUS_GEMBOX"
-      },
-      "width": 2,
-      "clear_resource": "Elixir",
-      "clear_cost": 1000,
-      "loot_resource": "Gems",
-      "loot_count": 25,
       "village": "home"
     },
     {
@@ -55329,45 +55213,6 @@
       "village": "home"
     },
     {
-      "_id": 8000033,
-      "name": "Present",
-      "TID": {
-        "name": "TID_OBSTACLE_XMASPRESENT"
-      },
-      "width": 1,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": "Elixir",
-      "loot_count": 5000,
-      "village": "home"
-    },
-    {
-      "_id": 8000034,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 3,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": null,
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000035,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 3,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": null,
-      "loot_count": null,
-      "village": "home"
-    },
-    {
       "_id": 8000036,
       "name": "Halloween Cauldron",
       "TID": {
@@ -55391,19 +55236,6 @@
       "clear_cost": 25000,
       "loot_resource": "Gold",
       "loot_count": 75000,
-      "village": "home"
-    },
-    {
-      "_id": 8000038,
-      "name": "Loot Cart",
-      "TID": {
-        "name": "TID_LOOT_CART"
-      },
-      "width": 2,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": "Elixir",
-      "loot_count": 0,
       "village": "home"
     },
     {
@@ -55433,318 +55265,6 @@
       "village": "home"
     },
     {
-      "_id": 8000041,
-      "name": "Tree",
-      "TID": {
-        "name": "TID_OBSTACLE_TREE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 2000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000042,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 3,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 20000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000043,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000044,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000045,
-      "name": "Bush",
-      "TID": {
-        "name": "TID_OBSTACLE_BUSH"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 250,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000046,
-      "name": "Tree",
-      "TID": {
-        "name": "TID_OBSTACLE_TREE"
-      },
-      "width": 3,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 7500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000047,
-      "name": "Mushroom",
-      "TID": {
-        "name": "TID_OBSTACLE_MUSHROOM"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 100,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000048,
-      "name": "Tombstone",
-      "TID": {
-        "name": "TID_OBSTACLE_TOMBSTONE"
-      },
-      "width": 1,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 0,
-      "loot_resource": "Builder Elixir",
-      "loot_count": 20,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000049,
-      "name": "Trunk",
-      "TID": {
-        "name": "TID_OBSTACLE_TRUNK"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 1000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000050,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000051,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000052,
-      "name": "Tree",
-      "TID": {
-        "name": "TID_OBSTACLE_TREE"
-      },
-      "width": 3,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 10000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000053,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 10000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000054,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 3,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 20000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000055,
-      "name": "Old Barbarian Statue",
-      "TID": {
-        "name": "TID_OBSTACLE_OLD_BARBARIAN_STATUE"
-      },
-      "width": 3,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 200000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000056,
-      "name": "Tree Stump",
-      "TID": {
-        "name": "TID_OBSTACLE_TREE_STUMP"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000057,
-      "name": "Grove",
-      "TID": {
-        "name": "TID_OBSTACLE_LARGE_PINE_TREE"
-      },
-      "width": 3,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 20000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000058,
-      "name": "Small Tree",
-      "TID": {
-        "name": "TID_OBSTACLE_SMALL_TREE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 2000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000059,
-      "name": "Big Tree",
-      "TID": {
-        "name": "TID_OBSTACLE_BIG_TREE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 10000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000060,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000061,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000062,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 500,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000063,
-      "name": "Tall Grass",
-      "TID": {
-        "name": "TID_GRASS"
-      },
-      "width": 1,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 50,
-      "loot_resource": "Builder Elixir",
-      "loot_count": 0,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000064,
-      "name": "Tall Grass",
-      "TID": {
-        "name": "TID_GRASS"
-      },
-      "width": 1,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 50,
-      "loot_resource": "Builder Elixir",
-      "loot_count": 0,
-      "village": "builderBase"
-    },
-    {
       "_id": 8000065,
       "name": "5th Anniversary Cake",
       "TID": {
@@ -55755,19 +55275,6 @@
       "clear_cost": 25000,
       "loot_resource": "Elixir",
       "loot_count": 75000,
-      "village": "home"
-    },
-    {
-      "_id": 8000066,
-      "name": "Present",
-      "TID": {
-        "name": "TID_OBSTACLE_XMASPRESENT"
-      },
-      "width": 1,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": "Elixir",
-      "loot_count": 5000,
       "village": "home"
     },
     {
@@ -56083,227 +55590,6 @@
       "village": "home"
     },
     {
-      "_id": 8000091,
-      "name": "Root",
-      "TID": {
-        "name": "TID_OBSTACLE_ROOT"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 30000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000092,
-      "name": "Large Root",
-      "TID": {
-        "name": "TID_OBSTACLE_ROOT_LARGE"
-      },
-      "width": 3,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 80000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000093,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 25000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000094,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 15000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000095,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 15000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000096,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 40000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000097,
-      "name": "Small Root",
-      "TID": {
-        "name": "TID_OBSTACLE_ROOT_SMALL"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 15000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000098,
-      "name": "Small Root",
-      "TID": {
-        "name": "TID_OBSTACLE_ROOT_SMALL"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 15000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000099,
-      "name": "Small Root",
-      "TID": {
-        "name": "TID_OBSTACLE_ROOT_SMALL"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 15000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000100,
-      "name": "Root",
-      "TID": {
-        "name": "TID_OBSTACLE_ROOT"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 30000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000101,
-      "name": "Small Root",
-      "TID": {
-        "name": "TID_OBSTACLE_ROOT_SMALL"
-      },
-      "width": 2,
-      "clear_resource": "Builder Elixir",
-      "clear_cost": 20000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000102,
-      "name": "Stone",
-      "TID": {
-        "name": "TID_OBSTACLE_STONE"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 10000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000103,
-      "name": "Pond",
-      "TID": {
-        "name": "TID_OBSTACLE_POND"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 60000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000104,
-      "name": "Pond",
-      "TID": {
-        "name": "TID_OBSTACLE_POND"
-      },
-      "width": 2,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 60000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000105,
-      "name": "Overgrown Pond",
-      "TID": {
-        "name": "TID_OBSTACLE_POND_OVERGROWN"
-      },
-      "width": 3,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 90000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000106,
-      "name": "Large Pond",
-      "TID": {
-        "name": "TID_OBSTACLE_POND_LARGE"
-      },
-      "width": 3,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 60000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
-      "_id": 8000107,
-      "name": "Large Pond",
-      "TID": {
-        "name": "TID_OBSTACLE_POND_LARGE"
-      },
-      "width": 3,
-      "clear_resource": "Builder Gold",
-      "clear_cost": 60000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "builderBase"
-    },
-    {
       "_id": 8000108,
       "name": "11th Anniversary Cake",
       "TID": {
@@ -56314,19 +55600,6 @@
       "clear_cost": 1100,
       "loot_resource": "Gold",
       "loot_count": 11000,
-      "village": "home"
-    },
-    {
-      "_id": 8000109,
-      "name": "Tombstone",
-      "TID": {
-        "name": "TID_OBSTACLE_TOMBSTONE"
-      },
-      "width": 1,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": "Medal Event Soft Currency",
-      "loot_count": 1,
       "village": "home"
     },
     {
@@ -56356,19 +55629,6 @@
       "village": "home"
     },
     {
-      "_id": 8000112,
-      "name": "Tombstone",
-      "TID": {
-        "name": "TID_OBSTACLE_TOMBSTONE"
-      },
-      "width": 1,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": "Medal Event Soft Currency",
-      "loot_count": 1,
-      "village": "home"
-    },
-    {
       "_id": 8000113,
       "name": "Lucky Letterbox",
       "TID": {
@@ -56379,19 +55639,6 @@
       "clear_cost": 8888,
       "loot_resource": "Elixir",
       "loot_count": 88888,
-      "village": "home"
-    },
-    {
-      "_id": 8000114,
-      "name": "Tombstone",
-      "TID": {
-        "name": "TID_OBSTACLE_TOMBSTONE"
-      },
-      "width": 1,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": "Elixir",
-      "loot_count": 1,
       "village": "home"
     },
     {
@@ -56434,123 +55681,6 @@
       "village": "home"
     },
     {
-      "_id": 8000118,
-      "name": "Deployable area marker",
-      "TID": {
-        "name": "TID_OBSTACLE_DEPLOY_AREA_MARKER"
-      },
-      "width": 1,
-      "clear_resource": "Gold",
-      "clear_cost": 1,
-      "loot_resource": "Gold",
-      "loot_count": 1,
-      "village": "home"
-    },
-    {
-      "_id": 8000119,
-      "name": "Foothill",
-      "TID": {
-        "name": "TID_DECO_HILL_3"
-      },
-      "width": 2,
-      "clear_resource": "Elixir",
-      "clear_cost": 2000000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000120,
-      "name": "Foothill",
-      "TID": {
-        "name": "TID_DECO_HILL_3"
-      },
-      "width": 2,
-      "clear_resource": "Elixir",
-      "clear_cost": 2000000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000121,
-      "name": "Foothill",
-      "TID": {
-        "name": "TID_DECO_HILL_3"
-      },
-      "width": 3,
-      "clear_resource": "Elixir",
-      "clear_cost": 2000000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000122,
-      "name": "Foothill",
-      "TID": {
-        "name": "TID_DECO_HILL_3"
-      },
-      "width": 3,
-      "clear_resource": "Elixir",
-      "clear_cost": 2000000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000123,
-      "name": "Foothill",
-      "TID": {
-        "name": "TID_DECO_HILL_3"
-      },
-      "width": 4,
-      "clear_resource": "Elixir",
-      "clear_cost": 2000000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000124,
-      "name": "Foothill",
-      "TID": {
-        "name": "TID_DECO_HILL_3"
-      },
-      "width": 4,
-      "clear_resource": "Elixir",
-      "clear_cost": 2000000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000125,
-      "name": "Water",
-      "TID": {
-        "name": "TID_WATER"
-      },
-      "width": 1,
-      "clear_resource": "Elixir",
-      "clear_cost": 2000000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
-      "_id": 8000126,
-      "name": "Foothill",
-      "TID": {
-        "name": "TID_DECO_HILL_3"
-      },
-      "width": 4,
-      "clear_resource": "Elixir",
-      "clear_cost": 2000000,
-      "loot_resource": "Gems",
-      "loot_count": null,
-      "village": "home"
-    },
-    {
       "_id": 8000127,
       "name": "2024 Clashmas Tree",
       "TID": {
@@ -56587,19 +55717,6 @@
       "clear_cost": 41,
       "loot_resource": "Gold",
       "loot_count": 41000,
-      "village": "home"
-    },
-    {
-      "_id": 8000130,
-      "name": "Tombstone",
-      "TID": {
-        "name": "TID_OBSTACLE_TOMBSTONE"
-      },
-      "width": 1,
-      "clear_resource": "Gold",
-      "clear_cost": 0,
-      "loot_resource": "Gold",
-      "loot_count": 1,
       "village": "home"
     },
     {
@@ -62078,7 +61195,10 @@
             "dark_elixir": 100
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 500
+      }
     },
     {
       "_id": 105000002,
@@ -62111,7 +61231,10 @@
             "dark_elixir": 150
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 550
+      }
     },
     {
       "_id": 105000003,
@@ -62152,7 +61275,10 @@
             "dark_elixir": 200
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 600
+      }
     },
     {
       "_id": 105000004,
@@ -62201,7 +61327,10 @@
             "dark_elixir": 300
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 650
+      }
     },
     {
       "_id": 105000005,
@@ -62250,7 +61379,10 @@
             "dark_elixir": 350
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 700
+      }
     },
     {
       "_id": 105000006,
@@ -62307,7 +61439,10 @@
             "dark_elixir": 400
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 750
+      }
     },
     {
       "_id": 105000007,
@@ -62364,7 +61499,10 @@
             "dark_elixir": 600
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 800
+      }
     },
     {
       "_id": 105000008,
@@ -62429,7 +61567,10 @@
             "dark_elixir": 650
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 850
+      }
     },
     {
       "_id": 105000009,
@@ -62494,7 +61635,10 @@
             "dark_elixir": 700
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 900
+      }
     },
     {
       "_id": 105000010,
@@ -62559,7 +61703,10 @@
             "dark_elixir": 900
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 950
+      }
     },
     {
       "_id": 105000011,
@@ -62632,7 +61779,10 @@
             "dark_elixir": 950
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1000
+      }
     },
     {
       "_id": 105000012,
@@ -62705,7 +61855,10 @@
             "dark_elixir": 1000
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1050
+      }
     },
     {
       "_id": 105000013,
@@ -62778,7 +61931,10 @@
             "dark_elixir": 1200
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1100
+      }
     },
     {
       "_id": 105000014,
@@ -62859,7 +62015,10 @@
             "dark_elixir": 1300
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1200
+      }
     },
     {
       "_id": 105000015,
@@ -62940,7 +62099,10 @@
             "dark_elixir": 1400
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1300
+      }
     },
     {
       "_id": 105000016,
@@ -63021,7 +62183,10 @@
             "dark_elixir": 1600
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1400
+      }
     },
     {
       "_id": 105000017,
@@ -63110,7 +62275,10 @@
             "dark_elixir": 1700
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1500
+      }
     },
     {
       "_id": 105000018,
@@ -63199,7 +62367,10 @@
             "dark_elixir": 1800
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1600
+      }
     },
     {
       "_id": 105000019,
@@ -63288,7 +62459,10 @@
             "dark_elixir": 2000
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1700
+      }
     },
     {
       "_id": 105000020,
@@ -63385,7 +62559,10 @@
             "dark_elixir": 2050
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1800
+      }
     },
     {
       "_id": 105000021,
@@ -63482,7 +62659,10 @@
             "dark_elixir": 2100
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 1900
+      }
     },
     {
       "_id": 105000022,
@@ -63579,7 +62759,10 @@
             "dark_elixir": 2300
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2000
+      }
     },
     {
       "_id": 105000023,
@@ -63684,7 +62867,10 @@
             "dark_elixir": 2350
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2100
+      }
     },
     {
       "_id": 105000024,
@@ -63789,7 +62975,10 @@
             "dark_elixir": 2400
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2200
+      }
     },
     {
       "_id": 105000025,
@@ -63894,7 +63083,10 @@
             "dark_elixir": 2600
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2300
+      }
     },
     {
       "_id": 105000026,
@@ -64015,7 +63207,10 @@
             "dark_elixir": 2625
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2400
+      }
     },
     {
       "_id": 105000027,
@@ -64136,7 +63331,10 @@
             "dark_elixir": 2650
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2500
+      }
     },
     {
       "_id": 105000028,
@@ -64257,7 +63455,10 @@
             "dark_elixir": 2750
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2600
+      }
     },
     {
       "_id": 105000029,
@@ -64378,7 +63579,10 @@
             "dark_elixir": 2775
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2700
+      }
     },
     {
       "_id": 105000030,
@@ -64499,7 +63703,10 @@
             "dark_elixir": 2800
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2800
+      }
     },
     {
       "_id": 105000031,
@@ -64620,7 +63827,10 @@
             "dark_elixir": 2900
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 2900
+      }
     },
     {
       "_id": 105000032,
@@ -64741,7 +63951,10 @@
             "dark_elixir": 2925
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 3000
+      }
     },
     {
       "_id": 105000033,
@@ -64862,7 +64075,10 @@
             "dark_elixir": 2950
           }
         }
-      ]
+      ],
+      "ranked_medals": {
+        "maximum_per_week": 3100
+      }
     },
     {
       "_id": 105000034,
@@ -64984,7 +64200,10 @@
           }
         }
       ],
-      "battle_modifier": "Minus Three"
+      "battle_modifier": "Minus Three",
+      "ranked_medals": {
+        "maximum_per_week": 3300
+      }
     },
     {
       "_id": 105000035,
@@ -65106,7 +64325,10 @@
           }
         }
       ],
-      "battle_modifier": "Minus Two"
+      "battle_modifier": "Minus Two",
+      "ranked_medals": {
+        "maximum_per_week": 3500
+      }
     },
     {
       "_id": 105000036,
@@ -65228,7 +64450,31 @@
           }
         }
       ],
-      "battle_modifier": "Minus One"
+      "battle_modifier": "Minus One",
+      "ranked_medals": {
+        "placement_rewards": [
+          {
+            "minimum_rank": 1,
+            "medals": 4000
+          },
+          {
+            "minimum_rank": 201,
+            "medals": 3500
+          },
+          {
+            "minimum_rank": 501,
+            "medals": 3000
+          },
+          {
+            "minimum_rank": 1001,
+            "medals": 2500
+          },
+          {
+            "minimum_rank": 5001,
+            "medals": 2000
+          }
+        ]
+      }
     }
   ],
   "star_bonus": [
@@ -65999,7 +65245,8 @@
         "info": "TID_BOOSTER_FINISH_TROOP_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "book"
     },
     {
       "_id": 890343935493710,
@@ -66010,7 +65257,8 @@
         "info": "TID_BOOSTER_FINISH_BUILDING_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "book"
     },
     {
       "_id": 753206450208602,
@@ -66021,7 +65269,8 @@
         "info": "TID_BOOSTER_FINISH_SPELL_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "book"
     },
     {
       "_id": 524139281942929,
@@ -66032,7 +65281,8 @@
         "info": "TID_BOOSTER_FINISH_HERO_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "book"
     },
     {
       "_id": 440405123938110,
@@ -66043,7 +65293,8 @@
         "info": "TID_BOOSTER_FINISH_ANY_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "book"
     },
     {
       "_id": 561696033072481,
@@ -66054,7 +65305,9 @@
         "info": "TID_BOOSTER_MAX_LEVEL_ARMY_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 3600
     },
     {
       "_id": 243284571992699,
@@ -66065,7 +65318,10 @@
         "info": "TID_BOOSTER_BOOST_RESOURCES_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "boost_multiplier": 2,
+      "duration": 86400
     },
     {
       "_id": 570452040909320,
@@ -66076,7 +65332,8 @@
         "info": "TID_BOOSTER_BOOST_PRODUCTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion"
     },
     {
       "_id": 676037793357332,
@@ -66087,7 +65344,8 @@
         "info": "TID_BOOSTER_FILL_GOLD_STORAGE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "rune"
     },
     {
       "_id": 771806884803063,
@@ -66098,7 +65356,8 @@
         "info": "TID_BOOSTER_FILL_ELIXIR_STORAGE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "rune"
     },
     {
       "_id": 305847136545998,
@@ -66109,7 +65368,8 @@
         "info": "TID_BOOSTER_FILL_DARK_ELIXIR_STORAGE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "rune"
     },
     {
       "_id": 827109296898367,
@@ -66120,7 +65380,8 @@
         "info": "TID_BOOSTER_FILL_GOLD2_STORAGE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "rune"
     },
     {
       "_id": 469261700147929,
@@ -66131,7 +65392,8 @@
         "info": "TID_BOOSTER_FILL_ELIXIR2_STORAGE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "rune"
     },
     {
       "_id": 900728545460161,
@@ -66142,7 +65404,8 @@
         "info": "TID_BOOSTER_WALL_UPGRADE_INFO"
       },
       "max_inventory": 25,
-      "gem_value": 5
+      "gem_value": 5,
+      "type": "other"
     },
     {
       "_id": 210956642277151,
@@ -66153,7 +65416,10 @@
         "info": "TID_BOOSTER_BUILDERS_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 3600,
+      "boost_multiplier": 10
     },
     {
       "_id": 280901775918853,
@@ -66164,7 +65430,8 @@
         "info": "TID_BOOSTER_FREE_TROOP_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 100
+      "gem_value": 100,
+      "type": "hammer"
     },
     {
       "_id": 151625849595091,
@@ -66175,7 +65442,8 @@
         "info": "TID_BOOSTER_FREE_BUILDING_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 100
+      "gem_value": 100,
+      "type": "hammer"
     },
     {
       "_id": 742529374013477,
@@ -66186,7 +65454,8 @@
         "info": "TID_BOOSTER_FREE_SPELL_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 100
+      "gem_value": 100,
+      "type": "hammer"
     },
     {
       "_id": 256984620428090,
@@ -66197,7 +65466,8 @@
         "info": "TID_BOOSTER_FREE_HERO_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 100
+      "gem_value": 100,
+      "type": "hammer"
     },
     {
       "_id": 782756751511908,
@@ -66208,7 +65478,10 @@
         "info": "TID_BOOSTER_CLOCKTOWER_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 1800,
+      "boost_multiplier": 10
     },
     {
       "_id": 635767448980463,
@@ -66219,7 +65492,8 @@
         "info": "TID_BOOSTER_SHOVEL_OBSTACLE_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "other"
     },
     {
       "_id": 240454282761805,
@@ -66230,7 +65504,9 @@
         "info": "TID_BOOSTER_HERO_POTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 3600
     },
     {
       "_id": 691966405407290,
@@ -66241,7 +65517,10 @@
         "info": "TID_BOOSTER_LAB_POTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 3600,
+      "boost_multiplier": 24
     },
     {
       "_id": 131106032702441,
@@ -66252,7 +65531,8 @@
         "info": "TID_BOOSTER_SUPER_POTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion"
     },
     {
       "_id": 495502005765862,
@@ -66263,7 +65543,10 @@
         "info": "TID_BOOSTER_PET_POTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 3600,
+      "boost_multiplier": 24
     },
     {
       "_id": 252268797315533,
@@ -66274,7 +65557,8 @@
         "info": "TID_BOOSTER_STAR_POTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "other"
     }
   ],
   "magic_snacks": [
@@ -66286,7 +65570,9 @@
         "name": "TID_CONSUMABLE_BOOST_BUILDER",
         "info": "TID_CONSUMABLE_BOOST_BUILDER_INFO"
       },
-      "duration": 3600
+      "duration": 3600,
+      "boost_multiplier": 2,
+      "activation_expiry": 86400
     },
     {
       "_id": 210152651251664,
@@ -66296,7 +65582,9 @@
         "name": "TID_CONSUMABLE_BOOST_LAB",
         "info": "TID_CONSUMABLE_BOOST_LAB_INFO"
       },
-      "duration": 3600
+      "duration": 3600,
+      "boost_multiplier": 4,
+      "activation_expiry": 86400
     },
     {
       "_id": 84541856028440,
@@ -66306,7 +65594,9 @@
         "name": "TID_CONSUMABLE_BOOST_HERO",
         "info": "TID_CONSUMABLE_BOOST_HERO_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "battle_uses": 3,
+      "activation_expiry": 86400
     },
     {
       "_id": 909252305102259,
@@ -66316,7 +65606,9 @@
         "name": "TID_CONSUMABLE_BOOST_ARMY",
         "info": "TID_CONSUMABLE_BOOST_ARMY_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "battle_uses": 3,
+      "activation_expiry": 86400
     },
     {
       "_id": 860289445845268,
@@ -66326,7 +65618,9 @@
         "name": "TID_CONSUMABLE_INSTANT_TRAINING",
         "info": "TID_CONSUMABLE_INSTANT_TRAINING_INFO"
       },
-      "duration": 1200
+      "duration": 1200,
+      "battle_uses": 10,
+      "activation_expiry": 86400
     },
     {
       "_id": 272344549778277,
@@ -66336,7 +65630,8 @@
         "name": "TID_CONSUMABLE_CC_REFILL",
         "info": "TID_CONSUMABLE_CC_REFILL_INFO"
       },
-      "duration": 43200
+      "duration": 43200,
+      "activation_expiry": 86400
     },
     {
       "_id": 34019729405766,
@@ -66346,7 +65641,9 @@
         "name": "TID_CONSUMABLE_BOOST_LOOT_ELITE",
         "info": "TID_CONSUMABLE_BOOST_LOOT_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "battle_uses": 1,
+      "activation_expiry": 86400
     },
     {
       "_id": 626644580712136,
@@ -66356,7 +65653,8 @@
         "name": "TID_CONSUMABLE_CC_CRUMBS",
         "info": "TID_CONSUMABLE_CC_CRUMBS_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "activation_expiry": 86400
     },
     {
       "_id": 316907614826529,
@@ -66366,7 +65664,9 @@
         "name": "TID_CONSUMABLE_BOOST_LOOT_PRO",
         "info": "TID_CONSUMABLE_BOOST_LOOT_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "battle_uses": 1,
+      "activation_expiry": 86400
     },
     {
       "_id": 785333832017841,
@@ -66376,7 +65676,9 @@
         "name": "TID_CONSUMABLE_BOOST_LOOT_SIGNATURE",
         "info": "TID_CONSUMABLE_BOOST_LOOT_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "battle_uses": 1,
+      "activation_expiry": 86400
     },
     {
       "_id": 7010528196406,
@@ -66386,7 +65688,9 @@
         "name": "TID_CONSUMABLE_HV_STAR_BONUS",
         "info": "TID_CONSUMABLE_HV_STAR_BONUS_INFO"
       },
-      "duration": 0
+      "duration": 0,
+      "activation_expiry": 86400,
+      "max_inventory": 1
     }
   ],
   "player_labels": [

@@ -29,6 +29,139 @@ from scindex import decode_decorations
 from utils import apk_url, download_file, fetch_fingerprint_manifest
 
 
+def squad_metadata(character, characters, squads, abilities=None, translate=None):
+    source = squads.get(character.get('Squad'))
+    if not source:
+        return None
+    names = str(source.get('Characters', '')).split(';')
+    counts = str(source.get('Counts', '')).split(';')
+    if len(names) != len(counts):
+        raise ValueError('Squad character/count lengths differ')
+    members = []
+    for name, count in zip(names, counts):
+        unit = characters[name]
+        members.append({'troop_id': unit['GlobalID'], 'count': int(count)})
+
+    def detail(row):
+        name = row.get('SquadSpecialAbilities')
+        root = (abilities or {}).get(name, {})
+        level = root.get(str(row.get('SquadSpecialAbilitiesLevel')), root)
+        fields = {
+            'SquadSplashDamageCap': 'splash_damage_cap',
+            'TrapShieldProtectionPercent': 'trap_damage_reduction_percent',
+            'ShieldProtectionPercent': 'damage_reduction_percent',
+            'DeactivateAfterTime': 'duration_ms',
+            'BoostDamagePercentage': 'damage_increase_percent',
+            'BoostAttackSpeedPercentage': 'attack_speed_increase_percent',
+            'SquadSharedTargeting': 'shared_targeting',
+        }
+        return (
+            {
+                'TID': {'name': root.get('TID'), 'info': root.get('InfoTID')},
+                **{
+                    key: value for key, tid in [('name', root.get('TID')), ('info', root.get('InfoTID'))]
+                    if translate and tid and (value := translate(tid)) and value != tid
+                },
+                **{
+                    target: level.get(source, root.get(source))
+                    for source, target in fields.items()
+                    if level.get(source, root.get(source)) is not None
+                },
+            }
+            if name
+            else {}
+        )
+
+    return {
+        'uses_player_troop_levels': source.get('UseAvatarLevels', False),
+        'members': members,
+        'levels': [
+            {
+                'level': int(level),
+                'ability': row.get('SquadSpecialAbilities'),
+                'ability_level': row.get('SquadSpecialAbilitiesLevel'),
+                **detail(row),
+            }
+            for level, row in source.items()
+            if level.isdigit()
+        ],
+    }
+
+
+def ranked_medals(league, legend_rewards):
+    result = {}
+    if league.get('MaxRankedPrestige') is not None:
+        result['maximum_per_week'] = league['MaxRankedPrestige']
+    # Only the highest Legend tier uses placement bands. Other tiers have a cap.
+    if league.get('Name') == 'Legendary1':
+        result['placement_rewards'] = [
+            {'minimum_rank': row['MinRank'], 'medals': row['PrestigeReward']}
+            for row in sorted(legend_rewards.values(), key=lambda row: row['MinRank'])
+        ]
+    return result or None
+
+
+def magic_item_effect(name, globals_data):
+    """Booster CSV flags select constants in globals, not inline effect values."""
+    def number(key):
+        return globals_data.get(key, {}).get('NumberValue')
+
+    keys = {
+        'Power Potion': ('BOOSTER_MAX_OUT_ARMY_DURATION', None),
+        'Hero Potion': ('BOOSTER_HERO_POTION_DURATION', None),
+        'Builder Potion': ('BOOSTER_BUILDERS_DURATION', 'BOOSTER_BUILDERS_SPEEDUP'),
+        'Research Potion': ('BOOSTER_LABORATORY_DURATION', 'BOOSTER_LABORATORY_SPEEDUP'),
+        'Pet Potion': ('BOOSTER_PET_SHOP_DURATION', 'BOOSTER_PET_SHOP_SPEEDUP'),
+        'Clock Tower Potion': ('BOOSTER_CLOCKTOWER_DURATION', 'CLOCK_TOWER_BOOST_MULTIPLIER'),
+        'Resource Potion': (None, 'RESOURCE_PRODUCTION_BOOST_MULTIPLIER'),
+    }
+    duration_key, multiplier_key = keys.get(name, (None, None))
+    result = {}
+    if duration_key and number(duration_key) is not None:
+        result['duration'] = number(duration_key)
+    if multiplier_key and number(multiplier_key) is not None:
+        result['boost_multiplier'] = number(multiplier_key)
+    if name == 'Resource Potion' and number('RESOURCE_PRODUCTION_BOOST_MINS') is not None:
+        result['duration'] = number('RESOURCE_PRODUCTION_BOOST_MINS') * 60
+    return result
+
+
+def building_level_rows(building):
+    """Single-level buildings store their construction level on the definition.
+
+    Keep that initial build separate from character upgrades (for example, the
+    Battle Machine altar versus its hero levels). Do not synthesize extra levels.
+    """
+    rows = [(level, row) for level, row in building.items() if level.isdigit() and isinstance(row, dict)]
+    if rows:
+        return rows
+    if building.get('BuildingLevel') is not None:
+        return [(str(building['BuildingLevel']), building)]
+    return []
+
+
+def is_catalogue_obstacle(obstacle):
+    """Only seasonal/event collectibles belong in the obstacle catalogue.
+
+    AppearancePeriodHours is the source's event-spawn window; respawn weight
+    alone cannot distinguish terrain from event items. The recurring Gem Box
+    also has that window and is explicitly not seasonal. Legacy Clashmas trees,
+    Cursed Seedling and the ore event lack it, so retain their source TIDs. Never renumber
+    IDs after filtering; player exports still use the original table identity.
+    """
+    if obstacle.get('IsTombstone', False) or obstacle.get('TID') == 'TID_BONUS_GEMBOX':
+        return False
+    historical = {
+        'TID_2012_CLASHMAS_TREE',
+        'TID_2013_CLASHMAS_TREE',
+        'TID_OBSTACLE_COSMICTREE',  # Cursed Seedling, Clash-o-Ween 2025.
+        'TID_OBSTACLE_COMMON_ORE_STONE',
+        'TID_OBSTACLE_RARE_ORE_STONE',
+        'TID_OBSTACLE_EPIC_ORE_STONE',
+    }
+    return obstacle.get('AppearancePeriodHours', 0) > 0 or obstacle.get('TID') in historical
+
+
 @dataclass(frozen=True)
 class SCAssetRequest:
     source_sc: str
@@ -443,7 +576,7 @@ class StaticUpdater:
         )
         missing_sources = requested_sources - available_files
         attachment_files: dict[str, SCAttachmentRef] = {}
-        if missing_sources and any(item.get("file", "").startswith("attachments/") for item in manifest_files):
+        if missing_sources and any(item.get("file", "").startswith(("attachments/", "base-attachments/")) for item in manifest_files):
             logging.info("Indexing SC attachments for %s missing source(s)", len(missing_sources))
             attachment_index = await discover_scattachments(base_url, manifest_files)
             attachment_files = attachment_index.by_path
@@ -1162,7 +1295,7 @@ class StaticUpdater:
                     "building_id": self.full_building_data.get(building_data.get("GearUpBuilding")).get("GlobalID"),
                 }
 
-            for level, level_data in building_data.items():
+            for level, level_data in building_level_rows(building_data):
                 if not isinstance(level_data, dict):
                     continue
 
@@ -1457,6 +1590,7 @@ class StaticUpdater:
 
     def _parse_troop_data(self):
         self.full_troop_data = self.open_file("logic/characters.json")
+        squads = self.open_file("logic/squads.json")
         full_super_troop_data = self.open_file("logic/super_licences.json")
         full_super_troop_data = {v.get("Replacement"): v for k, v in full_super_troop_data.items()}
 
@@ -1467,6 +1601,10 @@ class StaticUpdater:
         new_troop_data = []
         for troop_name, troop_data in self.full_troop_data.items():
             if troop_data.get("DisableProduction", False):
+                if troop_data.get("IsSecondaryTroop") and troop_data.get("BigPictureSWF") and troop_data.get("BigPicture"):
+                    self.register_sc_asset(troop_data["BigPictureSWF"], troop_data["BigPicture"],
+                        f'troops/{self.clean_name(self._translate(troop_data.get("TID")))}/icon',
+                        static_only=True, allow_missing_source=True)
                 continue
             if self.is_ignored_id(troop_data.get("GlobalID")):
                 continue
@@ -1499,6 +1637,13 @@ class StaticUpdater:
                 **(self._parse_unit_weights(troop_data) if not village_type else {}),
             }
 
+            squad = squad_metadata(troop_data, self.full_troop_data, squads, self.open_file("logic/special_abilities.json"), self._translate)
+            if squad is not None:
+                hold_data["squad"] = squad
+            if troop_data.get("BigPictureSWF") and troop_data.get("BigPicture"):
+                self.register_sc_asset(troop_data["BigPictureSWF"], troop_data["BigPicture"],
+                    f'troops/{self.clean_name(hold_data["name"])}/portrait', static_only=True, allow_missing_source=True)
+
             is_super_troop = troop_data.get("EnabledBySuperLicence", False)
             is_seasonal_troop = troop_data.get("EnabledByCalendar", False)
             super_troop_data = None
@@ -1513,7 +1658,9 @@ class StaticUpdater:
             hold_data["levels"] = []
 
             max_townhall_converter = self.lab_to_townhall
-            if troop_data.get("ProductionBuilding") == "Barrack2":
+            # The current game calls this "BB Barracks". Select the village,
+            # not a legacy building key, or BH units inherit home-village gates.
+            if village_type:
                 max_townhall_converter = self.bb_lab_to_townhall
 
             for level, level_data in troop_data.items():  # type: str, dict
@@ -1525,6 +1672,10 @@ class StaticUpdater:
                 if not is_super_troop and not is_seasonal_troop:
                     required_lab_level = level_data.get("LaboratoryLevel")
                     required_townhall = max_townhall_converter[required_lab_level]
+                    unlock_building = self.full_building_data[troop_data["ProductionBuilding"]]
+                    if village_type:
+                        # Star Laboratory access cannot precede the troop's Barracks unlock.
+                        required_townhall = max(required_townhall, unlock_building[str(troop_data["BarrackLevel"])]["TownHallLevel"])
                     if not village_type:
                         unlock_building = self.full_building_data[troop_data["ProductionBuilding"]]
                         unlock_townhall = unlock_building[str(troop_data["BarrackLevel"])]["TownHallLevel"]
@@ -1732,6 +1883,15 @@ class StaticUpdater:
                     save_path=f"heroes/{self.clean_name(self._translate(hero_data.get('TID')))}/icon.webp"
                 )
 
+            if hero_name == "Dragon Duke":
+                # The shipped BigPicture points at Battle Copter. The actual card art lives in info_dragon.
+                self.register_sc_asset("sc/info_dragon.sc", "card_dragon_duke_big",
+                    'heroes/dragon_duke/portrait', static_only=True)
+            if hero_name != "Dragon Duke" and hero_data.get("BigPictureSWF") and hero_data.get("BigPicture"):
+                self.register_sc_asset(hero_data["BigPictureSWF"], hero_data["BigPicture"],
+                    f'heroes/{self.clean_name(self._translate(hero_data.get("TID")))}/portrait',
+                    static_only=True, allow_missing_source=True)
+
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=hero_data.get("TID")),
@@ -1788,6 +1948,15 @@ class StaticUpdater:
                 asset_name=pet_data.get("IconExportName"),
                 save_path=f'pets/{self.clean_name(self._translate(tid=pet_data.get("TID")))}/icon'
             )
+            if pet_name == "Mighty Yak":
+                # The unit export is empty; the card export includes the actual Yak and grass base.
+                self.register_sc_asset("sc/info_pet_mightyyak.sc", "card_pet_mightyyak_big",
+                    'pets/mighty_yak/portrait', static_only=True)
+            if pet_name != "Mighty Yak" and pet_data.get("BigPictureSWF") and pet_data.get("BigPicture"):
+                self.register_sc_asset(pet_data["BigPictureSWF"], pet_data["BigPicture"],
+                    f'pets/{self.clean_name(self._translate(pet_data.get("TID")))}/portrait',
+                    static_only=True, allow_missing_source=True)
+
 
             hold_data = {
                 "_id": _id,
@@ -2132,6 +2301,8 @@ class StaticUpdater:
         for _id, (obstacle_name, obstacle_data) in enumerate(full_obstacle_data.items(), 8000000):
             if self.is_ignored_id(_id):
                 continue
+            if not is_catalogue_obstacle(obstacle_data):
+                continue
             village_type = obstacle_data.get("VillageType", 0)
             source_sc = obstacle_data.get("SWF")
             asset_name = obstacle_data.get("ExportName")
@@ -2260,6 +2431,9 @@ class StaticUpdater:
                 save_path=f'helpers/{self.clean_name(self._translate(tid=helper_data.get("TID")))}'
             )
 
+            if helper_name == "BuilderApprentice":
+                self.register_sc_asset(helper_data["IconSWF"], helper_data["IconExportNameReady"],
+                    'helpers/builder_s_apprentice/portrait', static_only=True)
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=helper_data.get("TID")),
@@ -2386,6 +2560,7 @@ class StaticUpdater:
 
     def _parse_league_tier_data(self):
         full_league_tier_data = self.open_file("logic/league_tiers.json")
+        legend_rewards = self.open_file("logic/legend_prestige_rewards.json")
 
         new_league_tier_data = []
         for _id, (league_name, league_data) in enumerate(full_league_tier_data.items(), 105000000):
@@ -2409,6 +2584,9 @@ class StaticUpdater:
                 "townhall_cap": None,
                 "rewards": [],
             }
+            medals = ranked_medals(league_data, legend_rewards)
+            if medals:
+                hold_data["ranked_medals"] = medals
             if league_data.get("BattleModifier") is not None:
                 hold_data["battle_modifier"] = league_data.get("BattleModifier")
 
@@ -2435,7 +2613,7 @@ class StaticUpdater:
                     }
                 )
             hold_data["townhall_cap"] = highest_townhall
-            hold_data["rewards"] = rewards
+            hold_data["rewards"] = sorted(rewards, key=lambda reward: reward["townhall_level"])
             new_league_tier_data.append(hold_data)
 
         return new_league_tier_data
@@ -2494,6 +2672,7 @@ class StaticUpdater:
 
     def _parse_magic_items_data(self):
         full_magic_items_data = self.open_file("logic/boosters.json")
+        globals_data = self.open_file("logic/globals.json")
 
         new_magic_items_data = []
         for name, magic_item_data in full_magic_items_data.items():
@@ -2511,10 +2690,12 @@ class StaticUpdater:
             hold_data = {
                 "_id": _id,
                 "name": self._translate(tid=magic_item_data.get("TID")),
+                "type": next((kind for kind in ("book", "hammer", "potion", "rune") if kind in name.lower()), "other"),
                 "info": self._translate(tid=magic_item_data.get("InfoTID")),
                 "TID": {"name": magic_item_data.get("TID"), "info": magic_item_data.get("InfoTID")},
                 "max_inventory": magic_item_data.get("MaxItems"),
                 "gem_value": magic_item_data.get("DiamondValue"),
+                **magic_item_effect(name, globals_data),
             }
             new_magic_items_data.append(hold_data)
 
@@ -2541,6 +2722,10 @@ class StaticUpdater:
                 "info": self._translate(tid=magic_snack_data.get("InfoTID")),
                 "TID": {"name": magic_snack_data.get("TID"), "info": magic_snack_data.get("InfoTID")},
                 "duration": magic_snack_data.get("DurationSeconds", 0),
+                "max_inventory": 1 if magic_snack_data.get("UniqueInStorage") else None,
+                "battle_uses": magic_snack_data.get("BattleUsages", magic_snack_data.get("AutoFillCCBattles")),
+                "boost_multiplier": magic_snack_data.get("BoostMultiplier"),
+                "activation_expiry": magic_snack_data.get("ActivationExpirySeconds"),
             }
             new_magic_snacks_data.append(hold_data)
 

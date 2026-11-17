@@ -3764,7 +3764,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 3500,
           "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_townhall": 1,
           "strength_weight": 2800
         },
         {
@@ -3774,7 +3774,7 @@
           "upgrade_time": 300,
           "upgrade_cost": 7000,
           "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_townhall": 1,
           "strength_weight": 3000
         },
         {
@@ -3784,7 +3784,7 @@
           "upgrade_time": 900,
           "upgrade_cost": 10000,
           "required_lab_level": 2,
-          "required_townhall": 4,
+          "required_townhall": 2,
           "strength_weight": 3200
         },
         {
@@ -3794,7 +3794,7 @@
           "upgrade_time": 18000,
           "upgrade_cost": 90000,
           "required_lab_level": 2,
-          "required_townhall": 4,
+          "required_townhall": 2,
           "strength_weight": 3400
         },
         {
@@ -3804,7 +3804,7 @@
           "upgrade_time": 36000,
           "upgrade_cost": 180000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3600
         },
         {
@@ -3814,7 +3814,7 @@
           "upgrade_time": 54000,
           "upgrade_cost": 300000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3800
         },
         {
@@ -3824,7 +3824,7 @@
           "upgrade_time": 72000,
           "upgrade_cost": 330000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -3834,7 +3834,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 700000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -3844,7 +3844,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 900000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -3854,7 +3854,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1000000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -3864,7 +3864,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1200000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -3874,7 +3874,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2000000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -3884,7 +3884,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2200000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -3894,7 +3894,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3000000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -3904,7 +3904,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3200000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -3914,7 +3914,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 3800000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -3924,7 +3924,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4000000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -3934,7 +3934,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 4600000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -3944,7 +3944,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5200000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -3954,7 +3954,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -3986,7 +3986,7 @@
           "upgrade_time": 180,
           "upgrade_cost": 5000,
           "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_townhall": 2,
           "strength_weight": 2800
         },
         {
@@ -3996,7 +3996,7 @@
           "upgrade_time": 600,
           "upgrade_cost": 8000,
           "required_lab_level": 1,
-          "required_townhall": 3,
+          "required_townhall": 2,
           "strength_weight": 3000
         },
         {
@@ -4006,7 +4006,7 @@
           "upgrade_time": 1800,
           "upgrade_cost": 12000,
           "required_lab_level": 2,
-          "required_townhall": 4,
+          "required_townhall": 2,
           "strength_weight": 3200
         },
         {
@@ -4016,7 +4016,7 @@
           "upgrade_time": 21600,
           "upgrade_cost": 100000,
           "required_lab_level": 2,
-          "required_townhall": 4,
+          "required_townhall": 2,
           "strength_weight": 3400
         },
         {
@@ -4026,7 +4026,7 @@
           "upgrade_time": 39600,
           "upgrade_cost": 200000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3600
         },
         {
@@ -4036,7 +4036,7 @@
           "upgrade_time": 57600,
           "upgrade_cost": 320000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3800
         },
         {
@@ -4046,7 +4046,7 @@
           "upgrade_time": 75600,
           "upgrade_cost": 350000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -4056,7 +4056,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 800000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -4066,7 +4066,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 1000000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -4076,7 +4076,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1100000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -4086,7 +4086,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1300000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -4096,7 +4096,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2100000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -4106,7 +4106,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2300000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -4116,7 +4116,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3100000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -4126,7 +4126,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3300000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -4136,7 +4136,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 3900000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -4146,7 +4146,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4100000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -4156,7 +4156,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 4700000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -4166,7 +4166,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5300000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -4176,7 +4176,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -4208,7 +4208,7 @@
           "upgrade_time": 14400,
           "upgrade_cost": 50000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3200
         },
         {
@@ -4218,7 +4218,7 @@
           "upgrade_time": 28800,
           "upgrade_cost": 110000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3400
         },
         {
@@ -4228,7 +4228,7 @@
           "upgrade_time": 43200,
           "upgrade_cost": 220000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3600
         },
         {
@@ -4238,7 +4238,7 @@
           "upgrade_time": 64800,
           "upgrade_cost": 330000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3800
         },
         {
@@ -4248,7 +4248,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 360000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -4258,7 +4258,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 900000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -4268,7 +4268,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1100000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -4278,7 +4278,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1300000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -4288,7 +4288,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1500000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -4298,7 +4298,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2300000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -4308,7 +4308,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2500000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -4318,7 +4318,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3300000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -4328,7 +4328,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3500000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -4338,7 +4338,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4000000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -4348,7 +4348,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4200000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -4358,7 +4358,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 4800000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -4368,7 +4368,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5400000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -4378,7 +4378,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -4410,7 +4410,7 @@
           "upgrade_time": 18000,
           "upgrade_cost": 60000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3200
         },
         {
@@ -4420,7 +4420,7 @@
           "upgrade_time": 36000,
           "upgrade_cost": 120000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3400
         },
         {
@@ -4430,7 +4430,7 @@
           "upgrade_time": 57600,
           "upgrade_cost": 240000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3600
         },
         {
@@ -4440,7 +4440,7 @@
           "upgrade_time": 72000,
           "upgrade_cost": 350000,
           "required_lab_level": 3,
-          "required_townhall": 5,
+          "required_townhall": 3,
           "strength_weight": 3800
         },
         {
@@ -4450,7 +4450,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 380000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -4460,7 +4460,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 1000000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -4470,7 +4470,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1200000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -4480,7 +4480,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1300000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -4490,7 +4490,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1500000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -4500,7 +4500,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2300000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -4510,7 +4510,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2500000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -4520,7 +4520,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3300000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -4530,7 +4530,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3500000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -4540,7 +4540,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4000000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -4550,7 +4550,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4200000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -4560,7 +4560,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 4800000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -4570,7 +4570,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5400000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -4580,7 +4580,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -4612,7 +4612,7 @@
           "upgrade_time": 57600,
           "upgrade_cost": 320000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 3600
         },
         {
@@ -4622,7 +4622,7 @@
           "upgrade_time": 72000,
           "upgrade_cost": 340000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 3800
         },
         {
@@ -4632,7 +4632,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 360000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -4642,7 +4642,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 900000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -4652,7 +4652,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1000000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -4662,7 +4662,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1200000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -4672,7 +4672,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1400000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -4682,7 +4682,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2200000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -4692,7 +4692,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2400000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -4702,7 +4702,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3200000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -4712,7 +4712,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3400000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -4722,7 +4722,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 3900000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -4732,7 +4732,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4100000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -4742,7 +4742,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 4700000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -4752,7 +4752,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5300000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -4762,7 +4762,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -4794,7 +4794,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 3600000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5200
         },
         {
@@ -4804,7 +4804,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3800000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5400
         },
         {
@@ -4814,7 +4814,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 4000000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -4824,7 +4824,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4600000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -4834,7 +4834,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4800000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -4844,7 +4844,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5600000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -4854,7 +4854,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5800000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -4864,7 +4864,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -4896,7 +4896,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 1000000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4000
         },
         {
@@ -4906,7 +4906,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 1100000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4200
         },
         {
@@ -4916,7 +4916,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1200000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -4926,7 +4926,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1400000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -4936,7 +4936,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1600000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -4946,7 +4946,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2400000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -4956,7 +4956,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2600000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -4966,7 +4966,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3400000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -4976,7 +4976,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3600000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -4986,7 +4986,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4100000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -4996,7 +4996,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4300000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -5006,7 +5006,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5300000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -5016,7 +5016,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5700000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -5026,7 +5026,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -5058,7 +5058,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 2400000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 4800,
           "death_damage": 300
         },
@@ -5069,7 +5069,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2600000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5000,
           "death_damage": 300
         },
@@ -5080,7 +5080,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2800000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200,
           "death_damage": 300
         },
@@ -5091,7 +5091,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3600000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400,
           "death_damage": 400
         },
@@ -5102,7 +5102,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3800000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600,
           "death_damage": 400
         },
@@ -5113,7 +5113,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4300000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800,
           "death_damage": 400
         },
@@ -5124,7 +5124,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4500000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000,
           "death_damage": 400
         },
@@ -5135,7 +5135,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5500000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200,
           "death_damage": 500
         },
@@ -5146,7 +5146,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5700000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400,
           "death_damage": 500
         },
@@ -5157,7 +5157,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600,
           "death_damage": 500
         }
@@ -5190,7 +5190,7 @@
           "upgrade_time": 57600,
           "upgrade_cost": 360000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 3600
         },
         {
@@ -5200,7 +5200,7 @@
           "upgrade_time": 72000,
           "upgrade_cost": 380000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 3800
         },
         {
@@ -5210,7 +5210,7 @@
           "upgrade_time": 86400,
           "upgrade_cost": 400000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4000
         },
         {
@@ -5220,7 +5220,7 @@
           "upgrade_time": 129600,
           "upgrade_cost": 1000000,
           "required_lab_level": 4,
-          "required_townhall": 6,
+          "required_townhall": 4,
           "strength_weight": 4200
         },
         {
@@ -5230,7 +5230,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1200000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4400
         },
         {
@@ -5240,7 +5240,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1400000,
           "required_lab_level": 5,
-          "required_townhall": 7,
+          "required_townhall": 5,
           "strength_weight": 4600
         },
         {
@@ -5250,7 +5250,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1600000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -5260,7 +5260,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2400000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -5270,7 +5270,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2600000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -5280,7 +5280,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3400000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -5290,7 +5290,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3600000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -5300,7 +5300,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4100000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -5310,7 +5310,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4300000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -5320,7 +5320,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5100000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -5330,7 +5330,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5500000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -5340,7 +5340,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -5372,7 +5372,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1400000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4400
         },
         {
@@ -5382,7 +5382,7 @@
           "upgrade_time": 172800,
           "upgrade_cost": 1600000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4600
         },
         {
@@ -5392,7 +5392,7 @@
           "upgrade_time": 216000,
           "upgrade_cost": 1800000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 4800
         },
         {
@@ -5402,7 +5402,7 @@
           "upgrade_time": 302400,
           "upgrade_cost": 2500000,
           "required_lab_level": 6,
-          "required_townhall": 8,
+          "required_townhall": 6,
           "strength_weight": 5000
         },
         {
@@ -5412,7 +5412,7 @@
           "upgrade_time": 388800,
           "upgrade_cost": 2700000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5200
         },
         {
@@ -5422,7 +5422,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3500000,
           "required_lab_level": 7,
-          "required_townhall": 9,
+          "required_townhall": 7,
           "strength_weight": 5400
         },
         {
@@ -5432,7 +5432,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 3700000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5600
         },
         {
@@ -5442,7 +5442,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4200000,
           "required_lab_level": 8,
-          "required_townhall": 10,
+          "required_townhall": 8,
           "strength_weight": 5800
         },
         {
@@ -5452,7 +5452,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4400000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -5462,7 +5462,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5200000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -5472,7 +5472,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5600000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -5482,7 +5482,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -7999,7 +7999,7 @@
           "upgrade_time": 475200,
           "upgrade_cost": 4000000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 5600
         },
         {
@@ -8009,7 +8009,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4200000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 5800
         },
         {
@@ -8019,7 +8019,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4400000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6000
         },
         {
@@ -8029,7 +8029,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5400000,
           "required_lab_level": 9,
-          "required_townhall": 11,
+          "required_townhall": 9,
           "strength_weight": 6200
         },
         {
@@ -8039,7 +8039,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5800000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -8049,7 +8049,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -10427,7 +10427,7 @@
           "upgrade_time": 518400,
           "upgrade_cost": 4400000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6000
         },
         {
@@ -10437,7 +10437,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5400000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6200
         },
         {
@@ -10447,7 +10447,7 @@
           "upgrade_time": 561600,
           "upgrade_cost": 5800000,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6400
         },
         {
@@ -10457,7 +10457,7 @@
           "upgrade_time": 0,
           "upgrade_cost": 0,
           "required_lab_level": 10,
-          "required_townhall": 12,
+          "required_townhall": 10,
           "strength_weight": 6600
         }
       ]
@@ -14059,7 +14059,47 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000000,
+            "count": 15
+          },
+          {
+            "troop_id": 4000001,
+            "count": 15
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 6
+          },
+          {
+            "level": 3,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 5
+          }
+        ]
+      }
     },
     {
       "_id": 4000196,
@@ -14111,7 +14151,47 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000003,
+            "count": 3
+          },
+          {
+            "troop_id": 4000006,
+            "count": 5
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 5
+          },
+          {
+            "level": 3,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 3,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 4
+          }
+        ]
+      }
     },
     {
       "_id": 4000197,
@@ -14163,7 +14243,43 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000004,
+            "count": 5
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadInvisibilityAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_INVISIBILITY",
+              "info": "TID_SQUAD_ABILITY_INVISIBILITY_INFO"
+            },
+            "duration_ms": 3000
+          },
+          {
+            "level": 3,
+            "ability": "SquadInvisibilityAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_INVISIBILITY",
+              "info": "TID_SQUAD_ABILITY_INVISIBILITY_INFO"
+            },
+            "duration_ms": 4000
+          }
+        ]
+      }
     },
     {
       "_id": 4000198,
@@ -14215,7 +14331,43 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000010,
+            "count": 8
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 4,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 3
+          },
+          {
+            "level": 3,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 5,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 2
+          }
+        ]
+      }
     },
     {
       "_id": 4000199,
@@ -14267,7 +14419,43 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000005,
+            "count": 4
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 15
+          },
+          {
+            "level": 3,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 20
+          }
+        ]
+      }
     },
     {
       "_id": 4000200,
@@ -14319,7 +14507,47 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000013,
+            "count": 1
+          },
+          {
+            "troop_id": 4000015,
+            "count": 4
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 4,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 3
+          },
+          {
+            "level": 3,
+            "ability": "SquadSplashCapAbility",
+            "ability_level": 5,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SPLASH_CAP",
+              "info": "TID_SQUAD_ABILITY_SPLASH_CAP_INFO"
+            },
+            "splash_damage_cap": 2
+          }
+        ]
+      }
     },
     {
       "_id": 4000201,
@@ -14371,7 +14599,43 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000011,
+            "count": 12
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 3,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 30
+          },
+          {
+            "level": 3,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 4,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 40
+          }
+        ]
+      }
     },
     {
       "_id": 4000202,
@@ -14423,7 +14687,43 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000024,
+            "count": 10
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 3,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 30
+          },
+          {
+            "level": 3,
+            "ability": "SquadTrapShieldAbility",
+            "ability_level": 4,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_TRAP_SHIELD",
+              "info": "TID_SQUAD_ABILITY_TRAP_SHIELD_INFO"
+            },
+            "trap_damage_reduction_percent": 40
+          }
+        ]
+      }
     },
     {
       "_id": 4000203,
@@ -14475,7 +14775,49 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000007,
+            "count": 5
+          },
+          {
+            "troop_id": 4000005,
+            "count": 1
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadDeployShieldAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_DEPLOY_SHIELD",
+              "info": "TID_SQUAD_ABILITY_DEPLOY_SHIELD_INFO"
+            },
+            "damage_reduction_percent": 100,
+            "duration_ms": 2000
+          },
+          {
+            "level": 3,
+            "ability": "SquadDeployShieldAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_DEPLOY_SHIELD",
+              "info": "TID_SQUAD_ABILITY_DEPLOY_SHIELD_INFO"
+            },
+            "damage_reduction_percent": 100,
+            "duration_ms": 3000
+          }
+        ]
+      }
     },
     {
       "_id": 4000204,
@@ -14527,7 +14869,47 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000009,
+            "count": 1
+          },
+          {
+            "troop_id": 4000095,
+            "count": 1
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadSharedTargetAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SHARED_TARGET",
+              "info": "TID_SQUAD_ABILITY_SHARED_TARGET_INFO"
+            },
+            "shared_targeting": true
+          },
+          {
+            "level": 3,
+            "ability": "SquadSharedTargetAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_SHARED_TARGET",
+              "info": "TID_SQUAD_ABILITY_SHARED_TARGET_INFO"
+            },
+            "shared_targeting": true
+          }
+        ]
+      }
     },
     {
       "_id": 4000205,
@@ -14579,7 +14961,49 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000008,
+            "count": 2
+          },
+          {
+            "troop_id": 4000065,
+            "count": 2
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadDeployShieldAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_DEPLOY_SHIELD",
+              "info": "TID_SQUAD_ABILITY_DEPLOY_SHIELD_INFO"
+            },
+            "damage_reduction_percent": 100,
+            "duration_ms": 2000
+          },
+          {
+            "level": 3,
+            "ability": "SquadDeployShieldAbility",
+            "ability_level": 2,
+            "TID": {
+              "name": "TID_SQUAD_ABILITY_DEPLOY_SHIELD",
+              "info": "TID_SQUAD_ABILITY_DEPLOY_SHIELD_INFO"
+            },
+            "damage_reduction_percent": 100,
+            "duration_ms": 3000
+          }
+        ]
+      }
     },
     {
       "_id": 4000206,
@@ -14631,7 +15055,45 @@
           "required_townhall": 19,
           "strength_weight": 2400
         }
-      ]
+      ],
+      "squad": {
+        "uses_player_troop_levels": true,
+        "members": [
+          {
+            "troop_id": 4000023,
+            "count": 3
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "ability": null,
+            "ability_level": null
+          },
+          {
+            "level": 2,
+            "ability": "SquadBabyDragonRageAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_BABY_DRAGON_ABILITY_NAME",
+              "info": "TID_BABY_DRAGON_ABILITY_HELP"
+            },
+            "damage_increase_percent": 100,
+            "attack_speed_increase_percent": 50
+          },
+          {
+            "level": 3,
+            "ability": "SquadBabyDragonRageAbility",
+            "ability_level": 1,
+            "TID": {
+              "name": "TID_BABY_DRAGON_ABILITY_NAME",
+              "info": "TID_BABY_DRAGON_ABILITY_HELP"
+            },
+            "damage_increase_percent": 100,
+            "attack_speed_increase_percent": 50
+          }
+        ]
+      }
     }
   ]
 }

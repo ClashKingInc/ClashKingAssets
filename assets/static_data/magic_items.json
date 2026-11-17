@@ -9,7 +9,8 @@
         "info": "TID_BOOSTER_FINISH_TROOP_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "book"
     },
     {
       "_id": 890343935493710,
@@ -20,7 +21,8 @@
         "info": "TID_BOOSTER_FINISH_BUILDING_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "book"
     },
     {
       "_id": 753206450208602,
@@ -31,7 +33,8 @@
         "info": "TID_BOOSTER_FINISH_SPELL_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "book"
     },
     {
       "_id": 524139281942929,
@@ -42,7 +45,8 @@
         "info": "TID_BOOSTER_FINISH_HERO_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "book"
     },
     {
       "_id": 440405123938110,
@@ -53,7 +57,8 @@
         "info": "TID_BOOSTER_FINISH_ANY_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "book"
     },
     {
       "_id": 561696033072481,
@@ -64,7 +69,9 @@
         "info": "TID_BOOSTER_MAX_LEVEL_ARMY_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 3600
     },
     {
       "_id": 243284571992699,
@@ -75,7 +82,10 @@
         "info": "TID_BOOSTER_BOOST_RESOURCES_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "boost_multiplier": 2,
+      "duration": 86400
     },
     {
       "_id": 570452040909320,
@@ -86,7 +96,8 @@
         "info": "TID_BOOSTER_BOOST_PRODUCTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion"
     },
     {
       "_id": 676037793357332,
@@ -97,7 +108,8 @@
         "info": "TID_BOOSTER_FILL_GOLD_STORAGE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "rune"
     },
     {
       "_id": 771806884803063,
@@ -108,7 +120,8 @@
         "info": "TID_BOOSTER_FILL_ELIXIR_STORAGE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "rune"
     },
     {
       "_id": 305847136545998,
@@ -119,7 +132,8 @@
         "info": "TID_BOOSTER_FILL_DARK_ELIXIR_STORAGE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "rune"
     },
     {
       "_id": 827109296898367,
@@ -130,7 +144,8 @@
         "info": "TID_BOOSTER_FILL_GOLD2_STORAGE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "rune"
     },
     {
       "_id": 469261700147929,
@@ -141,7 +156,8 @@
         "info": "TID_BOOSTER_FILL_ELIXIR2_STORAGE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "rune"
     },
     {
       "_id": 900728545460161,
@@ -152,7 +168,8 @@
         "info": "TID_BOOSTER_WALL_UPGRADE_INFO"
       },
       "max_inventory": 25,
-      "gem_value": 5
+      "gem_value": 5,
+      "type": "other"
     },
     {
       "_id": 210956642277151,
@@ -163,7 +180,10 @@
         "info": "TID_BOOSTER_BUILDERS_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 3600,
+      "boost_multiplier": 10
     },
     {
       "_id": 280901775918853,
@@ -174,7 +194,8 @@
         "info": "TID_BOOSTER_FREE_TROOP_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 100
+      "gem_value": 100,
+      "type": "hammer"
     },
     {
       "_id": 151625849595091,
@@ -185,7 +206,8 @@
         "info": "TID_BOOSTER_FREE_BUILDING_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 100
+      "gem_value": 100,
+      "type": "hammer"
     },
     {
       "_id": 742529374013477,
@@ -196,7 +218,8 @@
         "info": "TID_BOOSTER_FREE_SPELL_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 100
+      "gem_value": 100,
+      "type": "hammer"
     },
     {
       "_id": 256984620428090,
@@ -207,7 +230,8 @@
         "info": "TID_BOOSTER_FREE_HERO_UPGRADE_INFO"
       },
       "max_inventory": 1,
-      "gem_value": 100
+      "gem_value": 100,
+      "type": "hammer"
     },
     {
       "_id": 782756751511908,
@@ -218,7 +242,10 @@
         "info": "TID_BOOSTER_CLOCKTOWER_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 1800,
+      "boost_multiplier": 10
     },
     {
       "_id": 635767448980463,
@@ -229,7 +256,8 @@
         "info": "TID_BOOSTER_SHOVEL_OBSTACLE_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 50
+      "gem_value": 50,
+      "type": "other"
     },
     {
       "_id": 240454282761805,
@@ -240,7 +268,9 @@
         "info": "TID_BOOSTER_HERO_POTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 3600
     },
     {
       "_id": 691966405407290,
@@ -251,7 +281,10 @@
         "info": "TID_BOOSTER_LAB_POTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 3600,
+      "boost_multiplier": 24
     },
     {
       "_id": 131106032702441,
@@ -262,7 +295,8 @@
         "info": "TID_BOOSTER_SUPER_POTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion"
     },
     {
       "_id": 495502005765862,
@@ -273,7 +307,10 @@
         "info": "TID_BOOSTER_PET_POTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "potion",
+      "duration": 3600,
+      "boost_multiplier": 24
     },
     {
       "_id": 252268797315533,
@@ -284,7 +321,8 @@
         "info": "TID_BOOSTER_STAR_POTION_INFO"
       },
       "max_inventory": 5,
-      "gem_value": 10
+      "gem_value": 10,
+      "type": "other"
     }
   ]
 }
