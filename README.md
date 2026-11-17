@@ -48,21 +48,3 @@ If you add assets, keep paths organized under [`assets/`](assets) so they map cl
 ## License
 
 This repository is licensed under the GNU GPL v3. See [`LICENSE`](LICENSE).
-
-## Wiki data
-
-The obstacle collection contains seasonal/event collectibles only. It uses the
-raw `AppearancePeriodHours` event window, with the two legacy Clashmas trees,
-Cursed Seedling and ore-event meteorites retained by TID because those records
-omit the window. Recurring Gem Boxes and tombstones are excluded. Terrain,
-deploy markers, ordinary trees, bushes, roots, stones, ponds and campfires are
-not part of this collection. Filtering preserves original game IDs. Raw game tables remain unmodified.
-
-The static export includes squad composition (`squad.members` with stable `troop_id` and `count`), whether member levels use the player's troops, and squad ability references per level. These fields come from `logic/squads.csv`; they do not infer composition from descriptions.
-
-Ranked leagues export `ranked_medals.maximum_per_week` when defined in `MaxRankedPrestige`. The highest Legend tier exports `placement_rewards` from `legend_prestige_rewards.csv`. Absence means unknown/not applicable, never zero. CWL currencies remain separate.
-
-Troops with a source portrait export to `troops/<name>/portrait.webp`; keep icon.webp for compact rows. The portrait is registered from BigPictureSWF/BigPicture, not guessed from a filename.
-
-
-The November 2026 `19.6.1` APK was used to verify the new squad and medal source fields. All enrichment runs in `update_static.py` against its decoded source tables. 130 verified portrait exports are included (110 troop/squad, 8 hero, 12 pet). Game packages may wrap SC files in `base-attachments/` with a `source_assets:/` virtual root, and SC2 may contain SCTX bytes despite its KTX format tag. The extractor recognizes these containers without relaxing traversal or SHA verification.
