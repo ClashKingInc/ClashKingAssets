@@ -123,6 +123,24 @@
         "animated": false
       },
       {
+        "path": "buildings/builder-base/army_camp/level_1.webp",
+        "display_name": "army camp level 1",
+        "sha": "03913ac75100f8ec540610db919bcb82f3ae863b4a7a00a2a7b206b11afc22cf",
+        "animated": false
+      },
+      {
+        "path": "buildings/builder-base/battle_copter/level_1.webp",
+        "display_name": "battle copter level 1",
+        "sha": "d372cc49b2d56bea527634be24f6d832abf4aef3d2acb7a62e25722a7455c582",
+        "animated": false
+      },
+      {
+        "path": "buildings/builder-base/battle_machine/level_1.webp",
+        "display_name": "battle machine level 1",
+        "sha": "8a99569e57fa474f3cc1032bb2a4d06ff8c6534c9aed87db49f61c2cab784d04",
+        "animated": false
+      },
+      {
         "path": "buildings/builder-base/bob_control/level_1.webp",
         "display_name": "bob control level 1",
         "sha": "d0d3e19d322ba48b368798de294e9020c50d06fb8ff852b138636831b5749ef0",
@@ -150,6 +168,12 @@
         "path": "buildings/builder-base/bob_control/level_5.webp",
         "display_name": "bob control level 5",
         "sha": "c52b8453e110e498eb893c5b9acd0e8405306459502f015b9f429af950ce0745",
+        "animated": false
+      },
+      {
+        "path": "buildings/builder-base/botos_shack/level_1.webp",
+        "display_name": "botos shack level 1",
+        "sha": "224a53b59bdd2e2e69690eecbd82527b3c934bf73a7a1ae6e175ae69eccb0229",
         "animated": false
       },
       {
@@ -1341,6 +1365,12 @@
         "animated": false
       },
       {
+        "path": "buildings/builder-base/reinforcement_camp/level_1.webp",
+        "display_name": "reinforcement camp level 1",
+        "sha": "a593a9e44091bfb5559a80c8bd7998e04dc9093494246c2c0977429a48cff4f9",
+        "animated": false
+      },
+      {
         "path": "buildings/builder-base/roaster/level_1.webp",
         "display_name": "roaster level 1",
         "sha": "bffaa87356764a739d91c2389f27738d99d23cac1d5f096d6d3e4347c303dd26",
@@ -2079,6 +2109,12 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/bob's_hut/level_1.webp",
+        "display_name": "bob's hut level 1",
+        "sha": "97797cf6383c89375f47a6f6b2a2438a5ee356bfab2e5d75e96c7aa15e0b3dbd",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/bomb_tower/level_1.webp",
         "display_name": "bomb tower level 1",
         "sha": "3047b7d930435ceb9fce69ef1be673b4cec22a0c419a9de6b5f931ce43790465",
@@ -2424,6 +2460,12 @@
         "path": "buildings/home-village/clan_castle/level_9.webp",
         "display_name": "clan castle level 9",
         "sha": "a09de66a5a4fe8368d03f0d8dac7f4c1777ee6319b66c0668d80a9b1fcba29bc",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/crafting_station/level_1.webp",
+        "display_name": "crafting station level 1",
+        "sha": "e700920e142266335dfb4dd09e5d1dfe030d87065aafb934f289deab58ee1837",
         "animated": false
       },
       {
@@ -3237,6 +3279,18 @@
         "animated": false
       },
       {
+        "path": "buildings/home-village/guardian_shrine/level_1.webp",
+        "display_name": "guardian shrine level 1",
+        "sha": "64ce4fedcbb111de5cc798f8d3440f736122305562abe24c5d180f27578a45ef",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/helper_hut/level_1.webp",
+        "display_name": "helper hut level 1",
+        "sha": "7430c8555f802ade28f99afbe14f5a57d1fb54db155d49e00abe5dc122dbf03b",
+        "animated": false
+      },
+      {
         "path": "buildings/home-village/hero_hall/level_1.webp",
         "display_name": "hero hall level 1",
         "sha": "dcb517a5fce71fd44db61892c7f5929d3b1693e35b965b1bddf12a6d7767005a",
@@ -3942,6 +3996,12 @@
         "path": "buildings/home-village/scattershot/level_7.webp",
         "display_name": "scattershot level 7",
         "sha": "27ce34f76a7d2893c8ffe300847fc56c866be2d3491e82bfbcb5aaa9ddc6414c",
+        "animated": false
+      },
+      {
+        "path": "buildings/home-village/sour_elixir_cauldron/level_1.webp",
+        "display_name": "sour elixir cauldron level 1",
+        "sha": "8f44476ce933f0e21278792d0509b8dca9704bcd21e079019595c21b2cd5d515",
         "animated": false
       },
       {
@@ -8861,6 +8921,12 @@
         "animated": false
       },
       {
+        "path": "decorations/home-village/emerald_hot_streak.webp",
+        "display_name": "emerald hot streak",
+        "sha": "d12632ce1c1b577e6cc06bfa22ef70101ee03540194a8a15b137c45106da006b",
+        "animated": false
+      },
+      {
         "path": "decorations/home-village/eternal_flame.webp",
         "display_name": "eternal flame",
         "sha": "b98570d58ba08da1d598928155cd456129f7d85b60af02d73a175ddc8a1f1f16",
@@ -10159,6 +10225,12 @@
         "animated": false
       },
       {
+        "path": "helpers/builder_s_apprentice/portrait.webp",
+        "display_name": "portrait",
+        "sha": "7e996f352ed93acf42ff36cb79f1fe8c8a3dc46abd75f348fcea1f27e7b1934b",
+        "animated": false
+      },
+      {
         "path": "helpers/lab_assistant.webp",
         "display_name": "lab assistant",
         "sha": "2dd67dbbc2db78a3ed5ce4c904c4281749f1c0e44b5b179990839dd84478a370",
@@ -10179,9 +10251,21 @@
         "animated": false
       },
       {
+        "path": "heroes/archer_queen/portrait.webp",
+        "display_name": "portrait",
+        "sha": "5bbc0e34545026d2a109dd8e6617d39ddf2bbb1d32b7f89567493de35bdd52bc",
+        "animated": false
+      },
+      {
         "path": "heroes/barbarian_king/icon.webp",
         "display_name": "barbarian king",
         "sha": "28b037c771ac788b1adf8c0bf805f2bf5854d6e9b7f6169708347b69a5cc8d47",
+        "animated": false
+      },
+      {
+        "path": "heroes/barbarian_king/portrait.webp",
+        "display_name": "portrait",
+        "sha": "25e1abca9158e8801cb6ae1cc32d84486c1ac5a7ac60bbc9458b6c339fef60ec",
         "animated": false
       },
       {
@@ -10191,9 +10275,21 @@
         "animated": false
       },
       {
+        "path": "heroes/battle_copter/portrait.webp",
+        "display_name": "portrait",
+        "sha": "008727f8200478a60d7ae72d387567e54ee56c07d98f18d35a98114f1e85c46f",
+        "animated": false
+      },
+      {
         "path": "heroes/battle_machine/icon.webp",
         "display_name": "battle machine",
         "sha": "a17ad801e14bbcc848ca4935e49149eacedb8359ea161257429c0148a06068cd",
+        "animated": false
+      },
+      {
+        "path": "heroes/battle_machine/portrait.webp",
+        "display_name": "portrait",
+        "sha": "71d5ca93d9bb4cd424da3073373ba7860b4699615e4ad197b7c65683f7494aa4",
         "animated": false
       },
       {
@@ -10203,9 +10299,21 @@
         "animated": false
       },
       {
+        "path": "heroes/dragon_duke/portrait.webp",
+        "display_name": "portrait",
+        "sha": "3b1938109bb87142407df85623daaf5cd6b7c056070349c9ea4e216ff2ea0144",
+        "animated": false
+      },
+      {
         "path": "heroes/grand_warden/icon.webp",
         "display_name": "grand warden",
         "sha": "20f18e64cd27a56a728470d20a57618c5e1bf094b69b058670aeeb96e3280a9a",
+        "animated": false
+      },
+      {
+        "path": "heroes/grand_warden/portrait.webp",
+        "display_name": "portrait",
+        "sha": "ffd0584023e94905e752cbf5e2dcd8f0abb6bc9d8e562a8780244060b351c8dd",
         "animated": false
       },
       {
@@ -10215,9 +10323,21 @@
         "animated": false
       },
       {
+        "path": "heroes/minion_prince/portrait.webp",
+        "display_name": "portrait",
+        "sha": "81ae2ccda739bb4a4408fa01a49d44ea80cbd7a54fd834fa492d0ef0b0c2a6be",
+        "animated": false
+      },
+      {
         "path": "heroes/royal_champion/icon.webp",
         "display_name": "royal champion",
         "sha": "af59dfe512a7ba20b5d51d7fd47c269699c8f3fc21731e1461ea502a3b032102",
+        "animated": false
+      },
+      {
+        "path": "heroes/royal_champion/portrait.webp",
+        "display_name": "portrait",
+        "sha": "b2dc3e7ae3eb2f942fe280faa98244ccefc59a26c98b09725f35406230f16965",
         "animated": false
       }
     ],
@@ -12217,9 +12337,21 @@
         "animated": false
       },
       {
+        "path": "pets/angry_jelly/portrait.webp",
+        "display_name": "portrait",
+        "sha": "e33af51d7d97185e325b9f63f5be0bf3b489f822d8acc752eae26dac626f5087",
+        "animated": false
+      },
+      {
         "path": "pets/diggy/icon.webp",
         "display_name": "diggy",
         "sha": "57d0c360b374dd4bddb8b251d8fd70a54910ff15a0f884c1f00c83c99a1d3256",
+        "animated": false
+      },
+      {
+        "path": "pets/diggy/portrait.webp",
+        "display_name": "portrait",
+        "sha": "4ba13a6235410b73c2cf2f30da5867903d4ae8233921be3d4db9096589597247",
         "animated": false
       },
       {
@@ -12229,9 +12361,21 @@
         "animated": false
       },
       {
+        "path": "pets/electro_owl/portrait.webp",
+        "display_name": "portrait",
+        "sha": "cbf1bac1bd7c62f00fe3a3d3d796cae8be268705081a35dfc7acede2a2507465",
+        "animated": false
+      },
+      {
         "path": "pets/frosty/icon.webp",
         "display_name": "frosty",
         "sha": "4e5540af54e7ad4b8b8755c66be46a692688db0b8f59e0d5bf72a547218814a1",
+        "animated": false
+      },
+      {
+        "path": "pets/frosty/portrait.webp",
+        "display_name": "portrait",
+        "sha": "7e8a1ed98fc194ffa208b1e301c63c202350b919b376f58eec2ac32882d86ccc",
         "animated": false
       },
       {
@@ -12241,9 +12385,21 @@
         "animated": false
       },
       {
+        "path": "pets/greedy_raven/portrait.webp",
+        "display_name": "portrait",
+        "sha": "6101bf9ba2d952589fead03156460e4a91b01ac07a805da4db5efa3d12d3fd9b",
+        "animated": false
+      },
+      {
         "path": "pets/lassi/icon.webp",
         "display_name": "lassi",
         "sha": "db0aa33e9232112463a11f047ecb1ba08aabc14a01c9fbfbcff9cb02b3759436",
+        "animated": false
+      },
+      {
+        "path": "pets/lassi/portrait.webp",
+        "display_name": "portrait",
+        "sha": "81b08479b3d28968f5ca636c17f200369a4ca3cafb99d811378734d99b98a3c5",
         "animated": false
       },
       {
@@ -12253,9 +12409,21 @@
         "animated": false
       },
       {
+        "path": "pets/mighty_yak/portrait.webp",
+        "display_name": "portrait",
+        "sha": "0beb3eecd20760f304565dc7aba013403d3065db4d427a195c52e99943cef36b",
+        "animated": false
+      },
+      {
         "path": "pets/phoenix/icon.webp",
         "display_name": "phoenix",
         "sha": "5cd211cbee35396cc1ba96bf912805586777608d3e88c325b7161c793730d13a",
+        "animated": false
+      },
+      {
+        "path": "pets/phoenix/portrait.webp",
+        "display_name": "portrait",
+        "sha": "4bf502a92bc16dcc9171f111e6df964a12ca18cef94ce18264d4c69ae24fe8bc",
         "animated": false
       },
       {
@@ -12265,9 +12433,21 @@
         "animated": false
       },
       {
+        "path": "pets/poison_lizard/portrait.webp",
+        "display_name": "portrait",
+        "sha": "1ef30b3bd70d6bfc005884bd31195fa526b826e51313521e9e05e255a6a31414",
+        "animated": false
+      },
+      {
         "path": "pets/sneezy/icon.webp",
         "display_name": "sneezy",
         "sha": "5752e5ed2e6ab4026f6551e6b763638e9d9ca5e5b07f3546912606d6ae5344b5",
+        "animated": false
+      },
+      {
+        "path": "pets/sneezy/portrait.webp",
+        "display_name": "portrait",
+        "sha": "6d0fac04fc28e87592231acd76ac858e2c725f241b1b491faed8a7c50e5929ab",
         "animated": false
       },
       {
@@ -12277,9 +12457,21 @@
         "animated": false
       },
       {
+        "path": "pets/spirit_fox/portrait.webp",
+        "display_name": "portrait",
+        "sha": "bce57b926e5974b8382da0b75addd09a86a5c340c2d41ae0944d90b1a8bcf598",
+        "animated": false
+      },
+      {
         "path": "pets/unicorn/icon.webp",
         "display_name": "unicorn",
         "sha": "a644446fa8ed09c996b86b16e2ea2e1b0528c36530f69bbc2239082bb7da2f93",
+        "animated": false
+      },
+      {
+        "path": "pets/unicorn/portrait.webp",
+        "display_name": "portrait",
+        "sha": "03ca958d3d46d55b5927bd731dc5917fcd7a766d13172362f8ad012c0c304d94",
         "animated": false
       }
     ],
@@ -15989,9 +16181,21 @@
         "animated": false
       },
       {
+        "path": "troops/apprentice_warden/portrait.webp",
+        "display_name": "portrait",
+        "sha": "44a05daca28216adf0413ce24c161bc00112e363af0adf3ef3f9819097ff94bf",
+        "animated": false
+      },
+      {
         "path": "troops/archer/icon.webp",
         "display_name": "archer",
         "sha": "ca07d321f7c5eb105e8bee65d2acbc2a36c65af3417e8a293a1dfa7065d978a2",
+        "animated": false
+      },
+      {
+        "path": "troops/archer/portrait.webp",
+        "display_name": "portrait",
+        "sha": "b0a722344392cbf0a3cdef5348cdcc7026a6f0f3c4f177a34e6016a6af5b88b2",
         "animated": false
       },
       {
@@ -16001,9 +16205,21 @@
         "animated": false
       },
       {
+        "path": "troops/azure_dragon/portrait.webp",
+        "display_name": "portrait",
+        "sha": "647095f12c9412580b2f6b1d6b451304a9af3f2d59a601c7e10c4bca0bc74410",
+        "animated": false
+      },
+      {
         "path": "troops/baby_dragon/icon.webp",
         "display_name": "baby dragon",
         "sha": "e7480a09e0624917cc7e82657092b56390b8307ced53fba99e577a6411a48f53",
+        "animated": false
+      },
+      {
+        "path": "troops/baby_dragon/portrait.webp",
+        "display_name": "portrait",
+        "sha": "cfa86dcbc2b8fa4b9b9ba9e10b1f05226caa98e42acacfe2df71a406675922c6",
         "animated": false
       },
       {
@@ -16013,9 +16229,21 @@
         "animated": false
       },
       {
+        "path": "troops/baby_dragon_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "d95135dec134be08d46a1b69d716ef6e00f11f23bb670cf5bd347adc9f4902c4",
+        "animated": false
+      },
+      {
         "path": "troops/balloon/icon.webp",
         "display_name": "balloon",
         "sha": "75655d1e1d108d98fed91042603deb574f4d5f5eac46b839f950dcf1ce23ea75",
+        "animated": false
+      },
+      {
+        "path": "troops/balloon/portrait.webp",
+        "display_name": "portrait",
+        "sha": "8cd3a63ef2ebbbbaeb7314dd3d7a68057e17b4e6273d32dae592539e6b855e25",
         "animated": false
       },
       {
@@ -16025,9 +16253,21 @@
         "animated": false
       },
       {
+        "path": "troops/balloon_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "dd72dfa1555150a130ee7bb46455a211df0b2670718956e0042795faded29c8e",
+        "animated": false
+      },
+      {
         "path": "troops/barbarian/icon.webp",
         "display_name": "barbarian",
         "sha": "b67a036f947094304dd5a9216af125bdeb6461a87b77c0a1072f526ae13195d2",
+        "animated": false
+      },
+      {
+        "path": "troops/barbarian/portrait.webp",
+        "display_name": "portrait",
+        "sha": "5968e3f164fa2c5d2547864537abd16d6a520ab62088052d223eee78e4d74454",
         "animated": false
       },
       {
@@ -16037,9 +16277,21 @@
         "animated": false
       },
       {
+        "path": "troops/barbarian_kicker/portrait.webp",
+        "display_name": "portrait",
+        "sha": "2efbeee767e3bae1c536c2c27d4c43265e2fd5124d6592d89028903d499eb1b7",
+        "animated": false
+      },
+      {
         "path": "troops/barch_squad/icon.webp",
         "display_name": "barch squad",
         "sha": "be22fcc6a820fba86d9c537a73c26f0a60a5eb9f49f379f360bb3d0d47d03944",
+        "animated": false
+      },
+      {
+        "path": "troops/barch_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "9d4b7a8d1546e8b8f4c3bad6287f55d1f6640a19e2fae4ce6967373a0a2c563a",
         "animated": false
       },
       {
@@ -16049,9 +16301,21 @@
         "animated": false
       },
       {
+        "path": "troops/barcher/portrait.webp",
+        "display_name": "portrait",
+        "sha": "0482bbfde5e546644a767afd6c25373a61739b15840211520532cd148a5f6ffc",
+        "animated": false
+      },
+      {
         "path": "troops/battle_blimp/icon.webp",
         "display_name": "battle blimp",
         "sha": "c19c5aa36d318ec73213453791cfd74e2bc3b7ccb0e3312b9b6fcfe9724b3e34",
+        "animated": false
+      },
+      {
+        "path": "troops/battle_blimp/portrait.webp",
+        "display_name": "portrait",
+        "sha": "39bf107a21a382278c3d2fb0273f4afeeede23d4917a3406daf2cbebb5716738",
         "animated": false
       },
       {
@@ -16061,9 +16325,21 @@
         "animated": false
       },
       {
+        "path": "troops/battle_drill/portrait.webp",
+        "display_name": "portrait",
+        "sha": "1c0804295e0aa4f9fcf48c45849640a609012afd43d02b719f896edc9a9cb7e2",
+        "animated": false
+      },
+      {
         "path": "troops/battle_ram/icon.webp",
         "display_name": "battle ram",
         "sha": "46c53b98e78b833d70c71712a1c4c1af2f471863f4b8192526c9264b1c41a198",
+        "animated": false
+      },
+      {
+        "path": "troops/battle_ram/portrait.webp",
+        "display_name": "portrait",
+        "sha": "67262784dd188ea946e114c84e10456b8cedb00b00513355a9fd262ac86ff8a3",
         "animated": false
       },
       {
@@ -16073,9 +16349,21 @@
         "animated": false
       },
       {
+        "path": "troops/beta_minion/portrait.webp",
+        "display_name": "portrait",
+        "sha": "8cde6643b24051c329aa2a0925c911f25a5d58aeeea4ac6d6e1e4a5ebd4b981e",
+        "animated": false
+      },
+      {
         "path": "troops/bomber/icon.webp",
         "display_name": "bomber",
         "sha": "91d7b255d70d2c045c8530c402a5f44228bb385bdee46618c898214add27cdba",
+        "animated": false
+      },
+      {
+        "path": "troops/bomber/portrait.webp",
+        "display_name": "portrait",
+        "sha": "164c1693246bead53f9e107567d14707d911a038d0a683094b24a33070b6177a",
         "animated": false
       },
       {
@@ -16085,9 +16373,21 @@
         "animated": false
       },
       {
+        "path": "troops/bowler/portrait.webp",
+        "display_name": "portrait",
+        "sha": "ffee38a009311848c1a676960a6d3747ba1f1724b1c4a76fa95896c20c82c04a",
+        "animated": false
+      },
+      {
         "path": "troops/boxer_giant/icon.webp",
         "display_name": "boxer giant",
         "sha": "02920c621f38ecc9d3121a5324c4325527558e6439d8fcd2d42e10a901806a6c",
+        "animated": false
+      },
+      {
+        "path": "troops/boxer_giant/portrait.webp",
+        "display_name": "portrait",
+        "sha": "9128da87aefdf2d206a64543b1f1d20d336bf32b344301dbeec25451f89aa42c",
         "animated": false
       },
       {
@@ -16097,9 +16397,21 @@
         "animated": false
       },
       {
+        "path": "troops/broom_witch/portrait.webp",
+        "display_name": "portrait",
+        "sha": "160433dbe781a27c6474166672b9c0152c9460469849f85106138dbad48cc041",
+        "animated": false
+      },
+      {
         "path": "troops/cannon_cart/icon.webp",
         "display_name": "cannon cart",
         "sha": "113b68b54ff9654b42286e3ccdde67c59603a4cb8ea0cfe3812554b53286e598",
+        "animated": false
+      },
+      {
+        "path": "troops/cannon_cart/portrait.webp",
+        "display_name": "portrait",
+        "sha": "302982f5e2449ca034c8a9ac526db60ca3b896f347c3a9b9d9146c30c736db4d",
         "animated": false
       },
       {
@@ -16109,9 +16421,21 @@
         "animated": false
       },
       {
+        "path": "troops/cookie/portrait.webp",
+        "display_name": "portrait",
+        "sha": "1af5338845d9258d358c118c06627fa3db07b279ffed48da8f4cef491418cb2e",
+        "animated": false
+      },
+      {
         "path": "troops/debt_collector/icon.webp",
         "display_name": "debt collector",
         "sha": "7ef54d5b2fce725dfb407d502ed21d9c94cfbeffdd8a8d357b62b3bf44466cec",
+        "animated": false
+      },
+      {
+        "path": "troops/debt_collector/portrait.webp",
+        "display_name": "portrait",
+        "sha": "ccdf6b1a2db896d655347ed03cd503cbf2a5218d3cba247082b2fda769dba87d",
         "animated": false
       },
       {
@@ -16121,9 +16445,21 @@
         "animated": false
       },
       {
+        "path": "troops/dragon/portrait.webp",
+        "display_name": "portrait",
+        "sha": "db5a25de3b5467ad8846bbf22848a6e104aecf5869ce2929d5fd4d6910f79094",
+        "animated": false
+      },
+      {
         "path": "troops/dragon_rider/icon.webp",
         "display_name": "dragon rider",
         "sha": "47d6baf33ac6e1ff89167a6d260a1c878b98e030a70bd8f7f1eb53a615eb0350",
+        "animated": false
+      },
+      {
+        "path": "troops/dragon_rider/portrait.webp",
+        "display_name": "portrait",
+        "sha": "fe6cffb174b735c3293dadd956bf264582428cbb7668d0b8b8ac8ac9ac4e0f79",
         "animated": false
       },
       {
@@ -16133,9 +16469,21 @@
         "animated": false
       },
       {
+        "path": "troops/dragons_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "a04ad69c5f82a8bce322e6c119380cd6613de6d2b4a2d0552f4b6521a08e9e87",
+        "animated": false
+      },
+      {
         "path": "troops/drop_ship/icon.webp",
         "display_name": "drop ship",
         "sha": "7ca965b45211c4a0df470ea00fa0f3653341b860a7dc7ddd924310f04c0d9241",
+        "animated": false
+      },
+      {
+        "path": "troops/drop_ship/portrait.webp",
+        "display_name": "portrait",
+        "sha": "f27409108f4c7e5c0e3785efcf065f421f914b5ae0cb3c5ae3ec089892db6a8d",
         "animated": false
       },
       {
@@ -16145,9 +16493,21 @@
         "animated": false
       },
       {
+        "path": "troops/druid/portrait.webp",
+        "display_name": "portrait",
+        "sha": "ae4554faa3d9c84183d403c6300e884a96ada37e8707505a676bcff723b7aed2",
+        "animated": false
+      },
+      {
         "path": "troops/electro_dragon/icon.webp",
         "display_name": "electro dragon",
         "sha": "a0482b51578794a904c54f9db9e64dc3ab5fb823e9b7e51f502a610b6b62c5d9",
+        "animated": false
+      },
+      {
+        "path": "troops/electro_dragon/portrait.webp",
+        "display_name": "portrait",
+        "sha": "d23710dbb7ff9451c0e08307106ae5b9a01d3737c9a4fa4c07959847a4439736",
         "animated": false
       },
       {
@@ -16157,9 +16517,21 @@
         "animated": false
       },
       {
+        "path": "troops/electro_titan/portrait.webp",
+        "display_name": "portrait",
+        "sha": "e8a9bbbe928944b8fcd4e45754a3818406f679227b594bd820837c3e9c6d2203",
+        "animated": false
+      },
+      {
         "path": "troops/electrofire_wizard/icon.webp",
         "display_name": "electrofire wizard",
         "sha": "0c17fb666092e8a762ab9ba1a635a1b1cf7e83365d7bfc4cb2256e38a4ccb6ba",
+        "animated": false
+      },
+      {
+        "path": "troops/electrofire_wizard/portrait.webp",
+        "display_name": "portrait",
+        "sha": "3a8351def1d49da5bc1a44cc293f465d5d3c7aceb657ea9b9570a789717c07f8",
         "animated": false
       },
       {
@@ -16169,9 +16541,21 @@
         "animated": false
       },
       {
+        "path": "troops/elephant_rider/portrait.webp",
+        "display_name": "portrait",
+        "sha": "954fedea3b1ba39b40522592f798c16afa097c453f255b248d1f17a146d447a1",
+        "animated": false
+      },
+      {
         "path": "troops/firecracker/icon.webp",
         "display_name": "firecracker",
         "sha": "94abe15ce6b62ff264f8a134aa8de8b76b73ce1a5169ffe4b25e3ff91e6ef243",
+        "animated": false
+      },
+      {
+        "path": "troops/firecracker/portrait.webp",
+        "display_name": "portrait",
+        "sha": "16c3ce0eaee66afc1ae5d408d6bd2e0ab55f250da7ed36ba3127977d7d6499cf",
         "animated": false
       },
       {
@@ -16181,9 +16565,21 @@
         "animated": false
       },
       {
+        "path": "troops/flame_flinger/portrait.webp",
+        "display_name": "portrait",
+        "sha": "92c40fd19f0e666e64839dbced2cbff10567e8f45da29887733e2bb701dd38d1",
+        "animated": false
+      },
+      {
         "path": "troops/furnace/icon.webp",
         "display_name": "furnace",
         "sha": "99d0eec2116b09db7b77af97fc25724e9fb41ea6b396ec6c2c70defe393cc962",
+        "animated": false
+      },
+      {
+        "path": "troops/furnace/portrait.webp",
+        "display_name": "portrait",
+        "sha": "6bdfe0b036ae3783c23fcf55ca360088187013621192d9aad549bbc355bf78dc",
         "animated": false
       },
       {
@@ -16193,9 +16589,21 @@
         "animated": false
       },
       {
+        "path": "troops/giant/portrait.webp",
+        "display_name": "portrait",
+        "sha": "b319d9a6da086c779b2c60c8426b99a8a5ca48eeb0e68c1fee9156c3d956fa3b",
+        "animated": false
+      },
+      {
         "path": "troops/giant_giant/icon.webp",
         "display_name": "giant giant",
         "sha": "9962b7ac968f8e92b151bdfda57442deb2b3fd1a4e22b675105609e8eb6b85b7",
+        "animated": false
+      },
+      {
+        "path": "troops/giant_giant/portrait.webp",
+        "display_name": "portrait",
+        "sha": "bd1146ec63642d4dfe0fbdba88ad4142fe35b8fa156a96e4087f253dbdd61aca",
         "animated": false
       },
       {
@@ -16205,9 +16613,21 @@
         "animated": false
       },
       {
+        "path": "troops/giant_skeleton/portrait.webp",
+        "display_name": "portrait",
+        "sha": "1c0059c45c0540a71785fdd13b702ea9e2dc67e64d17c9c9e7ef9ea229a8d0c5",
+        "animated": false
+      },
+      {
         "path": "troops/giant_thrower/icon.webp",
         "display_name": "giant thrower",
         "sha": "e9cc606e8b1460aca66901ed159b9fa8a9a11f6be7dfdfcb693e6ca214446d39",
+        "animated": false
+      },
+      {
+        "path": "troops/giant_thrower/portrait.webp",
+        "display_name": "portrait",
+        "sha": "e41e6a19c6c9a6f9b8358c9d211ecef8900fa281e7e249c6e7d0454784c7b700",
         "animated": false
       },
       {
@@ -16217,9 +16637,21 @@
         "animated": false
       },
       {
+        "path": "troops/giant_wizard_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "357e1f4b5673d383594fb247f0c91fefc168e5fa975ecec6d979a65a07abe776",
+        "animated": false
+      },
+      {
         "path": "troops/goblin/icon.webp",
         "display_name": "goblin",
         "sha": "a21411fbf21e15ca1a49d75a0a050fbda8a9832e20948de306d9b36badae0216",
+        "animated": false
+      },
+      {
+        "path": "troops/goblin/portrait.webp",
+        "display_name": "portrait",
+        "sha": "5ed014af33a1735d86e2050068d2cb56ca45c059cd19cdd71b7d6d361af57c61",
         "animated": false
       },
       {
@@ -16229,9 +16661,21 @@
         "animated": false
       },
       {
+        "path": "troops/golem/portrait.webp",
+        "display_name": "portrait",
+        "sha": "1d3a97e2afa6f31397a7dbdb483774fa196cbc458ea1321d8bad34ae88ac6179",
+        "animated": false
+      },
+      {
         "path": "troops/golem_witch_squad/icon.webp",
         "display_name": "golem witch squad",
         "sha": "f259e9bff3ebedadae376943a53be48a91f01a16a656e87b3af41cd0e92a0d29",
+        "animated": false
+      },
+      {
+        "path": "troops/golem_witch_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "26fd186ad01921b86f2e251d14fae272a57710e31fa837ed9b881dbad24c5f5e",
         "animated": false
       },
       {
@@ -16241,9 +16685,21 @@
         "animated": false
       },
       {
+        "path": "troops/headhunter/portrait.webp",
+        "display_name": "portrait",
+        "sha": "42c52c6f41e92ad38acb87fc347c90bcba04c12e5e9de56cb5b18e953623f743",
+        "animated": false
+      },
+      {
         "path": "troops/healer/icon.webp",
         "display_name": "healer",
         "sha": "b8e57ac30f4c789ac45bec6cecba33bb3624378bdc57ece116b8b8a5878b9aa3",
+        "animated": false
+      },
+      {
+        "path": "troops/healer/portrait.webp",
+        "display_name": "portrait",
+        "sha": "767b598a5ab9b1717d471d9d7c99cc201015ca3e0ce86cdd7c522679d1b9c3a5",
         "animated": false
       },
       {
@@ -16253,9 +16709,27 @@
         "animated": false
       },
       {
+        "path": "troops/healer_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "db466072e23002c53c8148dd3518962b423e80adf45563790a1e4f574ae85485",
+        "animated": false
+      },
+      {
+        "path": "troops/henchmen/icon.webp",
+        "display_name": "henchmen",
+        "sha": "24f701c82d90cb6628485c625f4eb4673d3f3c2649c1df6ea8a63d920bb346ba",
+        "animated": false
+      },
+      {
         "path": "troops/hog_glider/icon.webp",
         "display_name": "hog glider",
         "sha": "c77a361d06ae0784ae24e99157954a3cb7ffd1e6977b97501241a7945a786ac9",
+        "animated": false
+      },
+      {
+        "path": "troops/hog_glider/portrait.webp",
+        "display_name": "portrait",
+        "sha": "e7e15a695201181e86d51f9ff0804cbec520183ca3a9beccd3ff06af2fab2af2",
         "animated": false
       },
       {
@@ -16265,9 +16739,21 @@
         "animated": false
       },
       {
+        "path": "troops/hog_rider/portrait.webp",
+        "display_name": "portrait",
+        "sha": "157e445210ee4122a5f4bcc3a1a86ae6a44a897516805beccbd7d932ca6eded9",
+        "animated": false
+      },
+      {
         "path": "troops/hog_rider_squad/icon.webp",
         "display_name": "hog rider squad",
         "sha": "c7ae9e85a3e5d8823de2242eee50a0d118de3a9a3ff272b737fd607c965a81cc",
+        "animated": false
+      },
+      {
+        "path": "troops/hog_rider_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "74672ee73bb14e194957040b8ff76c2af2bec26e8d665b86214f8fb1deedf837",
         "animated": false
       },
       {
@@ -16277,9 +16763,21 @@
         "animated": false
       },
       {
+        "path": "troops/hog_wizard/portrait.webp",
+        "display_name": "portrait",
+        "sha": "f5ac902f71eabab7dab272cc03410f01bcd7e96d9b1dbd9ff7098fb6dd38eb66",
+        "animated": false
+      },
+      {
         "path": "troops/ice_golem/icon.webp",
         "display_name": "ice golem",
         "sha": "3c536d50e437dff229827313a09dc3eefd1897bb7344762154dc02a1c708205c",
+        "animated": false
+      },
+      {
+        "path": "troops/ice_golem/portrait.webp",
+        "display_name": "portrait",
+        "sha": "79d14a8665b0af97f023f0259c1373ed564154db0bb44e15bf2c573bc56daaf1",
         "animated": false
       },
       {
@@ -16289,9 +16787,21 @@
         "animated": false
       },
       {
+        "path": "troops/ice_hound/portrait.webp",
+        "display_name": "portrait",
+        "sha": "180e3cd1987cf196a6692aea8a080430abdae4bc6f719f6579e703d09f061503",
+        "animated": false
+      },
+      {
         "path": "troops/ice_minion/icon.webp",
         "display_name": "ice minion",
         "sha": "e6bdfad89d6a8b3e9336a971594f35362a185345e8bc2ffdf0f0498680c45d3d",
+        "animated": false
+      },
+      {
+        "path": "troops/ice_minion/portrait.webp",
+        "display_name": "portrait",
+        "sha": "880b57497281e8ca2ea72845098aca0f2d687fe5d7bb0c21dd88252ecd292e87",
         "animated": false
       },
       {
@@ -16301,9 +16811,21 @@
         "animated": false
       },
       {
+        "path": "troops/ice_wizard/portrait.webp",
+        "display_name": "portrait",
+        "sha": "caf653db5610d5c1ade9e4f773a36dcf8d5765eac9672bc1fce1a8451307b904",
+        "animated": false
+      },
+      {
         "path": "troops/inferno_dragon/icon.webp",
         "display_name": "inferno dragon",
         "sha": "a75ac41148db021c84fcad955971e84a7c1cc1d98d2ea73e0d79122a0016dde5",
+        "animated": false
+      },
+      {
+        "path": "troops/inferno_dragon/portrait.webp",
+        "display_name": "portrait",
+        "sha": "b928ea25858a08d1aec63b6ccb4d1256ca7c687404e6238eb03fbebf4e1ade1b",
         "animated": false
       },
       {
@@ -16313,9 +16835,21 @@
         "animated": false
       },
       {
+        "path": "troops/kane/portrait.webp",
+        "display_name": "portrait",
+        "sha": "b02836820177670bb68019b54ee79e40f177ed0d35edf06ac56107270eadb384",
+        "animated": false
+      },
+      {
         "path": "troops/lava_hound/icon.webp",
         "display_name": "lava hound",
         "sha": "e72567c9d99ce02283100a5010706d130b230fdcbaa07fd7d066148181771175",
+        "animated": false
+      },
+      {
+        "path": "troops/lava_hound/portrait.webp",
+        "display_name": "portrait",
+        "sha": "902299f5859690f65f4f51bcccb0d85e44746b78e387a69a53605b22f36bcb8e",
         "animated": false
       },
       {
@@ -16325,9 +16859,21 @@
         "animated": false
       },
       {
+        "path": "troops/lavaloon/portrait.webp",
+        "display_name": "portrait",
+        "sha": "5c88911af0a13e872cba30764fb87edd4379ca049bed6a478ba387959af6de99",
+        "animated": false
+      },
+      {
         "path": "troops/log_launcher/icon.webp",
         "display_name": "log launcher",
         "sha": "f4bf20c147d72960edbe63afdd58845a439ed911e2ca5e184362bde6b7d1b698",
+        "animated": false
+      },
+      {
+        "path": "troops/log_launcher/portrait.webp",
+        "display_name": "portrait",
+        "sha": "deefc06cc35aa4501ad97c5f3d6505d86e3a4fb91a48cdb9a940722ddce71e17",
         "animated": false
       },
       {
@@ -16337,9 +16883,21 @@
         "animated": false
       },
       {
+        "path": "troops/mecha/portrait.webp",
+        "display_name": "portrait",
+        "sha": "b52685b48e8df187a31ec6a2dcc1f48c1362b79d49d8458ed50a506ba47343fb",
+        "animated": false
+      },
+      {
         "path": "troops/meteor_golem/icon.webp",
         "display_name": "meteor golem",
         "sha": "d26b88731ca0e7b15de129b4083797733180a986496ea31cc10472736e73df43",
+        "animated": false
+      },
+      {
+        "path": "troops/meteor_golem/portrait.webp",
+        "display_name": "portrait",
+        "sha": "e1b6133b923f9f329c3d7a8495e26c9ed37947f3475357dc0738f615e73ffe20",
         "animated": false
       },
       {
@@ -16349,9 +16907,21 @@
         "animated": false
       },
       {
+        "path": "troops/miner/portrait.webp",
+        "display_name": "portrait",
+        "sha": "9153f3d0391dc00e1db8294aa377495d37ed774acd52a201eb006308c673a3a8",
+        "animated": false
+      },
+      {
         "path": "troops/miner_squad/icon.webp",
         "display_name": "miner squad",
         "sha": "92b33cb3cbeb01695e059d35594356bc65b3e6479db844488e2b2bf2f0eb8741",
+        "animated": false
+      },
+      {
+        "path": "troops/miner_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "13df3fd56d8f43086dbe301f75eb3277cafcbf6c60bb3180e5ac897fc4b1cfad",
         "animated": false
       },
       {
@@ -16361,9 +16931,21 @@
         "animated": false
       },
       {
+        "path": "troops/minion/portrait.webp",
+        "display_name": "portrait",
+        "sha": "06389dc65d333a9c436fe635893796517772a5bad92c9368e37ba0ee8885cfd3",
+        "animated": false
+      },
+      {
         "path": "troops/minion_squad/icon.webp",
         "display_name": "minion squad",
         "sha": "5efa57b098f2460e586a9e1ae2328ef19ad1e6ff7ea3347e4b8b179cdf691d19",
+        "animated": false
+      },
+      {
+        "path": "troops/minion_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "c778e39d5bca1e34ed085e1bc6fe46053f6f7bff47963253739ce42ed945b4a9",
         "animated": false
       },
       {
@@ -16373,15 +16955,33 @@
         "animated": false
       },
       {
+        "path": "troops/night_witch/portrait.webp",
+        "display_name": "portrait",
+        "sha": "2f59c845492d5b9fad50dfacd7862defaeee7287a6113fe6f78be476806f9f48",
+        "animated": false
+      },
+      {
         "path": "troops/party_wizard/icon.webp",
         "display_name": "party wizard",
         "sha": "03a86c4d60dea944d7ea0dbdda3010a6df75970c22559f8938a94009fbad765f",
         "animated": true
       },
       {
+        "path": "troops/party_wizard/portrait.webp",
+        "display_name": "portrait",
+        "sha": "97c443848879f047a378eae30e763393fb83b41552100da3b8910ae2edd1d392",
+        "animated": false
+      },
+      {
         "path": "troops/pekka/icon.webp",
         "display_name": "pekka",
         "sha": "a966b660922e5b8379bf397d52e13532dbf4c5c22c21dbba56ae58e3c1df263e",
+        "animated": false
+      },
+      {
+        "path": "troops/pekka/portrait.webp",
+        "display_name": "portrait",
+        "sha": "4d40b912e92f289fb84a92f72a020456adad76c4f9ee500ec5f4f30788807b19",
         "animated": false
       },
       {
@@ -16391,9 +16991,21 @@
         "animated": false
       },
       {
+        "path": "troops/pekka_titan_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "4d00739bff9c4d116feb3595d89767958e7623333b1f88403c71f0a163c7e2fe",
+        "animated": false
+      },
+      {
         "path": "troops/power_pekka/icon.webp",
         "display_name": "power pekka",
         "sha": "7494deb208c6472e790f2cf55350df31abc38bfc483a93c370fe9fcdf7654648",
+        "animated": false
+      },
+      {
+        "path": "troops/power_pekka/portrait.webp",
+        "display_name": "portrait",
+        "sha": "6aaccf7922f8283fdf195dd3abb5005b17d2b69fe36912aa9504fa09939da944",
         "animated": false
       },
       {
@@ -16403,9 +17015,21 @@
         "animated": false
       },
       {
+        "path": "troops/pumpkin_barbarian/portrait.webp",
+        "display_name": "portrait",
+        "sha": "5968e3f164fa2c5d2547864537abd16d6a520ab62088052d223eee78e4d74454",
+        "animated": false
+      },
+      {
         "path": "troops/raged_barbarian/icon.webp",
         "display_name": "raged barbarian",
         "sha": "0380a70e6f0bdff6495d75323a3f23fb6a58e67cad8ffa7f4facfdf5d9523769",
+        "animated": false
+      },
+      {
+        "path": "troops/raged_barbarian/portrait.webp",
+        "display_name": "portrait",
+        "sha": "284ac30b00feb7b4354d8a71962eaae531c24bbcede79554dc0deb39b536d1bd",
         "animated": false
       },
       {
@@ -16415,9 +17039,21 @@
         "animated": false
       },
       {
+        "path": "troops/ram_rider/portrait.webp",
+        "display_name": "portrait",
+        "sha": "8395482d6a61b4956b8890df60b42d367f431a3a909035dbd3cd4a285b2dca9d",
+        "animated": false
+      },
+      {
         "path": "troops/rocket_balloon/icon.webp",
         "display_name": "rocket balloon",
         "sha": "04551e75b355c5ed4baa4c938195e74b55982ac1ac127eeeb6cc02c4496af2f0",
+        "animated": false
+      },
+      {
+        "path": "troops/rocket_balloon/portrait.webp",
+        "display_name": "portrait",
+        "sha": "02c283bf0a5660ac2d1bf84cbc3ebf610eaece243c4aed9793eebf2e9e246e49",
         "animated": false
       },
       {
@@ -16427,9 +17063,21 @@
         "animated": false
       },
       {
+        "path": "troops/root_rider/portrait.webp",
+        "display_name": "portrait",
+        "sha": "dc5d14e0d100c26234cd340518d0a1edd4d11a25688673c4fde52247f16bf215",
+        "animated": false
+      },
+      {
         "path": "troops/royal_ghost/icon.webp",
         "display_name": "royal ghost",
         "sha": "2580ba9a89e3af7e100d5063ab8b997ee6b05a6a4a55db47967a10d75cdb8eb4",
+        "animated": false
+      },
+      {
+        "path": "troops/royal_ghost/portrait.webp",
+        "display_name": "portrait",
+        "sha": "6867e586188ccf8adcafad2b747007ef37e6d72b931968aee00cb566506d8843",
         "animated": false
       },
       {
@@ -16439,9 +17087,21 @@
         "animated": false
       },
       {
+        "path": "troops/ruin_witch/portrait.webp",
+        "display_name": "portrait",
+        "sha": "f450c9e34de8b721afab9a24cab32b9f3d7d68094bfdf1158e86406a1dabbcd0",
+        "animated": false
+      },
+      {
         "path": "troops/siege_barracks/icon.webp",
         "display_name": "siege barracks",
         "sha": "59f6a17195b9daa17f1d01253769a6d1d06351cb289b87d473d3fb000aceeb58",
+        "animated": false
+      },
+      {
+        "path": "troops/siege_barracks/portrait.webp",
+        "display_name": "portrait",
+        "sha": "bf467bc91ded128ca8f10f8581c22fb3f2a8d731389cc12a86741009a346b060",
         "animated": false
       },
       {
@@ -16451,9 +17111,27 @@
         "animated": false
       },
       {
+        "path": "troops/skeleton_barrel/portrait.webp",
+        "display_name": "portrait",
+        "sha": "0fc333d5fbbcbf9945af3d16919099698ae77e97cf14df97f7e92d706350e932",
+        "animated": false
+      },
+      {
         "path": "troops/sky_wagon/icon.webp",
         "display_name": "sky wagon",
         "sha": "47f9256db4af136ad438d13f70083063396b32dc654bc8afe73d520792754cb8",
+        "animated": false
+      },
+      {
+        "path": "troops/sky_wagon/portrait.webp",
+        "display_name": "portrait",
+        "sha": "53a6c57b55ea53a2522837f21d3a93657861fd10d9ad24c2fcce94b2f05adf29",
+        "animated": false
+      },
+      {
+        "path": "troops/snake/icon.webp",
+        "display_name": "snake",
+        "sha": "9e4c8b865f9eda8da11eaeb74cfc7fc4be55f06b0a3030e2e1626fc68610d250",
         "animated": false
       },
       {
@@ -16463,9 +17141,21 @@
         "animated": false
       },
       {
+        "path": "troops/snake_barrel/portrait.webp",
+        "display_name": "portrait",
+        "sha": "ce708c30c45497f47e73d85f4f5554e08ac05e6b62d054f4ebd331a60199a5fb",
+        "animated": false
+      },
+      {
         "path": "troops/sneaky_archer/icon.webp",
         "display_name": "sneaky archer",
         "sha": "4625e1f224c91321f7c28cf1af3f80508f0303c361abed83fc3b3a1c52fe4f7d",
+        "animated": false
+      },
+      {
+        "path": "troops/sneaky_archer/portrait.webp",
+        "display_name": "portrait",
+        "sha": "2af98695192628e611a1ce75f8a6666dc9e98d789f05a5a51d33966cfd2d7846",
         "animated": false
       },
       {
@@ -16475,9 +17165,21 @@
         "animated": false
       },
       {
+        "path": "troops/sneaky_goblin/portrait.webp",
+        "display_name": "portrait",
+        "sha": "6428ff8ac3d65e0031c7dacac020a2e8ef7aa6f85dfb4c14fcab2a76a769013c",
+        "animated": false
+      },
+      {
         "path": "troops/stone_slammer/icon.webp",
         "display_name": "stone slammer",
         "sha": "67cf3c2b139966ae4610e6cb0c1d57db0d47c957d17b2274f30c4d49d68fc9e8",
+        "animated": false
+      },
+      {
+        "path": "troops/stone_slammer/portrait.webp",
+        "display_name": "portrait",
+        "sha": "fdb4d8c187a1ca1305ef1e39cf209e3d98fae8b40dc60d076b36ee1d9e039ca2",
         "animated": false
       },
       {
@@ -16487,9 +17189,21 @@
         "animated": false
       },
       {
+        "path": "troops/super_archer/portrait.webp",
+        "display_name": "portrait",
+        "sha": "260652dbd8d0f69a475db94e960dda4edb3773563a4caaf0a4643c41f2cbcce5",
+        "animated": false
+      },
+      {
         "path": "troops/super_barbarian/icon.webp",
         "display_name": "super barbarian",
         "sha": "a32d3d59227e35b79b3bffd6851e701c2654656eae4eaf39f1dc2d492aa8fb9a",
+        "animated": false
+      },
+      {
+        "path": "troops/super_barbarian/portrait.webp",
+        "display_name": "portrait",
+        "sha": "bf0732e1a996f301f68baad18ef9ce7bb5e7e661096e90f6ea2a1abcc870ccc3",
         "animated": false
       },
       {
@@ -16499,9 +17213,21 @@
         "animated": false
       },
       {
+        "path": "troops/super_bowler/portrait.webp",
+        "display_name": "portrait",
+        "sha": "8a0fdad4218843bda876101499ce7abe4308180bd0ceab7ed371c8221c7c8112",
+        "animated": false
+      },
+      {
         "path": "troops/super_dragon/icon.webp",
         "display_name": "super dragon",
         "sha": "e945dc34edc514ad5e23b2b31611981ab0e9bb6c3d6bde5efc19c139b986aca1",
+        "animated": false
+      },
+      {
+        "path": "troops/super_dragon/portrait.webp",
+        "display_name": "portrait",
+        "sha": "845f05299f8f39065232bf20cad84b4bccbf06778aad678ab60c2c5474d637ce",
         "animated": false
       },
       {
@@ -16511,9 +17237,21 @@
         "animated": false
       },
       {
+        "path": "troops/super_giant/portrait.webp",
+        "display_name": "portrait",
+        "sha": "b3760c32e540a4ad746860894d00808a88209e0ce2ea109c462459cbc6162941",
+        "animated": false
+      },
+      {
         "path": "troops/super_hog_rider/icon.webp",
         "display_name": "super hog rider",
         "sha": "b4e61b7b06836498e6152efa9fc72832ef114a7ec2ff686be148a0147277416f",
+        "animated": false
+      },
+      {
+        "path": "troops/super_hog_rider/portrait.webp",
+        "display_name": "portrait",
+        "sha": "0bcb5d65347ca537b26667f8183a8addd210481984464178186fcb632787ae92",
         "animated": false
       },
       {
@@ -16523,9 +17261,21 @@
         "animated": false
       },
       {
+        "path": "troops/super_miner/portrait.webp",
+        "display_name": "portrait",
+        "sha": "25fd495579343bae523e7de11f701c77bb47046c9873facd37f2d06dec2f1cf6",
+        "animated": false
+      },
+      {
         "path": "troops/super_minion/icon.webp",
         "display_name": "super minion",
         "sha": "a6d3737c4165b88d00e6c09fed6b01c50ba37a3e6df7eb564e17c3032303eecd",
+        "animated": false
+      },
+      {
+        "path": "troops/super_minion/portrait.webp",
+        "display_name": "portrait",
+        "sha": "c541ed0d0dfc99b229633ffc92b61b36e408592e3f32e7aa6bb256b344b7cb5e",
         "animated": false
       },
       {
@@ -16535,9 +17285,21 @@
         "animated": false
       },
       {
+        "path": "troops/super_valkyrie/portrait.webp",
+        "display_name": "portrait",
+        "sha": "e58322f0be0648dc7176f88772bd3e6802694976fe59a28a6191ec972d68b379",
+        "animated": false
+      },
+      {
         "path": "troops/super_wall_breaker/icon.webp",
         "display_name": "super wall breaker",
         "sha": "9b97a0347f13d862b49a92c470c4ffe1ef8f6f0f04413ba54ac19961ee2dbec1",
+        "animated": false
+      },
+      {
+        "path": "troops/super_wall_breaker/portrait.webp",
+        "display_name": "portrait",
+        "sha": "c198caabeb733bd0295a9337a2ffeb0d2f544d2ab2cc54e9d82090774aa38b62",
         "animated": false
       },
       {
@@ -16547,9 +17309,21 @@
         "animated": false
       },
       {
+        "path": "troops/super_witch/portrait.webp",
+        "display_name": "portrait",
+        "sha": "90e161632be554189ca98081b2097f8e9f11c6f98097e6700b48c08095740084",
+        "animated": false
+      },
+      {
         "path": "troops/super_wizard/icon.webp",
         "display_name": "super wizard",
         "sha": "aacdb54c141faaf461d30873da544ab7d143d7c7028ae0d6b90fc2c2711787a1",
+        "animated": false
+      },
+      {
+        "path": "troops/super_wizard/portrait.webp",
+        "display_name": "portrait",
+        "sha": "2eb200f5a0360adb78fe8d3b6d911b8964b959b30d3bd4ef7d7eb44f3ead6f9d",
         "animated": false
       },
       {
@@ -16559,9 +17333,21 @@
         "animated": false
       },
       {
+        "path": "troops/super_yeti/portrait.webp",
+        "display_name": "portrait",
+        "sha": "14ca607d648944db2fbebf5f1952708f563be9d15d82de99c023b6beb933daa0",
+        "animated": false
+      },
+      {
         "path": "troops/the_disarmer/icon.webp",
         "display_name": "the disarmer",
         "sha": "fc3bcc6d1bc276a844723230c1584481f3128406c024e8de7d293a054c3a0e05",
+        "animated": false
+      },
+      {
+        "path": "troops/the_disarmer/portrait.webp",
+        "display_name": "portrait",
+        "sha": "82c5c28437c916b07e99ad2f6a0734ba220801e7b884c47f5105af83e81062f3",
         "animated": false
       },
       {
@@ -16571,9 +17357,21 @@
         "animated": false
       },
       {
+        "path": "troops/thrower/portrait.webp",
+        "display_name": "portrait",
+        "sha": "4fbeda46fd7d4a3736a0ee8dd6bb75f448e7ce58d5b35b670f8e8bb0a457ef0d",
+        "animated": false
+      },
+      {
         "path": "troops/totem_thrower/icon.webp",
         "display_name": "totem thrower",
         "sha": "a00266ea79eb83c213b09783297267e0f84db3eed15138e218341717a808328e",
+        "animated": false
+      },
+      {
+        "path": "troops/totem_thrower/portrait.webp",
+        "display_name": "portrait",
+        "sha": "9c8348ab2bddc4131c28363c40b94a7e9103da2f49bb9e3fb78aa8a16e6d2ac6",
         "animated": false
       },
       {
@@ -16583,9 +17381,21 @@
         "animated": false
       },
       {
+        "path": "troops/troop_launcher/portrait.webp",
+        "display_name": "portrait",
+        "sha": "904684378fe3f3d4e2cf23f7806b0c737ff9f72874b0f6601a83b2334d52f9ba",
+        "animated": false
+      },
+      {
         "path": "troops/valkyrie/icon.webp",
         "display_name": "valkyrie",
         "sha": "374128fca8e56300d4370ac45b1e1dd6d342e0ed03a1e0cac028e98991fbabb8",
+        "animated": false
+      },
+      {
+        "path": "troops/valkyrie/portrait.webp",
+        "display_name": "portrait",
+        "sha": "2fba73c8bc2aefa91d09512ee4ccbf32f96859dc9298795fe476fe37494dcf13",
         "animated": false
       },
       {
@@ -16595,9 +17405,21 @@
         "animated": false
       },
       {
+        "path": "troops/wall_breaker/portrait.webp",
+        "display_name": "portrait",
+        "sha": "d8642ad801a6795298110c2314af1ecb4f3b2731d0435311e84d35dc5439c6f3",
+        "animated": false
+      },
+      {
         "path": "troops/wall_breaker_squad/icon.webp",
         "display_name": "wall breaker squad",
         "sha": "35df3aa02d1d31d7d80b47a515a13b1173ed0557baa494a2122cec56f458db13",
+        "animated": false
+      },
+      {
+        "path": "troops/wall_breaker_squad/portrait.webp",
+        "display_name": "portrait",
+        "sha": "8a838c3dfc7f8afdb9dd64b0ce2ff8d18c89637bb102d203307373328afbe5bb",
         "animated": false
       },
       {
@@ -16607,9 +17429,21 @@
         "animated": false
       },
       {
+        "path": "troops/wall_wrecker/portrait.webp",
+        "display_name": "portrait",
+        "sha": "3405922fba9590dd4db21fb115f25ad9088a0edf4e4f7747f250486b950574bc",
+        "animated": false
+      },
+      {
         "path": "troops/witch/icon.webp",
         "display_name": "witch",
         "sha": "cae6309525440c2f9cbe882c40978b55acbf36e26d95ab320c1bc7061b1da17a",
+        "animated": false
+      },
+      {
+        "path": "troops/witch/portrait.webp",
+        "display_name": "portrait",
+        "sha": "b7356ff8cbb85cb0c481b50651f7fd786fa6a6c032e05fe06ffb352eca07d121",
         "animated": false
       },
       {
@@ -16619,9 +17453,21 @@
         "animated": false
       },
       {
+        "path": "troops/witch_golem/portrait.webp",
+        "display_name": "portrait",
+        "sha": "78ba06ce726b350506189108b2b1943ef864956f390e5c8b037b7fe15fa0c39a",
+        "animated": false
+      },
+      {
         "path": "troops/wizard/icon.webp",
         "display_name": "wizard",
         "sha": "2fb44f4fdc9322cf134b8dbf68a01da8d3897a163c0b60c1365c2795476ca778",
+        "animated": false
+      },
+      {
+        "path": "troops/wizard/portrait.webp",
+        "display_name": "portrait",
+        "sha": "d7623aababe812682341f0dcf58de517be5d7092a1c30a22b9b307812feb8463",
         "animated": false
       },
       {
@@ -16631,15 +17477,33 @@
         "animated": false
       },
       {
+        "path": "troops/yeeter/portrait.webp",
+        "display_name": "portrait",
+        "sha": "ec785074cf6ab3faa0ac185fbc00f06a12b1750dd25282cd84a0c45e22f555fa",
+        "animated": false
+      },
+      {
         "path": "troops/yeti/icon.webp",
         "display_name": "yeti",
         "sha": "f372019b0c0ed01186a91740636c9802777c6c5253ea45e77a8870ad2993c616",
         "animated": false
       },
       {
+        "path": "troops/yeti/portrait.webp",
+        "display_name": "portrait",
+        "sha": "c19f41b8dce2b5da9521032d6e81d3b3f93270bba379d3e29c5531db96d6b2d5",
+        "animated": false
+      },
+      {
         "path": "troops/yeti_undertaker/icon.webp",
         "display_name": "yeti undertaker",
         "sha": "11ee54233de977b1ecea1292fe245e77c28079ff7af90a3da4c92379ddedbec6",
+        "animated": false
+      },
+      {
+        "path": "troops/yeti_undertaker/portrait.webp",
+        "display_name": "portrait",
+        "sha": "e5fa50138f3e62ebafcf46bdbe5aa7bdecdf7402a5c5ebac82fc3fc4a764bff7",
         "animated": false
       }
     ]
@@ -16664,7 +17528,7 @@
       },
       {
         "path": "static_data/buildings.json",
-        "sha": "fd1b1c17b7d9aff74c747c6009c12b67b428a40edc829ed64bcf318077fd9ace"
+        "sha": "54c2bc9e71f4a2b7ee0bf4e7c74698b9af5dd39911a11602087fb3f612505cff"
       },
       {
         "path": "static_data/capital_house_parts.json",
@@ -16684,7 +17548,7 @@
       },
       {
         "path": "static_data/decorations.json",
-        "sha": "fd91ffcd86761d8bb9a2f1a268f71e7d55faf085a422faadbaafea78848df71f"
+        "sha": "7fde9f087315219b03b1806c7228c2c5f3cb9ab435c61a64c995f016d7196c67"
       },
       {
         "path": "static_data/emotes.json",
@@ -16708,7 +17572,7 @@
       },
       {
         "path": "static_data/league_tiers.json",
-        "sha": "ad2fcc672b4aa024b28cb64bf249ca7fc9c106b5b004da97f4ba52644cc9d374"
+        "sha": "e8b9e0ffd4d0d753c15f6e58d58889994e0c00e66420a959e0e1798d6fbd9854"
       },
       {
         "path": "static_data/locales.json",
@@ -16716,15 +17580,15 @@
       },
       {
         "path": "static_data/magic_items.json",
-        "sha": "05f0bae92cb8b3f9691aac6339ad9ccbb7751ecacbd3dc04e577a40972b1f237"
+        "sha": "b9e62afe550f9ce75c952c4c122080982798325f83912d58c642dcf6944d6360"
       },
       {
         "path": "static_data/magic_snacks.json",
-        "sha": "ce5ea1fac83bf55a09e241ce71135be1b7cf28e48fad19fe0eebb20b99e5529b"
+        "sha": "bb5b17acd37f5dcc6f7f88d64944eea9960307bb6357114d9c0e6885dc96fd6b"
       },
       {
         "path": "static_data/obstacles.json",
-        "sha": "cecea8af2a584f12739acdfd9ed4a6e19c174bbd6ca3d44caffa5dcd67c76814"
+        "sha": "8747ff5299e6ce9efc0c3a66af9537e70940b9d5442dcf93e28ef2378efc7f14"
       },
       {
         "path": "static_data/pets.json",
@@ -16760,7 +17624,7 @@
       },
       {
         "path": "static_data/troops.json",
-        "sha": "ab840cb7a306e9ea173723e90415ec1d6f46b84976ed1d864b7ab70f98fd457e"
+        "sha": "f2cea68110b51fa56f75715795de2286da5aa99b3cde8d9a640a89a6e376312a"
       },
       {
         "path": "static_data/war_leagues.json",
@@ -16770,91 +17634,91 @@
     "translations": [
       {
         "path": "translations/AR.json",
-        "sha": "c5683a1c0a9b7203abf79a315eb624a2e2b2b3cc48c3877ce4d89c16e78b975f"
+        "sha": "d9533647b6c9f6ea0594e5ebbcc5029dc7efa256b6232b169855e430b735ea5b"
       },
       {
         "path": "translations/CN.json",
-        "sha": "25a95952e6df3efd1d1521d91670b243acdfb95fcc5560025976694290733a5b"
+        "sha": "1fab866fbeac1d0cf41addb39c304b96400ff3c2f70fc84bc6b1c9c4528a0a12"
       },
       {
         "path": "translations/CNT.json",
-        "sha": "9be97a0dfa0a9dee31fb94f6c1bf957da11315489cbc0a9b539395a80ef666b5"
+        "sha": "9161058f7df47ec5b54401563d56514a7f5ca0307e8661a3f84f65e8000b3795"
       },
       {
         "path": "translations/DE.json",
-        "sha": "4281f607f4166f099db073471d2336dfa30842bd75030cc5ba6c0eddda0664c3"
+        "sha": "826b54bb3cf899f50ccb6c441a70adf9bb8092eb68a43ebe81cc5e07bc90a97c"
       },
       {
         "path": "translations/EN.json",
-        "sha": "9ea33857130aa084490c5bd865956cecaccce9b1a5fe06db79713456a1135332"
+        "sha": "0efc5c0543cbda8c63189a3f1a545bf32496d615e49aee89db105c3388f4ffdd"
       },
       {
         "path": "translations/ES.json",
-        "sha": "ace2187aa554ca4009e05626d3ccdd50599c6baaef55b4b1eee4dad58b6fab56"
+        "sha": "f06ab6fb4a6400f6aad7628801fc3bda11cb262bf5dd36ffbf17d13069cf193e"
       },
       {
         "path": "translations/FA.json",
-        "sha": "41fc26b73cad146891470fe8d1caf6684945df72328a1b3b861d73ef53ec2f41"
+        "sha": "39b499b0fd04d227201b72a87fe881944f00b0fbf6c0bea8121c1a20655f8fcf"
       },
       {
         "path": "translations/FI.json",
-        "sha": "7f3587cf88878941bfac8c85999e67ffc5c90e20d25e1ad5217e296ca89d4e0b"
+        "sha": "4ffba71750c94446c385094ae91cbbb23eb79087bfeea0e3631339c6e635489b"
       },
       {
         "path": "translations/FR.json",
-        "sha": "5204b7cc62a2e48f620a3922fa2fb458d6153abf581350212cce8acf71dd40db"
+        "sha": "aa16f9cbe1f9f3ab995fff513b2b6d1127352c4dfc1091076a9b5e14303611fa"
       },
       {
         "path": "translations/ID.json",
-        "sha": "0f91941b1d7b2d1fc3ee9973cda8e0e6874afd869a23d61cb4695e6b3ba70f6e"
+        "sha": "8872460f03c661c223ae87fb626758d8d28d1fe6d641357b63453aa6ae40034f"
       },
       {
         "path": "translations/IT.json",
-        "sha": "34124894331087317438926b62804f8f79353907c0c97c3524b4fdc23ef60362"
+        "sha": "98f4bd8ff14ce09ed68fd157454fc95832cc9ad2853391eb070044a84825430b"
       },
       {
         "path": "translations/JP.json",
-        "sha": "462fbd2481cdcfc8d45e84bf28836f3b3661d88d42932bf39403a021b9f78b37"
+        "sha": "539c2cea3706d0abcf9a6b59fba07eb71cf7e5a5fdaedfb4d4df3638db5b36aa"
       },
       {
         "path": "translations/KR.json",
-        "sha": "001a88c023bd95ccd4e80276826a55e01af042fb308d6d3cc332534c06213881"
+        "sha": "fc5e876e26565e3d073556e3df7c5b004188ac2cd73b094449fa154619900f64"
       },
       {
         "path": "translations/MS.json",
-        "sha": "c75dcf4a67211820a3dcf2a43bed3061b59d3e666a0c7a0967f059c8d6040efb"
+        "sha": "c9ff2a1e6f54fbcaf5b27090867c724766ef0be272f0c974f1e487b69d727055"
       },
       {
         "path": "translations/NL.json",
-        "sha": "5c703234e8301b8ffb05cbd4695fbff4d793abcd9a978853b5c6fdd557d648dd"
+        "sha": "16e9e076bb464a258ea01eb0be72baacd11556c720fd39760d7078b61b082ed3"
       },
       {
         "path": "translations/NO.json",
-        "sha": "1e04616473e35fdb371e958c42d2f5bcda882c8fb0cad15cf1f77fa18d58d646"
+        "sha": "4a97655ccc97835c615f797d344b2efb5ef8235a8d77d9917e780ae1495c7d12"
       },
       {
         "path": "translations/PL.json",
-        "sha": "37d0f9b9edba96d8c2afb7fa0f423ae1d4a484e8e0a9ec360d735985306fdd7f"
+        "sha": "c08bf43100ed10794bb12a4dd040713bfc345b19e0297336e0386b9a616def9a"
       },
       {
         "path": "translations/PT.json",
-        "sha": "8a7b6d58d0e76ec2ee91817dbf6ccb5463842ba4d788a7a0e2b6c4263f888c90"
+        "sha": "d1bbb68b9798085d2ae340083318f8b58a69ea9bb0172c663d0ecee5bcfed4e1"
       },
       {
         "path": "translations/RU.json",
-        "sha": "b67642c4a834020916d8023309c57832844077f4d4e73efffc9ff591c7dc9f3f"
+        "sha": "95fea213a040729251d4d45a6ed48083de3c76468240baf70ae19cb27b469f6d"
       },
       {
         "path": "translations/TH.json",
-        "sha": "48f2426c0aff28d506c822f7dbd9dc65ee36806d644de9c16132b8a2406a7d06"
+        "sha": "a16dd2531139e60377cddf94a530ee764e8f3fb2858d4e4d10feaf1b0cbd981b"
       },
       {
         "path": "translations/TR.json",
-        "sha": "1918624e016024fb7bf8a63c411023c6d9e8d4fe86f0c44b986b81ac8c6c2942"
+        "sha": "c0a223e4b4db9532cfc137c07d5ddc6bedc3ca3b85bdf2470a629ee9dac0a10a"
       },
       {
         "path": "translations/VI.json",
-        "sha": "ae08764ad362432f97aaf3d839d7b3684ec7541359ae51e4627221b8b9b7b234"
+        "sha": "68dbe414b4c017e44099b0fe4be677431b73b675a927124480be8876daf2380d"
       }
     ]
   }

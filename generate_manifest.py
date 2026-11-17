@@ -125,7 +125,10 @@ def build_manifest(assets_root: Path) -> dict[str, object]:
             {"path": path.relative_to(assets_root).as_posix(), "sha": file_sha(path)}
             for path in sorted((assets_root / folder).glob("*.json"))
         ]
-        for category, folder in (("stats", "static_data"), ("translations", "translations"))
+        for category, folder in (
+            ("stats", "static_data"),
+            ("translations", "translations"),
+        )
     }
     categories: dict[str, list[dict[str, object]]] = {}
     for asset in assets:

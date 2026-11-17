@@ -771,34 +771,6 @@
       "village": "builderBase"
     },
     {
-      "_id": 18000081,
-      "name": "Goblin Chest",
-      "TID": {
-        "name": "TID_DECO_GOBLIN_CHEST"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "Gold",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000082,
-      "name": "Goblin Cart",
-      "TID": {
-        "name": "TID_DECO_GOBLIN_CART"
-      },
-      "width": 3,
-      "not_in_shop": true,
-      "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "Gold",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
       "_id": 18000089,
       "name": "Goblin Cellar",
       "TID": {
@@ -823,76 +795,6 @@
       "pass_reward": true,
       "max_count": 1,
       "build_resource": "Gold",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000091,
-      "name": "Goblin Barrel",
-      "TID": {
-        "name": "TID_DECO_GOBLIN_BARREL"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "Gold",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000092,
-      "name": "League Hammer",
-      "TID": {
-        "name": "TID_DECO_CWL_HAMMER"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "League Medals",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000093,
-      "name": "League Shield",
-      "TID": {
-        "name": "TID_DECO_CWL_SHIELD"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "League Medals",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000094,
-      "name": "Razer Deco",
-      "TID": {
-        "name": "TID_DECO_RAZER_PROMO"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 4,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000095,
-      "name": "Flexing Barbarian",
-      "TID": {
-        "name": "TID_DECO_FLEXING_BARB"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 4,
-      "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
     },
@@ -995,76 +897,6 @@
       "village": "home"
     },
     {
-      "_id": 18000104,
-      "name": "Crop Crates",
-      "TID": {
-        "name": "TID_DECO_HD_VEG_CRATES"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000105,
-      "name": "Blooming Beetroots",
-      "TID": {
-        "name": "TID_DECO_HD_BEETROOTS"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000106,
-      "name": "Sweet Carrots",
-      "TID": {
-        "name": "TID_DECO_HD_CARROTS"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000107,
-      "name": "Tasty Corn",
-      "TID": {
-        "name": "TID_DECO_HD_CORN"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000108,
-      "name": "Harvest Helper",
-      "TID": {
-        "name": "TID_DECO_HD_SOIL_SACKS"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
       "_id": 18000109,
       "name": "Hog Pen",
       "TID": {
@@ -1074,62 +906,6 @@
       "not_in_shop": true,
       "pass_reward": true,
       "max_count": 4,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000110,
-      "name": "Scratchy Stack",
-      "TID": {
-        "name": "TID_DECO_HD_HAYSTACK"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000111,
-      "name": "Juicy Tomatoes",
-      "TID": {
-        "name": "TID_DECO_HD_TOMATOES"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000112,
-      "name": "Clumsy Wheelbarrow",
-      "TID": {
-        "name": "TID_DECO_HD_WHEELBARROW"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000113,
-      "name": "Woodcutter’s Pile",
-      "TID": {
-        "name": "TID_DECO_HD_WOOD_PILE"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 5,
       "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
@@ -1569,20 +1345,6 @@
       "village": "home"
     },
     {
-      "_id": 18000146,
-      "name": "Beach Break",
-      "TID": {
-        "name": "TID_DECO_SC_BEACH_PARASOL"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 1,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
       "_id": 18000147,
       "name": "Brawl's Star",
       "TID": {
@@ -1601,20 +1363,6 @@
       "name": "Gargantuan Gauntlet",
       "TID": {
         "name": "TID_DECO_SC_GAUNTLET"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 1,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000149,
-      "name": "Heroic Chicken",
-      "TID": {
-        "name": "TID_DECO_SC_HAYDAY_CHICKEN"
       },
       "width": 2,
       "not_in_shop": true,
@@ -2395,34 +2143,6 @@
       "village": "home"
     },
     {
-      "_id": 18000205,
-      "name": "Darkness Throne",
-      "TID": {
-        "name": "TID_DECO_DARKNESS_THRONE"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 4,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000206,
-      "name": "Hog Skull",
-      "TID": {
-        "name": "TID_DECO_HOGSKULL"
-      },
-      "width": 2,
-      "not_in_shop": true,
-      "pass_reward": true,
-      "max_count": 4,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
       "_id": 18000207,
       "name": "Builder Bust",
       "TID": {
@@ -2880,6 +2600,20 @@
       "not_in_shop": true,
       "pass_reward": true,
       "max_count": 4,
+      "build_resource": "Gems",
+      "build_cost": 500,
+      "village": "home"
+    },
+    {
+      "_id": 18000242,
+      "name": "Emerald Hot Streak",
+      "TID": {
+        "name": "TID_DECO_COMMUNITY_FLAMER_GREEN"
+      },
+      "width": 2,
+      "not_in_shop": true,
+      "pass_reward": true,
+      "max_count": 2,
       "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"

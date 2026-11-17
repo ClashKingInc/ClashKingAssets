@@ -10,6 +10,7 @@ from pathlib import PurePosixPath
 import aiohttp
 
 ATTACHMENT_PREFIX = "attachments/"
+ATTACHMENT_PREFIXES = ("attachments/", "base-attachments/")
 HEADER_PROBE_SIZE = 512
 MAX_HEADER_SIZE = 4096
 
@@ -63,6 +64,8 @@ def parse_scattachment_header(data: bytes, *, label: str = "scattachment") -> tu
     except UnicodeDecodeError as exc:
         raise SCAttachmentError(f"{label}: embedded path is not valid UTF-8") from exc
 
+    # Normalize only the known virtual asset root, then retain traversal checks.
+    embedded_path = embedded_path.removeprefix("source_assets:/")
     path = PurePosixPath(embedded_path)
     if (
         path.is_absolute()
@@ -105,7 +108,7 @@ async def discover_scattachments(
     *,
     concurrency: int = 64,
 ) -> SCAttachmentIndex:
-    attachment_files = [item for item in manifest_files if item.get("file", "").startswith(ATTACHMENT_PREFIX)]
+    attachment_files = [item for item in manifest_files if item.get("file", "").startswith(ATTACHMENT_PREFIXES)]
     if not attachment_files:
         return SCAttachmentIndex(by_path={}, failures=())
     if concurrency < 1:
