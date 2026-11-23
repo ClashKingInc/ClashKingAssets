@@ -1,0 +1,22 @@
+{
+  "name": "clashking-assets-wiki",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 8788 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 8788 --strictPort"
+  },
+  "dependencies": {
+    "@radix-ui/react-dropdown-menu": "2.1.24",
+    "@radix-ui/react-select": "2.3.7",
+    "fflate": "0.8.3",
+    "lucide-react": "0.468.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "vite": "8.3.5"
+  }
+}

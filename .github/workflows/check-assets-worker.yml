@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'worker/**'
+      - 'asset_sounds.py'
       - 'build.py'
       - 'generate_emoji_catalog.py'
       - 'sync_discord_emojis.py'
@@ -41,4 +42,5 @@ jobs:
       - run: python scripts/check-app-artwork.py
       - run: python generate_emoji_catalog.py --check
       - run: python check_image_sources.py
-      - run: python -m ruff check build.py worker_purge.py check_image_sources.py generate_emoji_catalog.py sync_discord_emojis.py
+      - run: python -c "from pathlib import Path; from asset_sounds import check_sound_effects; check_sound_effects(Path('assets'))"
+      - run: python -m ruff check asset_sounds.py build.py worker_purge.py check_image_sources.py generate_emoji_catalog.py sync_discord_emojis.py

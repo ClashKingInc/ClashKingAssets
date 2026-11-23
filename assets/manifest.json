@@ -6619,12 +6619,6 @@
         "animated": false
       },
       {
-        "path": "clashking/landscapes/home-landscape.webp",
-        "display_name": "home landscape",
-        "sha": "9ef0f102a32e7500a03bc9ce5564e81df8d044e3f2ada568f0da88350184f96f",
-        "animated": false
-      },
-      {
         "path": "clashking/landscapes/legend-landscape.webp",
         "display_name": "legend landscape",
         "sha": "3cd9f4b31e2a7e963b2ec8c48edd9d3efca3213aa41823ae7b489320424dfc62",
@@ -10624,12 +10618,6 @@
         "path": "landscape/dragon-landscape.png",
         "display_name": "dragon landscape",
         "sha": "48bbba5a464ed642fddf140eda391914812ac00b804c2e69eadeb11749459958",
-        "animated": false
-      },
-      {
-        "path": "landscape/home-landscape.png",
-        "display_name": "home landscape",
-        "sha": "b574989f95efef987daaa5c5f3c5b3d1c14fd7cf03814a5393cf4c86c6e62b0f",
         "animated": false
       },
       {
@@ -17605,6 +17593,10 @@
       {
         "path": "static_data/sceneries.json",
         "sha": "7d914b4dcffe7dd0be999c7a3971638e08e3d2dc0e443360c919f6c8c7ea2e57"
+      },
+      {
+        "path": "static_data/sfx.json",
+        "sha": "e2d56f898effd2372a683d5e1d32f294a2777c53b4c235d213022d223ad65459"
       },
       {
         "path": "static_data/skins.json",

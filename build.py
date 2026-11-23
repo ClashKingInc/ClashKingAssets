@@ -12,6 +12,7 @@ from typing import Any
 
 from dotenv import load_dotenv
 
+from asset_sounds import check_sound_effects
 from check_image_sources import check_image_sources
 from generate_manifest import ManifestError, check_manifest
 from worker_purge import WorkerPurgeError, load_worker_purge_config, purge_worker_cache
@@ -389,6 +390,7 @@ def main() -> int:
     plan = build_sync_plan(entries, assets_root)
     try:
         source_summary = check_image_sources(Path(assets_root))
+        check_sound_effects(Path(assets_root))
     except ValueError as exc:
         raise BuildError(str(exc)) from exc
 

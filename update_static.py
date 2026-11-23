@@ -4,6 +4,7 @@ Now saves both the raw CSV and the generated JSON files.
 If new files need to be added, then place them in the TARGETS list.
 """
 
+import argparse
 import asyncio
 import csv
 import hashlib
@@ -17,16 +18,19 @@ import subprocess
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
+from urllib.parse import quote
 
 import zstandard
 from PIL import Image
 
+from asset_sounds import SOUND_PATH, general_sound_paths, load_ignored_ids, load_sound_index
 from generate_abilities import FILES as ABILITY_TABLES
 from generate_abilities import ability_tids, generate_abilities, write_abilities
 from generate_manifest import write_manifest
 from scattachment import SCAttachmentRef, discover_scattachments, unwrap_scattachment
 from scindex import decode_decorations
 from utils import apk_url, download_file, fetch_fingerprint_manifest
+from wiki.scripts.sound_index import TABLE_FILES, read_sound_table, sound_index, write_index
 
 
 def squad_metadata(character, characters, squads, abilities=None, translate=None):
@@ -227,22 +231,6 @@ def is_exported_via_go(source_sc: str) -> bool:
 def hash_15_digits(s: str) -> int:
     digest = hashlib.blake2b(s.encode("utf-8"), digest_size=8).digest()
     return int.from_bytes(digest, "big") % 10**15
-
-
-def load_ignored_ids(path: Path = Path(".ignored.txt")) -> set[int]:
-    if not path.exists():
-        return set()
-
-    ignored_ids = set()
-    for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
-        value = line.partition("#")[0].strip()
-        if not value:
-            continue
-        try:
-            ignored_ids.add(int(value))
-        except ValueError as exc:
-            raise ValueError(f"invalid ID in {path} on line {line_number}: {value!r}") from exc
-    return ignored_ids
 
 
 def save_emote_preview(source: Path, destination: Path) -> None:
@@ -1163,6 +1151,38 @@ class StaticUpdater:
 
         return list(new_achievement_data.values())
 
+    def _building_level_stats(self, building: dict, level: dict) -> dict:
+        fields = {}
+        for raw, key in {
+            "HousingSpace": "housing_space",
+            "HousingSpaceAlt": "spell_capacity",
+            "HousingSpaceSiege": "siege_capacity",
+            "ResourceMax": "storage_capacity",
+            "HealthRecoveryPercent": "health_recovery_percent",
+        }.items():
+            value = self._first_present(raw, level, building)
+            if isinstance(value, (int, float)) and not isinstance(value, bool):
+                fields[key] = value
+
+        # The game stores production per 100 hours. Storage-only buildings use
+        # separate columns from a collector's internal inventory.
+        rate = self._first_present("ResourcePer100Hours", level, building)
+        if isinstance(rate, (int, float)) and not isinstance(rate, bool):
+            fields["production_rate"] = rate / 100
+        storage = {}
+        for column, resource in {
+            "MaxStoredGold": "Gold", "MaxStoredElixir": "Elixir", "MaxStoredDarkElixir": "Dark Elixir",
+            "MaxStoredGold2": "Builder Gold", "MaxStoredElixir2": "Builder Elixir",
+        }.items():
+            amount = self._first_present(column, level, building)
+            if isinstance(amount, (int, float)) and not isinstance(amount, bool) and amount > 0:
+                storage[resource] = amount
+        if len(storage) == 1 and "storage_capacity" not in fields:
+            fields["storage_capacity"] = next(iter(storage.values()))
+        if storage:
+            fields["stored_resources"] = storage
+        return fields
+
     def _parse_building_data(self):
         self.full_building_data = self.open_file("logic/buildings.json")
         self.full_supercharges_data = self.open_file("logic/mini_levels.json")
@@ -1171,6 +1191,7 @@ class StaticUpdater:
         full_projectile_data: dict = self.open_file("logic/projectiles.json")
         full_spell_data: dict = self.open_file("logic/spells.json")
         full_globals_data: dict = self.open_file("logic/globals.json")
+        full_character_data: dict = self.open_file("logic/characters.json")
         self.register_seasonal_defense_assets()
 
         clan_castle_radius = full_globals_data.get("CLAN_CASTLE_RADIUS", {}).get("NumberValue")
@@ -1182,6 +1203,7 @@ class StaticUpdater:
             if (
                 building_data.get("BuildingClass") in ["Npc", "NonFunctional", "Npc Town Hall"]
                 or "Unused" in building_name
+                or building_data.get("EnabledByCalendar", False)
             ):
                 continue
             if self.is_ignored_id(building_data.get("GlobalID")):
@@ -1249,6 +1271,20 @@ class StaticUpdater:
                 "hitbox_width": building_data.get("BuildingW"),
                 "superchargeable": superchargeable,
             }
+
+            defenders = (
+                full_character_data.get(building_data.get(field), {}).get("GlobalID")
+                for field in ("DefenceTroopCharacter", "DefenceTroopCharacter2", "SecondaryTroop")
+            )
+            if defenders := list(dict.fromkeys(defender for defender in defenders if defender is not None)):
+                hold_data["defending_troops"] = defenders
+            if building_data.get("GlobalID") == 1000039:
+                boost = full_globals_data.get("CLOCK_TOWER_BOOST_MULTIPLIER", {}).get("NumberValue")
+                cooldown = full_globals_data.get("CLOCK_TOWER_BOOST_COOLDOWN_MINS", {}).get("NumberValue")
+                if boost is not None:
+                    hold_data["clock_boost_multiplier"] = boost
+                if cooldown is not None:
+                    hold_data["clock_boost_cooldown_seconds"] = cooldown * 60
 
             if is_defense and not has_level_targeting:
                 hold_data.update({
@@ -1328,6 +1364,7 @@ class StaticUpdater:
                     "build_time": upgrade_time_seconds,
                     "required_townhall": level_data.get("TownHallLevel"),
                     "hitpoints": level_data.get("Hitpoints", 0),
+                    **self._building_level_stats(building_data, level_data),
                 }
                 if is_defense:
                     defense_stats_source = building_data
@@ -2070,6 +2107,12 @@ class StaticUpdater:
 
     def _parse_equipment_data(self):
         full_equipment_data = self.open_file("logic/character_items.json")
+        starter_items = {
+            name.strip()
+            for hero in self.full_hero_data.values()
+            for name in (hero.get("DefaultItems") or "").split(";")
+            if name.strip()
+        }
 
         new_equipment_data = []
         for _id, (equipment_name, equipment_data) in enumerate(full_equipment_data.items(), 90000000):
@@ -2098,6 +2141,7 @@ class StaticUpdater:
                 "production_building_level": equipment_data.get("1").get("RequiredBlacksmithLevel"),
                 "rarity": equipment_data.get("Rarity", "").title(),
                 "hero": self._translate(tid=hero_TID),
+                "is_starter": equipment_name in starter_items,
                 "levels": [],
             }
 
@@ -2995,6 +3039,7 @@ class StaticUpdater:
         collection_path = base_path / "static_data"
         collection_path.mkdir(parents=True, exist_ok=True)
         expected_files = {f"{category}.json" for category in master_data}
+        expected_files.add("sfx.json")
         if abilities is not None:
             expected_files.add("abilities.json")
         for stale_file in collection_path.glob("*.json"):
@@ -3080,6 +3125,76 @@ class StaticUpdater:
 
         print(f"Constants written to {constants_path}")
 
+    async def update_sound_effects(self, base_url: str, fingerprint_file: dict, sound_tables: dict) -> None:
+        root = Path(self.BASE_PATH)
+        audio = root / "sfx"
+        clips = {}
+        for item in fingerprint_file.get("files", []):
+            source = item["file"]
+            if not source.startswith("sfx/") or not source.lower().endswith(".ogg"):
+                continue
+            if not SOUND_PATH.fullmatch(source):
+                raise ValueError(f"invalid sound effect path in fingerprint: {source!r}")
+            sha = item["sha"].lower()
+            if not re.fullmatch(r"[0-9a-f]{40}", sha):
+                raise ValueError(f"invalid SHA-1 for sound effect: {source}")
+            name = source.removeprefix("sfx/")
+            clip = (name, sha)
+            if clips.setdefault(name.casefold(), clip) != clip:
+                raise ValueError(f"conflicting sound effect paths in fingerprint: {source}")
+
+        on_disk = {f"sfx/{path.name}" for path in audio.glob("*.ogg") if path.is_file()}
+        available = on_disk | {f"sfx/{name}" for name, _ in clips.values()}
+        data = json.loads((root / "static_data.json").read_text(encoding="utf-8"))
+        mapping = sound_index(sound_tables, available, data, load_sound_index(), self.ignored_ids)
+        allowed = general_sound_paths() | {path for paths in mapping.values() for path in paths}
+        pending = {}
+        # A partial fingerprint can omit historical clips. Refresh only the OGGs it lists.
+        for name, sha in clips.values():
+            if f"sfx/{name}" not in allowed:
+                continue
+            destination = audio / name
+            if destination.is_file():
+                with destination.open("rb") as existing:
+                    if hashlib.file_digest(existing, "sha1").hexdigest() == sha:
+                        continue
+            pending[name] = sha
+
+        if pending:
+            audio.mkdir(parents=True, exist_ok=True)
+            # Validate the full batch before replacing any final copies.
+            with tempfile.TemporaryDirectory(prefix=".sfx-", dir=audio) as temp:
+                staged = Path(temp)
+                semaphore = asyncio.Semaphore(16)
+
+                async def download_clip(name: str, sha: str) -> None:
+                    async with semaphore:
+                        data = await download_file(url=f"{base_url}/sfx/{quote(name, safe='')}")
+                        if not data.startswith(b"OggS") or hashlib.sha1(data).hexdigest() != sha:
+                            raise ValueError(f"sound effect does not match fingerprint: sfx/{name}")
+                        (staged / name).write_bytes(data)
+
+                async with asyncio.TaskGroup() as downloads:
+                    for name, sha in pending.items():
+                        downloads.create_task(download_clip(name, sha))
+                for name in pending:
+                    (staged / name).replace(audio / name)
+
+        write_index(mapping)
+        logging.info("Updated %s sound effects under %s (%s in fingerprint)", len(pending), audio, len(clips))
+
+    async def download_sound_effects(self) -> None:
+        self.FINGERPRINT, fingerprint_file = await fetch_fingerprint_manifest(self.APK_URL, self.FINGERPRINT)
+        base_url = f"https://game-assets.clashofclans.com/{self.FINGERPRINT}"
+
+        async def download_sound_table(path):
+            data = await download_file(url=f"{base_url}/{path}")
+            return TABLE_FILES[path], await asyncio.to_thread(read_sound_table, path, data)
+
+        paths = [item["file"] for item in fingerprint_file["files"] if item["file"] in TABLE_FILES]
+        sound_tables = dict(await asyncio.gather(*(download_sound_table(path) for path in paths)))
+        await self.update_sound_effects(base_url, fingerprint_file, sound_tables)
+
     async def download_files(self):
         self.FINGERPRINT, fingerprint_file = await fetch_fingerprint_manifest(self.APK_URL, self.FINGERPRINT)
 
@@ -3092,6 +3207,8 @@ class StaticUpdater:
                 continue
             file_paths.append(file_path)
 
+        sound_tables = {}
+
         async def download_and_process(file_path: str):
             download_url = f"{BASE_URL}/{file_path}"
             print(f"Downloading: {download_url}")
@@ -3099,6 +3216,9 @@ class StaticUpdater:
 
             if file_path in STATIC_SCINDEX_FILES:
                 return file_path, data
+
+            if file_path in TABLE_FILES:
+                sound_tables[TABLE_FILES[file_path]] = await asyncio.to_thread(read_sound_table, file_path, data)
 
             def process():
                 print(f"Processing: {file_path}")
@@ -3123,6 +3243,7 @@ class StaticUpdater:
 
         self.create_master_json()
         await self.extract_assets()
+        await self.update_sound_effects(BASE_URL, fingerprint_file, sound_tables)
 
     def run(self):
         asyncio.run(self.download_files())
@@ -3134,4 +3255,13 @@ class StaticUpdater:
 
 
 if __name__ == "__main__":
-    StaticUpdater().run()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--sound-effects-only", action="store_true", help="Update OGG files without regenerating images or static data.",
+    )
+    args = parser.parse_args()
+    updater = StaticUpdater()
+    if args.sound_effects_only:
+        asyncio.run(updater.download_sound_effects())
+    else:
+        updater.run()
