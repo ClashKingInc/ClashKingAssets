@@ -7,6 +7,12 @@
   "preview_urls": false,
   // Existing public-assets bucket. No bucket is provisioned here.
   "r2_buckets": [{ "binding": "ASSETS", "bucket_name": "clashking-assets" }],
+  "assets": {
+    "directory": "../wiki/dist",
+    "binding": "WIKI_ASSETS",
+    "html_handling": "none",
+    "not_found_handling": "none"
+  },
   "images": { "binding": "IMAGES" },
   "cache": { "enabled": true, "cross_version_cache": false },
   "observability": { "enabled": true },

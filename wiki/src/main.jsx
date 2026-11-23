@@ -14,9 +14,10 @@ import crownDark from '../../assets/logos/crown-arrow-dark-bg/ClashKing-1.svg?ur
 import crownLight from '../../assets/logos/crown-arrow-white-bg/ClashKing-2.svg?url';
 import './styles.css';
 
+const home = '/';
 const featured = [1000106, 28000001, 4000106, 90000010];
 const nav = [
-  ['Wiki', wiki, 'wiki'],
+  ['Wiki', home, 'wiki'],
   ['Reference', referencePath, 'reference'],
   ['Assets', wiki + '/assets', 'assets'],
 ];
@@ -70,7 +71,7 @@ function Topbar({ area, query, onSearch, language, languages, onLanguage, pendin
   };
   return <header className="site-header">
     <div className="site-header-inner">
-      <a href={wiki} className="brand">
+      <a href={home} className="brand">
         <img src={theme === 'dark' ? crownDark : crownLight} alt="" width="24" height="26" />
         <span className="brand-name">ClashKing</span>
       </a>
@@ -107,7 +108,7 @@ function WikiCard({ entity, showCategory = true }) {
 }
 
 const villageTabs = [
-  ['home', 'buildings/home-village/town_hall/level_19.webp', wiki],
+  ['home', 'buildings/home-village/town_hall/level_19.webp', home],
   ['builder-base', 'buildings/builder-base/builder_hall/level_10.webp', wiki + '/builder-base'],
 ];
 
@@ -255,7 +256,8 @@ function App() {
   };
   useEffect(() => { if (sources && defaultLanguage !== 'EN') changeLanguage(defaultLanguage); }, [sources]);
   const url = new URL(route, location.origin);
-  const path = url.pathname.replace(/\/$/, '') || wiki;
+  const rawPath = url.pathname.replace(/\/$/, '');
+  const path = rawPath === '' || rawPath === '/index.html' ? wiki : rawPath;
   const [, first, page, category, id, slug, tool, ...extra] = path.split('/');
   const entity = id && !extra.length && catalogue?.entities.find((item) =>
     item.village === page && item.category === category && String(item._id) === id);
@@ -281,7 +283,7 @@ function App() {
   const gallery = entityAssets || path === wiki + '/assets';
   const referenceTopic = page === 'reference' && !id && catalogue?.references.get(category);
   const reference = path === referencePath || !!referenceTopic;
-  const browse = first === 'wiki' && (!page || villages[page]) && (!category || categories[category]) && !id;
+  const browse = first === 'site' && (!page || villages[page]) && (!category || categories[category]) && !id;
   const primaryArea = gallery ? 'assets' : reference ? 'reference' : 'wiki';
   const initialQuery = url.searchParams.get('q') || '';
   const scopedAssetKey = gallery && url.searchParams.get('entity');
@@ -295,9 +297,9 @@ function App() {
   const changeSearch = (value) => {
     if (!gallery && !browse && value.trim()) {
       // Use the same results as Wiki home and preserve focus in the shared header.
-      history.pushState(null, '', wiki);
+      history.pushState(null, '', home);
       setSearch({ scope: wiki, value });
-      setRoute(wiki);
+      setRoute(home);
       window.scrollTo(0, 0);
     } else {
       setSearch({ scope: searchScope, value });
@@ -305,7 +307,7 @@ function App() {
   };
   useEffect(() => {
     if (!catalogue) return;
-    const replacement = assetsTarget || chartTarget || (path === wiki + '/charts' ? wiki : null);
+    const replacement = assetsTarget || chartTarget || (path === wiki + '/charts' ? home : null);
     if (!replacement) return;
     history.replaceState(null, '', replacement);
     setRoute(replacement);
@@ -325,7 +327,7 @@ function App() {
     const anchor = event.target.closest('a');
     if (!anchor || anchor.target || anchor.hasAttribute('download')) return;
     const next = new URL(anchor.href);
-    if (next.origin !== location.origin || !/^\/wiki(?:\/|$)/.test(next.pathname)) return;
+    if (next.origin !== location.origin || !(next.pathname === '/' || /^\/site(?:\/|$)/.test(next.pathname))) return;
     event.preventDefault();
     if (next.pathname === location.pathname && next.search === location.search && next.hash) {
       const section = document.getElementById(next.hash.slice(1));
@@ -347,13 +349,13 @@ function App() {
   let content;
   if (failure) content = <Empty>The wiki data could not load. <button className="button" onClick={() => location.reload()}>Reload</button></Empty>;
   else if (!catalogue) content = <p className="loading" role="status">Loading the wiki…</p>;
-  else if (first !== 'wiki') content = <Empty>This page does not exist. <a href={wiki}>Browse the wiki</a></Empty>;
+  else if (first !== 'site') content = <Empty>This page does not exist. <a href={home}>Browse the wiki</a></Empty>;
   else if (gallery) content = <AssetGallery key={route} catalogue={catalogue} url={url} scopedEntity={entityAssets ? entity : undefined} language={language} dictionary={dictionary} query={query} />;
   else if (assetsTarget || chartTarget || path === wiki + '/charts') content = null;
   else if (reference) content = <ReferencePage key={path} catalogue={catalogue} references={catalogue.references} topic={referenceTopic || undefined} url={url} onUrlChange={setRoute} />;
   else if (entity && !tool) content = <EntityPage key={route} catalogue={catalogue} entity={entity} url={url} />;
   else if (browse) content = <Browse key={path} catalogue={catalogue} area={page || 'wiki'} initialCategory={category} query={query} />;
-  else content = <Empty>This page does not exist. <a href={wiki}>Browse the wiki</a></Empty>;
+  else content = <Empty>This page does not exist. <a href={home}>Browse the wiki</a></Empty>;
   return <WikiLocale.Provider value={language}><div className="app-shell" onClick={navigate}>
     <a className="skip" href="#content">Skip to content</a>
     <a className="skip" href="#site-footer">Skip to footer</a>

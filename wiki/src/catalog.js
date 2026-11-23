@@ -1,5 +1,5 @@
-export const wiki = '/wiki';
-export const assetOrigin = (import.meta.env?.VITE_ASSET_ORIGIN || '/media').replace(/\/$/, '');
+export const wiki = '/site';
+export const assetOrigin = (import.meta.env?.VITE_ASSET_ORIGIN ?? '/media').replace(/\/$/, '');
 export const assetUrl = (path) => assetOrigin + '/' + path.split('/').map(encodeURIComponent).join('/');
 export const cdnUrl = (path) => 'https://assets.clashk.ing/' + path.split('/').map(encodeURIComponent).join('/');
 export const villages = {

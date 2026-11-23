@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'worker/**'
+      - 'wiki/**'
       - 'asset_sounds.py'
       - 'build.py'
       - 'generate_emoji_catalog.py'
@@ -35,6 +36,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13.7'
+      - run: npm ci --prefix wiki
+      - run: npm run build:site --prefix wiki
       - run: npm ci --prefix worker
       - run: npm run typecheck --prefix worker
       - run: npm run build --prefix worker

@@ -328,7 +328,7 @@ export function EntityPage({ catalogue, entity, url }) {
   const related = hero || facility;
   return <article className={'entity-page' + (row ? '' : ' no-aside')}>
     <header className="entity-header">
-      <Crumbs items={[[t(villages[entity.village]), wiki + '/' + entity.village], [t(categories[browseCategory][0]), wiki + '/' + entity.village + '/' + browseCategory], [entity.name]]} />
+      <Crumbs items={[[t(villages[entity.village]), entity.village === 'home' ? '/' : wiki + '/' + entity.village], [t(categories[browseCategory][0]), wiki + '/' + entity.village + '/' + browseCategory], [entity.name]]} />
       <div className="entity-title">
         <div className={'entity-art' + (isPortrait ? ' portrait' : '')}>
           <Art file={art} alt={entity.name + (row?.exactArt ? ' level ' + row.display : '')} eager />

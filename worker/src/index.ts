@@ -8,6 +8,12 @@ interface AssetsEnv extends Omit<Cloudflare.Env, 'PURGE_ENABLED'> {
   PURGE_ENABLED: string;
 }
 
+function isSiteRoute(pathname: string): boolean {
+  if (pathname === '/' || pathname === '/site') return true;
+  if (!pathname.startsWith('/site/')) return false;
+  return !pathname.startsWith('/site/_assets/');
+}
+
 // Workers Cache checks its lower and upper tiers before this entrypoint runs.
 // A warm public request therefore executes no Worker code and makes no loopback call.
 export default class AssetsWorker extends WorkerEntrypoint<AssetsEnv> {
@@ -29,6 +35,11 @@ export default class AssetsWorker extends WorkerEntrypoint<AssetsEnv> {
         } });
       }
       if (request.method !== 'GET' && request.method !== 'HEAD') return errorResponse(405, 'GET or HEAD required');
+      if (isSiteRoute(url.pathname)) {
+        const indexUrl = new URL('/index.html', url);
+        return this.env.WIKI_ASSETS.fetch(new Request(indexUrl, { method: request.method, headers: request.headers }));
+      }
+      if (url.pathname.startsWith('/site/_assets/')) return errorResponse(404, 'Asset not found');
       return clientResponse(request, await serveAsset(request, this.env));
     } catch { return errorResponse(502, 'Asset service unavailable'); }
   }

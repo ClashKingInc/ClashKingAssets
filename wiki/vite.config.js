@@ -168,5 +168,9 @@ function localAssets(staticDataPath = resolve(assetsRoot, 'static_data.json'), a
 
 export default defineConfig(({ mode }) => {
   const { WIKI_STATIC_DATA_PATH, WIKI_ARTWORK_OVERLAY } = loadEnv(mode, fileURLToPath(new URL('.', import.meta.url)), 'WIKI_');
-  return { publicDir: false, plugins: [localAssets(WIKI_STATIC_DATA_PATH || undefined, WIKI_ARTWORK_OVERLAY)] };
+  return {
+    publicDir: false,
+    build: { assetsDir: 'site/_assets' },
+    plugins: [localAssets(WIKI_STATIC_DATA_PATH || undefined, WIKI_ARTWORK_OVERLAY)],
+  };
 });
