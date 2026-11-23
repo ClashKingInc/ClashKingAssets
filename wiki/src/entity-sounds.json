@@ -1,0 +1,3620 @@
+{
+  "buildings:1000000": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/troop_housing_pickup_06.ogg",
+    "sfx/troop_housing_pickup_09.ogg",
+    "sfx/troop_housing_placing_06.ogg",
+    "sfx/troop_housing_placing_08.ogg"
+  ],
+  "buildings:1000001": [
+    "sfx/Defence_TH17_Activate.ogg",
+    "sfx/Defence_TH17_Fire.ogg",
+    "sfx/Defence_TH17_LavaImpact_01.ogg",
+    "sfx/Defence_TH17_LavaImpact_02.ogg",
+    "sfx/Defence_TH17_LavaImpact_03.ogg",
+    "sfx/build_pickup_05.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/freeze_spell_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg",
+    "sfx/th13_activate_01.ogg",
+    "sfx/th13_fire_01_loop.ogg",
+    "sfx/th13_fire_02_loop.ogg",
+    "sfx/th_12_last_seq_01.ogg",
+    "sfx/town_hall_placing_04.ogg",
+    "sfx/vial_poison_hit_gound_01.ogg"
+  ],
+  "buildings:1000002": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/elixir_pump_drop_03.ogg",
+    "sfx/elixir_pump_pickup_07.ogg"
+  ],
+  "buildings:1000003": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/elixir_storage_drop_02.ogg",
+    "sfx/elixir_storage_pickup_04.ogg"
+  ],
+  "buildings:1000004": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/goldmine_drop4.ogg",
+    "sfx/goldmine_pickup4.ogg"
+  ],
+  "buildings:1000005": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/golden_haus_04.ogg",
+    "sfx/golden_haus_drop_02.ogg"
+  ],
+  "buildings:1000006": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/troop_housing_pickup_06.ogg",
+    "sfx/troop_housing_pickup_09.ogg",
+    "sfx/troop_housing_placing_06.ogg",
+    "sfx/troop_housing_placing_08.ogg"
+  ],
+  "buildings:1000007": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/troop_housing_pickup_06.ogg",
+    "sfx/troop_housing_pickup_09.ogg",
+    "sfx/troop_housing_placing_06.ogg",
+    "sfx/troop_housing_placing_08.ogg"
+  ],
+  "buildings:1000008": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_08.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/cannon_pickup3.ogg",
+    "sfx/generic_hit_01.ogg"
+  ],
+  "buildings:1000009": [
+    "sfx/archer_tower_pick_01.ogg",
+    "sfx/archer_tower_place_02.ogg",
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_07v2.ogg",
+    "sfx/arrow_hit_07v3.ogg",
+    "sfx/arrow_hit_12.ogg",
+    "sfx/bow_target.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/explosive_arrow_01v2.ogg",
+    "sfx/generic_hit_01.ogg"
+  ],
+  "buildings:1000010": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/wall_pickup_01.ogg",
+    "sfx/wall_place_01.ogg"
+  ],
+  "buildings:1000011": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/mage_attack_02.ogg",
+    "sfx/mage_attack_02v2.ogg",
+    "sfx/mage_attack_02v3.ogg",
+    "sfx/wizard_hit_01.ogg",
+    "sfx/wizard_tower_drop_01.ogg",
+    "sfx/wizard_tower_pickup_02.ogg"
+  ],
+  "buildings:1000012": [
+    "sfx/air_def_attack_02.ogg",
+    "sfx/air_def_hit_02.ogg",
+    "sfx/air_def_pickup_03.ogg",
+    "sfx/air_defense_place_01.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000013": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/mortar_fire_02_with_fall.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/mortar_pickup_01.ogg",
+    "sfx/mortar_place_02.ogg"
+  ],
+  "buildings:1000014": [
+    "sfx/alliance_build_drop_04.ogg",
+    "sfx/alliance_build_pickup_03.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000015": [
+    "sfx/builder_hut_pickup_02.ogg",
+    "sfx/builder_hut_place_02.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/clash_b_nail_gun_02.ogg",
+    "sfx/generic_hit_01.ogg"
+  ],
+  "buildings:1000019": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/tesla_appear_01.ogg",
+    "sfx/tesla_drop_09.ogg",
+    "sfx/tesla_pickup_11.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg"
+  ],
+  "buildings:1000020": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/spellfactory_pickup_01.ogg",
+    "sfx/spellfactory_place_01.ogg"
+  ],
+  "buildings:1000021": [
+    "sfx/bow_attack.ogg",
+    "sfx/bow_load.ogg",
+    "sfx/bow_out_of_ammo.ogg",
+    "sfx/bow_pickup.ogg",
+    "sfx/bow_place.ogg",
+    "sfx/bow_target.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/generic_hit_01.ogg"
+  ],
+  "buildings:1000023": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/dark_drill_pickup_02.ogg",
+    "sfx/dark_drill_place_07.ogg"
+  ],
+  "buildings:1000024": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/dark_storage_pickup.ogg",
+    "sfx/dark_storage_place.ogg"
+  ],
+  "buildings:1000026": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/troop_housing_pickup_06.ogg",
+    "sfx/troop_housing_pickup_09.ogg",
+    "sfx/troop_housing_placing_06.ogg",
+    "sfx/troop_housing_placing_08.ogg"
+  ],
+  "buildings:1000027": [
+    "sfx/beam_up_02.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/darktower_noammo_02.ogg",
+    "sfx/darktower_pickup_01.ogg",
+    "sfx/darktower_place_01.ogg",
+    "sfx/darktower_reload_01.ogg",
+    "sfx/laser_loop_02.ogg"
+  ],
+  "buildings:1000028": [
+    "sfx/air_cannon_fire_04.ogg",
+    "sfx/air_cannon_pickup_03.ogg",
+    "sfx/air_cannon_place_02.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000029": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/spellfactory_pickup_01.ogg",
+    "sfx/spellfactory_place_01.ogg"
+  ],
+  "buildings:1000031": [
+    "sfx/ancient_explo_01.ogg",
+    "sfx/ancient_fire_02.ogg",
+    "sfx/ancient_place_mecha_eagle_01.ogg",
+    "sfx/ancient_target_01.ogg",
+    "sfx/ancient_target_02.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_pickup3.ogg",
+    "sfx/mech_eagle_reload_01.ogg",
+    "sfx/mech_eagle_sad_no_ammo_01.ogg",
+    "sfx/mortar_hit_01.ogg"
+  ],
+  "buildings:1000032": [
+    "sfx/bomb_tower_atk_01.ogg",
+    "sfx/bomb_tower_hit_01.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/mortar_pickup_01.ogg",
+    "sfx/mortar_place_02.ogg"
+  ],
+  "buildings:1000033": [
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000034": [
+    "sfx/builder_hall_tap_01.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/town_hall_placing_04.ogg"
+  ],
+  "buildings:1000035": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/elixir_pump_drop_03.ogg",
+    "sfx/elixir_pump_pickup_07.ogg"
+  ],
+  "buildings:1000036": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/elixir_storage_drop_02.ogg",
+    "sfx/elixir_storage_pickup_04.ogg"
+  ],
+  "buildings:1000037": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/goldmine_drop4.ogg",
+    "sfx/goldmine_pickup4.ogg"
+  ],
+  "buildings:1000038": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/golden_haus_04.ogg",
+    "sfx/golden_haus_drop_02.ogg"
+  ],
+  "buildings:1000039": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/clock_tower_pickup_04.ogg",
+    "sfx/clock_tower_place_04.ogg"
+  ],
+  "buildings:1000040": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/troop_housing_pickup_06.ogg",
+    "sfx/troop_housing_pickup_09.ogg",
+    "sfx/troop_housing_placing_06.ogg",
+    "sfx/troop_housing_placing_08.ogg"
+  ],
+  "buildings:1000041": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/double_canon_deploy_01.ogg",
+    "sfx/double_canon_fire_01.ogg",
+    "sfx/double_canon_pickup_01.ogg",
+    "sfx/generic_hit_01.ogg"
+  ],
+  "buildings:1000042": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/troop_housing_pickup_06.ogg",
+    "sfx/troop_housing_pickup_09.ogg",
+    "sfx/troop_housing_placing_06.ogg",
+    "sfx/troop_housing_placing_08.ogg"
+  ],
+  "buildings:1000043": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/tesla_appear_01.ogg",
+    "sfx/tesla_drop_09.ogg",
+    "sfx/tesla_pickup_11.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg"
+  ],
+  "buildings:1000044": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_08.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/cannon_pickup3.ogg",
+    "sfx/generic_hit_01.ogg"
+  ],
+  "buildings:1000045": [
+    "sfx/bomb_tower_hit_01.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/multi_mortar_fire_01.ogg",
+    "sfx/multi_mortar_fire_02.ogg",
+    "sfx/multi_mortar_pickup_01.ogg",
+    "sfx/multi_mortar_place_01.ogg"
+  ],
+  "buildings:1000046": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/observatory_pickup_01.ogg",
+    "sfx/observatory_place_01.ogg"
+  ],
+  "buildings:1000047": [
+    "sfx/builder_hut_pickup_02.ogg",
+    "sfx/builder_hut_place_02.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000048": [
+    "sfx/archer_tower_pick_01.ogg",
+    "sfx/archer_tower_place_02.ogg",
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_07v2.ogg",
+    "sfx/arrow_hit_07v3.ogg",
+    "sfx/arrow_hit_12.ogg",
+    "sfx/bow_target.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/explosive_arrow_01v2.ogg",
+    "sfx/generic_hit_01.ogg"
+  ],
+  "buildings:1000049": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/troop_housing_pickup_06.ogg",
+    "sfx/troop_housing_pickup_09.ogg",
+    "sfx/troop_housing_placing_06.ogg",
+    "sfx/troop_housing_placing_08.ogg"
+  ],
+  "buildings:1000050": [
+    "sfx/air_def_attack_02.ogg",
+    "sfx/air_def_hit_02.ogg",
+    "sfx/air_def_pickup_03.ogg",
+    "sfx/air_defense_place_01.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000051": [
+    "sfx/builder_hut_pickup_02.ogg",
+    "sfx/builder_hut_place_02.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000052": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/tesla_drop_09.ogg",
+    "sfx/tesla_pickup_11.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg"
+  ],
+  "buildings:1000053": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/hero_altar_pickup_02.ogg",
+    "sfx/hero_altar_place.ogg"
+  ],
+  "buildings:1000054": [
+    "sfx/air_def_pickup_03.ogg",
+    "sfx/air_defense_place_01.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_fire3.ogg"
+  ],
+  "buildings:1000055": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/cannon_pickup3.ogg",
+    "sfx/crusher_atk_02.ogg",
+    "sfx/generic_hit_01.ogg"
+  ],
+  "buildings:1000056": [
+    "sfx/bomb_tower_hit_01.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/double_canon_deploy_01.ogg",
+    "sfx/double_canon_pickup_01.ogg",
+    "sfx/multi_mortar_fire_01.ogg",
+    "sfx/multi_mortar_fire_02.ogg"
+  ],
+  "buildings:1000057": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_08.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/cannon_pickup3.ogg",
+    "sfx/generic_hit_01.ogg"
+  ],
+  "buildings:1000058": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/goldmine_drop4.ogg",
+    "sfx/goldmine_pickup4.ogg"
+  ],
+  "buildings:1000059": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/troop_housing_pickup_06.ogg",
+    "sfx/troop_housing_pickup_09.ogg",
+    "sfx/troop_housing_placing_06.ogg",
+    "sfx/troop_housing_placing_08.ogg"
+  ],
+  "buildings:1000063": [
+    "sfx/bomb_tower_hit_01.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/lava_launcher_atk_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/mortar_pickup_01.ogg",
+    "sfx/mortar_place_02.ogg"
+  ],
+  "buildings:1000064": [
+    "sfx/builder_hut_pickup_02.ogg",
+    "sfx/builder_hut_place_02.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000065": [
+    "sfx/builder_hut_pickup_02.ogg",
+    "sfx/builder_hut_place_02.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000067": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/scattershot_atk_01.ogg",
+    "sfx/scattershot_atk_hit_01.ogg",
+    "sfx/scattershot_pickup_01.ogg",
+    "sfx/scattershot_place_01.ogg"
+  ],
+  "buildings:1000068": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/troop_housing_pickup_06.ogg",
+    "sfx/troop_housing_pickup_09.ogg",
+    "sfx/troop_housing_placing_06.ogg",
+    "sfx/troop_housing_placing_08.ogg"
+  ],
+  "buildings:1000070": [
+    "sfx/blacksmith_build_place_01.ogg",
+    "sfx/blacksmith_build_tap_01.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000071": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/hero_altar_pickup_02.ogg",
+    "sfx/hero_altar_place.ogg"
+  ],
+  "buildings:1000072": [
+    "sfx/bottle_rage_magic_07v2.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/generic_hit_01.ogg",
+    "sfx/invis_spell_01.ogg",
+    "sfx/spell_tower_pickup_01.ogg",
+    "sfx/spell_tower_place_01.ogg",
+    "sfx/vial_earthquake_hit_gound_01.ogg",
+    "sfx/vial_poison_hit_gound_01.ogg"
+  ],
+  "buildings:1000077": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/explosive_arrow_01v2.ogg",
+    "sfx/laser_loop_02.ogg",
+    "sfx/monolith_atk_sfx_01.ogg",
+    "sfx/monolith_atk_sfx_02.ogg",
+    "sfx/monolith_atk_sfx_03.ogg",
+    "sfx/monolith_pickup_01.ogg",
+    "sfx/monolith_place_01.ogg"
+  ],
+  "buildings:1000078": [
+    "sfx/builder_hall_tap_01.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/sparky_shot_01.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg",
+    "sfx/town_hall_placing_04.ogg",
+    "sfx/zapies_die_01.ogg"
+  ],
+  "buildings:1000079": [
+    "sfx/Defence_ComboArcher_Fire_01.ogg",
+    "sfx/Defence_ComboArcher_Fire_02.ogg",
+    "sfx/Defence_ComboArcher_Fire_03.ogg",
+    "sfx/Defence_ComboArcher_Hit.ogg",
+    "sfx/Defence_ComboCannon_Fire_01.ogg",
+    "sfx/Defence_ComboCannon_Fire_02.ogg",
+    "sfx/Defence_ComboCannon_Fire_03.ogg",
+    "sfx/bow_attack.ogg",
+    "sfx/bow_pickup.ogg",
+    "sfx/bow_place.ogg",
+    "sfx/bow_target.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000080": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/hero_altar_pickup_02.ogg",
+    "sfx/hero_altar_place.ogg"
+  ],
+  "buildings:1000081": [
+    "sfx/bow_attack.ogg",
+    "sfx/bow_pickup.ogg",
+    "sfx/bow_place.ogg",
+    "sfx/bow_target.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/generic_hit_01.ogg"
+  ],
+  "buildings:1000082": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/troop_housing_pickup_06.ogg",
+    "sfx/troop_housing_pickup_09.ogg",
+    "sfx/troop_housing_placing_06.ogg",
+    "sfx/troop_housing_placing_08.ogg"
+  ],
+  "buildings:1000084": [
+    "sfx/Defence_ComboArcher_Pull_01.ogg",
+    "sfx/Defence_ComboArcher_Pull_02.ogg",
+    "sfx/Defence_ComboArcher_Pull_03.ogg",
+    "sfx/archer_tower_pick_01.ogg",
+    "sfx/archer_tower_place_02.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/explosive_arrow_01v2.ogg"
+  ],
+  "buildings:1000085": [
+    "sfx/bomb_tower_hit_01.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_08.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/cannon_pickup3.ogg",
+    "sfx/ricochet_cannon_hit_01.ogg"
+  ],
+  "buildings:1000086": [
+    "sfx/barbarian_sword_swing_hit_14.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/cannon_pickup3.ogg",
+    "sfx/defence_revengetower_attack.ogg",
+    "sfx/defence_revengetower_transform.ogg"
+  ],
+  "buildings:1000089": [
+    "sfx/Defence_FireSpitter_Shoot.ogg",
+    "sfx/air_cannon_pickup_03.ogg",
+    "sfx/air_cannon_place_02.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/rock_troll_explo_01.ogg"
+  ],
+  "buildings:1000093": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/troop_housing_pickup_06.ogg",
+    "sfx/troop_housing_pickup_09.ogg",
+    "sfx/troop_housing_placing_06.ogg",
+    "sfx/troop_housing_placing_08.ogg"
+  ],
+  "buildings:1000097": [
+    "sfx/Defence_Wooden_PickUp.ogg",
+    "sfx/Defence_Wooden_PutDown.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "buildings:1000102": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/super_wizard_atk_01.ogg",
+    "sfx/super_wizard_atk_02.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg",
+    "sfx/wizard_tower_drop_01.ogg",
+    "sfx/wizard_tower_pickup_02.ogg"
+  ],
+  "decorations:18000052": [
+    "sfx/coins_collect_01.ogg"
+  ],
+  "decorations:18000053": [
+    "sfx/air_def_hit_02.ogg"
+  ],
+  "decorations:18000054": [
+    "sfx/xmastree.ogg"
+  ],
+  "decorations:18000055": [
+    "sfx/xmastree.ogg"
+  ],
+  "decorations:18000057": [
+    "sfx/dragon_attack_01.ogg"
+  ],
+  "decorations:18000058": [
+    "sfx/coins_collect_01.ogg"
+  ],
+  "decorations:18000061": [
+    "sfx/supercell_jingle.ogg"
+  ],
+  "decorations:18000062": [
+    "sfx/tap_stone_cog_stat_01.ogg"
+  ],
+  "decorations:18000066": [
+    "sfx/air_def_hit_02.ogg"
+  ],
+  "decorations:18000075": [
+    "sfx/clash_dragon_deco_tap_01.ogg"
+  ],
+  "decorations:18000096": [
+    "sfx/halloween_2023_deco_zombie_king_toilet.ogg"
+  ],
+  "decorations:18000098": [
+    "sfx/halloween_2023_deco_dead_jaccuzi.ogg"
+  ],
+  "decorations:18000099": [
+    "sfx/halloween_2023_deco_scarecrow.ogg"
+  ],
+  "decorations:18000141": [
+    "sfx/deco_anime_fortuneteller_01.ogg",
+    "sfx/deco_anime_fortuneteller_02.ogg",
+    "sfx/deco_anime_fortuneteller_03.ogg"
+  ],
+  "decorations:18000145": [
+    "sfx/deco_anime_giantschoolgirl_01.ogg",
+    "sfx/deco_anime_giantschoolgirl_02.ogg",
+    "sfx/deco_anime_giantschoolgirl_03.ogg"
+  ],
+  "decorations:18000152": [
+    "sfx/deco_clashgames_goblindive_01.ogg",
+    "sfx/deco_clashgames_goblindive_02.ogg",
+    "sfx/deco_clashgames_goblindive_03.ogg"
+  ],
+  "decorations:18000155": [
+    "sfx/deco_ttrpg_d20_01.ogg",
+    "sfx/deco_ttrpg_d20_02.ogg",
+    "sfx/deco_ttrpg_d20_03.ogg",
+    "sfx/deco_ttrpg_d20_20.ogg"
+  ],
+  "decorations:18000159": [
+    "sfx/deco_clashoween24_cauldron_drop.ogg",
+    "sfx/deco_clashoween24_cauldron_vomit.ogg"
+  ],
+  "decorations:18000160": [
+    "sfx/deco_clashoween24_coffeepot.ogg"
+  ],
+  "decorations:18000162": [
+    "sfx/Building_Clashmas24_RockingReindeer.ogg"
+  ],
+  "decorations:18000163": [
+    "sfx/Building_Clashmas24_Choir.ogg"
+  ],
+  "decorations:18000164": [
+    "sfx/Building_Clashmas24_SnowGlobe.ogg"
+  ],
+  "decorations:18000168": [
+    "sfx/Deco_Tap_GoblinSauna.ogg"
+  ],
+  "decorations:18000169": [
+    "sfx/Deco_Tap_FortuneCookie.ogg"
+  ],
+  "decorations:18000170": [
+    "sfx/Deco_Tap_GoblinRange_Hit_01.ogg",
+    "sfx/Deco_Tap_GoblinRange_Hit_02.ogg",
+    "sfx/Deco_Tap_GoblinRange_Hit_03.ogg",
+    "sfx/Deco_Tap_GoblinRange_Hit_04.ogg",
+    "sfx/Deco_Tap_GoblinRange_Hit_05.ogg",
+    "sfx/Deco_Tap_GoblinRange_Hit_06.ogg",
+    "sfx/Deco_Tap_GoblinRange_Hit_07.ogg",
+    "sfx/Deco_Tap_GoblinRange_Hit_08.ogg"
+  ],
+  "decorations:18000174": [
+    "sfx/Deco_Tap_CreatorFountain.ogg"
+  ],
+  "decorations:18000175": [
+    "sfx/Deco_Tap_Apr25_Wheel_01.ogg",
+    "sfx/Deco_Tap_Apr25_Wheel_02.ogg",
+    "sfx/Deco_Tap_Apr25_Wheel_03.ogg",
+    "sfx/Deco_Tap_Apr25_Wheel_04.ogg",
+    "sfx/Deco_Tap_Apr25_Wheel_05.ogg",
+    "sfx/Deco_Tap_Apr25_Wheel_06.ogg",
+    "sfx/Deco_Tap_Apr25_Wheel_07.ogg",
+    "sfx/Deco_Tap_Apr25_Wheel_08.ogg"
+  ],
+  "decorations:18000177": [
+    "sfx/Deco_Tap_DarkDays_Piano_01.ogg",
+    "sfx/Deco_Tap_DarkDays_Piano_02.ogg",
+    "sfx/Deco_Tap_DarkDays_Piano_03.ogg"
+  ],
+  "decorations:18000180": [
+    "sfx/Deco_Tap_Clasharama_Sculpture.ogg"
+  ],
+  "decorations:18000181": [
+    "sfx/Deco_Tap_Clasharama_Painting_01_Dragon.ogg",
+    "sfx/Deco_Tap_Clasharama_Painting_02_Pekka.ogg",
+    "sfx/Deco_Tap_Clasharama_Painting_03_Builder.ogg",
+    "sfx/Deco_Tap_Clasharama_Painting_04_Tree.ogg"
+  ],
+  "decorations:18000182": [
+    "sfx/Deco_Tap_Cyberpunk_Hologram_01.ogg",
+    "sfx/Deco_Tap_Cyberpunk_Hologram_02.ogg",
+    "sfx/Deco_Tap_Cyberpunk_Hologram_03.ogg",
+    "sfx/Deco_Tap_Cyberpunk_Hologram_04.ogg"
+  ],
+  "decorations:18000187": [
+    "sfx/Deco_Tap_CosmicDragonSkull_01.ogg",
+    "sfx/Deco_Tap_CosmicDragonSkull_02.ogg",
+    "sfx/Deco_Tap_CosmicDragonSkull_03.ogg"
+  ],
+  "decorations:18000189": [
+    "sfx/Deco_Tap_TheCogulator_01.ogg",
+    "sfx/Deco_Tap_TheCogulator_02.ogg",
+    "sfx/Deco_Tap_TheCogulator_03.ogg",
+    "sfx/Deco_Tap_TheCogulator_04.ogg",
+    "sfx/Deco_Tap_TheCogulator_05.ogg"
+  ],
+  "decorations:18000190": [
+    "sfx/Deco_Tap_CosmicBoombox_01.ogg",
+    "sfx/Deco_Tap_CosmicBoombox_02.ogg",
+    "sfx/Deco_Tap_CosmicBoombox_03.ogg"
+  ],
+  "decorations:18000191": [
+    "sfx/Deco_Tap_CosmicCurseBook_01.ogg",
+    "sfx/Deco_Tap_CosmicCurseBook_02.ogg",
+    "sfx/Deco_Tap_CosmicCurseBook_03.ogg",
+    "sfx/Deco_Tap_CosmicCurseBook_04.ogg",
+    "sfx/Deco_Tap_CosmicCurseBook_05.ogg",
+    "sfx/Deco_Tap_CosmicCurseBook_06.ogg"
+  ],
+  "decorations:18000192": [
+    "sfx/deco_tap_eaglemonument.ogg"
+  ],
+  "decorations:18000197": [
+    "sfx/Deco_Tap_ArabianNights_MagicLamp_01.ogg",
+    "sfx/Deco_Tap_ArabianNights_MagicLamp_02.ogg",
+    "sfx/Deco_Tap_ArabianNights_MagicLamp_03.ogg",
+    "sfx/Deco_Tap_ArabianNights_MagicLamp_04.ogg"
+  ],
+  "decorations:18000202": [
+    "sfx/Deco_Tap_FireHorse_01.ogg",
+    "sfx/Deco_Tap_FireHorse_02.ogg",
+    "sfx/Deco_Tap_FireHorse_03.ogg"
+  ],
+  "decorations:18000203": [
+    "sfx/Deco_Tap_HungryHound_01.ogg",
+    "sfx/Deco_Tap_HungryHound_02.ogg",
+    "sfx/Deco_Tap_HungryHound_03.ogg",
+    "sfx/Deco_Tap_HungryHound_04.ogg",
+    "sfx/Deco_Tap_HungryHound_05.ogg",
+    "sfx/Deco_Tap_HungryHound_06.ogg"
+  ],
+  "decorations:18000208": [
+    "sfx/deco_tap_dragonstatue_01.ogg",
+    "sfx/deco_tap_dragonstatue_02.ogg"
+  ],
+  "decorations:18000209": [
+    "sfx/deco_tap_barbblehead.ogg"
+  ],
+  "decorations:18000210": [
+    "sfx/deco_tap_mechabull_00.ogg",
+    "sfx/deco_tap_mechabull_01.ogg",
+    "sfx/deco_tap_mechabull_02.ogg"
+  ],
+  "decorations:18000211": [
+    "sfx/deco_tap_boneidol_01.ogg",
+    "sfx/deco_tap_boneidol_02.ogg",
+    "sfx/deco_tap_boneidol_03.ogg"
+  ],
+  "decorations:18000217": [
+    "sfx/deco_tap_luckycat.ogg"
+  ],
+  "decorations:18000218": [
+    "sfx/sfx_deco_tap_anime26_statue_01.ogg",
+    "sfx/sfx_deco_tap_anime26_statue_02.ogg",
+    "sfx/sfx_deco_tap_anime26_statue_03.ogg"
+  ],
+  "decorations:18000229": [
+    "sfx/deco_glory_grabbers_01.ogg",
+    "sfx/deco_glory_grabbers_02.ogg",
+    "sfx/deco_glory_grabbers_03.ogg"
+  ],
+  "decorations:18000233": [
+    "sfx/deco_card_flipper_01.ogg",
+    "sfx/deco_card_flipper_02.ogg",
+    "sfx/deco_card_flipper_03.ogg"
+  ],
+  "decorations:18000234": [
+    "sfx/deco_awesome_orb_01.ogg",
+    "sfx/deco_awesome_orb_02.ogg",
+    "sfx/deco_awesome_orb_03.ogg"
+  ],
+  "decorations:18000235": [
+    "sfx/deco_odyssey_immortal_monument_01.ogg",
+    "sfx/deco_odyssey_immortal_monument_02.ogg",
+    "sfx/deco_odyssey_immortal_monument_03.ogg"
+  ],
+  "equipment:90000004": [
+    "sfx/grand_warden_shield_01.ogg"
+  ],
+  "equipment:90000006": [
+    "sfx/rock_troll_explo_01.ogg"
+  ],
+  "equipment:90000013": [
+    "sfx/bomb_tower_hit_01.ogg",
+    "sfx/cannon_fire_hit_01.ogg"
+  ],
+  "equipment:90000014": [
+    "sfx/cannon_fire3.ogg"
+  ],
+  "equipment:90000015": [
+    "sfx/ice_mage_impact_01.ogg"
+  ],
+  "equipment:90000016": [
+    "sfx/sfx_ability_aq_monolitharrow_hit_lvl1.ogg",
+    "sfx/sfx_ability_aq_monolitharrow_hit_lvl2.ogg",
+    "sfx/sfx_ability_aq_monolitharrow_hit_lvl3.ogg",
+    "sfx/sfx_ability_aq_monolitharrow_shoot_01.ogg",
+    "sfx/sfx_ability_aq_monolitharrow_shoot_02.ogg",
+    "sfx/sfx_ability_aq_monolitharrow_shoot_03.ogg"
+  ],
+  "equipment:90000019": [
+    "sfx/ability_heroic_torch_blast.ogg"
+  ],
+  "equipment:90000022": [
+    "sfx/mage_attack_02.ogg"
+  ],
+  "equipment:90000032": [
+    "sfx/Ability_SnakeSummon.ogg",
+    "sfx/Troop_BarrelSnake_Attack.ogg",
+    "sfx/Troop_BarrelSnake_Die.ogg",
+    "sfx/Troop_Snake_Bite.ogg"
+  ],
+  "equipment:90000034": [
+    "sfx/bottle_heal_magic_03.ogg",
+    "sfx/healer_attack_01.ogg"
+  ],
+  "equipment:90000035": [
+    "sfx/Ability_MP_DarkCrown_PowerUp.ogg",
+    "sfx/Ability_MP_DarkCrown_SoulBeam.ogg",
+    "sfx/Ability_MP_DarkCrown_SpawnVortex.ogg"
+  ],
+  "equipment:90000040": [
+    "sfx/ability_electro_boots.ogg"
+  ],
+  "equipment:90000043": [
+    "sfx/Ability_DarkOrb_Attack.ogg"
+  ],
+  "equipment:90000044": [
+    "sfx/Ability_ChainPants_Activate.ogg",
+    "sfx/Ability_ChainPants_PutOn.ogg"
+  ],
+  "equipment:90000047": [
+    "sfx/Ability_MP_PowerPump_Fire.ogg",
+    "sfx/Ability_MP_PowerPump_Hit.ogg",
+    "sfx/cannon_fire_hit_01.ogg"
+  ],
+  "equipment:90000049": [
+    "sfx/Ability_MP_MeteorStaff_Fall_01.ogg",
+    "sfx/Ability_MP_MeteorStaff_Fall_02.ogg",
+    "sfx/Ability_MP_MeteorStaff_Fall_03.ogg",
+    "sfx/Ability_MP_MeteorStaff_Impact_01.ogg",
+    "sfx/Ability_MP_MeteorStaff_Impact_02.ogg",
+    "sfx/Ability_MP_MeteorStaff_Impact_03.ogg"
+  ],
+  "equipment:90000050": [
+    "sfx/ability_rc_frostflake_hit_01.ogg",
+    "sfx/ability_rc_frostflake_hit_02.ogg",
+    "sfx/ability_rc_frostflake_hit_03.ogg",
+    "sfx/ability_rc_frostflake_shoot.ogg"
+  ],
+  "equipment:90000051": [
+    "sfx/ability_bk_stickhorse.ogg"
+  ],
+  "equipment:90000052": [
+    "sfx/ability_dd_heal.ogg",
+    "sfx/ability_dd_heal_lp.ogg",
+    "sfx/clash_fire_dragon_dep_01.ogg"
+  ],
+  "equipment:90000053": [
+    "sfx/bomb_tower_hit_01.ogg",
+    "sfx/clash_fire_dragon_dep_01.ogg"
+  ],
+  "equipment:90000056": [
+    "sfx/ability_dd_stunblast.ogg"
+  ],
+  "equipment:90000057": [
+    "sfx/ability_dd_fireblast.ogg"
+  ],
+  "equipment:90000059": [
+    "sfx/sfx_ability_dd_electrofangs_bite.ogg",
+    "sfx/sfx_ability_dd_electrofangs_hit_01.ogg",
+    "sfx/sfx_ability_dd_electrofangs_hit_02.ogg",
+    "sfx/sfx_ability_dd_electrofangs_hit_03.ogg",
+    "sfx/sfx_ability_dd_electrofangs_hit_04.ogg",
+    "sfx/sfx_ability_dd_electrofangs_hit_05.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg"
+  ],
+  "equipment:90000060": [
+    "sfx/ability_dd_heal.ogg",
+    "sfx/ability_dd_heal_lp.ogg",
+    "sfx/sfx_equ_dd_counter_hit_01.ogg",
+    "sfx/sfx_equ_dd_counter_hit_02.ogg",
+    "sfx/sfx_equ_dd_counter_hit_03.ogg",
+    "sfx/sfx_equ_dd_counter_shoot_01.ogg",
+    "sfx/sfx_equ_dd_counter_shoot_02.ogg",
+    "sfx/sfx_equ_dd_counter_shoot_03.ogg"
+  ],
+  "guardians:107000000": [
+    "sfx/RangedGuardian_Atk_1_01.ogg",
+    "sfx/RangedGuardian_Atk_1_02.ogg",
+    "sfx/RangedGuardian_Atk_1_03.ogg",
+    "sfx/RangedGuardian_Atk_2_01.ogg",
+    "sfx/RangedGuardian_Atk_2_02.ogg",
+    "sfx/RangedGuardian_Atk_2_03.ogg",
+    "sfx/RangedGuardian_Cheer.ogg",
+    "sfx/RangedGuardian_Die.ogg",
+    "sfx/RangedGuardian_Hit_01.ogg",
+    "sfx/RangedGuardian_Hit_02.ogg",
+    "sfx/RangedGuardian_Hit_03.ogg",
+    "sfx/stone_golem_death_01.ogg"
+  ],
+  "guardians:107000001": [
+    "sfx/MeleeGuardian_Atk_1_01.ogg",
+    "sfx/MeleeGuardian_Atk_1_02.ogg",
+    "sfx/MeleeGuardian_Atk_1_03.ogg",
+    "sfx/MeleeGuardian_Atk_2_01.ogg",
+    "sfx/MeleeGuardian_Atk_2_02.ogg",
+    "sfx/MeleeGuardian_Atk_2_03.ogg",
+    "sfx/MeleeGuardian_Cheer.ogg",
+    "sfx/MeleeGuardian_Die.ogg",
+    "sfx/MeleeGuardian_Hit_01.ogg",
+    "sfx/MeleeGuardian_Hit_02.ogg",
+    "sfx/MeleeGuardian_Hit_03.ogg",
+    "sfx/MeleeGuardian_RageDeploy.ogg",
+    "sfx/stone_golem_death_01.ogg"
+  ],
+  "guardians:107000008": [
+    "sfx/RangedGuardian_Die.ogg",
+    "sfx/RangedGuardian_Hit_01.ogg",
+    "sfx/RangedGuardian_Hit_02.ogg",
+    "sfx/RangedGuardian_Hit_03.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/generic_hit_01.ogg",
+    "sfx/troop_guardian_logger_attack_01.ogg",
+    "sfx/troop_guardian_logger_attack_02.ogg",
+    "sfx/troop_guardian_logger_intro.ogg",
+    "sfx/troop_guardian_logger_jump.ogg",
+    "sfx/troop_guardian_logger_projectile_01.ogg",
+    "sfx/troop_guardian_logger_projectile_02.ogg",
+    "sfx/troop_guardian_logger_projectile_03.ogg"
+  ],
+  "helpers:93000000": [
+    "sfx/ApprenticeBuilder_Activate.ogg",
+    "sfx/ApprenticeBuilder_BuildingState1.ogg",
+    "sfx/ApprenticeBuilder_Cheer.ogg",
+    "sfx/ApprenticeBuilder_Hammering1.ogg",
+    "sfx/ApprenticeBuilder_cd2_rfw3.ogg",
+    "sfx/ApprenticeBuilder_cd3_rfw4.ogg",
+    "sfx/ApprenticeBuilder_rfw2.ogg"
+  ],
+  "helpers:93000001": [
+    "sfx/Researcher_Activate.ogg",
+    "sfx/Researcher_Cheer1.ogg",
+    "sfx/Researcher_RtW1.ogg",
+    "sfx/Researcher_RtW2.ogg",
+    "sfx/Researcher_RtW3.ogg",
+    "sfx/Researcher_WorkingLong1.ogg",
+    "sfx/Researcher_WorkingLong2.ogg"
+  ],
+  "helpers:93000002": [
+    "sfx/Alchemist_Activate.ogg",
+    "sfx/Alchemist_Cheer.ogg",
+    "sfx/Alchemist_Cooldown_Idle.ogg",
+    "sfx/Alchemist_Cooldown_Loop.ogg",
+    "sfx/Alchemist_RtW1_Loop.ogg",
+    "sfx/Alchemist_RtW2_Loop.ogg"
+  ],
+  "helpers:93000003": [
+    "sfx/prospector_default_celebration.ogg",
+    "sfx/prospector_default_readytowork_loop1.ogg",
+    "sfx/prospector_default_readytowork_loop2.ogg",
+    "sfx/prospector_default_readytoworkloop1.ogg"
+  ],
+  "heroes:28000000": [
+    "sfx/Barbarian_King_2022_Attack_1.ogg",
+    "sfx/Barbarian_King_2022_Attack_2.ogg",
+    "sfx/Barbarian_King_2022_Cheer.ogg",
+    "sfx/Barbarian_King_2022_Menu.ogg",
+    "sfx/Vo_BarbarianKing_Angry.ogg",
+    "sfx/Vo_BarbarianKing_Happy.ogg",
+    "sfx/Vo_BarbarianKing_Neutral.ogg",
+    "sfx/Vo_BarbarianKing_Sad.ogg",
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/barbarian_king_deploy.ogg",
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "heroes:28000001": [
+    "sfx/Vo_ArcherQueen_Angry.ogg",
+    "sfx/Vo_ArcherQueen_Happy.ogg",
+    "sfx/Vo_ArcherQueen_Neutral.ogg",
+    "sfx/Vo_ArcherQueen_Sad.ogg",
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg",
+    "sfx/explosive_arrow_01v2.ogg"
+  ],
+  "heroes:28000002": [
+    "sfx/Grand_Warden_Default_Attack.ogg",
+    "sfx/Grand_Warden_Default_Attack_Fly.ogg",
+    "sfx/Grand_Warden_Default_Cheer.ogg",
+    "sfx/Grand_Warden_Default_Cheer_Fly.ogg",
+    "sfx/Grand_Warden_Default_Menu.ogg",
+    "sfx/Vo_GrandWarden_Angry.ogg",
+    "sfx/Vo_GrandWarden_Happy.ogg",
+    "sfx/Vo_GrandWarden_Neutral.ogg",
+    "sfx/Vo_GrandWarden_Sad.ogg",
+    "sfx/grand_warden_attack_01.ogg",
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/tap_grand_warden_04.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "heroes:28000003": [
+    "sfx/battle_machine_normal_walk_01.ogg",
+    "sfx/builder_bot_atk_hit_01.ogg",
+    "sfx/builder_machine_ability_sfx_01.ogg",
+    "sfx/builder_machine_atk_sfx_01.ogg",
+    "sfx/builder_machine_menu_sfx_01.ogg",
+    "sfx/builder_machine_stun_sfx_01.ogg",
+    "sfx/electro_dragon_sfx_atk_01.ogg",
+    "sfx/electro_dragon_sfx_atk_02.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg",
+    "sfx/war_machine_dep_01.ogg",
+    "sfx/warmachine_lightning_02.ogg"
+  ],
+  "heroes:28000004": [
+    "sfx/Vo_RoyalChampion_Angry.ogg",
+    "sfx/Vo_RoyalChampion_Happy.ogg",
+    "sfx/Vo_RoyalChampion_Neutral.ogg",
+    "sfx/Vo_RoyalChampion_Sad.ogg",
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_alert_01.ogg",
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg",
+    "sfx/rg_atk_hit_01.ogg",
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "heroes:28000005": [
+    "sfx/battle_copter_atk_01.ogg",
+    "sfx/battle_copter_crash_01.ogg",
+    "sfx/battle_copter_menu_01.ogg",
+    "sfx/battle_copter_walk_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/war_machine_dep_01.ogg",
+    "sfx/warmachine_lightning_02.ogg"
+  ],
+  "heroes:28000006": [
+    "sfx/MinionPrince_Default_Atk.ogg",
+    "sfx/MinionPrince_Default_Atk_01.ogg",
+    "sfx/MinionPrince_Default_Atk_02.ogg",
+    "sfx/MinionPrince_Default_Atk_03.ogg",
+    "sfx/MinionPrince_Default_Cheer.ogg",
+    "sfx/MinionPrince_Default_Deploy.ogg",
+    "sfx/MinionPrince_Default_Die.ogg",
+    "sfx/MinionPrince_Default_Menu.ogg",
+    "sfx/Vo_MinionPrince_Angry.ogg",
+    "sfx/Vo_MinionPrince_Happy.ogg",
+    "sfx/Vo_MinionPrince_Neutral.ogg",
+    "sfx/Vo_MinionPrince_Sad.ogg"
+  ],
+  "heroes:28000007": [
+    "sfx/ability_dd_heal.ogg",
+    "sfx/ability_dd_heal_lp.ogg",
+    "sfx/dragonduke_default_atk_1_01.ogg",
+    "sfx/dragonduke_default_atk_1_02.ogg",
+    "sfx/dragonduke_default_atk_1_03.ogg",
+    "sfx/dragonduke_default_atk_2_01.ogg",
+    "sfx/dragonduke_default_atk_2_02.ogg",
+    "sfx/dragonduke_default_atk_2_03.ogg",
+    "sfx/dragonduke_default_cheer.ogg",
+    "sfx/dragonduke_default_deploy.ogg",
+    "sfx/dragonduke_default_die.ogg",
+    "sfx/dragonduke_default_enrage.ogg",
+    "sfx/dragonduke_default_menu.ogg",
+    "sfx/hero_hit_firebreath_gen_01.ogg",
+    "sfx/hero_hit_firebreath_gen_02.ogg",
+    "sfx/hero_hit_firebreath_gen_03.ogg",
+    "sfx/vo_dragonduke_angry_01.ogg",
+    "sfx/vo_dragonduke_angry_02.ogg",
+    "sfx/vo_dragonduke_angry_03.ogg",
+    "sfx/vo_dragonduke_happy_01.ogg",
+    "sfx/vo_dragonduke_happy_02.ogg",
+    "sfx/vo_dragonduke_happy_03.ogg",
+    "sfx/vo_dragonduke_neutral_01.ogg",
+    "sfx/vo_dragonduke_neutral_02.ogg",
+    "sfx/vo_dragonduke_neutral_03.ogg",
+    "sfx/vo_dragonduke_scared_01.ogg",
+    "sfx/vo_dragonduke_scared_02.ogg",
+    "sfx/vo_dragonduke_scared_03.ogg"
+  ],
+  "obstacles:8000021": [
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000028": [
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000031": [
+    "sfx/bush2-halloween.ogg"
+  ],
+  "obstacles:8000032": [
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000036": [
+    "sfx/tap_cauldron_01.ogg"
+  ],
+  "obstacles:8000037": [
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000039": [
+    "sfx/flowar_01.ogg"
+  ],
+  "obstacles:8000040": [
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000065": [
+    "sfx/cake_tap_01.ogg"
+  ],
+  "obstacles:8000067": [
+    "sfx/skull_tap_01.ogg"
+  ],
+  "obstacles:8000068": [
+    "sfx/air_def_hit_02.ogg"
+  ],
+  "obstacles:8000069": [
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000070": [
+    "sfx/coins_collect_01.ogg"
+  ],
+  "obstacles:8000071": [
+    "sfx/cake_tap_01.ogg"
+  ],
+  "obstacles:8000072": [
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000073": [
+    "sfx/skull_tap_01.ogg"
+  ],
+  "obstacles:8000074": [
+    "sfx/bush2.ogg"
+  ],
+  "obstacles:8000076": [
+    "sfx/cake_tap_01.ogg"
+  ],
+  "obstacles:8000077": [
+    "sfx/roysword_vo_01.ogg"
+  ],
+  "obstacles:8000078": [
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000080": [
+    "sfx/cake_tap_01.ogg"
+  ],
+  "obstacles:8000081": [
+    "sfx/clear_tombstone_01.ogg"
+  ],
+  "obstacles:8000082": [
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000083": [
+    "sfx/coins_collect_01.ogg",
+    "sfx/tree8.ogg"
+  ],
+  "obstacles:8000084": [
+    "sfx/cake_tap_01.ogg"
+  ],
+  "obstacles:8000085": [
+    "sfx/halloween2021_deco_tap_01.ogg"
+  ],
+  "obstacles:8000086": [
+    "sfx/collect_diamonds_01.ogg",
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000087": [
+    "sfx/10_anni_cake_01.ogg"
+  ],
+  "obstacles:8000088": [
+    "sfx/halloween2022_deco_tap_01.ogg"
+  ],
+  "obstacles:8000089": [
+    "sfx/collect_diamonds_01.ogg",
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000090": [
+    "sfx/tree8.ogg"
+  ],
+  "obstacles:8000108": [
+    "sfx/11th_anni_cake_tap_01.ogg",
+    "sfx/collect_diamonds_01.ogg"
+  ],
+  "obstacles:8000110": [
+    "sfx/bush2.ogg"
+  ],
+  "obstacles:8000111": [
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000113": [
+    "sfx/tree8.ogg"
+  ],
+  "obstacles:8000115": [
+    "sfx/coins_collect_01.ogg",
+    "sfx/rock_pickup3.ogg"
+  ],
+  "obstacles:8000116": [
+    "sfx/cake_tap_01.ogg",
+    "sfx/coins_collect_01.ogg"
+  ],
+  "obstacles:8000117": [
+    "sfx/bush2.ogg"
+  ],
+  "obstacles:8000127": [
+    "sfx/collect_diamonds_01.ogg",
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000128": [
+    "sfx/tree8.ogg"
+  ],
+  "obstacles:8000129": [
+    "sfx/Deco_Tap_April25_MoneyCase.ogg"
+  ],
+  "obstacles:8000131": [
+    "sfx/cake_tap_01.ogg"
+  ],
+  "obstacles:8000132": [
+    "sfx/bush2.ogg",
+    "sfx/coins_collect_01.ogg"
+  ],
+  "obstacles:8000133": [
+    "sfx/bush2.ogg",
+    "sfx/coins_collect_01.ogg"
+  ],
+  "obstacles:8000134": [
+    "sfx/bush2.ogg",
+    "sfx/coins_collect_01.ogg"
+  ],
+  "obstacles:8000135": [
+    "sfx/coins_collect_01.ogg",
+    "sfx/tree8.ogg"
+  ],
+  "obstacles:8000136": [
+    "sfx/tree8.ogg"
+  ],
+  "obstacles:8000137": [
+    "sfx/collect_diamonds_01.ogg",
+    "sfx/xmastree.ogg"
+  ],
+  "obstacles:8000138": [
+    "sfx/cake_tap_01.ogg"
+  ],
+  "obstacles:8000139": [
+    "sfx/rock_pickup3.ogg"
+  ],
+  "pets:73000001": [
+    "sfx/clash_pet_yak_atk_01.ogg",
+    "sfx/clash_pet_yak_dep_01.ogg",
+    "sfx/clash_pet_yak_die_01.ogg",
+    "sfx/clash_pet_yek_cheer_01.ogg",
+    "sfx/stone_golem_hit_01.ogg"
+  ],
+  "pets:73000002": [
+    "sfx/clash_pet_owl_atk_01.ogg",
+    "sfx/clash_pet_owl_cheer_01.ogg",
+    "sfx/clash_pet_owl_dep_01.ogg",
+    "sfx/clash_pet_owl_die_01.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg"
+  ],
+  "pets:73000003": [
+    "sfx/clash_pet_horse_dep_01.ogg",
+    "sfx/clash_pet_horse_die_01.ogg",
+    "sfx/clash_pet_horse_heal_01.ogg",
+    "sfx/clash_pet_pony_cheer_01.ogg",
+    "sfx/healer_hit_01.ogg",
+    "sfx/healer_hit_02.ogg"
+  ],
+  "pets:73000004": [
+    "sfx/pet_phoenix_atk_01.ogg",
+    "sfx/pet_phoenix_deploy_01.ogg",
+    "sfx/pet_phoenix_die_01.ogg"
+  ],
+  "pets:73000007": [
+    "sfx/pet_iguana_atk_01.ogg",
+    "sfx/pet_iguana_deploy_01.ogg",
+    "sfx/pet_iguana_die_01.ogg"
+  ],
+  "pets:73000008": [
+    "sfx/diggy_appear_01.ogg",
+    "sfx/diggy_atk_01.ogg",
+    "sfx/diggy_dep_01.ogg",
+    "sfx/diggy_die_01.ogg",
+    "sfx/diggy_dig_01.ogg",
+    "sfx/diggy_hit_01.ogg"
+  ],
+  "pets:73000009": [
+    "sfx/frostmite_atk_01.ogg",
+    "sfx/frostmite_die_01.ogg",
+    "sfx/ice_mage_impact_01.ogg",
+    "sfx/pet_frosty_atk_01.ogg",
+    "sfx/pet_frosty_dep_01.ogg",
+    "sfx/pet_frosty_die_01.ogg",
+    "sfx/pet_frosty_summon_01.ogg"
+  ],
+  "pets:73000010": [
+    "sfx/clash_pet_fennec_atk.ogg",
+    "sfx/clash_pet_fennec_cheer.ogg",
+    "sfx/clash_pet_fennec_deploy.ogg",
+    "sfx/clash_pet_fennec_die.ogg",
+    "sfx/clash_pet_fennec_menu.ogg",
+    "sfx/miner_atk_clash_01.ogg"
+  ],
+  "pets:73000011": [
+    "sfx/Clash_Pet_Angry_Jelly_Attack.ogg",
+    "sfx/Clash_Pet_Angry_Jelly_Cheer.ogg",
+    "sfx/Clash_Pet_Angry_Jelly_Deploy.ogg",
+    "sfx/Clash_Pet_Angry_Jelly_Die.ogg",
+    "sfx/Clash_Pet_Angry_Jelly_Menu.ogg"
+  ],
+  "pets:73000016": [
+    "sfx/Pet_Sneezy_Attack.ogg",
+    "sfx/Pet_Sneezy_Attack_Hit.ogg",
+    "sfx/Pet_Sneezy_BubbleBurst.ogg",
+    "sfx/Pet_Sneezy_Cheer.ogg",
+    "sfx/Pet_Sneezy_Deploy.ogg",
+    "sfx/Pet_Sneezy_Die.ogg",
+    "sfx/Pet_Sneezy_Spirit_Attack.ogg",
+    "sfx/Pet_Sneezy_Spirit_Attack_Hit.ogg",
+    "sfx/Pet_Sneezy_Spirit_Deploy.ogg",
+    "sfx/Pet_Sneezy_Spirit_Die.ogg"
+  ],
+  "pets:73000017": [
+    "sfx/pet_greedyraven_attack_1_01.ogg",
+    "sfx/pet_greedyraven_attack_1_02.ogg",
+    "sfx/pet_greedyraven_attack_1_03.ogg",
+    "sfx/pet_greedyraven_attack_2_01.ogg",
+    "sfx/pet_greedyraven_attack_2_02.ogg",
+    "sfx/pet_greedyraven_attack_2_03.ogg",
+    "sfx/pet_greedyraven_attack_3_01.ogg",
+    "sfx/pet_greedyraven_attack_3_02.ogg",
+    "sfx/pet_greedyraven_attack_3_03.ogg",
+    "sfx/pet_greedyraven_cheer.ogg",
+    "sfx/pet_greedyraven_deploy.ogg",
+    "sfx/pet_greedyraven_die.ogg",
+    "sfx/pet_greedyraven_menu.ogg"
+  ],
+  "sceneries:60000063": [
+    "sfx/Cine_TTRPG_ArcherQueen_dl_opt.ogg",
+    "sfx/Cine_TTRPG_BarbKing_dl_opt.ogg",
+    "sfx/Cine_TTRPG_GrandWarden_dl_opt.ogg",
+    "sfx/Cine_TTRPG_RoyalChamp_dl_opt.ogg",
+    "sfx/UI_Transition_TTRPG.ogg"
+  ],
+  "sceneries:60000070": [
+    "sfx/Cine_LNY25_ScrollOpen.ogg",
+    "sfx/UI_Transition_LNY25.ogg"
+  ],
+  "sceneries:60000085": [
+    "sfx/escape_scenery_clickable_a_audio.ogg",
+    "sfx/escape_scenery_fall_audio.ogg"
+  ],
+  "sceneries:60000092": [
+    "sfx/sfx_sce_odyssey_25_tap_statue_01_dl_opt.ogg",
+    "sfx/sfx_sce_odyssey_25_tap_statue_02_dl_opt.ogg",
+    "sfx/sfx_sce_odyssey_25_tap_statue_03_dl_opt.ogg"
+  ],
+  "skins:52000000": [
+    "sfx/Barbarian_King_2022_Attack_1.ogg",
+    "sfx/Barbarian_King_2022_Attack_2.ogg",
+    "sfx/Barbarian_King_2022_Cheer.ogg",
+    "sfx/Barbarian_King_2022_Menu.ogg",
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/barbarian_king_deploy.ogg",
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000001": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/gladiatorking_celebrate_vo_01_dl_opt.ogg"
+  ],
+  "skins:52000002": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg"
+  ],
+  "skins:52000004": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/gladiatorking_celebrate_vo_01_dl_opt.ogg"
+  ],
+  "skins:52000005": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/barbarian_king_deploy.ogg",
+    "sfx/barbarian_king_die_01.ogg",
+    "sfx/barbarian_king_scream_01.ogg"
+  ],
+  "skins:52000006": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg"
+  ],
+  "skins:52000007": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/barbarian_king_deploy.ogg",
+    "sfx/barbarian_king_die_01.ogg",
+    "sfx/barbarian_king_scream_01.ogg"
+  ],
+  "skins:52000008": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/bk_wood_scream_01_dl_opt.ogg"
+  ],
+  "skins:52000010": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/barbarian_king_die_01.ogg",
+    "sfx/gladchampkingpose_01_dl_opt.ogg"
+  ],
+  "skins:52000011": [
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000012": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg"
+  ],
+  "skins:52000013": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg"
+  ],
+  "skins:52000014": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg"
+  ],
+  "skins:52000015": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg"
+  ],
+  "skins:52000016": [
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg"
+  ],
+  "skins:52000017": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg"
+  ],
+  "skins:52000018": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/wood_queen_scream_01_dl_opt.ogg"
+  ],
+  "skins:52000019": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg"
+  ],
+  "skins:52000020": [
+    "sfx/pwdeploy01_dl_opt.ogg"
+  ],
+  "skins:52000021": [
+    "sfx/grand_warden_attack_01.ogg",
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/tap_grand_warden_04.ogg"
+  ],
+  "skins:52000022": [
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg",
+    "sfx/wooden_warden_tap_01_dl_opt.ogg"
+  ],
+  "skins:52000023": [
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/tap_grand_warden_04.ogg"
+  ],
+  "skins:52000024": [
+    "sfx/cannon_08.ogg",
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/tap_grand_warden_04.ogg"
+  ],
+  "skins:52000025": [
+    "sfx/grand_warden_attack_01.ogg",
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/tap_grand_warden_04.ogg"
+  ],
+  "skins:52000026": [
+    "sfx/grand_warden_attack_01.ogg",
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/tap_grand_warden_04.ogg"
+  ],
+  "skins:52000027": [
+    "sfx/barbarian_sword_swing_hit_14.ogg",
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/tap_grand_warden_04.ogg"
+  ],
+  "skins:52000028": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_alert_01.ogg",
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg",
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000029": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_alert_01.ogg",
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg",
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000030": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_alert_01.ogg",
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg",
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000031": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_alert_01.ogg",
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg",
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000032": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_alert_01.ogg",
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg",
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000033": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000034": [
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000035": [
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000039": [
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000040": [
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000041": [
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000042": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000043": [
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000044": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000045": [
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/cny_king_skin_01.ogg"
+  ],
+  "skins:52000046": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/barbarian_king_deploy.ogg",
+    "sfx/barbarian_king_die_01.ogg",
+    "sfx/barbarian_king_scream_01.ogg"
+  ],
+  "skins:52000047": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/barbarian_king_deploy.ogg",
+    "sfx/barbarian_king_die_01.ogg",
+    "sfx/barbarian_king_scream_01.ogg"
+  ],
+  "skins:52000048": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/barbarian_king_deploy.ogg",
+    "sfx/barbarian_king_die_01.ogg",
+    "sfx/barbarian_king_scream_01.ogg"
+  ],
+  "skins:52000049": [
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000050": [
+    "sfx/golem_king_select_01.ogg",
+    "sfx/stone_golem_attack_01.ogg",
+    "sfx/stone_golem_deploy_01.ogg"
+  ],
+  "skins:52000052": [
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/barbarian_king_die_01.ogg",
+    "sfx/tiger_king_atk_01.ogg",
+    "sfx/tiger_king_cheer_sfx_01.ogg",
+    "sfx/tiger_king_deploy_01.ogg",
+    "sfx/tiger_king_menu_sfx_01.ogg"
+  ],
+  "skins:52000053": [
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000054": [
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000055": [
+    "sfx/barbarian_hit_stuff4.ogg"
+  ],
+  "skins:52000056": [
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/barbarian_king_deploy.ogg",
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000057": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg"
+  ],
+  "skins:52000058": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg"
+  ],
+  "skins:52000059": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_scream_01.ogg"
+  ],
+  "skins:52000060": [
+    "sfx/aq_champ_abil_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/champ_archer_queen_atk_01.ogg",
+    "sfx/champ_archer_queen_dep_01.ogg",
+    "sfx/champ_archer_queen_hit_01.ogg",
+    "sfx/champion_archer_wardrobe_01.ogg"
+  ],
+  "skins:52000061": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/daq_attack_sfx_01.ogg",
+    "sfx/daq_cheer_sfx_01.ogg",
+    "sfx/daq_menu_sfx_01.ogg"
+  ],
+  "skins:52000062": [
+    "sfx/aq_champ_abil_01.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/explosive_arrow_01v2.ogg"
+  ],
+  "skins:52000063": [
+    "sfx/aq_champ_abil_01.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/explosive_arrow_01v2.ogg"
+  ],
+  "skins:52000064": [
+    "sfx/explosive_arrow_01v2.ogg"
+  ],
+  "skins:52000065": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000066": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_die_01.ogg"
+  ],
+  "skins:52000067": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg"
+  ],
+  "skins:52000068": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg"
+  ],
+  "skins:52000069": [
+    "sfx/grand_warden_dizzy_01.ogg"
+  ],
+  "skins:52000070": [
+    "sfx/cannon_08.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/warrior_warden_cheer_01.ogg",
+    "sfx/warrior_warden_dep_02.ogg",
+    "sfx/warrior_warden_menu_01.ogg"
+  ],
+  "skins:52000071": [
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/grand_warden_shield_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000072": [
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/grand_warden_shield_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000073": [
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000074": [
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/grand_warden_shield_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000075": [
+    "sfx/grand_warden_shield_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000076": [
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/grand_warden_shield_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000077": [
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000078": [
+    "sfx/grand_warden_dizzy_01.ogg"
+  ],
+  "skins:52000079": [
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000080": [
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg"
+  ],
+  "skins:52000087": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000088": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000089": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_die_01.ogg",
+    "sfx/tiger_king_deploy_01.ogg"
+  ],
+  "skins:52000091": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/barbarian_king_deploy.ogg",
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000092": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000093": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000094": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000095": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg"
+  ],
+  "skins:52000096": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000097": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_die_01.ogg"
+  ],
+  "skins:52000098": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg"
+  ],
+  "skins:52000099": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_die_01.ogg"
+  ],
+  "skins:52000100": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg"
+  ],
+  "skins:52000101": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_die_01.ogg"
+  ],
+  "skins:52000102": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_die_01.ogg"
+  ],
+  "skins:52000103": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_die_01.ogg"
+  ],
+  "skins:52000104": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000105": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000106": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/barbarian_hit_stuff4.ogg"
+  ],
+  "skins:52000112": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000113": [
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000114": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000115": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg"
+  ],
+  "skins:52000116": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg"
+  ],
+  "skins:52000117": [
+    "sfx/scattershot_atk_hit_01.ogg"
+  ],
+  "skins:52000119": [
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg"
+  ],
+  "skins:52000122": [
+    "sfx/grand_warden_dizzy_01.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg"
+  ],
+  "skins:52000123": [
+    "sfx/grand_warden_attack_01.ogg"
+  ],
+  "skins:52000124": [
+    "sfx/scattershot_atk_hit_01.ogg"
+  ],
+  "skins:52000129": [
+    "sfx/grand_warden_attack_01.ogg"
+  ],
+  "skins:52000131": [
+    "sfx/scattershot_atk_hit_01.ogg"
+  ],
+  "skins:52000132": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/scattershot_atk_hit_01.ogg"
+  ],
+  "skins:52000133": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/barbarian_king_attack_01.ogg"
+  ],
+  "skins:52000134": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/barbarian_king_attack_01.ogg"
+  ],
+  "skins:52000135": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_hit_stuff4.ogg"
+  ],
+  "skins:52000136": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_hit_stuff4.ogg"
+  ],
+  "skins:52000137": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000138": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000139": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000141": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg"
+  ],
+  "skins:52000142": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/explosive_arrow_01v2.ogg"
+  ],
+  "skins:52000143": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000144": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000145": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000146": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000147": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000148": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg"
+  ],
+  "skins:52000149": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000150": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000151": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000152": [
+    "sfx/battle_machine_normal_walk_01.ogg",
+    "sfx/builder_bot_atk_hit_01.ogg",
+    "sfx/builder_machine_ability_sfx_01.ogg",
+    "sfx/builder_machine_atk_sfx_01.ogg",
+    "sfx/builder_machine_menu_sfx_01.ogg",
+    "sfx/builder_machine_stun_sfx_01.ogg",
+    "sfx/war_machine_dep_01.ogg"
+  ],
+  "skins:52000153": [
+    "sfx/battle_machine_armour_walk_01.ogg",
+    "sfx/builder_bot_atk_hit_01.ogg",
+    "sfx/war_machine_dep_01.ogg"
+  ],
+  "skins:52000155": [
+    "sfx/builder_bot_atk_hit_01.ogg",
+    "sfx/war_machine_dep_01.ogg"
+  ],
+  "skins:52000156": [
+    "sfx/battle_machine_armour_walk_01.ogg",
+    "sfx/builder_bot_atk_hit_01.ogg",
+    "sfx/war_machine_dep_01.ogg"
+  ],
+  "skins:52000163": [
+    "sfx/battle_copter_atk_01.ogg",
+    "sfx/battle_copter_crash_01.ogg",
+    "sfx/battle_copter_menu_01.ogg",
+    "sfx/battle_copter_walk_01.ogg",
+    "sfx/war_machine_dep_01.ogg"
+  ],
+  "skins:52000164": [
+    "sfx/battle_copter_atk_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/war_machine_dep_01.ogg"
+  ],
+  "skins:52000166": [
+    "sfx/battle_copter_atk_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/war_machine_dep_01.ogg"
+  ],
+  "skins:52000174": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg"
+  ],
+  "skins:52000176": [
+    "sfx/ancient_defcon_2.ogg"
+  ],
+  "skins:52000178": [
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000179": [
+    "sfx/warriorgirl_hit_01.ogg"
+  ],
+  "skins:52000180": [
+    "sfx/warriorgirl_hit_01.ogg"
+  ],
+  "skins:52000183": [
+    "sfx/warriorgirl_hit_01.ogg"
+  ],
+  "skins:52000191": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg"
+  ],
+  "skins:52000192": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000193": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000194": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000195": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/barbarian_king_attack_01.ogg"
+  ],
+  "skins:52000196": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg"
+  ],
+  "skins:52000197": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg"
+  ],
+  "skins:52000198": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000199": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000200": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000201": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_hit_stuff4.ogg"
+  ],
+  "skins:52000202": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_hit_stuff4.ogg"
+  ],
+  "skins:52000203": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_hit_stuff4.ogg"
+  ],
+  "skins:52000204": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000205": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_sword_swing_hit_14.ogg"
+  ],
+  "skins:52000206": [
+    "sfx/BarbarianKing_Wastelands_Hit_03_dl_opt.ogg",
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000207": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000208": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_sword_swing_hit_14.ogg"
+  ],
+  "skins:52000209": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/hero_hit_melee_metal_hollow_01.ogg",
+    "sfx/hero_hit_melee_metal_hollow_02.ogg",
+    "sfx/hero_hit_melee_metal_hollow_03.ogg"
+  ],
+  "skins:52000210": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg"
+  ],
+  "skins:52000211": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg"
+  ],
+  "skins:52000212": [
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_12.ogg"
+  ],
+  "skins:52000213": [
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_12.ogg"
+  ],
+  "skins:52000215": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_12.ogg"
+  ],
+  "skins:52000216": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000217": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000218": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_12.ogg"
+  ],
+  "skins:52000219": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000220": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000221": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000222": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000223": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000224": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/hero_hit_projectile_arrow_magic_01.ogg",
+    "sfx/hero_hit_projectile_arrow_magic_02.ogg",
+    "sfx/hero_hit_projectile_arrow_magic_03.ogg"
+  ],
+  "skins:52000225": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/hero_hit_projectile_arrow_magic_01.ogg",
+    "sfx/hero_hit_projectile_arrow_magic_02.ogg",
+    "sfx/hero_hit_projectile_arrow_magic_03.ogg"
+  ],
+  "skins:52000226": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000227": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/sfx_her_hit_projectile_magic_ghost_01.ogg",
+    "sfx/sfx_her_hit_projectile_magic_ghost_02.ogg",
+    "sfx/sfx_her_hit_projectile_magic_ghost_03.ogg"
+  ],
+  "skins:52000230": [
+    "sfx/scattershot_atk_hit_01.ogg"
+  ],
+  "skins:52000231": [
+    "sfx/scattershot_atk_hit_01.ogg"
+  ],
+  "skins:52000233": [
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000234": [
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000235": [
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000236": [
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000239": [
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000240": [
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000245": [
+    "sfx/hero_hit_projectile_magic_wet_01.ogg",
+    "sfx/hero_hit_projectile_magic_wet_02.ogg",
+    "sfx/hero_hit_projectile_magic_wet_03.ogg"
+  ],
+  "skins:52000246": [
+    "sfx/hero_hit_projectile_magic_evil_01.ogg",
+    "sfx/hero_hit_projectile_magic_evil_02.ogg",
+    "sfx/hero_hit_projectile_magic_evil_03.ogg"
+  ],
+  "skins:52000247": [
+    "sfx/hero_hit_projectile_magic_elec_01.ogg",
+    "sfx/hero_hit_projectile_magic_elec_02.ogg",
+    "sfx/hero_hit_projectile_magic_elec_03.ogg"
+  ],
+  "skins:52000248": [
+    "sfx/sfx_her_hit_projectile_magic_ghost_01.ogg",
+    "sfx/sfx_her_hit_projectile_magic_ghost_02.ogg",
+    "sfx/sfx_her_hit_projectile_magic_ghost_03.ogg"
+  ],
+  "skins:52000250": [
+    "sfx/MinionPrince_Default_Atk.ogg",
+    "sfx/MinionPrince_Default_Atk_01.ogg",
+    "sfx/MinionPrince_Default_Atk_02.ogg",
+    "sfx/MinionPrince_Default_Atk_03.ogg",
+    "sfx/MinionPrince_Default_Cheer.ogg",
+    "sfx/MinionPrince_Default_Deploy.ogg",
+    "sfx/MinionPrince_Default_Die.ogg",
+    "sfx/MinionPrince_Default_Menu.ogg"
+  ],
+  "skins:52000251": [
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000257": [
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "skins:52000263": [
+    "sfx/hero_hit_projectile_magic_fire_01.ogg",
+    "sfx/hero_hit_projectile_magic_fire_02.ogg",
+    "sfx/hero_hit_projectile_magic_fire_03.ogg"
+  ],
+  "skins:52000264": [
+    "sfx/hero_hit_projectile_magic_cursed_01.ogg",
+    "sfx/hero_hit_projectile_magic_cursed_02.ogg",
+    "sfx/hero_hit_projectile_magic_cursed_03.ogg"
+  ],
+  "skins:52000265": [
+    "sfx/hero_hit_projectile_magic_fire_01.ogg",
+    "sfx/hero_hit_projectile_magic_fire_02.ogg",
+    "sfx/hero_hit_projectile_magic_fire_03.ogg"
+  ],
+  "skins:52000266": [
+    "sfx/sfx_her_hit_projectile_magic_ghost_01.ogg",
+    "sfx/sfx_her_hit_projectile_magic_ghost_02.ogg",
+    "sfx/sfx_her_hit_projectile_magic_ghost_03.ogg"
+  ],
+  "skins:52000270": [
+    "sfx/MinionPrince_Default_Atk.ogg",
+    "sfx/MinionPrince_Default_Atk_01.ogg",
+    "sfx/MinionPrince_Default_Atk_02.ogg",
+    "sfx/MinionPrince_Default_Atk_03.ogg",
+    "sfx/MinionPrince_Default_Cheer.ogg",
+    "sfx/MinionPrince_Default_Deploy.ogg",
+    "sfx/MinionPrince_Default_Die.ogg",
+    "sfx/MinionPrince_Default_Menu.ogg"
+  ],
+  "skins:52000285": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/hero_hit_melee_metal_fire_01.ogg",
+    "sfx/hero_hit_melee_metal_fire_02.ogg",
+    "sfx/hero_hit_melee_metal_fire_03.ogg"
+  ],
+  "skins:52000286": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000287": [
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/sfx_her_hit_melee_metal_magic_01.ogg",
+    "sfx/sfx_her_hit_melee_metal_magic_02.ogg",
+    "sfx/sfx_her_hit_melee_metal_magic_03.ogg"
+  ],
+  "skins:52000288": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000289": [
+    "sfx/barb_king_rage_fist_01.ogg"
+  ],
+  "skins:52000292": [
+    "sfx/Barbarian_King_2022_Attack_1.ogg",
+    "sfx/Barbarian_King_2022_Attack_2.ogg",
+    "sfx/Barbarian_King_2022_Cheer.ogg",
+    "sfx/Barbarian_King_2022_Menu.ogg",
+    "sfx/barb_king_rage_fist_01.ogg",
+    "sfx/barbarian_king_attack_01.ogg",
+    "sfx/barbarian_king_deploy.ogg",
+    "sfx/barbarian_king_die_01.ogg"
+  ],
+  "skins:52000293": [
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_12.ogg",
+    "sfx/barbarian_king_die_01.ogg",
+    "sfx/barbarian_king_zuqiu_atk_sfx_01.ogg",
+    "sfx/barbarian_king_zuqiu_cheer_sfx_01.ogg",
+    "sfx/barbarian_king_zuqiu_mean_sfx_01.ogg",
+    "sfx/barbarian_king_zuqiu_sfx_01.ogg"
+  ],
+  "skins:52000296": [
+    "sfx/hero_hit_projectile_spear_fire_01.ogg",
+    "sfx/hero_hit_projectile_spear_fire_02.ogg",
+    "sfx/hero_hit_projectile_spear_fire_03.ogg",
+    "sfx/hero_hit_shield_fire_01.ogg",
+    "sfx/hero_hit_shield_fire_02.ogg",
+    "sfx/hero_hit_shield_fire_03.ogg"
+  ],
+  "skins:52000297": [
+    "sfx/hero_hit_projectile_spear_fire_01.ogg",
+    "sfx/hero_hit_projectile_spear_fire_02.ogg",
+    "sfx/hero_hit_projectile_spear_fire_03.ogg"
+  ],
+  "skins:52000304": [
+    "sfx/ancient_defcon_2.ogg",
+    "sfx/rg_atk_01.ogg",
+    "sfx/rg_atk_02.ogg",
+    "sfx/rg_guard_01.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "skins:52000319": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000320": [
+    "sfx/archer_invis_01v2.ogg",
+    "sfx/archer_queen_attack_01.ogg",
+    "sfx/archer_queen_attack_02.ogg",
+    "sfx/archer_queen_deploy_01.ogg",
+    "sfx/archer_queen_die_01.ogg"
+  ],
+  "skins:52000321": [
+    "sfx/archer_queen_die_01.ogg",
+    "sfx/archer_queen_zuqiu_atk_sfx_01.ogg",
+    "sfx/archer_queen_zuqiu_atk_sfx_02.ogg",
+    "sfx/archer_queen_zuqiu_cheer_sfx_01.ogg",
+    "sfx/archer_queen_zuqiu_mean_sfx_01.ogg",
+    "sfx/archer_queen_zuqiu_sfx_01.ogg",
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_12.ogg"
+  ],
+  "skins:52000322": [
+    "sfx/archer_invis_01v2.ogg"
+  ],
+  "skins:52000331": [
+    "sfx/Grand_Warden_Default_Attack.ogg",
+    "sfx/Grand_Warden_Default_Attack_Fly.ogg",
+    "sfx/Grand_Warden_Default_Cheer.ogg",
+    "sfx/Grand_Warden_Default_Cheer_Fly.ogg",
+    "sfx/Grand_Warden_Default_Menu.ogg",
+    "sfx/grand_warden_attack_01.ogg",
+    "sfx/grand_warden_deploy_02.ogg",
+    "sfx/grand_warden_dizzy_01.ogg"
+  ],
+  "skins:52000333": [
+    "sfx/GrandWarden_zuqiu_atk_sfx_01.ogg",
+    "sfx/GrandWarden_zuqiu_cheer_sfx_01.ogg",
+    "sfx/GrandWarden_zuqiu_mean_sfx_01.ogg",
+    "sfx/GrandWarden_zuqiu_sfx_01.ogg",
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_12.ogg",
+    "sfx/grand_warden_dizzy_01.ogg"
+  ],
+  "skins:52000342": [
+    "sfx/dragonduke_default_atk_1_01.ogg",
+    "sfx/dragonduke_default_atk_1_02.ogg",
+    "sfx/dragonduke_default_atk_1_03.ogg",
+    "sfx/dragonduke_default_atk_2_01.ogg",
+    "sfx/dragonduke_default_atk_2_02.ogg",
+    "sfx/dragonduke_default_atk_2_03.ogg",
+    "sfx/dragonduke_default_cheer.ogg",
+    "sfx/dragonduke_default_deploy.ogg",
+    "sfx/dragonduke_default_die.ogg",
+    "sfx/dragonduke_default_menu.ogg",
+    "sfx/hero_hit_firebreath_gen_01.ogg",
+    "sfx/hero_hit_firebreath_gen_02.ogg",
+    "sfx/hero_hit_firebreath_gen_03.ogg"
+  ],
+  "skins:52000343": [
+    "sfx/hero_hit_firebreath_gen_01.ogg",
+    "sfx/hero_hit_firebreath_gen_02.ogg",
+    "sfx/hero_hit_firebreath_gen_03.ogg"
+  ],
+  "skins:52000344": [
+    "sfx/hero_hit_firebreath_gen_01.ogg",
+    "sfx/hero_hit_firebreath_gen_02.ogg",
+    "sfx/hero_hit_firebreath_gen_03.ogg"
+  ],
+  "skins:52000345": [
+    "sfx/dragonduke_dragonescape_atk_1_02_dl_opt.ogg",
+    "sfx/dragonduke_dragonescape_atk_1_03_dl_opt.ogg",
+    "sfx/dragonduke_dragonescape_atk_2_01_dl_opt.ogg",
+    "sfx/dragonduke_dragonescape_cheer_dl_opt.ogg",
+    "sfx/sfx_her_hit_projectile_magic_ghost_01.ogg",
+    "sfx/sfx_her_hit_projectile_magic_ghost_02.ogg",
+    "sfx/sfx_her_hit_projectile_magic_ghost_03.ogg"
+  ],
+  "skins:52000349": [
+    "sfx/dragonduke_default_atk_1_01.ogg",
+    "sfx/dragonduke_default_atk_1_02.ogg",
+    "sfx/dragonduke_default_atk_1_03.ogg",
+    "sfx/dragonduke_default_atk_2_01.ogg",
+    "sfx/dragonduke_default_atk_2_02.ogg",
+    "sfx/dragonduke_default_atk_2_03.ogg",
+    "sfx/dragonduke_default_cheer.ogg",
+    "sfx/dragonduke_default_deploy.ogg",
+    "sfx/dragonduke_default_die.ogg",
+    "sfx/dragonduke_default_menu.ogg",
+    "sfx/hero_hit_firebreath_gen_01.ogg",
+    "sfx/hero_hit_firebreath_gen_02.ogg",
+    "sfx/hero_hit_firebreath_gen_03.ogg"
+  ],
+  "skins:52000354": [
+    "sfx/MinionPrince_Default_Deploy.ogg",
+    "sfx/MinionPrince_Default_Die.ogg"
+  ],
+  "skins:52000378": [
+    "sfx/RoyalChampion_zuqiu_atk_sfx_01.ogg",
+    "sfx/RoyalChampion_zuqiu_atk_sfx_02.ogg",
+    "sfx/RoyalChampion_zuqiu_cheer_sfx_01.ogg",
+    "sfx/RoyalChampion_zuqiu_mean_sfx_01.ogg",
+    "sfx/RoyalChampion_zuqiu_sfx_01.ogg",
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_12.ogg",
+    "sfx/rg_knockout_01.ogg"
+  ],
+  "spells:26000000": [
+    "sfx/bottle_break_04_lightning_01.ogg",
+    "sfx/lightning_amb_01.ogg",
+    "sfx/magic_bottle_fall_05.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg"
+  ],
+  "spells:26000001": [
+    "sfx/bottle_heal_magic_03.ogg",
+    "sfx/healer_attack_01.ogg",
+    "sfx/magic_bottle_fall_05.ogg"
+  ],
+  "spells:26000002": [
+    "sfx/bottle_rage_magic_07v2.ogg",
+    "sfx/magic_bottle_fall_05.ogg"
+  ],
+  "spells:26000003": [
+    "sfx/bottle_jump_spell_01.ogg",
+    "sfx/magic_bottle_fall_05.ogg"
+  ],
+  "spells:26000005": [
+    "sfx/freeze_spell_01.ogg",
+    "sfx/magic_bottle_fall_05.ogg"
+  ],
+  "spells:26000006": [
+    "sfx/cannon_fire3.ogg",
+    "sfx/mage_deploy_06.ogg",
+    "sfx/santa.ogg",
+    "sfx/xmastree.ogg"
+  ],
+  "spells:26000009": [
+    "sfx/vial_fall_02.ogg",
+    "sfx/vial_poison_hit_gound_01.ogg"
+  ],
+  "spells:26000010": [
+    "sfx/vial_earthquake_hit_gound_01.ogg",
+    "sfx/vial_fall_02.ogg"
+  ],
+  "spells:26000011": [
+    "sfx/vial_fall_02.ogg",
+    "sfx/vial_speed_hit_gound_01.ogg"
+  ],
+  "spells:26000016": [
+    "sfx/copy_spell_deploy_01.ogg",
+    "sfx/vial_fall_02.ogg"
+  ],
+  "spells:26000017": [
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/skelly_spell_land_01.ogg",
+    "sfx/summon_attack_01.ogg",
+    "sfx/summon_die_02.ogg",
+    "sfx/upfromground_05.ogg",
+    "sfx/vial_fall_02.ogg"
+  ],
+  "spells:26000028": [
+    "sfx/bat_atk_01.ogg",
+    "sfx/bat_atk_hit_01.ogg",
+    "sfx/bat_deploy_01.ogg",
+    "sfx/clashbat_spell_01.ogg",
+    "sfx/tinymite_die_03.ogg",
+    "sfx/vial_fall_02.ogg"
+  ],
+  "spells:26000035": [
+    "sfx/invis_spell_01.ogg",
+    "sfx/vial_fall_02.ogg"
+  ],
+  "spells:26000053": [
+    "sfx/recall_spell_01.ogg",
+    "sfx/recall_spell_back_01.ogg",
+    "sfx/vial_fall_02.ogg"
+  ],
+  "spells:26000070": [
+    "sfx/overgrowth_spell_01.ogg",
+    "sfx/overgrowth_spell_retract_01.ogg",
+    "sfx/vial_fall_02.ogg"
+  ],
+  "spells:26000073": [
+    "sfx/frostmite_clashmas23_attack.ogg",
+    "sfx/frostmite_clashmas23_die.ogg",
+    "sfx/healer_hit_01.ogg",
+    "sfx/healer_hit_02.ogg"
+  ],
+  "spells:26000098": [
+    "sfx/Spell_Revive_Activate.ogg",
+    "sfx/Spell_Revive_Deploy.ogg"
+  ],
+  "spells:26000109": [
+    "sfx/Spell_de_IceBlock_Activate.ogg",
+    "sfx/Spell_de_IceBlock_All.ogg",
+    "sfx/Spell_de_IceBlock_End.ogg",
+    "sfx/Spell_de_IceBlock_Loop.ogg",
+    "sfx/magic_bottle_fall_05.ogg"
+  ],
+  "spells:26000120": [
+    "sfx/spell_totemtower_deploy_01.ogg",
+    "sfx/spell_totemtower_deploy_02.ogg",
+    "sfx/spell_totemtower_deploy_03.ogg",
+    "sfx/spell_totemtower_destroy_01.ogg",
+    "sfx/spell_totemtower_destroy_02.ogg",
+    "sfx/stone_golem_deploy_01.ogg",
+    "sfx/stone_golem_hit_01.ogg",
+    "sfx/vial_fall_02.ogg"
+  ],
+  "spells:26000123": [
+    "sfx/bottle_break_04_lightning_01.ogg",
+    "sfx/lightning_amb_01.ogg",
+    "sfx/magic_bottle_fall_05.ogg",
+    "sfx/sfx_spell_def_brainwash_01.ogg",
+    "sfx/sfx_spell_def_brainwash_02.ogg",
+    "sfx/sfx_spell_def_brainwash_03.ogg",
+    "sfx/sfx_spell_def_brainwash_hit_01.ogg",
+    "sfx/sfx_spell_def_brainwash_hit_02.ogg",
+    "sfx/sfx_spell_def_brainwash_hit_03.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg",
+    "sfx/vial_fall_02.ogg"
+  ],
+  "traps:12000000": [
+    "sfx/bad_move_06.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/generic_hit_01.ogg",
+    "sfx/wall_pickup_01.ogg"
+  ],
+  "traps:12000001": [
+    "sfx/bad_move_06.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/generic_hit_01.ogg",
+    "sfx/trap_eject_01v2.ogg",
+    "sfx/wall_pickup_01.ogg"
+  ],
+  "traps:12000002": [
+    "sfx/bad_move_06.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/generic_hit_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/wall_pickup_01.ogg"
+  ],
+  "traps:12000005": [
+    "sfx/air_trap.ogg",
+    "sfx/bad_move_06.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/wall_pickup_01.ogg"
+  ],
+  "traps:12000006": [
+    "sfx/air_trap.ogg",
+    "sfx/bad_move_06.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/wall_pickup_01.ogg"
+  ],
+  "traps:12000008": [
+    "sfx/coffin_pickup_01.ogg",
+    "sfx/coffin_place_01.ogg",
+    "sfx/coffin_popup_01.ogg"
+  ],
+  "traps:12000010": [
+    "sfx/bad_move_06.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/generic_hit_01.ogg",
+    "sfx/trap_eject_01v2.ogg",
+    "sfx/wall_pickup_01.ogg"
+  ],
+  "traps:12000011": [
+    "sfx/bad_move_06.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/generic_hit_01.ogg",
+    "sfx/trap_eject_01v2.ogg",
+    "sfx/wall_pickup_01.ogg"
+  ],
+  "traps:12000013": [
+    "sfx/bad_move_06.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/wall_pickup_01.ogg"
+  ],
+  "traps:12000014": [
+    "sfx/bad_move_06.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/wall_pickup_01.ogg"
+  ],
+  "traps:12000016": [
+    "sfx/cannon_drop2.ogg",
+    "sfx/generic_hit_01.ogg",
+    "sfx/shrink_spell_03.ogg",
+    "sfx/total_suckage_01.ogg",
+    "sfx/wall_pickup_01.ogg"
+  ],
+  "traps:12000020": [
+    "sfx/Defence_GigaBomb_Blast.ogg",
+    "sfx/Defence_GigaBomb_Fuse.ogg",
+    "sfx/cannon_drop2.ogg",
+    "sfx/wall_pickup_01.ogg"
+  ],
+  "troops:4000000": [
+    "sfx/barb_deploy_11.ogg",
+    "sfx/barb_deploy_11v2.ogg",
+    "sfx/barb_deploy_11v3.ogg",
+    "sfx/barbarian_death_01.ogg",
+    "sfx/barbarian_death_02.ogg",
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/barbarian_sword_swing_hit_14.ogg",
+    "sfx/barbarian_sword_swing_hit_14v2.ogg",
+    "sfx/barbarian_sword_swing_hit_14v3.ogg"
+  ],
+  "troops:4000001": [
+    "sfx/archer_death_05.ogg",
+    "sfx/archer_death_05v2.ogg",
+    "sfx/archer_deploy_09.ogg",
+    "sfx/archer_deploy_09v2.ogg",
+    "sfx/archer_deploy_09v3.ogg",
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_07v2.ogg",
+    "sfx/arrow_hit_07v3.ogg",
+    "sfx/arrow_hit_12.ogg"
+  ],
+  "troops:4000002": [
+    "sfx/gob_attack_01.ogg",
+    "sfx/gob_attack_02.ogg",
+    "sfx/gob_attack_03.ogg",
+    "sfx/goblin_death_02.ogg",
+    "sfx/goblin_deploy_14.ogg",
+    "sfx/goblin_deploy_14v2.ogg",
+    "sfx/goblin_deploy_14v3.ogg"
+  ],
+  "troops:4000003": [
+    "sfx/giant_attack_05.ogg",
+    "sfx/giant_attack_06.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/giant_death_02.ogg",
+    "sfx/giant_deploy_04.ogg",
+    "sfx/giant_deploy_04v2.ogg",
+    "sfx/giant_deploy_04v3.ogg"
+  ],
+  "troops:4000004": [
+    "sfx/cannon_fire3.ogg",
+    "sfx/deploy_skeleton_07.ogg",
+    "sfx/deploy_skeleton_07v2.ogg",
+    "sfx/deploy_skeleton_07v3.ogg",
+    "sfx/wall_breaker_attack_01.ogg",
+    "sfx/wall_breaker_die_01.ogg"
+  ],
+  "troops:4000005": [
+    "sfx/balloon_deploy_02.ogg",
+    "sfx/balloon_die_01.ogg",
+    "sfx/balloon_hit_01.ogg",
+    "sfx/cannon_fire3.ogg"
+  ],
+  "troops:4000006": [
+    "sfx/mage_attack_02.ogg",
+    "sfx/mage_attack_02v2.ogg",
+    "sfx/mage_attack_02v3.ogg",
+    "sfx/mage_deploy_06.ogg",
+    "sfx/wizard_die_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "troops:4000007": [
+    "sfx/healer_attack_01.ogg",
+    "sfx/healer_deploy_01.ogg",
+    "sfx/healer_die_01.ogg",
+    "sfx/healer_hit_01.ogg",
+    "sfx/healer_hit_02.ogg"
+  ],
+  "troops:4000008": [
+    "sfx/dragon_attack_01.ogg",
+    "sfx/dragon_deploy_01.ogg",
+    "sfx/dragon_die_01.ogg"
+  ],
+  "troops:4000009": [
+    "sfx/deploy_pekka_05.ogg",
+    "sfx/pekka_attack_02v2.ogg",
+    "sfx/pekka_attack_hit_02.ogg",
+    "sfx/pekka_death_06.ogg"
+  ],
+  "troops:4000010": [
+    "sfx/balloon_hit_01.ogg",
+    "sfx/garg_attack_01.ogg",
+    "sfx/garg_deploy_02.ogg",
+    "sfx/garg_die_01.ogg"
+  ],
+  "troops:4000011": [
+    "sfx/boarrider_attack_01.ogg",
+    "sfx/boarrider_attack_02.ogg",
+    "sfx/boarrider_deploy_01.ogg",
+    "sfx/boarrider_deploy_02.ogg",
+    "sfx/boarrider_die_02.ogg",
+    "sfx/bow_place.ogg"
+  ],
+  "troops:4000012": [
+    "sfx/warriorgirl_die_01.ogg",
+    "sfx/warriorgirl_hit_01.ogg",
+    "sfx/warriorgirlattack_01.ogg",
+    "sfx/warriorgirlattack_02.ogg",
+    "sfx/warriorgirlattack_03.ogg",
+    "sfx/warriorgirlattack_04.ogg",
+    "sfx/warriorgirlattack_05.ogg",
+    "sfx/warriorgirlattack_06.ogg",
+    "sfx/warriorgirldeploy_01.ogg",
+    "sfx/warriorgirldeploy_02.ogg"
+  ],
+  "troops:4000013": [
+    "sfx/stone_golem_attack_01.ogg",
+    "sfx/stone_golem_death_01.ogg",
+    "sfx/stone_golem_deploy_01.ogg",
+    "sfx/stone_golem_hit_01.ogg"
+  ],
+  "troops:4000015": [
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/slimeball_fire_05.ogg",
+    "sfx/summon_attack_01.ogg",
+    "sfx/summon_die_02.ogg",
+    "sfx/upfromground_05.ogg",
+    "sfx/witch_deploy_01.ogg",
+    "sfx/witch_die_01.ogg",
+    "sfx/witch_summon_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "troops:4000017": [
+    "sfx/tiny_attack_04.ogg",
+    "sfx/tiny_deploy_05.ogg",
+    "sfx/tiny_die_03.ogg",
+    "sfx/tiny_hurt_02.ogg",
+    "sfx/tinymite_attack_04.ogg",
+    "sfx/tinymite_die_03.ogg",
+    "sfx/tinymite_hurt_01.ogg"
+  ],
+  "troops:4000022": [
+    "sfx/rock_troll_dep_02.ogg",
+    "sfx/rock_troll_explo_01.ogg",
+    "sfx/rock_troll_hit_02.ogg",
+    "sfx/rock_troll_throw_01.ogg",
+    "sfx/rock_troll_throw_02.ogg",
+    "sfx/rock_troll_throw_03.ogg",
+    "sfx/wizard_die_01.ogg"
+  ],
+  "troops:4000023": [
+    "sfx/angry_dragon_01.ogg",
+    "sfx/baby_dragon_atk_01.ogg",
+    "sfx/baby_dragon_death_01.ogg",
+    "sfx/baby_dragon_death_02.ogg",
+    "sfx/babydragon_deploy_01.ogg"
+  ],
+  "troops:4000024": [
+    "sfx/miner_atk_clash_01.ogg",
+    "sfx/miner_death_02.ogg",
+    "sfx/miner_dig_down_01.ogg",
+    "sfx/miner_dig_oneshot_01.ogg"
+  ],
+  "troops:4000026": [
+    "sfx/barbarian_death_01.ogg",
+    "sfx/barbarian_death_02.ogg",
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/barbarian_sword_swing_hit_14.ogg",
+    "sfx/barbarian_sword_swing_hit_14v2.ogg",
+    "sfx/barbarian_sword_swing_hit_14v3.ogg",
+    "sfx/super_barb_deploy_01.ogg",
+    "sfx/super_barb_deploy_02.ogg"
+  ],
+  "troops:4000027": [
+    "sfx/ice_archer_deploy_01.ogg",
+    "sfx/ice_archer_die_01.ogg",
+    "sfx/ice_archer_fire_01.ogg"
+  ],
+  "troops:4000028": [
+    "sfx/cannon_fire3.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/super_skele_deploy_01.ogg",
+    "sfx/wall_breaker_attack_01.ogg"
+  ],
+  "troops:4000029": [
+    "sfx/giant_attack_05.ogg",
+    "sfx/giant_attack_06.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/giant_death_02.ogg",
+    "sfx/super_giant_deploy_01.ogg",
+    "sfx/super_giant_deploy_02.ogg"
+  ],
+  "troops:4000030": [
+    "sfx/ice_mage_impact_01.ogg",
+    "sfx/ice_wiz_death_01.ogg",
+    "sfx/ice_wiz_death_02.ogg",
+    "sfx/ice_wiz_deploy_01.ogg",
+    "sfx/ice_wizard_atk_01.ogg"
+  ],
+  "troops:4000031": [
+    "sfx/barb_deploy_11.ogg",
+    "sfx/barb_deploy_11v2.ogg",
+    "sfx/barb_deploy_11v3.ogg",
+    "sfx/barbarian_death_01.ogg",
+    "sfx/barbarian_death_02.ogg",
+    "sfx/barbarian_sword_swing_hit_14.ogg",
+    "sfx/barbarian_sword_swing_hit_14v2.ogg",
+    "sfx/barbarian_sword_swing_hit_14v3.ogg",
+    "sfx/new_barb_atk_hit_01.ogg"
+  ],
+  "troops:4000032": [
+    "sfx/archer_death_05.ogg",
+    "sfx/archer_death_05v2.ogg",
+    "sfx/crowwbow_archer_01.ogg",
+    "sfx/crowwbow_archer_02.ogg",
+    "sfx/new_archer_atk_01.ogg",
+    "sfx/new_archer_atk_02.ogg",
+    "sfx/new_archer_atk_03.ogg",
+    "sfx/new_archer_impact_01.ogg"
+  ],
+  "troops:4000033": [
+    "sfx/balloon_hit_01.ogg",
+    "sfx/garg_2_atk_hit_01.ogg",
+    "sfx/garg_2_die_01.ogg",
+    "sfx/poison_garg_2nd_atk_01.ogg",
+    "sfx/poison_garg_atk_01.ogg",
+    "sfx/poison_garg_dep_01.ogg"
+  ],
+  "troops:4000034": [
+    "sfx/giant_attack_05.ogg",
+    "sfx/giant_attack_06.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/giant_death_02.ogg",
+    "sfx/giant_deploy_04.ogg",
+    "sfx/giant_deploy_04v2.ogg",
+    "sfx/giant_deploy_04v3.ogg",
+    "sfx/giant_shield_01.ogg",
+    "sfx/rock_troll_explo_01.ogg",
+    "sfx/rock_troll_hit_02.ogg"
+  ],
+  "troops:4000035": [
+    "sfx/balloon_hit_01.ogg",
+    "sfx/bomb_skeleton_atk_01.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/deploy_bomb_skeleton_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/wall_breaker_die_01.ogg"
+  ],
+  "troops:4000036": [
+    "sfx/bottle_break_04_lightning_01.ogg",
+    "sfx/deploy_pekka_05.ogg",
+    "sfx/pekka_attack_02v2.ogg",
+    "sfx/pekka_attack_hit_02.ogg",
+    "sfx/pekka_shockwave_stomp_01.ogg"
+  ],
+  "troops:4000037": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_deploy_01.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/cannon_fire_01.ogg",
+    "sfx/cannon_fire_hit_01.ogg",
+    "sfx/cannon_roll_01.ogg",
+    "sfx/mortar_mode_cannon_cart_select_01.ogg"
+  ],
+  "troops:4000038": [
+    "sfx/balloon_deploy_02.ogg",
+    "sfx/balloon_die_01.ogg",
+    "sfx/balloon_hit_01.ogg",
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/summon_attack_01.ogg",
+    "sfx/summon_die_02.ogg",
+    "sfx/upfromground_05.ogg"
+  ],
+  "troops:4000041": [
+    "sfx/ability_dd_fireblast.ogg",
+    "sfx/angry_dragon_01.ogg",
+    "sfx/baby_dragon_atk_01.ogg",
+    "sfx/baby_dragon_death_01.ogg",
+    "sfx/baby_dragon_death_02.ogg",
+    "sfx/babydragon_deploy_01.ogg"
+  ],
+  "troops:4000042": [
+    "sfx/bat_atk_01.ogg",
+    "sfx/bat_atk_hit_01.ogg",
+    "sfx/bat_deploy_01.ogg",
+    "sfx/clashbat_spell_01.ogg",
+    "sfx/dark_witch_atk_01.ogg",
+    "sfx/dark_witch_dep_01.ogg",
+    "sfx/tinymite_die_03.ogg",
+    "sfx/witch_die_01.ogg",
+    "sfx/witch_summon_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "troops:4000045": [
+    "sfx/barb_deploy_11.ogg",
+    "sfx/barb_deploy_11v2.ogg",
+    "sfx/barb_deploy_11v3.ogg",
+    "sfx/barbarian_death_01.ogg",
+    "sfx/barbarian_death_02.ogg",
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/barbarian_sword_swing_hit_14.ogg",
+    "sfx/barbarian_sword_swing_hit_14v2.ogg",
+    "sfx/barbarian_sword_swing_hit_14v3.ogg",
+    "sfx/battle_ram_deploy_01.ogg",
+    "sfx/building_destroyed_01.ogg"
+  ],
+  "troops:4000047": [
+    "sfx/groy_dep_01.ogg",
+    "sfx/ice_mage_impact_01.ogg",
+    "sfx/roysword_01.ogg",
+    "sfx/roysword_vo_01.ogg"
+  ],
+  "troops:4000048": [
+    "sfx/barb_deploy_11.ogg",
+    "sfx/barb_deploy_11v2.ogg",
+    "sfx/barb_deploy_11v3.ogg",
+    "sfx/barbarian_death_01.ogg",
+    "sfx/barbarian_death_02.ogg",
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/barbarian_sword_swing_hit_14.ogg",
+    "sfx/barbarian_sword_swing_hit_14v2.ogg",
+    "sfx/barbarian_sword_swing_hit_14v3.ogg"
+  ],
+  "troops:4000050": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/giantskele_atk_01.ogg",
+    "sfx/giantskele_die_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/sw_skeleton_start_01.ogg"
+  ],
+  "troops:4000051": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/cannon_fire_01.ogg",
+    "sfx/cannon_fire_hit_01.ogg",
+    "sfx/rock_troll_explo_01.ogg",
+    "sfx/rock_troll_hit_02.ogg",
+    "sfx/siege_ram_deploy_01.ogg"
+  ],
+  "troops:4000052": [
+    "sfx/balloon_deploy_02.ogg",
+    "sfx/balloon_die_01.ogg",
+    "sfx/balloon_hit_01.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/mortar_hit_01.ogg"
+  ],
+  "troops:4000053": [
+    "sfx/yeti_atk_01.ogg",
+    "sfx/yeti_atk_hit_01.ogg",
+    "sfx/yeti_dep_02.ogg",
+    "sfx/yeti_die_01.ogg"
+  ],
+  "troops:4000055": [
+    "sfx/gob_attack_01.ogg",
+    "sfx/gob_attack_02.ogg",
+    "sfx/gob_attack_03.ogg",
+    "sfx/goblin_death_02.ogg",
+    "sfx/super_gob_deploy_01.ogg",
+    "sfx/super_gob_deploy_02.ogg",
+    "sfx/super_gob_deploy_03..ogg"
+  ],
+  "troops:4000056": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/miner_death_02.ogg",
+    "sfx/miner_dig_down_01.ogg",
+    "sfx/miner_dig_oneshot_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/superminer_drill_01.ogg"
+  ],
+  "troops:4000057": [
+    "sfx/balloon_die_01.ogg",
+    "sfx/balloon_hit_01.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/hasty_balloon_dep_01.ogg"
+  ],
+  "troops:4000058": [
+    "sfx/freeze_spell_01.ogg",
+    "sfx/giant_death_02.ogg",
+    "sfx/ice_golem_atk_02.ogg",
+    "sfx/ice_golem_deploy_01.ogg",
+    "sfx/ice_mage_impact_01.ogg"
+  ],
+  "troops:4000059": [
+    "sfx/bottle_break_04_lightning_01.ogg",
+    "sfx/dragon_die_01.ogg",
+    "sfx/electro_dragon_sfx_atk_01.ogg",
+    "sfx/electro_dragon_sfx_atk_02.ogg",
+    "sfx/electro_dragon_sfx_dep_01.ogg",
+    "sfx/electro_dragon_sfx_wing_01.ogg",
+    "sfx/lightning_amb_01.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg"
+  ],
+  "troops:4000061": [
+    "sfx/balloon_hit_01.ogg",
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/skel_barrel_die_01.ogg",
+    "sfx/skeleton_bomb_deploy_01.ogg",
+    "sfx/summon_attack_01.ogg",
+    "sfx/summon_die_02.ogg",
+    "sfx/upfromground_05.ogg"
+  ],
+  "troops:4000062": [
+    "sfx/balloon_die_01.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/siege_balloon_dep_01.ogg",
+    "sfx/stonestriker_01.ogg"
+  ],
+  "troops:4000063": [
+    "sfx/infdragon_deploy_02.ogg",
+    "sfx/infdragon_die_02.ogg",
+    "sfx/infdragon_fireloop_01.ogg",
+    "sfx/infdragon_lvl_up_03.ogg"
+  ],
+  "troops:4000064": [
+    "sfx/bottle_rage_magic_07v2.ogg",
+    "sfx/magic_bottle_fall_05.ogg",
+    "sfx/super_valk_atk_01.ogg",
+    "sfx/super_valk_atk_02.ogg",
+    "sfx/super_valk_deploy_01.ogg",
+    "sfx/warriorgirl_die_01.ogg",
+    "sfx/warriorgirl_hit_01.ogg"
+  ],
+  "troops:4000065": [
+    "sfx/bomb_tower_hit_01.ogg",
+    "sfx/dragon_rider_atk_01.ogg",
+    "sfx/dragon_rider_dep_01.ogg",
+    "sfx/dragon_rider_die_01.ogg",
+    "sfx/wall_breaker_die_01.ogg"
+  ],
+  "troops:4000066": [
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/giantskele_atk_01.ogg",
+    "sfx/giantskele_die_01.ogg",
+    "sfx/super_witch_deploy_01.ogg",
+    "sfx/super_witch_die_01.ogg",
+    "sfx/super_witch_summon_01.ogg",
+    "sfx/sw_skeleton_start_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "troops:4000067": [
+    "sfx/Troop_Anime_Mecha_Attack.ogg",
+    "sfx/Troop_Anime_Mecha_Cheer.ogg",
+    "sfx/Troop_Anime_Mecha_Deploy.ogg",
+    "sfx/Troop_Anime_Mecha_Die.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg"
+  ],
+  "troops:4000070": [
+    "sfx/boarrider_attack_01.ogg",
+    "sfx/boarrider_attack_02.ogg",
+    "sfx/boarrider_deploy_01.ogg",
+    "sfx/boarrider_deploy_02.ogg",
+    "sfx/boarrider_die_02.ogg",
+    "sfx/bow_place.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/freeze_spell_01.ogg",
+    "sfx/hog_glider_dep_sfx_01.ogg",
+    "sfx/rock_troll_explo_01.ogg",
+    "sfx/rock_troll_hit_02.ogg"
+  ],
+  "troops:4000072": [
+    "sfx/mage_attack_02.ogg",
+    "sfx/mage_attack_02v2.ogg",
+    "sfx/mage_attack_02v3.ogg",
+    "sfx/mage_deploy_06.ogg",
+    "sfx/wizard_die_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "troops:4000075": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_fire_hit_01.ogg",
+    "sfx/deploy_pekka_05.ogg",
+    "sfx/mage_attack_02.ogg",
+    "sfx/mage_attack_02v2.ogg",
+    "sfx/mage_attack_02v3.ogg",
+    "sfx/mage_deploy_06.ogg",
+    "sfx/pekka_attack_02v2.ogg",
+    "sfx/pekka_attack_hit_02.ogg",
+    "sfx/pekka_death_06.ogg",
+    "sfx/rock_troll_explo_01.ogg",
+    "sfx/rock_troll_hit_02.ogg",
+    "sfx/sb_deploy_01.ogg",
+    "sfx/wizard_die_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "troops:4000076": [
+    "sfx/freeze_spell_01.ogg",
+    "sfx/ice_golem_deploy_01.ogg",
+    "sfx/ice_hound_atk_01.ogg",
+    "sfx/ice_hound_deploy_01.ogg",
+    "sfx/ice_hound_die_01.ogg",
+    "sfx/ice_mage_impact_01.ogg",
+    "sfx/tiny_ice_die_01.ogg"
+  ],
+  "troops:4000080": [
+    "sfx/rock_troll_explo_01.ogg",
+    "sfx/sup_troll_atk_01.ogg",
+    "sfx/sup_troll_atk_02.ogg",
+    "sfx/sup_troll_rb_01.ogg",
+    "sfx/super_bowler_dep_04.ogg",
+    "sfx/wizard_die_01.ogg"
+  ],
+  "troops:4000081": [
+    "sfx/bomb_tower_hit_01.ogg",
+    "sfx/clash_fire_dragon_atk_01.ogg",
+    "sfx/clash_fire_dragon_dep_01.ogg",
+    "sfx/dragon_die_01.ogg"
+  ],
+  "troops:4000082": [
+    "sfx/headhunter_atk_01.ogg",
+    "sfx/headhunter_atk_02.ogg",
+    "sfx/headhunter_dep_01.ogg",
+    "sfx/headhunter_die_01.ogg",
+    "sfx/headhunter_hit_01.ogg",
+    "sfx/vial_fall_02.ogg",
+    "sfx/vial_poison_hit_gound_01.ogg"
+  ],
+  "troops:4000083": [
+    "sfx/electro_dragon_sfx_atk_01.ogg",
+    "sfx/electro_dragon_sfx_atk_02.ogg",
+    "sfx/super_wizard_atk_01.ogg",
+    "sfx/super_wizard_atk_02.ogg",
+    "sfx/super_wizard_dep_01.ogg",
+    "sfx/super_wizard_dep_02.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg",
+    "sfx/wizard_die_01.ogg"
+  ],
+  "troops:4000084": [
+    "sfx/cannon_fire_hit_01.ogg",
+    "sfx/garg_die_01.ogg",
+    "sfx/super_minion_atk_01.ogg",
+    "sfx/super_minion_dep_01.ogg"
+  ],
+  "troops:4000087": [
+    "sfx/building_destroyed_01.ogg",
+    "sfx/generic_hit_01.ogg",
+    "sfx/log_siege_atk_01.ogg",
+    "sfx/log_siege_deploy_01.ogg"
+  ],
+  "troops:4000091": [
+    "sfx/bomb_tower_hit_01.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/fire_siege_fire_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/rock_troll_explo_01.ogg",
+    "sfx/rock_troll_hit_02.ogg",
+    "sfx/siege_ram_deploy_01.ogg"
+  ],
+  "troops:4000092": [
+    "sfx/battle_drill_appear_01.ogg",
+    "sfx/battle_drill_atk_01.ogg",
+    "sfx/battle_drill_deploy_01.ogg",
+    "sfx/battle_drill_hit_01.ogg",
+    "sfx/battle_drill_move_01.ogg",
+    "sfx/battle_drill_move_02.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/explosion_02.ogg"
+  ],
+  "troops:4000094": [
+    "sfx/ramrider_death_01.ogg",
+    "sfx/xmas_ramrider_atk_sfx_01.ogg",
+    "sfx/xmas_ramrider_big_hit_01.ogg",
+    "sfx/xmas_ramrider_dep_sfx_01.ogg",
+    "sfx/xmas_ramrider_hit_01.ogg"
+  ],
+  "troops:4000095": [
+    "sfx/elektro_titan_atk_01.ogg",
+    "sfx/elektro_titan_dep_01.ogg",
+    "sfx/elektro_titan_die_01.ogg",
+    "sfx/stone_golem_hit_01.ogg"
+  ],
+  "troops:4000097": [
+    "sfx/apprentice_warden_attack_01.ogg",
+    "sfx/apprentice_warden_death.ogg",
+    "sfx/apprentice_warden_deploy_01.ogg",
+    "sfx/apprentice_warden_preattack_01.ogg",
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_12.ogg"
+  ],
+  "troops:4000098": [
+    "sfx/bow_place.ogg",
+    "sfx/hogless_rider_dep_01.ogg",
+    "sfx/hogless_rider_dep_02.ogg",
+    "sfx/hogless_rider_dep_03.ogg",
+    "sfx/hogless_rider_die_01.ogg",
+    "sfx/super_hog_atk_01.ogg",
+    "sfx/super_hog_atk_02.ogg",
+    "sfx/super_hog_atk_03.ogg",
+    "sfx/super_hog_dep_01.ogg",
+    "sfx/super_hog_dep_02.ogg",
+    "sfx/super_hog_dep_03.ogg",
+    "sfx/super_hog_die_01.ogg",
+    "sfx/super_hog_rider_deploy_01.ogg",
+    "sfx/super_hogrider_atk_01.ogg",
+    "sfx/super_hogrider_die_01.ogg"
+  ],
+  "troops:4000101": [
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_12.ogg",
+    "sfx/barcher_atk_01.ogg",
+    "sfx/barcher_atk_02.ogg",
+    "sfx/barcher_dep_01.ogg",
+    "sfx/barcher_dep_02.ogg",
+    "sfx/barcher_die_01.ogg",
+    "sfx/barcher_die_02.ogg"
+  ],
+  "troops:4000102": [
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/giantskele_atk_01.ogg",
+    "sfx/giantskele_die_01.ogg",
+    "sfx/grave_golem_atk_01.ogg",
+    "sfx/grave_golem_deploy_01.ogg",
+    "sfx/grave_golem_die_01.ogg",
+    "sfx/grave_golem_summon_01.ogg",
+    "sfx/stone_golem_hit_01.ogg",
+    "sfx/summon_attack_01.ogg",
+    "sfx/summon_die_02.ogg",
+    "sfx/sw_skeleton_start_01.ogg",
+    "sfx/upfromground_05.ogg",
+    "sfx/witch_summon_01.ogg"
+  ],
+  "troops:4000103": [
+    "sfx/hogwizard_atk_01.ogg",
+    "sfx/hogwizard_atk_02.ogg",
+    "sfx/hogwizard_atk_03.ogg",
+    "sfx/hogwizard_deploy_01.ogg",
+    "sfx/wizard_die_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "troops:4000104": [
+    "sfx/cannon_fire3.ogg",
+    "sfx/lavaloon_deploy_01.ogg",
+    "sfx/lavaloon_die_01.ogg",
+    "sfx/mortar_hit_01.ogg",
+    "sfx/tinymite_die_03.ogg"
+  ],
+  "troops:4000106": [
+    "sfx/electro_dragon_sfx_atk_01.ogg",
+    "sfx/electro_dragon_sfx_atk_02.ogg",
+    "sfx/infdragon_fireloop_01.ogg",
+    "sfx/infdragon_lvl_up_03.ogg",
+    "sfx/mage_deploy_06.ogg",
+    "sfx/tesla_zap_01.ogg",
+    "sfx/tesla_zap_03.ogg",
+    "sfx/wizard_die_01.ogg"
+  ],
+  "troops:4000109": [
+    "sfx/giant_attack_05.ogg",
+    "sfx/giant_attack_06.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/giant_death_02.ogg",
+    "sfx/giant_deploy_04.ogg",
+    "sfx/giant_deploy_04v2.ogg",
+    "sfx/giant_deploy_04v3.ogg",
+    "sfx/sfx_tro_ruinwitch_deploy.ogg",
+    "sfx/super_witch_deploy_01.ogg",
+    "sfx/super_witch_die_01.ogg",
+    "sfx/witch_summon_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "troops:4000110": [
+    "sfx/capital_golem_hit.ogg",
+    "sfx/root_rider_atk_01.ogg",
+    "sfx/root_rider_atk_02.ogg",
+    "sfx/root_rider_dep_01.ogg",
+    "sfx/root_rider_dep_02.ogg",
+    "sfx/root_rider_die_01.ogg",
+    "sfx/root_rider_die_02.ogg"
+  ],
+  "troops:4000118": [
+    "sfx/minipekka_clashmas23_attack.ogg",
+    "sfx/minipekka_clashmas23_attack_hit.ogg",
+    "sfx/minipekka_clashmas23_death.ogg",
+    "sfx/minipekka_clashmas23_deploy.ogg"
+  ],
+  "troops:4000119": [
+    "sfx/archer_death_05.ogg",
+    "sfx/firecracker_atk_01.ogg",
+    "sfx/firecracker_atk_hit_01.ogg",
+    "sfx/firecracker_deploy_01.ogg",
+    "sfx/scattershot_atk_hit_01.ogg"
+  ],
+  "troops:4000120": [
+    "sfx/lny23_dragon_death.ogg",
+    "sfx/lny23_dragon_deploy.ogg",
+    "sfx/lny23_dragon_projectile.ogg",
+    "sfx/scattershot_atk_hit_01.ogg"
+  ],
+  "troops:4000121": [
+    "sfx/Barbarian_Football_AtkClose.ogg",
+    "sfx/Barbarian_Football_AtkRanged.ogg",
+    "sfx/Barbarian_Football_Deploy.ogg",
+    "sfx/barbarian_death_01.ogg",
+    "sfx/barbarian_death_02.ogg",
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/mortar_hit_01.ogg"
+  ],
+  "troops:4000122": [
+    "sfx/Giant_Football_Attack.ogg",
+    "sfx/Giant_Football_BallBounce.ogg",
+    "sfx/Giant_Football_Buildup.ogg",
+    "sfx/Giant_Football_Deploy.ogg",
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/giant_death_02.ogg",
+    "sfx/mortar_hit_01.ogg"
+  ],
+  "troops:4000123": [
+    "sfx/druid_bear_attack_01.ogg",
+    "sfx/druid_bear_attack_02.ogg",
+    "sfx/druid_bear_attack_03.ogg",
+    "sfx/druid_bear_deploy.ogg",
+    "sfx/druid_bear_die.ogg",
+    "sfx/druid_bear_transform.ogg",
+    "sfx/elixir_steal_03.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/healer_hit_01.ogg",
+    "sfx/healer_hit_02.ogg",
+    "sfx/stone_golem_deploy_01.ogg"
+  ],
+  "troops:4000125": [
+    "sfx/Troop_Anime_WitchSprite_Action.ogg",
+    "sfx/Troop_Anime_Witch_Attack.ogg",
+    "sfx/Troop_Anime_Witch_Deploy.ogg",
+    "sfx/Troop_Anime_Witch_Die.ogg",
+    "sfx/bomb_tower_hit_01.ogg",
+    "sfx/wall_breaker_die_01.ogg"
+  ],
+  "troops:4000130": [
+    "sfx/freeze_spell_01.ogg",
+    "sfx/ice_mage_impact_01.ogg",
+    "sfx/ice_minion_atk.ogg",
+    "sfx/ice_minion_deploy.ogg",
+    "sfx/ice_minion_die.ogg"
+  ],
+  "troops:4000132": [
+    "sfx/Troop_Thrower_Attack_01.ogg",
+    "sfx/Troop_Thrower_Attack_02.ogg",
+    "sfx/Troop_Thrower_Attack_03.ogg",
+    "sfx/Troop_Thrower_Deploy.ogg",
+    "sfx/Troop_Thrower_Die.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "troops:4000135": [
+    "sfx/Troop_CommandTower_FireBarrel.ogg",
+    "sfx/archer_death_05.ogg",
+    "sfx/archer_death_05v2.ogg",
+    "sfx/archer_deploy_09.ogg",
+    "sfx/archer_deploy_09v2.ogg",
+    "sfx/archer_deploy_09v3.ogg",
+    "sfx/arrow_hit_07.ogg",
+    "sfx/arrow_hit_07v2.ogg",
+    "sfx/arrow_hit_07v3.ogg",
+    "sfx/arrow_hit_12.ogg",
+    "sfx/barb_deploy_11.ogg",
+    "sfx/barb_deploy_11v2.ogg",
+    "sfx/barb_deploy_11v3.ogg",
+    "sfx/barbarian_death_01.ogg",
+    "sfx/barbarian_death_02.ogg",
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/barbarian_sword_swing_hit_14.ogg",
+    "sfx/barbarian_sword_swing_hit_14v2.ogg",
+    "sfx/barbarian_sword_swing_hit_14v3.ogg",
+    "sfx/building_destroyed_01.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/deploy_skeleton_07.ogg",
+    "sfx/deploy_skeleton_07v2.ogg",
+    "sfx/deploy_skeleton_07v3.ogg",
+    "sfx/giant_attack_05.ogg",
+    "sfx/giant_attack_06.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/giant_death_02.ogg",
+    "sfx/giant_deploy_04.ogg",
+    "sfx/giant_deploy_04v2.ogg",
+    "sfx/giant_deploy_04v3.ogg",
+    "sfx/rock_troll_hit_02.ogg",
+    "sfx/siege_ram_deploy_01.ogg",
+    "sfx/wall_breaker_attack_01.ogg",
+    "sfx/wall_breaker_die_01.ogg"
+  ],
+  "troops:4000136": [
+    "sfx/Troop_GoblinTax_Deploy_01.ogg",
+    "sfx/Troop_GoblinTax_Deploy_02.ogg",
+    "sfx/Troop_GoblinTax_Deploy_03.ogg",
+    "sfx/Troop_GoblinTax_Die_01.ogg",
+    "sfx/Troop_GoblinTax_Die_02.ogg",
+    "sfx/Troop_GoblinTax_Die_03.ogg",
+    "sfx/gob_attack_01.ogg",
+    "sfx/gob_attack_02.ogg",
+    "sfx/gob_attack_03.ogg"
+  ],
+  "troops:4000142": [
+    "sfx/Troop_BarrelSnake_Attack.ogg",
+    "sfx/Troop_BarrelSnake_Die.ogg",
+    "sfx/Troop_SnakeBarrel_Deploy.ogg",
+    "sfx/Troop_SnakeBarrel_Destroy.ogg",
+    "sfx/Troop_Snake_Bite.ogg",
+    "sfx/balloon_hit_01.ogg",
+    "sfx/cannon_fire3.ogg"
+  ],
+  "troops:4000147": [
+    "sfx/Troop_SuperYeti_Attack.ogg",
+    "sfx/Troop_SuperYeti_Deploy.ogg",
+    "sfx/Troop_SuperYeti_Die.ogg",
+    "sfx/Troop_SuperYeti_Hit.ogg"
+  ],
+  "troops:4000150": [
+    "sfx/Troop_Furnace_Deploy.ogg",
+    "sfx/Troop_Furnace_Die.ogg",
+    "sfx/Troop_Furnace_FireSpirit_Attack.ogg",
+    "sfx/Troop_Furnace_FireSpirit_Deploy_01.ogg",
+    "sfx/Troop_Furnace_FireSpirit_Deploy_02.ogg",
+    "sfx/Troop_Furnace_FireSpirit_Die.ogg"
+  ],
+  "troops:4000156": [
+    "sfx/Troop_GiantGiant_Attack_01.ogg",
+    "sfx/Troop_GiantGiant_Attack_02.ogg",
+    "sfx/Troop_GiantGiant_Attack_03.ogg",
+    "sfx/Troop_GiantGiant_Deploy_01.ogg",
+    "sfx/Troop_GiantGiant_Deploy_02.ogg",
+    "sfx/Troop_GiantGiant_Deploy_03.ogg",
+    "sfx/Troop_GiantGiant_Die_01.ogg",
+    "sfx/Troop_GiantGiant_Die_02.ogg",
+    "sfx/Troop_GiantGiant_Die_03.ogg",
+    "sfx/Troop_GiantGiant_Grow.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg"
+  ],
+  "troops:4000157": [
+    "sfx/Troop_Apr25_TBRM_Attack_01.ogg",
+    "sfx/Troop_Apr25_TBRM_Attack_02.ogg",
+    "sfx/Troop_Apr25_TBRM_Attack_03.ogg",
+    "sfx/Troop_Apr25_TBRM_Attack_04.ogg",
+    "sfx/Troop_Apr25_TBRM_Attack_05.ogg",
+    "sfx/Troop_Apr25_TBRM_Deploy_01.ogg",
+    "sfx/Troop_Apr25_TBRM_Deploy_02.ogg",
+    "sfx/Troop_Apr25_TBRM_Deploy_03.ogg",
+    "sfx/Troop_Apr25_TBRM_Die_01.ogg",
+    "sfx/Troop_Apr25_TBRM_Die_02.ogg",
+    "sfx/Troop_Apr25_TBRM_Die_03.ogg",
+    "sfx/Troop_Apr25_TBRM_Rebirth.ogg",
+    "sfx/stone_golem_hit_01.ogg",
+    "sfx/witch_summon_01.ogg"
+  ],
+  "troops:4000158": [
+    "sfx/Troop_Apr25_BLTM_Attack_01.ogg",
+    "sfx/Troop_Apr25_BLTM_Attack_02.ogg",
+    "sfx/Troop_Apr25_BLTM_Attack_03.ogg",
+    "sfx/Troop_Apr25_BLTM_Attack_04.ogg",
+    "sfx/Troop_Apr25_BLTM_Attack_05.ogg",
+    "sfx/Troop_Apr25_BLTM_Deploy_01.ogg",
+    "sfx/Troop_Apr25_BLTM_Deploy_02.ogg",
+    "sfx/Troop_Apr25_BLTM_Deploy_03.ogg",
+    "sfx/Troop_Apr25_BLTM_Die_01.ogg",
+    "sfx/Troop_Apr25_BLTM_Die_02.ogg",
+    "sfx/Troop_Apr25_BLTM_Die_03.ogg",
+    "sfx/warriorgirl_hit_01.ogg"
+  ],
+  "troops:4000159": [
+    "sfx/Troop_Apr25_RRBL_Attack_01.ogg",
+    "sfx/Troop_Apr25_RRBL_Attack_02.ogg",
+    "sfx/Troop_Apr25_RRBL_Attack_03.ogg",
+    "sfx/Troop_Apr25_RRBL_Attack_04.ogg",
+    "sfx/Troop_Apr25_RRBL_Attack_05.ogg",
+    "sfx/Troop_Apr25_RRBL_Deploy_01.ogg",
+    "sfx/Troop_Apr25_RRBL_Deploy_02.ogg",
+    "sfx/Troop_Apr25_RRBL_Deploy_03.ogg",
+    "sfx/Troop_Apr25_RRBL_Die_01.ogg",
+    "sfx/Troop_Apr25_RRBL_Die_02.ogg",
+    "sfx/Troop_Apr25_RRBL_Die_03.ogg",
+    "sfx/cannon_fire_hit_01.ogg",
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ],
+  "troops:4000167": [
+    "sfx/Troop_MeteorGolem_Deploy_01.ogg",
+    "sfx/Troop_MeteorGolem_Deploy_02.ogg",
+    "sfx/Troop_MeteorGolem_Deploy_03.ogg",
+    "sfx/Troop_MeteorGolem_Die_01.ogg",
+    "sfx/Troop_MeteorGolem_Die_02.ogg",
+    "sfx/Troop_MeteorGolem_Die_03.ogg",
+    "sfx/Troop_MeteorGolem_Hit_01.ogg",
+    "sfx/Troop_MeteorGolem_Hit_02.ogg",
+    "sfx/Troop_MeteorGolem_Hit_03.ogg",
+    "sfx/Troop_MeteorGolem_MeleeAttack_01.ogg",
+    "sfx/Troop_MeteorGolem_MeleeAttack_02.ogg",
+    "sfx/Troop_MeteorGolem_MeleeAttack_03.ogg",
+    "sfx/Troop_MeteorGolem_ReForm.ogg",
+    "sfx/Troop_MeteorGolem_Split_01.ogg",
+    "sfx/Troop_MeteorGolem_Split_02.ogg",
+    "sfx/Troop_MeteorGolem_ThrowAttack_01.ogg",
+    "sfx/Troop_MeteorGolem_ThrowAttack_02.ogg",
+    "sfx/Troop_MeteorGolem_ThrowAttack_03.ogg"
+  ],
+  "troops:4000177": [
+    "sfx/Troop_MeteorGolem_Deploy_01.ogg",
+    "sfx/Troop_MeteorGolem_Deploy_02.ogg",
+    "sfx/Troop_MeteorGolem_Deploy_03.ogg",
+    "sfx/Troop_MeteorGolem_Die_01.ogg",
+    "sfx/Troop_MeteorGolem_Die_02.ogg",
+    "sfx/Troop_MeteorGolem_Die_03.ogg",
+    "sfx/Troop_MeteorGolem_Hit_01.ogg",
+    "sfx/Troop_MeteorGolem_Hit_02.ogg",
+    "sfx/Troop_MeteorGolem_Hit_03.ogg",
+    "sfx/Troop_MeteorGolem_MeleeAttack_01.ogg",
+    "sfx/Troop_MeteorGolem_MeleeAttack_02.ogg",
+    "sfx/Troop_MeteorGolem_MeleeAttack_03.ogg",
+    "sfx/Troop_MeteorGolem_ReForm.ogg",
+    "sfx/Troop_MeteorGolem_Split_01.ogg",
+    "sfx/Troop_MeteorGolem_Split_02.ogg",
+    "sfx/Troop_MeteorGolem_ThrowAttack_01.ogg",
+    "sfx/Troop_MeteorGolem_ThrowAttack_02.ogg",
+    "sfx/Troop_MeteorGolem_ThrowAttack_03.ogg"
+  ],
+  "troops:4000185": [
+    "sfx/RangedGuardian_Hit_01.ogg",
+    "sfx/RangedGuardian_Hit_02.ogg",
+    "sfx/RangedGuardian_Hit_03.ogg",
+    "sfx/barb_deploy_11.ogg",
+    "sfx/barb_deploy_11v2.ogg",
+    "sfx/barb_deploy_11v3.ogg",
+    "sfx/barbarian_death_01.ogg",
+    "sfx/barbarian_death_02.ogg",
+    "sfx/barbarian_hit_stuff2.ogg",
+    "sfx/barbarian_hit_stuff3.ogg",
+    "sfx/barbarian_hit_stuff4.ogg",
+    "sfx/barbarian_sword_swing_hit_14.ogg",
+    "sfx/barbarian_sword_swing_hit_14v2.ogg",
+    "sfx/barbarian_sword_swing_hit_14v3.ogg",
+    "sfx/sfx_tro_erider_attack_01.ogg",
+    "sfx/sfx_tro_erider_attack_02.ogg",
+    "sfx/sfx_tro_erider_attack_03.ogg",
+    "sfx/sfx_tro_erider_deploy.ogg",
+    "sfx/sfx_tro_erider_elephant_attack_01.ogg",
+    "sfx/sfx_tro_erider_elephant_attack_02.ogg",
+    "sfx/sfx_tro_erider_elephant_attack_03.ogg",
+    "sfx/sfx_tro_erider_elephant_deploy_01.ogg",
+    "sfx/sfx_tro_erider_elephant_deploy_02.ogg",
+    "sfx/sfx_tro_erider_elephant_deploy_03.ogg",
+    "sfx/sfx_tro_erider_elephant_die_01.ogg",
+    "sfx/sfx_tro_erider_elephant_die_02.ogg",
+    "sfx/sfx_tro_erider_elephant_die_03.ogg",
+    "sfx/sfx_tro_erider_elephant_stomp_01.ogg",
+    "sfx/sfx_tro_erider_elephant_stomp_02.ogg",
+    "sfx/sfx_tro_erider_elephant_stomp_03.ogg",
+    "sfx/sfx_tro_erider_rider_attack_01.ogg",
+    "sfx/sfx_tro_erider_rider_attack_02.ogg",
+    "sfx/sfx_tro_erider_rider_attack_03.ogg",
+    "sfx/sfx_tro_erider_rider_deploy_01.ogg",
+    "sfx/sfx_tro_erider_rider_deploy_02.ogg",
+    "sfx/sfx_tro_erider_rider_deploy_03.ogg"
+  ],
+  "troops:4000188": [
+    "sfx/angry_dragon_01.ogg",
+    "sfx/baby_dragon_atk_01.ogg",
+    "sfx/baby_dragon_death_01.ogg",
+    "sfx/baby_dragon_death_02.ogg",
+    "sfx/babydragon_deploy_01.ogg",
+    "sfx/balloon_deploy_02.ogg",
+    "sfx/balloon_die_01.ogg",
+    "sfx/balloon_hit_01.ogg",
+    "sfx/cannon_fire3.ogg",
+    "sfx/garg_attack_01.ogg",
+    "sfx/garg_deploy_02.ogg",
+    "sfx/garg_die_01.ogg",
+    "sfx/sfx_troop_sm_airtroop_attack.ogg",
+    "sfx/sfx_troop_sm_airtroop_barrel.ogg",
+    "sfx/sfx_troop_sm_airtroop_deploy.ogg",
+    "sfx/sfx_troop_sm_airtroop_die.ogg"
+  ],
+  "troops:4000190": [
+    "sfx/giant_attack_hit_01.ogg",
+    "sfx/giant_attack_hit_02.ogg",
+    "sfx/giantskele_die_01.ogg"
+  ],
+  "troops:4000194": [
+    "sfx/spell_totemtower_deploy_01.ogg",
+    "sfx/spell_totemtower_deploy_02.ogg",
+    "sfx/spell_totemtower_deploy_03.ogg",
+    "sfx/spell_totemtower_destroy_01.ogg",
+    "sfx/spell_totemtower_destroy_02.ogg",
+    "sfx/stone_golem_hit_01.ogg",
+    "sfx/wizard_hit_01.ogg"
+  ]
+}
