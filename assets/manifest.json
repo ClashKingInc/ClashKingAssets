@@ -17595,6 +17595,10 @@
         "sha": "7d914b4dcffe7dd0be999c7a3971638e08e3d2dc0e443360c919f6c8c7ea2e57"
       },
       {
+        "path": "static_data/sfx.json",
+        "sha": "e2d56f898effd2372a683d5e1d32f294a2777c53b4c235d213022d223ad65459"
+      },
+      {
         "path": "static_data/skins.json",
         "sha": "ca13c1249f9b9eeb7a505ee464b8db3bd725d78604f314482be66942884ebaa7"
       },

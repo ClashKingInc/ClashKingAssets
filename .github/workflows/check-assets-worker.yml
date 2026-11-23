@@ -14,7 +14,6 @@ on:
       - 'tests/**'
       - 'assets/**'
       - 'artwork/**'
-      - 'wiki/src/entity-sounds.json'
       - 'scripts/check-app-artwork.py'
       - '.github/workflows/check-assets-worker.yml'
       - '.github/workflows/release-assets.yml'

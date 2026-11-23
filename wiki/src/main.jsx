@@ -36,8 +36,9 @@ const alternateLanguageTags = { CN: 'zh-Hans', CNT: 'zh-Hant', JP: 'ja', KR: 'ko
 const englishNames = new Intl.DisplayNames('en', { type: 'language' });
 
 async function loadSources() {
-  const [data, manifest, abilities, translations] = await Promise.all([
-    load('static_data.json'), load('manifest.json'), load('static_data/abilities.json'), load('translations/EN.json'),
+  const [data, manifest, abilities, sfx, translations] = await Promise.all([
+    load('static_data.json'), load('manifest.json'), load('static_data/abilities.json'),
+    load('static_data/sfx.json'), load('translations/EN.json'),
   ]);
   const languages = new Map(data.locales.map(({ locale, name }) => [locale, name]));
   const locales = manifest.data?.translations || [];
@@ -52,7 +53,7 @@ async function loadSources() {
     options.set(code, { code, tag, name, english: englishNames.of(tag) || name });
   }
   const ordered = [...options.values()].sort((a, b) => a.code === 'EN' ? -1 : b.code === 'EN' ? 1 : a.english.localeCompare(b.english, 'en'));
-  return { data, manifest, abilities, translations, options: ordered };
+  return { data, manifest, abilities, sfx, translations, options: ordered };
 }
 const sourcesRequest = loadSources();
 const translationRequests = new Map();
@@ -220,7 +221,7 @@ function App() {
   const catalogue = useMemo(() => {
     if (!sources) return undefined;
     const strings = localized ? { ...sources.translations, ...localized.dictionary } : sources.translations;
-    const result = makeCatalogue(sources.data, sources.manifest, sources.abilities, strings, audio);
+    const result = makeCatalogue(sources.data, sources.manifest, sources.abilities, strings, audio, sources.sfx);
     return { ...result, references: makeReferences(sources.data, strings, result.byPath, language) };
   }, [sources, localized, language]);
   const [languageError, setLanguageError] = useState('');

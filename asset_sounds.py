@@ -2,7 +2,7 @@ import json
 import re
 from pathlib import Path
 
-SOUND_INDEX = Path("wiki/src/entity-sounds.json")
+SOUND_INDEX = Path("assets/static_data/sfx.json")
 SOUND_PATH = re.compile(r"sfx/[^/\\\x00-\x1f\x7f]+\.ogg", re.IGNORECASE)
 
 # Reviewed sounds shared by the game interface, tutorials, and other common actions.
@@ -230,9 +230,9 @@ def eligible_sound_owners(data: dict, ignored: set[int]) -> set[str]:
     }
 
 
-def load_sound_index() -> dict[str, list[str]]:
-    if SOUND_INDEX.is_file():
-        return json.loads(SOUND_INDEX.read_text(encoding="utf-8"))
+def load_sound_index(path: Path = SOUND_INDEX) -> dict[str, list[str]]:
+    if path.is_file():
+        return json.loads(path.read_text(encoding="utf-8"))
     return {}
 
 
@@ -241,7 +241,7 @@ def general_sound_paths() -> set[str]:
 
 
 def check_sound_effects(root: Path) -> None:
-    mapping = load_sound_index()
+    mapping = load_sound_index(root / "static_data/sfx.json")
     item_paths = {path for paths in mapping.values() for path in paths}
     allowed = item_paths | general_sound_paths()
     for path in sorted(allowed):

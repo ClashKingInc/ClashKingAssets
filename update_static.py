@@ -3039,6 +3039,7 @@ class StaticUpdater:
         collection_path = base_path / "static_data"
         collection_path.mkdir(parents=True, exist_ok=True)
         expected_files = {f"{category}.json" for category in master_data}
+        expected_files.add("sfx.json")
         if abilities is not None:
             expected_files.add("abilities.json")
         for stale_file in collection_path.glob("*.json"):

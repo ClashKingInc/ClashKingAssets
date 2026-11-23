@@ -1,5 +1,3 @@
-import soundPaths from './entity-sounds.json' with { type: 'json' };
-
 export const wiki = '/wiki';
 export const assetOrigin = (import.meta.env?.VITE_ASSET_ORIGIN || '/media').replace(/\/$/, '');
 export const assetUrl = (path) => assetOrigin + '/' + path.split('/').map(encodeURIComponent).join('/');
@@ -134,7 +132,7 @@ export function entityAssetFiles(entity) {
   return [...new Map([...entity.files, ...entity.soundEffects, entity.track].filter(Boolean).map((file) => [file.path, file])).values()];
 }
 
-export function makeCatalogue(data, manifest, abilities, translations, audio = []) {
+export function makeCatalogue(data, manifest, abilities, translations, audio = [], soundPaths = {}) {
   const sort = new Intl.Collator('en', { numeric: true });
   const images = Object.entries(manifest.assets).flatMap(([group, items]) => items.map((item) => ({ ...item, group })));
   const tracks = new Map(audio.map((item) => [item.path, item]));

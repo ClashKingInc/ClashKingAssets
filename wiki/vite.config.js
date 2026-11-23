@@ -38,6 +38,7 @@ function localAssets(staticDataPath = resolve(assetsRoot, 'static_data.json'), a
   const manifest = JSON.parse(readFileSync(mediaFile('manifest.json'), 'utf8'));
   const data = JSON.parse(readFileSync(staticDataPath, 'utf8'));
   const abilities = JSON.parse(readFileSync(resolve(assetsRoot, 'static_data/abilities.json'), 'utf8'));
+  const sfx = JSON.parse(readFileSync(resolve(assetsRoot, 'static_data/sfx.json'), 'utf8'));
   const translations = JSON.parse(readFileSync(resolve(assetsRoot, 'translations/EN.json'), 'utf8'));
   const audio = [...new Map(data.sceneries.flatMap(({ music, name }) => {
     if (!/^sceneries\/[^/]+\/music\.ogg$/.test(music || '')) return [];
@@ -55,12 +56,12 @@ function localAssets(staticDataPath = resolve(assetsRoot, 'static_data.json'), a
       });
     }
   }
-  const { entitiesByKey } = makeCatalogue(data, manifest, abilities, translations, audio);
+  const { entitiesByKey } = makeCatalogue(data, manifest, abilities, translations, audio, sfx);
   const virtualAudio = '\0virtual:wiki-audio';
   const localePaths = new Map(readdirSync(resolve(assetsRoot, 'translations'))
     .filter((name) => /^[A-Z]{2,3}\.json$/.test(name)).map((name) => [name.slice(0, -5), 'translations/' + name]));
   const paths = new Set([
-    'manifest.json', 'static_data.json', 'static_data/abilities.json', 'translations/EN.json',
+    'manifest.json', 'static_data.json', 'static_data/abilities.json', 'static_data/sfx.json', 'translations/EN.json',
     'fonts/clashking.woff2', 'fonts/SCmagic.ttf', 'logos/crown-red/ClashKing-crown.svg',
     'clashking/headers/assets-goblin-v2.webp',
     ...Object.values(manifest.assets).flatMap((group) => group.map(({ path }) => path)),
