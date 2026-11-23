@@ -161,6 +161,10 @@ type ShapeBitmap struct {
 	TextureIndex int
 	UVCoords     []Point
 	XYCoords     []Point
+	// UVTriangles stores flattened UV triangle geometry (3 vertices per triangle)
+	// for unified affine SC2 triangle strips so internal shared edges are not
+	// double-blended as separate sprites.
+	UVTriangles []Point
 	// SolidTriangles stores flattened triangle geometry for SC2 color fills.
 	// These commands intentionally sample one texture pixel for every vertex,
 	// so they cannot be represented by a regular UV-to-XY affine transform.

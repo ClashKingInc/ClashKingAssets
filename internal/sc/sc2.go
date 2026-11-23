@@ -450,6 +450,10 @@ func (s *SWF) loadSC2Shapes(chunk []byte, state *sc2State) error {
 				shape.Bitmaps = append(shape.Bitmaps, solid)
 				continue
 			}
+			if unified, ok := affineShapeBitmapFromStrip(points, textureIndex, s.Textures); ok {
+				shape.Bitmaps = append(shape.Bitmaps, unified)
+				continue
+			}
 			shape.Bitmaps = append(shape.Bitmaps, triangulateShapeStrip(points, textureIndex, s.Textures)...)
 		}
 		s.Resources[shape.ID] = shape
@@ -660,6 +664,68 @@ type shapeVertex struct {
 	Y float64
 	U uint16
 	V uint16
+}
+
+func affineShapeBitmapFromStrip(points []shapeVertex, textureIndex int, textures []*Texture) (ShapeBitmap, bool) {
+	if len(points) < 4 {
+		return ShapeBitmap{}, false
+	}
+	texWidth, texHeight := 0.0, 0.0
+	if textureIndex >= 0 && textureIndex < len(textures) && textures[textureIndex] != nil {
+		texWidth = float64(textures[textureIndex].Width)
+		texHeight = float64(textures[textureIndex].Height)
+	}
+	toUV := func(p shapeVertex) Point {
+		return Point{
+			X: math.Ceil(float64(p.U) / 65535.0 * texWidth),
+			Y: math.Ceil(float64(p.V) / 65535.0 * texHeight),
+		}
+	}
+
+	uvTriangles := make([]Point, 0, (len(points)-2)*3)
+	uvCoords := make([]Point, 0, len(points))
+	xyCoords := make([]Point, 0, len(points))
+	for i := 0; i+2 < len(points); i++ {
+		tri := []shapeVertex{points[i], points[i+1], points[i+2]}
+		if i%2 == 1 {
+			tri[1], tri[2] = tri[2], tri[1]
+		}
+		if degenerateShapeTriangle(tri) {
+			continue
+		}
+		for _, p := range tri {
+			uv := toUV(p)
+			uvTriangles = append(uvTriangles, uv)
+			uvCoords = append(uvCoords, uv)
+			xyCoords = append(xyCoords, Point{X: p.X, Y: p.Y})
+		}
+	}
+	if len(uvTriangles) < 6 {
+		return ShapeBitmap{}, false
+	}
+
+	bitmap := ShapeBitmap{
+		TextureIndex: textureIndex,
+		UVCoords:     uvCoords,
+		XYCoords:     xyCoords,
+		UVTriangles:  uvTriangles,
+	}
+	left, top, _, _ := bitmap.UVBounds()
+	local := make([]Point, len(uvCoords))
+	for i, uv := range uvCoords {
+		local[i] = Point{X: uv.X - float64(left), Y: uv.Y - float64(top)}
+	}
+	matrix, err := solveAffine(local, xyCoords)
+	if err != nil {
+		return ShapeBitmap{}, false
+	}
+	for i, uv := range local {
+		x, y := matrix.Apply(uv.X, uv.Y)
+		if math.Hypot(x-xyCoords[i].X, y-xyCoords[i].Y) > 0.5 {
+			return ShapeBitmap{}, false
+		}
+	}
+	return bitmap, true
 }
 
 func triangulateShapeStrip(points []shapeVertex, textureIndex int, textures []*Texture) []ShapeBitmap {

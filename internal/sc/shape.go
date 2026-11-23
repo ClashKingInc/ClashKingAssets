@@ -203,7 +203,12 @@ func (b ShapeBitmap) SpriteImage(textures []*Texture) (*image.NRGBA, error) {
 	sprite := image.NewNRGBA(image.Rect(0, 0, right-left, bottom-top))
 	for y := top; y < bottom; y++ {
 		for x := left; x < right; x++ {
-			if !pointInPolygon(float64(x)+0.5, float64(y)+0.5, b.UVCoords) && !pointNearPolygonEdge(float64(x)+0.5, float64(y)+0.5, b.UVCoords, 0.75) {
+			px, py := float64(x)+0.5, float64(y)+0.5
+			if len(b.UVTriangles) != 0 {
+				if !pointInAnyTriangle(px, py, b.UVTriangles, 0.75) {
+					continue
+				}
+			} else if !pointInPolygon(px, py, b.UVCoords) && !pointNearPolygonEdge(px, py, b.UVCoords, 0.75) {
 				continue
 			}
 			if !image.Pt(x, y).In(src.Rect) {
@@ -264,6 +269,16 @@ func (b ShapeBitmap) solidSpriteImage(texture *image.NRGBA) *image.NRGBA {
 		}
 	}
 	return sprite
+}
+
+func pointInAnyTriangle(x, y float64, triangles []Point, edgeTolerance float64) bool {
+	for index := 0; index+2 < len(triangles); index += 3 {
+		tri := triangles[index : index+3]
+		if pointInTriangle(x, y, tri) || pointNearPolygonEdge(x, y, tri, edgeTolerance) {
+			return true
+		}
+	}
+	return false
 }
 
 func pointInTriangle(x, y float64, triangle []Point) bool {
