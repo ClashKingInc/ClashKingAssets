@@ -11043,6 +11043,54 @@
         "animated": false
       },
       {
+        "path": "leagues/cwl-backgrounds/bronze.webp",
+        "display_name": "bronze",
+        "sha": "9ae6e93864fe4268b603f307dc1b75e22df98930a1f0b6559a50c0409d0cabea",
+        "animated": false
+      },
+      {
+        "path": "leagues/cwl-backgrounds/champion.webp",
+        "display_name": "champion",
+        "sha": "436f700c3b8c01d6eb32acc357edeffc2df3004a12a1836c4bb342bc80e22fa9",
+        "animated": false
+      },
+      {
+        "path": "leagues/cwl-backgrounds/crystal.webp",
+        "display_name": "crystal",
+        "sha": "27a4afdb417a30e189180dc054a35a4d264930e7834e9597f17990f6d0175aac",
+        "animated": false
+      },
+      {
+        "path": "leagues/cwl-backgrounds/gold.webp",
+        "display_name": "gold",
+        "sha": "95e132c94aa588cf09bfbeace5738c40a3e05753e42169f3749b4160c3d553a1",
+        "animated": false
+      },
+      {
+        "path": "leagues/cwl-backgrounds/legend.webp",
+        "display_name": "legend",
+        "sha": "f45dbc7d6d40f57fb0b6123dd937522c9e4a54c61f3e57d1968bc31a2409ad33",
+        "animated": false
+      },
+      {
+        "path": "leagues/cwl-backgrounds/master.webp",
+        "display_name": "master",
+        "sha": "033e7def87e8b7b455df9f36b5f45ec427e3cff98c8faf082bf52823a7cfbb01",
+        "animated": false
+      },
+      {
+        "path": "leagues/cwl-backgrounds/silver.webp",
+        "display_name": "silver",
+        "sha": "9ed18f7da4f82502c4321e7fbeaf21f90325bd01aa33e3f433177729f5cdb8fe",
+        "animated": false
+      },
+      {
+        "path": "leagues/cwl-backgrounds/titan.webp",
+        "display_name": "titan",
+        "sha": "7f28d380dcb4ee35575bc798753827c0da06cb6eaf581b198ed0127f6d0115ff",
+        "animated": false
+      },
+      {
         "path": "leagues/cwl/bronze_league_1.png",
         "display_name": "bronze league 1",
         "sha": "7d37a14b02338592ed695519b0f016fbf645038012b633e7e3995f401f48515b",
