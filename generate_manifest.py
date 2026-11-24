@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 
 SUPPORTED_IMAGE_EXTENSIONS = frozenset({"avif", "gif", "jpeg", "jpg", "png", "svg", "webp"})
+EXCLUDED_STATIC_DATA_FILES = frozenset({"sfx.json"})
 
 
 def image_is_animated(path: Path) -> bool:
@@ -124,6 +125,7 @@ def build_manifest(assets_root: Path) -> dict[str, object]:
         category: [
             {"path": path.relative_to(assets_root).as_posix(), "sha": file_sha(path)}
             for path in sorted((assets_root / folder).glob("*.json"))
+            if not (category == "stats" and path.name in EXCLUDED_STATIC_DATA_FILES)
         ]
         for category, folder in (
             ("stats", "static_data"),
