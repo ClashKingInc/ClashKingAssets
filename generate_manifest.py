@@ -8,6 +8,8 @@ from pathlib import Path
 
 SUPPORTED_IMAGE_EXTENSIONS = frozenset({"avif", "gif", "jpeg", "jpg", "png", "svg", "webp"})
 EXCLUDED_STATIC_DATA_FILES = frozenset({"sfx.json"})
+APP_METADATA_PREFIX = "app_metadata/v1"
+APP_METADATA_INDEX = f"{APP_METADATA_PREFIX}/index.json"
 
 
 def image_is_animated(path: Path) -> bool:
@@ -159,6 +161,43 @@ def check_manifest(assets_root: Path, output_path: Path) -> None:
         raise ManifestError(f"manifest does not exist: {output_path}")
     if output_path.read_text(encoding="utf-8") != render_manifest(assets_root):
         raise ManifestError("manifest is stale: run python generate_manifest.py")
+
+
+def build_app_metadata(assets_root: Path) -> dict[str, bytes]:
+    """Build the app's index and immutable payloads from the checked v2 manifest."""
+    manifest = json.loads((assets_root / "manifest.json").read_text(encoding="utf-8"))
+    data = manifest["data"]
+    sections = {}
+    for entry in data["stats"]:
+        path = assets_root / entry["path"]
+        stats = json.loads(path.read_bytes())
+        if not isinstance(stats, dict) or not isinstance(stats.get("items"), list):
+            raise ManifestError(f"invalid static section: {path}")
+        sections[path.stem] = stats["items"]
+    if not sections:
+        raise ManifestError("app metadata requires static data sections")
+
+    images = [
+        [asset["path"], asset["sha"], 1] if asset["animated"] else [asset["path"], asset["sha"]]
+        for entries in manifest["assets"].values()
+        for asset in entries
+    ]
+
+    def compact(value: object) -> bytes:
+        return json.dumps(value, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode("utf-8")
+
+    static_body = compact(sections)
+    images_body = compact({"images": images})
+    static_sha = hashlib.sha256(static_body).hexdigest()
+    images_sha = hashlib.sha256(images_body).hexdigest()
+    return {
+        f"{APP_METADATA_PREFIX}/static-{static_sha}.json": static_body,
+        f"{APP_METADATA_PREFIX}/images-{images_sha}.json": images_body,
+        APP_METADATA_INDEX: compact({
+            "version": 1, "staticSha": static_sha, "imagesSha": images_sha,
+            "translations": data["translations"],
+        }),
+    }
 
 
 def parse_args() -> argparse.Namespace:

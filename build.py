@@ -8,13 +8,20 @@ import subprocess
 import sys
 from dataclasses import dataclass
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from typing import Any
 
 from dotenv import load_dotenv
 
 from asset_sounds import check_sound_effects
 from check_image_sources import check_image_sources
-from generate_manifest import ManifestError, check_manifest
+from generate_manifest import (
+    APP_METADATA_INDEX,
+    APP_METADATA_PREFIX,
+    ManifestError,
+    build_app_metadata,
+    check_manifest,
+)
 from worker_purge import WorkerPurgeError, load_worker_purge_config, purge_worker_cache
 
 load_dotenv()
@@ -28,6 +35,7 @@ CDN_CONTENT_TYPES = {
     ".ttf": "font/ttf",
     ".woff2": "font/woff2",
 }
+RELEASE_INDEXES = frozenset({"manifest.json", APP_METADATA_INDEX})
 
 
 class BuildError(RuntimeError):
@@ -325,7 +333,7 @@ def apply_sync_plan(plan: dict[str, Any], config: R2Config, workers: int, before
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
         futures = [
-            executor.submit(upload_file, upload) for upload in plan["uploads"] if upload["key"] != "manifest.json"
+            executor.submit(upload_file, upload) for upload in plan["uploads"] if upload["key"] not in RELEASE_INDEXES
         ]
         for future in concurrent.futures.as_completed(futures):
             future.result()
@@ -345,7 +353,7 @@ def apply_sync_plan(plan: dict[str, Any], config: R2Config, workers: int, before
     if before_manifest is not None:
         before_manifest()
     for upload in plan["uploads"]:
-        if upload["key"] == "manifest.json":
+        if upload["key"] in RELEASE_INDEXES:
             upload_file(upload)
 
 
@@ -375,6 +383,7 @@ def main() -> int:
     assets_root = normalize_assets_root(args.assets_root)
     try:
         check_manifest(Path(assets_root), Path(assets_root) / "manifest.json")
+        app_metadata = build_app_metadata(Path(assets_root))
     except ManifestError as exc:
         raise BuildError(str(exc)) from exc
     current_ref = infer_current_ref(args.current_ref)
@@ -394,6 +403,23 @@ def main() -> int:
     except ValueError as exc:
         raise BuildError(str(exc)) from exc
 
+    with TemporaryDirectory() as directory:
+        for key, body in app_metadata.items():
+            path = Path(directory) / Path(key).name
+            path.write_bytes(body)
+            plan["uploads"].append(UploadOperation(str(path), key, "generated_app_metadata").__dict__)
+        return finish_release(args, current_ref, previous_ref, assets_root, plan, first_release, source_summary)
+
+
+def finish_release(
+    args: argparse.Namespace,
+    current_ref: str,
+    previous_ref: str | None,
+    assets_root: str,
+    plan: dict[str, Any],
+    first_release: bool,
+    source_summary: dict[str, int],
+) -> int:
     summary = build_summary(
         current_ref=current_ref,
         previous_ref=previous_ref,
@@ -413,15 +439,17 @@ def main() -> int:
         except WorkerPurgeError as exc:
             raise BuildError(str(exc)) from exc
         config = load_r2_config()
-        changed_keys = sorted(
-            {item['key'] for item in plan['uploads'] + plan['deletes'] if item['key'] != 'manifest.json'}
-        )
+        changed_keys = sorted({
+            item["key"] for item in plan["uploads"] + plan["deletes"]
+            if item["key"] not in RELEASE_INDEXES and not item["key"].startswith(APP_METADATA_PREFIX + "/")
+        })
         try:
             apply_sync_plan(
                 plan, config, args.workers, before_manifest=lambda: purge_worker_cache(purge_config, changed_keys)
             )
-            if any(item['key'] == 'manifest.json' for item in plan['uploads']):
-                purge_worker_cache(purge_config, ['manifest.json'])
+            index_keys = sorted({item['key'] for item in plan['uploads']} & RELEASE_INDEXES)
+            if index_keys:
+                purge_worker_cache(purge_config, index_keys)
         except Exception as exc:
             raise BuildError(
                 'R2 sync or selective cache clearing failed. Some objects may have changed. '

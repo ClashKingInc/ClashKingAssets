@@ -221,13 +221,18 @@ For JSON, retain a cached-first/offline body and validators. Check on login/resu
 and at most once per minute while foregrounded, coalescing concurrent checks.
 Prefer If-None-Match conditional GET: retain the body on 304, atomically replace
 body and validators on 200, and keep the last good body on network failure. Existing
-HEAD/Last-Modified followed by GET remains compatible during migration. No new
-separate minified manifest is required. The app reads `manifest.json` and the
-split `static_data/<section>.json` and `translations/<LOCALE>.json` files generated
-by `update_static.py`, rather than downloading the combined metadata files.
-The manifest's `data` object contains separate `stats` and `translations` arrays.
-Each entry contains a full relative `path` and its `sha`; image category arrays
-remain under `assets`. URLs and file extensions are derived from paths.
+HEAD/Last-Modified followed by GET remains compatible during migration.
+
+The app starts with `app_metadata/v1/index.json`. It references two immutable
+objects by SHA-256, `static-<sha>.json` with all app static sections and
+`images-<sha>.json` with image paths, hashes and animation flags. Locale catalogs
+stay separate under `translations/<LOCALE>.json`. The release uploads both
+objects and purges changed source assets before publishing the index. Previous
+hash-addressed objects remain available for clients with cached indexes.
+
+The full `manifest.json` remains available for the Wiki and older clients. Its
+`data` object still lists the individual `static_data/<section>.json` files and
+translations. The app uses that path when the startup metadata is unavailable.
 
 ## Official capability and billing references (verified 2026-09-04)
 
