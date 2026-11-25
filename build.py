@@ -15,13 +15,7 @@ from dotenv import load_dotenv
 
 from asset_sounds import check_sound_effects
 from check_image_sources import check_image_sources
-from generate_manifest import (
-    APP_METADATA_INDEX,
-    APP_METADATA_PREFIX,
-    ManifestError,
-    build_app_metadata,
-    check_manifest,
-)
+from generate_manifest import APP_METADATA_INDEX, APP_METADATA_PREFIX, ManifestError, build_app_metadata, check_manifest
 from worker_purge import WorkerPurgeError, load_worker_purge_config, purge_worker_cache
 
 load_dotenv()
